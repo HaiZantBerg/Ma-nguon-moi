@@ -12,8 +12,6 @@ import {
 
 const chakraPetch = Chakra_Petch({ weight: "700", subsets: ["vietnamese"] });
 
-const imageWidthHeight = 150;
-
 const FFHeader = () => {
     return (
         <div

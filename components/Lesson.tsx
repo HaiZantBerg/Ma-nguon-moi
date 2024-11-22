@@ -86,9 +86,7 @@ const MdTh = () => {
         );
     };
 
-    const handleLandmarkClick = (idx: number) => {
-        idx;
-
+    const handleLandmarkClick = () => {
         animate(
             "#landmarkContainer",
             {
@@ -171,19 +169,19 @@ const MdTh = () => {
                         >
                             <button
                                 className="h-full w-[95%]"
-                                onClick={() => handleLandmarkClick(0)}
+                                onClick={() => handleLandmarkClick()}
                             />
                             <button
                                 className="h-full w-[95%]"
-                                onClick={() => handleLandmarkClick(1)}
+                                onClick={() => handleLandmarkClick()}
                             />
                             <button
                                 className="h-full w-[95%]"
-                                onClick={() => handleLandmarkClick(2)}
+                                onClick={() => handleLandmarkClick()}
                             />
                             <button
                                 className="h-full w-[95%]"
-                                onClick={() => handleLandmarkClick(3)}
+                                onClick={() => handleLandmarkClick()}
                             />
                         </div>
                         <div

@@ -1,6 +1,8 @@
 import depressedAristotle from "@/Image/aristotlecantdopoetic.png";
 import Image from "next/image";
 
+const imageWidthHeight = 150;
+
 export const images = [
     [
         <div key="image1" />,
@@ -75,7 +77,7 @@ export const storyList = [
     ],
 ];
 
-export const historyFiqureName = [
+export const historyFigureName = [
     "Aristotle",
     "William of Ockham và Peter Abelard",
     "George Boole",
