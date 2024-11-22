@@ -2,10 +2,10 @@ import React from "react";
 import { Chakra_Petch } from "next/font/google";
 import { Landmark, Timeline } from "@/Svg/Timeline";
 import Link from "next/link";
-import Drawer from "./Drawer";
-import Image from "next/image";
-import Aristotle from "@/Image/image-removebg-preview.png";
-import GeorgeBoole from "@/Image/george-boole.png";
+// import Drawer from "./Drawer";
+// import Image from "next/image";
+// import Aristotle from "@/Image/image-removebg-preview.png";
+// import GeorgeBoole from "@/Image/george-boole.png";
 import { useAnimate } from "framer-motion";
 
 const chakraPetch = Chakra_Petch({ weight: "700", subsets: ["vietnamese"] });
@@ -87,6 +87,8 @@ const MdTh = () => {
     };
 
     const handleLandmarkClick = (idx: number) => {
+        idx;
+
         animate(
             "#landmarkContainer",
             {
@@ -383,4 +385,4 @@ const MdTh = () => {
     );
 };
 
-export const Lessons = [[<MdTh />], [], []];
+export const Lessons = [[<MdTh key="lesson1" />], [], []];

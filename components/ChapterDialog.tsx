@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { Chakra_Petch } from "next/font/google";
 import { useAnimate } from "framer-motion";
 import { Lessons } from "./Lesson";
@@ -33,52 +33,52 @@ export default function ChapterDialog({
     let isDialogEnter = true;
     let isClosing = false;
 
-    const openDialogAnimation = async () => {
-        animate(
-            "#backdrop",
-            {
-                opacity: [0, 1],
-            },
-            {
-                duration: 0.1,
-                type: "spring",
-                damping: 10,
-                stiffness: 100,
-                mass: 0.1,
-            }
-        );
-
-        await animate(
-            "#box",
-            {
-                opacity: [0, 1],
-                height: ["15vh", "95vh"],
-            },
-            {
-                duration: 0.1,
-                type: "spring",
-                damping: 10,
-                stiffness: 100,
-                mass: 0.1,
-            }
-        );
-
-        animate(
-            "#box",
-            {
-                width: ["25vw", "95vw"],
-            },
-            {
-                duration: 0.1,
-                type: "spring",
-                damping: 10,
-                stiffness: 100,
-                mass: 0.1,
-            }
-        );
-    };
-
     useEffect(() => {
+        const openDialogAnimation = async () => {
+            animate(
+                "#backdrop",
+                {
+                    opacity: [0, 1],
+                },
+                {
+                    duration: 0.1,
+                    type: "spring",
+                    damping: 10,
+                    stiffness: 100,
+                    mass: 0.1,
+                }
+            );
+
+            await animate(
+                "#box",
+                {
+                    opacity: [0, 1],
+                    height: ["15vh", "95vh"],
+                },
+                {
+                    duration: 0.1,
+                    type: "spring",
+                    damping: 10,
+                    stiffness: 100,
+                    mass: 0.1,
+                }
+            );
+
+            animate(
+                "#box",
+                {
+                    width: ["25vw", "95vw"],
+                },
+                {
+                    duration: 0.1,
+                    type: "spring",
+                    damping: 10,
+                    stiffness: 100,
+                    mass: 0.1,
+                }
+            );
+        };
+
         openDialogAnimation();
     }, []);
 

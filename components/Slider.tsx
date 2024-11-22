@@ -5,7 +5,8 @@ import { Chakra_Petch } from "next/font/google";
 import { useAnimate } from "framer-motion";
 import ChapterDialog from "./ChapterDialog";
 import debounce from "debounce";
-import { colorStop2, description, chapter, gradeColor } from "./static/static";
+import { gradeColor, colorStop2 } from "./static/static";
+import { description, chapter } from "./static/lessonsStatic";
 
 const firstCord = 20;
 const secondCord = 7.5;
@@ -199,18 +200,6 @@ export default function Slider({ id }: { id: number }) {
 
     const today = new Date();
 
-    useEffect(() => {
-        if (window)
-            setIsDesktop(window.matchMedia("(min-width: 767px)").matches);
-
-        resizeCanvas();
-        window.addEventListener("resize", resizeCanvas);
-
-        return () => {
-            window.removeEventListener("resize", resizeCanvas);
-        };
-    }, []);
-
     const resizeCanvas = useCallback(
         debounce(() => {
             if (!canvasNextRef.current) return;
@@ -225,6 +214,18 @@ export default function Slider({ id }: { id: number }) {
         }, 500),
         []
     );
+
+    useEffect(() => {
+        if (window)
+            setIsDesktop(window.matchMedia("(min-width: 767px)").matches);
+
+        resizeCanvas();
+        window.addEventListener("resize", resizeCanvas);
+
+        return () => {
+            window.removeEventListener("resize", resizeCanvas);
+        };
+    }, [resizeCanvas]);
 
     const random = (min: number, max: number) => {
         return min + Math.random() * (max - min);
@@ -407,7 +408,7 @@ export default function Slider({ id }: { id: number }) {
             const { left, top, right, bottom } =
                 nextBtnRef.current.getBoundingClientRect();
 
-            let dx = e.clientX,
+            const dx = e.clientX,
                 dy = top - 60,
                 vx =
                     (dx - (left + (right - left) / 2)) / (20 + random(-10, -5)),
@@ -496,7 +497,7 @@ export default function Slider({ id }: { id: number }) {
             const { left, top, right, bottom } =
                 prevBtnRef.current.getBoundingClientRect();
 
-            let dx = e.clientX,
+            const dx = e.clientX,
                 dy = top - 70,
                 vx =
                     (dx - (left + (right - left) / 2)) / (20 + random(-10, -5)),
@@ -868,7 +869,7 @@ export default function Slider({ id }: { id: number }) {
                 </div>
             </div>
             <div className="h-[calc(100vh-64px)] flex justify-between relative z-10 *:pb-8">
-                {/* <div className="flex-1 h-full items-end flex justify-end pt-96">
+                <div className="flex-1 h-full items-end flex justify-end pt-96">
                     <div className=" bg-gray-50 border-[2.5px] border-gray-300 rounded-[30px] w-[460px] max-h-[300px] px-7 py-5 flex flex-col justify-end">
                         <div className="flex items-center gap-3">
                             <svg
@@ -974,7 +975,7 @@ export default function Slider({ id }: { id: number }) {
                             })}
                         </div>
                     </div>
-                </div> */}
+                </div>
                 <div className="flex flex-col justify-between h-full flex-1 max-w-[500px] min-w-[250px]">
                     <div className="flex flex-col items-center gap-6 sm:pt-[15rem] md:px-0 px-5 pt-[20rem]">
                         <div className="sm:text-3xl text-2xl font-light text-center px-12 h-24">
@@ -1218,14 +1219,14 @@ export default function Slider({ id }: { id: number }) {
                         </button>
                     </div>
                 </div>
-                {/* <div className="flex items-end flex-1">
+                <div className="flex items-end flex-1">
                     <div className=" bg-gray-50 border-[2.5px] border-gray-300 rounded-[30px] w-[460px] max-h-[271.3px] px-7 py-5 flex flex-col justify-end">
                         <div className="text-4xl font-bold ml-auto">Notes</div>
                         <div className="h-[300px] w-full flex justify-center items-center text-gray-700">
                             {`Hiện tại bạn chưa note gì hết:(`}
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
             {curChapterId !== -1 && (
                 <ChapterDialog
