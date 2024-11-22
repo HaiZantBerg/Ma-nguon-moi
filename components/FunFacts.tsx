@@ -197,4 +197,4 @@ const FunFact1 = () => {
     );
 };
 
-export const FunFact = [[<FunFact1 />], [], []];
+export const FunFact = [[<FunFact1 key="funfact1" />], [], []];
