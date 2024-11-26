@@ -20,6 +20,7 @@ const page = () => {
                         <span className="text-white font-semibold">
                             Get started
                         </span>
+                        <span className="hidden">Hùng béo vcl</span>
                     </Link>
                 </div>
             </div>

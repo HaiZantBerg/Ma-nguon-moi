@@ -1,7 +1,8 @@
 import Slider from "@/components/Slider";
 import React from "react";
 
-export default function page({ params }: { params: { khoi: string } }) {
+export default async function page(props: { params: Promise<{ khoi: string }> }) {
+    const params = await props.params;
     const gradeId = Number(params.khoi.at(-1));
 
     if (gradeId >= 0 && gradeId <= 2)

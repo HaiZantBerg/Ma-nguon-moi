@@ -1,15 +1,77 @@
-import { Chakra_Petch } from "next/font/google";
-import React from "react";
+"use client";
 
-const chakraPetch = Chakra_Petch({ weight: "700", subsets: ["vietnamese"] });
+import { useState } from "react";
+import Dexie, { type EntityTable } from "dexie";
 
-export default function page() {
+interface Friend {
+    id: number;
+    name: string;
+    age: number;
+}
+
+const db = new Dexie("FriendsDatabase") as Dexie & {
+    friends: EntityTable<
+        Friend,
+        "id" // primary key "id" (for the typings only)
+    >;
+};
+
+// Schema declaration:
+db.version(1).stores({
+    friends: "++id, name, age", // primary key "id" (for the runtime!)
+});
+
+export default function page({ defaultAge } = { defaultAge: 21 }) {
+    const [name, setName] = useState("");
+    const [age, setAge] = useState(defaultAge);
+    const [status, setStatus] = useState("");
+
+    async function getAndModifyPerson() {
+        try {
+            const person = await db.friends.get(1);
+            if (person) {
+                person.name = "tan";
+
+                await db.friends.put(person);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async function addFriend() {
+        try {
+            // Add the new friend!
+            const id = await db.friends.add({
+                name,
+                age,
+            });
+
+            setStatus(`Friend ${name} successfully added. Got id ${id}`);
+            setName("");
+            setAge(defaultAge);
+        } catch (error) {
+            setStatus(`Failed to add ${name}: ${error}`);
+        }
+    }
+
     return (
-        <div
-            className={`${chakraPetch.className} text-[5rem] leading-[6.5rem] max-h-[250px] overflow-y-auto`}
-        >
-            adasdasdasdasdasaas
-            <br /> sada
-        </div>
+        <>
+            <p>{status}</p>
+            Name:
+            <input
+                type="text"
+                value={name}
+                onChange={(ev) => setName(ev.target.value)}
+            />
+            Age:
+            <input
+                type="number"
+                value={age}
+                onChange={(ev) => setAge(Number(ev.target.value))}
+            />
+            <button onClick={addFriend}>Add</button>
+            <button onClick={getAndModifyPerson}>Change</button>
+        </>
     );
 }

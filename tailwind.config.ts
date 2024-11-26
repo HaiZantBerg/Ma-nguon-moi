@@ -17,6 +17,8 @@ const config: Config = {
                 lgmi: "971px",
                 xxlg: "1730px",
                 lgpl: "1200px",
+                lg3: "1450px",
+                md1: "1100px",
             },
         },
     },

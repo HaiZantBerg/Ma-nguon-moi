@@ -222,15 +222,59 @@ export const svgIcon = [
 ];
 
 export const colorStop2 = [
-    ["#ccffd5", "#ccffd1"],
-    ["#ccffd1", "#c4ffc2"],
-    ["#c4ffc2", "#c0ffb8"],
-    ["#c0ffb8", "#baffad"],
-    ["#baffad", "#abffa8"],
-    ["#abffa8", "#c0ffb8"],
-    ["#c0ffb8", "#c4ffc2"],
-    ["#c4ffc2", "#ccffd1"],
-    ["#ccffd1", "#ccffd5"],
+    [
+        ["#ccffd5", "#ccffd1"],
+        ["#ccffd1", "#c4ffc2"],
+        ["#c4ffc2", "#c0ffb8"],
+        ["#c0ffb8", "#baffad"],
+        ["#baffad", "#abffa8"],
+        ["#abffa8", "#c0ffb8"],
+        ["#c0ffb8", "#c4ffc2"],
+        ["#c4ffc2", "#ccffd1"],
+        ["#ccffd1", "#ccffd5"],
+    ],
+    [
+        ["#d1d4ff", "#d3d1ff"],
+        ["#d3d1ff", "#d6deff"],
+        ["#d6deff", "#dbdeff"],
+        ["#dbdeff", "#dbe2ff"],
+        ["#dbe2ff", "#ccccff"],
+        ["#ccccff", "#dbdeff"],
+        ["#dbdeff", "#d6deff"],
+        ["#d6deff", "#d3d1ff"],
+        ["#d3d1ff", "#d1d4ff"],
+    ],
+    [
+        ["#ade8ff", "#a8ecff"],
+        ["#a8ecff", "#61baff"],
+        ["#61baff", "#9ecbff"],
+        ["#9ecbff", "#91b7fd"],
+        ["#91b7fd", "#afdafd"],
+        ["#afdafd", "#9ecbff"],
+        ["#9ecbff", "#61baff"],
+        ["#61baff", "#a8ecff"],
+        ["#a8ecff", "#ade8ff"],
+    ],
 ];
+export const circlrColor = ["#94ff9f", "#a8aaff", ""];
 
-export const gradeColor = ["rgb(0,0,0)"];
+export const gradeBorderColor = [
+    "border-[#0e7c3e] bg-[rgba(7,100,9,0.26)]",
+    "border-[#0049e6] bg-[rgba(46,150,255,0.26)]",
+    "",
+];
+export const gradeButtonColor = [
+    "bg-[#0da043] group-hover:bg-[#0e7c3e]",
+    "bg-[#0b14bc] group-hover:bg-[#1b0e7c]",
+    "",
+];
+export const gradeButtonOpenColor = [
+    "bg-[#0da043] hover:bg-[#0e7c3e]",
+    "bg-[#0b14bc] hover:bg-[#1b0e7c]",
+    "",
+];
+export const gradeParticleColor = [
+    "hsla(142 100% 24% / 0.6)",
+    "hsla(230 100% 24% / 0.6)",
+    "",
+];

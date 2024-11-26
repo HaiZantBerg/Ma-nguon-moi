@@ -5,8 +5,16 @@ import { Chakra_Petch } from "next/font/google";
 import { useAnimate } from "framer-motion";
 import ChapterDialog from "./ChapterDialog";
 import debounce from "debounce";
-import { gradeColor, colorStop2 } from "./static/static";
+import {
+    gradeBorderColor,
+    colorStop2,
+    gradeButtonColor,
+    gradeParticleColor,
+    circlrColor,
+    gradeButtonOpenColor,
+} from "./static/static";
 import { description, chapter } from "./static/lessonsStatic";
+import { db } from "@/db";
 
 const firstCord = 20;
 const secondCord = 7.5;
@@ -190,6 +198,7 @@ export default function Slider({ id }: { id: number }) {
     const backPrevRef = useRef<HTMLDivElement | null>(null);
     const canvasNextRef = useRef<HTMLCanvasElement | null>(null);
     const canvasPrevRef = useRef<HTMLCanvasElement | null>(null);
+    const playAnimation = useRef<boolean>(false);
     const [isDesktop, setIsDesktop] = useState(true);
 
     let stopNextAnimate = false;
@@ -424,7 +433,7 @@ export default function Slider({ id }: { id: number }) {
                     vx,
                     vy,
                     150,
-                    "hsla(142 100% 24% / 0.6)"
+                    gradeParticleColor[id]
                 )
             );
 
@@ -513,7 +522,7 @@ export default function Slider({ id }: { id: number }) {
                     vx,
                     vy,
                     150,
-                    "hsla(142 100% 24% / 0.6)"
+                    gradeParticleColor[id]
                 )
             );
 
@@ -762,13 +771,45 @@ export default function Slider({ id }: { id: number }) {
         }
     };
 
-    const handleOpenDialog = (idx: number) => {
+    const handleOpenDialog = async (idx: number) => {
         setCurChapterId(idx);
+
+        try {
+            await db.chapterData.put({
+                id: 1,
+                curGrade: id,
+                curChapter: idx,
+            });
+        } catch (err) {
+            console.log(err);
+        }
     };
 
-    const handleCloseDialog = () => {
+    const handleCloseDialog = async () => {
         setCurChapterId(-1);
+
+        try {
+            await db.chapterData.put({
+                id: 1,
+                curGrade: id,
+                curChapter: -1,
+            });
+        } catch (err) {
+            console.log(err);
+        }
     };
+
+    useEffect(() => {
+        const fetchCurChapter = async () => {
+            const openChapter = await db.chapterData.get(1);
+
+            if (openChapter) setCurChapterId(openChapter.curChapter);
+
+            setTimeout(() => (playAnimation.current = true), 100);
+        };
+
+        fetchCurChapter();
+    }, []);
 
     return (
         <div ref={scope}>
@@ -809,7 +850,7 @@ export default function Slider({ id }: { id: number }) {
                         >
                             <svg
                                 viewBox="-2 -2 129 34"
-                                className="xxlg:w-[340px] xxlg:h-[85px] sm:w-[400px] sm:h-[100px] w-[320px] h-[80px]"
+                                className="xxlg:w-[340px] xxlg:h-[85px] sm:w-[400px] sm:h-[100px] w-[360px] h-[90px]"
                             >
                                 <defs>
                                     <linearGradient
@@ -820,11 +861,11 @@ export default function Slider({ id }: { id: number }) {
                                         x2="100%"
                                     >
                                         <stop
-                                            stopColor={colorStop2[idx][0]}
+                                            stopColor={colorStop2[id][idx][0]}
                                             offset="0%"
                                         />
                                         <stop
-                                            stopColor={colorStop2[idx][1]}
+                                            stopColor={colorStop2[id][idx][1]}
                                             offset="100%"
                                         />
                                     </linearGradient>
@@ -840,7 +881,7 @@ export default function Slider({ id }: { id: number }) {
                                     cx="124.8"
                                     cy="15.1"
                                     r="1.3"
-                                    fill="#94ff9f"
+                                    fill={circlrColor[id]}
                                     stroke="black"
                                     strokeWidth={1}
                                 />
@@ -848,7 +889,7 @@ export default function Slider({ id }: { id: number }) {
                                     cx="0"
                                     cy="15.1"
                                     r="1.3"
-                                    fill="#94ff9f"
+                                    fill={circlrColor[id]}
                                     stroke="black"
                                     strokeWidth={1}
                                 />
@@ -858,7 +899,7 @@ export default function Slider({ id }: { id: number }) {
                                     className="w-[129px] h-[34px]"
                                 >
                                     <div
-                                        className={`${chakraPetch.className} sm:text-base text-[14.5px] w-full h-full flex justify-center items-center`}
+                                        className={`${chakraPetch.className} w-full h-full flex justify-center items-center`}
                                     >
                                         Chương {idx + 1}
                                     </div>
@@ -869,9 +910,9 @@ export default function Slider({ id }: { id: number }) {
                 </div>
             </div>
             <div className="h-[calc(100vh-64px)] flex justify-between relative z-10 *:pb-8">
-                <div className="flex-1 h-full items-end flex justify-end pt-96">
-                    <div className=" bg-gray-50 border-[2.5px] border-gray-300 rounded-[30px] w-[460px] max-h-[300px] px-7 py-5 flex flex-col justify-end">
-                        <div className="flex items-center gap-3">
+                <div className="flex-1 h-full items-end flex justify-end pt-[550px]">
+                    <div className=" bg-gray-50 border-[2.5px] border-gray-300 rounded-[30px] max-w-[460px] w-full max-h-[300px] px-7 py-5 lg3:flex flex-col hidden">
+                        <div className="flex flex-row items-center justify-normal gap-3">
                             <svg
                                 viewBox="-100 -100 200 200"
                                 height={100}
@@ -934,13 +975,16 @@ export default function Slider({ id }: { id: number }) {
                                 return (
                                     <div
                                         key={idx}
-                                        className="flex flex-col items-center"
+                                        className="flex flex-col lg3:gap-0 gap-2 items-center"
                                     >
-                                        <div className="max-h-[100px] h-[50vh]">
+                                        <div className="max-h-[100px] h-[50vh] w-[44px] flex justify-center">
                                             <svg
                                                 viewBox="0 0 100 100"
-                                                width={dateCondition ? 44 : 36}
-                                                className="h-full"
+                                                className={`h-full ${
+                                                    dateCondition
+                                                        ? "w-[44px]"
+                                                        : "w-[36px]"
+                                                }`}
                                             >
                                                 <path
                                                     d="M48.83 3.38a1.24 1.24 0 0 1 2.373 0l4.498 15.083a38.466 38.466 0 0 0 25.871 25.872l15.083 4.498a1.24 1.24 0 0 1 0 2.372l-15.083 4.498a38.466 38.466 0 0 0-25.87 25.871l-4.499 15.083a1.24 1.24 0 0 1-2.372 0l-4.498-15.083a38.466 38.466 0 0 0-25.872-25.87L3.38 51.204a1.24 1.24 0 0 1 0-2.372l15.082-4.498a38.466 38.466 0 0 0 25.872-25.872L48.83 3.381z"
@@ -960,7 +1004,7 @@ export default function Slider({ id }: { id: number }) {
                                                 />
                                             </svg>
                                         </div>
-                                        <div className="h-[2.5px] w-[50px] bg-gray-500" />
+                                        <div className="h-[2.5px] w-[50px] bg-gray-500 lg3:block hidden" />
                                         <span
                                             className={`${
                                                 dateCondition
@@ -976,9 +1020,9 @@ export default function Slider({ id }: { id: number }) {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col justify-between h-full flex-1 max-w-[500px] min-w-[250px]">
-                    <div className="flex flex-col items-center gap-6 sm:pt-[15rem] md:px-0 px-5 pt-[20rem]">
-                        <div className="sm:text-3xl text-2xl font-light text-center px-12 h-24">
+                <div className="flex flex-col justify-between h-full flex-1 sm:min-w-[500px] min-w-[300px]">
+                    <div className="flex flex-col items-center gap-10 pt-[15rem] md:px-0 px-5">
+                        <div className="sm:text-3xl text-2xl font-light text-center md:px-12 px-3 h-24">
                             <div
                                 id="chapterTitle1"
                                 ref={chapterContentRef}
@@ -991,7 +1035,7 @@ export default function Slider({ id }: { id: number }) {
                         </div>
                         <button
                             onClick={() => handleOpenDialog(chapterId.current)}
-                            className="bg-[#0da043] transition-colors ease-out duration-500 hover:bg-[#0e7c3e] text-white gap-2 rounded-full sm:px-[20px] sm:py-[12.5px] px-3 py-1 mt-10 sm:mt-3 font-[550] flex items-center sm:text-xl text-lg select-none"
+                            className={`${gradeButtonOpenColor[id]} transition-colors ease-out duration-500 text-white gap-2 rounded-full sm:px-[20px] sm:py-[12.5px] px-5 py-2 mt-10 sm:mt-3 font-[550] flex items-center sm:text-xl text-lg select-none`}
                         >
                             <svg
                                 viewBox="-10 -5 20 10"
@@ -1046,7 +1090,7 @@ export default function Slider({ id }: { id: number }) {
                                 >
                                     <div
                                         ref={middlePrevRef}
-                                        className={`rounded-full border-[1.75px] border-[${gradeColor[id]}] bg-[rgba(7,100,9,0.26)] sm:h-12 sm:w-36 h-[2.75rem] w-32 absolute transition-all duration-200 ease-linear`}
+                                        className={`rounded-full border-[1.75px] ${gradeBorderColor[id]} sm:h-12 sm:w-36 h-[2.75rem] w-32 absolute transition-all duration-200 ease-linear`}
                                     />
                                 </div>
                             </div>
@@ -1066,7 +1110,7 @@ export default function Slider({ id }: { id: number }) {
                                 >
                                     <div
                                         ref={backPrevRef}
-                                        className={`rounded-full border-[1.5px] border-[${gradeColor[id]}] bg-[rgba(7,100,9,0.26)] sm:h-10 sm:w-32 h-[2.25rem] w-28 absolute transition-all duration-200 ease-linear`}
+                                        className={`rounded-full border-[1.5px] ${gradeBorderColor[id]} sm:h-10 sm:w-32 h-[2.25rem] w-28 absolute transition-all duration-200 ease-linear`}
                                     />
                                 </div>
                             </div>
@@ -1093,7 +1137,7 @@ export default function Slider({ id }: { id: number }) {
                             >
                                 <div
                                     ref={prevBtnRef}
-                                    className={`rounded-full items-center flex justify-center h-full w-full bg-[#0da043] group-hover:bg-[#0e7c3e] text-white font-semibold transition-all duration-200 ease-linear`}
+                                    className={`rounded-full items-center flex justify-center h-full w-full ${gradeButtonColor[id]} text-white font-semibold transition-all duration-200 ease-linear`}
                                     style={{
                                         transformStyle: "preserve-3d",
                                     }}
@@ -1143,7 +1187,7 @@ export default function Slider({ id }: { id: number }) {
                                 >
                                     <div
                                         ref={middleNextRef}
-                                        className="rounded-full border-[1.75px] border-[#0e7c3e] bg-[rgba(7,100,9,0.26)] sm:h-12 sm:w-36 h-[2.75rem] w-32 relative transition-all duration-200 ease-linear"
+                                        className={`rounded-full border-[1.75px] ${gradeBorderColor[id]} sm:h-12 sm:w-36 h-[2.75rem] w-32 relative transition-all duration-200 ease-linear`}
                                     />
                                 </div>
                             </div>
@@ -1163,7 +1207,7 @@ export default function Slider({ id }: { id: number }) {
                                 >
                                     <div
                                         ref={backNextRef}
-                                        className="rounded-full border-[1.5px] border-[#0e7c3e] bg-[rgba(7,100,9,0.26)] sm:h-10 sm:w-32 h-[2.25rem] w-28 relative transition-all duration-200 ease-linear"
+                                        className={`rounded-full border-[1.5px] ${gradeBorderColor[id]} sm:h-10 sm:w-32 h-[2.25rem] w-28 relative transition-all duration-200 ease-linear`}
                                     />
                                 </div>
                             </div>
@@ -1190,7 +1234,7 @@ export default function Slider({ id }: { id: number }) {
                             >
                                 <div
                                     ref={nextBtnRef}
-                                    className="rounded-full items-center flex justify-center h-full w-full bg-[#0da043] group-hover:bg-[#0e7c3e] text-white font-semibold transition-all duration-200 ease-linear"
+                                    className={`rounded-full items-center flex justify-center h-full w-full ${gradeButtonColor[id]} text-white font-semibold transition-all duration-200 ease-linear`}
                                     style={{
                                         transformStyle: "preserve-3d",
                                     }}
@@ -1219,8 +1263,8 @@ export default function Slider({ id }: { id: number }) {
                         </button>
                     </div>
                 </div>
-                <div className="flex items-end flex-1">
-                    <div className=" bg-gray-50 border-[2.5px] border-gray-300 rounded-[30px] w-[460px] max-h-[271.3px] px-7 py-5 flex flex-col justify-end">
+                <div className="flex items-end flex-1 pt-[550px]">
+                    <div className=" bg-gray-50 border-[2.5px] border-gray-300 rounded-[30px] w-[460px] max-h-[271.3px] px-7 py-5 lg3:flex hidden lg3:flex-col justify-end">
                         <div className="text-4xl font-bold ml-auto">Notes</div>
                         <div className="h-[300px] w-full flex justify-center items-center text-gray-700">
                             {`Hiện tại bạn chưa note gì hết:(`}
@@ -1235,6 +1279,7 @@ export default function Slider({ id }: { id: number }) {
                     idx={curChapterId}
                     isDesktop={isDesktop}
                     description={description}
+                    playAnimation={playAnimation.current}
                     handleCloseDialog={handleCloseDialog}
                 />
             )}
