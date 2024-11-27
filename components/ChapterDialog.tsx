@@ -419,7 +419,7 @@ export default function ChapterDialog({
                             Trở lại
                         </button>
                     </div>
-                    <div className="flex md:gap-10 gap-4 md:h-[120px] h-[54px] items-end overflow-x-hidden z-50 md:row-[1/2] md:col-[1/-1] row-[2/-1] col-[1/-1] md:translate-y-[-32px] w-full justify-end">
+                    <div className="flex md:gap-10 gap-4 md:h-[120px] h-[54px] items-end overflow-hidden z-50 md:row-[1/2] md:col-[1/-1] row-[2/-1] col-[1/-1] md:translate-y-[-32px] w-full justify-end">
                         {[0, 1, 2].map((idxs) => (
                             <div key={idxs}>
                                 <svg
