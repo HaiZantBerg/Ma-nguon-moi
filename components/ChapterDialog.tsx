@@ -488,7 +488,7 @@ export default function ChapterDialog({
                             </div>
                         </div>
                         <div className="flex items-center md1:flex-row flex-col">
-                            <div className="md1:h-[50%] flex items-center">
+                            <div className="md1:h-[50%] w-[50%] flex items-center">
                                 <svg
                                     viewBox="-100 -100 200 200"
                                     className="w-[20px] h-[20px] md1:rotate-0 rotate-90"
