@@ -16,7 +16,7 @@ const MdTh = () => {
             className="h-full md:overflow-y-auto md:overflow-x-hidden w-full"
             ref={scope}
         >
-            <div className="pt-4 w-full">
+            <div className="w-full">
                 <span className="text-2xl font-semibold">Bài 1: Mệnh đề</span>
                 <div className="md:pl-5 font-light mt-6 mb-3 w-full">
                     Dòng thời gian phát triển mệnh đề:

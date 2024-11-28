@@ -89,9 +89,13 @@ export default function GradeCard() {
     return (
         <div
             ref={scope}
-            className="flex xl:flex-row flex-col justify-between text-white"
+            className="flex xl:flex-row flex-col xl:gap-0 md:gap-5 gap-10 justify-between text-white"
         >
-            <Link id="box1" href="/khoi-10" className="flex">
+            <Link
+                id="box1"
+                href="/khoi-10"
+                className="flex justify-center sm:justify-normal"
+            >
                 <svg
                     viewBox="0 0 313.35 227.35"
                     width="313.3457"
@@ -179,7 +183,11 @@ export default function GradeCard() {
                     </foreignObject>
                 </svg>
             </Link>
-            <Link id="box2" href="/khoi-11" className="flex justify-end">
+            <Link
+                id="box2"
+                href="/khoi-11"
+                className="flex sm:justify-end justify-center"
+            >
                 <svg
                     viewBox="0 0 313.15 227.35"
                     width="313.3457"
@@ -267,7 +275,11 @@ export default function GradeCard() {
                     </foreignObject>
                 </svg>
             </Link>
-            <Link id="box3" href="/khoi-12" className="flex">
+            <Link
+                id="box3"
+                href="/khoi-12"
+                className="flex justify-center sm:justify-normal"
+            >
                 <svg
                     viewBox="0 0 313.35 227.35"
                     width="313.3457"

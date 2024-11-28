@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 
 export const quizzes = [
     `Năm người thợ tên là: Da, Điện, Hàn, Tiện và Sơn làm 5 nghề khác nhau và trùng với tên của 5 người họ nhưng không có ai làm 

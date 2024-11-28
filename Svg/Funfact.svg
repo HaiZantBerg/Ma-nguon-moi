@@ -1,0 +1,174 @@
+<svg
+    width="40"
+    height="35"
+    x="-20"
+    y="0"
+    viewBox="0 0 682.667 682.667"
+>
+        <defs>
+            <clipPath id="a" clipPathUnits="userSpaceOnUse">
+                <path d="M0 512h512V0H0Z" fill="#ffffff" opacity={1} />
+            </clipPath>
+        </defs>
+        <g
+            clipPath="url(#a)"
+            transform="matrix(1.33333 0 0 -1.33333 0 682.667)"
+        >
+            <path
+                d="M0 0c5.51 0 10-4.49 10-10S5.51-20 0-20s-10 4.49-10 10S-5.51 0 0 0"
+                transform="translate(466 266)"
+                fill="#ffffff"
+            />
+            <path
+                d="M0 0c5.51 0 10-4.49 10-10S5.51-20 0-20s-10 4.49-10 10S-5.51 0 0 0"
+                transform="translate(346 356)"
+                fill="#ffffff"
+            />
+            <path
+                d="M0 0c5.51 0 10-4.49 10-10S5.51-20 0-20s-10 4.49-10 10S-5.51 0 0 0"
+                transform="translate(346 176)"
+                fill="#ffffff"
+            />
+            <path
+                d="M0 0c5.51 0 10-4.49 10-10S5.51-20 0-20s-10 4.49-10 10S-5.51 0 0 0"
+                transform="translate(166 356)"
+                fill="#ffffff"
+            />
+            <path
+                d="M0 0c5.51 0 10-4.49 10-10S5.51-20 0-20s-10 4.49-10 10S-5.51 0 0 0"
+                transform="translate(166 176)"
+                fill="#ffffff"
+            />
+            <path
+                d="M0 0c5.51 0 10-4.49 10-10S5.51-20 0-20s-10 4.49-10 10S-5.51 0 0 0"
+                transform="translate(46 266)"
+                fill="#ffffff"
+            />
+            <path
+                d="M0 0c0-33.14-26.86-60-60-60M0 0c0-33.14 26.86-60 60-60"
+                transform="translate(70 502)"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth={20}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M0 0c0 33.14 26.86 60 60 60M0 0c0 33.14-26.86 60-60 60"
+                transform="translate(70 382)"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth={20}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M0 0c0-33.14-26.86-60-60-60M0 0c0-33.14 26.86-60 60-60"
+                transform="translate(442 130)"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth={20}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M0 0c0 33.14 26.86 60 60 60M0 0c0 33.14-26.86 60-60 60"
+                transform="translate(442 10)"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth={20}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M0 0c0-49.71-40.3-90-90-90M0 0c0-49.71 40.29-90 90-90"
+                transform="translate(256 346)"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth={20}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M0 0c0 49.71 40.29 90 90 90M0 0c0 49.71-40.3 90-90 90"
+                transform="translate(256 166)"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth={20}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M0 0v60"
+                transform="translate(106 76)"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth={20}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M0 0h60"
+                transform="translate(76 106)"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth={20}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M0 0v60"
+                transform="translate(406 376)"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth={20}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M0 0h60"
+                transform="translate(376 406)"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth={20}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M0 0v60"
+                transform="translate(256 442)"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth={20}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M0 0h60"
+                transform="translate(226 472)"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth={20}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M0 0v60"
+                transform="translate(256 10)"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth={20}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M0 0h60"
+                transform="translate(226 40)"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth={20}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </g>
+</svg>

@@ -10,7 +10,7 @@ import {
     colorStop2,
     gradeButtonColor,
     gradeParticleColor,
-    circlrColor,
+    circleColor,
     gradeButtonOpenColor,
 } from "./static/static";
 import { description, chapter } from "./static/lessonsStatic";
@@ -226,7 +226,7 @@ export default function Slider({ id }: { id: number }) {
 
     useEffect(() => {
         if (window)
-            setIsDesktop(window.matchMedia("(min-width: 767px)").matches);
+            setIsDesktop(window.matchMedia("(min-width: 1100px)").matches);
 
         resizeCanvas();
         window.addEventListener("resize", resizeCanvas);
@@ -881,7 +881,7 @@ export default function Slider({ id }: { id: number }) {
                                     cx="124.8"
                                     cy="15.1"
                                     r="1.3"
-                                    fill={circlrColor[id]}
+                                    fill={circleColor[id]}
                                     stroke="black"
                                     strokeWidth={1}
                                 />
@@ -889,7 +889,7 @@ export default function Slider({ id }: { id: number }) {
                                     cx="0"
                                     cy="15.1"
                                     r="1.3"
-                                    fill={circlrColor[id]}
+                                    fill={circleColor[id]}
                                     stroke="black"
                                     strokeWidth={1}
                                 />
