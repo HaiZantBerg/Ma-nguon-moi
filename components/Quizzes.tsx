@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import { useAnimate } from "framer-motion";
-import ReactPlayer from "react-player/lazy";
+// import ReactPlayer from "react-player/lazy";
 import {
     quizName,
     answerArray,

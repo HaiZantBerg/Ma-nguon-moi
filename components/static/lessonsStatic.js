@@ -10,6 +10,7 @@ export const menhDeStars = [
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 105.09 19.27"
         className="h-full"
+        key="star1"
     >
         <defs>
             <linearGradient
@@ -86,6 +87,7 @@ export const menhDeStars = [
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 112.86 19.27"
         className="h-full"
+        key="star2"
     >
         <defs>
             <linearGradient
@@ -162,6 +164,7 @@ export const menhDeStars = [
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 84.91 19.27"
         className="h-full"
+        key="star3"
     >
         <defs>
             <linearGradient
@@ -238,6 +241,7 @@ export const menhDeStars = [
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 84.93 19.27"
         className="h-full"
+        key="star4"
     >
         <defs>
             <linearGradient

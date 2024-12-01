@@ -5,16 +5,14 @@ import React from "react";
 // import Image from "next/image";
 // import Aristotle from "@/Image/image-removebg-preview.png";
 // import GeorgeBoole from "@/Image/george-boole.png";
-import { useAnimate } from "framer-motion";
+// import { useAnimate } from "framer-motion";
 import { menhDeStars } from "./static/lessonsStatic";
 
 const MdTh = () => {
-    const [scope, animate] = useAnimate();
-
     return (
         <div
             className="font-light h-full md:pl-5 mb-3 md:overflow-y-auto md:overflow-x-hidden w-full"
-            ref={scope}
+            // ref={scope}
         >
             <div className="w-full">Dòng thời gian phát triển mệnh đề:</div>
             <div className="overflow-x-auto overflow-y-hidden grid grid-cols-1 grid-rows-[repeat(4,auto)] pt-[12px]">
