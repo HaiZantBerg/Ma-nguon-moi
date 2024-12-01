@@ -295,3 +295,10 @@ export const gradeParticleColor = [
     "hsla(230 100% 24% / 0.6)",
     "",
 ];
+
+export const hoverContent = [
+    "Câu chuyện lịch sử",
+    "Funfact",
+    "Quizzes",
+    "Thoát",
+];

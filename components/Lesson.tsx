@@ -7,17 +7,18 @@ import React from "react";
 // import GeorgeBoole from "@/Image/george-boole.png";
 // import { useAnimate } from "framer-motion";
 import { menhDeStars } from "./static/lessonsStatic";
+import "katex/dist/katex.min.css";
+import { InlineMath } from "react-katex";
 
-const MdTh = () => {
+const MenhdeTaphop = () => {
     return (
-        <div
-            className="font-light h-full md:pl-5 mb-3 md:overflow-y-auto md:overflow-x-hidden w-full"
-            // ref={scope}
-        >
-            <div className="w-full">Dòng thời gian phát triển mệnh đề:</div>
+        <>
+            <div className="text-[1.25rem] leading-[1.875rem]">
+                Dòng thời gian phát triển mệnh đề và tập hợp:
+            </div>
             <div className="overflow-x-auto overflow-y-hidden grid grid-cols-1 grid-rows-[repeat(4,auto)] pt-[12px]">
                 <div className="col-[1/-1] row-[1/-1] bg-[#050505] w-[2.5px] relative left-[21.35px]" />
-                <div className="col-[1/-1] row-[1/2] relative z-10 mt-[40px]">
+                <div className="col-[1/-1] row-[1/2] relative z-10 mt-[10px]">
                     <div className="h-[75px]">{menhDeStars[0]}</div>
                     <p className="pl-[70px] py-3">
                         Chúng ta hãy bắt đầu từ khoảng năm 384 TCN, khi
@@ -138,12 +139,22 @@ const MdTh = () => {
                     <p className="pl-[70px] py-3"></p>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
-const Lessons = [[<MdTh key="lesson1" />], [], []];
+const LuongGiac = () => {
+    return (
+        <>
+            <div>
+                <InlineMath math="e^{i\pi} + 1 = 0" />
+            </div>
+        </>
+    );
+};
 
-export default function LessonLayout({ id, idx }: { id: number; idx: number }) {
-    return <div>{Lessons[id][idx]}</div>;
-}
+export const Lessons = [
+    [<MenhdeTaphop key="lesson1" />, null, <LuongGiac key="lesson2" />],
+    [],
+    [],
+];

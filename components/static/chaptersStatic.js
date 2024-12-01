@@ -33,26 +33,20 @@ export const chapter = [
 
 export const description = [
     [
-        "Bài học này sẽ cung cấp kiến thức cơ bản về lịch sử hình thành và phát triển của mệnh đề và tập hợp. Đây là phần mở đầu quan trọng để hiểu sâu hơn về logic và toán học trong các bài học sau.",
-        "Các bất phương trình bậc nhất hai ẩn và hệ bất phương trình bậc nhất hai ẩn xuất hiện trong nhiều bài toán kinh tế, như là những ràng buộc trong các bài toán sản xuất, bài toán phân phối hàng hóa,... Chương này cung cấp cách biểu diễn miền nghiệm của các bất phương trình và hệ bất phương trình bậc nhất hai ẩn trên mặt phẳng tọa độ.",
-        "Lượng giác được phát triển từ nhu cầu tính toán góc và khoảng cách trong rất nhiều lĩnh vực như thiên văn học, lập bản đồ, bản vẽ thiết kế, khảo sát và tìm tầm bắn của pháo binh.",
-        "Một số đại lượng như lực, vận tốc được đặc trưng bởi hai yếu tố là độ lớn và hướng. Chương này xây dựng một đối tượng toán học, được gọi là vectơ, mà ta có thể dùng nó để biểu diễn các đại lượng nói trên.//Vectơ còn được sử dụng để xây dựng các khái niệm toán học, là công cụ để giải quyết nhiều bài toán và góp phần vào việc hình thành và phát triển năng lực tư duy tuyến tính cho người học.",
-        "Các số đặc trưng cung cấp thông tin quan trọng, hữu ích về mẫu số liệu. Nội dung chính của chương này là giới thiệu ý nghĩa, cách tính các số đặc trưng đo xu thế trung tâm và mức độ phân tán của một mẫu số liệu. Ta cũng sẽ tìm hiểu về số gần đúng, sai số và một số phương pháp phát hiện dữ liệu không chính xác.",
-        "Chương này hệ thống hoá các khái niệm cơ bản về hàm số và đồ thị của hàm số đã được học ở các lớp dưới; cách vẽ đồ thị của hàm số bậc hai, xét dấu của tam thức bậc hai và vận dụng để giải bất phương trình bậc hai, bài toán thực tiễn. Ta cũng xét các phương trình chưa căn thức đơn giản có thể quy về phương trình bậc hai.",
-        "Sau điểm và vector, những đối tượng khác của hình học phẳng như đường thẳng, đường tròn,... sẽ lần lượt được đại số hóa ở chương này. Đối với mỗi đối tượng hình học đó, trước hết ta đưa ra đối tượng đại số tương ứng, được gọi là phương trình của nó. Các mối quan hệ, công thức tính toán hình học sẽ được thể hiện theo các yếu tố của phương trình tương ứng.//Nhờ đại số hóa hình học, ta có thể dùng ngôn ngữ và phương pháp của đại số để diễn đạt và học tập hình học. Ngoài ra, đại số hóa hình học là bước quan trọng cho phép ta dùng ngôn ngữ của máy tính để diễn đạt hình học. Nhờ đó, ta có thể sử dụng công nghệ thông tin trong học tập và ứng dụng hình học, chẳng hạn, các phần mềm vẽ hình như GeoGebra (dùng trong học tập), Autocad (dùng trong vẽ thiết kế) đều sử dụng các kiến thức hình học.",
-        "Chương này cung cấp những khái niệm và kí hiệu logic thường dùng, củng cố và mở rộng hiểu biết ban đầu về lí thuyết tập hợp đã được học ở các lớp dưới. Từ đó góp phần hình thành khả năng suy luận có lí, khả năng tiếp nhận, diễn đạt các vấn đề một cách chính xác, tạo cơ sở để học tốt các nội dung toán học khác.",
-        "Lý thuyết Xác suất là một ngành toán học nghiên cứu các hiện tượng ngẫu nhiên. Nhà toán học Pháp P. S. Laplace đã viết: 'Lý thuyết Xác suất ra đời từ việc nghiên cứu các trò chơi may rủi, đã và đang trở thành một trong những đối tượng quan trọng nhất của trí tuệ nhân loại. Phần lớn những vấn đề quan trọng nhất của cuộc sống là những bài toán của Lý thuyết Xác suất.",
+        `Bài học này sẽ cung cấp kiến thức cơ bản về lịch sử hình thành và phát triển của mệnh đề và tập hợp. 
+        Đây là phần mở đầu quan trọng để hiểu sâu hơn về logic và toán học trong các bài học sau.`,
+        ``,
+        `Lượng giác bắt đầu từ các nền văn minh cổ đại như Ai Cập và Babylon, phát triển qua Hy Lạp với Hipparchus. 
+        Vào thế kỷ 5 - 7, Ấn Độ mở rộng bảng sine, cosine. Trong thời Trung Cổ, các học giả Ả Rập tiếp tục nghiên cứu. 
+        Đến thế kỷ 18, Euler và các nhà toán học châu Âu phát triển lý thuyết lượng giác hiện đại, ứng dụng trong khoa học và 
+        kỹ thuật. Lịch sử hình thành và phát triển lượng giác đã phát triển ở nhiều nơi trên thế giới.`,
+        ``,
+        ``,
+        ``,
+        ``,
+        ``,
+        ``,
     ],
-    [
-        "Chương này giới thiệu khái niệm góc lượng giác, giá trị lượng giác của góc lượng giác, các công thức lượng giác cơ bản, hàm số lượng giác, cách giải phương trình lượng giác cơ bản và một số ứng dụng của lượng giác trong thực tiễn.",
-        "Chương này giới thiệu những khái niệm cơ bản về dãy số (hữu hạn và vô hạn, một loại hàm số mà biến số là những số nguyên dương), và trình bày một cách hệ thống hai dãy số đặc biệt, có nhiều ứng dụng trong thực tiễn là cấp số cộng và cấp số nhân.",
-        "Ở lớp 10 ta đã được làm quen với các số đặc trưng của mẫu số liệu không ghép nhóm. Trong nhiều trường hợp, ta chỉ có số liệu dưới dạng ghép nhóm. Chương này giới thiệu về mẫu số liệu ghép nhóm và cách tính các số đặc trưng đo xu thế trung tâm cho mẫu số liệu này.",
-        "Ở các lớp dưới, ta đã học về Hình học phẳng, môn học nghiên cứu tính chất của các hình trong mặt phẳng như hình tam giác, hình tứ giác, hình tròn... Tuy nhiên, các vật thể thường gặp trong thực tế đời sống như hộp phấn, cục tẩy, chân giày là các hình trong không gian. Một số tính chất của những hình này đã được giới thiệu và thừa nhận trong phần Hình học trực quan. Trong chương này, ta sẽ tiếp tục học về Hình học không gian, môn học nghiên cứu tính chất của các hình trong không gian dựa trên các lập luận toán học logic và chặt chẽ. Nội dung chính của chương liên quan đến đường thẳng, mặt phẳng trong không gian và vị trí tương đối giữa chúng.",
-        "Chương này trình bày khái niệm giới hạn của dãy số, của hàm số và một số định lý, quy tắc tìm giới hạn. Chúng là cơ sở cho việc nghiên cứu các nội dung khác của Giải tích và cho phép giải quyết nhiều bài toán của khoa học và thực tiễn. Khái niệm hàm số liên tục và một vài tính chất đơn giản của chúng được trình bày ở phần cuối chương.",
-        "Trong chương này, lũy thừa với số mũ nguyên được mở rộng cho số mũ hữu tỉ, số mũ thực và từ đó hình thành khái niệm logarit. Đây là những phép tính được sử dụng nhiều trong khoa học, kỹ thuật và đời sống. Trên cơ sở đó, hai hàm số quan trọng là hàm số mũ và hàm số logarit được giới thiệu. Phần cuối chương trình bày cách giải một số phương trình, bất phương trình mũ và logarit đơn giản.",
-        "Chương này ta sẽ tìm hiểu về quan hệ vuông góc, góc, khoảng cách và thể tích Hình học không gian.",
-        "Nếu biết xác suất xảy ra của biến cố A, xác suất xảy ra của biến cố B, làm thế nào để tính xác suất xảy ra biến cố A hoặc biến cố B, xác suất xảy ra biến cố A và biến cố B?//Chương này đưa ra các quy tắc tính xác suất nhằm mục đích giúp ta trả lời các câu hỏi trên.",
-        "Chương này trình bày khái niệm và các quy tắc tính đạo hàm, công thức tính đạo hàm của một số hàm số sơ cấp cơ bản, cũng như ý nghĩa hình học và ý nghĩa cơ học của đạo hàm.",
-    ],
-    ["", "", "", "", "", ""],
+    [``, ``, ``, ``, ``, ``, ``, ``, ``],
+    [``, ``, ``, ``, ``, ``],
 ];

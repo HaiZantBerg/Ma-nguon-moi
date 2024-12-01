@@ -542,8 +542,6 @@ export default function Slider({ id }: { id: number }) {
             },
             {
                 type: "spring",
-
-                duration: 1,
                 bounce: 0.7,
             }
         );
@@ -559,11 +557,9 @@ export default function Slider({ id }: { id: number }) {
                 },
                 {
                     type: "spring",
-
-                    duration: 1,
-                    mass: 5,
                     stiffness: 150,
                     damping: 30,
+                    mass: 5,
                 }
             );
         });
@@ -588,8 +584,6 @@ export default function Slider({ id }: { id: number }) {
             },
             {
                 type: "spring",
-
-                duration: 1,
                 bounce: 0.7,
             }
         );
@@ -605,11 +599,9 @@ export default function Slider({ id }: { id: number }) {
                 },
                 {
                     type: "spring",
-
-                    duration: 1,
-                    mass: 5,
                     stiffness: 150,
                     damping: 30,
+                    mass: 5,
                 }
             );
         });
@@ -623,7 +615,7 @@ export default function Slider({ id }: { id: number }) {
             {
                 transform: "translate(15px, -10px)",
             },
-            { duration: 1, type: "spring" }
+            { type: "spring" }
         );
 
         animate(
@@ -632,7 +624,7 @@ export default function Slider({ id }: { id: number }) {
                 transform: "translate(5px, -5px)",
                 opacity: 0.75,
             },
-            { duration: 1, type: "spring" }
+            { type: "spring" }
         );
 
         animate(
@@ -641,7 +633,7 @@ export default function Slider({ id }: { id: number }) {
                 transform: "translate(-5px)",
                 opacity: 0.5,
             },
-            { duration: 1, type: "spring" }
+            { type: "spring" }
         );
 
         animate("#innerNextItems", {
@@ -655,7 +647,7 @@ export default function Slider({ id }: { id: number }) {
             {
                 transform: "translate(0px, 0px)",
             },
-            { duration: 1, type: "spring" }
+            { type: "spring" }
         );
 
         animate(
@@ -664,7 +656,7 @@ export default function Slider({ id }: { id: number }) {
                 transform: "translate(0px, 0px)",
                 opacity: 0,
             },
-            { duration: 1, type: "spring" }
+            { type: "spring" }
         );
 
         animate(
@@ -673,7 +665,7 @@ export default function Slider({ id }: { id: number }) {
                 transform: "translate(0px)",
                 opacity: 0,
             },
-            { duration: 1, type: "spring" }
+            { type: "spring" }
         );
 
         animate("#innerNextItems", {
@@ -698,7 +690,7 @@ export default function Slider({ id }: { id: number }) {
             {
                 transform: "translate(-15px, -10px)",
             },
-            { duration: 1, type: "spring" }
+            { type: "spring" }
         );
 
         animate(
@@ -707,7 +699,7 @@ export default function Slider({ id }: { id: number }) {
                 transform: "translate(-5px, -5px)",
                 opacity: 0.75,
             },
-            { duration: 1, type: "spring" }
+            { type: "spring" }
         );
 
         animate(
@@ -716,7 +708,7 @@ export default function Slider({ id }: { id: number }) {
                 transform: "translate(5px)",
                 opacity: 0.5,
             },
-            { duration: 1, type: "spring" }
+            { type: "spring" }
         );
 
         animate("#innerPrevItems", {
@@ -730,7 +722,7 @@ export default function Slider({ id }: { id: number }) {
             {
                 transform: "translate(0px, 0px)",
             },
-            { duration: 1, type: "spring" }
+            { type: "spring" }
         );
 
         animate(
@@ -739,7 +731,7 @@ export default function Slider({ id }: { id: number }) {
                 transform: "translate(0px, 0px)",
                 opacity: 0,
             },
-            { duration: 1, type: "spring" }
+            { type: "spring" }
         );
 
         animate(
@@ -748,7 +740,7 @@ export default function Slider({ id }: { id: number }) {
                 transform: "translate(0px)",
                 opacity: 0,
             },
-            { duration: 1, type: "spring" }
+            { type: "spring" }
         );
 
         animate("#innerPrevItems", {
@@ -1018,7 +1010,7 @@ export default function Slider({ id }: { id: number }) {
                 </div>
                 <div className="flex flex-col justify-between h-full flex-1 sm:min-w-[500px] min-w-[300px]">
                     <div className="flex flex-col items-center gap-10 pt-[15rem] md:px-0 px-5">
-                        <div className="sm:text-3xl text-2xl font-light text-center md:px-12 px-3 h-24">
+                        <div className="sm:text-[2rem] leading-[2.25rem] text-2xl font-light text-center md:px-12 px-3 h-24">
                             <div
                                 id="chapterTitle1"
                                 ref={chapterContentRef}
@@ -1270,7 +1262,7 @@ export default function Slider({ id }: { id: number }) {
             </div>
             {curChapterId !== -1 && (
                 <ChapterDialog
-                    chapterContent={chapter[id][curChapterId]}
+                    chapterTitle={chapter[id][curChapterId]}
                     id={id}
                     idx={curChapterId}
                     description={description}

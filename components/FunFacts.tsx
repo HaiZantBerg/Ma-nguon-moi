@@ -1,13 +1,67 @@
 "use client";
 
-import React, { useState } from "react";
-import FlipCard from "./FlipCard";
+import React, { useEffect, useRef, useState } from "react";
 import {
     images,
     storyList,
     historyFigureName,
     storyContent,
 } from "./static/funfactsStatic";
+import { useAnimate } from "framer-motion";
+import Image from "next/image";
+import cross from "@/Svg/Cross.svg";
+
+const FunFact1 = () => {
+    const [openFlipCard, setOpenFlipCard] = useState<[number, number]>([
+        -1, -1,
+    ]);
+
+    const triggerCloseCard = () => {
+        setOpenFlipCard([-1, -1]);
+    };
+
+    return (
+        <>
+            {storyList.map((section, idx) => (
+                <div key={idx} className="mb-5">
+                    <span className="font-semibold text-2xl">
+                        {historyFigureName[idx]}
+                    </span>
+                    <div className="md:ml-7 flex flex-wrap mt-5">
+                        {section.map((title, idxs) => (
+                            <FunFactCard
+                                key={idxs}
+                                idx={idx}
+                                setOpenFlipCard={setOpenFlipCard}
+                                idxs={idxs}
+                                title={title}
+                            >
+                                {openFlipCard[0] === idx &&
+                                    openFlipCard[1] === idxs && (
+                                        <FlipCard
+                                            idx={idx}
+                                            title={title}
+                                            idxs={idxs}
+                                            triggerCloseCard={triggerCloseCard}
+                                        >
+                                            {storyContent[idx][idxs]
+                                                .split("//")
+                                                .map((text, idxt) => (
+                                                    <p key={idxt}>{text}</p>
+                                                ))}
+                                        </FlipCard>
+                                    )}
+                            </FunFactCard>
+                        ))}
+                    </div>
+                    <hr className="mr-10" />
+                </div>
+            ))}
+        </>
+    );
+};
+
+export const FunFact = [[<FunFact1 key="funfact1" />], [], []];
 
 const FunFactCard = ({
     children,
@@ -43,7 +97,7 @@ const FunFactCard = ({
                     fill="white"
                 />
                 <foreignObject x="-160" y="-180" width="320" height="360">
-                    <div className="flex justify-center">
+                    <div className="flex justify-self-center h-[42.5%] aspect-square">
                         {images[idx][idxs]}
                     </div>
                 </foreignObject>
@@ -60,58 +114,235 @@ const FunFactCard = ({
     );
 };
 
-const FunFact1 = () => {
-    const [openFlipCard, setOpenFlipCard] = useState<[number, number]>([
-        -1, -1,
-    ]);
+const FlipCard = ({
+    children,
+    idx,
+    title,
+    idxs,
+    triggerCloseCard,
+}: {
+    children: React.ReactNode;
+    title: string;
+    idx: number;
+    idxs: number;
+    triggerCloseCard: () => void;
+}) => {
+    const [scope, animate] = useAnimate();
 
-    const triggerCloseCard = () => {
-        setOpenFlipCard([-1, -1]);
+    const flipCardContentRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        animate(
+            "#backdrop",
+            {
+                opacity: [0, 1],
+            },
+            { duration: 0.5 }
+        );
+
+        setTimeout(() => {
+            if (flipCardContentRef.current)
+                flipCardContentRef.current.style.display = "flex";
+        }, 200);
+
+        animate(
+            "#flipCardBody",
+            {
+                opacity: [0, 1],
+            },
+            {
+                duration: 0.5,
+                type: "spring",
+                stiffness: 100,
+                damping: 10,
+                mass: 1,
+            }
+        );
+
+        animate(
+            "#flipCardTitle",
+            {
+                opacity: [0, 1],
+            },
+            {
+                duration: 0.5,
+                type: "spring",
+                stiffness: 100,
+                damping: 10,
+                mass: 1,
+            }
+        );
+
+        animate(
+            "#flipCard",
+            {
+                transform: [
+                    "rotateY(180deg) scale(0.35)",
+                    "rotateY(0deg) scale(1)",
+                ],
+            },
+            {
+                duration: 0.1,
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+                mass: 2,
+            }
+        );
+    }, []);
+
+    const closeCard = async () => {
+        animate(
+            "#backdrop",
+            {
+                opacity: [1, 0],
+            },
+            { duration: 0.5 }
+        );
+
+        setTimeout(() => {
+            if (flipCardContentRef.current)
+                flipCardContentRef.current.style.display = "none";
+        }, 10);
+
+        animate(
+            "#flipCardBody",
+            {
+                opacity: [1, 0],
+            },
+            {
+                duration: 0.1,
+                type: "spring",
+                stiffness: 400,
+                damping: 50,
+                mass: 0.075,
+            }
+        );
+
+        animate(
+            "#flipCard",
+            {
+                transform: [
+                    "rotateY(0deg) scale(1)",
+                    "rotateY(180deg) scale(0.35)",
+                ],
+            },
+            {
+                duration: 0.1,
+                type: "spring",
+                stiffness: 200,
+                damping: 30,
+                mass: 0.075,
+            }
+        );
+
+        await animate(
+            "#flipCardTitle",
+            {
+                opacity: [1, 0],
+            },
+            {
+                duration: 0.1,
+                type: "spring",
+                stiffness: 400,
+                damping: 50,
+                mass: 0.075,
+            }
+        );
+
+        triggerCloseCard();
     };
 
     return (
-        <>
-            {storyList.map((section, idx) => (
-                <div key={idx} className="mb-5">
-                    <span className="font-semibold text-2xl">
-                        {historyFigureName[idx]}
-                    </span>
-                    <div className="md:ml-7 flex flex-wrap mt-5">
-                        {section.map((title, idxs) => (
-                            <FunFactCard
-                                key={idxs}
-                                idx={idx}
-                                setOpenFlipCard={setOpenFlipCard}
-                                idxs={idxs}
-                                title={title}
+        <div
+            className="fixed z-[100] w-screen h-screen -left-[2.5vw] -bottom-[2.5vh] flex items-center justify-center"
+            style={{
+                perspective: "750px",
+            }}
+            ref={scope}
+        >
+            <div
+                className="absolute top-0 left-0 w-screen h-screen -z-10"
+                style={{
+                    background: "rgba(0, 0, 0, 0.75)",
+                }}
+                id="backdrop"
+                onClick={closeCard}
+            />
+            <div
+                className="relative w-[82.22vh] h-[92.5vh]"
+                style={{
+                    transformStyle: "preserve-3d",
+                }}
+                id="flipCard"
+            >
+                <div
+                    className="relative top-[50%]"
+                    style={{
+                        aspectRatio: 8 / 9,
+                        transformStyle: "preserve-3d",
+                        transform: "translateY(-50%)",
+                    }}
+                >
+                    <svg viewBox="-160 -180 320 360" id="flipCardBody">
+                        <path
+                            d="M-120 -177.5 L120 -177.5 L157.5 -140 L157.5 140 L120 177.5 L-120 177.5 L-157.5 140 L-157.5 -140 Z"
+                            strokeWidth="3"
+                            strokeLinejoin="round"
+                            strokeLinecap="round"
+                            className="stroke-[rgb(25,25,25)]"
+                            fill="white"
+                        />
+                    </svg>
+                    <div
+                        className="w-full h-full absolute top-0 left-0"
+                        style={{
+                            transformStyle: "preserve-3d",
+                        }}
+                    >
+                        <div
+                            className="text-[60px] leading-[65px] flex flex-col h-full items-center w-full absolute left-0 top-0 font-semibold px-[40px] text-center overflow-hidden"
+                            style={{
+                                transformStyle: "preserve-3d",
+                                transform: "translateZ(-1px) scale(-1, 1)",
+                            }}
+                            id="flipCardTitle"
+                        >
+                            <div className="h-[50%] aspect-square">
+                                {images[idx][idxs]}
+                            </div>
+                            <div className="absolute top-[50%] px-[30px]">
+                                {idxs + 1}.
+                                <br />
+                                {title}
+                            </div>
+                        </div>
+                        <div
+                            className="w-full h-full hidden justify-between flex-col items-center absolute top-0 left-0 px-11 pt-[16%] pb-10"
+                            style={{
+                                transformStyle: "preserve-3d",
+                                transform: "translateZ(1px)",
+                            }}
+                            ref={flipCardContentRef}
+                        >
+                            <button
+                                onClick={closeCard}
+                                className="w-[5%] h-[5%] absolute top-[8%] right-[10%]"
                             >
-                                {openFlipCard[0] === idx &&
-                                    openFlipCard[1] === idxs && (
-                                        <FlipCard
-                                            title={title}
-                                            idxs={idxs}
-                                            triggerCloseCard={triggerCloseCard}
-                                        >
-                                            {storyContent[idx][idxs]
-                                                .split("//")
-                                                .map((text, idxt) => (
-                                                    <p
-                                                        key={idxt}
-                                                        className="mb-5"
-                                                    >
-                                                        {text}
-                                                    </p>
-                                                ))}
-                                        </FlipCard>
-                                    )}
-                            </FunFactCard>
-                        ))}
+                                <Image src={cross} alt="" />
+                            </button>
+                            <div
+                                className="text-[clamp(15px,2vw,19.25px)] leading-[clamp(22px,100vw,24px)] w-full flex-col font-medium px-2 text-center overflow-y-auto flex gap-5"
+                                style={{
+                                    aspectRatio: 8 / 9,
+                                }}
+                            >
+                                {children}
+                            </div>
+                        </div>
                     </div>
-                    <hr className="mr-10" />
                 </div>
-            ))}
-        </>
+            </div>
+        </div>
     );
 };
-
-export const FunFact = [[<FunFact1 key="funfact1" />], [], []];

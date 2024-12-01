@@ -1,7 +1,6 @@
 import depressedAristotle from "@/Image/aristotlecantdopoetic.png";
+import logicBread from "@/Image/logicbread.png";
 import Image from "next/image";
-
-const imageWidthHeight = 150;
 
 export const images = [
     [
@@ -11,11 +10,10 @@ export const images = [
         <div key="image4" />,
         <div key="image5" />,
         <Image
-            width={imageWidthHeight}
-            height={imageWidthHeight}
             src={depressedAristotle}
             alt=""
             key="image6"
+            className="w-full h-full"
         />,
     ],
     [
@@ -25,7 +23,16 @@ export const images = [
         <div key="image10" />,
         <div key="image11" />,
     ],
-    [<div key="image12" />, <div key="image13" />, <div key="image14" />],
+    [
+        <div key="image12" />,
+        <Image
+            src={logicBread}
+            alt=""
+            key="image13"
+            className="translate-y-2 w-full h-full"
+        />,
+        <div key="image14" />,
+    ],
     [
         <div key="image15" />,
         <div key="image16" />,

@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { Chakra_Petch } from "next/font/google";
 import { useAnimate } from "framer-motion";
-import LessonLayout from "./Lesson";
+import { Lessons } from "./Lesson";
 import { FunFact } from "./FunFacts";
 import { Quizzes } from "./Quizzes";
 import { colorStop, svgIcon } from "./static/static";
@@ -18,7 +18,7 @@ const chakraPetch = Chakra_Petch({ weight: "700", subsets: ["vietnamese"] });
 const LHeader = () => {
     return (
         <div
-            className={`${chakraPetch.className} h-[72px] md1:text-[40px] text-[35px] leading-[42.5px] items-center gap-4 flex text-nowrap`}
+            className={`${chakraPetch.className} h-[72px] pt-[19px] md1:text-[40px] text-[35px] leading-[42.5px] items-center gap-4 flex text-nowrap`}
         >
             Câu chuyện lịch sử
             <div className="h-[64px] aspect-square">
@@ -62,7 +62,7 @@ const QHeader = () => {
                     <Image src={QuesExcla} alt="" />
                 </div>
             </div>
-            Quizzes
+            <span className="pb-2">Quizzes</span>
             <div
                 className="ml-2 w-[90px] aspect-square"
                 style={{
@@ -78,14 +78,14 @@ const QHeader = () => {
 };
 
 export default function ChapterDialog({
-    chapterContent,
+    chapterTitle,
     description,
     id,
     idx,
     playAnimation,
     handleCloseDialog,
 }: {
-    chapterContent: string;
+    chapterTitle: string;
     description: string[][];
     id: number;
     idx: number;
@@ -103,6 +103,10 @@ export default function ChapterDialog({
 
     useEffect(() => {
         const openDialogAnimation = async () => {
+            if (!descriptionRef.current) return;
+
+            descriptionRef.current.style.overflowY = "hidden";
+
             if (playAnimation) {
                 animate(
                     "#backdrop",
@@ -164,6 +168,8 @@ export default function ChapterDialog({
                     mass: 0.1,
                 }
             );
+
+            descriptionRef.current.style.overflowY = "auto";
         };
 
         openDialogAnimation();
@@ -330,7 +336,7 @@ export default function ChapterDialog({
                 descriptionRef.current.style.overflowY = "hidden";
 
             animate(
-                horizontal ? "#blockage" : "#chapterTitle",
+                horizontal ? "#blockage" : "#chapterTitleAndDescription",
                 horizontal ? { flex: "1 0 0%" } : { height: "0px" },
                 {
                     duration: 0.3,
@@ -393,7 +399,7 @@ export default function ChapterDialog({
             );
 
             await animate(
-                horizontal ? "#blockage" : "#chapterTitle",
+                horizontal ? "#blockage" : "#chapterTitleAndDescription",
                 horizontal ? { flex: "1 0 20%" } : { height: "fit-content" },
                 {
                     duration: 0.3,
@@ -602,16 +608,16 @@ export default function ChapterDialog({
                     <div className="col-[1/-1] md1:row-[1/-1] row-[1/2] md1:grid flex flex-col md1:grid-cols-[20%_1fr] md1:grid-rows-1 md1:overflow-y-hidden overflow-x-hidden overflow-y-auto h-full w-full">
                         <div
                             className="md1:col-[1/2] md1:row-[1/-1] text-start font-bold h-fit md1:pr-2 md1:px-0 px-2 md1:max-h-none max-h-[30vh] flex flex-col"
-                            id="chapterTitle"
+                            id="chapterTitleAndDescription"
                         >
                             <div
-                                className={`${chakraPetch.className} md1:pt-0 pt-2 md1:text-[35px] text-[27.5px] md1:max-h-[250px] md1:overflow-x-hidden md1:overflow-y-auto flex-grow md1:flex-none md1:leading-[1.26] leading-[1.25] md1:text-balance`}
+                                className={`${chakraPetch.className} md1:pt-0 pt-2 md1:text-[35px] text-[27.5px] md1:max-h-[250px] overflow-hidden flex-grow md1:flex-none md1:leading-[1.26] leading-[1.25] md1:text-balance`}
                             >
-                                {chapterContent}
+                                {chapterTitle}
                             </div>
                             <div className="w-full h-[1.5px] bg-[rgba(0,0,0,0.25)] mt-5 md1:block hidden" />
                             <div
-                                className="overflow-y-auto font-light text-[15px] md1:mb-0 mb-4 md1:pt-4 pt-2"
+                                className="overflow-y-auto overflow-x-hidden font-light text-[15px] md1:mb-0 mb-4 md1:pt-4 pt-2"
                                 ref={descriptionRef}
                             >
                                 {description[id][idx]
@@ -687,10 +693,9 @@ export default function ChapterDialog({
                                         <div className="md1:pl-4 md1:pt-0 pt-2 h-full flex flex-col w-full">
                                             <LHeader />
                                             <div className="h-full md1:overflow-y-auto md1:overflow-x-hidden w-full mt-5">
-                                                <LessonLayout
-                                                    id={id}
-                                                    idx={idx}
-                                                />
+                                                <div className="font-light h-full md:pl-5 md:overflow-y-auto md:overflow-x-hidden w-full">
+                                                    {Lessons[id][idx]}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
