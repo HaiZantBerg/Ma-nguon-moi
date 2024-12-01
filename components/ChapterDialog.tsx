@@ -82,7 +82,6 @@ export default function ChapterDialog({
     description,
     id,
     idx,
-    isDesktop,
     playAnimation,
     handleCloseDialog,
 }: {
@@ -90,7 +89,6 @@ export default function ChapterDialog({
     description: string[][];
     id: number;
     idx: number;
-    isDesktop: boolean;
     playAnimation: boolean;
     handleCloseDialog: () => void;
 }) {
@@ -98,8 +96,10 @@ export default function ChapterDialog({
 
     let isActive = idx * 4;
     const containerRef = useRef<(HTMLDivElement | null)[]>([]);
+    const descriptionRef = useRef<HTMLDivElement | null>(null);
 
     let isClosing = false;
+    let isCollapse = false;
 
     useEffect(() => {
         const openDialogAnimation = async () => {
@@ -134,7 +134,24 @@ export default function ChapterDialog({
                 }
             );
 
-            await animate(
+            [0, 1, 2, 3].forEach((idxm) => {
+                animate(
+                    `#mark${idx * 4 + idxm}`,
+                    {
+                        top: idxm ? "-75px" : "-35px",
+                    },
+                    {
+                        delay: 0.05 * idxm,
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 700,
+                        damping: 40,
+                        mass: 3,
+                    }
+                );
+            });
+
+            animate(
                 "#box",
                 {
                     width: ["25vw", "95vw"],
@@ -152,61 +169,34 @@ export default function ChapterDialog({
         openDialogAnimation();
     }, []);
 
-    const closeDialogAnimationViaBackdrop = async () => {
-        if (!isDesktop || isClosing) return;
-
-        isClosing = true;
-
-        await animate(
-            "#box",
-            {
-                height: ["95vh", "15vh"],
-            },
-            {
-                duration: 0.1,
-                type: "spring",
-                damping: 10,
-                stiffness: 100,
-                mass: 0.1,
-            }
-        );
-
-        animate(
-            "#backdrop",
-            {
-                opacity: [1, 0],
-            },
-            {
-                duration: 0.1,
-                type: "spring",
-                damping: 10,
-                stiffness: 100,
-                mass: 0.1,
-            }
-        );
-
-        await animate(
-            "#box",
-            {
-                width: ["95vw", "25vw"],
-                opacity: [1, 0],
-            },
-            {
-                duration: 0.1,
-                type: "spring",
-                damping: 10,
-                stiffness: 100,
-                mass: 0.1,
-            }
-        );
-
-        handleCloseDialog();
-    };
-
     const closeDialogAnimation = async () => {
         if (isClosing) return;
 
         isClosing = true;
+
+        [0, 1, 2, 3].forEach((idxm) => {
+            setTimeout(
+                () =>
+                    animate(
+                        `#mark${idx * 4 + idxm}`,
+                        {
+                            top: "-140px",
+                        },
+                        {
+                            duration: 0.2,
+                        }
+                    ),
+                50 * idxm
+            );
+        });
+
+        animate(
+            "#collapseBtnLeft",
+            {
+                opacity: 0,
+            },
+            { duration: 0.1 }
+        );
 
         await animate(
             "#box",
@@ -255,50 +245,50 @@ export default function ChapterDialog({
     };
 
     const handleMouseEnterMark = (idxs: number) => {
-        if (isDesktop)
-            if (isActive !== idx * 4 + idxs) {
-                animate(
-                    `#mark${idx * 4 + idxs}`,
-                    {
-                        top: "-50px",
-                    },
-                    {
-                        ease: "easeOut",
-                    }
-                );
-            } else {
-                animate(
-                    `#mark${isActive}`,
-                    {
-                        top: "-10px",
-                    },
-                    { ease: "easeOut" }
-                );
-            }
+        if (isClosing) return;
+
+        if (isActive !== idx * 4 + idxs) {
+            animate(
+                `#mark${idx * 4 + idxs}`,
+                {
+                    top: "-65px",
+                },
+                {
+                    ease: "easeOut",
+                }
+            );
+        } else {
+            animate(
+                `#mark${isActive}`,
+                {
+                    top: "-25px",
+                },
+                { ease: "easeOut" }
+            );
+        }
     };
 
     const handleMouseLeaveMark = (idxs: number) => {
-        if (isDesktop)
-            if (isActive !== idx * 4 + idxs) {
-                animate(
-                    `#mark${idx * 4 + idxs}`,
-                    {
-                        top: "-55px",
-                    },
-                    { ease: "easeOut" }
-                );
-            } else {
-                animate(
-                    `#mark${isActive}`,
-                    {
-                        top: "-15px",
-                    },
-                    { ease: "easeOut" }
-                );
-            }
+        if (isActive !== idx * 4 + idxs) {
+            animate(
+                `#mark${idx * 4 + idxs}`,
+                {
+                    top: "-75px",
+                },
+                { ease: "easeOut" }
+            );
+        } else {
+            animate(
+                `#mark${isActive}`,
+                {
+                    top: "-35px",
+                },
+                { ease: "easeOut" }
+            );
+        }
     };
 
-    const handleClickMark = (idxs: number) => {
+    const handleClickMark = (idxs: number, playAnimation2: boolean) => {
         if (isActive !== idx * 4 + idxs) {
             const prevContainerRefIndex = isActive - idx * 4;
 
@@ -311,18 +301,18 @@ export default function ChapterDialog({
                     "none";
             }
 
-            if (isDesktop) {
+            if (playAnimation2) {
                 animate(
                     `#mark${isActive}`,
                     {
-                        top: "-55px",
+                        top: "-75px",
                     },
                     { ease: "easeOut" }
                 );
                 animate(
                     `#mark${idx * 4 + idxs}`,
                     {
-                        top: "-15px",
+                        top: "-35px",
                     },
                     { ease: "easeOut" }
                 );
@@ -332,7 +322,89 @@ export default function ChapterDialog({
         }
     };
 
-    const handleCollapseSummary = () => {};
+    const handleCollapseAndExtendSummary = async (horizontal: boolean) => {
+        if (!isCollapse) {
+            isCollapse = true;
+
+            if (descriptionRef.current)
+                descriptionRef.current.style.overflowY = "hidden";
+
+            animate(
+                horizontal ? "#blockage" : "#chapterTitle",
+                horizontal ? { flex: "1 0 0%" } : { height: "0px" },
+                {
+                    duration: 0.3,
+                    ease: "circOut",
+                }
+            );
+
+            animate(
+                horizontal ? "#collapseBtnLeft" : "#collapseBtnUp",
+                {
+                    transform: `${
+                        horizontal ? "translateX(10px)" : "translateY(10px)"
+                    } rotate(180deg)`,
+                },
+                {
+                    duration: 0.5,
+                    type: "spring",
+                }
+            );
+
+            animate(
+                "#hLine",
+                {
+                    transform: horizontal
+                        ? "translateX(-10px)"
+                        : "translateY(-10px)",
+                },
+                {
+                    duration: 0.5,
+                    type: "spring",
+                }
+            );
+        } else {
+            isCollapse = false;
+
+            animate(
+                horizontal ? "#collapseBtnLeft" : "#collapseBtnUp",
+                {
+                    transform: `${
+                        horizontal ? "translateX(0px)" : "translateY(0px)"
+                    } rotate(0deg)`,
+                },
+                {
+                    duration: 0.5,
+                    type: "spring",
+                }
+            );
+
+            animate(
+                "#hLine",
+                {
+                    transform: horizontal
+                        ? "translateX(0px)"
+                        : "translateY(0px)",
+                },
+                {
+                    duration: 0.5,
+                    type: "spring",
+                }
+            );
+
+            await animate(
+                horizontal ? "#blockage" : "#chapterTitle",
+                horizontal ? { flex: "1 0 20%" } : { height: "fit-content" },
+                {
+                    duration: 0.3,
+                    ease: "circOut",
+                }
+            );
+
+            if (descriptionRef.current)
+                descriptionRef.current.style.overflowY = "auto";
+        }
+    };
 
     return (
         <div
@@ -341,92 +413,76 @@ export default function ChapterDialog({
             ref={scope}
         >
             <div
-                onClick={closeDialogAnimationViaBackdrop}
-                className="w-full h-full bg-[rgba(0,0,0,0.75)] absolute top-0 left-0 -z-10"
+                onClick={closeDialogAnimation}
+                className="w-full h-full bg-[rgba(0,0,0,0.75)] absolute top-0 left-0 -z-10 md1:pointer-events-auto pointer-events-none"
                 id="backdrop"
             />
             <div
                 className="w-[25vw] h-[15vh] bg-white rounded-xl relative z-10"
                 id="box"
             >
-                <div className="w-full h-full lg:px-9 sm:px-7 px-3 py-6 overflow-hidden relative grid md1:grid-rows-[auto_1fr] grid-rows-[1fr_auto] grid-cols-1">
-                    <div className="col-[1/-1] md1:row-[1/2] row-[2/-1] flex md1:flex-row flex-row-reverse md1:justify-end justify-between md1:gap-3 gap-4 md1:h-[120px] h-[54px] w-full items-end overflow-hidden z-50 md1:translate-y-[-24px]">
-                        <div className="flex md1:gap-3 gap-4">
-                            {[0, 1, 2].map((idxs) => (
-                                <div key={idxs}>
-                                    <svg
-                                        viewBox="-27 -60 54 120"
-                                        id={`mark${idx * 4 + idxs}`}
-                                        onMouseEnter={() =>
-                                            handleMouseEnterMark(idxs)
-                                        }
-                                        onMouseLeave={() =>
-                                            handleMouseLeaveMark(idxs)
-                                        }
-                                        onClick={() => handleClickMark(idxs)}
-                                        className={`cursor-pointer relative ${
-                                            isDesktop
-                                                ? idxs
-                                                    ? "-top-[55px]"
-                                                    : "-top-[15px]"
-                                                : "top-0"
-                                        } md1:w-[54px] md1:h-[120px] w-[49px] h-[130px] md1:translate-y-0 translate-y-[24px]`}
-                                    >
-                                        <defs>
-                                            <linearGradient
-                                                x1="0%"
-                                                x2="0%"
-                                                y1="0%"
-                                                y2="100%"
-                                                id={`gradient${idx * 4 + idxs}`}
-                                            >
-                                                <stop
-                                                    offset="0%"
-                                                    stopColor={
-                                                        colorStop[idxs][0]
-                                                    }
-                                                />
-                                                <stop
-                                                    offset="100%"
-                                                    stopColor={
-                                                        colorStop[idxs][1]
-                                                    }
-                                                />
-                                            </linearGradient>
-                                        </defs>
-                                        <path
-                                            d="M-27 -60 L-27 60 L0 40 L27 60 L27 -60 Z"
-                                            fill={`url(#gradient${
-                                                idx * 4 + idxs
-                                            })`}
-                                            className="md1:block hidden"
-                                        />
-                                        <rect
-                                            x="-27"
-                                            y="-10"
-                                            width="54"
-                                            height="54"
-                                            rx="15"
-                                            fill={`url(#gradient${
-                                                idx * 4 + idxs
-                                            })`}
-                                            className="md1:hidden block"
-                                        />
-                                        {svgIcon[idxs]}
-                                    </svg>
-                                </div>
-                            ))}
-                        </div>
-                        <div>
+                <div className="w-full h-full lg:px-9 sm:px-7 px-3 py-6 overflow-hidden relative grid md1:grid-rows-[auto_1fr] grid-rows-[1fr_8px_auto] grid-cols-1">
+                    <div className="col-[1/-1] md1:row-[1/2] row-[3/-1] md1:h-[140px] h-[54px] w-full overflow-hidden z-10 md1:translate-y-[-24px] pointer-events-none">
+                        <div className="hidden md1:flex justify-end gap-3">
+                            <div className="gap-3 flex *:pointer-events-auto">
+                                {[0, 1, 2].map((idxm) => (
+                                    <div key={idxm}>
+                                        <svg
+                                            viewBox="-27 -60 54 120"
+                                            id={`mark${idx * 4 + idxm}`}
+                                            onMouseEnter={() =>
+                                                handleMouseEnterMark(idxm)
+                                            }
+                                            onMouseLeave={() =>
+                                                handleMouseLeaveMark(idxm)
+                                            }
+                                            onClick={() =>
+                                                handleClickMark(idxm, true)
+                                            }
+                                            className="cursor-pointer relative -top-[140px] w-[54px] h-[140px]"
+                                        >
+                                            <defs>
+                                                <linearGradient
+                                                    x1="0%"
+                                                    x2="0%"
+                                                    y1="0%"
+                                                    y2="100%"
+                                                    id={`gradient${
+                                                        idx * 4 + idxm
+                                                    }`}
+                                                >
+                                                    <stop
+                                                        offset="0%"
+                                                        stopColor={
+                                                            colorStop[idxm][0]
+                                                        }
+                                                    />
+                                                    <stop
+                                                        offset="100%"
+                                                        stopColor={
+                                                            colorStop[idxm][1]
+                                                        }
+                                                    />
+                                                </linearGradient>
+                                            </defs>
+                                            <path
+                                                d="M-27 -70 L-27 70 L0 50 L27 70 L27 -70 Z"
+                                                fill={`url(#gradient${
+                                                    idx * 4 + idxm
+                                                })`}
+                                            />
+                                            {svgIcon[idxm]}
+                                        </svg>
+                                    </div>
+                                ))}
+                            </div>
                             <svg
                                 viewBox="-27 -60 54 120"
                                 id={`mark${idx * 4 + 3}`}
                                 onMouseEnter={() => handleMouseEnterMark(3)}
                                 onMouseLeave={() => handleMouseLeaveMark(3)}
                                 onClick={closeDialogAnimation}
-                                className={`cursor-pointer relative ${
-                                    isDesktop ? "-top-[55px]" : "top-0"
-                                } md1:w-[54px] md1:h-[120px] w-[49px] h-[130px] md1:translate-y-0 translate-y-[24px]`}
+                                className="pointer-events-auto cursor-pointer relative -top-[140px] md1:w-[54px] md1:h-[140px] w-[49px] h-[130px] md1:translate-y-0 translate-y-[15px]"
                             >
                                 <defs>
                                     <linearGradient
@@ -447,102 +503,223 @@ export default function ChapterDialog({
                                     </linearGradient>
                                 </defs>
                                 <path
-                                    d="M-27 -60 L-27 60 L0 40 L27 60 L27 -60 Z"
+                                    d="M-27 -70 L-27 70 L0 50 L27 70 L27 -70 Z"
                                     fill={`url(#gradient${idx * 4 + 3})`}
-                                    className="md1:block hidden"
-                                />
-                                <rect
-                                    x="-27"
-                                    y="-10"
-                                    width="54"
-                                    height="54"
-                                    rx="15"
-                                    fill={`url(#gradient${idx * 4 + 3})`}
-                                    className="md1:hidden block"
                                 />
                                 {svgIcon[3]}
                             </svg>
                         </div>
+                        <div className="flex md1:hidden justify-between h-full">
+                            <svg
+                                viewBox="-28 -27 54 54"
+                                className="cursor-pointer w-[55px] h-[54px] pointer-events-auto"
+                                onClick={closeDialogAnimation}
+                            >
+                                <defs>
+                                    <linearGradient
+                                        x1="0%"
+                                        x2="0%"
+                                        y1="0%"
+                                        y2="100%"
+                                        id={`gradient${idx * 4 + 7}`}
+                                    >
+                                        <stop
+                                            offset="0%"
+                                            stopColor={colorStop[3][0]}
+                                        />
+                                        <stop
+                                            offset="100%"
+                                            stopColor={colorStop[3][1]}
+                                        />
+                                    </linearGradient>
+                                </defs>
+                                <rect
+                                    x="-28"
+                                    y="-27"
+                                    width="54"
+                                    height="54"
+                                    rx="15"
+                                    fill={`url(#gradient${idx * 4 + 7})`}
+                                />
+                                <g className="-translate-y-[26px]">
+                                    {svgIcon[3]}
+                                </g>
+                            </svg>
+                            <div className="flex gap-4 *:pointer-events-auto">
+                                {[0, 1, 2].map((idxm) => (
+                                    <div key={idxm}>
+                                        <svg
+                                            viewBox="-27 -27 54 54"
+                                            className="cursor-pointer w-[54px] h-[54px]"
+                                            onClick={() =>
+                                                handleClickMark(idxm, false)
+                                            }
+                                        >
+                                            <defs>
+                                                <linearGradient
+                                                    x1="0%"
+                                                    x2="0%"
+                                                    y1="0%"
+                                                    y2="100%"
+                                                    id={`gradient${
+                                                        idx * 4 + idxm + 4
+                                                    }`}
+                                                >
+                                                    <stop
+                                                        offset="0%"
+                                                        stopColor={
+                                                            colorStop[idxm][0]
+                                                        }
+                                                    />
+                                                    <stop
+                                                        offset="100%"
+                                                        stopColor={
+                                                            colorStop[idxm][1]
+                                                        }
+                                                    />
+                                                </linearGradient>
+                                            </defs>
+                                            <rect
+                                                x="-27"
+                                                y="-27"
+                                                width="54"
+                                                height="54"
+                                                rx="15"
+                                                fill={`url(#gradient${
+                                                    idx * 4 + idxm + 4
+                                                })`}
+                                                className="md1:hidden block"
+                                            />
+                                            <g className="-translate-y-[26px]">
+                                                {svgIcon[idxm]}
+                                            </g>
+                                        </svg>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
-                    <div className="col-[1/-1] md1:row-[1/-1] row-[1/2] flex md1:flex-row flex-col md1:overflow-y-hidden overflow-y-auto overflow-x-hidden h-full w-full">
-                        <div className="text-start font-bold md1:pr-2 md1:px-0 md1:pb-0 pb-6 px-2 md1:max-h-none max-h-[25vh] min-w-[200px] md1:flex-[1_0_25%] gap-2">
-                            <div className="md1:pt-0 pt-2 h-full grid grid-cols-1 md1:grid-rows-[auto_22px_2fr] grid-rows-auto">
-                                <div
-                                    className={`${chakraPetch.className} md1:text-[35px] text-[27.5px] md1:max-h-[250px] max-h-[100px] overflow-y-auto md1:leading-[1.26] leading-[1.25] text-balance`}
-                                >
-                                    {chapterContent}
-                                </div>
-                                <div className="w-full h-[2px] bg-[rgba(0,0,0,0.25)] mt-5 md1:block hidden" />
-                                <div className="overflow-y-auto h-full md1:pr-2 mt-5">
-                                    {description[id][idx]
-                                        .split("\n")
-                                        .map((text, idxt) => (
-                                            <p
-                                                key={idxt}
-                                                className="font-light text-[15px]"
-                                            >
-                                                {text}
-                                            </p>
-                                        ))}
-                                </div>
+                    <div className="col-[1/-1] md1:row-[1/-1] row-[1/2] md1:grid flex flex-col md1:grid-cols-[20%_1fr] md1:grid-rows-1 md1:overflow-y-hidden overflow-x-hidden overflow-y-auto h-full w-full">
+                        <div
+                            className="md1:col-[1/2] md1:row-[1/-1] text-start font-bold h-fit md1:pr-2 md1:px-0 px-2 md1:max-h-none max-h-[30vh] flex flex-col"
+                            id="chapterTitle"
+                        >
+                            <div
+                                className={`${chakraPetch.className} md1:pt-0 pt-2 md1:text-[35px] text-[27.5px] md1:max-h-[250px] md1:overflow-x-hidden md1:overflow-y-auto flex-grow md1:flex-none md1:leading-[1.26] leading-[1.25] md1:text-balance`}
+                            >
+                                {chapterContent}
+                            </div>
+                            <div className="w-full h-[1.5px] bg-[rgba(0,0,0,0.25)] mt-5 md1:block hidden" />
+                            <div
+                                className="overflow-y-auto font-light text-[15px] md1:mb-0 mb-4 md1:pt-4 pt-2"
+                                ref={descriptionRef}
+                            >
+                                {description[id][idx]
+                                    .split("\n")
+                                    .map((text, idxt) => (
+                                        <React.Fragment key={idxt}>
+                                            {text}
+                                        </React.Fragment>
+                                    ))}
                             </div>
                         </div>
-                        <div className="flex items-center md1:flex-row flex-col">
-                            <div className="md1:h-[50%] w-[50%] flex items-center">
-                                <svg
-                                    viewBox="-100 -100 200 200"
-                                    className="w-[20px] h-[20px] md1:rotate-0 rotate-90"
-                                >
-                                    <path
-                                        d="M0 92.5 L-92.5 0 L0 -92.5 M60 92.5 L-27.5 0 L60 -92.5"
-                                        stroke="rgba(0,0,0,0.25)"
-                                        strokeWidth={15}
-                                        fill="none"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
+                        <div className="flex md1:flex-row flex-col md1:col-[1/-1] md1:row-[1/-1] pointer-events-none grow">
+                            <div
+                                className="flex-[1_0_20%] md1:block hidden"
+                                id="blockage"
+                            />
+                            <div className="bg-white flex md1:flex-row flex-col w-full h-full pointer-events-auto">
+                                <div className="flex items-center md1:flex-row flex-col">
+                                    <button
+                                        className="w-[50%] md1:hidden flex flex-col items-center"
+                                        onClick={() =>
+                                            handleCollapseAndExtendSummary(
+                                                false
+                                            )
+                                        }
+                                        id="collapseBtnUp"
+                                    >
+                                        <div className="w-[20px] h-[20px]">
+                                            <svg viewBox="-100 -100 200 200">
+                                                <path
+                                                    d="M92.5 0 L0 -92.5 L-92.5 0 M92.5 60 L0 -27.5 L-92.5 60"
+                                                    stroke="rgba(0,0,0,0.25)"
+                                                    strokeWidth={15}
+                                                    fill="none"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                    <button
+                                        className="h-[50%] items-center md1:flex hidden"
+                                        onClick={() =>
+                                            handleCollapseAndExtendSummary(true)
+                                        }
+                                        id="collapseBtnLeft"
+                                    >
+                                        <div className="w-[20px] h-[20px]">
+                                            <svg viewBox="-100 -100 200 200">
+                                                <path
+                                                    d="M0 92.5 L-92.5 0 L0 -92.5 M60 92.5 L-27.5 0 L60 -92.5"
+                                                    stroke="rgba(0,0,0,0.25)"
+                                                    strokeWidth={15}
+                                                    fill="none"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                    <div
+                                        className="md1:w-[1.5px] w-full md1:h-full h-[1.5px] bg-[rgba(0,0,0,0.25)]"
+                                        id="hLine"
                                     />
-                                </svg>
-                            </div>
-                            <div className="md1:w-[2px] w-full md1:h-full h-[2px] bg-[rgba(0,0,0,0.25)] flex-[1_0_auto]" />
-                        </div>
-                        <div className="flex h-full w-full grow">
-                            <div className="md1:pt-0 pt-3 md1:grow w-full">
-                                <div
-                                    className="block h-full w-full"
-                                    ref={(el) => {
-                                        containerRef.current[0] = el;
-                                    }}
-                                >
-                                    <div className="md1:pl-4 md1:pt-0 pt-2 md1:pr-5 md1:px-0 px-3 h-full flex flex-col w-full">
-                                        <LHeader />
-                                        <div className="h-full md1:overflow-y-auto md1:overflow-x-hidden w-full pt-4">
-                                            <LessonLayout id={id} idx={idx} />
+                                </div>
+                                <div className="flex h-full md1:pt-0 pt-3 grow">
+                                    <div
+                                        className="block h-full w-full"
+                                        ref={(el) => {
+                                            containerRef.current[0] = el;
+                                        }}
+                                    >
+                                        <div className="md1:pl-4 md1:pt-0 pt-2 h-full flex flex-col w-full">
+                                            <LHeader />
+                                            <div className="h-full md1:overflow-y-auto md1:overflow-x-hidden w-full mt-5">
+                                                <LessonLayout
+                                                    id={id}
+                                                    idx={idx}
+                                                />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div
-                                    className="hidden h-full w-full"
-                                    ref={(el) => {
-                                        containerRef.current[1] = el;
-                                    }}
-                                >
-                                    <div className="md1:pl-4 md1:pt-0 pt-2 md1:pr-5 md1:px-0 px-3 h-full flex flex-col w-full">
-                                        <FFHeader />
-                                        <div className="h-full md1:overflow-y-auto md1:overflow-x-hidden w-full pt-4">
-                                            {FunFact[id][idx]}
+                                    <div
+                                        className="hidden h-full w-full"
+                                        ref={(el) => {
+                                            containerRef.current[1] = el;
+                                        }}
+                                    >
+                                        <div className="md1:pl-4 md1:pt-0 pt-2 h-full flex flex-col w-full">
+                                            <FFHeader />
+                                            <div className="h-full md1:overflow-y-auto md1:overflow-x-hidden w-full mt-5">
+                                                {FunFact[id][idx]}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div
-                                    className="hidden h-full w-full"
-                                    ref={(el) => {
-                                        containerRef.current[2] = el;
-                                    }}
-                                >
-                                    <div className="md1:pl-4 md1:pt-0 pt-2 md1:pr-5 md1:px-0 px-3 h-full flex flex-col w-full">
-                                        <QHeader />
-                                        <div className="h-full md1:overflow-y-auto md1:overflow-x-hidden w-full pt-4">
-                                            {Quizzes[id][idx]}
+                                    <div
+                                        className="hidden h-full w-full"
+                                        ref={(el) => {
+                                            containerRef.current[2] = el;
+                                        }}
+                                    >
+                                        <div className="md1:pl-4 md1:pt-0 pt-2 h-full flex flex-col w-full">
+                                            <QHeader />
+                                            <div className="h-full md1:overflow-y-auto md1:overflow-x-hidden w-full mt-5">
+                                                <div className="md:pt-5 md:pl-5 md:pb-0 flex flex-wrap lg:gap-10 md:gap-2 gap-6 md:justify-normal justify-center pb-5 pt-2">
+                                                    {Quizzes[id][idx]}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

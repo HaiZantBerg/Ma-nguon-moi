@@ -7,7 +7,7 @@ import {
     storyList,
     historyFigureName,
     storyContent,
-} from "./static/funfactStatic";
+} from "./static/funfactsStatic";
 
 const FunFactCard = ({
     children,

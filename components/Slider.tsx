@@ -13,7 +13,7 @@ import {
     circleColor,
     gradeButtonOpenColor,
 } from "./static/static";
-import { description, chapter } from "./static/lessonsStatic";
+import { description, chapter } from "./static/chaptersStatic";
 import { db } from "@/db";
 
 const firstCord = 20;
@@ -199,7 +199,6 @@ export default function Slider({ id }: { id: number }) {
     const canvasNextRef = useRef<HTMLCanvasElement | null>(null);
     const canvasPrevRef = useRef<HTMLCanvasElement | null>(null);
     const playAnimation = useRef<boolean>(false);
-    const [isDesktop, setIsDesktop] = useState(true);
 
     let stopNextAnimate = false;
     let stopPrevAnimate = false;
@@ -225,9 +224,6 @@ export default function Slider({ id }: { id: number }) {
     );
 
     useEffect(() => {
-        if (window)
-            setIsDesktop(window.matchMedia("(min-width: 1100px)").matches);
-
         resizeCanvas();
         window.addEventListener("resize", resizeCanvas);
 
@@ -1277,7 +1273,6 @@ export default function Slider({ id }: { id: number }) {
                     chapterContent={chapter[id][curChapterId]}
                     id={id}
                     idx={curChapterId}
-                    isDesktop={isDesktop}
                     description={description}
                     playAnimation={playAnimation.current}
                     handleCloseDialog={handleCloseDialog}

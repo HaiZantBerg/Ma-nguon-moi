@@ -106,7 +106,7 @@ const QuizCard = ({
         );
     };
 
-    const handleOpenQuizDialog = (idx: number) => {
+    const handleOpenQuizDialog = () => {
         if (quizDialogContainerRef.current)
             quizDialogContainerRef.current.style.display = "flex";
 
@@ -153,7 +153,7 @@ const QuizCard = ({
         <div ref={scope}>
             <button
                 className="aspect-square h-[200px] border rounded-md relative"
-                onClick={() => handleOpenQuizDialog(idx)}
+                onClick={handleOpenQuizDialog}
             >
                 <div className="absolute top-1 left-2">{idx + 1}</div>
                 <QuizCardDisplay content={content}>{children}</QuizCardDisplay>
@@ -295,23 +295,21 @@ const QuizCard = ({
 
 const Quiz1 = () => {
     return (
-        <div className="h-full md:overflow-y-auto md:overflow-x-hidden w-full relative">
-            <div className="md:pt-5 md:pl-5 md:pb-0 flex flex-wrap lg:gap-10 md:gap-2 gap-6 md:justify-normal justify-center pb-5 pt-2">
-                {quizName.map((quiz, idx) => (
-                    <QuizCard
-                        idx={idx}
-                        content={quiz}
-                        key={idx}
-                        quizName={quizName[idx]}
-                        quiz={quizzes[idx]}
-                        choices={choicesArray[idx]}
-                        answerId={answerArray[idx]}
-                    >
-                        {quizCardImg[idx]}
-                    </QuizCard>
-                ))}
-            </div>
-        </div>
+        <>
+            {quizName.map((quiz, idx) => (
+                <QuizCard
+                    idx={idx}
+                    content={quiz}
+                    key={idx}
+                    quizName={quizName[idx]}
+                    quiz={quizzes[idx]}
+                    choices={choicesArray[idx]}
+                    answerId={answerArray[idx]}
+                >
+                    {quizCardImg[idx]}
+                </QuizCard>
+            ))}
+        </>
     );
 };
 
