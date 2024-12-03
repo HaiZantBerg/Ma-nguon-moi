@@ -10,17 +10,14 @@ export default function Navbar() {
 
     const noNavBarRoutes = ["khoi"];
 
-    if (
-        !pathname.split("/")[1] ||
-        (lastSegment && noNavBarRoutes.includes(lastSegment))
-    ) {
+    if (lastSegment && noNavBarRoutes.includes(lastSegment)) {
         return null;
     }
 
     return (
-        <div className="bg-[rgba(0,0,0,0.9)] text-white h-16 flex items-center px-10 sm:justify-between justify-center">
+        <div className="bg-[rgba(0,0,0,0.9)] text-white h-16 flex items-center px-10 sm:justify-between justify-center relative z-[20]">
             {/* <Image src="" alt="" /> */}
-            <Link href="/getstarted" className="flex items-center">
+            <Link href="/" className="flex items-center">
                 {/* <div className="bg-white w-10 h-10 mr-2"></div> */}
                 <div className="font-bold text-xl">EThems</div>
             </Link>

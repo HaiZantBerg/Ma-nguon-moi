@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "KHKT",
+    title: "Ethems",
     description:
         "This app's purpose is for students to understand more about the history of maths",
 };

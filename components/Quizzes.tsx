@@ -78,7 +78,7 @@ const QuizCard = ({
 
     const quizDialogContainerRef = useRef<HTMLDivElement | null>(null);
 
-    let clickedChoice = [false, false, false, false];
+    const clickedChoice = [false, false, false, false];
     let openExplaination = false;
 
     const handleCloseCardDialog = async () => {
