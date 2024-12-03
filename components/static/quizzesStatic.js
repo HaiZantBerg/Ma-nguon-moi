@@ -25,10 +25,16 @@ sẽ nói thật. Một bạn nói với bạn bên phải mình "Đa số trong
 nói với bạn bên phải của mình "Đa số trong chúng ta là con gái", ... cho đến bạn cuối cùng nói với bạn đầu tiên "Đa số trong 
 chúng ta là con trai". Hỏi có bao nhiêu bạn trai ngồi quanh bàn?`,
 ];
-// `Giả sử bạn được bay đến Ý và vô tình đi ngang qua tháp nghiêng Pisa, và quyết định rằng sẽ mô phỏng lại thí nghiệm của Galileo,
-// bạn nhớ rằng Galileo đã đưa ra một mệnh đề rằng: "Tốc độ rơi của các vật có khối lượng khác nhau, kể cả rơi từ cùng độ cao,
-// là như nhau khi không có lực cản.". Hãy thử thả 1 quả bóng bàn và 1 quả banh, đoán xem quả nào chạm đất trước khi lực cản
-// không khí là quả nhỏ để xét?`,
+
+export const quizExplaination = [
+    `d
+    //d
+    //d
+    //d`,
+    ``,
+    ``,
+    ``,
+];
 
 export const quizCardImg = [
     <div key="quizCardImg1" />,
@@ -38,10 +44,10 @@ export const quizCardImg = [
 ];
 
 export const quizName = [
-    `Trùng tên nghề nghiệp`,
-    `Cửa sổ vỡ`,
-    `Đàn ông thì phải khiêm tốn`,
-    `Giới tính và trung thực`,
+    `Trùng Tên Nghề Nghiệp`,
+    `Cửa Sổ Vỡ`,
+    `Đàn Ông Thì Phải Khiêm Tốn`,
+    `Giới Tính Và Trung Thực`,
 ];
 
 export const choiceColor = [
@@ -76,8 +82,7 @@ export const choicesArray = [
         "asdasdadsadadasaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaa",
         "pd",
     ],
-    ["asd"],
-    ["q"],
+    ["asd", "q", "q", "q"],
+    ["q", "q", "q", "q"],
     ["p"],
 ];
-//["Quả bóng bàn", "Quả banh", "Cả 2 quả"],

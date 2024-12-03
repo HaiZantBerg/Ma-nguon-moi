@@ -31,7 +31,7 @@ const LHeader = () => {
 const FFHeader = () => {
     return (
         <div
-            className={`${chakraPetch.className} h-[72px] md1:text-[40px] items-end text-[35px] leading-[42.5px] flex text-nowrap`}
+            className={`${chakraPetch.className} h-[72px] pt-2 md1:text-[40px] items-end text-[35px] leading-[42.5px] flex text-nowrap`}
         >
             <div className="w-[40px] aspect-square mr-3">
                 <Image src={Sparkle} alt="" />
@@ -692,10 +692,8 @@ export default function ChapterDialog({
                                     >
                                         <div className="md1:pl-4 md1:pt-0 pt-2 h-full flex flex-col w-full">
                                             <LHeader />
-                                            <div className="h-full md1:overflow-y-auto md1:overflow-x-hidden w-full mt-5">
-                                                <div className="font-light h-full md:pl-5 md:overflow-y-auto md:overflow-x-hidden w-full">
-                                                    {Lessons[id][idx]}
-                                                </div>
+                                            <div className="h-full md1:overflow-y-auto md1:overflow-x-hidden mt-5 font-light md:pl-5 md:overflow-y-auto md:overflow-x-hidden w-full">
+                                                {Lessons[id][idx]}
                                             </div>
                                         </div>
                                     </div>
@@ -720,10 +718,8 @@ export default function ChapterDialog({
                                     >
                                         <div className="md1:pl-4 md1:pt-0 pt-2 h-full flex flex-col w-full">
                                             <QHeader />
-                                            <div className="h-full md1:overflow-y-auto md1:overflow-x-hidden w-full mt-5">
-                                                <div className="md:pt-5 md:pl-5 md:pb-0 flex flex-wrap lg:gap-10 md:gap-2 gap-6 md:justify-normal justify-center pb-5 pt-2">
-                                                    {Quizzes[id][idx]}
-                                                </div>
+                                            <div className="h-full md1:overflow-y-auto md1:overflow-x-hidden w-full mt-5 md:pt-5 md:pl-5 md:pb-0 flex flex-wrap lg:gap-10 md:gap-2 gap-6 md:justify-normal justify-center pb-5 pt-2">
+                                                {Quizzes[id][idx]}
                                             </div>
                                         </div>
                                     </div>
