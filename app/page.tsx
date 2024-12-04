@@ -39,7 +39,7 @@ const chakraPetch = Chakra_Petch({ weight: "700", subsets: ["vietnamese"] });
 
 const page = () => {
     return (
-        <div className="flex flex-col *:justify-between xl:px-40 md:px-24 px-5 pt-20 gap-24">
+        <div className="flex flex-col *:justify-between xl:px-40 md:px-24 px-5 py-20 gap-24">
             <div className="flex gap-8">
                 <div
                     className={`text-[2.3rem] font-black ${chakraPetch.className} leading-10 pt-5`}
