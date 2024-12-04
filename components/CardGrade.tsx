@@ -92,11 +92,11 @@ export default function GradeCard() {
             className="flex xl:flex-row flex-col xl:gap-0 md:gap-5 gap-10 justify-between text-white"
         >
             <Link
-                id="box1"
                 href="/khoi-10"
                 className="flex justify-center sm:justify-normal"
             >
                 <svg
+                    id="box1"
                     viewBox="0 0 313.35 227.35"
                     width="313.3457"
                     height="227.3457"
@@ -184,11 +184,11 @@ export default function GradeCard() {
                 </svg>
             </Link>
             <Link
-                id="box2"
                 href="/khoi-11"
                 className="flex sm:justify-end justify-center"
             >
                 <svg
+                    id="box2"
                     viewBox="0 0 313.15 227.35"
                     width="313.3457"
                     height="227.3457"
@@ -276,11 +276,11 @@ export default function GradeCard() {
                 </svg>
             </Link>
             <Link
-                id="box3"
                 href="/khoi-12"
                 className="flex justify-center sm:justify-normal"
             >
                 <svg
+                    id="box3"
                     viewBox="0 0 313.35 227.35"
                     width="313.3457"
                     height="227.3457"

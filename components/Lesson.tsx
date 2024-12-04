@@ -297,7 +297,12 @@ export default function LessonLayout({ id, idx }: { id: number; idx: number }) {
                     </div>
                 ))
             ) : (
-                <div className="mt-8 h-full md1:overflow-y-auto md1:overflow-x-hidden font-light md:pl-5 md:overflow-y-auto md:overflow-x-hidden w-full">
+                <div
+                    className="mt-8 h-full md1:overflow-y-auto md1:overflow-x-hidden font-light md:pl-5 md:overflow-y-auto md:overflow-x-hidden w-full"
+                    style={{
+                        scrollbarGutter: "stable",
+                    }}
+                >
                     {Lessons[id][idx]}
                 </div>
             )}
