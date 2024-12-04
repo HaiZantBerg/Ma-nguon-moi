@@ -7,7 +7,7 @@ import React, { useRef } from "react";
 // import GeorgeBoole from "@/Image/george-boole.png";
 import { menhDeStars, lessonsToggle } from "./static/lessonsStatic";
 import "katex/dist/katex.min.css";
-import { InlineMath } from "react-katex";
+// import { InlineMath } from "react-katex";
 import { useAnimate } from "framer-motion";
 
 const Menhde = () => {
