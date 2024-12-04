@@ -1,22 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 // import Drawer from "./Drawer";
 // import Image from "next/image";
 // import Aristotle from "@/Image/image-removebg-preview.png";
 // import GeorgeBoole from "@/Image/george-boole.png";
-// import { useAnimate } from "framer-motion";
-import { menhDeStars } from "./static/lessonsStatic";
+import { menhDeStars, lessonsToggle } from "./static/lessonsStatic";
 import "katex/dist/katex.min.css";
 import { InlineMath } from "react-katex";
+import { useAnimate } from "framer-motion";
 
-const MenhdeTaphop = () => {
+const Menhde = () => {
     return (
         <>
-            <div className="text-[1.25rem] leading-[1.875rem]">
-                Dòng thời gian phát triển mệnh đề và tập hợp:
-            </div>
-            <div className="overflow-x-auto overflow-y-hidden grid grid-cols-1 grid-rows-[repeat(4,auto)] pt-[12px]">
+            <div className="overflow-x-auto overflow-y-hidden grid grid-cols-1 grid-rows-[repeat(4,auto)]">
                 <div className="col-[1/-1] row-[1/-1] bg-[#050505] w-[2.5px] relative left-[21.35px]" />
                 <div className="col-[1/-1] row-[1/2] relative z-10 mt-[10px]">
                     <div className="h-[75px]">{menhDeStars[0]}</div>
@@ -143,6 +140,10 @@ const MenhdeTaphop = () => {
     );
 };
 
+const Taphop = () => {
+    return <div>hello</div>;
+};
+
 const LuongGiac = () => {
     return (
         <>
@@ -153,8 +154,112 @@ const LuongGiac = () => {
     );
 };
 
-export const Lessons = [
-    [<MenhdeTaphop key="lesson1" />, null, <LuongGiac key="lesson2" />],
+const Lessons = [
+    [
+        [<Menhde key="lesson1s1" />, <Taphop key="lesson1s2" />],
+        null,
+        <LuongGiac key="lesson3" />,
+    ],
     [],
     [],
 ];
+
+export default function LessonLayout({ id, idx }: { id: number; idx: number }) {
+    const [scope, animate] = useAnimate();
+
+    const toggleRef = useRef<(HTMLDivElement | null)[]>([]);
+    let curToggleId = 0;
+
+    const handleToggle = (idxl: number) => {
+        const constCurToggleId = curToggleId;
+
+        if (!toggleRef.current[idxl] || !toggleRef.current[constCurToggleId])
+            return;
+
+        if (idxl !== curToggleId) {
+            animate(`#lessonName${idxl}`, {
+                width: "fit-content",
+            });
+
+            animate(
+                `#toggleLine${idxl}`,
+                {
+                    width: "100%",
+                },
+                { delay: 0.2 }
+            );
+
+            animate(`#toggleLine${curToggleId}`, {
+                width: "0px",
+            });
+
+            animate(`#lessonName${curToggleId}`, {
+                width: "0px",
+            });
+
+            toggleRef.current[idxl].style.display = "block";
+            toggleRef.current[constCurToggleId].style.display = "none";
+
+            curToggleId = idxl;
+        }
+    };
+
+    return (
+        <>
+            {lessonsToggle[id][idx] && (
+                <div
+                    className="h-[50px] ml-[30px] my-[12px] w-fit relative"
+                    ref={scope}
+                >
+                    <div className="flex h-full">
+                        {lessonsToggle[id][idx].map((lessonName, idxl) => (
+                            <button
+                                className="h-full flex w-fit text-[1.25rem] leading-[1.75rem] px-3 relative text-nowrap overflow-hidden"
+                                key={idxl}
+                                onClick={() => handleToggle(idxl)}
+                            >
+                                <div>Bài {idxl + 1}</div>
+                                <div
+                                    className={`${
+                                        idxl ? "w-0" : "w-fit"
+                                    } overflow-hidden`}
+                                    id={`lessonName${idxl}`}
+                                >
+                                    : {lessonName}
+                                </div>
+                                <div className="w-full absolute bottom-0 left-0 flex justify-center">
+                                    <div
+                                        className={`h-[1.5px] w-full bg-black ${
+                                            idxl ? "w-0" : "w-full"
+                                        }`}
+                                        id={`toggleLine${idxl}`}
+                                    />
+                                </div>
+                            </button>
+                        ))}
+                    </div>
+                    <div className="h-[1.5px] bg-[rgba(0,0,0,0.25)] absolute bottom-0 left-0 w-full" />
+                </div>
+            )}
+            {Array.isArray(Lessons[id][idx]) ? (
+                Lessons[id][idx].map((lesson, idxl) => (
+                    <div
+                        key={idxl}
+                        className={`h-full md1:overflow-y-auto md1:overflow-x-hidden font-light md:pl-5 md:overflow-y-auto md:overflow-x-hidden w-full ${
+                            idxl ? "hidden" : "block"
+                        }`}
+                        ref={(el) => {
+                            toggleRef.current[idxl] = el;
+                        }}
+                    >
+                        {lesson}
+                    </div>
+                ))
+            ) : (
+                <div className="mt-8 h-full md1:overflow-y-auto md1:overflow-x-hidden font-light md:pl-5 md:overflow-y-auto md:overflow-x-hidden w-full">
+                    {Lessons[id][idx]}
+                </div>
+            )}
+        </>
+    );
+}

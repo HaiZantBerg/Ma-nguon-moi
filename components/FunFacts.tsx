@@ -11,7 +11,7 @@ import { useAnimate } from "framer-motion";
 import Image from "next/image";
 import cross from "@/Svg/Cross.svg";
 
-const FunFact1 = () => {
+const FunFact1 = ({ idxf, idxc }: { idxf: number; idxc: number }) => {
     const [openFlipCard, setOpenFlipCard] = useState<[number, number]>([
         -1, -1,
     ]);
@@ -22,15 +22,17 @@ const FunFact1 = () => {
 
     return (
         <>
-            {storyList.map((section, idx) => (
+            {storyList[idxc][idxf].map((section, idx) => (
                 <div key={idx} className="mb-5">
                     <span className="font-semibold text-2xl">
-                        {historyFigureName[idx]}
+                        {historyFigureName[idxc][idxf][idx]}
                     </span>
                     <div className="md:ml-7 flex flex-wrap mt-5">
                         {section.map((title, idxs) => (
                             <FunFactCard
                                 key={idxs}
+                                idxf={idxf}
+                                idxc={idxc}
                                 idx={idx}
                                 setOpenFlipCard={setOpenFlipCard}
                                 idxs={idxs}
@@ -42,9 +44,11 @@ const FunFact1 = () => {
                                             idx={idx}
                                             title={title}
                                             idxs={idxs}
+                                            idxc={idxc}
+                                            idxf={idxf}
                                             triggerCloseCard={triggerCloseCard}
                                         >
-                                            {storyContent[idx][idxs]
+                                            {storyContent[idxc][idxf][idx][idxs]
                                                 .split("//")
                                                 .map((text, idxt) => (
                                                     <p key={idxt}>{text}</p>
@@ -61,19 +65,27 @@ const FunFact1 = () => {
     );
 };
 
-export const FunFact = [[<FunFact1 key="funfact1" />], [], []];
+export const FunFact = [
+    [<FunFact1 key="funfact1" idxc={0} idxf={0} />],
+    [],
+    [],
+];
 
 const FunFactCard = ({
     children,
     setOpenFlipCard,
     idx,
     idxs,
+    idxf,
+    idxc,
     title,
 }: {
     children?: React.ReactNode;
     setOpenFlipCard: React.Dispatch<React.SetStateAction<[number, number]>>;
     idx: number;
     idxs: number;
+    idxf: number;
+    idxc: number;
     title: string;
 }) => {
     return (
@@ -98,7 +110,7 @@ const FunFactCard = ({
                 />
                 <foreignObject x="-160" y="-180" width="320" height="360">
                     <div className="flex justify-self-center h-[42.5%] aspect-square">
-                        {images[idx][idxs]}
+                        {images[idxc][idxf][idx][idxs]}
                     </div>
                 </foreignObject>
                 <foreignObject x="-160" y="-20" width="320" height="360">
@@ -119,12 +131,16 @@ const FlipCard = ({
     idx,
     title,
     idxs,
+    idxc,
+    idxf,
     triggerCloseCard,
 }: {
     children: React.ReactNode;
     title: string;
     idx: number;
     idxs: number;
+    idxf: number;
+    idxc: number;
     triggerCloseCard: () => void;
 }) => {
     const [scope, animate] = useAnimate();
@@ -191,7 +207,7 @@ const FlipCard = ({
         );
     }, []);
 
-    const closeCard = async () => {
+    const closeCardAnimation = async () => {
         animate(
             "#backdrop",
             {
@@ -267,7 +283,7 @@ const FlipCard = ({
                     background: "rgba(0, 0, 0, 0.75)",
                 }}
                 id="backdrop"
-                onClick={closeCard}
+                onClick={closeCardAnimation}
             />
             <div
                 className="relative w-[82.22vh] h-[92.5vh]"
@@ -309,7 +325,7 @@ const FlipCard = ({
                             id="flipCardTitle"
                         >
                             <div className="h-[50%] aspect-square">
-                                {images[idx][idxs]}
+                                {images[idxc][idxf][idx][idxs]}
                             </div>
                             <div className="absolute top-[50%] px-[30px]">
                                 {idxs + 1}.
@@ -326,7 +342,7 @@ const FlipCard = ({
                             ref={flipCardContentRef}
                         >
                             <button
-                                onClick={closeCard}
+                                onClick={closeCardAnimation}
                                 className="w-[5%] h-[5%] absolute top-[8%] right-[10%]"
                             >
                                 <Image src={cross} alt="" />

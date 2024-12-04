@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { Chakra_Petch } from "next/font/google";
 import { useAnimate } from "framer-motion";
-import { Lessons } from "./Lesson";
+import LessonLayout from "./Lesson";
 import { FunFact } from "./FunFacts";
 import { Quizzes } from "./Quizzes";
 import { colorStop, svgIcon } from "./static/static";
@@ -352,7 +352,6 @@ export default function ChapterDialog({
                     } rotate(180deg)`,
                 },
                 {
-                    duration: 0.5,
                     type: "spring",
                 }
             );
@@ -365,7 +364,6 @@ export default function ChapterDialog({
                         : "translateY(-10px)",
                 },
                 {
-                    duration: 0.5,
                     type: "spring",
                 }
             );
@@ -380,7 +378,6 @@ export default function ChapterDialog({
                     } rotate(0deg)`,
                 },
                 {
-                    duration: 0.5,
                     type: "spring",
                 }
             );
@@ -393,7 +390,6 @@ export default function ChapterDialog({
                         : "translateY(0px)",
                 },
                 {
-                    duration: 0.5,
                     type: "spring",
                 }
             );
@@ -692,9 +688,7 @@ export default function ChapterDialog({
                                     >
                                         <div className="md1:pl-4 md1:pt-0 pt-2 h-full flex flex-col w-full">
                                             <LHeader />
-                                            <div className="h-full md1:overflow-y-auto md1:overflow-x-hidden mt-5 font-light md:pl-5 md:overflow-y-auto md:overflow-x-hidden w-full">
-                                                {Lessons[id][idx]}
-                                            </div>
+                                            <LessonLayout id={id} idx={idx} />
                                         </div>
                                     </div>
                                     <div

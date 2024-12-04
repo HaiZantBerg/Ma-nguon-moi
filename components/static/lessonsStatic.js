@@ -314,3 +314,5 @@ export const menhDeStars = [
         </g>
     </svg>,
 ];
+
+export const lessonsToggle = [[["Mệnh đề", "Tập hợp"], null], [], []];
