@@ -16,7 +16,7 @@ const Menhde = () => {
             <div className="col-[1/-1] row-[1/-1] bg-[#050505] sm:w-[2.5px] w-[1.5px] relative sm:left-[21.35px] left-[14.25px]" />
             <div className="col-[1/-1] row-[1/2] relative z-10 mt-[10px]">
                 <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                <div className="pl-[70px] py-3">
+                <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                     Chúng ta hãy bắt đầu từ khoảng năm 384 TCN, khi Aristotle
                     được sinh ra tại thành phố Stagira, Hy Lạp. Con trai của một
                     bác sĩ hoàng gia, Aristotle được nuôi dưỡng trong môi trường
@@ -48,7 +48,7 @@ const Menhde = () => {
             </div>
             <div className="col-[1/-1] row-[2/3] relative z-10">
                 <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                <div className="pl-[70px] py-3">
+                <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                     Trong giai đoạn này, các nhà logic học như William of Ockham
                     và Peter Abelard đã tiếp tục phát triển các khái niệm về
                     logic và ngôn ngữ, tập trung vào cách các phát biểu có thể
@@ -60,7 +60,7 @@ const Menhde = () => {
             </div>
             <div className="col-[1/-1] row-[3/4] relative z-10">
                 <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                <div className="pl-[70px] py-3">
+                <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                     Chuyển sang thế kỷ 19, một nhân vật mới xuất hiện: George
                     Boole, xuất thân từ một gia đình khiêm tốn; cha ông là một
                     người thợ giày nhưng lại rất đam mê về toán học và khoa học.
@@ -93,7 +93,7 @@ const Menhde = () => {
                     rằng những tư tưởng của mình sẽ định hình tương lai của công
                     nghệ và viễn thông.
                 </div>
-                <div className="pl-[70px] py-3">
+                <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                     Khoảng 15 năm sau cái chết của Boole, một giáo sư trầm lặng
                     người Đức tên Gottlob Frege bắt đầu suy nghĩ về các vấn đề
                     sâu xa hơn trong logic. Frege sinh năm 1848 tại Wismar, Đức,
@@ -127,7 +127,7 @@ const Menhde = () => {
             </div>
             <div className="col-[1/-1] row-[4/-1] relative z-10">
                 <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                <div className="pl-[70px] py-3"></div>
+                <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3"></div>
             </div>
         </div>
     );
@@ -139,7 +139,7 @@ const Taphop = () => {
             <div className="col-[1/-1] row-[1/-1] bg-[#050505] sm:w-[2.5px] w-[1.5px] relative sm:left-[21.35px] left-[14.25px]" />
             <div className="col-[1/-1] row-[1/2] relative z-10 mt-[10px]">
                 <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                <div className="pl-[70px] py-3">
+                <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                     Cantor và tập hợp: Vào cuối thế kỷ 19, Georg Cantor đã giới
                     thiệu khái niệm về tập hợp (set) trong toán học, coi tập hợp
                     là một tập hợp các đối tượng hoặc phần tử mà có thể được xác
@@ -184,7 +184,7 @@ const Taphop = () => {
             </div>
             <div className="col-[1/-1] row-[2/3] relative z-10">
                 <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                <div className="pl-[70px] py-3">
+                <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                     <br />
                     Frege sử dụng khái niệm {'"'}tập hợp{'"'} trong lý thuyết
                     của ông, đặc biệt là trong cách ông định nghĩa khái niệm.
@@ -203,7 +203,7 @@ const Taphop = () => {
             </div>
             <div className="col-[1/-1] row-[3/4] relative z-10">
                 <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                <div className="pl-[70px] py-3">
+                <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                     Tuy nhiên, lý thuyết tập hợp của Frege gặp phải một vấn đề
                     lớn khi Bertrand Russell phát hiện ra nghịch lý Russell vào
                     năm 1901. Nghịch lý này xuất hiện trong lý thuyết của Frege
@@ -247,7 +247,7 @@ const Taphop = () => {
             </div>
             <div className="col-[1/-1] row-[4/5] relative z-10">
                 <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                <div className="pl-[70px] py-3">
+                <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                     Lý thuyết tập hợp tiên đề Zermelo-Fraenkel là một hệ thống
                     tiên đề được phát triển vào những năm 1920 để giải quyết các
                     vấn đề và nghịch lý trong lý thuyết tập hợp, đặc biệt là
@@ -280,7 +280,7 @@ const Taphop = () => {
             </div>
             <div className="col-[1/-1] row-[5/6] relative z-10">
                 <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                <div className="pl-[70px] py-3">
+                <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                     <div>Lý thuyết tập hợp và các phép toán nâng cao</div>
                     Khái niệm về thứ tự và số hạng (Ordinal and Cardinal
                     Numbers):
@@ -470,7 +470,7 @@ const LuongGiac = () => {
                 <div className="col-[1/-1] row-[1/-1] bg-[#050505] sm:w-[2.5px] w-[1.5px] relative sm:left-[21.35px] left-[14.25px]" />
                 <div className="col-[1/-1] row-[1/2] relative z-10 mt-[10px]">
                     <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                    <div className="pl-[70px] py-3">
+                    <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                         Lượng giác có nguồn gốc từ các nền văn minh cổ đại, đặc
                         biệt là ở Ai Cập, Babylon, và Hy Lạp. Các nền văn hóa
                         này đã nghiên cứu các hình học đơn giản và sử dụng chúng
@@ -495,7 +495,7 @@ const LuongGiac = () => {
                 </div>
                 <div className="col-[1/-1] row-[2/3] relative z-10">
                     <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                    <div className="pl-[70px] py-3">
+                    <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                         Cả người Ai Cập và người Babylon đã phát triển các
                         phương pháp để tính toán các độ dài và góc trong các tam
                         giác, mặc dù họ chưa phát triển đầy đủ lý thuyết lượng
@@ -506,7 +506,7 @@ const LuongGiac = () => {
                 </div>
                 <div className="col-[1/-1] row-[3/4] relative z-10">
                     <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                    <div className="pl-[70px] py-3">
+                    <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                         Các nhà toán học Hy Lạp, như Hipparchus và Ptolemy, đã
                         có đóng góp quan trọng trong việc phát triển lý thuyết
                         lượng giác. Hipparchus (khoảng 190 TCN) được coi là
@@ -530,7 +530,7 @@ const LuongGiac = () => {
                 </div>
                 <div className="col-[1/-1] row-[4/5] relative z-10">
                     <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                    <div className="pl-[70px] py-3">
+                    <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                         Lượng giác được phát triển mạnh mẽ ở Ấn Độ, đặc biệt là
                         trong các công trình của các nhà toán học như Aryabhata,
                         Brahmagupta, và Bhaskara I. Aryabhata (476 - 550 CN) đã
@@ -566,10 +566,10 @@ const LuongGiac = () => {
                         không vào các phép toán và cải tiến các phương pháp tính
                         toán trước đó.
                     </div>
-                    <div className="py-2 text-[1.25rem] font-semibold translate-x-[40px] w-fit">
+                    <div className="py-2 text-[1.25rem] font-semibold translate-x-[32.5px] w-fit">
                         CÁC HIỆN TƯỢNG THIÊN VĂN
                     </div>
-                    <div className="pl-[70px] py-3">
+                    <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                         1. Chuyển động của các hành tinh và Mặt Trăng: Aryabhata
                         là người đầu tiên mô tả chuyển động quay của Trái Đất
                         quanh trục của nó, điều này làm rõ rằng ngày và đêm
@@ -638,7 +638,7 @@ const LuongGiac = () => {
                 </div>
                 <div className="col-[1/-1] row-[5/6] relative z-10 mt-[10px]">
                     <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                    <div className="pl-[70px] py-3">
+                    <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                         Trong thời kỳ Trung Cổ, các học giả Ả Rập như Al-Battani
                         và Al-Khwarizmi tiếp tục phát triển lý thuyết lượng
                         giác. Al-Battani đã mở rộng và hoàn thiện bảng lượng
@@ -677,7 +677,7 @@ const LuongGiac = () => {
                 </div>
                 <div className="col-[1/-1] row-[6/7] relative z-10 mt-[10px]">
                     <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                    <div className="pl-[70px] py-3">
+                    <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                         Lượng giác bắt đầu phát triển mạnh mẽ ở châu Âu trong
                         thời kỳ Phục Hưng và Cách mạng khoa học. Các nhà toán
                         học như Regiomontanus, Johannes Kepler, và Isaac Newton
@@ -761,7 +761,7 @@ const LuongGiac = () => {
                 </div>
                 <div className="col-[1/-1] row-[7/8] relative z-10 mt-[10px]">
                     <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                    <div className="pl-[70px] py-3">
+                    <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                         Vào thế kỷ 18, các hàm lượng giác được định nghĩa rõ
                         ràng hơn và ứng dụng trong các lĩnh vực khác nhau như
                         phân tích, cơ học, điện học, v.v. Các nhà toán học như
@@ -800,7 +800,7 @@ const LuongGiac = () => {
                 </div>
                 <div className="col-[1/-1] row-[8/-1] relative z-10 mt-[10px]">
                     <div className="sm:h-[75px] h-[51.5px]">{}</div>
-                    <div className="pl-[70px] py-3">
+                    <div className="md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 py-3">
                         Lượng giác ngày nay không chỉ là một công cụ quan trọng
                         trong toán học mà còn trong nhiều ngành khoa học và kỹ
                         thuật, như vật lý, điện tử, cơ học, và cả máy tính. Các
