@@ -33,7 +33,7 @@ export const chapter = [
 
 export const description = [
     [
-        <p key="description1">
+        <div key="description1">
             <p className="font-[500] pb-1">Mệnh đề</p>
             <p className="font-[500] pb-1">Tập hợp</p>
             <p className="pl-[20px]">
@@ -43,7 +43,7 @@ export const description = [
                 hợp đã có ảnh hưởng sâu rộng đến các lĩnh vực khác của toán học
                 và khoa học máy tính.
             </p>
-        </p>,
+        </div>,
         <p key="description2"></p>,
         <p key="description3">
             Lượng giác bắt đầu từ các nền văn minh cổ đại như Ai Cập và Babylon,

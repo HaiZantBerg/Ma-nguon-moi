@@ -9,6 +9,9 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            height: {
+                dvh: "100dvh",
+            },
             colors: {
                 background: "var(--background)",
                 foreground: "var(--foreground)",

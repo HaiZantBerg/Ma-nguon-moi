@@ -814,7 +814,7 @@ export default function Slider({ id }: { id: number }) {
                     width={2400}
                     height={500}
                     viewBox="0 0 2400 500"
-                    className="absolute xxlg:stroke-[3.25px] sm:stroke-[2.5px] stroke-[1.75px] xxlg:scale-125 scale-100 xxlg:translate-y-10 translate-y-10"
+                    className="absolute xxlg:stroke-[3.25px] sm:stroke-[2.5px] stroke-[1.75px] xxlg:scale-125 scale-100 xxlg:translate-y-28 translate-y-10"
                 >
                     <path
                         d="M1200 550 L100 550 C -100 -40 2500 -40 2300 550 Z"
@@ -822,7 +822,7 @@ export default function Slider({ id }: { id: number }) {
                         fill="none"
                     />
                 </svg>
-                <div className="absolute overflow-hidden xxlg:scale-125 scale-100 xxlg:translate-y-10 translate-y-10 w-[2400px] h-[485px]">
+                <div className="absolute overflow-hidden xxlg:scale-125 scale-100 xxlg:translate-y-[6.75rem] translate-y-10 w-[2400px] h-[485px]">
                     {chapter[id].map((_, idx) => (
                         <div
                             key={idx}
@@ -897,8 +897,8 @@ export default function Slider({ id }: { id: number }) {
                     ))}
                 </div>
             </div>
-            <div className="h-[calc(100vh-64px)] flex justify-between relative z-10 *:pb-8">
-                <div className="flex-1 h-full items-end flex justify-end pt-[550px]">
+            <div className="h-[calc(100dvh-64px)] flex justify-between relative z-10">
+                <div className="flex-1 h-full items-end flex justify-end pt-[550px] xxlg:pb-[10vh] pb-8">
                     <div className=" bg-gray-50 border-[2.5px] border-gray-300 rounded-[30px] max-w-[460px] w-full max-h-[300px] px-7 py-5 lg3:flex flex-col hidden">
                         <div className="flex flex-row items-center justify-normal gap-3">
                             <svg
@@ -1008,8 +1008,8 @@ export default function Slider({ id }: { id: number }) {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col justify-between h-full flex-1 sm:min-w-[500px] min-w-[300px]">
-                    <div className="flex flex-col items-center gap-10 pt-[15rem] md:px-0 px-5">
+                <div className="flex flex-col justify-between h-full flex-1 sm:min-w-[500px] min-w-[300px] xxlg:pb-[15vh] pb-8">
+                    <div className="flex flex-col items-center xxlg:gap-[10vh] gap-10 xxlg:pt-[30vh] pt-[15rem] md:px-0 px-5">
                         <div className="sm:text-[2rem] leading-[2.25rem] text-2xl font-light text-center md:px-12 px-3 h-24">
                             <div
                                 id="chapterTitle1"
@@ -1251,7 +1251,7 @@ export default function Slider({ id }: { id: number }) {
                         </button>
                     </div>
                 </div>
-                <div className="flex items-end flex-1 pt-[550px]">
+                <div className="flex items-end flex-1 pt-[550px] xxlg:pb-[10vh] pb-8">
                     <div className=" bg-gray-50 border-[2.5px] border-gray-300 rounded-[30px] w-[460px] max-h-[271.3px] px-7 py-5 lg3:flex hidden lg3:flex-col justify-end">
                         <div className="text-4xl font-bold ml-auto">Notes</div>
                         <div className="h-[300px] w-full flex justify-center items-center text-gray-700">
