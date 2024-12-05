@@ -236,7 +236,7 @@ const QuizCard = ({
     };
 
     return (
-        <div ref={scope}>
+        <div ref={scope} className="h-fit">
             <button
                 className="aspect-square h-[200px] border rounded-md relative"
                 onClick={handleOpenQuizDialog}
@@ -271,7 +271,7 @@ const QuizCard = ({
                         />
                     </button>
                     <div className="h-full flex flex-col mx-1">
-                        <div className="flex justify-center text-2xl font-semibold px-2">
+                        <div className="text-center md1:text-2xl text-[1.2rem] font-semibold md1:px-2 px-[24px]">
                             {quizName}
                         </div>
                         <div

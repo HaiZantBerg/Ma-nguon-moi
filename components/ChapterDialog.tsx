@@ -127,7 +127,7 @@ export default function ChapterDialog({
                 "#box",
                 {
                     opacity: [0, 1],
-                    height: ["15vh", "95vh"],
+                    height: ["15dvh", "95dvh"],
                 },
                 {
                     duration: 0.1,
@@ -207,7 +207,7 @@ export default function ChapterDialog({
         await animate(
             "#box",
             {
-                height: ["95vh", "15vh"],
+                height: ["95dvh", "15dvh"],
             },
             {
                 duration: 0.1,
@@ -420,7 +420,7 @@ export default function ChapterDialog({
                 id="backdrop"
             />
             <div
-                className="w-[25vw] h-[15vh] bg-white rounded-xl relative z-10"
+                className="w-[25vw] h-[15dvh] bg-white rounded-xl relative z-10"
                 id="box"
             >
                 <div className="w-full h-full lg:px-9 sm:px-7 px-3 py-6 overflow-hidden relative grid md1:grid-rows-[auto_1fr] grid-rows-[1fr_8px_auto] grid-cols-1">
@@ -603,7 +603,7 @@ export default function ChapterDialog({
                     </div>
                     <div className="col-[1/-1] md1:row-[1/-1] row-[1/2] md1:grid flex flex-col md1:grid-cols-[20%_1fr] md1:grid-rows-1 md1:overflow-y-hidden overflow-x-hidden overflow-y-auto h-full w-full">
                         <div
-                            className="md1:col-[1/2] md1:row-[1/-1] text-start font-bold h-fit md1:pr-2 md1:px-0 px-2 md1:max-h-none max-h-[30vh] flex flex-col"
+                            className="md1:col-[1/2] md1:row-[1/-1] text-start font-bold h-fit md1:pr-2 md1:px-0 px-2 md1:max-h-none max-h-[30dvh] flex flex-col"
                             id="chapterTitleAndDescription"
                         >
                             <div
@@ -706,7 +706,7 @@ export default function ChapterDialog({
                                     >
                                         <div className="md1:pl-4 md1:pt-0 pt-2 h-full flex flex-col w-full">
                                             <QHeader />
-                                            <div className="h-full md1:overflow-y-auto md1:overflow-x-hidden w-full mt-5 md1:pt-5 md1:pl-5 md1:pb-0 flex flex-wrap lg:gap-10 md1:gap-2 gap-6 md1:justify-normal justify-center pb-5 pt-2">
+                                            <div className="h-fit md1:overflow-y-auto md1:overflow-x-hidden w-full mt-5 md1:pt-5 md1:pl-5 md1:pb-0 grid grid-cols-[repeat(auto-fit,minmax(200px,max-content))] md1:gap-10 md:gap-2 gap-6 md1:justify-normal justify-center pb-5 pt-2">
                                                 {Quizzes[id][idx]}
                                             </div>
                                         </div>
