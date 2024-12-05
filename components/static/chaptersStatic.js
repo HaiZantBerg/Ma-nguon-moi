@@ -44,8 +44,8 @@ export const description = [
                 và khoa học máy tính.
             </p>
         </div>,
-        <p key="description2"></p>,
-        <p key="description3">
+        <div key="description2"></div>,
+        <div key="description3">
             Lượng giác bắt đầu từ các nền văn minh cổ đại như Ai Cập và Babylon,
             phát triển qua Hy Lạp với Hipparchus. Vào thế kỷ 5 - 7, Ấn Độ mở
             rộng bảng sine, cosine. Trong thời Trung Cổ, các học giả Ả Rập tiếp
@@ -53,31 +53,31 @@ export const description = [
             phát triển lý thuyết lượng giác hiện đại, ứng dụng trong khoa học và
             kỹ thuật. Lịch sử hình thành và phát triển lượng giác đã phát triển
             ở nhiều nơi trên thế giới.
-        </p>,
-        <p key="description4"></p>,
-        <p key="description5"></p>,
-        <p key="description6"></p>,
-        <p key="description7"></p>,
-        <p key="description8"></p>,
-        <p key="description9"></p>,
+        </div>,
+        <div key="description4"></div>,
+        <div key="description5"></div>,
+        <div key="description6"></div>,
+        <div key="description7"></div>,
+        <div key="description8"></div>,
+        <div key="description9"></div>,
     ],
     [
-        <p key="description10"></p>,
-        <p key="description11"></p>,
-        <p key="description12"></p>,
-        <p key="description13"></p>,
-        <p key="description14"></p>,
-        <p key="description15"></p>,
-        <p key="description16"></p>,
-        <p key="description17"></p>,
-        <p key="description18"></p>,
+        <div key="description10"></div>,
+        <div key="description11"></div>,
+        <div key="description12"></div>,
+        <div key="description13"></div>,
+        <div key="description14"></div>,
+        <div key="description15"></div>,
+        <div key="description16"></div>,
+        <div key="description17"></div>,
+        <div key="description18"></div>,
     ],
     [
-        <p key="description19"></p>,
-        <p key="description20"></p>,
-        <p key="description21"></p>,
-        <p key="description22"></p>,
-        <p key="description23"></p>,
-        <p key="description24"></p>,
+        <div key="description19"></div>,
+        <div key="description20"></div>,
+        <div key="description21"></div>,
+        <div key="description22"></div>,
+        <div key="description23"></div>,
+        <div key="description24"></div>,
     ],
 ];
