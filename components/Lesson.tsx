@@ -80,8 +80,8 @@ const Menhde = () => {
                     và các mệnh đề có thể được biểu diễn bằng số nhị phân: đúng
                     là 1, sai là 0. Ví dụ, phát biểu “Socrates là người và
                     Socrates là sinh vật” có thể được viết dưới dạng phép toán
-                    đại số như: ￼, trong đó ￼ và ￼ lần lượt đại diện cho các
-                    mệnh đề. Boole không chỉ dừng lại ở đó.
+                    đại số như: , trong đó và lần lượt đại diện cho các mệnh đề.
+                    Boole không chỉ dừng lại ở đó.
                     <br />
                     Trong tác phẩm “An Investigation of the Laws of Thought”
                     (1854), ông mở rộng ý tưởng của mình và đặt nền móng cho
@@ -103,24 +103,26 @@ const Menhde = () => {
                     và triết học. Ông muốn tạo ra một hệ thống logic không chỉ
                     biểu diễn các mệnh đề đơn giản mà còn cả các khái niệm phức
                     tạp liên quan đến đối tượng và thuộc tính của chúng.
-                    <br /> Trong tác phẩm “Begriffsschrift” (1879), Frege đã
-                    phát triển logic vị từ (predicate logic), một bước tiến lớn
-                    so với logic mệnh đề của Boole. Nếu logic mệnh đề chỉ xử lý
-                    các phát biểu đơn giản như “Socrates là người”, thì logic vị
-                    từ cho phép Frege xử lý những phát biểu phức tạp hơn như
-                    “Mọi người đều có một trái tim”. Frege đã phát triển một hệ
-                    thống ký hiệu hoàn toàn mới để biểu diễn các khái niệm này,
-                    trong đó các đối tượng (như Socrates) và các thuộc tính (như
-                    “có trái tim”) có thể được biểu diễn một cách chính xác. Tuy
-                    nhiên, trong suốt cuộc đời của mình, Frege không được công
-                    nhận rộng rãi và phải đối mặt với nhiều thất bại cá nhân.
-                    Một trong những thất bại lớn nhất của Frege là khi ông phát
-                    hiện ra rằng hệ thống logic của mình chứa đựng một mâu thuẫn
-                    nghiêm trọng, được nhà toán học Bertrand Russell chỉ ra
-                    trong một lá thư vào năm 1902. Dù vậy, công trình của Frege
-                    sau này đã trở thành nền tảng cho nhiều nhánh của logic hiện
-                    đại và ảnh hưởng sâu sắc đến những nhà tư tưởng sau ông, như
-                    Ludwig Wittgenstein và Kurt Gödel.
+                    <br /> Trong tác phẩm {'"'}Begriffsschrift{'"'} (1879),
+                    Frege đã phát triển logic vị từ (predicate logic), một bước
+                    tiến lớn so với logic mệnh đề của Boole. Nếu logic mệnh đề
+                    chỉ xử lý các phát biểu đơn giản như {'"'}Socrates là người
+                    {'"'}, thì logic vị từ cho phép Frege xử lý những phát biểu
+                    phức tạp hơn như
+                    {'"'}Mọi người đều có một trái tim{'"'}. Frege đã phát triển
+                    một hệ thống ký hiệu hoàn toàn mới để biểu diễn các khái
+                    niệm này, trong đó các đối tượng (như Socrates) và các thuộc
+                    tính (như
+                    {'"'}có trái tim{'"'}) có thể được biểu diễn một cách chính
+                    xác. Tuy nhiên, trong suốt cuộc đời của mình, Frege không
+                    được công nhận rộng rãi và phải đối mặt với nhiều thất bại
+                    cá nhân. Một trong những thất bại lớn nhất của Frege là khi
+                    ông phát hiện ra rằng hệ thống logic của mình chứa đựng một
+                    mâu thuẫn nghiêm trọng, được nhà toán học Bertrand Russell
+                    chỉ ra trong một lá thư vào năm 1902. Dù vậy, công trình của
+                    Frege sau này đã trở thành nền tảng cho nhiều nhánh của
+                    logic hiện đại và ảnh hưởng sâu sắc đến những nhà tư tưởng
+                    sau ông, như Ludwig Wittgenstein và Kurt Gödel.
                 </div>
             </div>
             <div className="col-[1/-1] row-[4/-1] relative z-10">
@@ -184,12 +186,12 @@ const Taphop = () => {
                 <div className="sm:h-[75px] h-[51.5px]">{}</div>
                 <div className="pl-[70px] py-3">
                     <br />
-                    Frege sử dụng khái niệm "tập hợp" trong lý thuyết của ông,
-                    đặc biệt là trong cách ông định nghĩa khái niệm. Theo Frege,
-                    một khái niệm toán học là một tập hợp của các đối tượng thỏa
-                    mãn một thuộc tính cụ thể. Ví dụ, "tập hợp tất cả các số
-                    chẵn" là một tập hợp mà phần tử của nó là những số tự nhiên
-                    chẵn.
+                    Frege sử dụng khái niệm {'"'}tập hợp{'"'} trong lý thuyết
+                    của ông, đặc biệt là trong cách ông định nghĩa khái niệm.
+                    Theo Frege, một khái niệm toán học là một tập hợp của các
+                    đối tượng thỏa mãn một thuộc tính cụ thể. Ví dụ, {'"'}tập
+                    hợp tất cả các số chẵn{'"'} là một tập hợp mà phần tử của nó
+                    là những số tự nhiên chẵn.
                     <br />
                     Frege không chỉ định nghĩa tập hợp như là một tập hợp các
                     đối tượng vật lý mà ông coi tập hợp là một đối tượng toán
@@ -284,8 +286,8 @@ const Taphop = () => {
                     Numbers):
                     <br />
                     Trong lý thuyết tập hợp, số hạng (ordinal numbers) dùng để
-                    chỉ thứ tự của các phần tử trong một tập hợp (ví dụ: "phần
-                    tử thứ nhất", "phần tử thứ hai",...).
+                    chỉ thứ tự của các phần tử trong một tập hợp (ví dụ: {'"'}
+                    phần tử thứ nhất{'"'}, {'"'}phần tử thứ hai{'"'},...).
                     <br />
                     Số cardinal là một khái niệm quan trọng dùng để chỉ kích
                     thước hoặc số lượng phần tử của một tập hợp. Số cardinal có
@@ -369,17 +371,18 @@ const Taphop = () => {
                     2. Các loại mô hình
                     <br />
                     Mô hình chuẩn (Standard model): Là mô hình mà trong đó các
-                    khái niệm của lý thuyết được mô tả theo cách "bình thường"
-                    hoặc "tiêu chuẩn". Ví dụ, trong lý thuyết số học, mô hình
-                    chuẩn là tập hợp các số tự nhiên cùng với các phép toán cộng
-                    và nhân thông thường.
+                    khái niệm của lý thuyết được mô tả theo cách {'"'}bình
+                    thường{'"'}
+                    hoặc {'"'}tiêu chuẩn{'"'}. Ví dụ, trong lý thuyết số học, mô
+                    hình chuẩn là tập hợp các số tự nhiên cùng với các phép toán
+                    cộng và nhân thông thường.
                     <br />
                     Mô hình không chuẩn (Non-standard model): Là mô hình của lý
                     thuyết mà các phần tử của mô hình không hoàn toàn tuân theo
                     cấu trúc mà lý thuyết mô tả. Ví dụ, trong lý thuyết số học,
                     có những mô hình không chuẩn của lý thuyết này, trong đó có
-                    các "số tự nhiên không chuẩn" không xuất hiện trong tập hợp
-                    số tự nhiên tiêu chuẩn.
+                    các {'"'}số tự nhiên không chuẩn{'"'} không xuất hiện trong
+                    tập hợp số tự nhiên tiêu chuẩn.
                     <br />
                     3. Các khái niệm quan trọng trong lý thuyết mô hình
                     <br />
@@ -403,8 +406,8 @@ const Taphop = () => {
                     4. Các khái niệm cơ bản khác
                     <br />
                     Tính đúng đắn (Satisfiability): Một lý thuyết hoặc một công
-                    thức được gọi là "đúng đắn" nếu có ít nhất một mô hình mà
-                    trong đó công thức hoặc lý thuyết đó được thỏa mãn.
+                    thức được gọi là {'"'}đúng đắn{'"'} nếu có ít nhất một mô
+                    hình mà trong đó công thức hoặc lý thuyết đó được thỏa mãn.
                     <br />
                     Tính quyết định (Decidability): Tính quyết định của lý
                     thuyết có nghĩa là có thể xây dựng một thuật toán để quyết
@@ -414,10 +417,10 @@ const Taphop = () => {
                     thức trong lý thuyết.
                     <br />
                     Tính xác định của lý thuyết (Categoricity): Một lý thuyết
-                    được gọi là "đúng đắn" hoặc "đặc trưng" (categorical) nếu
-                    mọi mô hình của lý thuyết đó là đồng nhất (tức là chỉ có một
-                    mô hình duy nhất) hoặc có một mô hình duy nhất trong một
-                    không gian cụ thể.
+                    được gọi là {'"'}đúng đắn{'"'} hoặc {'"'}đặc trưng{'"'}{" "}
+                    (categorical) nếu mọi mô hình của lý thuyết đó là đồng nhất
+                    (tức là chỉ có một mô hình duy nhất) hoặc có một mô hình duy
+                    nhất trong một không gian cụ thể.
                     <br />
                     5. Ứng dụng của lý thuyết mô hình
                     <br />
@@ -512,10 +515,10 @@ const LuongGiac = () => {
                         hệ góc trong các tam giác vuông và tam giác tròn.
                         <br />
                         Ptolemy (khoảng 100 - 170 CN) tiếp tục công trình của
-                        Hipparchus và viết cuốn sách nổi tiếng "Almagest", trong
-                        đó có các bảng lượng giác để tính toán các khoảng cách
-                        và góc trong thiên văn học. (Có thể link đến trang web
-                        có cuốn sách để người dùng có thể tham khảo)
+                        Hipparchus và viết cuốn sách nổi tiếng {'"'}Almagest
+                        {'"'}, trong đó có các bảng lượng giác để tính toán các
+                        khoảng cách và góc trong thiên văn học. (Có thể link đến
+                        trang web có cuốn sách để người dùng có thể tham khảo)
                         <br />
                         Hipparchus (khoảng 190 TCN - 120 TCN) là một nhà thiên
                         văn học và toán học nổi tiếng người Hy Lạp, được coi là
@@ -541,26 +544,26 @@ const LuongGiac = () => {
                         là một trong những học giả nổi bật nhất trong lịch sử
                         khoa học Ấn Độ cổ đại. Ông là tác giả của cuốn
                         <br />
-                        "Aryabhatiya", một tác phẩm nổi tiếng trong toán học và
-                        thiên văn học, chứa đựng nhiều khái niệm quan trọng vẫn
-                        có ảnh hưởng lâu dài.
+                        {'"'}Aryabhatiya{'"'}, một tác phẩm nổi tiếng trong toán
+                        học và thiên văn học, chứa đựng nhiều khái niệm quan
+                        trọng vẫn có ảnh hưởng lâu dài.
                         <br />
                         Brahmagupta (khoảng 598 - 668 CN) là một trong những nhà
                         toán học và thiên văn học vĩ đại của Ấn Độ cổ đại, nổi
                         bật với những đóng góp quan trọng trong cả hai lĩnh vực
-                        này. Ông là tác giả của cuốn "Brahmasphutasiddhanta",
-                        một tác phẩm nổi tiếng mà trong đó, ông đã phát triển và
-                        trình bày nhiều lý thuyết toán học mới.
+                        này. Ông là tác giả của cuốn {'"'}Brahmasphutasiddhanta
+                        {'"'}, một tác phẩm nổi tiếng mà trong đó, ông đã phát
+                        triển và trình bày nhiều lý thuyết toán học mới.
                         <br />
                         Bhaskara I là một nhà toán học và thiên văn học Ấn Độ,
                         nổi tiếng với những đóng góp trong các lĩnh vực toán học
                         và thiên văn học. Một trong những tác phẩm nổi bật của
-                        ông là "Mahabhaskariya", trong đó ông đã phát triển các
-                        lý thuyết về chu kỳ của các hành tinh và các hiện tượng
-                        thiên văn như nhật thực và nguyệt thực. Ông cũng là
-                        người đầu tiên giới thiệu các khái niệm về số không vào
-                        các phép toán và cải tiến các phương pháp tính toán
-                        trước đó.
+                        ông là {'"'}Mahabhaskariya{'"'}, trong đó ông đã phát
+                        triển các lý thuyết về chu kỳ của các hành tinh và các
+                        hiện tượng thiên văn như nhật thực và nguyệt thực. Ông
+                        cũng là người đầu tiên giới thiệu các khái niệm về số
+                        không vào các phép toán và cải tiến các phương pháp tính
+                        toán trước đó.
                     </div>
                     <div className="py-2 text-[1.25rem] font-semibold translate-x-[40px] w-fit">
                         CÁC HIỆN TƯỢNG THIÊN VĂN
@@ -653,8 +656,8 @@ const LuongGiac = () => {
                         <br />
                         l-Khwarizmi (khoảng 780-850 CN) là một nhà toán học,
                         thiên văn học, và địa lý học người Ả Rập nổi tiếng, được
-                        coi là "cha đẻ của đại số" vì những đóng góp quan trọng
-                        của ông trong lĩnh vực này.
+                        coi là {'"'}cha đẻ của đại số{'"'} vì những đóng góp
+                        quan trọng của ông trong lĩnh vực này.
                         <br />
                         Bảng lượng giác: Al-Battani đã phát triển các bảng lượng
                         giác với độ chính xác cao hơn so với các bảng trước đó,
@@ -732,12 +735,13 @@ const LuongGiac = () => {
                         Định lý vạn vật hấp dẫn. Newton cũng là người sáng lập
                         Calculus (giải tích), một công cụ toán học quan trọng
                         trong nghiên cứu các hiện tượng thay đổi liên tục. Các
-                        công trình của ông, đặc biệt là cuốn sách "Philosophiæ
-                        Naturalis Principia Mathematica" (Mathematical
-                        Principles of Natural Philosophy), đã đặt nền tảng cho
-                        cơ học cổ điển và có ảnh hưởng sâu rộng đến sự phát
-                        triển của khoa học tự nhiên. (có thể liên kết với trang
-                        sách khác) Ba định lý chuyển động (Ba định lý Newton)
+                        công trình của ông, đặc biệt là cuốn sách {'"'}
+                        Philosophiæ Naturalis Principia Mathematica{'"'}{" "}
+                        (Mathematical Principles of Natural Philosophy), đã đặt
+                        nền tảng cho cơ học cổ điển và có ảnh hưởng sâu rộng đến
+                        sự phát triển của khoa học tự nhiên. (có thể liên kết
+                        với trang sách khác) Ba định lý chuyển động (Ba định lý
+                        Newton)
                         <br />
                         Định lí 1:
                         {/* https://www.youtube.com/watch?v=-lToBk24L8w */}
