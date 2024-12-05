@@ -5,7 +5,7 @@ import React, { useRef } from "react";
 // import Image from "next/image";
 // import Aristotle from "@/Image/image-removebg-preview.png";
 // import GeorgeBoole from "@/Image/george-boole.png";
-import { menhDeStars, lessonsToggle } from "./static/lessonsStatic";
+import { lessonsToggle } from "./static/lessonsStatic";
 import "katex/dist/katex.min.css";
 import { InlineMath } from "react-katex";
 import { useAnimate } from "framer-motion";
