@@ -411,7 +411,7 @@ export default function ChapterDialog({
     return (
         <div
             key={idx}
-            className="top-0 left-0 fixed w-full h-full z-30 flex items-center justify-center"
+            className="top-0 left-0 fixed w-full h-[100dvh] z-30 flex items-center justify-center"
             ref={scope}
         >
             <div
@@ -607,13 +607,13 @@ export default function ChapterDialog({
                             id="chapterTitleAndDescription"
                         >
                             <div
-                                className={`${chakraPetch.className} md1:pt-0 pt-2 md1:text-[35px] text-[27.5px] md1:max-h-[250px] overflow-hidden flex-grow md1:flex-none md1:leading-[1.26] leading-[1.25] md1:text-balance`}
+                                className={`${chakraPetch.className} md1:pt-0 pt-2 md1:text-[35px] text-[27.5px] h-fit overflow-hidden flex-[1_0_auto] md1:leading-[1.26] leading-[1.25] md1:text-balance`}
                             >
                                 {chapterTitle}
                             </div>
                             <div className="w-full h-[1.5px] bg-[rgba(0,0,0,0.25)] mt-5 md1:block hidden" />
                             <div
-                                className="overflow-y-auto overflow-x-hidden font-light text-[15px] md1:mb-0 mb-4 md1:pt-4 pt-2"
+                                className="overflow-y-auto overflow-x-hidden font-light shrink text-[15px] md1:mb-0 mb-4 mt-4 flex-[0_1_auto]"
                                 ref={descriptionRef}
                             >
                                 {description[id][idx]}
@@ -706,7 +706,7 @@ export default function ChapterDialog({
                                     >
                                         <div className="md1:pl-4 md1:pt-0 pt-2 h-full flex flex-col w-full">
                                             <QHeader />
-                                            <div className="h-full md1:overflow-y-auto md1:overflow-x-hidden w-full mt-5 md:pt-5 md:pl-5 md:pb-0 flex flex-wrap lg:gap-10 md:gap-2 gap-6 md:justify-normal justify-center pb-5 pt-2">
+                                            <div className="h-full md1:overflow-y-auto md1:overflow-x-hidden w-full mt-5 md1:pt-5 md1:pl-5 md1:pb-0 flex flex-wrap lg:gap-10 md1:gap-2 gap-6 md1:justify-normal justify-center pb-5 pt-2">
                                                 {Quizzes[id][idx]}
                                             </div>
                                         </div>

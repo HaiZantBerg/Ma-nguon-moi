@@ -288,7 +288,7 @@ const QuizCard = ({
                                     .map((text, idxt) => (
                                         <div
                                             key={idxt}
-                                            className="whitespace-pre text-wrap font-medium md:text-[1rem] md:leading-[1.5rem] text-[0.8rem] leading-[1.15rem]"
+                                            className="whitespace-pre text-wrap font-medium md1:text-[1rem] md1:leading-[1.5rem] text-[0.8rem] leading-[1.15rem]"
                                         >
                                             {text}
                                         </div>

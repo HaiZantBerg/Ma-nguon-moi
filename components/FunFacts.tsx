@@ -27,7 +27,7 @@ const FunFact1 = ({ idxf, idxc }: { idxf: number; idxc: number }) => {
                     <span className="font-semibold text-2xl">
                         {historyFigureName[idxc][idxf][idx]}
                     </span>
-                    <div className="md:ml-7 flex flex-wrap mt-5">
+                    <div className="md1:ml-7 flex flex-wrap mt-5">
                         {section.map((title, idxs) => (
                             <FunFactCard
                                 key={idxs}
@@ -92,7 +92,7 @@ const FunFactCard = ({
         <>
             <svg
                 viewBox="-160 -180 320 360"
-                className="md:h-[180px] h-[150px] md:mr-5 mr-[6px] md:mb-5 mb-[6px] cursor-pointer"
+                className="md1:h-[180px] h-[150px] md1:mr-5 mr-[6px] md1:mb-5 mb-[6px] cursor-pointer"
                 style={{
                     aspectRatio: 8 / 9,
                 }}

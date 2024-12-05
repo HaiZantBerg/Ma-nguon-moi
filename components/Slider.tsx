@@ -1009,8 +1009,8 @@ export default function Slider({ id }: { id: number }) {
                     </div>
                 </div>
                 <div className="flex flex-col justify-between h-full flex-1 sm:min-w-[500px] min-w-[300px] xxlg:pb-[15vh] pb-8">
-                    <div className="flex flex-col items-center xxlg:gap-[10vh] gap-10 xxlg:pt-[30vh] pt-[15rem] md:px-0 px-5">
-                        <div className="sm:text-[2rem] leading-[2.25rem] text-2xl font-light text-center md:px-12 px-3 h-24">
+                    <div className="flex flex-col items-center xxlg:gap-[10vh] gap-10 xxlg:pt-[30vh] pt-[15rem] md1:px-0 px-5">
+                        <div className="sm:text-[2rem] leading-[2.25rem] text-2xl font-light text-center md1:px-12 px-3 h-24">
                             <div
                                 id="chapterTitle1"
                                 ref={chapterContentRef}

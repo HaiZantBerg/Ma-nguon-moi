@@ -880,13 +880,13 @@ export default function LessonLayout({ id, idx }: { id: number; idx: number }) {
         <>
             {lessonsToggle[id][idx] && (
                 <div
-                    className="h-[50px] ml-[30px] mb-[10px] mt-[20px] w-fit relative"
+                    className="md1:h-[50px] h-[40px] ml-[30px] mb-[10px] md1:mt-[20px] w-fit relative"
                     ref={scope}
                 >
                     <div className="flex h-full">
                         {lessonsToggle[id][idx].map((lessonName, idxl) => (
                             <button
-                                className="h-full flex w-fit text-[1.25rem] leading-[1.75rem] px-3 relative text-nowrap overflow-hidden"
+                                className="h-full flex w-fit md1:text-[1.25rem] text-[1.125rem] md1:leading-[1.75rem] leading-[1.5rem] px-3 relative text-nowrap overflow-hidden"
                                 key={idxl}
                                 onClick={() => handleToggle(idxl)}
                             >
@@ -917,7 +917,7 @@ export default function LessonLayout({ id, idx }: { id: number; idx: number }) {
                 Lessons[id][idx].map((lesson, idxl) => (
                     <div
                         key={idxl}
-                        className={`h-full md1:overflow-y-auto md1:overflow-x-hidden font-light md:pl-5 md:overflow-y-auto md:overflow-x-hidden w-full ${
+                        className={`h-full md1:overflow-y-auto md1:overflow-x-hidden font-light md1:pl-5 w-full ${
                             idxl ? "hidden" : "block"
                         }`}
                         ref={(el) => {
@@ -929,7 +929,7 @@ export default function LessonLayout({ id, idx }: { id: number; idx: number }) {
                 ))
             ) : (
                 <div
-                    className="mt-8 h-full md1:overflow-y-auto md1:overflow-x-hidden font-light md:pl-5 md:overflow-y-auto md:overflow-x-hidden w-full"
+                    className="mt-8 h-full md1:overflow-y-auto md1:overflow-x-hidden font-light md1:pl-5 w-full"
                     style={{
                         scrollbarGutter: "stable",
                     }}
