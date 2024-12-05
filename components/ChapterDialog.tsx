@@ -86,7 +86,7 @@ export default function ChapterDialog({
     handleCloseDialog,
 }: {
     chapterTitle: string;
-    description: string[][];
+    description: JSX.Element[][];
     id: number;
     idx: number;
     playAnimation: boolean;
