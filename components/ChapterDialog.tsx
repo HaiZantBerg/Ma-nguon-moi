@@ -18,10 +18,10 @@ const chakraPetch = Chakra_Petch({ weight: "700", subsets: ["vietnamese"] });
 const LHeader = () => {
     return (
         <div
-            className={`${chakraPetch.className} h-[72px] pt-[19px] md1:text-[40px] text-[35px] leading-[42.5px] items-center gap-4 flex text-nowrap`}
+            className={`${chakraPetch.className} h-[72px] pt-[19px] md1:text-[40px] sm:text-[35px] text-[27.5px] sm:leading-[42.5px] leading-[37.5px] items-center sm:gap-4 gap-2 flex text-nowrap`}
         >
             Câu chuyện lịch sử
-            <div className="h-[64px] aspect-square">
+            <div className="sm:h-[64px] h-[47.5px] aspect-square">
                 <Image src={BookandQuill} alt="" />
             </div>
         </div>
@@ -616,13 +616,7 @@ export default function ChapterDialog({
                                 className="overflow-y-auto overflow-x-hidden font-light text-[15px] md1:mb-0 mb-4 md1:pt-4 pt-2"
                                 ref={descriptionRef}
                             >
-                                {description[id][idx]
-                                    .split("\n")
-                                    .map((text, idxt) => (
-                                        <React.Fragment key={idxt}>
-                                            {text}
-                                        </React.Fragment>
-                                    ))}
+                                {description[id][idx]}
                             </div>
                         </div>
                         <div className="flex md1:flex-row flex-col md1:col-[1/-1] md1:row-[1/-1] pointer-events-none grow">

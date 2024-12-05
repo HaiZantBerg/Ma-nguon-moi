@@ -33,20 +33,51 @@ export const chapter = [
 
 export const description = [
     [
-        `Bài học này sẽ cung cấp kiến thức cơ bản về lịch sử hình thành và phát triển của mệnh đề và tập hợp. 
-        Đây là phần mở đầu quan trọng để hiểu sâu hơn về logic và toán học trong các bài học sau.`,
-        ``,
-        `Lượng giác bắt đầu từ các nền văn minh cổ đại như Ai Cập và Babylon, phát triển qua Hy Lạp với Hipparchus. 
-        Vào thế kỷ 5 - 7, Ấn Độ mở rộng bảng sine, cosine. Trong thời Trung Cổ, các học giả Ả Rập tiếp tục nghiên cứu. 
-        Đến thế kỷ 18, Euler và các nhà toán học châu Âu phát triển lý thuyết lượng giác hiện đại, ứng dụng trong khoa học và 
-        kỹ thuật. Lịch sử hình thành và phát triển lượng giác đã phát triển ở nhiều nơi trên thế giới.`,
-        ``,
-        ``,
-        ``,
-        ``,
-        ``,
-        ``,
+        <p key="description1">
+            <p className="font-[500] pb-1">Mệnh đề</p>
+            <p className="font-[500] pb-1">Tập hợp</p>
+            <p className="pl-[20px]">
+                Lịch sử toán học về tập hợp và các phép toán trong tập hợp có
+                thể được tóm tắt qua một số mốc quan trọng. Tập hợp là một khái
+                niệm cơ bản trong toán học, và sự phát triển của lý thuyết tập
+                hợp đã có ảnh hưởng sâu rộng đến các lĩnh vực khác của toán học
+                và khoa học máy tính.
+            </p>
+        </p>,
+        <p key="description2"></p>,
+        <p key="description3">
+            Lượng giác bắt đầu từ các nền văn minh cổ đại như Ai Cập và Babylon,
+            phát triển qua Hy Lạp với Hipparchus. Vào thế kỷ 5 - 7, Ấn Độ mở
+            rộng bảng sine, cosine. Trong thời Trung Cổ, các học giả Ả Rập tiếp
+            tục nghiên cứu. Đến thế kỷ 18, Euler và các nhà toán học châu Âu
+            phát triển lý thuyết lượng giác hiện đại, ứng dụng trong khoa học và
+            kỹ thuật. Lịch sử hình thành và phát triển lượng giác đã phát triển
+            ở nhiều nơi trên thế giới.
+        </p>,
+        <p key="description4"></p>,
+        <p key="description5"></p>,
+        <p key="description6"></p>,
+        <p key="description7"></p>,
+        <p key="description8"></p>,
+        <p key="description9"></p>,
     ],
-    [``, ``, ``, ``, ``, ``, ``, ``, ``],
-    [``, ``, ``, ``, ``, ``],
+    [
+        <p key="description10"></p>,
+        <p key="description11"></p>,
+        <p key="description12"></p>,
+        <p key="description13"></p>,
+        <p key="description14"></p>,
+        <p key="description15"></p>,
+        <p key="description16"></p>,
+        <p key="description17"></p>,
+        <p key="description18"></p>,
+    ],
+    [
+        <p key="description19"></p>,
+        <p key="description20"></p>,
+        <p key="description21"></p>,
+        <p key="description22"></p>,
+        <p key="description23"></p>,
+        <p key="description24"></p>,
+    ],
 ];

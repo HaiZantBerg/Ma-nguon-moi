@@ -315,4 +315,4 @@ export const menhDeStars = [
     </svg>,
 ];
 
-export const lessonsToggle = [[["Mệnh đề", "Tập hợp"], null], [], []];
+export const lessonsToggle = [[["Mệnh đề", "Tập hợp"]], [], []];

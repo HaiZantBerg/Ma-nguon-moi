@@ -7,15 +7,15 @@ import React, { useRef } from "react";
 // import GeorgeBoole from "@/Image/george-boole.png";
 import { menhDeStars, lessonsToggle } from "./static/lessonsStatic";
 import "katex/dist/katex.min.css";
-// import { InlineMath } from "react-katex";
+import { InlineMath } from "react-katex";
 import { useAnimate } from "framer-motion";
 
 const Menhde = () => {
     return (
         <div className="overflow-x-auto overflow-y-hidden grid grid-cols-1 grid-rows-[repeat(4,auto)]">
-            <div className="col-[1/-1] row-[1/-1] bg-[#050505] w-[2.5px] relative left-[21.35px]" />
+            <div className="col-[1/-1] row-[1/-1] bg-[#050505] sm:w-[2.5px] w-[1.5px] relative sm:left-[21.35px] left-[14.25px]" />
             <div className="col-[1/-1] row-[1/2] relative z-10 mt-[10px]">
-                <div className="h-[75px]">{menhDeStars[0]}</div>
+                <div className="sm:h-[75px] h-[51.5px]">{menhDeStars[0]}</div>
                 <p className="pl-[70px] py-3">
                     Chúng ta hãy bắt đầu từ khoảng năm 384 TCN, khi Aristotle
                     được sinh ra tại thành phố Stagira, Hy Lạp. Con trai của một
@@ -47,7 +47,7 @@ const Menhde = () => {
                 </p>
             </div>
             <div className="col-[1/-1] row-[2/3] relative z-10">
-                <div className="h-[75px]">{menhDeStars[1]}</div>
+                <div className="sm:h-[75px] h-[51.5px]">{menhDeStars[1]}</div>
                 <p className="pl-[70px] py-3">
                     Trong giai đoạn này, các nhà logic học như William of Ockham
                     và Peter Abelard đã tiếp tục phát triển các khái niệm về
@@ -59,7 +59,7 @@ const Menhde = () => {
                 </p>
             </div>
             <div className="col-[1/-1] row-[3/4] relative z-10">
-                <div className="h-[75px]">{menhDeStars[2]}</div>
+                <div className="sm:h-[75px] h-[51.5px]">{menhDeStars[2]}</div>
                 <p className="pl-[70px] py-3">
                     Chuyển sang thế kỷ 19, một nhân vật mới xuất hiện: George
                     Boole, xuất thân từ một gia đình khiêm tốn; cha ông là một
@@ -124,7 +124,7 @@ const Menhde = () => {
                 </p>
             </div>
             <div className="col-[1/-1] row-[4/-1] relative z-10">
-                <div className="h-[75px]">{menhDeStars[3]}</div>
+                <div className="sm:h-[75px] h-[51.5px]">{menhDeStars[3]}</div>
                 <p className="pl-[70px] py-3"></p>
             </div>
         </div>
@@ -134,22 +134,63 @@ const Menhde = () => {
 const Taphop = () => {
     return (
         <div className="overflow-x-auto overflow-y-hidden grid grid-cols-1 grid-rows-[repeat(4,auto)]">
-            <div className="col-[1/-1] row-[1/-1] bg-[#050505] w-[2.5px] relative left-[21.35px]" />
+            <div className="col-[1/-1] row-[1/-1] bg-[#050505] sm:w-[2.5px] w-[1.5px] relative sm:left-[21.35px] left-[14.25px]" />
             <div className="col-[1/-1] row-[1/2] relative z-10 mt-[10px]">
-                <div className="h-[75px]"></div>
-                <p className="pl-[70px] py-3"></p>
+                <div className="sm:h-[75px] h-[51.5px]"></div>
+                <p className="pl-[70px] py-3">
+                    Cantor và tập hợp: Vào cuối thế kỷ 19, Georg Cantor đã giới
+                    thiệu khái niệm về tập hợp (set) trong toán học, coi tập hợp
+                    là một tập hợp các đối tượng hoặc phần tử mà có thể được xác
+                    định rõ ràng. Cantor không chỉ khái quát hóa các tập hợp hữu
+                    hạn mà còn mở rộng ra tập hợp vô hạn.
+                    <br />
+                    Lý thuyết tập hợp vô hạn: Một trong những đóng góp quan
+                    trọng của Cantor là sự phân biệt giữa các loại vô hạn. Ông
+                    phát hiện rằng không phải tất cả các tập hợp vô hạn đều có
+                    cùng kích thước (số lượng phần tử). Cantor đưa ra khái niệm
+                    về số siêu hạn (cardinality), trong đó có sự phân biệt giữa
+                    tập hợp đếm được (countably infinite) như tập các số tự
+                    nhiên và tập hợp không đếm được (uncountably infinite) như
+                    tập các số thực. <br />
+                    Ví dụ, tập các số tự nhiên <InlineMath math="\mathbb{N}" />=
+                    {"{1, 2, 3,…}"} là một tập hợp đếm được.
+                    <br />
+                    Tập các số thực <InlineMath math="\mathbb{R}" /> lại không
+                    thể đếm được. Điều này được chứng minh qua định lý Cantor
+                    rằng không thể thiết lập một ánh xạ một - một giữa tập{" "}
+                    <InlineMath math="\mathbb{N}" /> và{" "}
+                    <InlineMath math="\mathbb{R}" />.
+                    <br />
+                    Các phép toán tập hợp cơ bản của Cantor:
+                    <br />
+                    Hợp tập (Union): Nếu A và B là hai tập hợp, thì hợp tập A{" "}
+                    <InlineMath math="\cup" /> B là tập hợp tất cả các phần tử
+                    thuộc A hoặc B, không trùng lặp.
+                    <br />
+                    Giao tập (Intersection): Giao tập A{" "}
+                    <InlineMath math="\cap" /> B là tập hợp tất cả các phần tử
+                    mà A và B cùng chia sẻ.
+                    <br />
+                    Hiệu tập (Difference): Hiệu tập A{" "}
+                    <InlineMath math="\setminus" /> B là tập hợp tất cả các phần
+                    tử thuộc A nhưng không thuộc B.
+                    <br />
+                    Tập con (Subset): Một tập hợp A là một tập con của tập hợp B
+                    (ký hiệu A <InlineMath math="\subset" /> B ) nếu mọi phần tử
+                    của A đều là phần tử của B.
+                </p>
             </div>
             <div className="col-[1/-1] row-[2/3] relative z-10">
-                <div className="h-[75px]"></div>
+                <div className="sm:h-[75px] h-[51.5px]"></div>
                 <p className="pl-[70px] py-3"></p>
             </div>
             <div className="col-[1/-1] row-[3/4] relative z-10">
-                <div className="h-[75px]"></div>
+                <div className="sm:h-[75px] h-[51.5px]"></div>
                 <p className="pl-[70px] py-3"></p>
                 <p className="pl-[70px] py-3"></p>
             </div>
             <div className="col-[1/-1] row-[4/-1] relative z-10">
-                <div className="h-[75px]"></div>
+                <div className="sm:h-[75px] h-[51.5px]"></div>
                 <p className="pl-[70px] py-3"></p>
             </div>
         </div>
@@ -160,22 +201,22 @@ const LuongGiac = () => {
     return (
         <>
             <div className="overflow-x-auto overflow-y-hidden grid grid-cols-1 grid-rows-[repeat(4,auto)]">
-                <div className="col-[1/-1] row-[1/-1] bg-[#050505] w-[2.5px] relative left-[21.35px]" />
+                <div className="col-[1/-1] row-[1/-1] bg-[#050505] sm:w-[2.5px] w-[1.5px] relative sm:left-[21.35px] left-[14.25px]" />
                 <div className="col-[1/-1] row-[1/2] relative z-10 mt-[10px]">
-                    <div className="h-[75px]"></div>
+                    <div className="sm:h-[75px] h-[51.5px]"></div>
                     <p className="pl-[70px] py-3"></p>
                 </div>
                 <div className="col-[1/-1] row-[2/3] relative z-10">
-                    <div className="h-[75px]"></div>
+                    <div className="sm:h-[75px] h-[51.5px]"></div>
                     <p className="pl-[70px] py-3"></p>
                 </div>
                 <div className="col-[1/-1] row-[3/4] relative z-10">
-                    <div className="h-[75px]"></div>
+                    <div className="sm:h-[75px] h-[51.5px]"></div>
                     <p className="pl-[70px] py-3"></p>
                     <p className="pl-[70px] py-3"></p>
                 </div>
                 <div className="col-[1/-1] row-[4/-1] relative z-10">
-                    <div className="h-[75px]"></div>
+                    <div className="sm:h-[75px] h-[51.5px]"></div>
                     <p className="pl-[70px] py-3"></p>
                 </div>
             </div>
