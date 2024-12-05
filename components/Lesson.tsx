@@ -324,15 +324,16 @@ const Taphop = () => {
                     <br />
                     Định lý Cantor (hay Định lý Cantor về tính không đếm được)
                     khẳng định rằng tập hợp các số thực (
-                    <InlineMath math="mathbb{R}" />) có "số phần tử" nhiều hơn
-                    tập hợp các số tự nhiên (<InlineMath math="mathbb{N}" />
+                    <InlineMath math="mathbb{R}" />) có {'"'}số phần tử{'"'}{" "}
+                    nhiều hơn tập hợp các số tự nhiên (
+                    <InlineMath math="mathbb{N}" />
                     ), tức là tập các số thực không thể đếm được. Cụ thể, định
                     lý này chỉ ra rằng không tồn tại một ánh xạ một-một (hay một
                     phép biên dịch) giữa tập hợp các số tự nhiên và tập hợp các
                     số thực. Nói cách khác, tập các số thực là vô hạn nhưng
-                    không thể đếm được, có "số siêu hạn" lớn hơn tập hợp các số
-                    tự nhiên. Định lý này được chứng minh bởi Cantor vào năm
-                    1874, sử dụng một kỹ thuật gọi là phương pháp đối chứng
+                    không thể đếm được, có {'"'}số siêu hạn{'"'} lớn hơn tập hợp
+                    các số tự nhiên. Định lý này được chứng minh bởi Cantor vào
+                    năm 1874, sử dụng một kỹ thuật gọi là phương pháp đối chứng
                     (diagonalization argument).
                     <br />
                     Lý thuyết mô hình (Model Theory) là một nhánh quan trọng của
