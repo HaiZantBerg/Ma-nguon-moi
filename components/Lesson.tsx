@@ -15,7 +15,7 @@ const generalClassName = "md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 ";
 const Menhde = () => {
     return (
         <div className="overflow-x-auto overflow-y-hidden grid grid-cols-1 grid-rows-[repeat(4,auto)]">
-            <div className="col-[1/-1] row-[1/-1] bg-[#050505] md:w-[1.5px] w-[1.5px] relative md:left-[13.9px] left-[14.25px]" />
+            <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.6px]" />
             <div className="col-[1/-1] row-[1/2] relative z-10 h-fit mt-[10px]">
                 <div className="md:h-[75px] h-[51.5px]">{}</div>
                 <div className={generalClassName}>
@@ -138,10 +138,10 @@ const Menhde = () => {
 const Taphop = () => {
     return (
         <div className="overflow-x-auto overflow-y-hidden grid grid-cols-1 grid-rows-[repeat(6,auto)]">
-            <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.8px]" />
+            <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.6px]" />
             <div className="col-[1/-1] row-[1/2] relative z-10 h-fit mt-[10px]">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar[0][0][0][1][0]}
+                    {timelineStar[0][0][0]}
                 </div>
                 <div className={generalClassName}>
                     Cantor và tập hợp: Vào cuối thế kỷ 19, Georg Cantor đã giới
@@ -187,8 +187,14 @@ const Taphop = () => {
                 </div>
             </div>
             <div className="col-[1/-1] row-[2/3] relative z-10 h-fit">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar[0][0][0][1][1]}
+                <div className="grid grid-rows-1 md:grid-cols-[28.5px_auto] grid-cols-[20px_auto]">
+                    <div className="col-[1/2] row-[1/-1]">
+                        {timelineStar[0][0][1]}
+                    </div>
+                    <div className="col-[2/-1] row-[1/-1] flex flex-wrap">
+                        {timelineStar[0][0][2]}
+                        {timelineStar[0][0][3]}
+                    </div>
                 </div>
                 <div className={generalClassName}>
                     Frege sử dụng khái niệm {'"'}tập hợp{'"'} trong lý thuyết
@@ -207,18 +213,8 @@ const Taphop = () => {
                 </div>
             </div>
             <div className="col-[1/-1] row-[3/4] relative z-10 h-fit">
-                <div className="grid grid-rows-1 md:grid-cols-[28.5px_auto] grid-cols-[20px_auto]">
-                    {Array.isArray(timelineStar[0][0][0][1][2]) && (
-                        <>
-                            <div className="col-[1/2] row-[1/-1]">
-                                {timelineStar[0][0][0][1][2][0]}
-                            </div>
-                            <div className="col-[2/-1] row-[1/-1] flex flex-wrap">
-                                {timelineStar[0][0][0][1][2][1]}
-                                {timelineStar[0][0][0][1][2][2]}
-                            </div>
-                        </>
-                    )}
+                <div className="md:h-[75px] h-[51.5px]">
+                    {timelineStar[0][0][4]}
                 </div>
                 <div className={generalClassName}>
                     Tuy nhiên, lý thuyết tập hợp của Frege gặp phải một vấn đề
@@ -237,11 +233,10 @@ const Taphop = () => {
                     ra là: liệu <InlineMath math="\mathbb{R}" /> có phải là phần
                     tử của chính nó không?
                     <br />
-                    Nếu
-                    <InlineMath math="\mathbb{R}" /> <InlineMath math="\in" />{" "}
-                    <InlineMath math="\mathbb{R}" />, thì theo định nghĩa{" "}
-                    <InlineMath math="\mathbb{R}" /> phải không phải là phần tử
-                    của chính nó, điều này mâu thuẫn.
+                    Nếu <InlineMath math="\mathbb{R}" />{" "}
+                    <InlineMath math="\in" /> <InlineMath math="\mathbb{R}" />,
+                    thì theo định nghĩa <InlineMath math="\mathbb{R}" /> phải
+                    không phải là phần tử của chính nó, điều này mâu thuẫn.
                     <br />
                     Nếu <InlineMath math="\mathbb{R}" />{" "}
                     <InlineMath math="\notin" />{" "}
@@ -264,7 +259,7 @@ const Taphop = () => {
             </div>
             <div className="col-[1/-1] row-[4/5] relative z-10 h-fit">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar[0][0][0][1][3]}
+                    {timelineStar[0][0][5]}
                 </div>
                 <div className={generalClassName}>
                     Lý thuyết tập hợp tiên đề Zermelo-Fraenkel là một hệ thống
@@ -299,7 +294,7 @@ const Taphop = () => {
             </div>
             <div className="col-[1/-1] row-[5/6] relative z-10 h-fit">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar[0][0][0][1][4]}
+                    {timelineStar[0][0][6]}
                 </div>
                 <div className={generalClassName}>
                     <div>Lý thuyết tập hợp và các phép toán nâng cao</div>
@@ -488,9 +483,11 @@ const LuongGiac = () => {
     return (
         <>
             <div className="overflow-x-auto overflow-y-hidden grid grid-cols-1 grid-rows-[repeat(8,auto)]">
-                <div className="col-[1/-1] row-[1/-1] bg-[#050505] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[14.25px]" />
+                <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.6px]" />
                 <div className="col-[1/-1] row-[1/2] relative z-10 h-fit mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">{}</div>
+                    <div className="md:h-[75px] h-[51.5px]">
+                        {timelineStar[0][2][0]}
+                    </div>
                     <div className={generalClassName}>
                         Lượng giác có nguồn gốc từ các nền văn minh cổ đại, đặc
                         biệt là ở Ai Cập, Babylon, và Hy Lạp. Các nền văn hóa
@@ -515,7 +512,9 @@ const LuongGiac = () => {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[2/3] relative z-10 h-fit">
-                    <div className="md:h-[75px] h-[51.5px]">{}</div>
+                    <div className="md:h-[75px] h-[51.5px]">
+                        {timelineStar[0][2][1]}
+                    </div>
                     <div className={generalClassName}>
                         Cả người Ai Cập và người Babylon đã phát triển các
                         phương pháp để tính toán các độ dài và góc trong các tam
@@ -526,7 +525,9 @@ const LuongGiac = () => {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[3/4] relative z-10 h-fit">
-                    <div className="md:h-[75px] h-[51.5px]">{}</div>
+                    <div className="md:h-[75px] h-[51.5px]">
+                        {timelineStar[0][2][2]}
+                    </div>
                     <div className={generalClassName}>
                         Các nhà toán học Hy Lạp, như Hipparchus và Ptolemy, đã
                         có đóng góp quan trọng trong việc phát triển lý thuyết
@@ -550,7 +551,9 @@ const LuongGiac = () => {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[4/5] relative z-10 h-fit">
-                    <div className="md:h-[75px] h-[51.5px]">{}</div>
+                    <div className="md:h-[75px] h-[51.5px]">
+                        {timelineStar[0][2][3]}
+                    </div>
                     <div className={generalClassName}>
                         Lượng giác được phát triển mạnh mẽ ở Ấn Độ, đặc biệt là
                         trong các công trình của các nhà toán học như Aryabhata,
@@ -587,7 +590,7 @@ const LuongGiac = () => {
                         không vào các phép toán và cải tiến các phương pháp tính
                         toán trước đó.
                     </div>
-                    <div className="py-2 text-[1.25rem] font-semibold translate-x-[32.5px] w-fit">
+                    <div className="py-2 text-[1.25rem] font-[475] translate-x-[32.5px] w-fit">
                         CÁC HIỆN TƯỢNG THIÊN VĂN
                     </div>
                     <div className={generalClassName}>
@@ -658,7 +661,9 @@ const LuongGiac = () => {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[5/6] relative z-10 h-fit mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">{}</div>
+                    <div className="md:h-[75px] h-[51.5px]">
+                        {timelineStar[0][2][4]}
+                    </div>
                     <div className={generalClassName}>
                         Trong thời kỳ Trung Cổ, các học giả Ả Rập như Al-Battani
                         và Al-Khwarizmi tiếp tục phát triển lý thuyết lượng
@@ -697,7 +702,9 @@ const LuongGiac = () => {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[6/7] relative z-10 h-fit mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">{}</div>
+                    <div className="md:h-[75px] h-[51.5px]">
+                        {timelineStar[0][2][5]}
+                    </div>
                     <div className={generalClassName}>
                         Lượng giác bắt đầu phát triển mạnh mẽ ở châu Âu trong
                         thời kỳ Phục Hưng và Cách mạng khoa học. Các nhà toán
@@ -781,7 +788,9 @@ const LuongGiac = () => {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[7/8] relative z-10 h-fit mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">{}</div>
+                    <div className="md:h-[75px] h-[51.5px]">
+                        {timelineStar[0][2][6]}
+                    </div>
                     <div className={generalClassName}>
                         Vào thế kỷ 18, các hàm lượng giác được định nghĩa rõ
                         ràng hơn và ứng dụng trong các lĩnh vực khác nhau như
@@ -820,7 +829,9 @@ const LuongGiac = () => {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[8/-1] relative z-1 h-fit0 mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">{}</div>
+                    <div className="md:h-[75px] h-[51.5px]">
+                        {timelineStar[0][2][7]}
+                    </div>
                     <div className={generalClassName}>
                         Lượng giác ngày nay không chỉ là một công cụ quan trọng
                         trong toán học mà còn trong nhiều ngành khoa học và kỹ
