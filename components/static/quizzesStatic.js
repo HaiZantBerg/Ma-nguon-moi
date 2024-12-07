@@ -1,4 +1,5 @@
-// import Image from "next/image";
+import Image from "next/image";
+import behumble from "@/Image/behumble.png";
 
 import React from "react";
 
@@ -56,8 +57,15 @@ export const quizCardImg = [
         [
             <div key="quizCardImg1" />,
             <div key="quizCardImg2" />,
+            <div
+                key="quizCardImg4"
+                className="flex justify-center items-center h-full"
+            >
+                <div className="w-[175px]">
+                    <Image src={behumble} className="w-full h-full" alt="" />
+                </div>
+            </div>,
             <div key="quizCardImg3" />,
-            <div key="quizCardImg4" />,
         ],
     ],
     [[]],

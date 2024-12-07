@@ -48,7 +48,7 @@ const page = () => {
                 <div className="text-end pt-3 w-[560px] md:text-base text-sm">
                     Nơi đây tập hợp các cột mốc quan trọng trong toán học, từ
                     các con số cổ đại đến các lý thuyết hiện đại, kết nối kiến
-                    ​​thức qua các thời đại và nền văn hóa. Hãy cùng chúng tôi
+                    thức qua các thời đại và nền văn hóa. Hãy cùng chúng tôi
                     khám phá di sản và sự phát triển của toán học, một lĩnh vực
                     tiếp tục định hình thế giới của chúng ta.
                 </div>

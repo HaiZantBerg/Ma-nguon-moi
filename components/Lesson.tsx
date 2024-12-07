@@ -25,7 +25,7 @@ const Menhde = () => {
                     học thuật từ nhỏ.
                     <br />
                     Đến năm 17 tuổi, ông đến Athens và trở thành học trò của
-                    triết gia nổi tiếng Plato tại Học viện Athens – một nơi tập
+                    triết gia nổi tiếng Plato tại Học viện Athens - một nơi tập
                     trung những bộ óc vĩ đại của thời đại. Tại đây, Aristotle
                     sớm nổi lên như một trong những học giả hàng đầu, nhưng tư
                     tưởng của ông dần dần tách biệt khỏi những ý tưởng lý thuyết

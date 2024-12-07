@@ -31,7 +31,7 @@ const Quiz1 = ({ idxq, idxc }: { idxq: number; idxc: number }) => {
                     choices={choicesArray[idxc][idxq][idx]}
                     answerId={answerArray[idxc][idxq][idx]}
                 >
-                    {quizCardImg[idx]}
+                    {quizCardImg[idxc][idxq][idx]}
                 </QuizCard>
             ))}
         </>
