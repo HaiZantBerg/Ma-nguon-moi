@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { Chakra_Petch } from "next/font/google";
 import { useAnimate } from "framer-motion";
 import ChapterDialog from "./ChapterDialog";
 import debounce from "debounce";
@@ -180,8 +179,6 @@ class minusParticle {
         this.scale = 1 / (1 - Math.pow(1 - this.scaleTime, 3));
     }
 }
-
-const chakraPetch = Chakra_Petch({ weight: "700", subsets: ["vietnamese"] });
 
 export default function Slider({ id }: { id: number }) {
     const [scope, animate] = useAnimate();
@@ -886,9 +883,7 @@ export default function Slider({ id }: { id: number }) {
                                     y={-2}
                                     className="w-[129px] h-[34px]"
                                 >
-                                    <div
-                                        className={`${chakraPetch.className} w-full h-full flex justify-center items-center`}
-                                    >
+                                    <div className='font-["Chakra_Petch"] font-[700] w-full h-full flex justify-center items-center'>
                                         Chương {idx + 1}
                                     </div>
                                 </foreignObject>

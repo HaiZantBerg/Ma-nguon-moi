@@ -3,9 +3,6 @@
 import React from "react";
 import { useAnimate } from "framer-motion";
 import Link from "next/link";
-import { Chakra_Petch } from "next/font/google";
-
-const chakraPetch = Chakra_Petch({ weight: "700", subsets: ["vietnamese"] });
 
 export default function GradeCard() {
     const [scope, animate] = useAnimate();
@@ -168,9 +165,7 @@ export default function GradeCard() {
                         height="227.3457"
                     >
                         <div className="flex flex-col gap-3">
-                            <div
-                                className={`text-2xl ${chakraPetch.className}`}
-                            >
+                            <div className='text-2xl font-["Chakra_Petch"] font-[600]'>
                                 KHỐI 10
                             </div>
                             <div className="text-gray-300 text-xs">
@@ -261,9 +256,7 @@ export default function GradeCard() {
                         height="227.3457"
                     >
                         <div className="flex flex-col gap-3">
-                            <div
-                                className={`text-2xl ${chakraPetch.className}`}
-                            >
+                            <div className='text-2xl font-["Chakra_Petch"] font-[600]'>
                                 KHỐI 11
                             </div>
                             <div className="text-gray-300 text-xs">
@@ -353,9 +346,7 @@ export default function GradeCard() {
                         height="227.3457"
                     >
                         <div className="flex flex-col gap-3">
-                            <div
-                                className={`text-2xl ${chakraPetch.className}`}
-                            >
+                            <div className='text-2xl font-["Chakra_Petch"] font-[600]'>
                                 KHỐI 12
                             </div>
                             <div className="text-gray-300 text-xs">

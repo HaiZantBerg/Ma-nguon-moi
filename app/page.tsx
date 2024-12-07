@@ -33,17 +33,12 @@
 
 import React from "react";
 import CardGrade from "@/components/CardGrade";
-import { Chakra_Petch } from "next/font/google";
-
-const chakraPetch = Chakra_Petch({ weight: "700", subsets: ["vietnamese"] });
 
 const page = () => {
     return (
         <div className="flex flex-col *:justify-between xl:px-40 md:px-24 px-5 py-20 gap-24">
             <div className="flex gap-8">
-                <div
-                    className={`md:text-[2.3rem] text-[2rem] font-black ${chakraPetch.className} leading-10 pt-5`}
-                >
+                <div className='md:text-[2.3rem] text-[2rem] font-bold font-["Chakra_Petch"] leading-10 pt-5'>
                     Chọn Khối Của
                     <br /> Bạn
                 </div>

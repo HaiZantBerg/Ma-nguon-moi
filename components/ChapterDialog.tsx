@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { Chakra_Petch } from "next/font/google";
 import { useAnimate } from "framer-motion";
 import LessonLayout from "./Lesson";
 import { FunFact } from "./FunFacts";
@@ -13,13 +12,9 @@ import Sparkle from "@/Svg/Sparkle.svg";
 import Noticed from "@/Svg/Noticed.svg";
 import Image from "next/image";
 
-const chakraPetch = Chakra_Petch({ weight: "700", subsets: ["vietnamese"] });
-
 const LHeader = () => {
     return (
-        <div
-            className={`${chakraPetch.className} h-[72px] pt-[19px] md1:text-[40px] sm:text-[35px] text-[27.5px] sm:leading-[42.5px] leading-[37.5px] items-center sm:gap-4 gap-2 flex text-nowrap`}
-        >
+        <div className='font-["Chakra_Petch"] font-[600] h-[72px] pt-[19px] md1:text-[40px] sm:text-[35px] text-[27.5px] sm:leading-[42.5px] leading-[37.5px] items-center sm:gap-4 gap-2 flex text-nowrap'>
             Câu chuyện lịch sử
             <div className="sm:h-[64px] h-[47.5px] aspect-square">
                 <Image src={BookandQuill} alt="" />
@@ -30,9 +25,7 @@ const LHeader = () => {
 
 const FFHeader = () => {
     return (
-        <div
-            className={`${chakraPetch.className} h-[72px] pt-2 md1:text-[40px] items-end text-[35px] leading-[42.5px] flex text-nowrap`}
-        >
+        <div className='font-["Chakra_Petch"] font-[600] h-[72px] pt-2 md1:text-[40px] items-end text-[35px] leading-[42.5px] flex text-nowrap'>
             <div className="w-[40px] aspect-square mr-3">
                 <Image src={Sparkle} alt="" />
             </div>
@@ -49,9 +42,7 @@ const FFHeader = () => {
 
 const QHeader = () => {
     return (
-        <div
-            className={`${chakraPetch.className} h-[72px] md1:text-[40px] items-end text-[35px] leading-[42.5px] flex text-nowrap`}
-        >
+        <div className='font-["Chakra_Petch"] font-[600] h-[72px] md1:text-[40px] items-end text-[35px] leading-[42.5px] flex text-nowrap'>
             <div
                 className="mr-2 w-[90px] aspect-square"
                 style={{
@@ -606,9 +597,7 @@ export default function ChapterDialog({
                             className="md1:col-[1/2] md1:row-[1/-1] text-start font-bold h-fit md1:pr-2 md1:px-0 px-2 md1:max-h-none max-h-[30dvh] flex flex-col"
                             id="chapterTitleAndDescription"
                         >
-                            <div
-                                className={`${chakraPetch.className} md1:pt-0 pt-2 md1:text-[35px] text-[27.5px] h-fit overflow-hidden flex-[1_0_auto] md1:leading-[1.26] leading-[1.25] md1:text-balance`}
-                            >
+                            <div className='font-["Chakra_Petch"] font-[700] md1:pt-0 pt-2 md1:text-[35px] text-[27.5px] h-fit overflow-hidden flex-[1_0_auto] md1:leading-[1.26] leading-[1.25] md1:text-balance'>
                                 {chapterTitle}
                             </div>
                             <div className="w-full h-[1.5px] bg-[rgba(0,0,0,0.25)] mt-5 md1:block hidden" />
