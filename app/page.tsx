@@ -36,11 +36,14 @@ import CardGrade from "@/components/CardGrade";
 
 const page = () => {
     return (
-        <div className="flex flex-col *:justify-between xl:px-40 md:px-24 px-5 py-20 gap-24">
+        <div className="flex flex-col *:justify-between xl:px-[6vw] md:px-24 px-5 py-20 gap-24">
             <div className="flex gap-8">
-                <div className='md:text-[2.3rem] text-[2rem] font-bold font-["Chakra_Petch"] leading-10 pt-5'>
-                    Chọn Khối Của
-                    <br /> Bạn
+                <div className='md:text-[2.3rem] text-[1.75rem] md:min-w-fit min-w-[145px] font-bold font-["Chakra_Petch"] leading-10 pt-5 text-wrap'>
+                    <p className="md:block hidden">
+                        Chọn Khối Của
+                        <br /> Bạn
+                    </p>
+                    <p className="md:hidden">Chọn Khối Của Bạn</p>
                 </div>
                 <div className="text-end pt-3 w-[560px] md:text-base text-sm">
                     Nơi đây tập hợp các cột mốc quan trọng trong toán học, từ
