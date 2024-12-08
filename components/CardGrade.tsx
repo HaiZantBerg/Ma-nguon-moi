@@ -129,13 +129,7 @@ export default function GradeCard() {
                         id="blank1"
                         fill="hsla(360, 100%, 100%, 1)"
                     />
-                    <foreignObject
-                        x={265}
-                        y={10}
-                        width={37}
-                        height={37}
-                        viewBox="-18.5 -18.5 37 37"
-                    >
+                    <foreignObject x={265} y={10} width={37} height={37}>
                         <div id="arrow1">
                             <svg
                                 x={265}
@@ -220,13 +214,7 @@ export default function GradeCard() {
                         fill="white"
                     />
 
-                    <foreignObject
-                        x={265}
-                        y={177.3457}
-                        width={37}
-                        height={37}
-                        viewBox="-18.5 -18.5 37 37"
-                    >
+                    <foreignObject x={265} y={177.3457} width={37} height={37}>
                         <div id="arrow2">
                             <svg
                                 x={265}
@@ -310,13 +298,7 @@ export default function GradeCard() {
                         id="blank3"
                         fill="white"
                     />
-                    <foreignObject
-                        x={265}
-                        y={10}
-                        width={37}
-                        height={37}
-                        viewBox="-18.5 -18.5 37 37"
-                    >
+                    <foreignObject x={265} y={10} width={37} height={37}>
                         <div id="arrow3">
                             <svg
                                 x={265}

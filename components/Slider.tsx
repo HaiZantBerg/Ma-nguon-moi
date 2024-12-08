@@ -848,7 +848,8 @@ export default function Slider({ id }: { id: number }) {
                                 <foreignObject
                                     x={-2}
                                     y={-2}
-                                    className="w-[129px] h-[34px]"
+                                    width={129}
+                                    height={34}
                                 >
                                     <div className='font-["Chakra_Petch"] font-[700] w-full h-full flex justify-center items-center'>
                                         Chương {idx + 1}
