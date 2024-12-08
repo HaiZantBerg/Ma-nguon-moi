@@ -108,12 +108,12 @@ const FunFactCard = ({
                     className="stroke-black"
                     fill="white"
                 />
-                <foreignObject x="-160" y="-180" width="320" height="360">
+                <foreignObject x="-160" y="-180" width={320} height={360}>
                     <div className="flex justify-self-center h-[42.5%] aspect-square">
                         {images[idxc][idxf][idx][idxs]}
                     </div>
                 </foreignObject>
-                <foreignObject x="-160" y="-20" width="320" height="360">
+                <foreignObject x="-160" y="-20" width={320} height={360}>
                     <div className="text-[30px] leading-[37.5px] w-full absolute left-0 top-0 font-semibold px-[11px] text-center">
                         {idxs + 1}.
                         <br />
