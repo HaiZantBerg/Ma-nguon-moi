@@ -193,12 +193,10 @@ export default function Slider({ id }: { id: number }) {
     const backNextRef = useRef<HTMLDivElement | null>(null);
     const middlePrevRef = useRef<HTMLDivElement | null>(null);
     const backPrevRef = useRef<HTMLDivElement | null>(null);
-    const canvasNextRef = useRef<HTMLCanvasElement | null>(null);
-    const canvasPrevRef = useRef<HTMLCanvasElement | null>(null);
+    const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const playAnimation = useRef<boolean>(false);
 
-    let stopNextAnimate = false;
-    let stopPrevAnimate = false;
+    let stopAnimate = false;
 
     const plusParticleArray: plusParticle[] = [];
     const minusParticleArray: minusParticle[] = [];
@@ -207,15 +205,10 @@ export default function Slider({ id }: { id: number }) {
 
     const resizeCanvas = useCallback(
         debounce(() => {
-            if (!canvasNextRef.current) return;
+            if (!canvasRef.current) return;
 
-            canvasNextRef.current.width = window.innerWidth;
-            canvasNextRef.current.height = window.innerHeight - 65;
-
-            if (!canvasPrevRef.current) return;
-
-            canvasPrevRef.current.width = window.innerWidth;
-            canvasPrevRef.current.height = window.innerHeight - 65;
+            canvasRef.current.width = window.innerWidth;
+            canvasRef.current.height = window.innerHeight - 65;
         }, 500),
         []
     );
@@ -233,41 +226,8 @@ export default function Slider({ id }: { id: number }) {
         return min + Math.random() * (max - min);
     };
 
-    const animationPlusLoop = (ctx: CanvasRenderingContext2D) => {
-        stopNextAnimate = true;
-
-        let animationId: number;
-
-        const animation = () => {
-            ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-
-            plusParticleArray.forEach((plusIcon, idx) => {
-                if (plusIcon) {
-                    plusIcon.update();
-                    plusIcon.draw(ctx);
-
-                    if (
-                        plusIcon.y > window.innerHeight + 200 ||
-                        plusIcon.x < -500 ||
-                        plusIcon.x > window.innerWidth + 200
-                    )
-                        plusParticleArray.splice(idx, 1);
-                }
-            });
-
-            if (!plusParticleArray.length) {
-                cancelAnimationFrame(animationId);
-                stopNextAnimate = false;
-            } else animationId = requestAnimationFrame(animation);
-        };
-
-        animationId = requestAnimationFrame(animation);
-
-        return () => cancelAnimationFrame(animationId);
-    };
-
-    const animationPrevLoop = (ctx: CanvasRenderingContext2D) => {
-        stopPrevAnimate = true;
+    const animationLoop = (ctx: CanvasRenderingContext2D) => {
+        stopAnimate = true;
 
         let animationId: number;
 
@@ -288,9 +248,23 @@ export default function Slider({ id }: { id: number }) {
                 }
             });
 
-            if (!minusParticleArray.length) {
+            plusParticleArray.forEach((plusIcon, idx) => {
+                if (plusIcon) {
+                    plusIcon.update();
+                    plusIcon.draw(ctx);
+
+                    if (
+                        plusIcon.y > window.innerHeight + 200 ||
+                        plusIcon.x < -500 ||
+                        plusIcon.x > window.innerWidth + 200
+                    )
+                        plusParticleArray.splice(idx, 1);
+                }
+            });
+
+            if (!minusParticleArray.length && !plusParticleArray.length) {
                 cancelAnimationFrame(animationId);
-                stopPrevAnimate = false;
+                stopAnimate = false;
             } else animationId = requestAnimationFrame(animation);
         };
 
@@ -404,8 +378,8 @@ export default function Slider({ id }: { id: number }) {
             { duration: 0.5, ease: "easeOut", delay: 0.05 }
         );
 
-        if (canvasNextRef.current && nextBtnRef.current) {
-            const ctx = canvasNextRef.current.getContext("2d");
+        if (canvasRef.current && nextBtnRef.current) {
+            const ctx = canvasRef.current.getContext("2d");
 
             const { left, top, right, bottom } =
                 nextBtnRef.current.getBoundingClientRect();
@@ -430,7 +404,7 @@ export default function Slider({ id }: { id: number }) {
                 )
             );
 
-            if (!stopNextAnimate && ctx) animationPlusLoop(ctx);
+            if (!stopAnimate && ctx) animationLoop(ctx);
         }
     };
 
@@ -493,8 +467,8 @@ export default function Slider({ id }: { id: number }) {
             { duration: 0.5, ease: "easeOut", delay: 0.05 }
         );
 
-        if (canvasPrevRef.current && prevBtnRef.current) {
-            const ctx = canvasPrevRef.current.getContext("2d");
+        if (canvasRef.current && prevBtnRef.current) {
+            const ctx = canvasRef.current.getContext("2d");
 
             const { left, top, right, bottom } =
                 prevBtnRef.current.getBoundingClientRect();
@@ -519,7 +493,7 @@ export default function Slider({ id }: { id: number }) {
                 )
             );
 
-            if (!stopPrevAnimate && ctx) animationPrevLoop(ctx);
+            if (!stopAnimate && ctx) animationLoop(ctx);
         }
     };
 
@@ -799,11 +773,7 @@ export default function Slider({ id }: { id: number }) {
     return (
         <div ref={scope}>
             <canvas
-                ref={canvasNextRef}
-                className="fixed z-20 pointer-events-none"
-            />
-            <canvas
-                ref={canvasPrevRef}
+                ref={canvasRef}
                 className="fixed z-20 pointer-events-none"
             />
             <div className="absolute w-screen overflow-hidden top-0 left-0 h-[550px] flex justify-center">
@@ -811,7 +781,7 @@ export default function Slider({ id }: { id: number }) {
                     width={2400}
                     height={500}
                     viewBox="0 0 2400 500"
-                    className="absolute xxlg:stroke-[3.25px] sm:stroke-[2.5px] stroke-[1.75px] xxlg:scale-125 scale-100 xxlg:translate-y-28 translate-y-10"
+                    className="absolute xxlg:stroke-[3px] sm:stroke-[2.5px] stroke-[1.75px] md1:scale-125 scale-100 md1:translate-y-28 translate-y-10"
                 >
                     <path
                         d="M1200 550 L100 550 C -100 -40 2500 -40 2300 550 Z"
@@ -819,7 +789,7 @@ export default function Slider({ id }: { id: number }) {
                         fill="none"
                     />
                 </svg>
-                <div className="absolute overflow-hidden xxlg:scale-125 scale-100 xxlg:translate-y-[6.75rem] translate-y-10 w-[2400px] h-[485px]">
+                <div className="absolute overflow-hidden md1:scale-125 scale-100 md1:translate-y-[6.75rem] translate-y-10 w-[2400px] h-[485px]">
                     {chapter[id].map((_, idx) => (
                         <div
                             key={idx}
@@ -835,7 +805,7 @@ export default function Slider({ id }: { id: number }) {
                         >
                             <svg
                                 viewBox="-2 -2 129 34"
-                                className="xxlg:w-[340px] xxlg:h-[85px] sm:w-[400px] sm:h-[100px] w-[360px] h-[90px]"
+                                className="md1:w-[340px] md1:h-[85px] sm:w-[400px] sm:h-[100px] w-[360px] h-[90px] xxlg:stroke-[1.25px] sm:stroke-[1px] stroke-[0.75px]"
                             >
                                 <defs>
                                     <linearGradient
@@ -860,7 +830,6 @@ export default function Slider({ id }: { id: number }) {
                                     s6.6,0,10.5,12.4c0.1,0.2,1,2.7,2.2,2.7h99.5c1.2,0,2.1-2.5,2.2-2.7C118.1,15.1,124.8,15.1,124.8,15.1z"
                                     fill={`url(#chapterCardGradient${idx})`}
                                     stroke="black"
-                                    strokeWidth={1}
                                 />
                                 <circle
                                     cx="124.8"
@@ -868,7 +837,6 @@ export default function Slider({ id }: { id: number }) {
                                     r="1.3"
                                     fill={circleColor[id]}
                                     stroke="black"
-                                    strokeWidth={1}
                                 />
                                 <circle
                                     cx="0"
@@ -876,7 +844,6 @@ export default function Slider({ id }: { id: number }) {
                                     r="1.3"
                                     fill={circleColor[id]}
                                     stroke="black"
-                                    strokeWidth={1}
                                 />
                                 <foreignObject
                                     x={-2}
@@ -893,7 +860,7 @@ export default function Slider({ id }: { id: number }) {
                 </div>
             </div>
             <div className="h-[calc(100dvh-64px)] flex justify-between relative z-10">
-                <div className="flex-1 h-full items-end flex justify-end pt-[550px] xxlg:pb-[10vh] pb-8">
+                <div className="flex-1 h-full items-end flex justify-end pt-[550px] xxlg:pb-[10vh] md1:pb-[5vh] pb-8">
                     <div className=" bg-gray-50 border-[2.5px] border-gray-300 rounded-[30px] max-w-[460px] w-full max-h-[300px] px-7 py-5 lg3:flex flex-col hidden">
                         <div className="flex flex-row items-center justify-normal gap-3">
                             <svg
@@ -1003,14 +970,15 @@ export default function Slider({ id }: { id: number }) {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col justify-between h-full flex-1 sm:min-w-[500px] min-w-[300px] xxlg:pb-[15vh] pb-8">
-                    <div className="flex flex-col items-center xxlg:gap-[10vh] gap-10 xxlg:pt-[30vh] pt-[15rem] md1:px-0 px-5">
+                <div className="flex flex-col justify-between h-full flex-1 sm:min-w-[500px] min-w-[300px] xxlg:pb-[10vh] md1:pb-[5vh] pb-[3rem]">
+                    <div className="flex flex-col items-center xxlg:gap-[10vh] md1:gap-[5vh] gap-10 xxlg:pt-[30vh] md1:pt-[35vh] pt-[15rem] md1:px-0 px-5">
                         <div className="sm:text-[2rem] leading-[2.25rem] text-2xl font-light text-center md1:px-12 px-3 h-24">
                             <div
                                 id="chapterTitle1"
                                 ref={chapterContentRef}
                                 style={{
                                     color: "rgba(0,0,0,1)",
+                                    fontWeight: 350,
                                 }}
                             >
                                 {chapter[id][0]}
@@ -1246,7 +1214,7 @@ export default function Slider({ id }: { id: number }) {
                         </button>
                     </div>
                 </div>
-                <div className="flex items-end flex-1 pt-[550px] xxlg:pb-[10vh] pb-8">
+                <div className="flex items-end flex-1 pt-[550px] xxlg:pb-[10vh] md1:pb-[5vh] pb-8">
                     <div className=" bg-gray-50 border-[2.5px] border-gray-300 rounded-[30px] w-[460px] max-h-[271.3px] px-7 py-5 lg3:flex hidden lg3:flex-col justify-end">
                         <div className="text-4xl font-bold ml-auto">Notes</div>
                         <div className="h-[300px] w-full flex justify-center items-center text-gray-700">
