@@ -31,7 +31,7 @@ export const images = [
                     src={logicBread}
                     alt=""
                     key="image13"
-                    className="w-[97%] h-[97%]"
+                    className="w-[97%] h-[97%] mt-[3%]"
                 />,
                 <div key="image14" />,
             ],
