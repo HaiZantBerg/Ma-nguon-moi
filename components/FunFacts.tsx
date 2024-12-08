@@ -90,9 +90,8 @@ const FunFactCard = ({
 }) => {
     return (
         <>
-            <svg
-                viewBox="-160 -180 320 360"
-                className="md1:h-[180px] h-[150px] md1:mr-5 mr-[6px] md1:mb-5 mb-[6px] cursor-pointer"
+            <div
+                className="cursor-pointer relative md1:mr-5 mr-[6px] md1:mb-5 md1:h-[180px] h-[150px] mb-[6px]"
                 style={{
                     aspectRatio: 8 / 9,
                 }}
@@ -100,27 +99,27 @@ const FunFactCard = ({
                     setOpenFlipCard([idx, idxs]);
                 }}
             >
-                <path
-                    d="M-120 -177.5 L120 -177.5 L157.5 -140 L157.5 130 L120 167.5 L-120 167.5 L-157.5 130 L-157.5 -140 Z"
-                    strokeWidth="5"
-                    strokeLinejoin="round"
-                    strokeLinecap="round"
-                    className="stroke-black"
-                    fill="white"
-                />
-                <foreignObject x="-160" y="-180" width={320} height={360}>
-                    <div className="flex justify-self-center h-[42.5%] aspect-square">
+                <svg viewBox="-160 -180 320 360" className="h-full w-full">
+                    <path
+                        d="M-120 -177.5 L120 -177.5 L157.5 -140 L157.5 130 L120 167.5 L-120 167.5 L-157.5 130 L-157.5 -140 Z"
+                        strokeWidth="5"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        className="stroke-black"
+                        fill="white"
+                    />
+                </svg>
+                <div className="absolute top-0 left-0 w-full h-full grid grid-cols-1 grid-rows-2 select-none">
+                    <div className="h-full aspect-square justify-self-center col-[1/-1] row-[1/2]">
                         {images[idxc][idxf][idx][idxs]}
                     </div>
-                </foreignObject>
-                <foreignObject x="-160" y="-20" width={320} height={360}>
-                    <div className="text-[30px] leading-[37.5px] w-full absolute left-0 top-0 font-semibold px-[11px] text-center">
+                    <div className="text-[15px] leading-[17.5px] w-full font-semibold px-[7px] text-center col-[1/-1] row-[2/-1]">
                         {idxs + 1}.
                         <br />
                         {title}
                     </div>
-                </foreignObject>
-            </svg>
+                </div>
+            </div>
             {children}
         </>
     );

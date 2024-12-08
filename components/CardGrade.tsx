@@ -86,17 +86,16 @@ export default function GradeCard() {
     return (
         <div
             ref={scope}
-            className="flex xl:flex-row flex-col xl:gap-0 md:gap-5 gap-10 justify-between text-white"
+            className="flex xl:flex-row flex-col xl:gap-0 md:gap-5 gap-10 justify-between text-white xl:*:grow"
         >
             <Link
                 href="/khoi-10"
-                className="flex justify-center sm:justify-normal"
+                className="flex xl:justify-center justify-center sm:justify-normal"
             >
                 <svg
                     id="box1"
                     viewBox="0 0 313.35 227.35"
-                    width="313.3457"
-                    height="227.3457"
+                    className="aspect-[313/227] xl:w-[75%] w-[313px] max-w-[500px]"
                     onMouseEnter={() => handleMouseEnter(1)}
                     onMouseLeave={() => handleMouseLeave(1)}
                 >
@@ -174,13 +173,12 @@ export default function GradeCard() {
             </Link>
             <Link
                 href="/khoi-11"
-                className="flex sm:justify-end justify-center"
+                className="flex xl:justify-center sm:justify-end justify-center"
             >
                 <svg
                     id="box2"
                     viewBox="0 0 313.15 227.35"
-                    width="313.3457"
-                    height="227.3457"
+                    className="aspect-[313/227] xl:w-[75%] w-[313px] max-w-[500px]"
                     onMouseEnter={() => handleMouseEnter(2)}
                     onMouseLeave={() => handleMouseLeave(2)}
                 >
@@ -258,13 +256,12 @@ export default function GradeCard() {
             </Link>
             <Link
                 href="/khoi-12"
-                className="flex justify-center sm:justify-normal"
+                className="flex xl:justify-center justify-center sm:justify-normal"
             >
                 <svg
                     id="box3"
                     viewBox="0 0 313.35 227.35"
-                    width="313.3457"
-                    height="227.3457"
+                    className="aspect-[313/227] xl:w-[75%] w-[313px] max-w-[500px]"
                     onMouseEnter={() => handleMouseEnter(3)}
                     onMouseLeave={() => handleMouseLeave(3)}
                 >
