@@ -6,10 +6,10 @@ import LessonLayout from "./Lesson";
 import { FunFact } from "./FunFacts";
 import { Quizzes } from "./Quizzes";
 import { colorStop, svgIcon } from "./static/static";
-import QuesExcla from "@/Svg/QuesExcla.svg";
-import BookandQuill from "@/Svg/Book&Quill.svg";
-import Sparkle from "@/Svg/Sparkle.svg";
-import Noticed from "@/Svg/Noticed.svg";
+import QuesExcla from "@/public/Svg/QuesExcla.svg";
+import BookandQuill from "@/public/Svg/Book&Quill.svg";
+import Sparkle from "@/public/Svg/Sparkle.svg";
+import Noticed from "@/public/Svg/Noticed.svg";
 import Image from "next/image";
 
 const LHeader = () => {
@@ -105,11 +105,10 @@ export default function ChapterDialog({
                         opacity: [0, 1],
                     },
                     {
-                        duration: 0.1,
                         type: "spring",
                         damping: 10,
-                        stiffness: 100,
-                        mass: 0.1,
+                        stiffness: 125,
+                        mass: 0.075,
                     }
                 );
             }
@@ -121,11 +120,10 @@ export default function ChapterDialog({
                     height: ["15dvh", "95dvh"],
                 },
                 {
-                    duration: 0.1,
                     type: "spring",
                     damping: 10,
-                    stiffness: 100,
-                    mass: 0.1,
+                    stiffness: 125,
+                    mass: 0.075,
                 }
             );
 
@@ -137,11 +135,10 @@ export default function ChapterDialog({
                     },
                     {
                         delay: 0.05 * idxm,
-                        duration: 0.5,
                         type: "spring",
                         stiffness: 700,
                         damping: 40,
-                        mass: 3,
+                        mass: 2.5,
                     }
                 );
             });
@@ -152,11 +149,10 @@ export default function ChapterDialog({
                     width: ["25vw", "95vw"],
                 },
                 {
-                    duration: 0.1,
                     type: "spring",
                     damping: 10,
-                    stiffness: 100,
-                    mass: 0.1,
+                    stiffness: 125,
+                    mass: 0.075,
                 }
             );
 
@@ -201,11 +197,10 @@ export default function ChapterDialog({
                 height: ["95dvh", "15dvh"],
             },
             {
-                duration: 0.1,
                 type: "spring",
                 damping: 10,
-                stiffness: 100,
-                mass: 0.1,
+                stiffness: 125,
+                mass: 0.075,
             }
         );
 
@@ -215,11 +210,10 @@ export default function ChapterDialog({
                 opacity: [1, 0],
             },
             {
-                duration: 0.1,
                 type: "spring",
                 damping: 10,
-                stiffness: 100,
-                mass: 0.1,
+                stiffness: 125,
+                mass: 0.075,
             }
         );
 
@@ -230,11 +224,10 @@ export default function ChapterDialog({
                 opacity: [1, 0],
             },
             {
-                duration: 0.1,
                 type: "spring",
                 damping: 10,
-                stiffness: 100,
-                mass: 0.1,
+                stiffness: 125,
+                mass: 0.075,
             }
         );
 
@@ -602,7 +595,7 @@ export default function ChapterDialog({
                             </div>
                             <div className="w-full h-[1.5px] bg-[rgba(0,0,0,0.25)] mt-5 md1:block hidden" />
                             <div
-                                className="overflow-y-auto overflow-x-hidden font-light shrink text-[15px] md1:mb-0 mb-4 mt-4 flex-[0_1_auto]"
+                                className="overflow-y-auto overflow-x-hidden font-light shrink text-[15px] md1:mb-0 mb-4 mt-4 flex-[0_1_auto] lg3:text-lg"
                                 ref={descriptionRef}
                             >
                                 {description[id][idx]}

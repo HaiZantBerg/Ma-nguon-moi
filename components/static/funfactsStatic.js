@@ -1,5 +1,5 @@
-import depressedAristotle from "@/Image/aristotlecantdopoetic.png";
-import logicBread from "@/Image/logicbread.png";
+import depressedAristotle from "@/public/Image/aristotlecantdopoetic.png";
+import logicBread from "@/public/Image/logicbread.png";
 import Image from "next/image";
 
 export const images = [

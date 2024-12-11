@@ -781,7 +781,7 @@ export default function Slider({ id }: { id: number }) {
                     width={2400}
                     height={500}
                     viewBox="0 0 2400 500"
-                    className="absolute xxlg:stroke-[3px] sm:stroke-[2.5px] stroke-[1.75px] md1:scale-125 scale-100 md1:translate-y-28 translate-y-10"
+                    className="absolute xxlg:stroke-[2.75px] sm:stroke-[2.5px] stroke-[1.75px] md1:scale-125 scale-100 md1:translate-y-28 translate-y-10"
                 >
                     <path
                         d="M1200 550 L100 550 C -100 -40 2500 -40 2300 550 Z"
@@ -805,7 +805,7 @@ export default function Slider({ id }: { id: number }) {
                         >
                             <svg
                                 viewBox="-2 -2 129 34"
-                                className="md1:w-[340px] md1:h-[85px] sm:w-[400px] sm:h-[100px] w-[360px] h-[90px] xxlg:stroke-[1.25px] sm:stroke-[1px] stroke-[0.75px]"
+                                className="md1:w-[340px] md1:h-[85px] sm:w-[400px] sm:h-[100px] w-[360px] h-[90px] xxlg:stroke-[1.1px] sm:stroke-[1px] stroke-[0.75px]"
                             >
                                 <defs>
                                     <linearGradient

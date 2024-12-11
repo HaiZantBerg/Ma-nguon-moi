@@ -27,42 +27,42 @@ body {
 @layer base {
     @font-face {
         font-family: "Chakra Petch";
-        src: url("../font/ChakraPetch-Medium.ttf");
+        src: url("../public/font/ChakraPetch-Medium.ttf");
         font-weight: 500;
         font-style: normal;
     }
 
     @font-face {
         font-family: "Chakra Petch";
-        src: url("../font/ChakraPetch-Regular.ttf");
+        src: url("../public/font/ChakraPetch-Regular.ttf");
         font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family: "Chakra Petch";
-        src: url("../font/ChakraPetch-Light.ttf");
+        src: url("../public/font/ChakraPetch-Light.ttf");
         font-weight: 300;
         font-style: normal;
     }
 
     @font-face {
         font-family: "Chakra Petch";
-        src: url("../font/ChakraPetch-Bold.ttf");
+        src: url("../public/font/ChakraPetch-Bold.ttf");
         font-weight: bold;
         font-style: normal;
     }
 
     @font-face {
         font-family: "Chakra Petch";
-        src: url("../font/ChakraPetch-SemiBold.ttf");
+        src: url("../public/font/ChakraPetch-SemiBold.ttf");
         font-weight: 600;
         font-style: normal;
     }
 
     @font-face {
         font-family: "Algerian";
-        src: url("../font/Algerian.woff");
+        src: url("../public/font/Algerian.woff");
         font-weight: normal;
         font-style: normal;
     }

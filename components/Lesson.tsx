@@ -1,16 +1,14 @@
 "use client";
 
-import React, { useRef } from "react";
-// import Drawer from "./Drawer";
-// import Image from "next/image";
-// import Aristotle from "@/Image/image-removebg-preview.png";
-// import GeorgeBoole from "@/Image/george-boole.png";
+import React, { useRef, useState } from "react";
 import { lessonsToggle, timelineStar } from "./static/lessonsStatic";
 import "katex/dist/katex.min.css";
 import { InlineMath } from "react-katex";
 import { useAnimate } from "framer-motion";
+import ReactPlayer from "react-player/lazy";
 
-const generalClassName = "md1:pl-[70px] pl-[50px] md1:pr-0 pr-1 ";
+const generalClassName =
+    "md1:pl-[70px] pl-[35px] md1:pr-0 pr-1 lg3:text-lg md1:pr-0 pr-5";
 
 const Menhde = () => {
     return (
@@ -136,58 +134,65 @@ const Menhde = () => {
 };
 
 const Taphop = () => {
+    const [playVideo, setPlayVideo] = useState<boolean>(true);
+
+    const handleStartVideo = (idx: number) => {
+        setPlayVideo(!playVideo);
+    };
+
     return (
-        <div className="overflow-x-auto overflow-y-hidden grid grid-cols-1 grid-rows-[repeat(6,auto)]">
+        <div className="grid grid-cols-1 grid-rows-[repeat(6,auto)]">
             <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.6px]" />
             <div className="col-[1/-1] row-[1/2] relative z-10 h-fit mt-[10px]">
                 <div className="md:h-[75px] h-[51.5px]">
                     {timelineStar[0][0][0]}
                 </div>
-                <div className={generalClassName}>
-                    Cantor và tập hợp: Vào cuối thế kỷ 19, Georg Cantor đã giới
-                    thiệu khái niệm về tập hợp (set) trong toán học, coi tập hợp
-                    là một tập hợp các đối tượng hoặc phần tử mà có thể được xác
-                    định rõ ràng. Cantor không chỉ khái quát hóa các tập hợp hữu
-                    hạn mà còn mở rộng ra tập hợp vô hạn.
-                    <br />
-                    Lý thuyết tập hợp vô hạn: Một trong những đóng góp quan
-                    trọng của Cantor là sự phân biệt giữa các loại vô hạn. Ông
-                    phát hiện rằng không phải tất cả các tập hợp vô hạn đều có
-                    cùng kích thước (số lượng phần tử). Cantor đưa ra khái niệm
-                    về số siêu hạn (cardinality), trong đó có sự phân biệt giữa
-                    tập hợp đếm được (countably infinite) như tập các số tự
-                    nhiên và tập hợp không đếm được (uncountably infinite) như
-                    tập các số thực. Ví dụ, tập các số tự nhiên{" "}
-                    <InlineMath math="\mathbb{N}" />={"{1, 2, 3,…}"} là một tập
-                    hợp đếm được.
-                    <br />
-                    Tập các số thực <InlineMath math="\mathbb{R}" /> lại không
-                    thể đếm được. Điều này được chứng minh qua định lý Cantor
-                    rằng không thể thiết lập một ánh xạ một - một giữa tập{" "}
-                    <InlineMath math="\mathbb{N}" /> và{" "}
-                    <InlineMath math="\mathbb{R}" />.
-                    <br />
-                    Các phép toán tập hợp cơ bản của Cantor:
-                    <br />
-                    Hợp tập (Union): Nếu A và B là hai tập hợp, thì hợp tập A{" "}
-                    <InlineMath math="\cup" /> B là tập hợp tất cả các phần tử
-                    thuộc A hoặc B, không trùng lặp.
-                    <br />
-                    Giao tập (Intersection): Giao tập A{" "}
-                    <InlineMath math="\cap" /> B là tập hợp tất cả các phần tử
-                    mà A và B cùng chia sẻ.
-                    <br />
-                    Hiệu tập (Difference): Hiệu tập A{" "}
-                    <InlineMath math="\setminus" /> B là tập hợp tất cả các phần
-                    tử thuộc A nhưng không thuộc B.
-                    <br />
-                    Tập con (Subset): Một tập hợp A là một tập con của tập hợp B
-                    (ký hiệu A <InlineMath math="\subset" /> B ) nếu mọi phần tử
-                    của A đều là phần tử của B.
+                <div
+                    className={`${generalClassName} grid lg2:grid-cols-[auto_auto] lg2:grid-rows-[auto_auto]`}
+                >
+                    <div className="col-[1/2] row-[1/2] font-semibold md1:text-[1.25rem] text-[1.125rem] mb-5">
+                        Người nguyên thủy đếm như thế nào?
+                    </div>
+                    <div
+                        className="lg2:col-[1/2] lg2:row-[2/-1] max-w-[400px] w-full aspect-[304/207] cursor-pointer"
+                        onClick={() => handleStartVideo(0)}
+                    >
+                        <ReactPlayer
+                            url="/videos/primitive.mp4"
+                            loop={!playVideo}
+                            playing={playVideo}
+                            onEnded={() => handleStartVideo(0)}
+                            muted
+                            width="100%"
+                            height="100%"
+                        />
+                        {/* <div className="border-black border lg2:sticky lg2:top-[20px] h-full w-full" /> */}
+                    </div>
+                    <p className="lg2:col-[2/-1] lg2:row-[2/-1] lg2:pl-5 lg2:pt-0 pt-5 md1:pr-5 md1:text-base text-sm">
+                        Khái niệm về số và quá trình đếm phát triển rất lâu
+                        trước khi lịch sử loài người được ghi chép lại bằng văn
+                        bản nên cách thức phát triển đó chỉ là những phỏng đoán
+                        của những thế hệ sau này. Người ta cho rằng ngay trong
+                        thời kỳ nguyên thủy xa xưa nhất, con người đã có những
+                        khái niệm sơ đẳng về số, để nhận ra sự nhiều hơn hoặc ít
+                        hơn khi một nhóm nhỏ các đồ vật được thêm vào hay lấy đi
+                        một số. Cùng với từng bước tiến xã hội, việc đếm trở
+                        thành một nhu cầu không thể thiếu được của con người.
+                        Một bộ lạc cần phải biết có bao nhiêu thành viên. Một
+                        người cần phải biết đàn gia súc của mình có bao nhiêu
+                        con. Có lẽ cách đếm sớm nhất là phương pháp đối chiếu
+                        đơn giản theo nguyên tắc tương ứng một - một. Chẳng hạn
+                        khi đếm cừu mỗi con cừu sẽ ứng với một ngón tay. Ngoài
+                        ra cách đếm có thể được thực hiện bằng cách tập hợp số
+                        viên đá sỏi hoặc qua những cái que, hoặc bằng cách vạch
+                        lên mặt đất hay một hòn đá có bề mặt phẳng và nhằn, hoặc
+                        bằng cách khắc các dấu chữ v trên một miếng gỗ, hoặc
+                        bằng thắt nút trên một sợi dây.
+                    </p>
                 </div>
             </div>
             <div className="col-[1/-1] row-[2/3] relative z-10 h-fit">
-                <div className="grid grid-rows-1 md:grid-cols-[28.5px_auto] grid-cols-[20px_auto]">
+                {/* <div className="grid grid-rows-1 md:grid-cols-[28.5px_auto] grid-cols-[20px_auto]">
                     <div className="col-[1/2] row-[1/-1]">
                         {timelineStar[0][0][1]}
                     </div>
@@ -195,284 +200,28 @@ const Taphop = () => {
                         {timelineStar[0][0][2]}
                         {timelineStar[0][0][3]}
                     </div>
-                </div>
-                <div className={generalClassName}>
-                    Frege sử dụng khái niệm {'"'}tập hợp{'"'} trong lý thuyết
-                    của ông, đặc biệt là trong cách ông định nghĩa khái niệm.
-                    Theo Frege, một khái niệm toán học là một tập hợp của các
-                    đối tượng thỏa mãn một thuộc tính cụ thể. Ví dụ, {'"'}tập
-                    hợp tất cả các số chẵn{'"'} là một tập hợp mà phần tử của nó
-                    là những số tự nhiên chẵn.
-                    <br />
-                    Frege không chỉ định nghĩa tập hợp như là một tập hợp các
-                    đối tượng vật lý mà ông coi tập hợp là một đối tượng toán
-                    học chính thống, có thể được mô tả và sử dụng trong các phép
-                    toán toán học. Frege tin rằng lý thuyết tập hợp của ông có
-                    thể giúp xác định một cách chính xác các khái niệm trong
-                    toán học.
+                </div> */}
+                <div className="col-[1/-1] row-[1/2] relative z-10 h-fit mt-[10px]">
+                    <div className="md:h-[75px] h-[51.5px]">{}</div>
+                    <div className={generalClassName}></div>
                 </div>
             </div>
             <div className="col-[1/-1] row-[3/4] relative z-10 h-fit">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar[0][0][4]}
-                </div>
-                <div className={generalClassName}>
-                    Tuy nhiên, lý thuyết tập hợp của Frege gặp phải một vấn đề
-                    lớn khi Bertrand Russell phát hiện ra nghịch lý Russell vào
-                    năm 1901. Nghịch lý này xuất hiện trong lý thuyết của Frege
-                    khi ông cố gắng định nghĩa tập hợp của tất cả các tập hợp
-                    không phải là phần tử của chính nó. Bertrand Russell và
-                    nghịch lý của tập hợp:
-                    <br />
-                    Nghịch lý Russell là một trong những mâu thuẫn quan trọng
-                    nhất trong lý thuyết tập hợp, được Bertrand Russell phát
-                    hiện vào năm 1901. Nghịch lý này liên quan đến tập hợp chứa
-                    chính nó như một phần tử. Cụ thể, nếu ta định nghĩa tập hợp{" "}
-                    <InlineMath math="\mathbb{R}" /> là tập hợp của tất cả các
-                    tập hợp không phải là phần tử của chính nó, thì câu hỏi đặt
-                    ra là: liệu <InlineMath math="\mathbb{R}" /> có phải là phần
-                    tử của chính nó không?
-                    <br />
-                    Nếu <InlineMath math="\mathbb{R}" />{" "}
-                    <InlineMath math="\in" /> <InlineMath math="\mathbb{R}" />,
-                    thì theo định nghĩa <InlineMath math="\mathbb{R}" /> phải
-                    không phải là phần tử của chính nó, điều này mâu thuẫn.
-                    <br />
-                    Nếu <InlineMath math="\mathbb{R}" />{" "}
-                    <InlineMath math="\notin" />{" "}
-                    <InlineMath math="\mathbb{R}" />, thì theo định nghĩa,{" "}
-                    <InlineMath math="\mathbb{R}" /> phải là phần tử của chính
-                    nó, lại dẫn đến mâu thuẫn.
-                    <br />
-                    <InlineMath math="\Rightarrow" /> Hệ quả của nghịch lý: Sau
-                    khi nghịch lý Russell được phát hiện, Frege nhận ra rằng lý
-                    thuyết tập hợp của ông không thể hoạt động như một nền tảng
-                    vững chắc cho toán học. Trong một lá thư gửi Russell, Frege
-                    đã thể hiện sự thất vọng sâu sắc về việc lý thuyết của ông
-                    bị phá vỡ. Nghịch lý này là một trong những lý do quan trọng
-                    dẫn đến sự phát triển của các lý thuyết tập hợp sau này, vào
-                    những năm 1920 để tránh các nghịch lý như của Frege và
-                    Russell. Zermelo-Fraenkel sử dụng các tiên đề để hạn chế các
-                    tập hợp không hợp lệ và bảo vệ lý thuyết tập hợp khỏi các
-                    nghịch lý.
+                <div className="col-[1/-1] row-[1/2] relative z-10 h-fit mt-[10px]">
+                    <div className="md:h-[75px] h-[51.5px]">{}</div>
+                    <div className={generalClassName}></div>
                 </div>
             </div>
             <div className="col-[1/-1] row-[4/5] relative z-10 h-fit">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar[0][0][5]}
-                </div>
-                <div className={generalClassName}>
-                    Lý thuyết tập hợp tiên đề Zermelo-Fraenkel là một hệ thống
-                    tiên đề được phát triển vào những năm 1920 để giải quyết các
-                    vấn đề và nghịch lý trong lý thuyết tập hợp, đặc biệt là
-                    nghịch lý Russell. Hệ thống này được xây dựng bởi Ernst
-                    Zermelo và sau đó được mở rộng bởi Abraham Fraenkel. Mục
-                    tiêu của lý thuyết này là tạo ra một nền tảng logic vững
-                    chắc cho lý thuyết tập hợp mà không gặp phải các nghịch lý
-                    như trong lý thuyết tập hợp trước đó của Frege.
-                    <br />
-                    Hệ tiên đề Zermelo-Fraenkel bao gồm các tiên đề cơ bản đảm
-                    bảo rằng các tập hợp có thể được xây dựng một cách hợp lý mà
-                    không gặp phải nghịch lý. Một trong những tiên đề quan trọng
-                    trong lý thuyết này là tiên đề tập hợp trống và tập hợp con.
-                    Tiên đề Zermelo-Fraenkel:
-                    <br />
-                    Tiên đề tập hợp trống: Có tồn tại một tập hợp không có phần
-                    tử nào (tập hợp rỗng, ký hiệu{" "}
-                    <InlineMath math="\varnothing" />
-                    ).
-                    <br />
-                    Tiên đề hình thành: Nếu A là tập hợp, thì tồn tại một tập
-                    hợp con của A có các phần tử là các tập hợp con của các phần
-                    tử trong A.
-                    <br />
-                    Tiên đề lựa chọn: Tiên đề này cho phép chọn phần tử từ mỗi
-                    tập hợp không rỗng. Đây là một tiên đề quan trọng trong lý
-                    thuyết tập hợp, mặc dù đôi khi nó có thể dẫn đến các kết quả
-                    phi trực quan.
+                <div className="col-[1/-1] row-[1/2] relative z-10 h-fit mt-[10px]">
+                    <div className="md:h-[75px] h-[51.5px]">{}</div>
+                    <div className={generalClassName}></div>
                 </div>
             </div>
             <div className="col-[1/-1] row-[5/6] relative z-10 h-fit">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar[0][0][6]}
-                </div>
-                <div className={generalClassName}>
-                    <div>Lý thuyết tập hợp và các phép toán nâng cao</div>
-                    Khái niệm về thứ tự và số hạng (Ordinal and Cardinal
-                    Numbers):
-                    <br />
-                    Trong lý thuyết tập hợp, số hạng (ordinal numbers) dùng để
-                    chỉ thứ tự của các phần tử trong một tập hợp (ví dụ: {'"'}
-                    phần tử thứ nhất{'"'}, {'"'}phần tử thứ hai{'"'},...).
-                    <br />
-                    Số cardinal là một khái niệm quan trọng dùng để chỉ kích
-                    thước hoặc số lượng phần tử của một tập hợp. Số cardinal có
-                    thể là hữu hạn hoặc vô hạn. Lý thuyết mô hình (Model Theory)
-                    và ứng dụng trong lý thuyết tập hợp:
-                    <br />
-                    Vào nửa sau thế kỷ 20, lý thuyết tập hợp trở thành cơ sở cho
-                    lý thuyết mô hình, trong đó các mô hình toán học được mô tả
-                    bằng các tập hợp và phép toán trên chúng. Lý thuyết mô hình
-                    giúp giải quyết các câu hỏi về sự đúng đắn và tính khả thi
-                    của các lý thuyết toán học.
-                    <div>
-                        Ứng dụng lý thuyết tập hợp trong khoa học máy tính
-                    </div>
-                    Khoa học máy tính:
-                    <br />
-                    Ngôn ngữ lập trình: Các ngôn ngữ lập trình sử dụng các cấu
-                    trúc dữ liệu như danh sách, tập hợp và mảng, trong đó tập
-                    hợp là một công cụ quan trọng để tổ chức và thao tác dữ
-                    liệu. <br /> Cơ sở dữ liệu: Trong lý thuyết cơ sở dữ liệu,
-                    tập hợp được sử dụng để mô hình hóa các đối tượng dữ liệu và
-                    quan hệ giữa chúng.
-                    <br />
-                    Các ứng dụng khác:
-                    <br />
-                    Lý thuyết đồ thị: Các tập hợp và phép toán trên tập hợp cũng
-                    được ứng dụng trong lý thuyết đồ thị, nơi các đỉnh và cạnh
-                    có thể được coi là các phần tử trong các tập hợp.
-                    <br />
-                    Lý thuyết thông tin và mã hóa: Tập hợp cũng là công cụ quan
-                    trọng trong lý thuyết mã hóa, nơi các tập hợp của các mã có
-                    thể được sử dụng để đảm bảo tính chính xác trong việc truyền
-                    tải thông tin.
-                    <br />
-                    Định lý Cantor (hay Định lý Cantor về tính không đếm được)
-                    khẳng định rằng tập hợp các số thực (
-                    <InlineMath math="\mathbb{R}" />) có {'"'}số phần tử{'"'}{" "}
-                    nhiều hơn tập hợp các số tự nhiên (
-                    <InlineMath math="\mathbb{N}" />
-                    ), tức là tập các số thực không thể đếm được. Cụ thể, định
-                    lý này chỉ ra rằng không tồn tại một ánh xạ một-một (hay một
-                    phép biên dịch) giữa tập hợp các số tự nhiên và tập hợp các
-                    số thực. Nói cách khác, tập các số thực là vô hạn nhưng
-                    không thể đếm được, có {'"'}số siêu hạn{'"'} lớn hơn tập hợp
-                    các số tự nhiên. Định lý này được chứng minh bởi Cantor vào
-                    năm 1874, sử dụng một kỹ thuật gọi là phương pháp đối chứng
-                    (diagonalization argument).
-                    <br />
-                    Lý thuyết mô hình (Model Theory) là một nhánh quan trọng của
-                    toán học và logic học, nghiên cứu mối quan hệ giữa các lý
-                    thuyết toán học (thường được biểu diễn qua hệ thống tiên đề
-                    hoặc ngôn ngữ hình thức) và các mô hình mà lý thuyết đó mô
-                    tả. Mô hình trong lý thuyết mô hình là một cấu trúc toán học
-                    xác định một lý thuyết cụ thể, trong đó các tiên đề của lý
-                    thuyết này được thỏa mãn. Lý thuyết mô hình có ứng dụng rộng
-                    rãi trong nhiều lĩnh vực, từ lý thuyết tập hợp, lý thuyết đồ
-                    thị, đến lý thuyết đồ thị trong khoa học máy tính và logic
-                    học.
-                    <br />
-                    1. Khái niệm cơ bản trong lý thuyết mô hình Lý thuyết
-                    (Theory): Là một tập hợp các tiên đề được mô tả bằng một
-                    ngôn ngữ logic cụ thể. Ví dụ, trong lý thuyết tập hợp, các
-                    tiên đề Zermelo-Fraenkel là một lý thuyết, và lý thuyết số
-                    học có thể được mô tả qua các tiên đề liên quan đến các số
-                    tự nhiên.
-                    <br />
-                    Mô hình (Model): Một mô hình của một lý thuyết là một cấu
-                    trúc toán học cụ thể trong đó các công thức của lý thuyết
-                    này được thỏa mãn. Một mô hình bao gồm một tập hợp các đối
-                    tượng (các phần tử) và một số phép toán hoặc quan hệ định
-                    nghĩa giữa các đối tượng này, sao cho các tiên đề của lý
-                    thuyết đều được thỏa mãn trong mô hình đó.
-                    <br />
-                    Ví dụ, trong lý thuyết số học, tập hợp các số tự nhiên với
-                    phép cộng và nhân là một mô hình của lý thuyết số học
-                    (theory of natural numbers).
-                    <br />
-                    Công thức (Sentence): Là các biểu thức logic được xây dựng
-                    từ các ký hiệu, quan hệ và phép toán trong ngôn ngữ của lý
-                    thuyết.
-                    <br />
-                    2. Các loại mô hình
-                    <br />
-                    Mô hình chuẩn (Standard model): Là mô hình mà trong đó các
-                    khái niệm của lý thuyết được mô tả theo cách {'"'}bình
-                    thường{'"'}
-                    hoặc {'"'}tiêu chuẩn{'"'}. Ví dụ, trong lý thuyết số học, mô
-                    hình chuẩn là tập hợp các số tự nhiên cùng với các phép toán
-                    cộng và nhân thông thường.
-                    <br />
-                    Mô hình không chuẩn (Non-standard model): Là mô hình của lý
-                    thuyết mà các phần tử của mô hình không hoàn toàn tuân theo
-                    cấu trúc mà lý thuyết mô tả. Ví dụ, trong lý thuyết số học,
-                    có những mô hình không chuẩn của lý thuyết này, trong đó có
-                    các {'"'}số tự nhiên không chuẩn{'"'} không xuất hiện trong
-                    tập hợp số tự nhiên tiêu chuẩn.
-                    <br />
-                    3. Các khái niệm quan trọng trong lý thuyết mô hình
-                    <br />
-                    Đúng đắn (Soundness): Một lý thuyết là đúng đắn nếu tất cả
-                    các công thức mà lý thuyết chứng minh được đều đúng trong
-                    mọi mô hình của lý thuyết đó.
-                    <br />
-                    Đầy đủ (Completeness): Một lý thuyết là đầy đủ nếu tất cả
-                    các công thức đúng trong mọi mô hình của lý thuyết đó đều có
-                    thể được chứng minh từ lý thuyết.
-                    <br />
-                    Tính độc lập (Independence): Một tập hợp các công thức là
-                    độc lập nếu không có công thức nào có thể được suy luận từ
-                    các công thức còn lại.
-                    <br />
-                    Tính xác định (Definability): Một khái niệm trong lý thuyết
-                    được gọi là có thể định nghĩa được nếu có một công thức
-                    logic có thể mô tả nó trong một mô hình sao cho các phần tử
-                    của mô hình có đặc tính đó.
-                    <br />
-                    4. Các khái niệm cơ bản khác
-                    <br />
-                    Tính đúng đắn (Satisfiability): Một lý thuyết hoặc một công
-                    thức được gọi là {'"'}đúng đắn{'"'} nếu có ít nhất một mô
-                    hình mà trong đó công thức hoặc lý thuyết đó được thỏa mãn.
-                    <br />
-                    Tính quyết định (Decidability): Tính quyết định của lý
-                    thuyết có nghĩa là có thể xây dựng một thuật toán để quyết
-                    định xem một công thức có đúng trong mô hình của lý thuyết
-                    hay không. Một lý thuyết là quyết định được nếu có một thuật
-                    toán xác định cho phép kiểm tra tính đúng đắn của các công
-                    thức trong lý thuyết.
-                    <br />
-                    Tính xác định của lý thuyết (Categoricity): Một lý thuyết
-                    được gọi là {'"'}đúng đắn{'"'} hoặc {'"'}đặc trưng{'"'}{" "}
-                    (categorical) nếu mọi mô hình của lý thuyết đó là đồng nhất
-                    (tức là chỉ có một mô hình duy nhất) hoặc có một mô hình duy
-                    nhất trong một không gian cụ thể.
-                    <br />
-                    5. Ứng dụng của lý thuyết mô hình
-                    <br />
-                    Logic học và phân tích tiên đề: Lý thuyết mô hình giúp phân
-                    tích tính đúng đắn và tính đầy đủ của các lý thuyết toán học
-                    và logic học. Nó giúp kiểm tra xem một lý thuyết có thể mô
-                    tả chính xác các cấu trúc toán học mà nó muốn nghiên cứu hay
-                    không.
-                    <br />
-                    Lý thuyết tập hợp: Lý thuyết mô hình được sử dụng để phân
-                    tích các mô hình của lý thuyết tập hợp, bao gồm các mô hình
-                    chuẩn và không chuẩn. Nó giúp hiểu rõ hơn về các tiên đề
-                    trong lý thuyết tập hợp, đặc biệt là liên quan đến các tiên
-                    đề như Axiom of Choice và các lý thuyết vô hạn.
-                    <br />
-                    Lý thuyết nhóm và lý thuyết đồ thị: Lý thuyết mô hình cũng
-                    có ứng dụng trong lý thuyết nhóm (group theory) và lý thuyết
-                    đồ thị, nơi các cấu trúc mô hình được sử dụng để nghiên cứu
-                    các đặc tính của các đối tượng toán học này.
-                    <br />
-                    Khoa học máy tính: Trong khoa học máy tính, lý thuyết mô
-                    hình giúp nghiên cứu các mô hình tính toán và các hệ thống
-                    lý thuyết phức tạp, đặc biệt trong việc hiểu các lý thuyết
-                    tính toán như lý thuyết phức tạp và lý thuyết tự động.
-                    <br />
-                    6. Các định lý quan trọng Định lý hoàn chỉnh của Gödel: Định
-                    lý này chứng minh rằng trong một hệ thống hình thức đầy đủ
-                    và đúng đắn, nếu một công thức là đúng trong tất cả các mô
-                    hình của lý thuyết, thì công thức đó có thể được chứng minh
-                    từ các tiên đề của lý thuyết.
-                    <br />
-                    Định lý không đầy đủ của Gödel: Định lý này chỉ ra rằng
-                    trong mọi hệ thống tiên đề đủ mạnh để bao gồm lý thuyết số
-                    học, luôn tồn tại những câu hỏi đúng mà không thể chứng minh
-                    được trong hệ thống đó (tức là không đầy đủ).
+                <div className="col-[1/-1] row-[1/2] relative z-10 h-fit mt-[10px]">
+                    <div className="md:h-[75px] h-[51.5px]">{}</div>
+                    <div className={generalClassName}></div>
                 </div>
             </div>
         </div>

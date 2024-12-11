@@ -7,15 +7,11 @@ interface ChapterData {
 }
 
 const db = new Dexie("EThemsDatabase") as Dexie & {
-    chapterData: EntityTable<
-        ChapterData,
-        "id" // primary key "id" (for the typings only)
-    >;
+    chapterData: EntityTable<ChapterData, "id">;
 };
 
-// Schema declaration:
 db.version(1).stores({
-    chapterData: "id, curGrade, curChapter", // primary key "id" (for the runtime!)
+    chapterData: "id, curGrade, curChapter",
 });
 
 export { db };

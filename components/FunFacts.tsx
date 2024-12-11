@@ -9,7 +9,7 @@ import {
 } from "./static/funfactsStatic";
 import { useAnimate } from "framer-motion";
 import Image from "next/image";
-import cross from "@/Svg/Cross.svg";
+import cross from "@/public/Svg/Cross.svg";
 
 const FunFact1 = ({ idxf, idxc }: { idxf: number; idxc: number }) => {
     const [openFlipCard, setOpenFlipCard] = useState<[number, number]>([

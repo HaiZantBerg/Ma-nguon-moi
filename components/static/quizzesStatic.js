@@ -1,5 +1,5 @@
 import Image from "next/image";
-import behumble from "@/Image/behumble.png";
+import behumble from "@/public/Image/behumble.png";
 
 import React from "react";
 

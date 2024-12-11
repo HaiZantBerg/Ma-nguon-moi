@@ -5,7 +5,6 @@ const config: Config = {
         "./pages/**/*.{js,ts,jsx,tsx,mdx}",
         "./components/**/*.{js,ts,jsx,tsx,mdx}",
         "./app/**/*.{js,ts,jsx,tsx,mdx}",
-        "./Svg/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
         extend: {
@@ -19,6 +18,7 @@ const config: Config = {
             screens: {
                 lgmi: "971px",
                 xxlg: "1730px",
+                lg2: "1300px",
                 lgpl: "1200px",
                 lg3: "1450px",
                 md1: "1100px",

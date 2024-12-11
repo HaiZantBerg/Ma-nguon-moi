@@ -2,7 +2,6 @@
 
 import React, { useRef } from "react";
 import { useAnimate } from "framer-motion";
-// import ReactPlayer from "react-player/lazy";
 import {
     quizName,
     answerArray,
@@ -15,7 +14,7 @@ import {
     choiceColorHover,
     quizExplaination,
 } from "./static/quizzesStatic";
-import cross from "@/Svg/Cross.svg";
+import cross from "@/public/Svg/Cross.svg";
 import Image from "next/image";
 
 const Quiz1 = ({ idxq, idxc }: { idxq: number; idxc: number }) => {
@@ -271,7 +270,7 @@ const QuizCard = ({
                         />
                     </button>
                     <div className="h-full flex flex-col mx-1">
-                        <div className="text-center md1:text-2xl text-[1.2rem] font-semibold md1:px-2 px-[24px]">
+                        <div className="text-center lg3:text-3xl md1:text-2xl text-[1.2rem] font-semibold md1:px-2 px-[24px]">
                             {quizName}
                         </div>
                         <div
@@ -288,13 +287,13 @@ const QuizCard = ({
                                     .map((text, idxt) => (
                                         <div
                                             key={idxt}
-                                            className="whitespace-pre text-wrap font-medium md1:text-[1rem] md1:leading-[1.5rem] text-[0.8rem] leading-[1.15rem]"
+                                            className="whitespace-pre text-wrap font-medium lg3:text-lg md1:text-[1rem] md1:leading-[1.5rem] text-[0.8rem] leading-[1.15rem]"
                                         >
                                             {text}
                                         </div>
                                     ))}
                             </div>
-                            <div className="flex flex-wrap gap-[0.5rem] w-full justify-center mt-3 mb-6 col-[1/-1] row-[2/3]">
+                            <div className="flex flex-wrap gap-[0.5rem] w-full justify-center mt-3 mb-6 col-[1/-1] row-[2/3] lg3:text-lg">
                                 {choices.map((choice, idxc) => (
                                     <div
                                         key={idxc}
@@ -385,7 +384,7 @@ const QuizCard = ({
                                         </svg>
                                     </div>
                                     <div
-                                        className="text-[rgba(0,0,0,0.25)] text-sm"
+                                        className="text-[rgba(0,0,0,0.25)] lg3:text-base text-sm"
                                         id="textOpenExplaination"
                                     >
                                         Xem giải thích
