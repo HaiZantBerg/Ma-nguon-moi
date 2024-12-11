@@ -140,8 +140,6 @@ const Taphop = () => {
         setPlayVideo(!playVideo);
     };
 
-    console.log(process.env.NEXT_PUBLIC_PUBLIC_URL);
-
     return (
         <div className="grid grid-cols-1 grid-rows-[repeat(6,auto)]">
             <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.6px]" />
