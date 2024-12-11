@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    webpack(config, options) {
+    reactStrictMode: false,
+    webpack: (config, options) => {
         config.module.rules.push({
             test: /\.mp4$/,
             use: {
@@ -12,6 +13,7 @@ const nextConfig = {
                 },
             },
         });
+
         return config;
     },
 };

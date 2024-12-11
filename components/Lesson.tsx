@@ -158,7 +158,7 @@ const Taphop = () => {
                         onClick={() => handleStartVideo(0)}
                     >
                         <ReactPlayer
-                            url="/videos/primitive.mp4"
+                            url={`${process.env.NEXT_PUBLIC_PUBLIC_URL}/videos/primitive.mp4`}
                             loop={!playVideo}
                             playing={playVideo}
                             onEnded={() => handleStartVideo(0)}
