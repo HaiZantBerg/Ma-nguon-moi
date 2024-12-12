@@ -6,15 +6,13 @@ export default function page() {
             <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.6px]" />
             <div className="col-[1/-1] row-[1/2] relative z-10 h-fit mt-[10px]">
                 <div className="md:h-[75px] h-[51.5px]"></div>
-                <div className="h-[1000px] flex items-start justify-center w-full">
-                    <div className="w-[400px] aspect-[304/207] border-black border sticky top-0" />
-                </div>
                 <div
                     className={`grid grid-cols-[auto_auto] grid-rows-[auto_auto]`}
                 >
                     <div className="col-[1/2] row-[1/2] font-semibold text-[1.25rem] mb-5">
                         Người nguyên thủy đếm như thế nào?
                     </div>
+
                     <div className="col-[1/2] row-[2/-1]">
                         {/* <ReactPlayer
                             url="/videos/primitive.mp4"
@@ -24,7 +22,7 @@ export default function page() {
                         /> */}
                         <div className="w-[400px] aspect-[304/207] border-black border sticky top-0" />
                     </div>
-                    <p className="col-[2/-1] row-[2/-1]">
+                    <div className="col-[2/-1] row-[2/-1] h-[1000px]">
                         Khái niệm về số và quá trình đếm phát triển rất lâu
                         trước khi lịch sử loài người được ghi chép lại bằng văn
                         bản nên cách thức phát triển đó chỉ là những phỏng đoán
@@ -44,7 +42,7 @@ export default function page() {
                         lên mặt đất hay một hòn đá có bề mặt phẳng và nhằn, hoặc
                         bằng cách khắc các dấu chữ v trên một miếng gỗ, hoặc
                         bằng thắt nút trên một sợi dây.
-                    </p>
+                    </div>
                 </div>
             </div>
             <div className="col-[1/-1] row-[2/3] relative z-10 h-fit">

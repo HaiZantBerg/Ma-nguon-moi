@@ -6,15 +6,21 @@ import "katex/dist/katex.min.css";
 import { InlineMath } from "react-katex";
 import { useAnimate } from "framer-motion";
 import ReactPlayer from "react-player/lazy";
+import Extra from "./Extra";
+import Image from "next/image";
+import Boner from "@/public/Image/boner.png";
+import Link from "next/link";
 
-const generalClassName =
-    "md1:pl-[70px] pl-[35px] md1:pr-0 pr-1 lg3:text-lg md1:pr-0 pr-5";
+const generalClassName = "md1:ml-[70px] ml-[35px] lg3:text-lg md1:mr-0 mr-5";
+const generalContentClassName =
+    "md1:text-base text-sm md1:leading-[26px] leading-[22px]";
+const generalInstanceClassName = "sm:pl-[24px] pl-[12px]";
 
 const Menhde = () => {
     return (
         <div className="overflow-x-auto overflow-y-hidden grid grid-cols-1 grid-rows-[repeat(4,auto)]">
             <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.6px]" />
-            <div className="col-[1/-1] row-[1/2] relative z-10 h-fit mt-[10px]">
+            <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
                 <div className="md:h-[75px] h-[51.5px]">{}</div>
                 <div className={generalClassName}>
                     Chúng ta hãy bắt đầu từ khoảng năm 384 TCN, khi Aristotle
@@ -46,7 +52,7 @@ const Menhde = () => {
                     đủ để giải quyết những thách thức của toán học hiện đại.
                 </div>
             </div>
-            <div className="col-[1/-1] row-[2/3] relative z-10 h-fit">
+            <div className="col-[1/-1] row-[2/3] h-fit">
                 <div className="md:h-[75px] h-[51.5px]">{}</div>
                 <div className={generalClassName}>
                     Trong giai đoạn này, các nhà logic học như William of Ockham
@@ -58,7 +64,7 @@ const Menhde = () => {
                     này.
                 </div>
             </div>
-            <div className="col-[1/-1] row-[3/4] relative z-10 h-fit">
+            <div className="col-[1/-1] row-[3/4] h-fit">
                 <div className="md:h-[75px] h-[51.5px]">{}</div>
                 <div className={generalClassName}>
                     Chuyển sang thế kỷ 19, một nhân vật mới xuất hiện: George
@@ -141,9 +147,9 @@ const Taphop = () => {
     };
 
     return (
-        <div className="grid grid-cols-1 grid-rows-[repeat(6,auto)]">
+        <div className="grid grid-cols-1 grid-rows-[repeat(6,auto)] relative">
             <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.6px]" />
-            <div className="col-[1/-1] row-[1/2] relative z-10 h-fit mt-[10px]">
+            <div className="col-[1/-1] row-[1/2] relative z-20 h-fit mt-[10px]">
                 <div className="md:h-[75px] h-[51.5px]">
                     {timelineStar[0][0][0]}
                 </div>
@@ -154,21 +160,27 @@ const Taphop = () => {
                         Người nguyên thủy đếm như thế nào?
                     </div>
                     <div
-                        className="lg2:col-[1/2] lg2:row-[2/-1] max-w-[400px] w-full aspect-[304/207] cursor-pointer"
+                        className="lg2:col-[1/2] lg2:row-[2/-1] cursor-pointer flex items-start"
                         onClick={() => handleStartVideo(0)}
                     >
-                        <ReactPlayer
-                            url={`${process.env.NEXT_PUBLIC_API_URL}/videos/primitive.mp4`}
-                            loop={!playVideo}
-                            playing={playVideo}
-                            onEnded={() => handleStartVideo(0)}
-                            muted
-                            width="100%"
-                            height="100%"
-                        />
-                        {/* <div className="border-black border lg2:sticky lg2:top-[20px] h-full w-full" /> */}
+                        <div className="lg2:sticky lg2:top-[20px] max-w-[400px] w-full aspect-[304/207] border">
+                            {/* <ReactPlayer
+                                url={
+                                    // {`${process.env.NEXT_PUBLIC_API_URL}/videos/primitive.mp4`}
+                                    `${process.env.NEXT_PUBLIC_PUBLIC_URL}/videos/primitive.mp4`
+                                }
+                                loop={!playVideo}
+                                playing={playVideo}
+                                onEnded={() => handleStartVideo(0)}
+                                muted
+                                width="100%"
+                                height="100%"
+                            /> */}
+                        </div>
                     </div>
-                    <p className="lg2:col-[2/-1] lg2:row-[2/-1] lg2:pl-5 lg2:pt-0 pt-5 md1:pr-5 md1:text-base text-sm">
+                    <div
+                        className={`${generalContentClassName} lg2:col-[2/-1] lg2:row-[2/-1] lg2:pl-5 lg2:pt-0 pt-5 md1:pr-5`}
+                    >
                         Khái niệm về số và quá trình đếm phát triển rất lâu
                         trước khi lịch sử loài người được ghi chép lại bằng văn
                         bản nên cách thức phát triển đó chỉ là những phỏng đoán
@@ -188,10 +200,182 @@ const Taphop = () => {
                         lên mặt đất hay một hòn đá có bề mặt phẳng và nhằn, hoặc
                         bằng cách khắc các dấu chữ v trên một miếng gỗ, hoặc
                         bằng thắt nút trên một sợi dây.
-                    </p>
+                    </div>
+                </div>
+                <div className="md1:ml-[70px] ml-[35px] md1:mr-0 mr-5 my-4">
+                    <Extra buttonContent="Xương Ishango" variant="aloneFact">
+                        <div className="w-full h-full text-lg flex lg3:flex-row flex-col gap-2 items-center">
+                            <div
+                                className={`${generalContentClassName} flex-[0_1_auto]`}
+                            >
+                                Xương Ishango có thể là hiện vật toán học cổ xưa
+                                nhất vẫn còn tồn tại đến ngày nay: nó được phát
+                                hiện vào năm 1950 tại Cộng hòa Dân chủ Congo ở
+                                khu vực Trung Phi, và được đặt tên theo khu vực
+                                nơi nó được tìm thấy. Hiện vật này có niên đại
+                                từ thời kỳ đồ đá cũ muộn trong lịch sử loài
+                                người, khoảng 20.000 năm trước. Chiếc xương dài
+                                10 cm và chứa một loạt các khía, mà nhiều nhà
+                                khoa học tin rằng đã được sử dụng để đếm. Cách
+                                nhóm các khía thậm chí có thể gợi ý về sự hiểu
+                                biết toán học cao cấp hơn, như hệ thập phân hoặc
+                                số nguyên tố. Khi đếm thì vấn đề nan giải tiếp
+                                theo mà con người phải vượt qua đó là khi số
+                                lượng cần phải đếm nhiều đáng kể, không thể nào
+                                mãi khắc vạch, không thể nào bổ sung mãi các hòn
+                                sỏi, que đếm, chuỗi hạt,… Làm sao để chỉ rõ con
+                                số lớn một cách đơn giản, với số lượng đối tượng
+                                được thể hiện ít nhất có thể? Thế là khái niệm
+                                cơ số được sinh ra.
+                            </div>
+                            <div className="lg3:flex-[1_0_50%]">
+                                <div className="w-full aspect-[595/311]">
+                                    <Image
+                                        src={Boner}
+                                        alt=""
+                                        className="w-full h-full"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </Extra>
+                </div>
+                <div className={`${generalClassName}`}>
+                    <div className="font-semibold md1:text-[1.25rem] text-[1.125rem] mb-5">
+                        Cơ số
+                    </div>
+                    <div className={`${generalContentClassName}`}>
+                        Để hiểu được khái niệm gây khá nhiều bối rối này, chúng
+                        ta bàn một chút về cách đếm hiện nay. Với chúng ta, mỗi
+                        khi đếm, cứ đủ mười thì được một chục, tiếp tục đêm đủ
+                        mười nữa, thì ta được hai chục,...và khi đủ mười chục
+                        thì được một trăm, mười trăm thì bằng một ngàn, mười
+                        ngàn thì là một vạn, mười vạn chính bằng một ức,... Kiểu
+                        đếm này bất cứ ai cũng đã được học ngay từ khi còn nhỏ.
+                        Thế nhưng, con người ở một số nền văn minh cổ đại xa xưa
+                        cũng như vài tộc người ngày nay lại có kiểu đếm khác.
+                        "Chục" của họ không hẳn là mười, chẳng hạn với "chục" là
+                        tám thì:
+                        <div className={`${generalInstanceClassName}`}>
+                            8 là một "chục"
+                        </div>
+                        <div className={`${generalInstanceClassName}`}>
+                            16 bằng hai lần tám nghĩa là hai "chục"
+                        </div>
+                        <div className={`${generalInstanceClassName}`}>
+                            24 bằng ba lần tám nghĩa là ba "chục"
+                        </div>
+                        Như vậy, có thể hiểu rằng Hệ cơ số n là một kiểu đếm mà
+                        mỗi "chục" bằng n.
+                    </div>
+                    <div className={`${generalContentClassName}`}>
+                        <br />
+                        Các cơ số phổ biến thường gặp:
+                        <div className={`${generalInstanceClassName}`}>
+                            <Extra
+                                buttonContent="Cơ số mười"
+                                variant="inlineFact"
+                                containerClassName="inline bg-black w-[100px] h-[100px]"
+                            >
+                                <div className="md:text-[0.9rem] text-sm">
+                                    Nó còn được thế hiện qua đơn vị đo lường
+                                    quốc tế về khoảng cách và khối lượng: hệ mét
+                                    và kilogam. Cứ đủ mười đơn vị sẽ cho ra một
+                                    cho đơn vị lớn hơn ngay trước đó. Tại sao cơ
+                                    số mười lại được con người chúng ta ưu ái
+                                    đền thế? Hầu như mọi dân tộc, hầu hết mọi
+                                    người đều đếm theo cơ số mười từ nhỏ. Tại
+                                    sao không phải là một cơ số nào đó khác? Có
+                                    phải vì bàn tay chúng ta có mười ngón nên cơ
+                                    số này hỗ trợ tốt cho việc đếm? Hay vì mười
+                                    là cơ số có lợi cho việc thực hiện phép
+                                    tính, nhất là khi nhân với mười hay một lũy
+                                    thừa của mười? Những câu hỏi như thế này
+                                    thường ít khi được nêu ra vì đếm theo mười
+                                    là một điều quá hiển nhiên, không có gì phải
+                                    thắc mắc. Sự thực thì cơ số mười không tốt
+                                    cho việc tính toán hơn so với những cơ số
+                                    khác, chẳng hạn như cơ số mười hai. Mười chỉ
+                                    chia hết cho hai và năm, trong khi mười hai
+                                    thì chia hết cho hai, ba, bốn và sáu. Vì
+                                    thế, đếm và tính theo cơ số mười hai vượt
+                                    trội hơn rất nhiều so với cơ số mười, nhất
+                                    là trong việc phân chia: phân nửa, một phần
+                                    ba, phần tư, thậm chí cả phần sáu. Thế thì
+                                    mười là cơ số có lợi cho việc tính toán
+                                    không phải là câu trả lời thỏa đáng. Vậy thì
+                                    chắc là do bàn tay con người có mười ngón.
+                                    Trong trường hợp chỉ có tám ngón thôi thì
+                                    liệu chúng ta có đếm theo cơ số tám? Hay vẫn
+                                    cứ luôn là cơ số mười? Thật khó lòng mà biết
+                                    được, nhưng khả năng cao sẽ là cơ số tám.
+                                    Nếu quả đúng vậy thì thật lạ, tư duy Toán
+                                    học của chúng ta, như bạn đã biết, hình
+                                    thành từ việc đếm, lại phụ thuộc vào cấu
+                                    trúc sinh học cơ thể, cấu trúc này lại hình
+                                    thành từ hàng loạt quá trình ngẫu nhiên và
+                                    tiến hóa. Sinh học đã tác động đến Toán học
+                                    theo cách không thể ngờ. Toán học ra đời từ
+                                    chính bàn tay của chúng ta theo đúng nghĩa
+                                    đen như vậy. Quả thực, khi ngẫm nghĩ về điều
+                                    này, chúng ta không khỏi có một cảm giác kì
+                                    lạ và bối rối. Trong khoa học, khi truy
+                                    nguyên tận cùng gốc rễ vấn đề thì câu trả
+                                    lời nhận được sẽ như một chiếc búa tạ đập
+                                    thẳng vào tâm thức khiến ta phải choáng
+                                    váng.
+                                    <br /> Nguồn{" "}
+                                    <Link
+                                        href="https://www.history-of-mathematics.org/"
+                                        className="underline text-white font-[450]"
+                                    >
+                                        https://www.history-of-mathematics.org/.
+                                    </Link>{" "}
+                                    Đây là trích đoạn từ De Temporum Ratione.
+                                    Trong chương đầu tiên của De Temporum
+                                    Ratione, mang tên “Tính toán hoặc nói chuyện
+                                    bằng ngón tay,” đã mô tả một hình thức đếm
+                                    bằng ngón tay.
+                                </div>
+                            </Extra>{" "}
+                            (hệ thập phân) là vô cùng phổ biến
+                        </div>
+                        <div className={`${generalInstanceClassName}`}>
+                            Phổ biến thứ hai sau cơ số mười là{" "}
+                            <Extra
+                                buttonContent="cơ số mười hai"
+                                variant="inlineFact"
+                                containerClassName="inline bg-black w-[100px] h-[100px]"
+                            >
+                                <div className="md:text-[0.9rem] text-sm">
+                                    Mười hai bằng một tá, kiểu đếm này vẫn còn
+                                    được dùng, điển hình là số lượng trứng và
+                                    vài trường hợp ở các nước Anh, Mỹ. Thời cổ
+                                    đại, người Sumer chia một ngày làm mười hai
+                                    danna, một danna tương ứng hai giờ đồng hồ
+                                    hiện nay; họ cũng chia một đường tròn làm
+                                    mười hai phần bằng nhau, mỗi cung có số đo
+                                    30°. Vì sao lại là con số mười hai? Cũng như
+                                    cơ số mười, nguồn gốc của nó cũng có thể tạm
+                                    giải thích theo chính bàn tay con người. Bốn
+                                    ngón gồm ngón trỏ, ngón giữa, ngón áp út và
+                                    ngón út, mỗi ngón được chia làm ba đốt, tổng
+                                    cộng mười hai đốt, riêng ngón cái có chức
+                                    năng chỉ lần lượt mỗi mười hai đốt này khi
+                                    đếm. Đếm theo kiểu này rất thuận tiện vì chỉ
+                                    cần một tay, tay còn lại có thể ghi chép lại
+                                    số liệu. Bàn tay người vẫn chỉ là một giả
+                                    thuyết cho việc sử dụng cơ số mười hai, một
+                                    lời giải thích đơn giản hơn có thể là bởi sự
+                                    thuận tiện trong tính toán của cơ số mười
+                                    hai.
+                                </div>
+                            </Extra>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div className="col-[1/-1] row-[2/3] relative z-10 h-fit">
+            <div className="col-[1/-1] row-[2/3] h-fit">
                 {/* <div className="grid grid-rows-1 md:grid-cols-[28.5px_auto] grid-cols-[20px_auto]">
                     <div className="col-[1/2] row-[1/-1]">
                         {timelineStar[0][0][1]}
@@ -201,25 +385,25 @@ const Taphop = () => {
                         {timelineStar[0][0][3]}
                     </div>
                 </div> */}
-                <div className="col-[1/-1] row-[1/2] relative z-10 h-fit mt-[10px]">
+                <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
                     <div className="md:h-[75px] h-[51.5px]">{}</div>
                     <div className={generalClassName}></div>
                 </div>
             </div>
-            <div className="col-[1/-1] row-[3/4] relative z-10 h-fit">
-                <div className="col-[1/-1] row-[1/2] relative z-10 h-fit mt-[10px]">
+            <div className="col-[1/-1] row-[3/4] h-fit">
+                <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
                     <div className="md:h-[75px] h-[51.5px]">{}</div>
                     <div className={generalClassName}></div>
                 </div>
             </div>
-            <div className="col-[1/-1] row-[4/5] relative z-10 h-fit">
-                <div className="col-[1/-1] row-[1/2] relative z-10 h-fit mt-[10px]">
+            <div className="col-[1/-1] row-[4/5] h-fit">
+                <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
                     <div className="md:h-[75px] h-[51.5px]">{}</div>
                     <div className={generalClassName}></div>
                 </div>
             </div>
-            <div className="col-[1/-1] row-[5/6] relative z-10 h-fit">
-                <div className="col-[1/-1] row-[1/2] relative z-10 h-fit mt-[10px]">
+            <div className="col-[1/-1] row-[5/6] h-fit">
+                <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
                     <div className="md:h-[75px] h-[51.5px]">{}</div>
                     <div className={generalClassName}></div>
                 </div>
@@ -233,7 +417,7 @@ const LuongGiac = () => {
         <>
             <div className="overflow-x-auto overflow-y-hidden grid grid-cols-1 grid-rows-[repeat(8,auto)]">
                 <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.6px]" />
-                <div className="col-[1/-1] row-[1/2] relative z-10 h-fit mt-[10px]">
+                <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
                     <div className="md:h-[75px] h-[51.5px]">
                         {timelineStar[0][2][0]}
                     </div>
@@ -260,7 +444,7 @@ const LuongGiac = () => {
                         dựng.
                     </div>
                 </div>
-                <div className="col-[1/-1] row-[2/3] relative z-10 h-fit">
+                <div className="col-[1/-1] row-[2/3] h-fit">
                     <div className="md:h-[75px] h-[51.5px]">
                         {timelineStar[0][2][1]}
                     </div>
@@ -273,7 +457,7 @@ const LuongGiac = () => {
                         tròn.
                     </div>
                 </div>
-                <div className="col-[1/-1] row-[3/4] relative z-10 h-fit">
+                <div className="col-[1/-1] row-[3/4] h-fit">
                     <div className="md:h-[75px] h-[51.5px]">
                         {timelineStar[0][2][2]}
                     </div>
@@ -299,7 +483,7 @@ const LuongGiac = () => {
                         trong việc nghiên cứu chuyển động của các thiên thể.
                     </div>
                 </div>
-                <div className="col-[1/-1] row-[4/5] relative z-10 h-fit">
+                <div className="col-[1/-1] row-[4/5] h-fit">
                     <div className="md:h-[75px] h-[51.5px]">
                         {timelineStar[0][2][3]}
                     </div>
@@ -409,7 +593,7 @@ const LuongGiac = () => {
                         và Mặt Trời với độ chính xác cao.
                     </div>
                 </div>
-                <div className="col-[1/-1] row-[5/6] relative z-10 h-fit mt-[10px]">
+                <div className="col-[1/-1] row-[5/6] h-fit mt-[10px]">
                     <div className="md:h-[75px] h-[51.5px]">
                         {timelineStar[0][2][4]}
                     </div>
@@ -450,7 +634,7 @@ const LuongGiac = () => {
                         thực và nhật thực.
                     </div>
                 </div>
-                <div className="col-[1/-1] row-[6/7] relative z-10 h-fit mt-[10px]">
+                <div className="col-[1/-1] row-[6/7] h-fit mt-[10px]">
                     <div className="md:h-[75px] h-[51.5px]">
                         {timelineStar[0][2][5]}
                     </div>
@@ -536,7 +720,7 @@ const LuongGiac = () => {
                         Giải tích:
                     </div>
                 </div>
-                <div className="col-[1/-1] row-[7/8] relative z-10 h-fit mt-[10px]">
+                <div className="col-[1/-1] row-[7/8] h-fit mt-[10px]">
                     <div className="md:h-[75px] h-[51.5px]">
                         {timelineStar[0][2][6]}
                     </div>
