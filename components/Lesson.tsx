@@ -163,11 +163,11 @@ const Taphop = () => {
                         className="lg2:col-[1/2] lg2:row-[2/-1] cursor-pointer flex items-start"
                         onClick={() => handleStartVideo(0)}
                     >
-                        <div className="lg2:sticky lg2:top-[20px] max-w-[400px] w-full aspect-[304/207] border">
-                            {/* <ReactPlayer
+                        <div className="lg2:sticky lg2:top-[20px] max-w-[400px] w-full aspect-[304/207] border-0">
+                            <ReactPlayer
                                 url={
-                                    // {`${process.env.NEXT_PUBLIC_API_URL}/videos/primitive.mp4`}
-                                    `${process.env.NEXT_PUBLIC_PUBLIC_URL}/videos/primitive.mp4`
+                                    `${process.env.NEXT_PUBLIC_API_URL}/videos/primitive.mp4`
+                                    // `${process.env.NEXT_PUBLIC_PUBLIC_URL}/videos/primitive.mp4`
                                 }
                                 loop={!playVideo}
                                 playing={playVideo}
@@ -175,7 +175,7 @@ const Taphop = () => {
                                 muted
                                 width="100%"
                                 height="100%"
-                            /> */}
+                            />
                         </div>
                     </div>
                     <div
