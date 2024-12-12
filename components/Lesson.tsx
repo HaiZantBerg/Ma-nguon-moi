@@ -11,9 +11,9 @@ import Image from "next/image";
 import Boner from "@/public/Image/boner.png";
 import Link from "next/link";
 
-const generalClassName = "md1:ml-[70px] ml-[35px] lg3:text-lg md1:mr-0 mr-5";
+const generalClassName = "md1:ml-[70px] ml-[35px] lg3:text-lg md1:mr-2 mr-5";
 const generalContentClassName =
-    "md1:text-base text-sm md1:leading-[26px] leading-[22px]";
+    "md1:text-base text-sm md1:leading-[26px] leading-[22px] pl-4";
 const generalInstanceClassName = "sm:pl-[24px] pl-[12px]";
 
 const Menhde = () => {
@@ -21,7 +21,7 @@ const Menhde = () => {
         <div className="overflow-x-auto overflow-y-hidden grid grid-cols-1 grid-rows-[repeat(4,auto)]">
             <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.6px]" />
             <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
-                <div className="md:h-[75px] h-[51.5px]">{}</div>
+                <div className="md:h-[75px] h-[51.5px] relative z-10">{}</div>
                 <div className={generalClassName}>
                     Chúng ta hãy bắt đầu từ khoảng năm 384 TCN, khi Aristotle
                     được sinh ra tại thành phố Stagira, Hy Lạp. Con trai của một
@@ -53,7 +53,7 @@ const Menhde = () => {
                 </div>
             </div>
             <div className="col-[1/-1] row-[2/3] h-fit">
-                <div className="md:h-[75px] h-[51.5px]">{}</div>
+                <div className="md:h-[75px] h-[51.5px] relative z-10">{}</div>
                 <div className={generalClassName}>
                     Trong giai đoạn này, các nhà logic học như William of Ockham
                     và Peter Abelard đã tiếp tục phát triển các khái niệm về
@@ -65,7 +65,7 @@ const Menhde = () => {
                 </div>
             </div>
             <div className="col-[1/-1] row-[3/4] h-fit">
-                <div className="md:h-[75px] h-[51.5px]">{}</div>
+                <div className="md:h-[75px] h-[51.5px] relative z-10">{}</div>
                 <div className={generalClassName}>
                     Chuyển sang thế kỷ 19, một nhân vật mới xuất hiện: George
                     Boole, xuất thân từ một gia đình khiêm tốn; cha ông là một
@@ -132,7 +132,7 @@ const Menhde = () => {
                 </div>
             </div>
             <div className="col-[1/-1] row-[4/-1] relative z-1 h-fit0">
-                <div className="md:h-[75px] h-[51.5px]">{}</div>
+                <div className="md:h-[75px] h-[51.5px] relative z-10">{}</div>
                 <div className={generalClassName}></div>
             </div>
         </div>
@@ -149,8 +149,8 @@ const Taphop = () => {
     return (
         <div className="grid grid-cols-1 grid-rows-[repeat(6,auto)] relative">
             <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.6px]" />
-            <div className="col-[1/-1] row-[1/2] relative z-20 h-fit mt-[10px]">
-                <div className="md:h-[75px] h-[51.5px]">
+            <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
+                <div className="md:h-[75px] h-[51.5px] relative z-10">
                     {timelineStar[0][0][0]}
                 </div>
                 <div
@@ -163,8 +163,8 @@ const Taphop = () => {
                         className="lg2:col-[1/2] lg2:row-[2/-1] cursor-pointer flex items-start"
                         onClick={() => handleStartVideo(0)}
                     >
-                        <div className="lg2:sticky lg2:top-[20px] max-w-[400px] w-full aspect-[304/207] border-0">
-                            <ReactPlayer
+                        <div className="lg2:sticky lg2:top-[20px] max-w-[400px] w-full aspect-[304/207] border">
+                            {/* <ReactPlayer
                                 url={
                                     `${process.env.NEXT_PUBLIC_API_URL}/videos/primitive.mp4`
                                     // `${process.env.NEXT_PUBLIC_PUBLIC_URL}/videos/primitive.mp4`
@@ -175,7 +175,7 @@ const Taphop = () => {
                                 muted
                                 width="100%"
                                 height="100%"
-                            />
+                            /> */}
                         </div>
                     </div>
                     <div
@@ -202,46 +202,47 @@ const Taphop = () => {
                         bằng thắt nút trên một sợi dây.
                     </div>
                 </div>
-                <div className="md1:ml-[70px] ml-[35px] md1:mr-0 mr-5 my-4">
-                    <Extra buttonContent="Xương Ishango" variant="aloneFact">
-                        <div className="w-full h-full text-lg flex lg3:flex-row flex-col gap-2 items-center">
-                            <div
-                                className={`${generalContentClassName} flex-[0_1_auto]`}
-                            >
-                                Xương Ishango có thể là hiện vật toán học cổ xưa
-                                nhất vẫn còn tồn tại đến ngày nay: nó được phát
-                                hiện vào năm 1950 tại Cộng hòa Dân chủ Congo ở
-                                khu vực Trung Phi, và được đặt tên theo khu vực
-                                nơi nó được tìm thấy. Hiện vật này có niên đại
-                                từ thời kỳ đồ đá cũ muộn trong lịch sử loài
-                                người, khoảng 20.000 năm trước. Chiếc xương dài
-                                10 cm và chứa một loạt các khía, mà nhiều nhà
-                                khoa học tin rằng đã được sử dụng để đếm. Cách
-                                nhóm các khía thậm chí có thể gợi ý về sự hiểu
-                                biết toán học cao cấp hơn, như hệ thập phân hoặc
-                                số nguyên tố. Khi đếm thì vấn đề nan giải tiếp
-                                theo mà con người phải vượt qua đó là khi số
-                                lượng cần phải đếm nhiều đáng kể, không thể nào
-                                mãi khắc vạch, không thể nào bổ sung mãi các hòn
-                                sỏi, que đếm, chuỗi hạt,… Làm sao để chỉ rõ con
-                                số lớn một cách đơn giản, với số lượng đối tượng
-                                được thể hiện ít nhất có thể? Thế là khái niệm
-                                cơ số được sinh ra.
-                            </div>
-                            <div className="lg3:flex-[1_0_50%]">
-                                <div className="w-full aspect-[595/311]">
-                                    <Image
-                                        src={Boner}
-                                        alt=""
-                                        className="w-full h-full"
-                                    />
-                                </div>
+                <Extra
+                    buttonContent="Xương Ishango"
+                    variant="aloneFact"
+                    containerClassName="md1:ml-[70px] ml-[35px]"
+                    extraBodyVariant=""
+                >
+                    <div className="w-full h-full text-lg flex lg3:flex-row flex-col gap-2 items-center">
+                        <div
+                            className={`${generalContentClassName} flex-[0_1_auto]`}
+                        >
+                            Xương Ishango có thể là hiện vật toán học cổ xưa
+                            nhất vẫn còn tồn tại đến ngày nay: nó được phát hiện
+                            vào năm 1950 tại Cộng hòa Dân chủ Congo ở khu vực
+                            Trung Phi, và được đặt tên theo khu vực nơi nó được
+                            tìm thấy. Hiện vật này có niên đại từ thời kỳ đồ đá
+                            cũ muộn trong lịch sử loài người, khoảng 20.000 năm
+                            trước. Chiếc xương dài 10 cm và chứa một loạt các
+                            khía, mà nhiều nhà khoa học tin rằng đã được sử dụng
+                            để đếm. Cách nhóm các khía thậm chí có thể gợi ý về
+                            sự hiểu biết toán học cao cấp hơn, như hệ thập phân
+                            hoặc số nguyên tố. Khi đếm thì vấn đề nan giải tiếp
+                            theo mà con người phải vượt qua đó là khi số lượng
+                            cần phải đếm nhiều đáng kể, không thể nào mãi khắc
+                            vạch, không thể nào bổ sung mãi các hòn sỏi, que
+                            đếm, chuỗi hạt,… Làm sao để chỉ rõ con số lớn một
+                            cách đơn giản, với số lượng đối tượng được thể hiện
+                            ít nhất có thể? Thế là khái niệm cơ số được sinh ra.
+                        </div>
+                        <div className="lg3:flex-[1_0_50%]">
+                            <div className="w-full aspect-[595/311]">
+                                <Image
+                                    src={Boner}
+                                    alt=""
+                                    className="w-full h-full"
+                                />
                             </div>
                         </div>
-                    </Extra>
-                </div>
+                    </div>
+                </Extra>
                 <div className={`${generalClassName}`}>
-                    <div className="font-semibold md1:text-[1.25rem] text-[1.125rem] mb-5">
+                    <div className="font-semibold md1:text-[1.25rem] text-[1.125rem] mb-2">
                         Cơ số
                     </div>
                     <div className={`${generalContentClassName}`}>
@@ -275,7 +276,8 @@ const Taphop = () => {
                             <Extra
                                 buttonContent="Cơ số mười"
                                 variant="inlineFact"
-                                containerClassName="inline bg-black w-[100px] h-[100px]"
+                                containerClassName="inline bg-black"
+                                extraBodyVariant="instance"
                             >
                                 <div className="md:text-[0.9rem] text-sm">
                                     Nó còn được thế hiện qua đơn vị đo lường
@@ -327,7 +329,7 @@ const Taphop = () => {
                                     <br /> Nguồn{" "}
                                     <Link
                                         href="https://www.history-of-mathematics.org/"
-                                        className="underline text-white font-[450]"
+                                        className="underline font-[450]"
                                     >
                                         https://www.history-of-mathematics.org/.
                                     </Link>{" "}
@@ -338,14 +340,15 @@ const Taphop = () => {
                                     bằng ngón tay.
                                 </div>
                             </Extra>{" "}
-                            (hệ thập phân) là vô cùng phổ biến
+                            (hệ thập phân) là vô cùng phổ biến.
                         </div>
                         <div className={`${generalInstanceClassName}`}>
                             Phổ biến thứ hai sau cơ số mười là{" "}
                             <Extra
                                 buttonContent="cơ số mười hai"
                                 variant="inlineFact"
-                                containerClassName="inline bg-black w-[100px] h-[100px]"
+                                containerClassName="inline bg-black"
+                                extraBodyVariant="instance"
                             >
                                 <div className="md:text-[0.9rem] text-sm">
                                     Mười hai bằng một tá, kiểu đếm này vẫn còn
@@ -371,7 +374,276 @@ const Taphop = () => {
                                     hai.
                                 </div>
                             </Extra>
+                            .
                         </div>
+                        <div className={`${generalInstanceClassName}`}>
+                            <Extra
+                                buttonContent="Cơ số sáu mươi"
+                                variant="inlineFact"
+                                containerClassName="inline bg-black"
+                                extraBodyVariant="instance"
+                            >
+                                <div className="md:text-[0.9rem] text-sm">
+                                    Cơ số 60 là một trong những phương pháp đếm
+                                    cổ xưa của con người, có nguồn gốc từ người
+                                    Semite cổ đại vào thế kỷ thứ 3 trước Công
+                                    nguyên và sau đó được truyền bá sang Babylon
+                                    và những nơi khác.
+                                    <br />
+                                    Lý do tại sao 60 được sử dụng thay vì các số
+                                    khác có thể là do 60 là một số tương đối nhỏ
+                                    và có thể được chia thành 10 thừa số thực
+                                    của 2, 3, 4, 5, 6, 10, 12, 15, 20 và 30 điều
+                                    này làm cho hệ đếm cơ số 60 linh hoạt hơn
+                                    cho các tính toán khác nhau.
+                                    <br />
+                                    Nhà thiên văn học người Hy Lạp Eratosthenes
+                                    đã sử dụng số thập lục phân để tạo ra một hệ
+                                    thống địa lý vĩ độ với việc chia một vòng
+                                    tròn thành 60 phần và một hệ thống các đường
+                                    kinh độ bao phủ 360 độ và chạy từ bắc xuống
+                                    nam, nối từ cực này sang cực kia.
+                                    <br />
+                                    Tiếp đó, nhà bác học Claudius Ptolemy đã mở
+                                    rộng công trình của Hipparchus bằng cách
+                                    chia hệ thống 360 độ vĩ độ và kinh độ thành
+                                    các phần nhỏ hơn. Mỗi độ được chia thành 60
+                                    phần (ngày nay chúng ta gọi là phút), mỗi
+                                    phần được chia thành 60 phần nhỏ hơn (ngày
+                                    nay gọi là giây)
+                                    <div className="aspect-video max-w-[500px]">
+                                        <ReactPlayer
+                                            url="https://www.youtube.com/watch?v=VnBbvPevFFQ"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                </div>
+                            </Extra>{" "}
+                            (hệ lục thập phân).
+                        </div>
+                        <div className={`${generalInstanceClassName}`}>
+                            Trong thời đại công nghệ thông tin đang phát triển
+                            mạnh mẽ, hệ đếm{" "}
+                            <Extra
+                                buttonContent="Cơ số hai"
+                                variant="inlineFact"
+                                containerClassName="inline bg-black"
+                                extraBodyVariant="instance"
+                            >
+                                <div className="md:text-[0.9rem] text-sm">
+                                    Cơ số hai được sử dụng rộng rãi vì nó gắn
+                                    liền với hoạt động của máy tính điện tử. Tuy
+                                    nhiên, ngay từ thời xa xưa, những thổ dân
+                                    Queensland cũng đã sử dụng hệ đếm này.
+                                </div>
+                            </Extra>{" "}
+                            (gọi là hệ nhị phân).
+                        </div>
+                        <div className={`${generalInstanceClassName}`}>
+                            Ngoài ra hệ đếm{" "}
+                            <Extra
+                                buttonContent="Cơ số năm"
+                                variant="inlineFact"
+                                containerClassName="inline bg-black"
+                                extraBodyVariant="instance"
+                            >
+                                <div className="md:text-[0.9rem] text-sm">
+                                    Cơ số năm cũng được dùng ở một số vùng khác
+                                    như tộc người Yukaghir ở Siberia. Cho đến
+                                    đầu thế kỉ mười chín, lịch nông nghiệp của
+                                    Đức vẫn còn dùng hệ ngũ phân!
+                                </div>
+                            </Extra>{" "}
+                            (gọi là hệ ngũ phân).
+                        </div>
+                    </div>
+                </div>
+                <div className={`${generalClassName}`}>
+                    <div className="font-semibold md1:text-[1.25rem] text-[1.125rem] my-2">
+                        Sự ra đời của số 0 và số âm
+                    </div>
+                    <div className={`${generalContentClassName}`}>
+                        Trong khi một vài thế kỷ trước người Hy Lạp còn gặp khó
+                        khăn trong việc chấp nhận 1 là một con số, hãy tưởng
+                        tượng việc gắn tên “số” cho một điều không tồn tại tạo
+                        nên một cuộc các mạng thế nào. Vậy thì đối với số 0 lại
+                        càng khó khăn để chấp nhận hơn.
+                        <br />
+                        Số 0 được coi là một trong những khám phá vĩ đại nhất
+                        trong lịch sử loài người. Cho đến khi phát hiện ra số 0,
+                        việc thực hiện ngay cả những phép tính số học cơ bản
+                        cũng là rất khó khăn đối với con người.
+                        <br />
+                        <br />
+                        Việc ta hiểu được số 0 phức tạp hơn bạn tưởng: ta không
+                        hề gặp "số không" trong tự nhiên để nó có thể hữu hình,
+                        dễ hiểu. Bất cứ số tự nhiên nào lớn hơn không đều có ví
+                        dụ thực hiện: một con khỉ, hai con ong, ba trái đào hay
+                        bốn bông hoa. Nhưng "không" thì sao? Phải có chút nhận
+                        thức để nhận ra cái vô hình cũng là cái hữu hình, trong
+                        hư có thực, "không có gì" cũng là một cái gì đó.
+                        <br />
+                        "Số không tồn tại trong não bộ chúng ta chứ không thuộc
+                        về cảm giác", Robert Kaplan, giáo sư toán học tại
+                        Harvard và tác giả cuốn sách về con số không, nói với
+                        tạp chí Vox.
+                        <br />
+                        Trong cuốn “Chữ số và Thế giới - Nguồn gốc bị lãng quên”
+                        của Đỗ Minh Triết trang 323 có khẳng định: “Vậy là Ấn Độ
+                        đã có hệ ghi số hoàn chỉnh, đơn giản, hữu hiệu nhất của
+                        nhân loại: hệ ghi số gồm mười chữ số gán cho số 0 và
+                        chín số đếm đầu tiên, số được ghi theo quy tắc vị trí
+                        định lượng cơ số 10. Ấn Độ chính là tác giả độc lập của
+                        phát minh vĩ đại này, không phải Hy Lạp, không phải La
+                        Mã, Maya hay Babylon và cũng không phải của Ả Rập Hồi
+                        giáo.”
+                        <br />
+                        <br />
+                        Trước người Ấn Độ, vài dân tộc đã từng manh nha suy nghĩ
+                        ấy, nhưng không ai thành công được đến cùng. Người Lưỡng
+                        Hà, kể từ từ thế kỉ thứ 3 trước Công nguyên, là người
+                        đầu tiên phát minh ra một số 0. Trước đó, hệ số đếm của
+                        họ biểu diễn những số như 25 và 250 theo cùng một cách.
+                        Nhờ có số 0 chỉ một vị trí trống, nhiều khả năng nhầm
+                        lẫn đã bị loại bỏ. Tuy vậy, người Babylon lại không coi
+                        ký tự 0 này như một con số có thể đứng một mình để biểu
+                        diễn sự thiếu vắng của đối tượng.
+                        <br />Ở nửa kia của thế giới, người Maya cũng đã phát
+                        minh ra số không. Họ thậm chí còn phát minh ra hai số
+                        không! Số thứ nhất, như của người Babylon, chỉ có công
+                        dụng là để đánh dấu vị trí trống trong hệ nhị thập phân
+                        của họ. Số thứ hai, ngược lại, có thể thực sự được coi
+                        là một số nhưng chỉ được sử dụng trong lịch của họ. Mỗi
+                        tháng trong lịch Maya có hai mươi ngày được đánh số từ 0
+                        đến 19. Số không này đứng một mình, tuy nhiên không có
+                        tính chất toán học. Người Maya chưa bao giờ sử dụng nó
+                        trong các phép tính số học.
+                        <br />
+                        Người đầu tiên thực sự mô tả hoàn chỉnh số không như một
+                        con số độc lập và cũng miêu tả các đặc tính của nó là
+                        nhà thiên văn học - toán học người Ấn Độ{" "}
+                        <Extra
+                            buttonContent="Brahmagupta"
+                            variant="inlineFact"
+                            containerClassName="inline bg-black"
+                            extraBodyVariant="content"
+                        >
+                            <div className="md:text-[0.9rem] text-sm">
+                                Nhà toán học Ấn Độ Brahmagupta (598 - 668 CE) đã
+                                phát minh ra các quy tắc cộng, trừ và nhân với
+                                số 0 và số âm trong quyển sách Brahma Sphuta
+                                Siddhanta. Ông cũng là một nhà thiên văn học và
+                                thực hiện nhiều khám phá khác trong toán học.
+                                Thật không may, các bài viết của anh ấy không
+                                chứa bất kỳ bằng chứng nào, vì vậy chúng tôi
+                                không thể biết được kết quả của anh ấy như thế
+                                nào.
+                            </div>
+                        </Extra>
+                        . Và ông cũng là người đầu tiên nêu lên các quy tắc tính
+                        toán trong hệ ghi số có số 0 trong quyển sách{" "}
+                        <Extra
+                            buttonContent="Brahma Sphuta Siddhanta"
+                            variant="inlineFact"
+                            containerClassName="inline bg-black"
+                            extraBodyVariant="content"
+                        >
+                            <div className="md:text-[0.9rem] text-sm">
+                                Nội dung sách gồm 24 chương với 1 008 câu hoàn
+                                toàn là thơ ca viết bằng tiếng Sanskrit, không
+                                chứa bất kỳ một ký hiệu toán học nào. Số 0 vẫn
+                                được gọi là{" "}
+                                <span className="font-[500]">sunya</span>, nó có
+                                tính chất: Thêm hay bớt{" "}
+                                <span className="font-[500]">sunya</span> từ một
+                                số thì con số vẫn không thay đổi, nhân một số
+                                với <span className="font-[500]">sunya</span>{" "}
+                                thì kết quả nhận được là{" "}
+                                <span className="font-[500]">sunya</span>. Xa
+                                hơn nữa, Brahmagupta còn chỉ ra khái niệm số âm,
+                                số dương qua mô hình khoản nợ và tài sản:{" "}
+                                <div
+                                    className={`${generalInstanceClassName}`}
+                                ></div>
+                                Một khoản nợ trừ đi{" "}
+                                <span className="font-[500]">sunya</span> vẫn là
+                                một khoản nợ.{" "}
+                                <div
+                                    className={`${generalInstanceClassName}`}
+                                ></div>
+                                Tài sản trừ đi{" "}
+                                <span className="font-[500]">sunya</span> vẫn là
+                                tài sản.
+                                <div
+                                    className={`${generalInstanceClassName}`}
+                                ></div>
+                                <span className="font-[500]">sunya</span> trừ đi{" "}
+                                <span className="font-[500]">sunya</span> vẫn là{" "}
+                                <span className="font-[500]">sunya</span>.{" "}
+                                <div
+                                    className={`${generalInstanceClassName}`}
+                                ></div>
+                                Một khoản nợ được trừ đi từ{" "}
+                                <span className="font-[500]">sunya</span> trở
+                                thành tài sản.{" "}
+                                <div
+                                    className={`${generalInstanceClassName}`}
+                                ></div>
+                                Tài sản được trừ đi từ{" "}
+                                <span className="font-[500]">sunya</span> trở
+                                thành một khoản nợ.
+                                <div
+                                    className={`${generalInstanceClassName}`}
+                                ></div>
+                                Nhân tài sản hay khoản nợ với{" "}
+                                <span className="font-[500]">sunya</span> thì
+                                thành
+                                <span className="font-[500]">sunya</span>.{" "}
+                                <div
+                                    className={`${generalInstanceClassName}`}
+                                ></div>
+                                <span className="font-[500]">sunya</span> nhân
+                                với <span className="font-[500]">sunya</span>{" "}
+                                vẫn là <span className="font-[500]">sunya</span>
+                                . • Tài sản chia thành những tài sản vẫn là
+                                những tài sản (nhỏ hơn).{" "}
+                                <div
+                                    className={`${generalInstanceClassName}`}
+                                ></div>
+                                Tài sản chia ra các khoản nợ thì thành những
+                                khoản nợ Chưa dừng lại ở đó, quyền sách còn bàn
+                                về căn bậc hai, căn bậc ba, phương trình tuyến
+                                tính, phương trình nghiệm nguyên, bộ ba
+                                Pythagoras, phân số, công thức nội suy, hình
+                                học, và đặc biệt nhất là số r. Ở thời đại chữ số
+                                chỉ mới hình thành mà Brahmagupta đã có những
+                                khám phá toán học như thế đủ để đưa ông vào danh
+                                sách những khoa học gia xuất chúng nhất nhân
+                                loại thời bấy giờ. Tuy nhiên, Brahmagupta cũng
+                                có nhận định sai lầm về số 0:{" "}
+                                <span className="font-[500]">sunya</span> chia
+                                cho
+                                <span className="font-[500]">sunya</span> thì
+                                vẫn là <span className="font-[500]">sunya</span>
+                                .
+                            </div>
+                        </Extra>{" "}
+                        <Extra
+                            buttonContent="Ý nghĩa của số 0"
+                            variant="aloneFact"
+                            containerClassName="w-full"
+                            extraBodyVariant="content"
+                            extraBodyClassName="max-w-[700px]"
+                        >
+                            <div className="aspect-video">
+                                <ReactPlayer
+                                    url="https://www.youtube.com/watch?v=Lic7cvYuulU"
+                                    width="100%"
+                                    height="100%"
+                                />
+                            </div>
+                        </Extra>
                     </div>
                 </div>
             </div>
@@ -386,25 +658,33 @@ const Taphop = () => {
                     </div>
                 </div> */}
                 <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">{}</div>
+                    <div className="md:h-[75px] h-[51.5px] relative z-10">
+                        {}
+                    </div>
                     <div className={generalClassName}></div>
                 </div>
             </div>
             <div className="col-[1/-1] row-[3/4] h-fit">
                 <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">{}</div>
+                    <div className="md:h-[75px] h-[51.5px] relative z-10">
+                        {}
+                    </div>
                     <div className={generalClassName}></div>
                 </div>
             </div>
             <div className="col-[1/-1] row-[4/5] h-fit">
                 <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">{}</div>
+                    <div className="md:h-[75px] h-[51.5px] relative z-10">
+                        {}
+                    </div>
                     <div className={generalClassName}></div>
                 </div>
             </div>
             <div className="col-[1/-1] row-[5/6] h-fit">
                 <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">{}</div>
+                    <div className="md:h-[75px] h-[51.5px] relative z-10">
+                        {}
+                    </div>
                     <div className={generalClassName}></div>
                 </div>
             </div>
@@ -418,7 +698,7 @@ const LuongGiac = () => {
             <div className="overflow-x-auto overflow-y-hidden grid grid-cols-1 grid-rows-[repeat(8,auto)]">
                 <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.6px]" />
                 <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">
+                    <div className="md:h-[75px] h-[51.5px] relative z-10">
                         {timelineStar[0][2][0]}
                     </div>
                     <div className={generalClassName}>
@@ -445,7 +725,7 @@ const LuongGiac = () => {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[2/3] h-fit">
-                    <div className="md:h-[75px] h-[51.5px]">
+                    <div className="md:h-[75px] h-[51.5px] relative z-10">
                         {timelineStar[0][2][1]}
                     </div>
                     <div className={generalClassName}>
@@ -458,7 +738,7 @@ const LuongGiac = () => {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[3/4] h-fit">
-                    <div className="md:h-[75px] h-[51.5px]">
+                    <div className="md:h-[75px] h-[51.5px] relative z-10">
                         {timelineStar[0][2][2]}
                     </div>
                     <div className={generalClassName}>
@@ -484,7 +764,7 @@ const LuongGiac = () => {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[4/5] h-fit">
-                    <div className="md:h-[75px] h-[51.5px]">
+                    <div className="md:h-[75px] h-[51.5px] relative z-10">
                         {timelineStar[0][2][3]}
                     </div>
                     <div className={generalClassName}>
@@ -594,7 +874,7 @@ const LuongGiac = () => {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[5/6] h-fit mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">
+                    <div className="md:h-[75px] h-[51.5px] relative z-10">
                         {timelineStar[0][2][4]}
                     </div>
                     <div className={generalClassName}>
@@ -635,7 +915,7 @@ const LuongGiac = () => {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[6/7] h-fit mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">
+                    <div className="md:h-[75px] h-[51.5px] relative z-10">
                         {timelineStar[0][2][5]}
                     </div>
                     <div className={generalClassName}>
@@ -721,7 +1001,7 @@ const LuongGiac = () => {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[7/8] h-fit mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">
+                    <div className="md:h-[75px] h-[51.5px] relative z-10">
                         {timelineStar[0][2][6]}
                     </div>
                     <div className={generalClassName}>
@@ -762,7 +1042,7 @@ const LuongGiac = () => {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[8/-1] relative z-1 h-fit0 mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">
+                    <div className="md:h-[75px] h-[51.5px] relative z-10">
                         {timelineStar[0][2][7]}
                     </div>
                     <div className={generalClassName}>

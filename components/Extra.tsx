@@ -1,17 +1,15 @@
 "use client";
 
 import { useAnimate } from "framer-motion";
-import Image from "next/image";
 import React, { useRef, useState } from "react";
-import aristotle from "@/public/Image/aristotlecantdopoetic.png";
 
 const variants: { [key: string]: string } = {
     aloneFact:
-        "bg-[#ff981a] hover:bg-[#f58700] transition-all duration-2 ease-in text-white font-[500] px-4 pt-2 pb-[10px] md:text-[1rem] text-[0.9rem]",
+        "hover:bg-[#f58700] transition-all duration-2 ease-in text-white font-[500] px-4 pt-2 pb-[10px] md:text-[1rem] text-[0.9rem]",
     aloneFact1: "bg-[#f58700] rounded-[15px_15px_0px_0px]",
     aloneFact2: "bg-[#ff981a] rounded-[15px_15px_15px_15px]",
     inlineFact:
-        "bg-[#ff981a] hover:bg-[#f58700] transition-all duration-2 ease-in text-white py-[3px] px-[5px] rounded-lg",
+        "hover:bg-[#f58700] transition-all duration-2 ease-in text-white py-[3px] px-[5px]",
     inlineFact1: "bg-[#f58700] rounded-[8px_8px_0px_0px]",
     inlineFact2: "bg-[#ff981a] rounded-[8px_8px_8px_8px]",
 };
@@ -33,24 +31,39 @@ const extraBody: { [key: string]: string } = {
     inlineFact: "md:py-4 py-3 md:px-6 px-4",
 };
 
+const container: { [key: string]: string } = {
+    aloneFact: "md1:mr-0 mr-5 my-4",
+    inlineFact: "",
+};
+
+const extraBodyVariants: { [key: string]: string } = {
+    instance: "sm:ml-[40px] ml-[28px]",
+    content: "ml-[1rem]",
+};
+
 export default function Extra({
     children,
     buttonContent,
     buttonClassName,
     containerClassName,
+    extraBodyClassName,
     variant,
+    extraBodyVariant,
 }: {
     children?: React.ReactNode;
     buttonContent: string;
     buttonClassName?: string;
     containerClassName?: string;
-    variant: string;
+    extraBodyClassName?: string;
+    variant: "aloneFact" | "inlineFact";
+    extraBodyVariant: "instance" | "" | "content";
 }) {
     const [scope, animate] = useAnimate();
 
     const [openExtra, setOpenExtra] = useState(false);
 
     const sneakyRef = useRef<HTMLDivElement | null>(null);
+    const extraBodyContainerRef = useRef<HTMLDivElement | null>(null);
 
     const handleOpenClose = async () => {
         if (!openExtra && sneakyRef.current) {
@@ -70,10 +83,10 @@ export default function Extra({
             );
 
             setOpenExtra(true);
-        } else {
+        } else if (extraBodyContainerRef.current) {
             setTimeout(() => {
                 if (sneakyRef.current) sneakyRef.current.style.display = "none";
-            }, 220);
+            }, extraBodyContainerRef.current.offsetHeight / 3);
 
             await animate("#extraBody", {
                 height: "0px",
@@ -100,10 +113,17 @@ export default function Extra({
     }`;
 
     return (
-        <div ref={scope} className={`${containerClassName} inline`}>
+        <div
+            ref={scope}
+            className={`${containerClassName ? containerClassName : ""} ${
+                container[variant]
+            }`}
+        >
             <button
                 onClick={handleOpenClose}
-                className={`${buttonClassName} ${variantExtra} relative`}
+                className={`${
+                    buttonClassName ? buttonClassName : ""
+                } ${variantExtra} relative`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
@@ -129,11 +149,26 @@ export default function Extra({
                     ref={sneakyRef}
                 />
             </button>
+            {openExtra && (
+                <div
+                    className="absolute w-full h-full top-0 left-0 z-10"
+                    onClick={handleOpenClose}
+                />
+            )}
             <div
-                className="bg-[#e67e00] h-0 absolute mr-5 rounded-[15px] overflow-hidden z-50"
+                className="h-0 absolute left-0 md1:pl-[70px] pl-[35px] md1:pr-2 pr-5 overflow-hidden w-full"
                 id="extraBody"
+                ref={extraBodyContainerRef}
             >
-                <div className={`text-white ${extraBody[variant]}`}>
+                {openExtra && (
+                    <div
+                        className="absolute w-full h-full top-0 left-0"
+                        onClick={() => console.log("1")}
+                    />
+                )}
+                <div
+                    className={`text-white bg-[#e67e00] ${extraBodyVariants[extraBodyVariant]} ${extraBodyClassName} rounded-[15px] ${extraBody[variant]}`}
+                >
                     <div>{children}</div>
                     <button
                         className={`${button[variant]} font-semibold py-2 px-6 border-white border-2 rounded-full`}
