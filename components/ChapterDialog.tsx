@@ -14,7 +14,7 @@ import Image from "next/image";
 
 const LHeader = () => {
     return (
-        <div className='font-["Chakra_Petch"] font-[600] h-[72px] pt-[19px] md1:text-[40px] sm:text-[35px] text-[27.5px] sm:leading-[42.5px] leading-[37.5px] items-center sm:gap-4 gap-2 flex text-nowrap'>
+        <div className='md1:pl-4 font-["Chakra_Petch"] font-[600] h-[72px] pt-[19px] md1:text-[40px] sm:text-[35px] text-[27.5px] sm:leading-[42.5px] leading-[37.5px] items-center sm:gap-4 gap-2 flex text-nowrap'>
             Câu chuyện lịch sử
             <div className="sm:h-[64px] h-[47.5px] aspect-square">
                 <Image src={BookandQuill} alt="" />
@@ -662,7 +662,7 @@ export default function ChapterDialog({
                                             containerRef.current[0] = el;
                                         }}
                                     >
-                                        <div className="md1:pl-4 md1:pt-0 pt-2 h-full flex flex-col w-full">
+                                        <div className="md1:pt-0 pt-2 h-full flex flex-col w-full">
                                             <LHeader />
                                             <LessonLayout id={id} idx={idx} />
                                         </div>

@@ -5,9 +5,9 @@ import React, { useRef, useState } from "react";
 
 const variants: { [key: string]: string } = {
     aloneFact:
-        "hover:bg-[#f58700] transition-all duration-2 ease-in text-white font-[500] px-4 pt-2 pb-[10px] md:text-[1rem] text-[0.9rem]",
-    aloneFact1: "bg-[#f58700] rounded-[15px_15px_0px_0px]",
-    aloneFact2: "bg-[#ff981a] rounded-[15px_15px_15px_15px]",
+        "hover:bg-[#f13827] transition-all duration-2 ease-in text-white font-[500] px-4 pt-2 pb-[10px] md:text-[1rem] text-[0.9rem]",
+    aloneFact1: "bg-[#f13827] rounded-[15px_15px_0px_0px]",
+    aloneFact2: "bg-[#ff6338] rounded-[15px_15px_15px_15px]",
     inlineFact:
         "hover:bg-[#f58700] transition-all duration-2 ease-in text-white py-[3px] px-[5px]",
     inlineFact1: "bg-[#f58700] rounded-[8px_8px_0px_0px]",
@@ -19,6 +19,10 @@ const line: { [key: string]: string } = {
     inlineFact: "bottom-[-0.5px]",
     aloneFactWidth: "100%",
     inlineFactWidth: "95%",
+    aloneFactLineColor1: "bg-[rgba(255,190,179,0.75)]",
+    aloneFactLineColor2: "bg-[rgba(255,246,246,0.75)]",
+    inlineFactLineColor1: "bg-[rgba(255,210,152,0.75)]",
+    inlineFactLineColor2: "bg-[rgba(255,251,246,0.75)]",
 };
 
 const button: { [key: string]: string } = {
@@ -29,6 +33,8 @@ const button: { [key: string]: string } = {
 const extraBody: { [key: string]: string } = {
     aloneFact: "md:py-8 py-4 md:px-10 px-6",
     inlineFact: "md:py-4 py-3 md:px-6 px-4",
+    aloneFactBgColor: "bg-[#e43707]",
+    inlineFactBgColor: "bg-[#e67e00]",
 };
 
 const container: { [key: string]: string } = {
@@ -86,7 +92,7 @@ export default function Extra({
         } else if (extraBodyContainerRef.current) {
             setTimeout(() => {
                 if (sneakyRef.current) sneakyRef.current.style.display = "none";
-            }, extraBodyContainerRef.current.offsetHeight / 3);
+            }, extraBodyContainerRef.current.offsetHeight / 2);
 
             await animate("#extraBody", {
                 height: "0px",
@@ -133,19 +139,25 @@ export default function Extra({
                         className={`h-[2px] ${line[variant]} w-full absolute bottom-[-1px] left-0 grid grid-cols-1 grid-rows-1 *:justify-self-center`}
                     >
                         <div
-                            className="bg-[rgba(255,210,152,0.75)] h-full col-[1/-1] row-[1/-1]"
+                            className={`${
+                                line[variant + "LineColor1"]
+                            } h-full col-[1/-1] row-[1/-1]`}
                             style={{
                                 width: line[variant + "Width"],
                             }}
                         />
                         <div
-                            className="bg-[rgba(255,251,246,0.75)] w-0 h-full z-10 col-[1/-1] row-[1/-1]"
+                            className={`${
+                                line[variant + "LineColor2"]
+                            } w-0 h-full z-10 col-[1/-1] row-[1/-1]`}
                             id="line"
                         />
                     </div>
                 </div>
                 <div
-                    className="absolute hidden bottom-[-15px] left-0 h-[15px] w-full bg-[#e67e00]"
+                    className={`absolute hidden bottom-[-15px] left-0 h-[15px] w-full ${
+                        extraBody[variant + "BgColor"]
+                    }`}
                     ref={sneakyRef}
                 />
             </button>
@@ -156,18 +168,16 @@ export default function Extra({
                 />
             )}
             <div
-                className="h-0 absolute left-0 md1:pl-[70px] pl-[35px] md1:pr-2 pr-5 overflow-hidden w-full"
+                className="h-0 absolute left-0 md1:pl-[81px] pl-[30px] md1:pr-2 pr-5 overflow-hidden w-full z-10"
                 id="extraBody"
                 ref={extraBodyContainerRef}
             >
-                {openExtra && (
-                    <div
-                        className="absolute w-full h-full top-0 left-0"
-                        onClick={() => console.log("1")}
-                    />
-                )}
                 <div
-                    className={`text-white bg-[#e67e00] ${extraBodyVariants[extraBodyVariant]} ${extraBodyClassName} rounded-[15px] ${extraBody[variant]}`}
+                    className={`text-white ${
+                        extraBodyVariants[extraBodyVariant]
+                    } ${extraBodyClassName} rounded-[15px] ${
+                        extraBody[variant]
+                    } ${extraBody[variant + "BgColor"]}`}
                 >
                     <div>{children}</div>
                     <button
@@ -177,6 +187,10 @@ export default function Extra({
                         Đóng
                     </button>
                 </div>
+                <div
+                    className="absolute w-full h-full top-0 left-0 -z-10"
+                    onClick={handleOpenClose}
+                />
             </div>
         </div>
     );

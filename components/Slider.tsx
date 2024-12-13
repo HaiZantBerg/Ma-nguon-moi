@@ -13,7 +13,7 @@ import {
     gradeButtonOpenColor,
 } from "./static/static";
 import { description, chapter } from "./static/chaptersStatic";
-import { db } from "@/db";
+// import { db } from "@/db";
 
 const firstCord = 20;
 const secondCord = 7.5;
@@ -733,42 +733,42 @@ export default function Slider({ id }: { id: number }) {
     const handleOpenDialog = async (idx: number) => {
         setCurChapterId(idx);
 
-        try {
-            await db.chapterData.put({
-                id: 1,
-                curGrade: id,
-                curChapter: idx,
-            });
-        } catch (err) {
-            console.log(err);
-        }
+        // try {
+        //     await db.chapterData.put({
+        //         id: 1,
+        //         curGrade: id,
+        //         curChapter: idx,
+        //     });
+        // } catch (err) {
+        //     console.log(err);
+        // }
     };
 
     const handleCloseDialog = async () => {
         setCurChapterId(-1);
 
-        try {
-            await db.chapterData.put({
-                id: 1,
-                curGrade: id,
-                curChapter: -1,
-            });
-        } catch (err) {
-            console.log(err);
-        }
+        // try {
+        //     await db.chapterData.put({
+        //         id: 1,
+        //         curGrade: id,
+        //         curChapter: -1,
+        //     });
+        // } catch (err) {
+        //     console.log(err);
+        // }
     };
 
-    useEffect(() => {
-        const fetchCurChapter = async () => {
-            const openChapter = await db.chapterData.get(1);
+    // useEffect(() => {
+    //     const fetchCurChapter = async () => {
+    //         const openChapter = await db.chapterData.get(1);
 
-            if (openChapter) setCurChapterId(openChapter.curChapter);
+    //         if (openChapter) setCurChapterId(openChapter.curChapter);
 
-            setTimeout(() => (playAnimation.current = true), 100);
-        };
+    //         setTimeout(() => (playAnimation.current = true), 100);
+    //     };
 
-        fetchCurChapter();
-    }, []);
+    //     fetchCurChapter();
+    // }, []);
 
     return (
         <div ref={scope}>

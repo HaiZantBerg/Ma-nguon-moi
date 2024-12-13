@@ -1,3 +1,15 @@
+export const lessonsToggle = [[["Mệnh đề", "Tập hợp"]], [], []];
+
+export const gridDisplay = [
+    [
+        ["grid-rows-[repeat(4,auto)]", "grid-rows-[repeat(6,auto)]"],
+        "",
+        "grid-rows-[repeat(8,auto)]",
+    ],
+    [],
+    [],
+];
+
 export const timelineStar = [
     [
         [
@@ -8,7 +20,7 @@ export const timelineStar = [
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 184.49 36.53"
                 key="1131"
-                className="h-full"
+                className="h-full relative z-10"
             >
                 <defs>
                     <linearGradient
@@ -128,7 +140,7 @@ export const timelineStar = [
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 184.49 36.53"
                 key="1131"
-                className="h-full"
+                className="h-full relative z-10"
             >
                 <defs>
                     <linearGradient
@@ -245,7 +257,7 @@ export const timelineStar = [
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 268.23 36.53"
                 key="1132"
-                className="h-full"
+                className="h-full relative z-10"
             >
                 <defs>
                     <linearGradient
@@ -319,7 +331,7 @@ export const timelineStar = [
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 238.16 36.53"
                 key="1133"
-                className="h-full"
+                className="h-full relative z-10"
             >
                 <defs>
                     <linearGradient
@@ -393,7 +405,7 @@ export const timelineStar = [
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 238.16 36.53"
                 key="1134"
-                className="h-full"
+                className="h-full relative z-10"
             >
                 <defs>
                     <linearGradient
@@ -474,7 +486,7 @@ export const timelineStar = [
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 238.23 36.53"
                 key="1135"
-                className="h-full"
+                className="h-full relative z-10"
             >
                 <defs>
                     <linearGradient
@@ -555,7 +567,7 @@ export const timelineStar = [
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 238.23 36.53"
                 key="1136"
-                className="h-full"
+                className="h-full relative z-10"
             >
                 <defs>
                     <linearGradient
@@ -636,7 +648,7 @@ export const timelineStar = [
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 238.23 36.53"
                 key="1137"
-                className="h-full"
+                className="h-full relative z-10"
             >
                 <defs>
                     <linearGradient
@@ -717,7 +729,7 @@ export const timelineStar = [
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 118.82 36.53"
                 key="1138"
-                className="h-full"
+                className="h-full relative z-10"
             >
                 <defs>
                     <linearGradient
@@ -767,5 +779,3 @@ export const timelineStar = [
     [],
     [],
 ];
-
-export const lessonsToggle = [[["Mệnh đề", "Tập hợp"]], [], []];
