@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import {
     gridDisplay,
     lessonsToggle,
@@ -14,11 +14,16 @@ import Extra from "./Extra";
 import Image from "next/image";
 import Boner from "@/public/Image/boner.png";
 import Link from "next/link";
+import { signal } from "@preact/signals-react";
+import { useSignals } from "@preact/signals-react/runtime";
 
-const generalClassName = "md1:ml-[45px] ml-[30px] lg3:text-lg md1:mr-2 mr-5";
+const generalClassName =
+    "md1:ml-[45px] ml-[30px] lg3:text-lg sm:text-base text-[0.9rem] leading-[1.3rem] md1:mr-2 mr-5";
 const generalContentClassName =
-    "md1:text-lg md1:leading-[26px] leading-[22px] pl-4";
-const generalInstanceClassName = "sm:pl-[24px] pl-[12px]";
+    "md1:text-lg sm:text-base text-[0.9rem] leading-[1.3rem] pl-4 text-pretty";
+const generalInstanceClassName = "sm:pl-[24px] pl-[12px] text-pretty";
+
+const gridHeight = signal(-1);
 
 const Menhde = () => {
     return (
@@ -144,13 +149,13 @@ const Menhde = () => {
 };
 
 const Taphop = () => {
-    const [playVideo, setPlayVideo] = useState<boolean>(true);
+    useSignals();
 
-    const handleStartVideo = () =>
-        // idx: number
-        {
-            setPlayVideo(!playVideo);
-        };
+    const playVideo = signal<boolean[]>([true]);
+
+    const handleStartVideo = (idx: number) => {
+        playVideo.value[idx] = !playVideo.value[idx];
+    };
 
     return (
         <>
@@ -162,15 +167,12 @@ const Taphop = () => {
                 <div
                     className={`${generalClassName} grid lg2:grid-cols-[auto_auto] lg2:grid-rows-[auto_auto]`}
                 >
-                    <div className="col-[1/2] row-[1/2] font-semibold md1:text-[1.25rem] text-[1.125rem] mb-5">
+                    <div className="col-[1/2] row-[1/2] font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base mb-5">
                         Người nguyên thủy đếm như thế nào?
                     </div>
                     <div
-                        className="lg2:col-[1/2] lg2:row-[2/-1] cursor-pointer flex md1:justify-normal justify-center"
-                        onClick={
-                            () => handleStartVideo()
-                            //0
-                        }
+                        className="lg2:col-[1/2] lg2:row-[2/-1] cursor-pointer flex md1:justify-normal justify-center items-start"
+                        onClick={() => handleStartVideo(0)}
                     >
                         <div className="lg2:sticky lg2:top-[20px] max-w-[400px] w-full aspect-[304/207] border">
                             {/* <ReactPlayer
@@ -215,7 +217,6 @@ const Taphop = () => {
                     buttonContent="Xương Ishango"
                     variant="aloneFact"
                     containerClassName="md1:ml-[45px] ml-[45px]"
-                    extraBodyVariant=""
                 >
                     <div className="w-full h-full text-lg flex lg3:flex-row flex-col gap-2 items-center">
                         <div
@@ -251,7 +252,7 @@ const Taphop = () => {
                     </div>
                 </Extra>
                 <div className={`${generalClassName}`}>
-                    <div className="font-semibold md1:text-[1.25rem] text-[1.125rem] mb-2">
+                    <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base mb-2">
                         Cơ số
                     </div>
                     <div className={`${generalContentClassName}`}>
@@ -285,69 +286,60 @@ const Taphop = () => {
                             <Extra
                                 buttonContent="Cơ số mười"
                                 variant="inlineFact"
-                                containerClassName="inline bg-black"
                                 extraBodyVariant="instance"
                             >
-                                <div className="md:text-[0.9rem] text-sm">
-                                    Nó còn được thế hiện qua đơn vị đo lường
-                                    quốc tế về khoảng cách và khối lượng: hệ mét
-                                    và kilogam. Cứ đủ mười đơn vị sẽ cho ra một
-                                    cho đơn vị lớn hơn ngay trước đó. Tại sao cơ
-                                    số mười lại được con người chúng ta ưu ái
-                                    đền thế? Hầu như mọi dân tộc, hầu hết mọi
-                                    người đều đếm theo cơ số mười từ nhỏ. Tại
-                                    sao không phải là một cơ số nào đó khác? Có
-                                    phải vì bàn tay chúng ta có mười ngón nên cơ
-                                    số này hỗ trợ tốt cho việc đếm? Hay vì mười
-                                    là cơ số có lợi cho việc thực hiện phép
-                                    tính, nhất là khi nhân với mười hay một lũy
-                                    thừa của mười? Những câu hỏi như thế này
-                                    thường ít khi được nêu ra vì đếm theo mười
-                                    là một điều quá hiển nhiên, không có gì phải
-                                    thắc mắc. Sự thực thì cơ số mười không tốt
-                                    cho việc tính toán hơn so với những cơ số
-                                    khác, chẳng hạn như cơ số mười hai. Mười chỉ
-                                    chia hết cho hai và năm, trong khi mười hai
-                                    thì chia hết cho hai, ba, bốn và sáu. Vì
-                                    thế, đếm và tính theo cơ số mười hai vượt
-                                    trội hơn rất nhiều so với cơ số mười, nhất
-                                    là trong việc phân chia: phân nửa, một phần
-                                    ba, phần tư, thậm chí cả phần sáu. Thế thì
-                                    mười là cơ số có lợi cho việc tính toán
-                                    không phải là câu trả lời thỏa đáng. Vậy thì
-                                    chắc là do bàn tay con người có mười ngón.
-                                    Trong trường hợp chỉ có tám ngón thôi thì
-                                    liệu chúng ta có đếm theo cơ số tám? Hay vẫn
-                                    cứ luôn là cơ số mười? Thật khó lòng mà biết
-                                    được, nhưng khả năng cao sẽ là cơ số tám.
-                                    Nếu quả đúng vậy thì thật lạ, tư duy Toán
-                                    học của chúng ta, như bạn đã biết, hình
-                                    thành từ việc đếm, lại phụ thuộc vào cấu
-                                    trúc sinh học cơ thể, cấu trúc này lại hình
-                                    thành từ hàng loạt quá trình ngẫu nhiên và
-                                    tiến hóa. Sinh học đã tác động đến Toán học
-                                    theo cách không thể ngờ. Toán học ra đời từ
-                                    chính bàn tay của chúng ta theo đúng nghĩa
-                                    đen như vậy. Quả thực, khi ngẫm nghĩ về điều
-                                    này, chúng ta không khỏi có một cảm giác kì
-                                    lạ và bối rối. Trong khoa học, khi truy
-                                    nguyên tận cùng gốc rễ vấn đề thì câu trả
-                                    lời nhận được sẽ như một chiếc búa tạ đập
-                                    thẳng vào tâm thức khiến ta phải choáng
-                                    váng.
-                                    <br /> Nguồn{" "}
-                                    <Link
-                                        href="https://www.history-of-mathematics.org/"
-                                        className="underline font-[450]"
-                                    >
-                                        https://www.history-of-mathematics.org/.
-                                    </Link>{" "}
-                                    Đây là trích đoạn từ De Temporum Ratione.
-                                    Trong chương đầu tiên của De Temporum
-                                    Ratione, mang tên “Tính toán hoặc nói chuyện
-                                    bằng ngón tay,” đã mô tả một hình thức đếm
-                                    bằng ngón tay.
-                                </div>
+                                Nó còn được thế hiện qua đơn vị đo lường quốc tế
+                                về khoảng cách và khối lượng: hệ mét và kilogam.
+                                Cứ đủ mười đơn vị sẽ cho ra một cho đơn vị lớn
+                                hơn ngay trước đó. Tại sao cơ số mười lại được
+                                con người chúng ta ưu ái đền thế? Hầu như mọi
+                                dân tộc, hầu hết mọi người đều đếm theo cơ số
+                                mười từ nhỏ. Tại sao không phải là một cơ số nào
+                                đó khác? Có phải vì bàn tay chúng ta có mười
+                                ngón nên cơ số này hỗ trợ tốt cho việc đếm? Hay
+                                vì mười là cơ số có lợi cho việc thực hiện phép
+                                tính, nhất là khi nhân với mười hay một lũy thừa
+                                của mười? Những câu hỏi như thế này thường ít
+                                khi được nêu ra vì đếm theo mười là một điều quá
+                                hiển nhiên, không có gì phải thắc mắc. Sự thực
+                                thì cơ số mười không tốt cho việc tính toán hơn
+                                so với những cơ số khác, chẳng hạn như cơ số
+                                mười hai. Mười chỉ chia hết cho hai và năm,
+                                trong khi mười hai thì chia hết cho hai, ba, bốn
+                                và sáu. Vì thế, đếm và tính theo cơ số mười hai
+                                vượt trội hơn rất nhiều so với cơ số mười, nhất
+                                là trong việc phân chia: phân nửa, một phần ba,
+                                phần tư, thậm chí cả phần sáu. Thế thì mười là
+                                cơ số có lợi cho việc tính toán không phải là
+                                câu trả lời thỏa đáng. Vậy thì chắc là do bàn
+                                tay con người có mười ngón. Trong trường hợp chỉ
+                                có tám ngón thôi thì liệu chúng ta có đếm theo
+                                cơ số tám? Hay vẫn cứ luôn là cơ số mười? Thật
+                                khó lòng mà biết được, nhưng khả năng cao sẽ là
+                                cơ số tám. Nếu quả đúng vậy thì thật lạ, tư duy
+                                Toán học của chúng ta, như bạn đã biết, hình
+                                thành từ việc đếm, lại phụ thuộc vào cấu trúc
+                                sinh học cơ thể, cấu trúc này lại hình thành từ
+                                hàng loạt quá trình ngẫu nhiên và tiến hóa. Sinh
+                                học đã tác động đến Toán học theo cách không thể
+                                ngờ. Toán học ra đời từ chính bàn tay của chúng
+                                ta theo đúng nghĩa đen như vậy. Quả thực, khi
+                                ngẫm nghĩ về điều này, chúng ta không khỏi có
+                                một cảm giác kì lạ và bối rối. Trong khoa học,
+                                khi truy nguyên tận cùng gốc rễ vấn đề thì câu
+                                trả lời nhận được sẽ như một chiếc búa tạ đập
+                                thẳng vào tâm thức khiến ta phải choáng váng.
+                                <br /> Nguồn{" "}
+                                <Link
+                                    href="https://www.history-of-mathematics.org/"
+                                    className="underline font-[475]"
+                                >
+                                    https://www.history-of-mathematics.org/.
+                                </Link>{" "}
+                                Đây là trích đoạn từ De Temporum Ratione. Trong
+                                chương đầu tiên của De Temporum Ratione, mang
+                                tên “Tính toán hoặc nói chuyện bằng ngón tay,”
+                                đã mô tả một hình thức đếm bằng ngón tay.
                             </Extra>{" "}
                             (hệ thập phân) là vô cùng phổ biến.
                         </div>
@@ -356,32 +348,27 @@ const Taphop = () => {
                             <Extra
                                 buttonContent="cơ số mười hai"
                                 variant="inlineFact"
-                                containerClassName="inline bg-black"
                                 extraBodyVariant="instance"
                             >
-                                <div className="md:text-[0.9rem] text-sm">
-                                    Mười hai bằng một tá, kiểu đếm này vẫn còn
-                                    được dùng, điển hình là số lượng trứng và
-                                    vài trường hợp ở các nước Anh, Mỹ. Thời cổ
-                                    đại, người Sumer chia một ngày làm mười hai
-                                    danna, một danna tương ứng hai giờ đồng hồ
-                                    hiện nay; họ cũng chia một đường tròn làm
-                                    mười hai phần bằng nhau, mỗi cung có số đo
-                                    30°. Vì sao lại là con số mười hai? Cũng như
-                                    cơ số mười, nguồn gốc của nó cũng có thể tạm
-                                    giải thích theo chính bàn tay con người. Bốn
-                                    ngón gồm ngón trỏ, ngón giữa, ngón áp út và
-                                    ngón út, mỗi ngón được chia làm ba đốt, tổng
-                                    cộng mười hai đốt, riêng ngón cái có chức
-                                    năng chỉ lần lượt mỗi mười hai đốt này khi
-                                    đếm. Đếm theo kiểu này rất thuận tiện vì chỉ
-                                    cần một tay, tay còn lại có thể ghi chép lại
-                                    số liệu. Bàn tay người vẫn chỉ là một giả
-                                    thuyết cho việc sử dụng cơ số mười hai, một
-                                    lời giải thích đơn giản hơn có thể là bởi sự
-                                    thuận tiện trong tính toán của cơ số mười
-                                    hai.
-                                </div>
+                                Mười hai bằng một tá, kiểu đếm này vẫn còn được
+                                dùng, điển hình là số lượng trứng và vài trường
+                                hợp ở các nước Anh, Mỹ. Thời cổ đại, người Sumer
+                                chia một ngày làm mười hai danna, một danna
+                                tương ứng hai giờ đồng hồ hiện nay; họ cũng chia
+                                một đường tròn làm mười hai phần bằng nhau, mỗi
+                                cung có số đo 30°. Vì sao lại là con số mười
+                                hai? Cũng như cơ số mười, nguồn gốc của nó cũng
+                                có thể tạm giải thích theo chính bàn tay con
+                                người. Bốn ngón gồm ngón trỏ, ngón giữa, ngón áp
+                                út và ngón út, mỗi ngón được chia làm ba đốt,
+                                tổng cộng mười hai đốt, riêng ngón cái có chức
+                                năng chỉ lần lượt mỗi mười hai đốt này khi đếm.
+                                Đếm theo kiểu này rất thuận tiện vì chỉ cần một
+                                tay, tay còn lại có thể ghi chép lại số liệu.
+                                Bàn tay người vẫn chỉ là một giả thuyết cho việc
+                                sử dụng cơ số mười hai, một lời giải thích đơn
+                                giản hơn có thể là bởi sự thuận tiện trong tính
+                                toán của cơ số mười hai.
                             </Extra>
                             .
                         </div>
@@ -389,44 +376,40 @@ const Taphop = () => {
                             <Extra
                                 buttonContent="Cơ số sáu mươi"
                                 variant="inlineFact"
-                                containerClassName="inline bg-black"
                                 extraBodyVariant="instance"
                             >
-                                <div className="md:text-[0.9rem] text-sm">
-                                    Cơ số 60 là một trong những phương pháp đếm
-                                    cổ xưa của con người, có nguồn gốc từ người
-                                    Semite cổ đại vào thế kỷ thứ 3 trước Công
-                                    nguyên và sau đó được truyền bá sang Babylon
-                                    và những nơi khác.
-                                    <br />
-                                    Lý do tại sao 60 được sử dụng thay vì các số
-                                    khác có thể là do 60 là một số tương đối nhỏ
-                                    và có thể được chia thành 10 thừa số thực
-                                    của 2, 3, 4, 5, 6, 10, 12, 15, 20 và 30 điều
-                                    này làm cho hệ đếm cơ số 60 linh hoạt hơn
-                                    cho các tính toán khác nhau.
-                                    <br />
-                                    Nhà thiên văn học người Hy Lạp Eratosthenes
-                                    đã sử dụng số thập lục phân để tạo ra một hệ
-                                    thống địa lý vĩ độ với việc chia một vòng
-                                    tròn thành 60 phần và một hệ thống các đường
-                                    kinh độ bao phủ 360 độ và chạy từ bắc xuống
-                                    nam, nối từ cực này sang cực kia.
-                                    <br />
-                                    Tiếp đó, nhà bác học Claudius Ptolemy đã mở
-                                    rộng công trình của Hipparchus bằng cách
-                                    chia hệ thống 360 độ vĩ độ và kinh độ thành
-                                    các phần nhỏ hơn. Mỗi độ được chia thành 60
-                                    phần (ngày nay chúng ta gọi là phút), mỗi
-                                    phần được chia thành 60 phần nhỏ hơn (ngày
-                                    nay gọi là giây)
-                                    <div className="aspect-video max-w-[500px]">
-                                        <ReactPlayer
-                                            url="https://www.youtube.com/watch?v=VnBbvPevFFQ"
-                                            width="100%"
-                                            height="100%"
-                                        />
-                                    </div>
+                                Cơ số 60 là một trong những phương pháp đếm cổ
+                                xưa của con người, có nguồn gốc từ người Semite
+                                cổ đại vào thế kỷ thứ 3 trước Công nguyên và sau
+                                đó được truyền bá sang Babylon và những nơi
+                                khác.
+                                <br />
+                                Lý do tại sao 60 được sử dụng thay vì các số
+                                khác có thể là do 60 là một số tương đối nhỏ và
+                                có thể được chia thành 10 thừa số thực của 2, 3,
+                                4, 5, 6, 10, 12, 15, 20 và 30 điều này làm cho
+                                hệ đếm cơ số 60 linh hoạt hơn cho các tính toán
+                                khác nhau.
+                                <br />
+                                Nhà thiên văn học người Hy Lạp Eratosthenes đã
+                                sử dụng số thập lục phân để tạo ra một hệ thống
+                                địa lý vĩ độ với việc chia một vòng tròn thành
+                                60 phần và một hệ thống các đường kinh độ bao
+                                phủ 360 độ và chạy từ bắc xuống nam, nối từ cực
+                                này sang cực kia.
+                                <br />
+                                Tiếp đó, nhà bác học Claudius Ptolemy đã mở rộng
+                                công trình của Hipparchus bằng cách chia hệ
+                                thống 360 độ vĩ độ và kinh độ thành các phần nhỏ
+                                hơn. Mỗi độ được chia thành 60 phần (ngày nay
+                                chúng ta gọi là phút), mỗi phần được chia thành
+                                60 phần nhỏ hơn (ngày nay gọi là giây)
+                                <div className="aspect-video max-w-[475px]">
+                                    <ReactPlayer
+                                        url="https://www.youtube.com/watch?v=VnBbvPevFFQ"
+                                        width="100%"
+                                        height="100%"
+                                    />
                                 </div>
                             </Extra>{" "}
                             (hệ lục thập phân).
@@ -437,15 +420,12 @@ const Taphop = () => {
                             <Extra
                                 buttonContent="Cơ số hai"
                                 variant="inlineFact"
-                                containerClassName="inline bg-black"
                                 extraBodyVariant="instance"
                             >
-                                <div className="md:text-[0.9rem] text-sm">
-                                    Cơ số hai được sử dụng rộng rãi vì nó gắn
-                                    liền với hoạt động của máy tính điện tử. Tuy
-                                    nhiên, ngay từ thời xa xưa, những thổ dân
-                                    Queensland cũng đã sử dụng hệ đếm này.
-                                </div>
+                                Cơ số hai được sử dụng rộng rãi vì nó gắn liền
+                                với hoạt động của máy tính điện tử. Tuy nhiên,
+                                ngay từ thời xa xưa, những thổ dân Queensland
+                                cũng đã sử dụng hệ đếm này.
                             </Extra>{" "}
                             (gọi là hệ nhị phân).
                         </div>
@@ -454,22 +434,19 @@ const Taphop = () => {
                             <Extra
                                 buttonContent="Cơ số năm"
                                 variant="inlineFact"
-                                containerClassName="inline bg-black"
                                 extraBodyVariant="instance"
                             >
-                                <div className="md:text-[0.9rem] text-sm">
-                                    Cơ số năm cũng được dùng ở một số vùng khác
-                                    như tộc người Yukaghir ở Siberia. Cho đến
-                                    đầu thế kỉ mười chín, lịch nông nghiệp của
-                                    Đức vẫn còn dùng hệ ngũ phân!
-                                </div>
+                                Cơ số năm cũng được dùng ở một số vùng khác như
+                                tộc người Yukaghir ở Siberia. Cho đến đầu thế kỉ
+                                mười chín, lịch nông nghiệp của Đức vẫn còn dùng
+                                hệ ngũ phân!
                             </Extra>{" "}
                             (gọi là hệ ngũ phân).
                         </div>
                     </div>
                 </div>
                 <div className={`${generalClassName}`}>
-                    <div className="font-semibold md1:text-[1.25rem] text-[1.125rem] my-2">
+                    <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base my-2">
                         Sự ra đời của số 0 và số âm
                     </div>
                     <div className={`${generalContentClassName}`}>
@@ -535,82 +512,77 @@ const Taphop = () => {
                         <Extra
                             buttonContent="Brahmagupta"
                             variant="inlineFact"
-                            containerClassName="inline bg-black"
                             extraBodyVariant="content"
                         >
-                            <div className="md:text-[0.9rem] text-sm">
-                                Nhà toán học Ấn Độ Brahmagupta (598 - 668 CE) đã
-                                phát minh ra các quy tắc cộng, trừ và nhân với
-                                số 0 và số âm trong quyển sách Brahma Sphuta
-                                Siddhanta. Ông cũng là một nhà thiên văn học và
-                                thực hiện nhiều khám phá khác trong toán học.
-                                Thật không may, các bài viết của anh ấy không
-                                chứa bất kỳ bằng chứng nào, vì vậy chúng tôi
-                                không thể biết được kết quả của anh ấy như thế
-                                nào.
-                            </div>
+                            Nhà toán học Ấn Độ Brahmagupta (598 - 668 CE) đã
+                            phát minh ra các quy tắc cộng, trừ và nhân với số 0
+                            và số âm trong quyển sách Brahma Sphuta Siddhanta.
+                            Ông cũng là một nhà thiên văn học và thực hiện nhiều
+                            khám phá khác trong toán học. Thật không may, các
+                            bài viết của anh ấy không chứa bất kỳ bằng chứng
+                            nào, vì vậy chúng tôi không thể biết được kết quả
+                            của anh ấy như thế nào.
                         </Extra>
                         . Và ông cũng là người đầu tiên nêu lên các quy tắc tính
                         toán trong hệ ghi số có số 0 trong quyển sách{" "}
                         <Extra
                             buttonContent="Brahma Sphuta Siddhanta"
                             variant="inlineFact"
-                            containerClassName="inline bg-black"
                             extraBodyVariant="content"
                         >
-                            <div className="md:text-[0.9rem] text-sm">
+                            <>
                                 Nội dung sách gồm 24 chương với 1 008 câu hoàn
                                 toàn là thơ ca viết bằng tiếng Sanskrit, không
                                 chứa bất kỳ một ký hiệu toán học nào. Số 0 vẫn
                                 được gọi là{" "}
-                                <span className="font-[500]">sunya</span>, nó có
+                                <span className="font-[475]">sunya</span>, nó có
                                 tính chất: Thêm hay bớt{" "}
-                                <span className="font-[500]">sunya</span> từ một
+                                <span className="font-[475]">sunya</span> từ một
                                 số thì con số vẫn không thay đổi, nhân một số
-                                với <span className="font-[500]">sunya</span>{" "}
+                                với <span className="font-[475]">sunya</span>{" "}
                                 thì kết quả nhận được là{" "}
-                                <span className="font-[500]">sunya</span>. Xa
+                                <span className="font-[475]">sunya</span>. Xa
                                 hơn nữa, Brahmagupta còn chỉ ra khái niệm số âm,
                                 số dương qua mô hình khoản nợ và tài sản:
                                 <div className={`${generalInstanceClassName}`}>
                                     Một khoản nợ trừ đi{" "}
-                                    <span className="font-[500]">sunya</span>{" "}
+                                    <span className="font-[475]">sunya</span>{" "}
                                     vẫn là một khoản nợ.
                                 </div>
                                 <div className={`${generalInstanceClassName}`}>
                                     Tài sản trừ đi{" "}
-                                    <span className="font-[500]">sunya</span>{" "}
+                                    <span className="font-[475]">sunya</span>{" "}
                                     vẫn là tài sản.
                                 </div>
                                 <div className={`${generalInstanceClassName}`}>
-                                    <span className="font-[500]">sunya</span>{" "}
+                                    <span className="font-[475]">sunya</span>{" "}
                                     trừ đi{" "}
-                                    <span className="font-[500]">sunya</span>{" "}
+                                    <span className="font-[475]">sunya</span>{" "}
                                     vẫn là{" "}
-                                    <span className="font-[500]">sunya</span>.
+                                    <span className="font-[475]">sunya</span>.
                                 </div>
                                 <div className={`${generalInstanceClassName}`}>
                                     Một khoản nợ được trừ đi từ{" "}
-                                    <span className="font-[500]">sunya</span>{" "}
+                                    <span className="font-[475]">sunya</span>{" "}
                                     trở thành tài sản.
                                 </div>
                                 <div className={`${generalInstanceClassName}`}>
                                     Tài sản được trừ đi từ{" "}
-                                    <span className="font-[500]">sunya</span>{" "}
+                                    <span className="font-[475]">sunya</span>{" "}
                                     trở thành một khoản nợ.
                                 </div>
                                 <div className={`${generalInstanceClassName}`}>
                                     Nhân tài sản hay khoản nợ với{" "}
-                                    <span className="font-[500]">sunya</span>{" "}
+                                    <span className="font-[475]">sunya</span>{" "}
                                     thì thành{" "}
-                                    <span className="font-[500]">sunya</span>.
+                                    <span className="font-[475]">sunya</span>.
                                 </div>
                                 <div className={`${generalInstanceClassName}`}>
-                                    <span className="font-[500]">sunya</span>{" "}
+                                    <span className="font-[475]">sunya</span>{" "}
                                     nhân với{" "}
-                                    <span className="font-[500]">sunya</span>{" "}
+                                    <span className="font-[475]">sunya</span>{" "}
                                     vẫn là{" "}
-                                    <span className="font-[500]">sunya</span>.
+                                    <span className="font-[475]">sunya</span>.
                                 </div>
                                 <div className={`${generalInstanceClassName}`}>
                                     Tài sản chia thành những tài sản vẫn là
@@ -630,11 +602,11 @@ const Taphop = () => {
                                 những khoa học gia xuất chúng nhất nhân loại
                                 thời bấy giờ. Tuy nhiên, Brahmagupta cũng có
                                 nhận định sai lầm về số 0:{" "}
-                                <span className="font-[500]">sunya</span> chia
-                                cho <span className="font-[500]">sunya</span>{" "}
+                                <span className="font-[475]">sunya</span> chia
+                                cho <span className="font-[475]">sunya</span>{" "}
                                 thì vẫn là{" "}
-                                <span className="font-[500]">sunya</span>.
-                            </div>
+                                <span className="font-[475]">sunya</span>.
+                            </>
                         </Extra>{" "}
                         <Extra
                             buttonContent="Ý nghĩa của số 0"
@@ -651,20 +623,17 @@ const Taphop = () => {
                                 />
                             </div>
                         </Extra>
-                        <div>
-                            Số không mở ra cánh cửa đến với các số âm. Tuy vậy,
-                            phải mất một thời gian dài các nhà toán học mới thực
-                            sự chấp nhận chúng. Giới học giả Trung Quốc là những
-                            người đầu tiên mô tả những số lượng có thể liên quan
-                            đến số âm. Trong những lời bàn ở “Cửu chương toán
-                            thuật”, Lưu Huy đã mô tả một hệ thống các thanh màu
-                            cho phép biểu diễn những số lượng dương hoặc âm. Mỗi
-                            thanh đỏ biểu trưng cho một số dương, mỗi thanh đen
-                            biểu trưng cho một số âm. Lưu Huy đã giải thích cụ
-                            thể hai loại số này tương tác với nhau như thế nào,
-                            và đặc biệt là việc chúng cộng vào hoặc trừ với nhau
-                            ra sao.
-                        </div>
+                        Số không mở ra cánh cửa đến với các số âm. Tuy vậy, phải
+                        mất một thời gian dài các nhà toán học mới thực sự chấp
+                        nhận chúng. Giới học giả Trung Quốc là những người đầu
+                        tiên mô tả những số lượng có thể liên quan đến số âm.
+                        Trong những lời bàn ở “Cửu chương toán thuật”, Lưu Huy
+                        đã mô tả một hệ thống các thanh màu cho phép biểu diễn
+                        những số lượng dương hoặc âm. Mỗi thanh đỏ biểu trưng
+                        cho một số dương, mỗi thanh đen biểu trưng cho một số
+                        âm. Lưu Huy đã giải thích cụ thể hai loại số này tương
+                        tác với nhau như thế nào, và đặc biệt là việc chúng cộng
+                        vào hoặc trừ với nhau ra sao.
                     </div>
                     <br />
                     <div className={`${generalContentClassName}`}>
@@ -689,16 +658,591 @@ const Taphop = () => {
                     </div>
                 </div>
                 <div className={`${generalClassName}`}>
-                    <div className="font-semibold md1:text-[1.25rem] text-[1.125rem] my-2">
+                    <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base my-2">
                         Sự xuất hiện của số hữu tỉ
                     </div>
-                    <div className={`${generalClassName}`}></div>
+                    <div className={`${generalContentClassName}`}>
+                        Sự ra đời của số hữu tỉ xuất phát từ nhu cầu giải quyết
+                        các vấn đề thực tiễn và toán học trong đời sống. Đầu
+                        tiên đó là nhu cầu{" "}
+                        <Extra
+                            buttonContent="đo lường chính xác trong thực tế"
+                            variant="inlineFact"
+                            extraBodyVariant="content"
+                        >
+                            <span className="font-[475]">
+                                MỘT VÀI VẤN ĐỀ CỦA THỜI ĐẠI
+                            </span>
+                            <br />
+                            Từ những bài toán về ruộng đất, kiến trúc, hay khái
+                            quát hơn, về quy hoạch không gian, các nhà bác học
+                            thời kỳ cổ đại đã đặt ra những vấn đề hình học rất
+                            đa dạng. Đề bài sau, trích từ bản khắc văn tự BM
+                            85200 của người Babylon, cho thấy người Babylon
+                            không hề dừng lại ở hình học mặt phẳng mà còn vươn
+                            đến cả hình học không gian. Một tầng hầm. Chiều dài
+                            bằng chiều sâu. 1 [đơn vị], Tôi đào dưới đất. Nền
+                            nhà của tôi và khoảng đất tôi đắp lên, 1'10. Chiều
+                            dài và mặt tiền, '50. Chiều dài, mặt tiền, bao
+                            nhiêu? Bạn sẽ thấy các nhà toán học Babylon dùng
+                            ngôn ngữ điện báo. Cụ thể, nội dung của đề bài trên
+                            có thể hiểu như sau: Chiều sâu của một tầng hầm gấp
+                            mười hai lần chiều dài của nó. Nếu tôi đào căn hầm
+                            sâu thêm một đơn vị, thể tích của nó sẽ bằng{" "}
+                            <InlineMath math="\frac{7}{6}" />. Nếu tôi cộng
+                            chiều dài và chiều rộng, tôi sẽ thu được{" "}
+                            <InlineMath math="\frac{5}{6}" />. Các kích thước
+                            của căn hầm là bao nhiêu? Lưu ý rằng với hệ thống có
+                            cơ số sáu mươi, kí hiệu 1'10 Bài toán này được viết
+                            kèm với một lời giải cụ thể dẫn tới câu trả lời là
+                            chiều dài bằng <InlineMath math="\frac{1}{2}" />,
+                            chiều rộng bằng <InlineMath math="\frac{1}{3}" /> và
+                            chiều sâu bằng 6. Bây giờ hãy cùng dạo qua phía sông
+                            Nile một chút. Lẽ tất nhiên, ở vùng đất của người Ai
+                            Cập, ta sẽ gặp những bài toán về kim tự tháp. Đề bài
+                            tiếp theo đây được trích từ một quyển sách giấy cói
+                            nổi tiếng được viết bởi viên thư lại Ahmes, có niên
+                            đại vào nửa đầu thế kỉ 16 trước Công nguyên. Một kim
+                            tự tháp có cạnh đáy bằng 140 cẳng tay và độ dốc bằng
+                            5 gang tay và 1 ngón tay, có độ cao là bao nhiều?
+                            Cẳng tay, gang tay và ngón tay là các đơn vị đo
+                            lường lần lượt tương ứng với 52,5 xentimét, 7,5
+                            xentimét và 1,88 xentimét. Ahmes đã đưa ra lời giải:
+                            93 cẳng tay <InlineMath math="\frac{1}{3}" />. Trong
+                            sách giấy cói này, ông cũng thử sức với hình tròn.
+                            Và còn nhiều bài toán khác nữa. Các bạn có thể tìm
+                            đọc thêm ở cuốn sách “Toán học - Một thiên tiểu
+                            thuyết” của Mickael Launay.
+                        </Extra>
+                        : Trong các hoạt động đời sống như đo chiều dài, diện
+                        tích, khối lượng, hoặc chia sẻ tài sản, các số nguyên
+                        không thể đáp ứng hết nhu cầu. Ví dụ, việc chia một
+                        chiếc bánh cho 3 người dẫn đến phần chia không thể biểu
+                        diễn bằng số nguyên, mà cần đến các phân số như{" "}
+                        <InlineMath math="\frac{1}{3}" />. Từ nhu cầu về đo
+                        lường đó thì hình học và toán học cũng phát triển một
+                        cách mạnh mẽ. Người Hy Lạp cổ đại, đặc biệt là nhà toán
+                        học Pythagoras và các học trò của ông, đã nghiên cứu
+                        hình học và phát hiện rằng nhiều tỷ lệ giữa các đoạn
+                        thẳng có thể được biểu diễn dưới dạng phân số. Điều này
+                        thúc đẩy sự ra đời và phát triển của khái niệm số hữu
+                        tỉ. Hệ thống số hữu tỉ được dùng để biểu diễn các tỷ lệ
+                        trong hình học, chẳng hạn như các tỷ lệ trong tam giác
+                        hay giữa các cạnh của hình chữ nhật.
+                        <br />
+                        <br />
+                        Cũng như sự ra đời của số hữu tỉ, số vô tỉ ra đời vì nhu
+                        cầu đo lường của xã hội. Người Pythagoras ở Hy Lạp,
+                        những người theo học nhà toán học và triết gia nổi tiếng
+                        Pythagoras, là những người đầu tiên phát hiện ra các số
+                        không phải là số hữu tỷ, vào khoảng năm 400 TCN. Những
+                        số này được gọi là số vô tỷ (irrationals), vì chúng
+                        không thể được viết dưới dạng tỉ số của hai số nguyên.
+                        Có rất nhiều câu chuyện huyền thoại xoay quanh việc phát
+                        hiện ra số vô tỷ của nhà toán học Pythagoras, Hippacus
+                        thành Croton. Trong tất cả các câu chuyện, Hippacus gặp
+                        một kết cục không may, hoặc vì phát hiện ra rằng{" "}
+                        <InlineMath math="\sqrt{2}" /> là số vô tỷ, hoặc vì tiết
+                        lộ bí mật về <InlineMath math="\sqrt{2}" /> ra bên ngoài
+                        hội kín Pythagoras.
+                    </div>
                 </div>
             </div>
             <div className="col-[1/-1] row-[2/3] h-fit">
-                <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">{}</div>
-                    <div className={generalClassName}></div>
+                <div className="md:h-[75px] h-[51.5px]">
+                    {timelineStar[0][0][1]}
+                </div>
+                <div className={`${generalClassName}`}>
+                    <div className={`${generalContentClassName}`}>
+                        Bài báo của{" "}
+                        <Extra
+                            variant="inlineFact"
+                            buttonContent="Georg Cantor"
+                            extraBodyVariant="content"
+                        >
+                            <span className="font-[475]">Georg Cantor </span>{" "}
+                            (1845-1918) là nhà toán học người Đức, sáng lập lý
+                            thuyết tập hợp hiện đại. Ông phát hiện ra tập hợp vô
+                            hạn có thể có kích thước khác nhau và giới thiệu
+                            khái niệm về số cardinal và số siêu hạn, mở đường
+                            cho nghiên cứu về tập hợp vô hạn và lý thuyết tập
+                            hợp.
+                        </Extra>{" "}
+                        công bố năm 1874, "Über eine Eigenschaft des Inbegriffes
+                        aller reellen algebraischen Zahlen" ("Về một thuộc tính
+                        của tập hợp tất cả số đại số thực"), đã đánh dấu sự ra
+                        đời của{" "}
+                        <Extra
+                            buttonContent="lý thuyết tập hợp hiện đại"
+                            variant="inlineFact"
+                            extraBodyVariant="content"
+                        >
+                            <span className="font-[475]">
+                                Khái niệm về tập hợp của Georg Cantor
+                            </span>
+                            : Cantor đã định nghĩa một tập hợp là một tập hợp
+                            các đối tượng duy nhất và khác nhau.
+                        </Extra>{" "}
+                        như một nhánh của toán học. Ông đã giới thiệu khái niệm
+                        về tập hợp (set) trong toán học, coi tập hợp là một tập
+                        hợp các đối tượng hoặc phần tử mà có thể được xác định
+                        rõ ràng. Cantor không chỉ khái quát hóa các tập hợp hữu
+                        hạn mà còn mở rộng ra{" "}
+                        <Extra
+                            buttonContent="tập hợp vô hạn"
+                            extraBodyVariant="content"
+                            variant="inlineFact"
+                        >
+                            <span className="font-[475]">
+                                Lý thuyết tập hợp vô hạn
+                            </span>
+                            : Một trong những đóng góp quan trọng của Cantor là
+                            sự phân biệt giữa các loại vô hạn. Ông phát hiện
+                            rằng không phải tất cả các tập hợp vô hạn đều có
+                            cùng kích thước (số lượng phần tử). Cantor đưa ra
+                            khái niệm về số siêu hạn (cardinality), trong đó có
+                            sự phân biệt giữa tập hợp đếm được (countably
+                            infinite) như tập các số tự nhiên và tập hợp không
+                            đếm được (uncountably infinite) như tập các số thực.
+                            <br />
+                            Ví dụ: tập các số tự nhiên{" "}
+                            <InlineMath math="\mathbb{N}=\{1, 2, 3, ...\}" /> là
+                            một tập hợp đếm được.
+                        </Extra>
+                        .
+                    </div>
+                    <Extra variant="learnMore" buttonContent="Tìm hiểu thêm">
+                        Tập các số thực <InlineMath math="\mathbb{R}" /> lại
+                        không thể đếm được. Điều này được chứng minh qua định lý
+                        Cantor rằng không thể thiết lập một ánh xạ một-một giữa
+                        tập <InlineMath math="\mathbb{N}" /> và{" "}
+                        <InlineMath math="\mathbb{R}" />.{" "}
+                        <span className="font-[475]">Định lý Cantor</span>, hay
+                        còn gọi là{" "}
+                        <span className="font-[475]">
+                            Định lý Cantor về chiều của tập hợp
+                        </span>
+                        , là một trong những phát hiện quan trọng của
+                        <span className="font-[475]"> Georg Cantor</span> trong
+                        lý thuyết tập hợp. Định lý này chứng minh rằng:
+                        <br />{" "}
+                        <span className="font-[475]">
+                            "Không có ánh xạ (hàm) một-một từ một tập hợp vô hạn
+                            vào một tập hợp con của nó mà phủ định."
+                        </span>
+                        <br />
+                        Cụ thể, định lý này cho biết rằng:
+                        <br />
+                        <div className={`${generalInstanceClassName}`}>
+                            Tập hợp số thực <InlineMath math="\mathbb{R}" /> có
+                            nhiều phần tử hơn tập hợp số tự nhiên{" "}
+                            <InlineMath math="\mathbb{N}" />, mặc dù cả hai đều
+                            là vô hạn. Điều này có nghĩa là tập hợp các số thực
+                            là một tập hợp vô hạn lớn hơn so với tập hợp các số
+                            tự nhiên.
+                        </div>
+                        <div className={`${generalInstanceClassName}`}>
+                            {" "}
+                            Tập hợp vô hạn không thể có cùng số phần tử với một
+                            tập con của nó. Tức là không thể tìm một ánh xạ
+                            một-một từ một tập hợp vô hạn vào một tập con của
+                            nó. Nếu có một ánh xạ như vậy, thì ánh xạ đó không
+                            thể là khả nghịch (không thể đảo ngược được).
+                        </div>{" "}
+                        Các phép toán tập hợp cơ bản của Cantor: Hợp tập, Giao
+                        tập, Hiệu tập, Tập con,... như ta đã biết hiện nay.
+                        <br />
+                        <div className={`${generalInstanceClassName}`}>
+                            Hợp tập (Union): Nếu A và B là hai tập hợp, thì hợp
+                            tập <InlineMath math="A \cup B" /> là tập hợp tất cả
+                            các phần tử thuộc A hoặc B, không trùng lặp.
+                        </div>
+                        <div className={`${generalInstanceClassName}`}>
+                            Giao tập (Intersection): Giao tập{" "}
+                            <InlineMath math="A \cap B" /> là tập hợp tất cả các
+                            phần tử mà A và B cùng chia sẻ.
+                        </div>
+                        <div className={`${generalInstanceClassName}`}>
+                            Hiệu tập (Difference): Hiệu tập{" "}
+                            <InlineMath math="A / B" /> là tập hợp tất cả các
+                            phần tử thuộc A nhưng không thuộc B.
+                        </div>
+                        <div className={`${generalInstanceClassName}`}>
+                            Tập con (Subset): Một tập hợp A là một tập con của
+                            tập hợp B (ký hiệu <InlineMath math="A \subset B" />{" "}
+                            ) nếu mọi phần tử của A đều là phần tử của B.
+                        </div>
+                    </Extra>
+                </div>
+            </div>
+            <div className="col-[1/-1] row-[3/4] h-fit">
+                <div className="md:h-[75px] h-[51.5px] grid grid-rows-1 md:grid-cols-[28.5px_auto] grid-cols-[20px_auto]">
+                    <div className="col-[1/2] row-[1/-1]">
+                        {timelineStar[0][0][2]}
+                    </div>
+                    <div className="col-[2/-1] row-[1/-1] flex flex-wrap ml-3">
+                        {timelineStar[0][0][3]}
+                        {timelineStar[0][0][4]}
+                    </div>
+                </div>
+                <div className={`${generalClassName}`}>
+                    <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base my-2">
+                        Gottlob Frege và Lý thuyết tập hợp
+                    </div>
+                    <div className={`${generalContentClassName}`}>
+                        <Extra
+                            buttonContent="Gottlob Frege"
+                            variant="inlineFact"
+                            extraBodyVariant="content"
+                        >
+                            Gottlob Frege (1848 - 1925) được xem là người sáng
+                            lập ra logic học hiện đại. Trong công trình nổi
+                            tiếng của ông, "Begriffsschrift" (1879), Frege đã
+                            đưa ra một hệ thống logic đại số để hình dung và mô
+                            tả các khái niệm toán học. Ông đã phát triển phép
+                            tính tâm lý học (predicate calculus), một nền tảng
+                            cơ bản của logic toán học hiện đại.
+                        </Extra>{" "}
+                        sử dụng khái niệm "tập hợp" trong lý thuyết của ông, đặc
+                        biệt là trong cách ông định nghĩa khái niệm. Theo Frege,
+                        một khái niệm toán học là một tập hợp của các đối tượng
+                        thỏa mãn một thuộc tính cụ thể. Ví dụ, "tập hợp tất cả
+                        các số chẵn" là một tập hợp mà phần tử của nó là những
+                        số tự nhiên chẵn. Frege không chỉ định nghĩa tập hợp như
+                        là một tập hợp các đối tượng vật lý mà ông coi tập hợp
+                        là một đối tượng toán học chính thống, có thể được mô tả
+                        và sử dụng trong các phép toán toán học. Frege tin rằng
+                        lý thuyết tập hợp của ông có thể giúp xác định một cách
+                        chính xác các khái niệm trong toán học. Frege được xem
+                        là người sáng lập ra logic học hiện đại. Trong công
+                        trình nổi tiếng của ông, "Begriffsschrift" (1879), Frege
+                        đã đưa ra một hệ thống logic đại số để hình dung và mô
+                        tả các khái niệm toán học. Ông đã phát triển phép tính
+                        tâm lý học (predicate calculus), một nền tảng cơ bản của
+                        logic toán học hiện đại.
+                        <br />
+                        <br />
+                        Tuy nhiên, lý thuyết tập hợp của Frege gặp phải một vấn
+                        đề lớn khi{" "}
+                        <Extra
+                            buttonContent="Bertrand Russell"
+                            variant="inlineFact"
+                            extraBodyVariant="content"
+                        >
+                            Bertrand Russell (1872-1970) là nhà triết học, toán
+                            học và logic học người Anh, nổi tiếng với nghịch lý
+                            Russell trong lý thuyết tập hợp. Ông cùng Whitehead
+                            viết Principia Mathematica, đặt nền tảng cho toán
+                            học hiện đại qua logic học. Russell cũng là một nhà
+                            hoạt động xã hội, nhận Giải Nobel Văn học 1950.
+                        </Extra>{" "}
+                        phát hiện ra{" "}
+                        <Extra
+                            buttonContent="nghịch lý Russell"
+                            variant="inlineFact"
+                            extraBodyVariant="content"
+                        >
+                            Nghịch lý Russell là một trong những mâu thuẫn quan
+                            trọng nhất trong lý thuyết tập hợp, được Bertrand
+                            Russell phát hiện vào năm 1901. Nghịch lý này liên
+                            quan đến tập hợp chứa chính nó như một phần tử. Cụ
+                            thể, nếu ta định nghĩa tập hợp{" "}
+                            <InlineMath math="\mathbb{R}" /> là tập hợp của tất
+                            cả các tập hợp không phải là phần tử của chính nó,
+                            thì câu hỏi đặt ra là: liệu{" "}
+                            <InlineMath math="\mathbb{R}" /> có phải là phần tử
+                            của chính nó không?
+                            <br />
+                            Nếu <InlineMath math="\mathbb{R} \in \mathbb{R}" />,
+                            thì theo định nghĩa <InlineMath math="\mathbb{R}" />{" "}
+                            phải không phải là phần tử của chính nó, điều này
+                            mâu thuẫn.
+                            <br />
+                            Nếu{" "}
+                            <InlineMath math="\mathbb{R} \notin \mathbb{R}" />,
+                            thì theo định nghĩa,{" "}
+                            <InlineMath math="\mathbb{R}" /> phải là phần tử của
+                            chính nó, lại dẫn đến mâu thuẫn.
+                            <br />
+                            <InlineMath math="\to" /> Hệ quả của nghịch lý: Sau
+                            khi nghịch lý Russell được phát hiện, Frege nhận ra
+                            rằng lý thuyết tập hợp của ông không thể hoạt động
+                            như một nền tảng vững chắc cho toán học. Trong một
+                            lá thư gửi Russell, Frege đã thể hiện sự thất vọng
+                            sâu sắc về việc lý thuyết của ông bị phá vỡ. Nghịch
+                            lý này là một trong những lý do quan trọng dẫn đến
+                            sự phát triển của các lý thuyết tập hợp sau này,
+                            chẳng hạn như lý thuyết tập hợp tiên đề
+                            Zermelo-Fraenkel, được phát triển bởi Ernst Zermelo
+                            và Abraham Fraenkel vào những năm 1920 để tránh các
+                            nghịch lý như của Frege và Russell. Zermelo-Fraenkel
+                            sử dụng các tiên đề để hạn chế các tập hợp không hợp
+                            lệ và bảo vệ lý thuyết tập hợp khỏi các nghịch lý.
+                        </Extra>{" "}
+                        vào năm 1901. Nghịch lý này xuất hiện trong lý thuyết
+                        của Frege khi ông cố gắng định nghĩa tập hợp của{" "}
+                        <span className="font-[475]">
+                            tất cả các tập hợp không phải là phần tử của chính
+                            nó
+                        </span>
+                        . Và để giải quyết vấn đề nghịch lý này thì nhà toán học
+                        <Extra
+                            buttonContent="Zermelo và Fraenkel"
+                            variant="inlineFact"
+                            extraBodyVariant="content"
+                        >
+                            Ernst Zermelo là một nhà toán học người Đức nổi
+                            tiếng với các đóng góp trong lý thuyết tập hợp, đặc
+                            biệt là việc phát triển Axiom of Choice (Axiom lựa
+                            chọn), một tiên đề quan trọng trong lý thuyết tập
+                            hợp hiện đại. Ông cũng là người đề xuất hệ thống
+                            tiên đề Zermelo-Fraenkel để xây dựng lý thuyết tập
+                            hợp vững chắc, với Zermelo-Fraenkel + Axioms of
+                            Choice (ZFC) là hệ thống tiên đề phổ biến nhất hiện
+                            nay trong toán học. <br /> <br /> Abraham Fraenkel
+                            là một nhà toán học người Đức, nổi tiếng với việc
+                            phát triển hệ thống tiên đề Zermelo-Fraenkel cho lý
+                            thuyết tập hợp, trong đó các tiên đề này giúp xây
+                            dựng nền tảng toán học vững chắc, đồng thời giải
+                            quyết một số vấn đề trong lý thuyết tập hợp mà
+                            Zermelo chưa hoàn chỉnh.
+                        </Extra>{" "}
+                        đã xây dựng{" "}
+                        <Extra
+                            buttonContent="Lý thuyết tập hợp tiên đề Zermelo-Fraenkel"
+                            variant="inlineFact"
+                            extraBodyVariant="content"
+                        >
+                            Hệ tiên đề Zermelo-Fraenkel bao gồm các tiên đề cơ
+                            bản đảm bảo rằng các tập hợp có thể được xây dựng
+                            một cách hợp lý mà không gặp phải nghịch lý. Một
+                            trong những tiên đề quan trọng trong lý thuyết này
+                            là tiên đề{" "}
+                            <span className="font-[475]">tập hợp trống</span> và{" "}
+                            <span className="font-[475]"> tập hợp con</span>.
+                            Tiên đề Zermelo-Fraenkel:
+                            <br />
+                            Tiên đề tập hợp trống: Có tồn tại một tập hợp không
+                            có phần tử nào (tập hợp rỗng, ký hiệu Ø).
+                            <br />
+                            Tiên đề hình thành: Nếu A là tập hợp, thì tồn tại
+                            một tập hợp con của A có các phần tử là các tập hợp
+                            con của các phần tử trong A.
+                            <br />
+                            Tiên đề lựa chọn: Tiên đề này cho phép chọn phần tử
+                            từ mỗi tập hợp không rỗng. Đây là một tiên đề quan
+                            trọng trong lý thuyết tập hợp, mặc dù đôi khi nó có
+                            thể dẫn đến các kết quả phi trực quan.
+                        </Extra>{" "}
+                        . Đây là một hệ thống tiên đề được phát triển vào những
+                        năm 1920 để giải quyết các vấn đề và nghịch lý trong lý
+                        thuyết tập hợp, đặc biệt là nghịch lý Russell. Hệ thống
+                        này được xây dựng bởi Ernst Zermelo và sau đó được mở
+                        rộng bởi Abraham Fraenkel. Mục tiêu của lý thuyết này là
+                        tạo ra một nền tảng logic vững chắc cho lý thuyết tập
+                        hợp mà không gặp phải các nghịch lý như trong lý thuyết
+                        tập hợp trước đó của Frege.
+                    </div>
+                </div>
+            </div>
+            <div className="col-[1/-1] row-[4/5] h-fit">
+                <div className="md:h-[75px] h-[51.5px]">
+                    {timelineStar[0][0][5]}
+                </div>
+                <div className={`${generalClassName}`}>
+                    <div className={`${generalContentClassName}`}>
+                        <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base my-2">
+                            Lý thuyết tập hợp và các phép toán nâng cao
+                        </div>
+                        <div className={`${generalContentClassName}`}>
+                            Khái niệm về thứ tự và số hạng (Ordinal and Cardinal
+                            Numbers):
+                            <div className={`${generalInstanceClassName}`}>
+                                Trong lý thuyết tập hợp, số hạng (ordinal
+                                numbers) dùng để chỉ thứ tự của các phần tử
+                                trong một tập hợp (ví dụ: "phần tử thứ nhất",
+                                "phần tử thứ hai",...).
+                            </div>
+                            <div className={`${generalInstanceClassName}`}>
+                                Số cardinal là một khái niệm quan trọng dùng để
+                                chỉ kích thước hoặc số lượng phần tử của một tập
+                                hợp. Số cardinal có thể là hữu hạn hoặc vô hạn.
+                            </div>
+                            Lý thuyết mô hình (Model Theory) và ứng dụng trong
+                            lý thuyết tập hợp: Vào nửa sau thế kỷ 20, lý thuyết
+                            tập hợp trở thành cơ sở cho lý thuyết mô hình, trong
+                            đó các mô hình toán học được mô tả bằng các tập hợp
+                            và phép toán trên chúng. Lý thuyết mô hình giúp giải
+                            quyết các câu hỏi về sự đúng đắn và tính khả thi của
+                            các lý thuyết toán học.
+                        </div>
+                        <Extra
+                            buttonContent="Tìm hiểu thêm"
+                            variant="learnMore"
+                            extraBodyVariant="content"
+                            flip
+                        >
+                            <span className="font-[450]">
+                                Lý thuyết mô hình
+                            </span>{" "}
+                            (Model Theory) là một nhánh của logic toán học
+                            nghiên cứu về mối quan hệ giữa các{" "}
+                            <span className="font-[450]">
+                                hệ thống lý thuyết
+                            </span>{" "}
+                            (hay lý thuyết, tức là các tập hợp các tiên đề và
+                            định lý) và các{" "}
+                            <span className="font-[450]">mô hình</span> của
+                            chúng (tức là các cấu trúc toán học mà trong đó các
+                            định lý của lý thuyết được thỏa mãn). Trong lý
+                            thuyết mô hình, "mô hình" là một cấu trúc toán học
+                            được thiết lập để kiểm tra tính hợp lý của các lý
+                            thuyết, và các lý thuyết có thể có nhiều mô hình
+                            khác nhau.{" "}
+                            <span className="font-[450]">
+                                Khái niệm cơ bản trong Lý thuyết Mô hình:
+                            </span>
+                            <div className={`${generalInstanceClassName}`}>
+                                <span className="font-[450]">
+                                    Lý thuyết (Theory)
+                                </span>
+                                : Là một tập hợp các tiên đề hoặc định lý. Ví
+                                dụ, lý thuyết về nhóm (group theory) chứa các
+                                tiên đề về nhóm, như tính chất đóng, tính chất
+                                nghịch đảo, v.v .
+                            </div>
+                            <div className={`${generalInstanceClassName}`}>
+                                <span className="font-[450]">
+                                    Mô hình (Model)
+                                </span>
+                                : Là một cấu trúc toán học thỏa mãn các tiên đề
+                                của lý thuyết. Ví dụ, tập hợp các số nguyên dưới
+                                phép cộng và phép nhân có thể là một mô hình của
+                                lý thuyết nhóm.
+                            </div>
+                            <div className={`${generalInstanceClassName}`}>
+                                <span className="font-[450]">
+                                    Khái niệm đồng nhất (Isomorphism)
+                                </span>
+                                : Hai mô hình được gọi là đồng nhất nếu có một
+                                phép ánh xạ một-một giữa chúng mà bảo toàn cấu
+                                trúc của lý thuyết. Điều này có nghĩa là các mô
+                                hình này "giống nhau" về mặt lý thuyết, mặc dù
+                                có thể có các cấu trúc khác nhau.
+                            </div>
+                            <span className="font-[450]">
+                                Ứng dụng trong lý thuyết tập hợp
+                            </span>
+                            :
+                            <br />
+                            Trong lý thuyết tập hợp, lý thuyết mô hình có những
+                            ứng dụng quan trọng trong việc nghiên cứu các mô
+                            hình của lý thuyết tập hợp và các cấu trúc trong đó
+                            các tiên đề của lý thuyết tập hợp được thỏa mãn.{" "}
+                            <div className={`${generalInstanceClassName}`}>
+                                <span className="font-[450]">
+                                    Mô hình của lý thuyết tập hợp ZFC
+                                </span>
+                                : Lý thuyết tập hợp Zermelo-Fraenkel với tiên đề
+                                lựa chọn (ZFC) là lý thuyết chính trong lý
+                                thuyết tập hợp hiện đại. Các mô hình của ZFC là
+                                các cấu trúc tập hợp trong đó tất cả các tiên đề
+                                của ZFC đều đúng. Ví dụ, một mô hình của lý
+                                thuyết ZFC có thể là một tập hợp các tập hợp
+                                trong đó tất cả các định lý của ZFC được thỏa
+                                mãn.
+                            </div>
+                            <div className={`${generalInstanceClassName}`}>
+                                <span className="font-[450]">
+                                    Các mô hình của lý thuyết tập hợp và các vấn
+                                    đề như tính không đầy đủ
+                                </span>
+                                : Lý thuyết mô hình giúp nghiên cứu về khả năng
+                                tồn tại các mô hình khác nhau của lý thuyết tập
+                                hợp. Cantor đã chỉ ra sự tồn tại của các tập hợp
+                                vô hạn, và lý thuyết mô hình có thể được sử dụng
+                                để nghiên cứu các mô hình của lý thuyết tập hợp,
+                                chẳng hạn như việc liệu một mô hình cụ thể có
+                                chứa tất cả các tập hợp mà lý thuyết yêu cầu hay
+                                không.
+                            </div>
+                            <div className={`${generalInstanceClassName}`}>
+                                <span className="font-[450]">
+                                    Các mô hình không chuẩn (Nonstandard Models)
+                                </span>
+                                : Lý thuyết mô hình cho phép nghiên cứu các{" "}
+                                <span className="font-[450]">
+                                    mô hình không chuẩn
+                                </span>{" "}
+                                của lý thuyết tập hợp. Ví dụ, trong lý thuyết
+                                tập hợp, có thể tồn tại các mô hình mà trong đó
+                                các khái niệm như{" "}
+                                <span className="font-[450]">số thực</span> hay{" "}
+                                <span className="font-[450]">số tự nhiên</span>{" "}
+                                có thể có những thuộc tính đặc biệt không tồn
+                                tại trong các mô hình chuẩn của lý thuyết ZFC.
+                                Đây là một ví dụ về việc sử dụng lý thuyết mô
+                                hình để mở rộng và kiểm tra các lý thuyết tập
+                                hợp.
+                            </div>
+                            <div className={`${generalInstanceClassName}`}>
+                                <span className="font-[450]">
+                                    Định lý bất khả hoàn thành của Gödel
+                                </span>
+                                : Lý thuyết mô hình cũng liên quan đến định lý
+                                bất khả hoàn thành của Gödel, chứng minh rằng
+                                không thể có một lý thuyết tập hợp đầy đủ và
+                                nhất quán, nghĩa là sẽ luôn có những mệnh đề
+                                trong lý thuyết tập hợp mà không thể chứng minh
+                                hoặc bác bỏ được. Lý thuyết mô hình giúp nghiên
+                                cứu những mô hình mà trong đó các mệnh đề không
+                                thể chứng minh hoặc không thể bác bỏ, do đó liên
+                                quan đến tính không đầy đủ của lý thuyết tập
+                                hợp.
+                            </div>
+                            <div className={`${generalInstanceClassName}`}>
+                                <span className="font-[450]">
+                                    Lý thuyết mô hình và các vấn đề về lựa chọn
+                                </span>
+                                : Trong lý thuyết tập hợp, các tiên đề Lý thuyết
+                                lựa chọn (Axiom of Choice - AC) có ảnh hưởng lớn
+                                đến các kết quả. Lý thuyết mô hình có thể được
+                                sử dụng để nghiên cứu sự tồn tại của các mô hình
+                                trong đó AC được áp dụng và các mô hình không có
+                                AC, từ đó mở ra những sự phân biệt và tính chất
+                                khác nhau trong lý thuyết tập hợp.
+                            </div>
+                        </Extra>
+                        <div className={`${generalContentClassName}`}>
+                            Khoa học máy tính:
+                            <div className={`${generalInstanceClassName}`}>
+                                Ngôn ngữ lập trình: Các ngôn ngữ lập trình sử
+                                dụng các cấu trúc dữ liệu như danh sách, tập hợp
+                                và mảng, trong đó tập hợp là một công cụ quan
+                                trọng để tổ chức và thao tác dữ liệu.
+                            </div>
+                            <div className={`${generalInstanceClassName}`}>
+                                Cơ sở dữ liệu: Trong lý thuyết cơ sở dữ liệu,
+                                tập hợp được sử dụng để mô hình hóa các đối
+                                tượng dữ liệu và quan hệ giữa chúng.
+                            </div>
+                            <br />
+                            Các ứng dụng khác:
+                            <div className={`${generalInstanceClassName}`}>
+                                Lý thuyết đồ thị: Các tập hợp và phép toán trên
+                                tập hợp cũng được ứng dụng trong lý thuyết đồ
+                                thị, nơi các đỉnh và cạnh có thể được coi là các
+                                phần tử trong các tập hợp.
+                            </div>
+                            <div className={`${generalInstanceClassName}`}>
+                                Lý thuyết thông tin và mã hóa: Tập hợp cũng là
+                                công cụ quan trọng trong lý thuyết mã hóa, nơi
+                                các tập hợp của các mã có thể được sử dụng để
+                                đảm bảo tính chính xác trong việc truyền tải
+                                thông tin.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
@@ -1167,7 +1711,7 @@ export default function LessonLayout({ id, idx }: { id: number; idx: number }) {
                         }}
                     >
                         <div
-                            className={`grid grid-cols-1 ${gridDisplay[id][idx][idxl]} relative`}
+                            className={`grid grid-cols-1 ${gridDisplay[0][0][1]} relative`}
                         >
                             {lesson}
                         </div>
@@ -1181,7 +1725,7 @@ export default function LessonLayout({ id, idx }: { id: number; idx: number }) {
                     }}
                 >
                     <div
-                        className={`grid grid-cols-1 ${gridDisplay[id][idx]} relative`}
+                        className={`grid grid-cols-1 ${gridDisplay[0][0][1]} relative`}
                     >
                         {Lessons[id][idx]}
                     </div>

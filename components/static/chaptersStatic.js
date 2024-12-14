@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const chapter = [
     [
         "Mệnh đề và tập hợp",
@@ -81,3 +83,74 @@ export const description = [
         <div key="description24"></div>,
     ],
 ];
+
+export const LHeader = () => {
+    return (
+        <div className='md1:pl-4 font-["Chakra_Petch"] font-[600] h-[72px] pt-[19px] md1:text-[40px] sm:text-[35px] text-[27.5px] sm:leading-[42.5px] leading-[37.5px] items-center sm:gap-4 gap-2 flex text-nowrap'>
+            Câu chuyện lịch sử
+            <div className="sm:h-[64px] h-[47.5px] aspect-square">
+                <Image
+                    src="Svg/Book&Quill.svg"
+                    alt=""
+                    width={100}
+                    height={100}
+                />
+            </div>
+        </div>
+    );
+};
+
+export const FFHeader = () => {
+    return (
+        <div className='font-["Chakra_Petch"] font-[600] h-[72px] pt-2 md1:text-[40px] items-end text-[35px] leading-[42.5px] flex text-nowrap'>
+            <div className="w-[40px] aspect-square mr-3">
+                <Image src="Svg/Sparkle.svg" alt="" width={100} height={100} />
+            </div>
+            Fun facts
+            <div className="w-[64px] aspect-square -translate-x-6 -translate-y-2">
+                <Image src="Svg/Noticed.svg" alt="" width={100} height={100} />
+            </div>
+            <div className="md1:-translate-x-6 -translate-x-9 w-[40px] aspect-square ml-3">
+                <Image src="Svg/Sparkle.svg" alt="" width={100} height={100} />
+            </div>
+        </div>
+    );
+};
+
+export const QHeader = () => {
+    return (
+        <div className='font-["Chakra_Petch"] font-[600] h-[72px] md1:text-[40px] items-end text-[35px] leading-[42.5px] flex text-nowrap'>
+            <div
+                className="mr-2 w-[90px] aspect-square"
+                style={{
+                    transform: "scale(-1, 1) translateY(30px)",
+                }}
+            >
+                <div className="w-[90px] aspect-square">
+                    <Image
+                        src="Svg/QuesExcla.svg"
+                        alt=""
+                        width={100}
+                        height={100}
+                    />
+                </div>
+            </div>
+            <span className="pb-2">Quizzes</span>
+            <div
+                className="ml-2 w-[90px] aspect-square"
+                style={{
+                    transform: "translateY(30px)",
+                }}
+            >
+                <div className="w-[90px] aspect-square">
+                    <Image
+                        src="Svg/QuesExcla.svg"
+                        alt=""
+                        width={100}
+                        height={100}
+                    />
+                </div>
+            </div>
+        </div>
+    );
+};

@@ -1,19 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: false,
-    webpack: (config, options) => {
-        config.module.rules.push({
-            test: /\.mp4$/,
-            use: {
-                loader: "file-loader",
-                options: {
-                    publicPath: "/_next/static/videos/",
-                    outputPath: "static/videos/",
-                    name: "[name].[hash].[ext]",
-                },
-            },
-        });
-
+    webpack: (config, { dev, isServer }) => {
+        if (!dev && !isServer) {
+            Object.assign(config.resolve.alias, {
+                "react/jsx-runtime.js": "preact/compat/jsx-runtime",
+                react: "preact/compat",
+                "react-dom/test-utils": "preact/test-utils",
+                "react-dom": "preact/compat",
+            });
+        }
         return config;
     },
 };

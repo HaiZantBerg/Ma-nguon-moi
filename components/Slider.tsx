@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { useAnimate } from "framer-motion";
 import ChapterDialog from "./ChapterDialog";
 import debounce from "debounce";
@@ -14,6 +14,8 @@ import {
 } from "./static/static";
 import { description, chapter } from "./static/chaptersStatic";
 // import { db } from "@/db";
+import { signal } from "@preact/signals-react";
+import { useSignals } from "@preact/signals-react/runtime";
 
 const firstCord = 20;
 const secondCord = 7.5;
@@ -180,10 +182,12 @@ class minusParticle {
     }
 }
 
-export default function Slider({ id }: { id: number }) {
-    const [scope, animate] = useAnimate();
+const curChapterId = signal(-1);
 
-    const [curChapterId, setCurChapterId] = useState<number>(-1);
+export default function Slider({ id }: { id: number }) {
+    useSignals();
+
+    const [scope, animate] = useAnimate();
 
     const chapterId = useRef<number>(0);
     const chapterContentRef = useRef<HTMLDivElement | null>(null);
@@ -731,7 +735,7 @@ export default function Slider({ id }: { id: number }) {
     };
 
     const handleOpenDialog = async (idx: number) => {
-        setCurChapterId(idx);
+        curChapterId.value = idx;
 
         // try {
         //     await db.chapterData.put({
@@ -745,7 +749,7 @@ export default function Slider({ id }: { id: number }) {
     };
 
     const handleCloseDialog = async () => {
-        setCurChapterId(-1);
+        curChapterId.value = -1;
 
         // try {
         //     await db.chapterData.put({
@@ -1224,11 +1228,11 @@ export default function Slider({ id }: { id: number }) {
                     </div>
                 </div>
             </div>
-            {curChapterId !== -1 && (
+            {curChapterId.value !== -1 && (
                 <ChapterDialog
-                    chapterTitle={chapter[id][curChapterId]}
+                    chapterTitle={chapter[id][curChapterId.value]}
                     id={id}
-                    idx={curChapterId}
+                    idx={curChapterId.value}
                     description={description}
                     playAnimation={playAnimation.current}
                     handleCloseDialog={handleCloseDialog}

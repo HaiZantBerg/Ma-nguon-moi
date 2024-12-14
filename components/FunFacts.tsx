@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import {
     images,
     storyList,
@@ -10,15 +10,15 @@ import {
 import { useAnimate } from "framer-motion";
 import Image from "next/image";
 import cross from "@/public/Svg/Cross.svg";
+import { signal } from "@preact/signals-react";
+import { useSignals } from "@preact/signals-react/runtime";
+
+const openFlipCard = signal([-1, -1]);
 
 const FunFact1 = ({ idxf, idxc }: { idxf: number; idxc: number }) => {
-    const [openFlipCard, setOpenFlipCard] = useState<[number, number]>([
-        -1, -1,
-    ]);
+    useSignals();
 
-    const triggerCloseCard = () => {
-        setOpenFlipCard([-1, -1]);
-    };
+    const triggerCloseCard = () => (openFlipCard.value = [-1, -1]);
 
     return (
         <>
@@ -34,12 +34,11 @@ const FunFact1 = ({ idxf, idxc }: { idxf: number; idxc: number }) => {
                                 idxf={idxf}
                                 idxc={idxc}
                                 idx={idx}
-                                setOpenFlipCard={setOpenFlipCard}
                                 idxs={idxs}
                                 title={title}
                             >
-                                {openFlipCard[0] === idx &&
-                                    openFlipCard[1] === idxs && (
+                                {openFlipCard.value[0] === idx &&
+                                    openFlipCard.value[1] === idxs && (
                                         <FlipCard
                                             idx={idx}
                                             title={title}
@@ -73,7 +72,6 @@ export const FunFact = [
 
 const FunFactCard = ({
     children,
-    setOpenFlipCard,
     idx,
     idxs,
     idxf,
@@ -81,7 +79,6 @@ const FunFactCard = ({
     title,
 }: {
     children?: React.ReactNode;
-    setOpenFlipCard: React.Dispatch<React.SetStateAction<[number, number]>>;
     idx: number;
     idxs: number;
     idxf: number;
@@ -96,7 +93,7 @@ const FunFactCard = ({
                     aspectRatio: 8 / 9,
                 }}
                 onClick={() => {
-                    setOpenFlipCard([idx, idxs]);
+                    openFlipCard.value = [idx, idxs];
                 }}
             >
                 <svg viewBox="-160 -180 320 360" className="h-full w-full">
