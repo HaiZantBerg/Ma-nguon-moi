@@ -19,13 +19,16 @@ import ExtraInlineFact from "../Extra/ExtraInlineFact";
 import ExtraFunFact from "../Extra/ExtraFunFact";
 import ExtraLearnMore from "../Extra/ExtraLearnMore";
 
+const playVideo = signal([true]);
+
 export default function TapHop() {
     useSignals();
 
-    const playVideo = signal<boolean[]>([true]);
-
     const handleStartVideo = (idx: number) => {
-        playVideo.value[idx] = !playVideo.value[idx];
+        const updatedArray = [...playVideo.value];
+        updatedArray[idx] = !updatedArray[idx];
+
+        playVideo.value = updatedArray;
     };
 
     return (
