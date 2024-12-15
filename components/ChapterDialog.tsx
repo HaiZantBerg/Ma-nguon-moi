@@ -17,7 +17,7 @@ export default function ChapterDialog({
     handleCloseDialog,
 }: {
     chapterTitle: string;
-    description: JSX.Element[][];
+    description: React.JSX.Element[][];
     id: number;
     idx: number;
     playAnimation: boolean;

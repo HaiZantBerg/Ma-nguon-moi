@@ -10,8 +10,6 @@
     },
     "dependencies": {
         "@preact/signals-react": "^2.2.0",
-        "@radix-ui/react-dialog": "^1.1.2",
-        "@radix-ui/react-icons": "^1.3.2",
         "@typescript-eslint/eslint-plugin": "^8.16.0",
         "@typescript-eslint/parser": "^8.16.0",
         "debounce": "^2.2.0",
@@ -27,13 +25,12 @@
         "react-player": "^2.13.0",
         "react-ssr-prepass": "npm:preact-ssr-prepass@^1.2.2",
         "tailwind-merge": "^2.5.4",
-        "tailwindcss-animate": "^1.0.7",
-        "url-loader": "^4.1.1"
+        "tailwindcss-animate": "^1.0.7"
     },
     "devDependencies": {
         "@types/node": "^22",
-        "@types/react": "^19.0.1",
-        "@types/react-dom": "^19.0.2",
+        "@types/react": "^18.3.16",
+        "@types/react-dom": "^18.3.5",
         "@types/react-katex": "^3.0.4",
         "eslint": "^9.15.0",
         "eslint-config-next": "15.0.3",
