@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "katex/dist/katex.min.css";
 import { InlineMath } from "react-katex";
 import ReactPlayer from "react-player/lazy";
-import Extra from "../Extra";
+
 import Image from "next/image";
 import Link from "next/link";
 import Boner from "@/public/Image/boner.png";
@@ -14,6 +14,11 @@ import {
     generalContentClassName,
     generalInstanceClassName,
 } from "../static/lessonsStatic";
+import ExtraQuiz from "../Extra/ExtraQuiz";
+import ExtraAloneFact from "../Extra/ExtraAloneFact";
+import ExtraInlineFact from "../Extra/ExtraInlineFact";
+import ExtraFunFact from "../Extra/ExtraFunFact";
+import ExtraLearnMore from "../Extra/ExtraLearnMore";
 
 export default function TapHop() {
     useSignals();
@@ -29,7 +34,7 @@ export default function TapHop() {
             <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.6px]" />
             <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar[0][0][0]}
+                    {timelineStar.ThoiCoDai}
                 </div>
                 <div
                     className={`${generalClassName} grid lg2:grid-cols-[auto_auto] lg2:grid-rows-[auto_auto]`}
@@ -80,9 +85,8 @@ export default function TapHop() {
                         bằng thắt nút trên một sợi dây.
                     </div>
                 </div>
-                <Extra
+                <ExtraAloneFact
                     buttonContent="Xương Ishango"
-                    variant="aloneFact"
                     containerClassName="md1:ml-[45px] ml-[30px]"
                 >
                     <div className="w-full h-full text-lg flex lg3:flex-row flex-col gap-2 items-center">
@@ -117,7 +121,7 @@ export default function TapHop() {
                             </div>
                         </div>
                     </div>
-                </Extra>
+                </ExtraAloneFact>
                 <div className={`${generalClassName}`}>
                     <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base mb-2">
                         Cơ số
@@ -150,9 +154,8 @@ export default function TapHop() {
                         <br />
                         Các cơ số phổ biến thường gặp:
                         <div className={`${generalInstanceClassName}`}>
-                            <Extra
+                            <ExtraInlineFact
                                 buttonContent="Cơ số mười"
-                                variant="inlineFact"
                                 extraBodyVariant="instance"
                             >
                                 Nó còn được thế hiện qua đơn vị đo lường quốc tế
@@ -198,6 +201,7 @@ export default function TapHop() {
                                 thẳng vào tâm thức khiến ta phải choáng váng.
                                 <br /> Nguồn{" "}
                                 <Link
+                                    target="_blank"
                                     href="https://www.history-of-mathematics.org/"
                                     className="underline font-[475]"
                                 >
@@ -207,14 +211,13 @@ export default function TapHop() {
                                 chương đầu tiên của De Temporum Ratione, mang
                                 tên “Tính toán hoặc nói chuyện bằng ngón tay,”
                                 đã mô tả một hình thức đếm bằng ngón tay.
-                            </Extra>{" "}
+                            </ExtraInlineFact>{" "}
                             (hệ thập phân) là vô cùng phổ biến.
                         </div>
                         <div className={`${generalInstanceClassName}`}>
                             Phổ biến thứ hai sau cơ số mười là{" "}
-                            <Extra
+                            <ExtraInlineFact
                                 buttonContent="cơ số mười hai"
-                                variant="inlineFact"
                                 extraBodyVariant="instance"
                             >
                                 Mười hai bằng một tá, kiểu đếm này vẫn còn được
@@ -236,13 +239,12 @@ export default function TapHop() {
                                 sử dụng cơ số mười hai, một lời giải thích đơn
                                 giản hơn có thể là bởi sự thuận tiện trong tính
                                 toán của cơ số mười hai.
-                            </Extra>
+                            </ExtraInlineFact>
                             .
                         </div>
                         <div className={`${generalInstanceClassName}`}>
-                            <Extra
+                            <ExtraInlineFact
                                 buttonContent="Cơ số sáu mươi"
-                                variant="inlineFact"
                                 extraBodyVariant="instance"
                             >
                                 Cơ số 60 là một trong những phương pháp đếm cổ
@@ -257,57 +259,34 @@ export default function TapHop() {
                                 4, 5, 6, 10, 12, 15, 20 và 30 điều này làm cho
                                 hệ đếm cơ số 60 linh hoạt hơn cho các tính toán
                                 khác nhau.
-                                <br />
-                                Nhà thiên văn học người Hy Lạp Eratosthenes đã
-                                sử dụng số thập lục phân để tạo ra một hệ thống
-                                địa lý vĩ độ với việc chia một vòng tròn thành
-                                60 phần và một hệ thống các đường kinh độ bao
-                                phủ 360 độ và chạy từ bắc xuống nam, nối từ cực
-                                này sang cực kia.
-                                <br />
-                                Tiếp đó, nhà bác học Claudius Ptolemy đã mở rộng
-                                công trình của Hipparchus bằng cách chia hệ
-                                thống 360 độ vĩ độ và kinh độ thành các phần nhỏ
-                                hơn. Mỗi độ được chia thành 60 phần (ngày nay
-                                chúng ta gọi là phút), mỗi phần được chia thành
-                                60 phần nhỏ hơn (ngày nay gọi là giây)
-                                <div className="aspect-video max-w-[475px]">
-                                    <ReactPlayer
-                                        url="https://www.youtube.com/watch?v=VnBbvPevFFQ"
-                                        width="100%"
-                                        height="100%"
-                                    />
-                                </div>
-                            </Extra>{" "}
+                            </ExtraInlineFact>{" "}
                             (hệ lục thập phân).
                         </div>
                         <div className={`${generalInstanceClassName}`}>
                             Trong thời đại công nghệ thông tin đang phát triển
                             mạnh mẽ, hệ đếm{" "}
-                            <Extra
+                            <ExtraInlineFact
                                 buttonContent="Cơ số hai"
-                                variant="inlineFact"
                                 extraBodyVariant="instance"
                             >
                                 Cơ số hai được sử dụng rộng rãi vì nó gắn liền
                                 với hoạt động của máy tính điện tử. Tuy nhiên,
                                 ngay từ thời xa xưa, những thổ dân Queensland
                                 cũng đã sử dụng hệ đếm này.
-                            </Extra>{" "}
+                            </ExtraInlineFact>{" "}
                             (gọi là hệ nhị phân).
                         </div>
                         <div className={`${generalInstanceClassName}`}>
                             Ngoài ra hệ đếm{" "}
-                            <Extra
+                            <ExtraInlineFact
                                 buttonContent="Cơ số năm"
-                                variant="inlineFact"
                                 extraBodyVariant="instance"
                             >
                                 Cơ số năm cũng được dùng ở một số vùng khác như
                                 tộc người Yukaghir ở Siberia. Cho đến đầu thế kỉ
                                 mười chín, lịch nông nghiệp của Đức vẫn còn dùng
                                 hệ ngũ phân!
-                            </Extra>{" "}
+                            </ExtraInlineFact>{" "}
                             (gọi là hệ ngũ phân).
                         </div>
                     </div>
@@ -376,9 +355,8 @@ export default function TapHop() {
                         Người đầu tiên thực sự mô tả hoàn chỉnh số không như một
                         con số độc lập và cũng miêu tả các đặc tính của nó là
                         nhà thiên văn học - toán học người Ấn Độ{" "}
-                        <Extra
+                        <ExtraInlineFact
                             buttonContent="Brahmagupta"
-                            variant="inlineFact"
                             extraBodyVariant="content"
                         >
                             Nhà toán học Ấn Độ Brahmagupta (598 - 668 CE) đã
@@ -389,12 +367,11 @@ export default function TapHop() {
                             bài viết của anh ấy không chứa bất kỳ bằng chứng
                             nào, vì vậy chúng tôi không thể biết được kết quả
                             của anh ấy như thế nào.
-                        </Extra>
+                        </ExtraInlineFact>
                         . Và ông cũng là người đầu tiên nêu lên các quy tắc tính
                         toán trong hệ ghi số có số 0 trong quyển sách{" "}
-                        <Extra
+                        <ExtraInlineFact
                             buttonContent="Brahma Sphuta Siddhanta"
-                            variant="inlineFact"
                             extraBodyVariant="content"
                         >
                             <>
@@ -474,10 +451,9 @@ export default function TapHop() {
                                 thì vẫn là{" "}
                                 <span className="font-[475]">sunya</span>.
                             </>
-                        </Extra>{" "}
-                        <Extra
+                        </ExtraInlineFact>{" "}
+                        <ExtraAloneFact
                             buttonContent="Ý nghĩa của số 0"
-                            variant="aloneFact"
                             extraBodyVariant="content"
                             extraBodyClassName="max-w-[700px] w-full"
                         >
@@ -488,7 +464,7 @@ export default function TapHop() {
                                     height="100%"
                                 />
                             </div>
-                        </Extra>
+                        </ExtraAloneFact>
                         Số không mở ra cánh cửa đến với các số âm. Tuy vậy, phải
                         mất một thời gian dài các nhà toán học mới thực sự chấp
                         nhận chúng. Giới học giả Trung Quốc là những người đầu
@@ -501,7 +477,64 @@ export default function TapHop() {
                         tác với nhau như thế nào, và đặc biệt là việc chúng cộng
                         vào hoặc trừ với nhau ra sao.
                     </div>
-                    <br />
+                    <ExtraQuiz
+                        buttonContent="Tại sao trừ với trừ lại thành cộng?"
+                        explaination={
+                            <div>
+                                a) Giả sử bạn bổ sung thêm 4 thanh đen, vậy số
+                                tiền bạn là bao nhiêu? b) Nếu bây giờ người ta
+                                đưa cho bạn 4 thanh xám, số tiền của bạn là bao
+                                nhiêu? c) Nếu người ta đưa bạn 4 thanh xám, số
+                                tiền của bạn là bao nhiêu? d) Khoản tiền của bạn
+                                sẽ thế nào nếu người ta lấy đi của bạn 4 thanh
+                                xám? Thấy rằng, đối với câu a), số tiền của bạn
+                                có sẽ tăng thêm 20€. Nói cách khác: 4 x 5 = 20.
+                                Tích của hai số dương vẫn là số dương, đến đây
+                                mọi thứ đều ổn. b) Nếu bây giờ người ta đưa cho
+                                bạn 4 thanh xám, nghĩa là bốn khoản nợ, khoản
+                                tiền sẽ giảm đi 20€. Nói cách khác: 4 x (-5) =
+                                -20. Một số dương nhân với một số âm sẽ cho ra
+                                một số âm. Và tương tự, câu c) nếu người ta lấy
+                                của bạn 4 thanh đen, bạn sẽ mất 20€. Cũng có
+                                nghĩa là (-4) x 5 = -20. Hai trường hợp b) và c)
+                                chứng tỏ rằng việc đưa ai một khoản nợ thì cũng
+                                cùng tác dụng với việc đang lấy tiền từ người
+                                đó. Thêm số âm tức là trừ đi số dương. Giờ hãy
+                                tới điểm mấu chốt là câu d): khoản tiền của bạn
+                                sẽ thế nào nếu người ta lấy đi của bạn 4 thanh
+                                xám? Nói cách khác, chuyện gì sẽ xảy ra nếu
+                                người ta xóa bỏ những khoản nợ của bạn? Câu trả
+                                lời rất rõ ràng: số tiền bạn có sẽ tăng lên, bạn
+                                sẽ có thêm tiền. Nói cách khác (-4) x (-5) = 20.
+                                Bỏ số âm tức là thêm sỡ dương! Trừ với trừ bằng
+                                cộng.
+                            </div>
+                        }
+                    >
+                        Quy tắc của việc nhân các dấu, ban đầu hẳn là khá kỳ
+                        quặc, lại hoàn toàn có nghĩa nếu ta nhớ lại hệ thống các
+                        thanh màu được phát minh bởi các học giả Trung Quốc. Ví
+                        dụ sử dụng hệ thống này để biểu diễn cho sự lời lỗ về
+                        tiền bạc.
+                        <br />
+                        Giả sử một thanh đen tượng trưng cho 5€ trong khi một
+                        thanh xám tượng trưng cho một món nợ 5€, nghĩa là -5€.
+                        Nếu bạn có 10 thanh đen và 5 thanh xám, khoản tiền của
+                        bạn sẽ là 25€.
+                        <br />
+                        Bây giờ hãy nghiên cứu những trường hợp khác nhau có thể
+                        xảy ra khi tài khoản của bạn thay đổi. Và hãy đưa về
+                        phép tính nhé!
+                        <br />a{`)`} Giả sử bạn bổ sung thêm 4 thanh đen, vậy số
+                        tiền bạn là bao nhiêu?
+                        <br />b{`)`} Nếu bây giờ người ta đưa cho bạn 4 thanh
+                        xám, số tiền của bạn là bao nhiêu?
+                        <br />c{`)`} Nếu người ta đưa bạn 4 thanh xám, số tiền
+                        của bạn là bao nhiêu?
+                        <br />d{`)`} Khoản tiền của bạn sẽ thế nào nếu người ta
+                        lấy đi của bạn 4 thanh xám?
+                        <div className="bg-[#327e0c] w-full h-[1px] my-2" />
+                    </ExtraQuiz>
                     <div className={`${generalContentClassName}`}>
                         Sự xuất hiện của số âm cũng đảo lộn ý nghĩa của phép
                         cộng và phép trừ. Vì cộng một số âm có nghĩa là trừ một
@@ -531,9 +564,8 @@ export default function TapHop() {
                         Sự ra đời của số hữu tỉ xuất phát từ nhu cầu giải quyết
                         các vấn đề thực tiễn và toán học trong đời sống. Đầu
                         tiên đó là nhu cầu{" "}
-                        <Extra
+                        <ExtraInlineFact
                             buttonContent="đo lường chính xác trong thực tế"
-                            variant="inlineFact"
                             extraBodyVariant="content"
                         >
                             <span className="font-[475]">
@@ -579,7 +611,7 @@ export default function TapHop() {
                             Và còn nhiều bài toán khác nữa. Các bạn có thể tìm
                             đọc thêm ở cuốn sách “Toán học - Một thiên tiểu
                             thuyết” của Mickael Launay.
-                        </Extra>
+                        </ExtraInlineFact>
                         : Trong các hoạt động đời sống như đo chiều dài, diện
                         tích, khối lượng, hoặc chia sẻ tài sản, các số nguyên
                         không thể đáp ứng hết nhu cầu. Ví dụ, việc chia một
@@ -605,9 +637,14 @@ export default function TapHop() {
                         số này được gọi là số vô tỷ (irrationals), vì chúng
                         không thể được viết dưới dạng tỉ số của hai số nguyên.
                         Có rất nhiều câu chuyện huyền thoại xoay quanh việc phát
-                        hiện ra số vô tỷ của nhà toán học Pythagoras, Hippacus
-                        thành Croton. Trong tất cả các câu chuyện, Hippacus gặp
-                        một kết cục không may, hoặc vì phát hiện ra rằng{" "}
+                        hiện ra{" "}
+                        <ExtraFunFact
+                            buttonContent="số vô tỷ"
+                            ffidx={[0, 0, 5, 0]}
+                        />{" "}
+                        của nhà toán học Pythagoras, Hippacus thành Croton.
+                        Trong tất cả các câu chuyện, Hippacus gặp một kết cục
+                        không may, hoặc vì phát hiện ra rằng{" "}
                         <InlineMath math="\sqrt{2}" /> là số vô tỷ, hoặc vì tiết
                         lộ bí mật về <InlineMath math="\sqrt{2}" /> ra bên ngoài
                         hội kín Pythagoras.
@@ -616,13 +653,12 @@ export default function TapHop() {
             </div>
             <div className="col-[1/-1] row-[2/3] h-fit">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar[0][0][1]}
+                    {timelineStar.TheKy19}
                 </div>
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>
                         Bài báo của{" "}
-                        <Extra
-                            variant="inlineFact"
+                        <ExtraInlineFact
                             buttonContent="Georg Cantor"
                             extraBodyVariant="content"
                         >
@@ -633,14 +669,13 @@ export default function TapHop() {
                             khái niệm về số cardinal và số siêu hạn, mở đường
                             cho nghiên cứu về tập hợp vô hạn và lý thuyết tập
                             hợp.
-                        </Extra>{" "}
+                        </ExtraInlineFact>{" "}
                         công bố năm 1874, "Über eine Eigenschaft des Inbegriffes
                         aller reellen algebraischen Zahlen" ("Về một thuộc tính
                         của tập hợp tất cả số đại số thực"), đã đánh dấu sự ra
                         đời của{" "}
-                        <Extra
+                        <ExtraInlineFact
                             buttonContent="lý thuyết tập hợp hiện đại"
-                            variant="inlineFact"
                             extraBodyVariant="content"
                         >
                             <span className="font-[475]">
@@ -648,16 +683,15 @@ export default function TapHop() {
                             </span>
                             : Cantor đã định nghĩa một tập hợp là một tập hợp
                             các đối tượng duy nhất và khác nhau.
-                        </Extra>{" "}
+                        </ExtraInlineFact>{" "}
                         như một nhánh của toán học. Ông đã giới thiệu khái niệm
                         về tập hợp (set) trong toán học, coi tập hợp là một tập
                         hợp các đối tượng hoặc phần tử mà có thể được xác định
                         rõ ràng. Cantor không chỉ khái quát hóa các tập hợp hữu
                         hạn mà còn mở rộng ra{" "}
-                        <Extra
+                        <ExtraInlineFact
                             buttonContent="tập hợp vô hạn"
                             extraBodyVariant="content"
-                            variant="inlineFact"
                         >
                             <span className="font-[475]">
                                 Lý thuyết tập hợp vô hạn
@@ -674,10 +708,10 @@ export default function TapHop() {
                             Ví dụ: tập các số tự nhiên{" "}
                             <InlineMath math="\mathbb{N}=\{1, 2, 3, ...\}" /> là
                             một tập hợp đếm được.
-                        </Extra>
+                        </ExtraInlineFact>
                         .
                     </div>
-                    <Extra variant="learnMore" buttonContent="Tìm hiểu thêm">
+                    <ExtraLearnMore buttonContent="Tìm hiểu thêm">
                         Tập các số thực <InlineMath math="\mathbb{R}" /> lại
                         không thể đếm được. Điều này được chứng minh qua định lý
                         Cantor rằng không thể thiết lập một ánh xạ một-một giữa
@@ -738,20 +772,20 @@ export default function TapHop() {
                             tập hợp B (ký hiệu <InlineMath math="A \subset B" />{" "}
                             ) nếu mọi phần tử của A đều là phần tử của B.
                         </div>
-                    </Extra>
+                    </ExtraLearnMore>
                 </div>
             </div>
             <div className="col-[1/-1] row-[3/4] h-fit">
                 <div className="grid grid-rows-1 md:grid-cols-[28.5px_auto] grid-cols-[20px_auto]">
                     <div className="md:h-[75px] h-[51.5px] col-[1/2] row-[1/-1]">
-                        {timelineStar[0][0][2]}
+                        {timelineStar.Star1dc19}
                     </div>
                     <div className="col-[2/-1] row-[1/-1] flex flex-wrap ml-3">
                         <div className="md:h-[75px] h-[51.5px] ">
-                            {timelineStar[0][0][3]}
+                            {timelineStar.DauTheKy19Text}
                         </div>
                         <div className="md:h-[75px] h-[51.5px] ">
-                            {timelineStar[0][0][4]}
+                            {timelineStar.CuoiTheKy19Text}
                         </div>
                     </div>
                 </div>
@@ -760,9 +794,8 @@ export default function TapHop() {
                         Gottlob Frege và Lý thuyết tập hợp
                     </div>
                     <div className={`${generalContentClassName}`}>
-                        <Extra
+                        <ExtraInlineFact
                             buttonContent="Gottlob Frege"
-                            variant="inlineFact"
                             extraBodyVariant="content"
                         >
                             Gottlob Frege (1848 - 1925) được xem là người sáng
@@ -772,7 +805,7 @@ export default function TapHop() {
                             tả các khái niệm toán học. Ông đã phát triển phép
                             tính tâm lý học (predicate calculus), một nền tảng
                             cơ bản của logic toán học hiện đại.
-                        </Extra>{" "}
+                        </ExtraInlineFact>{" "}
                         sử dụng khái niệm "tập hợp" trong lý thuyết của ông, đặc
                         biệt là trong cách ông định nghĩa khái niệm. Theo Frege,
                         một khái niệm toán học là một tập hợp của các đối tượng
@@ -794,9 +827,8 @@ export default function TapHop() {
                         <br />
                         Tuy nhiên, lý thuyết tập hợp của Frege gặp phải một vấn
                         đề lớn khi{" "}
-                        <Extra
+                        <ExtraInlineFact
                             buttonContent="Bertrand Russell"
-                            variant="inlineFact"
                             extraBodyVariant="content"
                         >
                             Bertrand Russell (1872-1970) là nhà triết học, toán
@@ -805,11 +837,10 @@ export default function TapHop() {
                             viết Principia Mathematica, đặt nền tảng cho toán
                             học hiện đại qua logic học. Russell cũng là một nhà
                             hoạt động xã hội, nhận Giải Nobel Văn học 1950.
-                        </Extra>{" "}
+                        </ExtraInlineFact>{" "}
                         phát hiện ra{" "}
-                        <Extra
+                        <ExtraInlineFact
                             buttonContent="nghịch lý Russell"
-                            variant="inlineFact"
                             extraBodyVariant="content"
                         >
                             Nghịch lý Russell là một trong những mâu thuẫn quan
@@ -848,7 +879,7 @@ export default function TapHop() {
                             nghịch lý như của Frege và Russell. Zermelo-Fraenkel
                             sử dụng các tiên đề để hạn chế các tập hợp không hợp
                             lệ và bảo vệ lý thuyết tập hợp khỏi các nghịch lý.
-                        </Extra>{" "}
+                        </ExtraInlineFact>{" "}
                         vào năm 1901. Nghịch lý này xuất hiện trong lý thuyết
                         của Frege khi ông cố gắng định nghĩa tập hợp của{" "}
                         <span className="font-[475]">
@@ -856,9 +887,8 @@ export default function TapHop() {
                             nó
                         </span>
                         . Và để giải quyết vấn đề nghịch lý này thì nhà toán học
-                        <Extra
+                        <ExtraInlineFact
                             buttonContent="Zermelo và Fraenkel"
-                            variant="inlineFact"
                             extraBodyVariant="content"
                         >
                             Ernst Zermelo là một nhà toán học người Đức nổi
@@ -876,11 +906,10 @@ export default function TapHop() {
                             dựng nền tảng toán học vững chắc, đồng thời giải
                             quyết một số vấn đề trong lý thuyết tập hợp mà
                             Zermelo chưa hoàn chỉnh.
-                        </Extra>{" "}
+                        </ExtraInlineFact>{" "}
                         đã xây dựng{" "}
-                        <Extra
+                        <ExtraInlineFact
                             buttonContent="Lý thuyết tập hợp tiên đề Zermelo-Fraenkel"
-                            variant="inlineFact"
                             extraBodyVariant="content"
                         >
                             Hệ tiên đề Zermelo-Fraenkel bao gồm các tiên đề cơ
@@ -903,7 +932,7 @@ export default function TapHop() {
                             từ mỗi tập hợp không rỗng. Đây là một tiên đề quan
                             trọng trong lý thuyết tập hợp, mặc dù đôi khi nó có
                             thể dẫn đến các kết quả phi trực quan.
-                        </Extra>{" "}
+                        </ExtraInlineFact>{" "}
                         . Đây là một hệ thống tiên đề được phát triển vào những
                         năm 1920 để giải quyết các vấn đề và nghịch lý trong lý
                         thuyết tập hợp, đặc biệt là nghịch lý Russell. Hệ thống
@@ -915,9 +944,9 @@ export default function TapHop() {
                     </div>
                 </div>
             </div>
-            <div className="col-[1/-1] row-[4/5] h-fit">
+            <div className="col-[1/-1] row-[4/-1] h-fit">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar[0][0][5]}
+                    {timelineStar.TheKy20}
                 </div>
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>
@@ -946,9 +975,8 @@ export default function TapHop() {
                             quyết các câu hỏi về sự đúng đắn và tính khả thi của
                             các lý thuyết toán học.
                         </div>
-                        <Extra
+                        <ExtraLearnMore
                             buttonContent="Tìm hiểu thêm"
-                            variant="learnMore"
                             extraBodyVariant="content"
                             flip
                         >
@@ -1082,7 +1110,7 @@ export default function TapHop() {
                                 AC, từ đó mở ra những sự phân biệt và tính chất
                                 khác nhau trong lý thuyết tập hợp.
                             </div>
-                        </Extra>
+                        </ExtraLearnMore>
                         <div className={`${generalContentClassName}`}>
                             Khoa học máy tính:
                             <div className={`${generalInstanceClassName}`}>

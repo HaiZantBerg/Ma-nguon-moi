@@ -48,6 +48,7 @@ export const images = [
                 <div key="image22" />,
                 <div key="image23" />,
             ],
+            [<div key="image24" />],
         ],
     ],
     [[[]]],
@@ -90,6 +91,7 @@ export const storyList = [
                 "Hilbert và câu chuyện về cái chết của hình học",
                 "Hilbert và câu hỏi trong buổi bảo vệ luận án tiến sĩ",
             ],
+            ["Kẻ giết người mang tên Pythagoras?!"],
         ],
     ],
     [[[]]],
@@ -104,6 +106,7 @@ export const historyFigureName = [
             "George Boole",
             "Frege",
             "Hilbert",
+            "Pythagoras",
         ],
     ],
     [[]],
@@ -118,7 +121,7 @@ export const storyContent = [
         Khác với những triết gia khác ngồi trong phòng giảng bài, Aristotle có thói quen vừa đi 
         dạo vừa giảng giải cho học trò của mình. Ông thường dẫn học trò đi qua các khu vườn, giảng bài về triết học, 
         khoa học, và các chủ đề học thuật khác trong lúc cả nhóm cùng đi bộ. Vì thói quen giảng dạy này, trường học của ông tại 
-        Lyceum được gọi là “Peripatetic School” – tức là “Trường học của những người đi bộ.”
+        Lyceum được gọi là “Peripatetic School” - tức là “Trường học của những người đi bộ.”
         //
         Có một câu chuyện vui kể rằng, một ngày nọ, khi một học trò mới tham gia lớp học và không quen với cách dạy này, 
         cậu ta cố gắng ghi chép trong khi đi bộ theo Aristotle. Sau một thời gian dài cố gắng ghi chép mọi thứ, 
@@ -153,7 +156,7 @@ export const storyContent = [
         cuộc sống đôi khi không thể giải quyết mọi vấn đề gia đình.
         `,
                 `Còn có một câu chuyện vui liên quan đến thời trẻ của Aristotle khi ông là học trò tại Học viện của Plato. 
-        Plato, thầy của Aristotle, luôn ca ngợi tư tưởng của mình về “thế giới ý niệm” – 
+        Plato, thầy của Aristotle, luôn ca ngợi tư tưởng của mình về “thế giới ý niệm” - 
         cho rằng mọi sự vật trong thế giới thực chỉ là bản sao không hoàn hảo của các ý niệm lý tưởng. 
         Tuy nhiên, Aristotle lại không hoàn toàn đồng ý với quan điểm này.
         //
@@ -163,27 +166,27 @@ export const storyContent = [
         ngay cả khi nó mang tính hài hước.
         `,
                 `Dù nổi tiếng với tư duy logic và triết học, Aristotle cũng có những lúc muốn thử sức với nghệ thuật. 
-        Có lần, ông thử làm thơ – một hoạt động được cho là cao quý trong thời kỳ của ông. Nhưng đáng tiếc, 
+        Có lần, ông thử làm thơ - một hoạt động được cho là cao quý trong thời kỳ của ông. Nhưng đáng tiếc, 
         các tác phẩm thơ của Aristotle không thành công và thậm chí bị nhiều người chê cười. 
         Khi một người bạn hỏi tại sao ông lại thất bại trong lĩnh vực này, Aristotle chỉ cười và nói: 
         “Có lẽ vì tôi đã dành quá nhiều thời gian cho lý trí và quá ít thời gian cho cảm xúc.”
         //
-        Những câu chuyện này không chỉ là những giai thoại vui vẻ về Aristotle mà còn mang đến một góc nhìn khác về con người ông – 
+        Những câu chuyện này không chỉ là những giai thoại vui vẻ về Aristotle mà còn mang đến một góc nhìn khác về con người ông - 
         không chỉ là một triết gia uyên bác mà còn là một người có tính cách thú vị, hài hước và đôi khi rất đời thường. 
         Dù là trong những khoảnh khắc giảng dạy hay cuộc sống cá nhân, Aristotle vẫn giữ được sự tinh tế và tư duy sâu sắc, 
         nhưng không bao giờ thiếu đi một chút hài hước khiến ông trở thành một hình mẫu vừa tôn kính vừa gần gũi.
         `,
             ],
             [
-                `William of Ockham nổi tiếng với nguyên lý “Ockham’s Razor” (Lưỡi dao của Ockham), 
+                `William of Ockham nổi tiếng với nguyên lý “Ockham's Razor” (Lưỡi dao của Ockham), 
         một nguyên lý cho rằng các giải thích đơn giản thường là chính xác nhất, và chúng ta không nên nhân lên các giả 
         thiết nếu không cần thiết. Tuy nhiên, có một câu chuyện vui kể rằng, sự đơn giản của ông đôi khi còn khiến các đồng 
         nghiệp bất ngờ.
         //
         Có một lần, một đồng nghiệp đến hỏi Ockham về một vấn đề thần học phức tạp, hy vọng sẽ có một cuộc thảo luận dài dòng 
-        và sâu sắc. Nhưng Ockham chỉ đơn giản trả lời: “Câu trả lời là ‘không’.” Người đồng nghiệp thất vọng hỏi: 
+        và sâu sắc. Nhưng Ockham chỉ đơn giản trả lời: “Câu trả lời là 'không'.” Người đồng nghiệp thất vọng hỏi: 
         “Tại sao lại không? Có rất nhiều điều cần phải xem xét!” Ockham chỉ mỉm cười và nói: “Vì giải thích dài không cần thiết 
-        khi sự thật chỉ đơn giản là ‘không’.”
+        khi sự thật chỉ đơn giản là 'không'.”
         //
         Câu trả lời ngắn gọn của Ockham phản ánh chính nguyên tắc nổi tiếng của ông về sự đơn giản, nhưng nó cũng khiến người khác 
         phải cười vì cách ông cắt ngắn những cuộc tranh luận phức tạp chỉ bằng một vài từ.
@@ -342,6 +345,48 @@ export const storyContent = [
         viên quá lý thuyết và không có tính ứng dụng thực tiễn. Dù là một nhà toán học thuần túy, Hilbert vẫn đánh giá cao sự 
         kết nối giữa lý thuyết và thực hành.
         `,
+            ],
+            [
+                `Bạn có biết việc tìm ra số √2 đã khiến Pythagoras (Pi-ta-go) trở thành một kẻ giết người.//
+Đó là một câu chuyện "truyền miệng" rất nổi tiếng trong giới toán học đấy các bạn ạ. Chắc hẳn các bạn đọc của VMF là học sinh Việt Nam đã quen và áp dụng không ít lần định 
+lí Pythagoras, về việc tổng bình phương hai cạnh góc vuông bằng bình phương cạnh huyền. Hôm nay chúng ta sẽ cùng đọc thêm một câu chuyện "trái chiều" về Pythagoras và bước 
+đầu thảo luận về những "số thực" nhé. Đầu tiên, chúng ta hãy cùng tưởng tượng lại thế giới ngày xửa ngày xưa (500 năm trước Công nguyên), bối cảnh là khi nhà triết học Hyppasus 
+cùng các môn đệ khác của Pythagoras trên một chuyến đi biển:
+//
+"Ném kẻ phản bội xuống biển", đám đông la hét.
+//
+"Tôi tự thấy mình không phải là kẻ phản bội", Hippasus phản đối.
+//
+"Ngươi đã thề lời thề của những môn đồ Pythagoras. Và ngươi đã phản bội lời thề đó, Hippasus", thủ lĩnh của đám đông tuyên bố.
+//
+"Tôi đã chứng minh một điều không thể tưởng tượng được: sự tồn tại của các số vô tỉ. Các người muốn tôi giữ bí mật điều này ư? Các người đang yêu cầu tôi che giấu tri thức 
+và sự thật", Hippapus điềm tĩnh nói.//
+"Ngươi biết rằng chúng ta đã bảo đó không phải là những con số rồi cơ mà", viên thủ lĩnh đáp trả.
+//
+"Nhưng √2 là một con số! Chẳng phải chức năng của số là để đo hay sao? √2 dùng để đo một độ dài xác định. Không có số nào khác biểu thị chính xác độ dài của đường chéo một 
+hình vuông có cạnh là 1", Hippasus kiên quyết bảo vệ ý mình.
+//
+Đám đông các môn đồ của Pythagoras trên boong tàu càng lúc càng mất kiên nhẫn. Sự thật đã làm cho họ lo sợ. Bỗng nhiên, những tiếng la hét của họ biến thành hành động. Mọi chuyện xảy ra rất nhanh. Không ai trên tàu có thể ngăn cản sự kích động của đám đông. "Ném hắn xuống biển", họ la lên khi tìm cách che giấu điều không thể che giấu được là √2 = 1,41421... Họ tóm lấy Hippasus và ném ông xuống biển để thủ tiêu...
+//
+-------
+//
+Có thể đến đây bạn sẽ nghĩ rằng chỉ là vài con số thôi mà tại sao họ lại phải hại nhau như vậy! Nhưng với những người Hy Lạp cổ mà đặc biệt là những người theo "trường phái 
+Pythagoras", toán học đóng vai trò đặc biệt trong cuộc sống của họ. Đối với họ thì bản chất của vũ trụ là các con số mà cụ thể là các số tự nhiên và tỉ số của chúng (phân số). 
+Số 1 là con số thần thánh sáng tạo nên tất cả các số. Số 2 là số chẵn đầu tiên, được coi là thuộc nữ giới. Số 3 là số thuộc nam giới và thể hiện sự điều hoà vì là tổng của 1 và 
+2, v.v... Họ tôn thờ các con số và cho rằng tất cả mọi số trên đời đều là số tự nhiên hoặc là tỉ số của chúng (các phân số). Nhưng rồi định lý Pythagoras nổi tiếng được ra 
+đời và hệ quả đi theo là những đại lượng "không phải số". Vậy bạn có thể hình dung các môn đồ của Pythagoras đã tức giận như thế nào khi Hyppasus không giữ lời thề và tuyên bố 
+rằng có thể chứng minh √2 không thể biểu diễn được dưới dạng tỉ số của hai số tự nhiên để rồi quyết định "trừng phạt" ông một cách tàn bạo. Nhưng rồi bí mật chẳng giữ được lâu, 
+cuối cùng người ta đã cùng công nhân rằng có những số "vô tỉ" (không thể viết dưới dạng phân số của các số nguyên) và sử dụng nó cho đến tận ngày nay. Ta có thể phỏng lại cách 
+chứng minh của Hyppasus theo ngôn ngữ hiện đại:
+//
+Giả sử √2 = a/b là một phân số tối giản (a,b không có ước chung lớn hơn 1), thì khi đó a^2 = 2b^2, suy ra a phải là số chẵn. Khi đó 2b^2 chia hết cho 4 nên b^2 chia hết cho 2, 
+lại suy ra b là số chẵn. Vậy a, b có ước chung là 2. (Mâu thuẫn.)
+//
+Vậy là những số vô tỉ đầu tiên đã ra đời như vậy đấy. Mặc dù Hyppasus đã bị hiểu nhầm và chết một cách oan uổng nhưng ông đã đóng góp viên đá nền để con người có thể xây dựng 
+trường số thực mà ta vẫn quen dùng ngày nay. Các con số xuất hiện trong tự nhiên như pi, e, và tỉ lệ vàng đều là các số vô tỉ!
+//
+(Bài viết có sự tham khảo từ cuốn sách Những vụ Scandal trong toán học, Theoni Pappas.)
+`,
             ],
         ],
     ],

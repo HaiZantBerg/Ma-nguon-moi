@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const chapter = [
     [
@@ -53,14 +54,36 @@ export const description = [
             </p>
         </div>,
         <div key="description2"></div>,
-        <div key="description3">
-            Lượng giác bắt đầu từ các nền văn minh cổ đại như Ai Cập và Babylon,
-            phát triển qua Hy Lạp với Hipparchus. Vào thế kỷ 5 - 7, Ấn Độ mở
-            rộng bảng sine, cosine. Trong thời Trung Cổ, các học giả Ả Rập tiếp
-            tục nghiên cứu. Đến thế kỷ 18, Euler và các nhà toán học châu Âu
-            phát triển lý thuyết lượng giác hiện đại, ứng dụng trong khoa học và
-            kỹ thuật. Lịch sử hình thành và phát triển lượng giác đã phát triển
-            ở nhiều nơi trên thế giới.
+        <div
+            key="description3"
+            className="md1:text-[1.12rem] md1:leading-[1.6rem]"
+        >
+            Để có thể đi vào chuyên sâu của một khái niệm trước hết chúng ta
+            phải biết rõ các khái niệm chúng ta đang bàn đến có ý nghĩa thế nào
+            về mặt từ ngữ. Từ “<span className="font-[475]">lượng giác</span>”
+            được sử dụng trong các chương trình giáo dục của Việt Nam từ lúc bắt
+            đầu có chương trình giáo dục phổ thông từ giữa thế kỷ XX. Đây là một
+            từ Hán Việt ghép từ 2 khái niệm: “lượng” mang ý nghĩa về đo lường và
+            “giác” nói về các góc, nên có thể hiểu “lượng giác” mang ý nghĩa là
+            một phương pháp đo lường và định lượng về góc.
+            <br /> Nếu chỉ mang ý nghĩa như trên chúng ta không có gì để bàn ở
+            đây, trong tiếng Anh hoặc tiếng Pháp, khái niệm “lượng giác” được
+            tương ứng với “<span className="font-[475]">trigonometry</span>”,
+            đây là một từ xuất phát từ tiếng Hy Lạp - nền văn minh đặt nền tảng
+            cho sự phát triển của nền văn mình phương Tây - trong đó, “
+            <span className="font-[475]">trigōnon</span>” có nghĩa là “tam giác”
+            và “<span className="font-[475]">metron</span>” mang nghĩa “đo
+            lường”. Như thế khái niệm “lượng giác” trong tiếng Anh lại có ý
+            nghĩa là sự đo lường về góc bằng tam giác.
+            <br /> (
+            <Link
+                target="_blank"
+                href="https://zefro.wordpress.com/2021/07/16/luong-giac-tu-ly-thuyet-den-thuc-te/"
+                className="underline"
+            >
+                Theo nguồn
+            </Link>
+            )
         </div>,
         <div key="description4"></div>,
         <div key="description5"></div>,

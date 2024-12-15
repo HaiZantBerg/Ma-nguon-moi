@@ -105,6 +105,9 @@ export default function ChapterDialog({
     const closeDialogAnimation = async () => {
         if (isClosing) return;
 
+        if (descriptionRef.current)
+            descriptionRef.current.style.overflowY = "hidden";
+
         isClosing = true;
 
         [0, 1, 2, 3].forEach((idxm) => {
@@ -527,15 +530,15 @@ export default function ChapterDialog({
                     </div>
                     <div className="col-[1/-1] md1:row-[1/-1] row-[1/2] md1:grid flex flex-col md1:grid-cols-[20%_1fr] md1:grid-rows-1 md1:overflow-y-hidden overflow-x-hidden overflow-y-auto h-full w-full">
                         <div
-                            className="md1:col-[1/2] md1:row-[1/-1] text-start font-bold h-fit md1:pr-2 md1:px-0 px-2 md1:max-h-none max-h-[30dvh] flex flex-col"
+                            className="md1:col-[1/2] md1:row-[1/-1] text-start font-bold h-full md1:pr-2 md1:px-0 px-2 md1:max-h-none max-h-[30dvh] flex flex-col"
                             id="chapterTitleAndDescription"
                         >
-                            <div className='font-["Chakra_Petch"] font-[700] md1:pt-0 pt-2 md1:text-[35px] text-[27.5px] h-fit overflow-hidden flex-[1_0_auto] md1:leading-[1.26] leading-[1.25] md1:text-balance'>
+                            <div className='font-["Chakra_Petch"] font-[700] md1:pt-0 pt-2 md1:text-[35px] text-[27.5px] h-fit overflow-hidden md1:flex-none flex-[1_0_auto] md1:leading-[1.26] leading-[1.25] md1:text-balance'>
                                 {chapterTitle}
                             </div>
                             <div className="w-full h-[1.5px] bg-[rgba(0,0,0,0.25)] mt-5 md1:block hidden" />
                             <div
-                                className="overflow-y-auto overflow-x-hidden font-light shrink text-[15px] md1:mb-0 mb-4 mt-4 flex-[0_1_auto] lg3:text-lg"
+                                className="overflow-y-auto overflow-x-hidden font-light text-[15px] md1:mb-0 mb-4 mt-4 flex-[0_1_auto] lg3:text-lg"
                                 ref={descriptionRef}
                             >
                                 {description[id][idx]}
@@ -546,8 +549,8 @@ export default function ChapterDialog({
                                 className="flex-[1_0_20%] md1:block hidden"
                                 id="blockage"
                             />
-                            <div className="flex md1:flex-row flex-col w-full h-full pointer-events-auto">
-                                <div className="flex items-center md1:flex-row flex-col">
+                            <div className="flex md1:flex-row flex-col w-full h-full pointer-events-auto bg-white">
+                                <div className="flex items-center md1:flex-row flex-col relative z-10">
                                     <button
                                         className="w-[50%] md1:hidden flex flex-col items-center"
                                         onClick={() =>

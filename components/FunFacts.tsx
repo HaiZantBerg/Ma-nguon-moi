@@ -18,7 +18,9 @@ const openFlipCard = signal([-1, -1]);
 const FunFact1 = ({ idxf, idxc }: { idxf: number; idxc: number }) => {
     useSignals();
 
-    const triggerCloseCard = () => (openFlipCard.value = [-1, -1]);
+    const triggerCloseCard = () => {
+        openFlipCard.value = [-1, -1];
+    };
 
     return (
         <>
@@ -122,7 +124,7 @@ const FunFactCard = ({
     );
 };
 
-const FlipCard = ({
+export const FlipCard = ({
     children,
     idx,
     title,
@@ -137,7 +139,7 @@ const FlipCard = ({
     idxs: number;
     idxf: number;
     idxc: number;
-    triggerCloseCard: () => void;
+    triggerCloseCard: () => void | Promise<void>;
 }) => {
     const [scope, animate] = useAnimate();
 
@@ -274,7 +276,7 @@ const FlipCard = ({
             ref={scope}
         >
             <div
-                className="absolute top-0 left-0 w-screen h-screen -z-10"
+                className="absolute top-0 left-0 w-screen h-screen -z-10 md1:block hidden"
                 style={{
                     background: "rgba(0, 0, 0, 0.75)",
                 }}

@@ -118,7 +118,7 @@ export default function LessonLayout({ id, idx }: { id: number; idx: number }) {
                         }}
                     >
                         <div
-                            className={`grid grid-cols-1 ${gridDisplay[0][0][1]} relative`}
+                            className={`grid grid-cols-1 ${gridDisplay[id][idx][idxl]} relative`}
                         >
                             {lesson}
                         </div>
@@ -132,7 +132,7 @@ export default function LessonLayout({ id, idx }: { id: number; idx: number }) {
                     }}
                 >
                     <div
-                        className={`grid grid-cols-1 ${gridDisplay[0][0][1]} relative`}
+                        className={`grid grid-cols-1 ${gridDisplay[id][idx]} relative`}
                     >
                         {Lessons[id][idx]}
                     </div>

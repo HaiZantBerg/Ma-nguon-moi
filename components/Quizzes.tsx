@@ -21,7 +21,7 @@ const Quiz1 = ({ idxq, idxc }: { idxq: number; idxc: number }) => {
     return (
         <>
             {quizName[idxc][idxq].map((quiz, idx) => (
-                <QuizCard
+                <QuizCardContainer
                     idx={idx}
                     content={quiz}
                     key={idx}
@@ -31,7 +31,7 @@ const Quiz1 = ({ idxq, idxc }: { idxq: number; idxc: number }) => {
                     answerId={answerArray[idxc][idxq][idx]}
                 >
                     {quizCardImg[idxc][idxq][idx]}
-                </QuizCard>
+                </QuizCardContainer>
             ))}
         </>
     );
@@ -44,7 +44,7 @@ const QuizCardDisplay = ({
     content,
 }: {
     children?: React.ReactNode;
-    content: string;
+    content?: string;
 }) => {
     return (
         <div className="w-full h-full flex flex-col px-2 py-2">
@@ -56,7 +56,7 @@ const QuizCardDisplay = ({
     );
 };
 
-const QuizCard = ({
+const QuizCardContainer = ({
     children,
     idx,
     content,
@@ -67,7 +67,7 @@ const QuizCard = ({
 }: {
     children?: React.ReactNode;
     idx: number;
-    content: string;
+    content?: string;
     quizName: string;
     quiz: string;
     choices: string[];
