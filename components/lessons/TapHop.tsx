@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "katex/dist/katex.min.css";
 import { InlineMath } from "react-katex";
 import ReactPlayer from "react-player/lazy";
-
 import Image from "next/image";
 import Link from "next/link";
 import Boner from "@/public/Image/boner.png";
@@ -46,19 +45,16 @@ export default function TapHop() {
                         className="lg2:col-[1/2] lg2:row-[2/-1] cursor-pointer flex md1:justify-normal justify-center items-start"
                         onClick={() => handleStartVideo(0)}
                     >
-                        <div className="lg2:sticky lg2:top-[20px] max-w-[400px] w-full aspect-[304/207] border">
-                            {/* <ReactPlayer
-                                url={
-                                    `${process.env.NEXT_PUBLIC_API_URL}/videos/primitive.mp4`
-                                    // `${process.env.NEXT_PUBLIC_PUBLIC_URL}/videos/primitive.mp4`
-                                }
-                                loop={!playVideo}
-                                playing={playVideo}
+                        <div className="lg2:sticky lg2:top-[20px] max-w-[400px] w-full aspect-[304/207]">
+                            <ReactPlayer
+                                url={`${process.env.NEXT_PUBLIC_API_URL}/videos/primitive.mp4`}
+                                loop={!playVideo.value[0]}
+                                playing={playVideo.value[0]}
                                 onEnded={() => handleStartVideo(0)}
                                 muted
                                 width="100%"
                                 height="100%"
-                            /> */}
+                            />
                         </div>
                     </div>
                     <div
@@ -136,19 +132,19 @@ export default function TapHop() {
                         đếm này bất cứ ai cũng đã được học ngay từ khi còn nhỏ.
                         Thế nhưng, con người ở một số nền văn minh cổ đại xa xưa
                         cũng như vài tộc người ngày nay lại có kiểu đếm khác.
-                        "Chục" của họ không hẳn là mười, chẳng hạn với "chục" là
-                        tám thì:
+                        {'"'}Chục{'"'} của họ không hẳn là mười, chẳng hạn với{" "}
+                        {'"'}chục{'"'} là tám thì:
                         <div className={`${generalInstanceClassName}`}>
-                            8 là một "chục"
+                            8 là một {'"'}chục{'"'}
                         </div>
                         <div className={`${generalInstanceClassName}`}>
-                            16 bằng hai lần tám nghĩa là hai "chục"
+                            16 bằng hai lần tám nghĩa là hai {'"'}chục{'"'}
                         </div>
                         <div className={`${generalInstanceClassName}`}>
-                            24 bằng ba lần tám nghĩa là ba "chục"
+                            24 bằng ba lần tám nghĩa là ba {'"'}chục{'"'}
                         </div>
                         Như vậy, có thể hiểu rằng Hệ cơ số n là một kiểu đếm mà
-                        mỗi "chục" bằng n.
+                        mỗi {'"'}chục{'"'} bằng n.
                     </div>
                     <div className={`${generalContentClassName}`}>
                         <br />
@@ -309,17 +305,18 @@ export default function TapHop() {
                         <br />
                         <br />
                         Việc ta hiểu được số 0 phức tạp hơn bạn tưởng: ta không
-                        hề gặp "số không" trong tự nhiên để nó có thể hữu hình,
-                        dễ hiểu. Bất cứ số tự nhiên nào lớn hơn không đều có ví
-                        dụ thực hiện: một con khỉ, hai con ong, ba trái đào hay
-                        bốn bông hoa. Nhưng "không" thì sao? Phải có chút nhận
-                        thức để nhận ra cái vô hình cũng là cái hữu hình, trong
-                        hư có thực, "không có gì" cũng là một cái gì đó.
+                        hề gặp {'"'}số không{'"'} trong tự nhiên để nó có thể
+                        hữu hình, dễ hiểu. Bất cứ số tự nhiên nào lớn hơn không
+                        đều có ví dụ thực hiện: một con khỉ, hai con ong, ba
+                        trái đào hay bốn bông hoa. Nhưng {'"'}không{'"'} thì
+                        sao? Phải có chút nhận thức để nhận ra cái vô hình cũng
+                        là cái hữu hình, trong hư có thực, {'"'}không có gì{'"'}{" "}
+                        cũng là một cái gì đó.
                         <br />
-                        "Số không tồn tại trong não bộ chúng ta chứ không thuộc
-                        về cảm giác", Robert Kaplan, giáo sư toán học tại
-                        Harvard và tác giả cuốn sách về con số không, nói với
-                        tạp chí Vox.
+                        {'"'}Số không tồn tại trong não bộ chúng ta chứ không
+                        thuộc về cảm giác{'"'}, Robert Kaplan, giáo sư toán học
+                        tại Harvard và tác giả cuốn sách về con số không, nói
+                        với tạp chí Vox.
                         <br />
                         Trong cuốn “Chữ số và Thế giới - Nguồn gốc bị lãng quên”
                         của Đỗ Minh Triết trang 323 có khẳng định: “Vậy là Ấn Độ
@@ -481,33 +478,37 @@ export default function TapHop() {
                         buttonContent="Tại sao trừ với trừ lại thành cộng?"
                         explaination={
                             <div>
-                                a) Giả sử bạn bổ sung thêm 4 thanh đen, vậy số
-                                tiền bạn là bao nhiêu? b) Nếu bây giờ người ta
-                                đưa cho bạn 4 thanh xám, số tiền của bạn là bao
-                                nhiêu? c) Nếu người ta đưa bạn 4 thanh xám, số
-                                tiền của bạn là bao nhiêu? d) Khoản tiền của bạn
-                                sẽ thế nào nếu người ta lấy đi của bạn 4 thanh
-                                xám? Thấy rằng, đối với câu a), số tiền của bạn
-                                có sẽ tăng thêm 20€. Nói cách khác: 4 x 5 = 20.
-                                Tích của hai số dương vẫn là số dương, đến đây
-                                mọi thứ đều ổn. b) Nếu bây giờ người ta đưa cho
-                                bạn 4 thanh xám, nghĩa là bốn khoản nợ, khoản
-                                tiền sẽ giảm đi 20€. Nói cách khác: 4 x (-5) =
-                                -20. Một số dương nhân với một số âm sẽ cho ra
-                                một số âm. Và tương tự, câu c) nếu người ta lấy
-                                của bạn 4 thanh đen, bạn sẽ mất 20€. Cũng có
-                                nghĩa là (-4) x 5 = -20. Hai trường hợp b) và c)
+                                a{")"} Giả sử bạn bổ sung thêm 4 thanh đen, vậy
+                                số tiền bạn là bao nhiêu? b{")"} Nếu bây giờ
+                                người ta đưa cho bạn 4 thanh xám, số tiền của
+                                bạn là bao nhiêu? c{")"} Nếu người ta đưa bạn 4
+                                thanh xám, số tiền của bạn là bao nhiêu? d{")"}{" "}
+                                Khoản tiền của bạn sẽ thế nào nếu người ta lấy
+                                đi của bạn 4 thanh xám? Thấy rằng, đối với câu a
+                                {")"}, số tiền của bạn có sẽ tăng thêm 20€. Nói
+                                cách khác: 4 x 5 = 20. Tích của hai số dương vẫn
+                                là số dương, đến đây mọi thứ đều ổn.
+                                <br />b{")"} Nếu bây giờ người ta đưa cho bạn 4
+                                thanh xám, nghĩa là bốn khoản nợ, khoản tiền sẽ
+                                giảm đi 20€. Nói cách khác: 4 x (-5) = -20. Một
+                                số dương nhân với một số âm sẽ cho ra một số âm.
+                                <br />
+                                Và tương tự, câu c{")"} nếu người ta lấy của bạn
+                                4 thanh đen, bạn sẽ mất 20€. Cũng có nghĩa là
+                                (-4) x 5 = -20. Hai trường hợp b{")"} và c{")"}
                                 chứng tỏ rằng việc đưa ai một khoản nợ thì cũng
                                 cùng tác dụng với việc đang lấy tiền từ người
-                                đó. Thêm số âm tức là trừ đi số dương. Giờ hãy
-                                tới điểm mấu chốt là câu d): khoản tiền của bạn
-                                sẽ thế nào nếu người ta lấy đi của bạn 4 thanh
-                                xám? Nói cách khác, chuyện gì sẽ xảy ra nếu
-                                người ta xóa bỏ những khoản nợ của bạn? Câu trả
-                                lời rất rõ ràng: số tiền bạn có sẽ tăng lên, bạn
-                                sẽ có thêm tiền. Nói cách khác (-4) x (-5) = 20.
-                                Bỏ số âm tức là thêm sỡ dương! Trừ với trừ bằng
-                                cộng.
+                                đó. Thêm số âm tức là trừ đi số dương.
+                                <br />
+                                Giờ hãy tới điểm mấu chốt là câu d{")"}: khoản
+                                tiền của bạn sẽ thế nào nếu người ta lấy đi của
+                                bạn 4 thanh xám?
+                                <br />
+                                Nói cách khác, chuyện gì sẽ xảy ra nếu người ta
+                                xóa bỏ những khoản nợ của bạn? Câu trả lời rất
+                                rõ ràng: số tiền bạn có sẽ tăng lên, bạn sẽ có
+                                thêm tiền. Nói cách khác (-4) x (-5) = 20. Bỏ số
+                                âm tức là thêm sỡ dương! Trừ với trừ bằng cộng.
                             </div>
                         }
                     >
@@ -545,15 +546,15 @@ export default function TapHop() {
                         tên cho hai thứ khác nhau. Với các số âm, phép cộng và
                         phép trừ trở thành hai mặt của cùng một thao tác. Sự lẫn
                         lộn từ ngữ này và những thứ trông có vẻ nghịch lý, như
-                        "trừ x trừ = cộng", đã làm chậm đi đáng kể quá trình
-                        chấp nhận những số âm. Rất lâu sau Brahmagupta, nhiều
-                        học giả vẫn tiếp tục coi thường những con số cực kỳ tiện
-                        lợi nhưng lại khó nắm bắt này. Vài người gọi chúng là
-                        những "con số phi lý" và chỉ áp dụng chúng trong những
-                        phép tính trung gian với điều kiện là chúng sẽ không
-                        xuất hiện trong kết quả cuối cùng. Phải đến thế kỉ 19,
-                        thậm chí là thế kỉ 20 thì tính chính đáng và công dụng
-                        của chúng mới chính thức được chấp nhận.
+                        {'"'}trừ x trừ = cộng{'"'}, đã làm chậm đi đáng kể quá
+                        trình chấp nhận những số âm. Rất lâu sau Brahmagupta,
+                        nhiều học giả vẫn tiếp tục coi thường những con số cực
+                        kỳ tiện lợi nhưng lại khó nắm bắt này. Vài người gọi
+                        chúng là những {'"'}con số phi lý{'"'} và chỉ áp dụng
+                        chúng trong những phép tính trung gian với điều kiện là
+                        chúng sẽ không xuất hiện trong kết quả cuối cùng. Phải
+                        đến thế kỉ 19, thậm chí là thế kỉ 20 thì tính chính đáng
+                        và công dụng của chúng mới chính thức được chấp nhận.
                     </div>
                 </div>
                 <div className={`${generalClassName}`}>
@@ -670,10 +671,10 @@ export default function TapHop() {
                             cho nghiên cứu về tập hợp vô hạn và lý thuyết tập
                             hợp.
                         </ExtraInlineFact>{" "}
-                        công bố năm 1874, "Über eine Eigenschaft des Inbegriffes
-                        aller reellen algebraischen Zahlen" ("Về một thuộc tính
-                        của tập hợp tất cả số đại số thực"), đã đánh dấu sự ra
-                        đời của{" "}
+                        công bố năm 1874, {'"'}Über eine Eigenschaft des
+                        Inbegriffes aller reellen algebraischen Zahlen{'"'} (
+                        {'"'}Về một thuộc tính của tập hợp tất cả số đại số thực
+                        {'"'}), đã đánh dấu sự ra đời của{" "}
                         <ExtraInlineFact
                             buttonContent="lý thuyết tập hợp hiện đại"
                             extraBodyVariant="content"
@@ -727,8 +728,8 @@ export default function TapHop() {
                         lý thuyết tập hợp. Định lý này chứng minh rằng:
                         <br />{" "}
                         <span className="font-[475]">
-                            "Không có ánh xạ (hàm) một-một từ một tập hợp vô hạn
-                            vào một tập hợp con của nó mà phủ định."
+                            {'"'}Không có ánh xạ (hàm) một-một từ một tập hợp vô
+                            hạn vào một tập hợp con của nó mà phủ định.{'"'}
                         </span>
                         <br />
                         Cụ thể, định lý này cho biết rằng:
@@ -800,29 +801,30 @@ export default function TapHop() {
                         >
                             Gottlob Frege (1848 - 1925) được xem là người sáng
                             lập ra logic học hiện đại. Trong công trình nổi
-                            tiếng của ông, "Begriffsschrift" (1879), Frege đã
-                            đưa ra một hệ thống logic đại số để hình dung và mô
-                            tả các khái niệm toán học. Ông đã phát triển phép
-                            tính tâm lý học (predicate calculus), một nền tảng
-                            cơ bản của logic toán học hiện đại.
+                            tiếng của ông, {'"'}Begriffsschrift{'"'} (1879),
+                            Frege đã đưa ra một hệ thống logic đại số để hình
+                            dung và mô tả các khái niệm toán học. Ông đã phát
+                            triển phép tính tâm lý học (predicate calculus), một
+                            nền tảng cơ bản của logic toán học hiện đại.
                         </ExtraInlineFact>{" "}
-                        sử dụng khái niệm "tập hợp" trong lý thuyết của ông, đặc
-                        biệt là trong cách ông định nghĩa khái niệm. Theo Frege,
-                        một khái niệm toán học là một tập hợp của các đối tượng
-                        thỏa mãn một thuộc tính cụ thể. Ví dụ, "tập hợp tất cả
-                        các số chẵn" là một tập hợp mà phần tử của nó là những
-                        số tự nhiên chẵn. Frege không chỉ định nghĩa tập hợp như
-                        là một tập hợp các đối tượng vật lý mà ông coi tập hợp
-                        là một đối tượng toán học chính thống, có thể được mô tả
-                        và sử dụng trong các phép toán toán học. Frege tin rằng
-                        lý thuyết tập hợp của ông có thể giúp xác định một cách
-                        chính xác các khái niệm trong toán học. Frege được xem
-                        là người sáng lập ra logic học hiện đại. Trong công
-                        trình nổi tiếng của ông, "Begriffsschrift" (1879), Frege
-                        đã đưa ra một hệ thống logic đại số để hình dung và mô
-                        tả các khái niệm toán học. Ông đã phát triển phép tính
-                        tâm lý học (predicate calculus), một nền tảng cơ bản của
-                        logic toán học hiện đại.
+                        sử dụng khái niệm {'"'}tập hợp{'"'} trong lý thuyết của
+                        ông, đặc biệt là trong cách ông định nghĩa khái niệm.
+                        Theo Frege, một khái niệm toán học là một tập hợp của
+                        các đối tượng thỏa mãn một thuộc tính cụ thể. Ví dụ,{" "}
+                        {'"'}tập hợp tất cả các số chẵn{'"'} là một tập hợp mà
+                        phần tử của nó là những số tự nhiên chẵn. Frege không
+                        chỉ định nghĩa tập hợp như là một tập hợp các đối tượng
+                        vật lý mà ông coi tập hợp là một đối tượng toán học
+                        chính thống, có thể được mô tả và sử dụng trong các phép
+                        toán toán học. Frege tin rằng lý thuyết tập hợp của ông
+                        có thể giúp xác định một cách chính xác các khái niệm
+                        trong toán học. Frege được xem là người sáng lập ra
+                        logic học hiện đại. Trong công trình nổi tiếng của ông,{" "}
+                        {'"'}Begriffsschrift{'"'} (1879), Frege đã đưa ra một hệ
+                        thống logic đại số để hình dung và mô tả các khái niệm
+                        toán học. Ông đã phát triển phép tính tâm lý học
+                        (predicate calculus), một nền tảng cơ bản của logic toán
+                        học hiện đại.
                         <br />
                         <br />
                         Tuy nhiên, lý thuyết tập hợp của Frege gặp phải một vấn
@@ -959,8 +961,8 @@ export default function TapHop() {
                             <div className={`${generalInstanceClassName}`}>
                                 Trong lý thuyết tập hợp, số hạng (ordinal
                                 numbers) dùng để chỉ thứ tự của các phần tử
-                                trong một tập hợp (ví dụ: "phần tử thứ nhất",
-                                "phần tử thứ hai",...).
+                                trong một tập hợp (ví dụ: {'"'}phần tử thứ nhất
+                                {'"'},{'"'}phần tử thứ hai{'"'},...).
                             </div>
                             <div className={`${generalInstanceClassName}`}>
                                 Số cardinal là một khái niệm quan trọng dùng để
@@ -993,10 +995,10 @@ export default function TapHop() {
                             <span className="font-[450]">mô hình</span> của
                             chúng (tức là các cấu trúc toán học mà trong đó các
                             định lý của lý thuyết được thỏa mãn). Trong lý
-                            thuyết mô hình, "mô hình" là một cấu trúc toán học
-                            được thiết lập để kiểm tra tính hợp lý của các lý
-                            thuyết, và các lý thuyết có thể có nhiều mô hình
-                            khác nhau.{" "}
+                            thuyết mô hình, {'"'}mô hình{'"'} là một cấu trúc
+                            toán học được thiết lập để kiểm tra tính hợp lý của
+                            các lý thuyết, và các lý thuyết có thể có nhiều mô
+                            hình khác nhau.{" "}
                             <span className="font-[450]">
                                 Khái niệm cơ bản trong Lý thuyết Mô hình:
                             </span>
@@ -1025,8 +1027,8 @@ export default function TapHop() {
                                 : Hai mô hình được gọi là đồng nhất nếu có một
                                 phép ánh xạ một-một giữa chúng mà bảo toàn cấu
                                 trúc của lý thuyết. Điều này có nghĩa là các mô
-                                hình này "giống nhau" về mặt lý thuyết, mặc dù
-                                có thể có các cấu trúc khác nhau.
+                                hình này {'"'}giống nhau{'"'} về mặt lý thuyết,
+                                mặc dù có thể có các cấu trúc khác nhau.
                             </div>
                             <span className="font-[450]">
                                 Ứng dụng trong lý thuyết tập hợp
