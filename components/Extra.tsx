@@ -7,141 +7,142 @@ const svgIcons: { [key: string]: React.JSX.Element } = {
     aloneFact: <></>,
     inlineFact: <></>,
     learnMore: (
-        <svg
-            id="Layer_1"
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 319.05 305.07"
-            className="h-[30px] aspect-square"
-        >
-            <path
-                d="M334.83,385.19A94.94,94.94,0,1,1,296.19,345"
-                transform="translate(-112.47 -310.55)"
-                fill="none"
-                stroke="#136907"
-                strokeLinecap="round"
-                strokeMiterlimit={10}
-                strokeWidth={14}
-            />
-            <circle cx="207.17" cy="52.83" r={7} fill="#136907" />
-            <circle
-                cx="137.53"
-                cy="117.45"
-                r="63.77"
-                fill="none"
-                stroke="#136907"
-                strokeMiterlimit={10}
-                strokeWidth="11.88"
-            />
-            <path
-                d="M367.56,587.37c3.78,6,.93,14.57-6.37,19.19s-16.28,3.51-20.06-2.48l-3.05-4.81L286.6,517.86,313,501.14l51.49,81.42Z"
-                transform="translate(-112.47 -310.55)"
-                fill="none"
-                stroke="#136907"
-                strokeMiterlimit={10}
-                strokeWidth="12.43"
-            />
-            <rect
-                x="288.41"
-                y="529.19"
-                width="53.74"
-                height="9.53"
-                rx="4.77"
-                transform="translate(-349.05 -59.37) rotate(-32.31)"
-                fill="#136907"
-                stroke="#136907"
-                strokeMiterlimit={10}
-                strokeWidth={6}
-            />
-            <line
-                x1={5}
-                y1={244}
-                x2="20.83"
-                y2={244}
-                fill="#fff"
-                stroke="#136907"
-                strokeLinecap="round"
-                strokeMiterlimit={10}
-                strokeWidth={10}
-            />
-            <line
-                x1="38.04"
-                y1={244}
-                x2="53.87"
-                y2={244}
-                fill="#fff"
-                stroke="#136907"
-                strokeLinecap="round"
-                strokeMiterlimit={10}
-                strokeWidth={10}
-            />
-            <line
-                x1="29.68"
-                y1="253.96"
-                x2="29.68"
-                y2="269.79"
-                fill="#fff"
-                stroke="#136907"
-                strokeLinecap="round"
-                strokeMiterlimit={10}
-                strokeWidth={10}
-            />
-            <line
-                x1="29.68"
-                y1="218.66"
-                x2="29.68"
-                y2="234.49"
-                fill="#fff"
-                stroke="#136907"
-                strokeLinecap="round"
-                strokeMiterlimit={10}
-                strokeWidth={10}
-            />
-            <line
-                x1="265.18"
-                y1="30.34"
-                x2="281.01"
-                y2="30.34"
-                fill="#fff"
-                stroke="#136907"
-                strokeLinecap="round"
-                strokeMiterlimit={10}
-                strokeWidth={10}
-            />
-            <line
-                x1="298.22"
-                y1="30.34"
-                x2="314.05"
-                y2="30.34"
-                fill="#fff"
-                stroke="#136907"
-                strokeLinecap="round"
-                strokeMiterlimit={10}
-                strokeWidth={10}
-            />
-            <line
-                x1="289.86"
-                y1="40.3"
-                x2="289.86"
-                y2="56.13"
-                fill="#fff"
-                stroke="#136907"
-                strokeLinecap="round"
-                strokeMiterlimit={10}
-                strokeWidth={10}
-            />
-            <line
-                x1="289.86"
-                y1={5}
-                x2="289.86"
-                y2="20.83"
-                fill="#fff"
-                stroke="#136907"
-                strokeLinecap="round"
-                strokeMiterlimit={10}
-                strokeWidth={10}
-            />
-        </svg>
+        <div className="md1:w-[30px] w-[20px] aspect-square">
+            <svg
+                id="Layer_1"
+                data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 319.05 305.07"
+            >
+                <path
+                    d="M334.83,385.19A94.94,94.94,0,1,1,296.19,345"
+                    transform="translate(-112.47 -310.55)"
+                    fill="none"
+                    stroke="#136907"
+                    strokeLinecap="round"
+                    strokeMiterlimit={10}
+                    strokeWidth={14}
+                />
+                <circle cx="207.17" cy="52.83" r={7} fill="#136907" />
+                <circle
+                    cx="137.53"
+                    cy="117.45"
+                    r="63.77"
+                    fill="none"
+                    stroke="#136907"
+                    strokeMiterlimit={10}
+                    strokeWidth="11.88"
+                />
+                <path
+                    d="M367.56,587.37c3.78,6,.93,14.57-6.37,19.19s-16.28,3.51-20.06-2.48l-3.05-4.81L286.6,517.86,313,501.14l51.49,81.42Z"
+                    transform="translate(-112.47 -310.55)"
+                    fill="none"
+                    stroke="#136907"
+                    strokeMiterlimit={10}
+                    strokeWidth="12.43"
+                />
+                <rect
+                    x="288.41"
+                    y="529.19"
+                    width="53.74"
+                    height="9.53"
+                    rx="4.77"
+                    transform="translate(-349.05 -59.37) rotate(-32.31)"
+                    fill="#136907"
+                    stroke="#136907"
+                    strokeMiterlimit={10}
+                    strokeWidth={6}
+                />
+                <line
+                    x1={5}
+                    y1={244}
+                    x2="20.83"
+                    y2={244}
+                    fill="#fff"
+                    stroke="#136907"
+                    strokeLinecap="round"
+                    strokeMiterlimit={10}
+                    strokeWidth={10}
+                />
+                <line
+                    x1="38.04"
+                    y1={244}
+                    x2="53.87"
+                    y2={244}
+                    fill="#fff"
+                    stroke="#136907"
+                    strokeLinecap="round"
+                    strokeMiterlimit={10}
+                    strokeWidth={10}
+                />
+                <line
+                    x1="29.68"
+                    y1="253.96"
+                    x2="29.68"
+                    y2="269.79"
+                    fill="#fff"
+                    stroke="#136907"
+                    strokeLinecap="round"
+                    strokeMiterlimit={10}
+                    strokeWidth={10}
+                />
+                <line
+                    x1="29.68"
+                    y1="218.66"
+                    x2="29.68"
+                    y2="234.49"
+                    fill="#fff"
+                    stroke="#136907"
+                    strokeLinecap="round"
+                    strokeMiterlimit={10}
+                    strokeWidth={10}
+                />
+                <line
+                    x1="265.18"
+                    y1="30.34"
+                    x2="281.01"
+                    y2="30.34"
+                    fill="#fff"
+                    stroke="#136907"
+                    strokeLinecap="round"
+                    strokeMiterlimit={10}
+                    strokeWidth={10}
+                />
+                <line
+                    x1="298.22"
+                    y1="30.34"
+                    x2="314.05"
+                    y2="30.34"
+                    fill="#fff"
+                    stroke="#136907"
+                    strokeLinecap="round"
+                    strokeMiterlimit={10}
+                    strokeWidth={10}
+                />
+                <line
+                    x1="289.86"
+                    y1="40.3"
+                    x2="289.86"
+                    y2="56.13"
+                    fill="#fff"
+                    stroke="#136907"
+                    strokeLinecap="round"
+                    strokeMiterlimit={10}
+                    strokeWidth={10}
+                />
+                <line
+                    x1="289.86"
+                    y1={5}
+                    x2="289.86"
+                    y2="20.83"
+                    fill="#fff"
+                    stroke="#136907"
+                    strokeLinecap="round"
+                    strokeMiterlimit={10}
+                    strokeWidth={10}
+                />
+            </svg>
+        </div>
     ),
 };
 
@@ -157,7 +158,7 @@ const variants: { [key: string]: string } = {
     inlineFactFlip: "bg-[#f58700] rounded-[0px_0px_8px_8px]",
     inlineFact2: "bg-[#ff981a] rounded-[8px_8px_8px_8px]",
     learnMore:
-        "hover:bg-[#b0f6a7] transition-all duration-2 ease-in font-[500] px-4 pt-2 pb-[10px] md:text-[1.05rem] text-[0.9rem] bg-[#d6ffd1] rounded-[20px] border text-[#136907] border-[#136907]",
+        "hover:bg-[#b0f6a7] transition-colors duration-2 ease-in font-[500] md:text-[1.05rem] text-[0.9rem] bg-[#d6ffd1] md1:rounded-[20px] rounded-[16px] border text-[#136907] border-[#136907]",
     learnMore1: "bg-[#b0f6a7]",
     learnMore2: "bg-[#d6ffd1]",
 };
@@ -171,7 +172,7 @@ const line: { [key: string]: string } = {
     inlineFactWidth: "95%",
     inlineFactLineColor1: "bg-[rgba(255,210,152,0.75)]",
     inlineFactLineColor2: "bg-[rgba(255,251,246,0.75)]",
-    learnMore: "",
+    learnMore: "hidden",
     learnMoreWidth: "",
     learnMoreLineColor1: "",
     learnMoreLineColor2: "",
@@ -189,7 +190,7 @@ const extraBody: { [key: string]: string } = {
     inlineFact: "rounded-[15px] text-white md:py-4 py-3 md:px-6 px-4",
     inlineFactBgColor: "bg-[#e67e00]",
     learnMore:
-        "md:pt-8 md:pb-6 pt-4 pb-3 md:px-10 px-6 bg-[#b0f6a7] text-[#136907] border-[#136907] border rounded-[20px]",
+        "md:pt-8 md:pb-6 pt-4 pb-3 md:px-10 px-6 bg-[#d6ffd1] text-[#136907] border-[#136907] border md1:rounded-[20px] rounded-[16px]",
     learnMoreBgColor: "",
 };
 
@@ -210,7 +211,7 @@ const extraBodyVariants: { [key: string]: string } = {
 const buttonContentVariants: { [key: string]: string } = {
     instance: "",
     content: "",
-    learnMore: "flex text-nowrap items-center gap-3",
+    learnMore: "flex text-nowrap items-center md1:gap-3 gap-1 w-fit mx-4 my-2",
 };
 
 const extraBodyAnimation: { [key: string]: { [key: string]: any } } = {
@@ -227,7 +228,7 @@ const extraBodyAnimation: { [key: string]: { [key: string]: any } } = {
         mass: 1.5,
     },
     learnMore: {
-        delay: 2,
+        delay: 0.3,
         type: "spring",
         stiffness: 450,
         damping: 40,
@@ -274,13 +275,17 @@ export default function Extra({
             );
 
             if (variant === "learnMore") {
-                // animate(
-                //     "#button",
-                //     {
-                //         width: "100%",
-                //     },
-                //     { type: "spring" }
-                // );
+                animate(
+                    "#button",
+                    {
+                        width: "100%",
+                    },
+                    { type: "spring", stiffness: 250, damping: 20, mass: 0.5 }
+                );
+
+                animate("#buttonContent", {
+                    opacity: 0,
+                });
             }
 
             setOpenExtra(true);
@@ -294,9 +299,17 @@ export default function Extra({
             });
 
             if (variant === "learnMore") {
-                // animate("#button", {
-                //     width: "fit-content",
-                // });
+                animate(
+                    "#button",
+                    {
+                        width: "fit-content",
+                    },
+                    { type: "spring", stiffness: 250, damping: 20, mass: 0.5 }
+                );
+
+                animate("#buttonContent", {
+                    opacity: 1,
+                });
             }
 
             setOpenExtra(false);
@@ -338,7 +351,10 @@ export default function Extra({
                 id="button"
             >
                 <div className="relative w-full">
-                    <div className={`${buttonContentVariants[variant]}`}>
+                    <div
+                        className={`${buttonContentVariants[variant]}`}
+                        id="buttonContent"
+                    >
                         <div>{buttonContent}</div>
                         {svgIcons[variant]}
                     </div>

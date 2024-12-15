@@ -1,0 +1,129 @@
+import {
+    generalClassName,
+    // generalContentClassName,
+    // generalInstanceClassName,
+    // timelineStar
+} from "../static/lessonsStatic";
+
+export default function MenhDe() {
+    return (
+        <>
+            <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.6px]" />
+            <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
+                <div className="md:h-[75px] h-[51.5px]">{}</div>
+                <div className={generalClassName}>
+                    Chúng ta hãy bắt đầu từ khoảng năm 384 TCN, khi Aristotle
+                    được sinh ra tại thành phố Stagira, Hy Lạp. Con trai của một
+                    bác sĩ hoàng gia, Aristotle được nuôi dưỡng trong môi trường
+                    học thuật từ nhỏ.
+                    <br />
+                    Đến năm 17 tuổi, ông đến Athens và trở thành học trò của
+                    triết gia nổi tiếng Plato tại Học viện Athens - một nơi tập
+                    trung những bộ óc vĩ đại của thời đại. Tại đây, Aristotle
+                    sớm nổi lên như một trong những học giả hàng đầu, nhưng tư
+                    tưởng của ông dần dần tách biệt khỏi những ý tưởng lý thuyết
+                    của Plato.
+                    <br /> Aristotle bị ám ảnh bởi câu hỏi về sự chính xác trong
+                    tư duy. Làm thế nào con người có thể đạt được sự thật thông
+                    qua lý luận? Ông phát triển một hệ thống suy luận logic mà
+                    sau này được gọi là logic học suy diễn (syllogistic logic).
+                    Aristotle lập luận rằng mọi kết luận đều có thể được rút ra
+                    từ hai hoặc nhiều tiền đề. Ví dụ, nếu “Mọi người đều là sinh
+                    vật” và “Socrates là người”, thì có thể suy ra “Socrates là
+                    sinh vật”. Đây là cách thức đầu tiên mà loài người có thể
+                    suy luận về thế giới một cách có hệ thống và chặt chẽ.
+                    <br /> Trong gần 2000 năm, lý thuyết logic của Aristotle
+                    chiếm vị trí thống trị trong triết học phương Tây. Các học
+                    giả thời Trung cổ như Thomas Aquinas và Albertus Magnus đã
+                    đưa các nguyên lý logic của ông vào hệ thống triết học và
+                    thần học, củng cố thêm tầm quan trọng của nó. Nhưng dù những
+                    nền tảng mà Aristotle xây dựng rất mạnh mẽ, chúng vẫn chưa
+                    đủ để giải quyết những thách thức của toán học hiện đại.
+                </div>
+            </div>
+            <div className="col-[1/-1] row-[2/3] h-fit">
+                <div className="md:h-[75px] h-[51.5px]">{}</div>
+                <div className={generalClassName}>
+                    Trong giai đoạn này, các nhà logic học như William of Ockham
+                    và Peter Abelard đã tiếp tục phát triển các khái niệm về
+                    logic và ngôn ngữ, tập trung vào cách các phát biểu có thể
+                    được kết hợp và phân tích. Mặc dù chưa hình thành rõ ràng
+                    mệnh đề như ta hiểu ngày nay, những nghiên cứu về suy luận
+                    và ngôn ngữ của họ đã đặt nền móng cho sự phát triển sau
+                    này.
+                </div>
+            </div>
+            <div className="col-[1/-1] row-[3/4] h-fit">
+                <div className="md:h-[75px] h-[51.5px]">{}</div>
+                <div className={generalClassName}>
+                    Chuyển sang thế kỷ 19, một nhân vật mới xuất hiện: George
+                    Boole, xuất thân từ một gia đình khiêm tốn; cha ông là một
+                    người thợ giày nhưng lại rất đam mê về toán học và khoa học.
+                    Boole sớm bộc lộ tài năng xuất sắc trong học tập, và dù hoàn
+                    cảnh khó khăn, ông vẫn tự học toán học và các ngôn ngữ cổ
+                    đại như Latin và Hy Lạp. Khi bước vào tuổi trưởng thành,
+                    Boole cảm thấy rằng logic học truyền thống không đủ để giải
+                    quyết những vấn đề phức tạp trong toán học và các lĩnh vực
+                    khoa học khác. Ông nhận ra rằng để lý giải suy luận một cách
+                    có hệ thống, cần phải có một phương pháp mới, một ngôn ngữ
+                    toán học có thể biểu diễn logic.
+                    <br /> Năm 1847, Boole xuất bản tác phẩm “The Mathematical
+                    Analysis of Logic”, trong đó ông giới thiệu một ý tưởng đột
+                    phá: các mệnh đề logic có thể được đại số hóa. Theo Boole,
+                    logic có thể được xử lý giống như các phép toán đại số với
+                    những ký hiệu cho “và” (AND), “hoặc” (OR) và “không” (NOT),
+                    và các mệnh đề có thể được biểu diễn bằng số nhị phân: đúng
+                    là 1, sai là 0. Ví dụ, phát biểu “Socrates là người và
+                    Socrates là sinh vật” có thể được viết dưới dạng phép toán
+                    đại số như: , trong đó và lần lượt đại diện cho các mệnh đề.
+                    Boole không chỉ dừng lại ở đó.
+                    <br />
+                    Trong tác phẩm “An Investigation of the Laws of Thought”
+                    (1854), ông mở rộng ý tưởng của mình và đặt nền móng cho
+                    toàn bộ một hệ thống logic đại số, gọi là Đại số Boole. Điều
+                    đặc biệt là dù Boole phát triển hệ thống này từ quan điểm lý
+                    thuyết thuần túy, nhưng các khái niệm mà ông đưa ra sau này
+                    đã trở thành nền tảng cho khoa học máy tính hiện đại.
+                    <br /> Khi Boole qua đời năm 1864 ở tuổi 49, ông không biết
+                    rằng những tư tưởng của mình sẽ định hình tương lai của công
+                    nghệ và viễn thông.
+                </div>
+                <div className={generalClassName}>
+                    Khoảng 15 năm sau cái chết của Boole, một giáo sư trầm lặng
+                    người Đức tên Gottlob Frege bắt đầu suy nghĩ về các vấn đề
+                    sâu xa hơn trong logic. Frege sinh năm 1848 tại Wismar, Đức,
+                    và ban đầu ông theo đuổi toán học thuần túy. Tuy nhiên,
+                    Frege nhanh chóng nhận ra rằng lý thuyết mệnh đề của Boole
+                    chưa đủ để giải quyết những vấn đề phức tạp trong toán học
+                    và triết học. Ông muốn tạo ra một hệ thống logic không chỉ
+                    biểu diễn các mệnh đề đơn giản mà còn cả các khái niệm phức
+                    tạp liên quan đến đối tượng và thuộc tính của chúng.
+                    <br /> Trong tác phẩm {'"'}Begriffsschrift{'"'} (1879),
+                    Frege đã phát triển logic vị từ (predicate logic), một bước
+                    tiến lớn so với logic mệnh đề của Boole. Nếu logic mệnh đề
+                    chỉ xử lý các phát biểu đơn giản như {'"'}Socrates là người
+                    {'"'}, thì logic vị từ cho phép Frege xử lý những phát biểu
+                    phức tạp hơn như
+                    {'"'}Mọi người đều có một trái tim{'"'}. Frege đã phát triển
+                    một hệ thống ký hiệu hoàn toàn mới để biểu diễn các khái
+                    niệm này, trong đó các đối tượng (như Socrates) và các thuộc
+                    tính (như
+                    {'"'}có trái tim{'"'}) có thể được biểu diễn một cách chính
+                    xác. Tuy nhiên, trong suốt cuộc đời của mình, Frege không
+                    được công nhận rộng rãi và phải đối mặt với nhiều thất bại
+                    cá nhân. Một trong những thất bại lớn nhất của Frege là khi
+                    ông phát hiện ra rằng hệ thống logic của mình chứa đựng một
+                    mâu thuẫn nghiêm trọng, được nhà toán học Bertrand Russell
+                    chỉ ra trong một lá thư vào năm 1902. Dù vậy, công trình của
+                    Frege sau này đã trở thành nền tảng cho nhiều nhánh của
+                    logic hiện đại và ảnh hưởng sâu sắc đến những nhà tư tưởng
+                    sau ông, như Ludwig Wittgenstein và Kurt Gödel.
+                </div>
+            </div>
+            <div className="col-[1/-1] row-[4/-1] relative z-1 h-fit0">
+                <div className="md:h-[75px] h-[51.5px]">{}</div>
+                <div className={generalClassName}></div>
+            </div>
+        </>
+    );
+}

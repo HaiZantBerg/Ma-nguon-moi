@@ -37,6 +37,12 @@ export const description = [
     [
         <div key="description1">
             <p className="font-[500] pb-1">Mệnh đề</p>
+            <p className="pl-[20px]">
+                Mệnh đề là một câu khẳng định trong toán học có thể đúng hoặc
+                sai. Nó thường được sử dụng để phát biểu các kết luận trong lý
+                thuyết. Mệnh đề có thể có các dạng như mệnh đề đảo, mệnh đề
+                tương đương, và được chứng minh qua các phương pháp logic.
+            </p>
             <p className="font-[500] pb-1">Tập hợp</p>
             <p className="pl-[20px]">
                 Lịch sử toán học về tập hợp và các phép toán trong tập hợp có
