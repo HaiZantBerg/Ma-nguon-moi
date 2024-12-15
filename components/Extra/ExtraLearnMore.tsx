@@ -25,14 +25,11 @@ export default function Extra({
 
     const [openExtra, setOpenExtra] = useState(false);
 
-    const sneakyRef = useRef<HTMLDivElement | null>(null);
     const extraBodyContainerRef = useRef<HTMLDivElement | null>(null);
 
     const handleOpenClose = async () => {
-        if (!openExtra && sneakyRef.current) {
-            sneakyRef.current.style.display = "block";
-
-            await animate(
+        if (!openExtra && extraBodyContainerRef.current) {
+            animate(
                 "#button",
                 {
                     width: "100%",
@@ -40,12 +37,17 @@ export default function Extra({
                 { type: "spring", stiffness: 250, damping: 20, mass: 0.5 }
             );
 
+            const delayTime =
+                extraBodyContainerRef.current.getBoundingClientRect().width /
+                4000;
+
             animate(
                 "#extraBody",
                 {
                     height: "fit-content",
                 },
                 {
+                    delay: delayTime,
                     type: "spring",
                     stiffness: 450,
                     damping: 40,
@@ -58,11 +60,7 @@ export default function Extra({
             });
 
             setOpenExtra(true);
-        } else if (extraBodyContainerRef.current) {
-            setTimeout(() => {
-                if (sneakyRef.current) sneakyRef.current.style.display = "none";
-            }, extraBodyContainerRef.current.offsetHeight / 2);
-
+        } else {
             await animate("#extraBody", {
                 height: "0px",
             });

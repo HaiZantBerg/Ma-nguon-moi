@@ -325,7 +325,7 @@ export const FlipCard = ({
                             <div className="h-[50%] aspect-square">
                                 {images[idxc][idxf][idx][idxs]}
                             </div>
-                            <div className="absolute top-[50%] px-[30px]">
+                            <div className="absolute top-[50%] px-[30px] lg:text-[3.5rem] lg:leading-[4.5rem] sm:text-[3rem] sm:leading-[4rem] text-[1.75rem] leading-[3rem]">
                                 {idxs + 1}.
                                 <br />
                                 {title}

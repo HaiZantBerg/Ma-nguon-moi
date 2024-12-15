@@ -31,8 +31,11 @@ export default function Extra({
     const extraBodyContainerRef = useRef<HTMLDivElement | null>(null);
 
     const handleOpenClose = async () => {
-        if (!openExtra && sneakyRef.current) {
-            sneakyRef.current.style.display = "block";
+        if (!openExtra) {
+            setTimeout(() => {
+                if (sneakyRef.current)
+                    sneakyRef.current.style.display = "block";
+            }, 10);
 
             animate(
                 "#extraBody",
@@ -49,13 +52,22 @@ export default function Extra({
 
             setOpenExtra(true);
         } else if (extraBodyContainerRef.current) {
+            const delayTime =
+                Math.sqrt(
+                    extraBodyContainerRef.current.getBoundingClientRect().height
+                ) / 90;
+
             setTimeout(() => {
                 if (sneakyRef.current) sneakyRef.current.style.display = "none";
-            }, extraBodyContainerRef.current.offsetHeight / 2);
+            }, delayTime * 1000 - 50);
 
-            await animate("#extraBody", {
-                height: "0px",
-            });
+            await animate(
+                "#extraBody",
+                {
+                    height: "0px",
+                },
+                { duration: delayTime }
+            );
 
             setOpenExtra(false);
         }
@@ -156,6 +168,11 @@ export default function Extra({
                         Đóng
                     </button>
                 </div>
+
+                <div
+                    className="absolute left-0 w-full h-full -z-10"
+                    onClick={handleOpenClose}
+                />
             </div>
         </div>
     );
