@@ -581,9 +581,9 @@ export default function TapHop() {
                             không hề dừng lại ở hình học mặt phẳng mà còn vươn
                             đến cả hình học không gian. Một tầng hầm. Chiều dài
                             bằng chiều sâu. 1 [đơn vị], Tôi đào dưới đất. Nền
-                            nhà của tôi và khoảng đất tôi đắp lên, 1'10. Chiều
-                            dài và mặt tiền, '50. Chiều dài, mặt tiền, bao
-                            nhiêu? Bạn sẽ thấy các nhà toán học Babylon dùng
+                            nhà của tôi và khoảng đất tôi đắp lên, 1{"'"}10.
+                            Chiều dài và mặt tiền, {"'"}50. Chiều dài, mặt tiền,
+                            bao nhiêu? Bạn sẽ thấy các nhà toán học Babylon dùng
                             ngôn ngữ điện báo. Cụ thể, nội dung của đề bài trên
                             có thể hiểu như sau: Chiều sâu của một tầng hầm gấp
                             mười hai lần chiều dài của nó. Nếu tôi đào căn hầm
@@ -592,9 +592,9 @@ export default function TapHop() {
                             chiều dài và chiều rộng, tôi sẽ thu được{" "}
                             <InlineMath math="\frac{5}{6}" />. Các kích thước
                             của căn hầm là bao nhiêu? Lưu ý rằng với hệ thống có
-                            cơ số sáu mươi, kí hiệu 1'10 Bài toán này được viết
-                            kèm với một lời giải cụ thể dẫn tới câu trả lời là
-                            chiều dài bằng <InlineMath math="\frac{1}{2}" />,
+                            cơ số sáu mươi, kí hiệu 1{"'"}10 Bài toán này được
+                            viết kèm với một lời giải cụ thể dẫn tới câu trả lời
+                            là chiều dài bằng <InlineMath math="\frac{1}{2}" />,
                             chiều rộng bằng <InlineMath math="\frac{1}{3}" /> và
                             chiều sâu bằng 6. Bây giờ hãy cùng dạo qua phía sông
                             Nile một chút. Lẽ tất nhiên, ở vùng đất của người Ai
