@@ -1,6 +1,6 @@
-import depressedAristotle from "@/public/Image/aristotlecantdopoetic.png";
-import logicBread from "@/public/Image/logicbread.png";
-import Image from "next/image";
+// import depressedAristotle from "@/public/Image/aristotlecantdopoetic.png";
+// import logicBread from "@/public/Image/logicbread.png";
+// import Image from "next/image";
 
 export const images = [
     [
@@ -28,9 +28,9 @@ export const images = [
             [
                 <div key="image12" />,
                 <div
-                    src={logicBread}
+                    // src={logicBread}
                     // alt=""
-                    // key="image13"
+                    key="image13"
                     // className="w-[97%] h-[97%] mt-[3%]"
                 />,
                 <div key="image14" />,
