@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { storyContent } from "../static/funfactsStatic";
 import { FlipCard } from "../FunFacts";
 
-export default function Extra({
+export default function ExtraFunFact({
     buttonContent,
     buttonClassName = "",
     containerClassName = "",

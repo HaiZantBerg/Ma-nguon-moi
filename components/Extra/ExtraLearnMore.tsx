@@ -4,9 +4,8 @@ import { useAnimate } from "framer-motion";
 import React, { useRef, useState } from "react";
 import { extraBodyVariants } from "./static";
 
-export default function Extra({
+export default function ExtraLearnMore({
     children,
-    buttonContent,
     buttonClassName = "",
     containerClassName = "",
     extraBodyClassName = "",
@@ -14,7 +13,6 @@ export default function Extra({
     flip = false,
 }: {
     children?: React.ReactNode;
-    buttonContent: string;
     buttonClassName?: string;
     containerClassName?: string;
     extraBodyClassName?: string;
@@ -102,7 +100,7 @@ export default function Extra({
                         className="flex text-nowrap items-center md1:gap-3 gap-1 w-fit mx-4 my-2"
                         id="buttonContent"
                     >
-                        <div>{buttonContent}</div>
+                        <div>Tìm hiểu thêm</div>
                         <div className="md1:w-[30px] w-[20px] aspect-square">
                             <svg
                                 id="Layer_1"

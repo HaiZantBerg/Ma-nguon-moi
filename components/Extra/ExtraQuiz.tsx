@@ -4,7 +4,7 @@ import { useAnimate } from "framer-motion";
 import React, { useRef, useState } from "react";
 import { extraBodyVariants } from "./static";
 
-export default function Extra({
+export default function ExtraQuiz({
     children,
     buttonContent,
     buttonClassName = "",

@@ -657,7 +657,7 @@ export default function TapHop() {
             </div>
             <div className="col-[1/-1] row-[2/3] h-fit">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy19}
+                    {timelineStar.TheKy19(0)}
                 </div>
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>
@@ -715,7 +715,7 @@ export default function TapHop() {
                         </ExtraInlineFact>
                         .
                     </div>
-                    <ExtraLearnMore buttonContent="Tìm hiểu thêm">
+                    <ExtraLearnMore>
                         Tập các số thực <InlineMath math="\mathbb{R}" /> lại
                         không thể đếm được. Điều này được chứng minh qua định lý
                         Cantor rằng không thể thiết lập một ánh xạ một-một giữa
@@ -951,7 +951,7 @@ export default function TapHop() {
             </div>
             <div className="col-[1/-1] row-[4/-1] h-fit">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy20}
+                    {timelineStar.TheKy20(0)}
                 </div>
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>
@@ -980,11 +980,7 @@ export default function TapHop() {
                             quyết các câu hỏi về sự đúng đắn và tính khả thi của
                             các lý thuyết toán học.
                         </div>
-                        <ExtraLearnMore
-                            buttonContent="Tìm hiểu thêm"
-                            extraBodyVariant="content"
-                            flip
-                        >
+                        <ExtraLearnMore extraBodyVariant="content" flip>
                             <span className="font-[450]">
                                 Lý thuyết mô hình
                             </span>{" "}
