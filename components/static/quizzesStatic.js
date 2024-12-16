@@ -135,8 +135,8 @@ export const quizExplaination = [
                 Tổng cộng, có 3 + 4 = 7 bạn thuộc cùng một giới tính và 3 + 3 =
                 6 bạn còn lại khác giới với họ.
                 <br />
-                Bạn thứ 13 cùng giới với bạn thứ 1, nên họ đã nói thật rằng "Đa
-                số trong chúng ta là nam".
+                Bạn thứ 13 cùng giới với bạn thứ 1, nên họ đã nói thật rằng{" "}
+                {'"'}Đa số trong chúng ta là nam{'"'}.
                 <br />
                 Do đó, số nam ngồi quanh bàn tròn này là 7.
             </div>,
