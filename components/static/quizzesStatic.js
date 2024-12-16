@@ -3,6 +3,7 @@ import behumble from "@/public/Image/behumble.png";
 import brokenGlass from "@/public/Image/brokenglass.png";
 import jobAndName from "@/public/Image/jobandname.png";
 import frog from "@/public/Image/frog.png";
+import faces from "@/public/Image/faces.png";
 import React from "react";
 
 export const quizzes = [
@@ -44,6 +45,8 @@ chúng ta là con trai". Hỏi có bao nhiêu bạn trai ngồi quanh bàn?`,
 5. Danny lại nói Eli và Andrew là hai con thú khác nhau.
 //
 Hỏi có bao nhiêu con ếch trong số 5 bạn này?
+`,
+            `Mọi người giúp mình câu toán logic này đi: Peter có 4 tấm bìa 2 mặt, một mặt ghi 1 chữ cái còn mặt kia ghi một số. Peter khẳng định rằng "Nếu 1 mặt của tấm bìa ghi chữ A thì mặt kia ghi số 1". Hiện trên bàn đặt 4 tấm bìa và mặt ngửa lên ghi lần lượt là A, 1, 2, B. Hỏi phải lật 2 tấm bìa nào để kiểm tra khẳng định của Peter là đúng hay sai. 
 `,
         ],
     ],
@@ -102,21 +105,21 @@ export const quizExplaination = [
                     <br />
                     Nhưng vì trong bốn người chỉ có một người nói dối, nên suy
                     ra B và D nói thật. Theo lời của D, thì C nói dối, như vậy A
-                    nói thật. Vì A nói "C làm vỡ", nên C là người làm vỡ kính
-                    trong trường hợp này.
+                    nói thật. Vì A nói {'"'}C làm vỡ{'"'}, nên C là người làm vỡ
+                    kính trong trường hợp này.
                 </div>
             </div>,
             <div key="explaination3"></div>,
             <div key="explaination4">
                 Do tổng số bạn ngồi quanh bàn là lẻ, nên số nam và số nữ không
-                thể bằng nhau. Từ đó suy ra, trong hai câu nói: "Đa số trong
-                chúng ta là con trai" và "Đa số trong chúng ta là con gái", có 1
-                câu sai và 1 câu đúng.
+                thể bằng nhau. Từ đó suy ra, trong hai câu nói: {'"'}Đa số trong
+                chúng ta là con trai{'"'} và {'"'}Đa số trong chúng ta là con
+                gái{'"'}, có 1 câu sai và 1 câu đúng.
                 <br />
-                Theo giả thiết, có tất cả 7 bạn nói "Đa số trong chúng ta là con
-                trai" và 6 bạn nói "Đa số trong chúng ta là con gái". Chú ý rằng
-                mỗi bạn từ số thứ tự 2 đến 13 đều nói ngược lại với điều nghe
-                được, nên họ đã ngồi giữa hai người khác giới.
+                Theo giả thiết, có tất cả 7 bạn nói {'"'}Đa số trong chúng ta là
+                con trai{'"'} và 6 bạn nói {'"'}Đa số trong chúng ta là con gái
+                {'"'}. Chú ý rằng mỗi bạn từ số thứ tự 2 đến 13 đều nói ngược
+                lại với điều nghe được, nên họ đã ngồi giữa hai người khác giới.
                 <br />
                 <br />
                 Từ đây, ta suy ra:
@@ -140,6 +143,7 @@ export const quizExplaination = [
             <div key="explaination5" className="my-2">
                 4 con ếch. Andrew, Burt, Danny, Eli là ếch, Charlie là kangaroo.
             </div>,
+            <div key="explaination6"></div>,
         ],
     ],
     [[]],
@@ -159,8 +163,11 @@ export const quizCardImg = [
                 <Image src={behumble} className="w-full h-full" alt="" />
             </div>,
             <div key="quizCardImg4" />,
-            <div key="quizCardImg3" className="w-[125px]">
+            <div key="quizCardImg5" className="w-[125px]">
                 <Image src={frog} className="w-full h-full" alt="" />
+            </div>,
+            <div key="quizCardImg6" className="w-[125px]">
+                <Image src={faces} className="w-full h-full" alt="" />
             </div>,
         ],
     ],
@@ -176,13 +183,14 @@ export const quizName = [
             `Đàn Ông Thì Phải Khiêm Tốn`,
             `Giới Tính Và Trung Thực`,
             `Ếch ngồi đáy xã hội`,
+            `Lật mặt`,
         ],
     ],
     [[]],
     [[]],
 ];
 
-export const answerArray = [[[0, 0, 3, 2, 1]]];
+export const answerArray = [[[0, 0, 3, 2, 1, 3]]];
 
 export const choicesArray = [
     [
@@ -197,6 +205,12 @@ export const choicesArray = [
             ["Hùng", "Huy", "Hoảng", "Hải"],
             ["69", "6", "7", "5"],
             ["3", "4", "1", "-1"],
+            [
+                "Lật mặt B và mặt 1",
+                "Lật mặt A và mặt 1",
+                "Lật mặt B và mặt 2",
+                "Lật mặt A và mặt 2",
+            ],
         ],
     ],
     [[]],
