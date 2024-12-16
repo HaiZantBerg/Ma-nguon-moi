@@ -11,11 +11,11 @@ export const images = [
                 <div key="image3" />,
                 <div key="image4" />,
                 <div key="image5" />,
-                <Image
-                    src={depressedAristotle}
-                    alt=""
+                <div
+                    // src={depressedAristotle}
+                    // alt=""
                     key="image6"
-                    className="w-full h-full"
+                    // className="w-full h-full"
                 />,
             ],
             [
@@ -27,11 +27,11 @@ export const images = [
             ],
             [
                 <div key="image12" />,
-                <Image
+                <div
                     src={logicBread}
-                    alt=""
-                    key="image13"
-                    className="w-[97%] h-[97%] mt-[3%]"
+                    // alt=""
+                    // key="image13"
+                    // className="w-[97%] h-[97%] mt-[3%]"
                 />,
                 <div key="image14" />,
             ],
