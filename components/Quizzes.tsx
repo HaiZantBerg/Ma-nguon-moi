@@ -29,6 +29,7 @@ const Quiz1 = ({ idxq, idxc }: { idxq: number; idxc: number }) => {
                     quiz={quizzes[idxc][idxq][idx]}
                     choices={choicesArray[idxc][idxq][idx]}
                     answerId={answerArray[idxc][idxq][idx]}
+                    explaination={quizExplaination[idxc][idxq][idx]}
                 >
                     {quizCardImg[idxc][idxq][idx]}
                 </QuizCardContainer>
@@ -48,7 +49,9 @@ const QuizCardDisplay = ({
 }) => {
     return (
         <div className="w-full h-full flex flex-col px-2 py-2">
-            <div className="flex-[1_0_65%]">{children}</div>
+            <div className="flex-[1_0_65%] flex justify-center items-center h-full">
+                {children}
+            </div>
             <div className="flex-[1_0_35%] font-semibold text-lg flex items-center justify-center">
                 {content}
             </div>
@@ -64,6 +67,7 @@ const QuizCardContainer = ({
     quiz,
     choices,
     answerId,
+    explaination,
 }: {
     children?: React.ReactNode;
     idx: number;
@@ -72,6 +76,7 @@ const QuizCardContainer = ({
     quiz: string;
     choices: string[];
     answerId: number;
+    explaination: React.JSX.Element;
 }) => {
     const [scope, animate] = useAnimate();
 
@@ -311,7 +316,21 @@ const QuizCardContainer = ({
                                             id={`choice${idxc}`}
                                         >
                                             <div className="grow relative z-10">
-                                                {choiceABCD[idxc]}. {choice}
+                                                {choiceABCD[idxc]}.{" "}
+                                                {choice
+                                                    .split("//")
+                                                    .map((text, idx) => (
+                                                        <span
+                                                            key={`${idx}${idxc}`}
+                                                            className={
+                                                                idx
+                                                                    ? "block"
+                                                                    : "inline"
+                                                            }
+                                                        >
+                                                            {text}
+                                                        </span>
+                                                    ))}
                                             </div>
                                             <div className="absolute w-full h-full flex justify-center items-center top-0 left-0">
                                                 <div className="aspect-square h-[200%]">
@@ -362,7 +381,7 @@ const QuizCardContainer = ({
                                     className="w-full h-0 overflow-hidden"
                                     id="explainationContent"
                                 >
-                                    {quizExplaination[idx]}
+                                    {explaination}
                                 </div>
                                 <button
                                     className="flex flex-col items-center overflow-hidden h-0"

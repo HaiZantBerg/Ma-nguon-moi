@@ -86,14 +86,14 @@ export default function MenhDe() {
                                 (1287-1347) là một nhà triết học và tu sĩ người
                                 Anh, nổi tiếng với nguyên lý {'"'}Dao cạo Ockham
                                 {'"'}
-                                (Occam's Razor), cho rằng khi đối mặt với nhiều
-                                giả thuyết, giả thuyết đơn giản nhất với ít giả
-                                định nhất là hợp lý nhất. Ông là người sáng lập
-                                trường phái {'"'}Nominalism{'"'}, phủ nhận sự
-                                tồn tại của các khái niệm chung và chỉ chấp nhận
-                                các sự vật cụ thể. Ockham cũng có ảnh hưởng sâu
-                                rộng đến logic học, khoa học và triết học hiện
-                                đại.
+                                (Occam{"'"}s Razor), cho rằng khi đối mặt với
+                                nhiều giả thuyết, giả thuyết đơn giản nhất với
+                                ít giả định nhất là hợp lý nhất. Ông là người
+                                sáng lập trường phái {'"'}Nominalism{'"'}, phủ
+                                nhận sự tồn tại của các khái niệm chung và chỉ
+                                chấp nhận các sự vật cụ thể. Ockham cũng có ảnh
+                                hưởng sâu rộng đến logic học, khoa học và triết
+                                học hiện đại.
                             </ExtraInlineFact>
                             và{" "}
                             <ExtraInlineFact buttonContent="Peter Abelard">
@@ -101,10 +101,10 @@ export default function MenhDe() {
                                     Peter Abelard
                                 </span>{" "}
                                 (1079-1142) là một triết gia và thần học gia
-                                người Pháp, nổi bật với phương pháp "Sic et
-                                Non", khuyến khích đối chiếu các quan điểm đối
-                                lập trong thần học. Ông cũng nổi tiếng với mối
-                                tình với Héloïse và là một trong những người
+                                người Pháp, nổi bật với phương pháp {'"'}Sic et
+                                Non{'"'}, khuyến khích đối chiếu các quan điểm
+                                đối lập trong thần học. Ông cũng nổi tiếng với
+                                mối tình với Héloïse và là một trong những người
                                 tiên phong trong việc áp dụng lý luận logic vào
                                 thần học. Abelard có ảnh hưởng lớn đến triết học
                                 và thần học thời Trung Cổ.
@@ -131,16 +131,16 @@ export default function MenhDe() {
                             <ExtraInlineFact buttonContent="George Boole">
                                 George Boole (1815-1864) là người đầu tiên phát
                                 triển hệ thống logic mệnh đề hiện đại với việc
-                                sáng tạo ra Đại số Boole. Trong cuốn sách “The
-                                Mathematical Analysis of Logic” (1847) và “An
-                                Investigation of the Laws of Thought” (1854),
-                                Boole đã hệ thống hóa cách thức xử lý các phát
-                                biểu toán học thông qua các phép toán đại số như
-                                AND, OR, và NOT, tương ứng với các mệnh đề
-                                logic. Đại số Boole cho phép biểu diễn các mệnh
-                                đề bằng các giá trị đúng (1) hoặc sai (0), từ đó
-                                thực hiện các phép toán logic để kiểm tra tính
-                                hợp lý của các mệnh đề.
+                                sáng tạo ra Đại số Boole. Trong cuốn sách {'"'}
+                                The Mathematical Analysis of Logic{'"'} (1847)
+                                và {'"'}An Investigation of the Laws of Thought
+                                {'"'} (1854), Boole đã hệ thống hóa cách thức xử
+                                lý các phát biểu toán học thông qua các phép
+                                toán đại số như AND, OR, và NOT, tương ứng với
+                                các mệnh đề logic. Đại số Boole cho phép biểu
+                                diễn các mệnh đề bằng các giá trị đúng (1) hoặc
+                                sai (0), từ đó thực hiện các phép toán logic để
+                                kiểm tra tính hợp lý của các mệnh đề.
                             </ExtraInlineFact>{" "}
                             phát triển logic đại số, nơi ông áp dụng các phép
                             toán đại số vào lý thuyết logic. Ông giới thiệu các
@@ -213,9 +213,9 @@ export default function MenhDe() {
                             </div>
                             <div className={`${generalInstanceClassName}`}>
                                 thì P <InlineMath math="\land" /> Q=1, nghĩa là
-                                "Socrates là người và Socrates là sinh vật" là
-                                đúng. Nếu một trong hai mệnh đề là sai, kết quả
-                                của phép toán AND sẽ là 0.
+                                {'"'}Socrates là người và Socrates là sinh vật
+                                {'"'} là đúng. Nếu một trong hai mệnh đề là sai,
+                                kết quả của phép toán AND sẽ là 0.
                             </div>
                         </div>
                     </div>
@@ -294,8 +294,8 @@ export default function MenhDe() {
                                     >
                                         Hàm (Function): Các ký hiệu biểu thị
                                         những quan hệ giữa các đối tượng, ví dụ,
-                                        "x là một số nguyên" hoặc "x là một
-                                        người".
+                                        {'"'}x là một số nguyên{'"'} hoặc {'"'}x
+                                        là một người{'"'}.
                                     </div>
                                     <div
                                         className={`${generalInstanceClassName}`}
