@@ -4,6 +4,7 @@ import brokenGlass from "@/public/Image/brokenglass.png";
 import jobAndName from "@/public/Image/jobandname.png";
 import frog from "@/public/Image/frog.png";
 import faces from "@/public/Image/faces.png";
+import genderHonest from "@/public/Image/genderhonest.png";
 import React from "react";
 
 export const quizzes = [
@@ -162,7 +163,9 @@ export const quizCardImg = [
             <div key="quizCardImg3" className="w-[175px]">
                 <Image src={behumble} className="w-full h-full" alt="" />
             </div>,
-            <div key="quizCardImg4" />,
+            <div key="quizCardImg4" className="w-[125px]">
+                <Image src={genderHonest} className="w-full h-full" alt="" />
+            </div>,
             <div key="quizCardImg5" className="w-[125px]">
                 <Image src={frog} className="w-full h-full" alt="" />
             </div>,
