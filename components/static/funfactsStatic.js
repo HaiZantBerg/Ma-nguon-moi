@@ -4,7 +4,7 @@ import Image from "next/image";
 import walk from "@/public/Image/walk.png";
 import feast from "@/public/Image/feast.png";
 import wife from "@/public/Image/wife.png";
-import simple from "@/public/Image/simple.png";
+import simpleTalk from "@/public/Image/simpletalk.png";
 
 import { InlineMath } from "react-katex";
 
@@ -31,7 +31,6 @@ export const images = [
                     key="image4"
                     className="w-[90%] aspect-square"
                 />,
-                ,
                 <div key="image5" />,
                 <Image
                     src={depressedAristotle}
@@ -44,13 +43,13 @@ export const images = [
                 <div key="image7" />,
                 <div key="image8" />,
                 <div key="image9" />,
-                <div key="image10" />,
                 <Image
-                    src={simple}
+                    src={simpleTalk}
                     alt=""
-                    key="image11"
-                    className="w-[90%] h-auto"
+                    key="image10"
+                    className="w-[90%] aspect-square"
                 />,
+                <div key="image11" />,
             ],
             [
                 <div key="image12" />,
@@ -94,11 +93,11 @@ export const storyList = [
                 "Làm thơ không thành công",
             ],
             [
-                "William of Ockham: Lưỡi dao và sự đơn giản",
                 "William of Ockham: Lời từ chối hài hước với giáo hoàng",
                 "Peter Abelard: Triết gia và câu chuyện tình yêu tai tiếng",
                 `Peter Abelard: "Bị xử phạt" bởi chính trí tuệ của mình`,
                 "William of Ockham: Lời khuyên đơn giản trong cuộc sống",
+                "William of Ockham: Lưỡi dao và sự đơn giản",
             ],
             [
                 "Một cuộc tranh luận về thời tiết và… toán học",
@@ -257,6 +256,77 @@ export const storyContent = [
             ],
             [
                 <div key="story117">
+                    William of Ockham không ngại lên tiếng chống lại Giáo hoàng
+                    John XXII trong những tranh luận về thần học và quyền lực
+                    của Giáo hội. Một lần, khi Ockham bị triệu tập đến trước
+                    Giáo hoàng để trả lời về những quan điểm của mình, ông đã
+                    nói một câu bất hủ: {'"'}Nếu Giáo hoàng sai, tôi không ngại
+                    nói ra điều đó.{'"'} Dù câu này có vẻ nghiêm túc, nhưng nó
+                    thể hiện một sự hài hước sắc bén trong việc đối đầu với một
+                    trong những người quyền lực nhất của thời đại.
+                    <br />
+                    <br />
+                    Câu chuyện kể rằng khi Giáo hoàng hỏi Ockham tại sao ông lại
+                    dám chống lại quyền lực Giáo hội, Ockham chỉ trả lời một
+                    cách bình thản: {'"'}Con chỉ đang làm điều đơn giản nhất,
+                    như lưỡi dao của chính mình đã dạy con.{'"'}
+                </div>,
+                <div key="story118">
+                    Peter Abelard, ngoài vai trò là một triết gia lỗi lạc, còn
+                    được nhớ đến nhiều qua mối tình đầy sóng gió với Héloïse,
+                    một học trò xuất sắc của ông. Câu chuyện tình yêu này gây ra
+                    nhiều tai tiếng trong thời gian đó, nhưng cũng có những tình
+                    tiết hài hước trong mối quan hệ của họ.
+                    <br />
+                    <br />
+                    Một lần, trong lúc đang giảng bài, Abelard bị Héloïse phản
+                    bác lại một luận điểm triết học. Héloïse thông minh đến mức
+                    có thể tranh luận và thậm chí còn đưa ra những câu hỏi mà
+                    chính Abelard cũng gặp khó khăn để trả lời. Để không mất mặt
+                    trước các học trò khác, Abelard đã cố gắng đưa ra một câu
+                    trả lời phức tạp nhằm đánh lạc hướng, nhưng Héloïse nhanh
+                    chóng nhận ra và mỉm cười hỏi: {'"'}Thưa thầy, triết học có
+                    liên quan gì đến việc né tránh câu hỏi?{'"'}
+                    <br />
+                    <br />
+                    Câu hỏi này khiến cả lớp bật cười và Abelard cũng không khỏi
+                    cười trừ. Mối quan hệ giữa hai người từ đây không chỉ nổi
+                    tiếng vì sự lãng mạn mà còn vì những khoảnh khắc tranh luận
+                    trí tuệ đầy hài hước giữa họ.
+                </div>,
+                <div key="story119">
+                    Abelard nổi tiếng là một trong những trí thức sắc bén nhất
+                    thời đại, nhưng chính sự kiêu ngạo về kiến thức của mình đã
+                    khiến ông rơi vào nhiều tình huống dở khóc dở cười. Trong
+                    một buổi tranh luận, khi Abelard liên tục đưa ra các lý lẽ
+                    phức tạp và tỏ ra thắng thế, một nhà thần học khác đã đứng
+                    lên và nói: {'"'}Thưa thầy Abelard, lý lẽ của thầy quá cao
+                    siêu, tôi chẳng hiểu nổi một từ nào!{'"'}
+                    <br />
+                    <br />
+                    Thay vì cảm thấy bị xúc phạm, Abelard chỉ cười và nói: {'"'}
+                    Có lẽ đó là vì tôi đang nói chuyện với chính bản thân mình!
+                    {'"'}
+                    Câu nói này không chỉ làm dịu tình hình mà còn khiến tất cả
+                    mọi người bật cười, thừa nhận rằng Abelard đôi khi quá lý
+                    thuyết và khó hiểu, ngay cả với những người thông thái khác.
+                </div>,
+                <div key="story1110">
+                    Ngoài nguyên lý triết học, William of Ockham cũng áp dụng sự
+                    đơn giản vào cuộc sống hàng ngày. Có một câu chuyện kể rằng,
+                    trong một lần đi dạo với một nhóm học trò, Ockham được hỏi
+                    làm thế nào để sống một cuộc sống có ý nghĩa. Các học trò
+                    mong chờ một câu trả lời phức tạp với nhiều triết lý sâu xa.
+                    Nhưng Ockham chỉ cười và nói: {'"'}Hãy sống đơn giản và bớt
+                    lo lắng về những điều không cần thiết.{'"'}
+                    <br />
+                    <br />
+                    Câu trả lời của Ockham làm các học trò ngạc nhiên, nhưng rồi
+                    họ nhận ra rằng, ông chỉ đang áp dụng nguyên tắc {'"'}Lưỡi
+                    dao của Ockham{'"'} vào cả cuộc sống thường nhật, khuyên mọi
+                    người đừng phức tạp hóa mọi vấn đề.
+                </div>,
+                <div key="story1111">
                     William of Ockham nổi tiếng với nguyên lý {'"'}Ockham{"'"}s
                     Razor{'"'}
                     (Lưỡi dao của Ockham), một nguyên lý cho rằng các giải thích
@@ -282,77 +352,6 @@ export const storyContent = [
                     nổi tiếng của ông về sự đơn giản, nhưng nó cũng khiến người
                     khác phải cười vì cách ông cắt ngắn những cuộc tranh luận
                     phức tạp chỉ bằng một vài từ.
-                </div>,
-                <div key="story118">
-                    William of Ockham không ngại lên tiếng chống lại Giáo hoàng
-                    John XXII trong những tranh luận về thần học và quyền lực
-                    của Giáo hội. Một lần, khi Ockham bị triệu tập đến trước
-                    Giáo hoàng để trả lời về những quan điểm của mình, ông đã
-                    nói một câu bất hủ: {'"'}Nếu Giáo hoàng sai, tôi không ngại
-                    nói ra điều đó.{'"'} Dù câu này có vẻ nghiêm túc, nhưng nó
-                    thể hiện một sự hài hước sắc bén trong việc đối đầu với một
-                    trong những người quyền lực nhất của thời đại.
-                    <br />
-                    <br />
-                    Câu chuyện kể rằng khi Giáo hoàng hỏi Ockham tại sao ông lại
-                    dám chống lại quyền lực Giáo hội, Ockham chỉ trả lời một
-                    cách bình thản: {'"'}Con chỉ đang làm điều đơn giản nhất,
-                    như lưỡi dao của chính mình đã dạy con.{'"'}
-                </div>,
-                <div key="story119">
-                    Peter Abelard, ngoài vai trò là một triết gia lỗi lạc, còn
-                    được nhớ đến nhiều qua mối tình đầy sóng gió với Héloïse,
-                    một học trò xuất sắc của ông. Câu chuyện tình yêu này gây ra
-                    nhiều tai tiếng trong thời gian đó, nhưng cũng có những tình
-                    tiết hài hước trong mối quan hệ của họ.
-                    <br />
-                    <br />
-                    Một lần, trong lúc đang giảng bài, Abelard bị Héloïse phản
-                    bác lại một luận điểm triết học. Héloïse thông minh đến mức
-                    có thể tranh luận và thậm chí còn đưa ra những câu hỏi mà
-                    chính Abelard cũng gặp khó khăn để trả lời. Để không mất mặt
-                    trước các học trò khác, Abelard đã cố gắng đưa ra một câu
-                    trả lời phức tạp nhằm đánh lạc hướng, nhưng Héloïse nhanh
-                    chóng nhận ra và mỉm cười hỏi: {'"'}Thưa thầy, triết học có
-                    liên quan gì đến việc né tránh câu hỏi?{'"'}
-                    <br />
-                    <br />
-                    Câu hỏi này khiến cả lớp bật cười và Abelard cũng không khỏi
-                    cười trừ. Mối quan hệ giữa hai người từ đây không chỉ nổi
-                    tiếng vì sự lãng mạn mà còn vì những khoảnh khắc tranh luận
-                    trí tuệ đầy hài hước giữa họ.
-                </div>,
-                <div key="story1110">
-                    Abelard nổi tiếng là một trong những trí thức sắc bén nhất
-                    thời đại, nhưng chính sự kiêu ngạo về kiến thức của mình đã
-                    khiến ông rơi vào nhiều tình huống dở khóc dở cười. Trong
-                    một buổi tranh luận, khi Abelard liên tục đưa ra các lý lẽ
-                    phức tạp và tỏ ra thắng thế, một nhà thần học khác đã đứng
-                    lên và nói: {'"'}Thưa thầy Abelard, lý lẽ của thầy quá cao
-                    siêu, tôi chẳng hiểu nổi một từ nào!{'"'}
-                    <br />
-                    <br />
-                    Thay vì cảm thấy bị xúc phạm, Abelard chỉ cười và nói: {'"'}
-                    Có lẽ đó là vì tôi đang nói chuyện với chính bản thân mình!
-                    {'"'}
-                    Câu nói này không chỉ làm dịu tình hình mà còn khiến tất cả
-                    mọi người bật cười, thừa nhận rằng Abelard đôi khi quá lý
-                    thuyết và khó hiểu, ngay cả với những người thông thái khác.
-                </div>,
-                <div key="story1111">
-                    Ngoài nguyên lý triết học, William of Ockham cũng áp dụng sự
-                    đơn giản vào cuộc sống hàng ngày. Có một câu chuyện kể rằng,
-                    trong một lần đi dạo với một nhóm học trò, Ockham được hỏi
-                    làm thế nào để sống một cuộc sống có ý nghĩa. Các học trò
-                    mong chờ một câu trả lời phức tạp với nhiều triết lý sâu xa.
-                    Nhưng Ockham chỉ cười và nói: {'"'}Hãy sống đơn giản và bớt
-                    lo lắng về những điều không cần thiết.{'"'}
-                    <br />
-                    <br />
-                    Câu trả lời của Ockham làm các học trò ngạc nhiên, nhưng rồi
-                    họ nhận ra rằng, ông chỉ đang áp dụng nguyên tắc {'"'}Lưỡi
-                    dao của Ockham{'"'} vào cả cuộc sống thường nhật, khuyên mọi
-                    người đừng phức tạp hóa mọi vấn đề.
                 </div>,
             ],
             [

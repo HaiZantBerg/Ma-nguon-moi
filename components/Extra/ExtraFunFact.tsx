@@ -2,7 +2,7 @@
 
 import { useAnimate } from "motion/react";
 import React, { useState } from "react";
-import { storyContent } from "../static/funfactsStatic";
+import { storyContent, storyList } from "../static/funfactsStatic";
 import { FlipCard } from "../FunFacts";
 
 export default function ExtraFunFact({
@@ -70,7 +70,9 @@ export default function ExtraFunFact({
                 <>
                     <FlipCard
                         idx={ffidx[2]}
-                        title={"Kẻ giết người mang tên Pythagoras?!"}
+                        title={
+                            storyList[ffidx[0]][ffidx[1]][ffidx[2]][ffidx[3]]
+                        }
                         idxs={ffidx[3]}
                         idxc={ffidx[0]}
                         idxf={ffidx[1]}

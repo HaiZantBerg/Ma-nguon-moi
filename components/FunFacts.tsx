@@ -113,9 +113,7 @@ const FunFactCard = ({
                     <div className="h-full aspect-square flex justify-center items-end justify-self-center col-[1/-1] row-[1/2]">
                         {images[idxc][idxf][idx][idxs]}
                     </div>
-                    <div className="md1:text-[15px] md1:leading-[17.5px] text-[12px] leading-[13.5px] w-full font-semibold px-[7px] text-center col-[1/-1] row-[2/-1]">
-                        {idxs + 1}.
-                        <br />
+                    <div className="md1:text-[15px] md1:leading-[17.5px] text-[12px] leading-[13.5px] w-full font-semibold pt-3 px-[7px] text-center col-[1/-1] row-[2/-1]">
                         {title}
                     </div>
                 </div>
@@ -373,9 +371,7 @@ export const FlipCard = ({
                             <div className="h-[50%] aspect-square flex justify-center items-end">
                                 {images[idxc][idxf][idx][idxs]}
                             </div>
-                            <div className="absolute top-[50%] px-[30px] lg:text-[4.25rem] lg:leading-[4.75rem] sm:text-[3rem] sm:leading-[4rem] text-[1.75rem] leading-[3rem]">
-                                {/* {idxs + 1}. */}
-                                <br />
+                            <div className="absolute top-[50%] pt-16 px-[30px] lg:text-[4.25rem] lg:leading-[4.75rem] sm:text-[3rem] sm:leading-[4rem] text-[1.75rem] leading-[3rem]">
                                 {title}
                             </div>
                         </div>
@@ -403,7 +399,7 @@ export const FlipCard = ({
                                 <Image src={flip} alt="" />
                             </button>
                             <div
-                                className="text-[clamp(15px,4vw,25px)] leading-[clamp(22px,4vw,27px)] w-full flex-col font-medium px-2 text-center overflow-y-auto flex gap-5"
+                                className="text-[clamp(15px,5vw,27.5px)] leading-[clamp(22px,5.5vw,32.5px)] mt-2 w-full flex-col font-medium px-6 text-center overflow-y-auto flex gap-5"
                                 style={{
                                     aspectRatio: 8 / 9,
                                 }}
