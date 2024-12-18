@@ -1,6 +1,6 @@
 "use client";
 
-import { useAnimate } from "framer-motion";
+import { useAnimate } from "motion/react";
 import React, { useRef, useState } from "react";
 import { extraBodyVariants } from "./static";
 

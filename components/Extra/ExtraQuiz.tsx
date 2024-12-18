@@ -1,6 +1,6 @@
 "use client";
 
-import { useAnimate } from "framer-motion";
+import { useAnimate } from "motion/react";
 import React, { useRef, useState } from "react";
 import { extraBodyVariants } from "./static";
 
@@ -21,7 +21,7 @@ export default function ExtraQuiz({
     extraBodyClassName?: string;
     flip?: boolean;
     extraBodyVariant?: "instance" | "" | "content";
-    explaination: React.JSX.Element;
+    explaination?: React.JSX.Element;
 }) {
     const [scope, animate] = useAnimate();
 
@@ -33,8 +33,7 @@ export default function ExtraQuiz({
     const handleOpenClose = async () => {
         if (!openExtra) {
             setTimeout(() => {
-                if (sneakyRef.current)
-                    sneakyRef.current.style.display = "block";
+                if (sneakyRef.current) sneakyRef.current.style.display = "flex";
             }, 10);
 
             animate(
@@ -106,12 +105,12 @@ export default function ExtraQuiz({
                 onClick={handleOpenClose}
                 className={`${
                     buttonClassName ?? buttonClassName
-                } hover:bg-[#b8ff94] transition-all duration-2 ease-in text-[#319400] border border-[#319400] font-[500] px-4 pt-2 pb-[10px] md:text-[1.05rem] text-[0.9rem] ${
+                } hover:bg-[#d3ffbd] transition-all duration-2 ease-in text-[#2f730c] border border-[#2f730c] font-[500] px-4 pt-2 pb-[10px] md:text-[1.05rem] text-[0.9rem] ${
                     openExtra
                         ? flip
-                            ? "bg-[#b8ff94] rounded-[0px_0px_15px_15px]"
-                            : "bg-[#b8ff94] rounded-[15px_15px_0px_0px]"
-                        : "bg-[#daffc7] rounded-[15px_15px_15px_15px]"
+                            ? "bg-[#d3ffbd] rounded-[0px_0px_15px_15px]"
+                            : "bg-[#d3ffbd] rounded-[15px_15px_0px_0px]"
+                        : "bg-[#ddffcc] rounded-[15px_15px_15px_15px]"
                 } relative`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
@@ -130,9 +129,12 @@ export default function ExtraQuiz({
                 <div
                     className={`absolute hidden ${
                         flip ? "top-[-15px]" : "bottom-[-15px]"
-                    } left-0 h-[15px] w-full bg-[#b8ff94] z-30`}
+                    } h-[15px] w-full left-0`}
                     ref={sneakyRef}
-                />
+                >
+                    <div className="bg-[#d3ffbd] relative z-30 w-full h-full" />
+                    <div className="bg-[#2f730c] absolute w-[1px] h-full right-[-1px]" />
+                </div>
             </button>
             {openExtra && (
                 <div
@@ -148,27 +150,28 @@ export default function ExtraQuiz({
                 ref={extraBodyContainerRef}
             >
                 <div
-                    className={`${extraBodyVariants[extraBodyVariant]} ${extraBodyClassName} rounded-[0px_15px_15px_15px] md1:pb-8 pt-3 pb-6 md1:px-10 px-6 border border-[#319400] bg-[#b8ff94] text-[#327e0c]`}
+                    className={`${extraBodyVariants[extraBodyVariant]} ${extraBodyClassName} rounded-[0px_15px_15px_15px] md1:pb-8 pt-3 pb-6 md1:px-10 px-6 border border-[#2f730c] bg-[#d3ffbd] text-[#327e0c]`}
                 >
                     <div>{children}</div>
                     <div className="h-0 overflow-hidden" id="explaination">
                         {explaination}
                     </div>
-                    <div
-                        onClick={handleOpenExplaination}
-                        className="cursor-pointer overflow-hidden"
-                        id="explainationButton"
-                    >
-                        Xem giải thích
-                    </div>
+                    {explaination && (
+                        <div
+                            onClick={handleOpenExplaination}
+                            className="cursor-pointer overflow-hidden"
+                            id="explainationButton"
+                        >
+                            Xem giải thích
+                        </div>
+                    )}
                     <button
-                        className="border md:text-[1.1rem] text-sm mt-3 py-2 border-[#319400] font-semibold px-6 rounded-full"
+                        className="border md:text-[1.1rem] text-sm mt-3 py-2 border-[#2f730c] font-semibold px-6 rounded-full"
                         onClick={handleOpenClose}
                     >
                         Đóng
                     </button>
                 </div>
-
                 <div
                     className="absolute left-0 w-full h-full -z-10"
                     onClick={handleOpenClose}

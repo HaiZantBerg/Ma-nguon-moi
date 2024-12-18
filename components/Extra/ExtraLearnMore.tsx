@@ -1,6 +1,6 @@
 "use client";
 
-import { useAnimate } from "framer-motion";
+import { useAnimate } from "motion/react";
 import React, { useRef, useState } from "react";
 import { extraBodyVariants } from "./static";
 
@@ -91,8 +91,8 @@ export default function ExtraLearnMore({
                 className={`${
                     buttonClassName && buttonClassName
                 } hover:bg-[#fdff8a] ${
-                    openExtra ? "bg-[#fdff8a]" : "bg-[#feffbd]"
-                } transition-colors duration-2 ease-in font-[500] md:text-[1.05rem] text-[0.9rem] bg-[#feffbd] md1:rounded-[20px] rounded-[16px] border text-[#6b6c0e] border-[#6b6c0e] relative`}
+                    openExtra ? "bg-[#fdff8a]" : "bg-[#ffffc7]"
+                } transition-colors duration-2 ease-in font-[500] md:text-[1.05rem] text-[0.9rem] md1:rounded-[20px] rounded-[16px] border text-[#6a6a0b] border-[#6a6a0b] relative`}
                 id="button"
             >
                 <div className="relative w-full">
@@ -112,7 +112,7 @@ export default function ExtraLearnMore({
                                     d="M334.83,385.19A94.94,94.94,0,1,1,296.19,345"
                                     transform="translate(-112.47 -310.55)"
                                     fill="none"
-                                    stroke="#6b6c0e"
+                                    stroke="#6a6a0b"
                                     strokeLinecap="round"
                                     strokeMiterlimit={10}
                                     strokeWidth={14}
@@ -121,14 +121,14 @@ export default function ExtraLearnMore({
                                     cx="207.17"
                                     cy="52.83"
                                     r={7}
-                                    fill="#6b6c0e"
+                                    fill="#6a6a0b"
                                 />
                                 <circle
                                     cx="137.53"
                                     cy="117.45"
                                     r="63.77"
                                     fill="none"
-                                    stroke="#6b6c0e"
+                                    stroke="#6a6a0b"
                                     strokeMiterlimit={10}
                                     strokeWidth="11.88"
                                 />
@@ -136,7 +136,7 @@ export default function ExtraLearnMore({
                                     d="M367.56,587.37c3.78,6,.93,14.57-6.37,19.19s-16.28,3.51-20.06-2.48l-3.05-4.81L286.6,517.86,313,501.14l51.49,81.42Z"
                                     transform="translate(-112.47 -310.55)"
                                     fill="none"
-                                    stroke="#6b6c0e"
+                                    stroke="#6a6a0b"
                                     strokeMiterlimit={10}
                                     strokeWidth="12.43"
                                 />
@@ -147,8 +147,8 @@ export default function ExtraLearnMore({
                                     height="9.53"
                                     rx="4.77"
                                     transform="translate(-349.05 -59.37) rotate(-32.31)"
-                                    fill="#6b6c0e"
-                                    stroke="#6b6c0e"
+                                    fill="#6a6a0b"
+                                    stroke="#6a6a0b"
                                     strokeMiterlimit={10}
                                     strokeWidth={6}
                                 />
@@ -158,7 +158,7 @@ export default function ExtraLearnMore({
                                     x2="20.83"
                                     y2={244}
                                     fill="#fff"
-                                    stroke="#6b6c0e"
+                                    stroke="#6a6a0b"
                                     strokeLinecap="round"
                                     strokeMiterlimit={10}
                                     strokeWidth={10}
@@ -169,7 +169,7 @@ export default function ExtraLearnMore({
                                     x2="53.87"
                                     y2={244}
                                     fill="#fff"
-                                    stroke="#6b6c0e"
+                                    stroke="#6a6a0b"
                                     strokeLinecap="round"
                                     strokeMiterlimit={10}
                                     strokeWidth={10}
@@ -180,7 +180,7 @@ export default function ExtraLearnMore({
                                     x2="29.68"
                                     y2="269.79"
                                     fill="#fff"
-                                    stroke="#6b6c0e"
+                                    stroke="#6a6a0b"
                                     strokeLinecap="round"
                                     strokeMiterlimit={10}
                                     strokeWidth={10}
@@ -191,7 +191,7 @@ export default function ExtraLearnMore({
                                     x2="29.68"
                                     y2="234.49"
                                     fill="#fff"
-                                    stroke="#6b6c0e"
+                                    stroke="#6a6a0b"
                                     strokeLinecap="round"
                                     strokeMiterlimit={10}
                                     strokeWidth={10}
@@ -202,7 +202,7 @@ export default function ExtraLearnMore({
                                     x2="281.01"
                                     y2="30.34"
                                     fill="#fff"
-                                    stroke="#6b6c0e"
+                                    stroke="#6a6a0b"
                                     strokeLinecap="round"
                                     strokeMiterlimit={10}
                                     strokeWidth={10}
@@ -213,7 +213,7 @@ export default function ExtraLearnMore({
                                     x2="314.05"
                                     y2="30.34"
                                     fill="#fff"
-                                    stroke="#6b6c0e"
+                                    stroke="#6a6a0b"
                                     strokeLinecap="round"
                                     strokeMiterlimit={10}
                                     strokeWidth={10}
@@ -224,7 +224,7 @@ export default function ExtraLearnMore({
                                     x2="289.86"
                                     y2="56.13"
                                     fill="#fff"
-                                    stroke="#6b6c0e"
+                                    stroke="#6a6a0b"
                                     strokeLinecap="round"
                                     strokeMiterlimit={10}
                                     strokeWidth={10}
@@ -235,7 +235,7 @@ export default function ExtraLearnMore({
                                     x2="289.86"
                                     y2="20.83"
                                     fill="#fff"
-                                    stroke="#6b6c0e"
+                                    stroke="#6a6a0b"
                                     strokeLinecap="round"
                                     strokeMiterlimit={10}
                                     strokeWidth={10}
@@ -260,11 +260,11 @@ export default function ExtraLearnMore({
             >
                 {openExtra && (
                     <div
-                        className={`${extraBodyVariants[extraBodyVariant]} ${extraBodyClassName} md:pt-8 md:pb-6 pt-4 pb-3 md:px-10 px-6 bg-[#feffbd] text-[#6b6c0e] border-[#6b6c0e] border md1:rounded-[20px] rounded-[16px]`}
+                        className={`${extraBodyVariants[extraBodyVariant]} ${extraBodyClassName} md:pt-8 md:pb-6 pt-4 pb-3 md:px-10 px-6 bg-[#ffffc7] text-[#6a6a0b] border-[#6a6a0b] border md1:rounded-[20px] rounded-[16px]`}
                     >
                         <div>{children}</div>
                         <button
-                            className="border md:text-[1.1rem] text-sm mt-6 border-[#6b6c0e] py-3 font-semibold px-6 rounded-full"
+                            className="border md:text-[1.1rem] text-sm mt-6 border-[#6a6a0b] py-3 font-semibold px-6 rounded-full"
                             onClick={handleOpenClose}
                         >
                             Đóng

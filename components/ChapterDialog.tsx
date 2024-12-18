@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { useAnimate } from "framer-motion";
+import { useAnimate } from "motion/react";
 import LessonLayout from "./Lesson";
 import { FunFact } from "./FunFacts";
 import { Quizzes } from "./Quizzes";

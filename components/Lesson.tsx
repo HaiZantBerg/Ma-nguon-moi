@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import { gridDisplay, lessonsToggle } from "./static/lessonsStatic";
-import { useAnimate } from "framer-motion";
+import { useAnimate } from "motion/react";
 import MenhDe from "./lessons/MenhDe";
 import TapHop from "./lessons/TapHop";
 import LuongGiac from "./lessons/LuongGiac";
@@ -120,6 +120,7 @@ export default function LessonLayout({ id, idx }: { id: number; idx: number }) {
                         <div
                             className={`grid grid-cols-1 ${gridDisplay[id][idx][idxl]} relative`}
                         >
+                            <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[1px] relative md:left-[13.9px] left-[9.6px]" />
                             {lesson}
                         </div>
                     </div>
@@ -134,6 +135,7 @@ export default function LessonLayout({ id, idx }: { id: number; idx: number }) {
                     <div
                         className={`grid grid-cols-1 ${gridDisplay[id][idx]} relative`}
                     >
+                        <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[1px] relative md:left-[13.9px] left-[9.6px]" />
                         {Lessons[id][idx]}
                     </div>
                 </div>

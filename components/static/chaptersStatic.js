@@ -1,5 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import Quill from "@/public/Svg/Quill.svg";
+import Sparkle from "@/public/Svg/Sparkle.svg";
+import Notice from "@/public/Svg/Noticed.svg";
+import QuesExcla from "@/public/Svg/QuesExcla.svg";
 
 export const chapter = [
     [
@@ -118,12 +122,7 @@ export const LHeader = () => {
         <div className='md1:pl-4 font-["Chakra_Petch"] font-[600] h-[72px] pt-[19px] md1:text-[40px] sm:text-[35px] text-[27.5px] sm:leading-[42.5px] leading-[37.5px] items-center sm:gap-4 gap-2 flex text-nowrap'>
             Câu chuyện lịch sử
             <div className="sm:h-[64px] h-[47.5px] aspect-square">
-                <Image
-                    src="Svg/Book&Quill.svg"
-                    alt=""
-                    width={100}
-                    height={100}
-                />
+                <Image src={Quill} alt="" width={100} height={100} />
             </div>
         </div>
     );
@@ -133,14 +132,14 @@ export const FFHeader = () => {
     return (
         <div className='font-["Chakra_Petch"] font-[600] h-[72px] pt-2 md1:text-[40px] items-end text-[35px] leading-[42.5px] flex text-nowrap'>
             <div className="w-[40px] aspect-square mr-3">
-                <Image src="Svg/Sparkle.svg" alt="" width={100} height={100} />
+                <Image src={Sparkle} alt="" width={100} height={100} />
             </div>
             Fun facts
             <div className="w-[64px] aspect-square -translate-x-6 -translate-y-2">
-                <Image src="Svg/Noticed.svg" alt="" width={100} height={100} />
+                <Image src={Notice} alt="" width={100} height={100} />
             </div>
             <div className="md1:-translate-x-6 -translate-x-9 w-[40px] aspect-square ml-3">
-                <Image src="Svg/Sparkle.svg" alt="" width={100} height={100} />
+                <Image src={Sparkle} alt="" width={100} height={100} />
             </div>
         </div>
     );
@@ -156,12 +155,7 @@ export const QHeader = () => {
                 }}
             >
                 <div className="w-[90px] aspect-square">
-                    <Image
-                        src="Svg/QuesExcla.svg"
-                        alt=""
-                        width={100}
-                        height={100}
-                    />
+                    <Image src={QuesExcla} alt="" width={100} height={100} />
                 </div>
             </div>
             <span className="pb-2">Quizzes</span>
@@ -172,12 +166,7 @@ export const QHeader = () => {
                 }}
             >
                 <div className="w-[90px] aspect-square">
-                    <Image
-                        src="Svg/QuesExcla.svg"
-                        alt=""
-                        width={100}
-                        height={100}
-                    />
+                    <Image src={QuesExcla} alt="" width={100} height={100} />
                 </div>
             </div>
         </div>

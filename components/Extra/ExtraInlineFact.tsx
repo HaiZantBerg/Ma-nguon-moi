@@ -1,6 +1,6 @@
 "use client";
 
-import { useAnimate } from "framer-motion";
+import { useAnimate } from "motion/react";
 import React, { useRef, useState } from "react";
 import { extraBodyVariants } from "./static";
 
@@ -138,7 +138,7 @@ export default function ExtraInlineFact({
                 {openExtra && (
                     <>
                         <div
-                            className={`${extraBodyVariants[extraBodyVariant]} ${extraBodyClassName} rounded-[15px] text-white md:py-4 py-3 md:px-6 px-4 bg-[#e67e00]`}
+                            className={`${extraBodyVariants[extraBodyVariant]} ${extraBodyClassName} rounded-[15px] text-white md:py-4 w-full py-3 md:px-6 px-4 bg-[#e67e00]`}
                         >
                             <div>{children}</div>
                             <button

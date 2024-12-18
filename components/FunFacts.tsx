@@ -7,11 +7,12 @@ import {
     historyFigureName,
     storyContent,
 } from "./static/funfactsStatic";
-import { useAnimate } from "framer-motion";
+import { useAnimate } from "motion/react";
 import Image from "next/image";
 import cross from "@/public/Svg/Cross.svg";
 import { signal } from "@preact/signals-react";
 import { useSignals } from "@preact/signals-react/runtime";
+import flip from "@/public/Svg/Flip.svg";
 
 const openFlipCard = signal([-1, -1]);
 
@@ -49,11 +50,11 @@ const FunFact1 = ({ idxf, idxc }: { idxf: number; idxc: number }) => {
                                             idxf={idxf}
                                             triggerCloseCard={triggerCloseCard}
                                         >
-                                            {storyContent[idxc][idxf][idx][idxs]
-                                                .split("//")
-                                                .map((text, idxt) => (
-                                                    <p key={idxt}>{text}</p>
-                                                ))}
+                                            {
+                                                storyContent[idxc][idxf][idx][
+                                                    idxs
+                                                ]
+                                            }
                                         </FlipCard>
                                     )}
                             </FunFactCard>
@@ -109,7 +110,7 @@ const FunFactCard = ({
                     />
                 </svg>
                 <div className="absolute top-0 left-0 w-full h-full grid grid-cols-1 grid-rows-2 select-none">
-                    <div className="h-full aspect-square justify-self-center col-[1/-1] row-[1/2]">
+                    <div className="h-full aspect-square flex justify-center items-end justify-self-center col-[1/-1] row-[1/2]">
                         {images[idxc][idxf][idx][idxs]}
                     </div>
                     <div className="md1:text-[15px] md1:leading-[17.5px] text-[12px] leading-[13.5px] w-full font-semibold px-[7px] text-center col-[1/-1] row-[2/-1]">
@@ -144,6 +145,8 @@ export const FlipCard = ({
     const [scope, animate] = useAnimate();
 
     const flipCardContentRef = useRef<HTMLDivElement | null>(null);
+
+    let isFlip = false;
 
     useEffect(() => {
         animate(
@@ -204,6 +207,42 @@ export const FlipCard = ({
             }
         );
     }, []);
+
+    const handleFlipCard = () => {
+        if (!isFlip) {
+            isFlip = true;
+
+            animate(
+                "#flipCard",
+                {
+                    transform: ["rotateY(0deg)", "rotateY(180deg)"],
+                },
+                {
+                    duration: 0.1,
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 20,
+                    mass: 2,
+                }
+            );
+        } else {
+            isFlip = false;
+
+            animate(
+                "#flipCard",
+                {
+                    transform: ["rotateY(180deg)", "rotateY(0deg)"],
+                },
+                {
+                    duration: 0.1,
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 20,
+                    mass: 2,
+                }
+            );
+        }
+    };
 
     const closeCardAnimation = async () => {
         animate(
@@ -322,11 +361,20 @@ export const FlipCard = ({
                             }}
                             id="flipCardTitle"
                         >
-                            <div className="h-[50%] aspect-square">
+                            <button
+                                className="w-[10%] h-[10%] absolute top-[5%] left-[10%]"
+                                style={{
+                                    transformStyle: "preserve-3d",
+                                }}
+                                onClick={handleFlipCard}
+                            >
+                                <Image src={flip} alt="" />
+                            </button>
+                            <div className="h-[50%] aspect-square flex justify-center items-end">
                                 {images[idxc][idxf][idx][idxs]}
                             </div>
-                            <div className="absolute top-[50%] px-[30px] lg:text-[3.5rem] lg:leading-[4.5rem] sm:text-[3rem] sm:leading-[4rem] text-[1.75rem] leading-[3rem]">
-                                {idxs + 1}.
+                            <div className="absolute top-[50%] px-[30px] lg:text-[4.25rem] lg:leading-[4.75rem] sm:text-[3rem] sm:leading-[4rem] text-[1.75rem] leading-[3rem]">
+                                {/* {idxs + 1}. */}
                                 <br />
                                 {title}
                             </div>
@@ -344,6 +392,15 @@ export const FlipCard = ({
                                 className="w-[5%] h-[5%] absolute top-[8%] right-[10%]"
                             >
                                 <Image src={cross} alt="" />
+                            </button>
+                            <button
+                                className="w-[10%] h-[10%] absolute top-[5%] left-[10%]"
+                                style={{
+                                    transformStyle: "preserve-3d",
+                                }}
+                                onClick={handleFlipCard}
+                            >
+                                <Image src={flip} alt="" />
                             </button>
                             <div
                                 className="text-[clamp(15px,4vw,25px)] leading-[clamp(22px,4vw,27px)] w-full flex-col font-medium px-2 text-center overflow-y-auto flex gap-5"

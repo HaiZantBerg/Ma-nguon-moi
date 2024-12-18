@@ -33,7 +33,6 @@ export default function TapHop() {
 
     return (
         <>
-            <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.6px]" />
             <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
                 <div className="md:h-[75px] h-[51.5px]">
                     {timelineStar.ThoiCoDai}
@@ -98,17 +97,19 @@ export default function TapHop() {
                             Trung Phi, và được đặt tên theo khu vực nơi nó được
                             tìm thấy. Hiện vật này có niên đại từ thời kỳ đồ đá
                             cũ muộn trong lịch sử loài người, khoảng 20.000 năm
-                            trước. Chiếc xương dài 10 cm và chứa một loạt các
-                            khía, mà nhiều nhà khoa học tin rằng đã được sử dụng
-                            để đếm. Cách nhóm các khía thậm chí có thể gợi ý về
-                            sự hiểu biết toán học cao cấp hơn, như hệ thập phân
-                            hoặc số nguyên tố. Khi đếm thì vấn đề nan giải tiếp
-                            theo mà con người phải vượt qua đó là khi số lượng
-                            cần phải đếm nhiều đáng kể, không thể nào mãi khắc
-                            vạch, không thể nào bổ sung mãi các hòn sỏi, que
-                            đếm, chuỗi hạt,… Làm sao để chỉ rõ con số lớn một
-                            cách đơn giản, với số lượng đối tượng được thể hiện
-                            ít nhất có thể? Thế là khái niệm cơ số được sinh ra.
+                            trước.
+                            <br /> <br />
+                            Chiếc xương dài 10 cm và chứa một loạt các khía, mà
+                            nhiều nhà khoa học tin rằng đã được sử dụng để đếm.
+                            Cách nhóm các khía thậm chí có thể gợi ý về sự hiểu
+                            biết toán học cao cấp hơn, như hệ thập phân hoặc số
+                            nguyên tố. Khi đếm thì vấn đề nan giải tiếp theo mà
+                            con người phải vượt qua đó là khi số lượng cần phải
+                            đếm nhiều đáng kể, không thể nào mãi khắc vạch,
+                            không thể nào bổ sung mãi các hòn sỏi, que đếm,
+                            chuỗi hạt,… Làm sao để chỉ rõ con số lớn một cách
+                            đơn giản, với số lượng đối tượng được thể hiện ít
+                            nhất có thể? Thế là khái niệm cơ số được sinh ra.
                         </div>
                         <div className="lg3:flex-[1_0_50%]">
                             <div className="w-full aspect-[595/311]">
@@ -170,35 +171,42 @@ export default function TapHop() {
                                 tính, nhất là khi nhân với mười hay một lũy thừa
                                 của mười? Những câu hỏi như thế này thường ít
                                 khi được nêu ra vì đếm theo mười là một điều quá
-                                hiển nhiên, không có gì phải thắc mắc. Sự thực
-                                thì cơ số mười không tốt cho việc tính toán hơn
-                                so với những cơ số khác, chẳng hạn như cơ số
-                                mười hai. Mười chỉ chia hết cho hai và năm,
-                                trong khi mười hai thì chia hết cho hai, ba, bốn
-                                và sáu. Vì thế, đếm và tính theo cơ số mười hai
-                                vượt trội hơn rất nhiều so với cơ số mười, nhất
-                                là trong việc phân chia: phân nửa, một phần ba,
-                                phần tư, thậm chí cả phần sáu. Thế thì mười là
-                                cơ số có lợi cho việc tính toán không phải là
-                                câu trả lời thỏa đáng. Vậy thì chắc là do bàn
-                                tay con người có mười ngón. Trong trường hợp chỉ
-                                có tám ngón thôi thì liệu chúng ta có đếm theo
-                                cơ số tám? Hay vẫn cứ luôn là cơ số mười? Thật
-                                khó lòng mà biết được, nhưng khả năng cao sẽ là
-                                cơ số tám. Nếu quả đúng vậy thì thật lạ, tư duy
-                                Toán học của chúng ta, như bạn đã biết, hình
-                                thành từ việc đếm, lại phụ thuộc vào cấu trúc
-                                sinh học cơ thể, cấu trúc này lại hình thành từ
-                                hàng loạt quá trình ngẫu nhiên và tiến hóa. Sinh
-                                học đã tác động đến Toán học theo cách không thể
-                                ngờ. Toán học ra đời từ chính bàn tay của chúng
-                                ta theo đúng nghĩa đen như vậy. Quả thực, khi
-                                ngẫm nghĩ về điều này, chúng ta không khỏi có
-                                một cảm giác kì lạ và bối rối. Trong khoa học,
-                                khi truy nguyên tận cùng gốc rễ vấn đề thì câu
-                                trả lời nhận được sẽ như một chiếc búa tạ đập
-                                thẳng vào tâm thức khiến ta phải choáng váng.
-                                <br /> Nguồn{" "}
+                                hiển nhiên, không có gì phải thắc mắc.
+                                <br />
+                                <br />
+                                Sự thực thì cơ số mười không tốt cho việc tính
+                                toán hơn so với những cơ số khác, chẳng hạn như
+                                cơ số mười hai. Mười chỉ chia hết cho hai và
+                                năm, trong khi mười hai thì chia hết cho hai,
+                                ba, bốn và sáu. Vì thế, đếm và tính theo cơ số
+                                mười hai vượt trội hơn rất nhiều so với cơ số
+                                mười, nhất là trong việc phân chia: phân nửa,
+                                một phần ba, phần tư, thậm chí cả phần sáu. Thế
+                                thì mười là cơ số có lợi cho việc tính toán
+                                không phải là câu trả lời thỏa đáng.
+                                <br />
+                                <br />
+                                Vậy thì chắc là do bàn tay con người có mười
+                                ngón. Trong trường hợp chỉ có tám ngón thôi thì
+                                liệu chúng ta có đếm theo cơ số tám? Hay vẫn cứ
+                                luôn là cơ số mười? Thật khó lòng mà biết được,
+                                nhưng khả năng cao sẽ là cơ số tám. Nếu quả đúng
+                                vậy thì thật lạ, tư duy Toán học của chúng ta,
+                                như bạn đã biết, hình thành từ việc đếm, lại phụ
+                                thuộc vào cấu trúc sinh học cơ thể, cấu trúc này
+                                lại hình thành từ hàng loạt quá trình ngẫu nhiên
+                                và tiến hóa. Sinh học đã tác động đến Toán học
+                                theo cách không thể ngờ. Toán học ra đời từ
+                                chính bàn tay của chúng ta theo đúng nghĩa đen
+                                như vậy. Quả thực, khi ngẫm nghĩ về điều này,
+                                chúng ta không khỏi có một cảm giác kì lạ và bối
+                                rối. Trong khoa học, khi truy nguyên tận cùng
+                                gốc rễ vấn đề thì câu trả lời nhận được sẽ như
+                                một chiếc búa tạ đập thẳng vào tâm thức khiến ta
+                                phải choáng váng.
+                                <br />
+                                <br />
+                                Nguồn{" "}
                                 <Link
                                     target="_blank"
                                     href="https://www.history-of-mathematics.org/"
@@ -582,15 +590,20 @@ export default function TapHop() {
                             đa dạng. Đề bài sau, trích từ bản khắc văn tự BM
                             85200 của người Babylon, cho thấy người Babylon
                             không hề dừng lại ở hình học mặt phẳng mà còn vươn
-                            đến cả hình học không gian. Một tầng hầm. Chiều dài
-                            bằng chiều sâu. 1 [đơn vị], Tôi đào dưới đất. Nền
-                            nhà của tôi và khoảng đất tôi đắp lên, 1{"'"}10.
-                            Chiều dài và mặt tiền, {"'"}50. Chiều dài, mặt tiền,
-                            bao nhiêu? Bạn sẽ thấy các nhà toán học Babylon dùng
-                            ngôn ngữ điện báo. Cụ thể, nội dung của đề bài trên
-                            có thể hiểu như sau: Chiều sâu của một tầng hầm gấp
-                            mười hai lần chiều dài của nó. Nếu tôi đào căn hầm
-                            sâu thêm một đơn vị, thể tích của nó sẽ bằng{" "}
+                            đến cả hình học không gian.
+                            <br />
+                            <br />
+                            Một tầng hầm. Chiều dài bằng chiều sâu. 1 [đơn vị],
+                            tôi đào dưới đất. Nền nhà của tôi và khoảng đất tôi
+                            đắp lên, 1{"'"}10. Chiều dài và mặt tiền, {"'"}50.
+                            Chiều dài, mặt tiền, bao nhiêu? Bạn sẽ thấy các nhà
+                            toán học Babylon dùng ngôn ngữ điện báo.
+                            <br />
+                            <br />
+                            Cụ thể, nội dung của đề bài trên có thể hiểu như
+                            sau: Chiều sâu của một tầng hầm gấp mười hai lần
+                            chiều dài của nó. Nếu tôi đào căn hầm sâu thêm một
+                            đơn vị, thể tích của nó sẽ bằng{" "}
                             <InlineMath math="\frac{7}{6}" />. Nếu tôi cộng
                             chiều dài và chiều rộng, tôi sẽ thu được{" "}
                             <InlineMath math="\frac{5}{6}" />. Các kích thước
@@ -601,16 +614,18 @@ export default function TapHop() {
                             chiều rộng bằng <InlineMath math="\frac{1}{3}" /> và
                             chiều sâu bằng 6. Bây giờ hãy cùng dạo qua phía sông
                             Nile một chút. Lẽ tất nhiên, ở vùng đất của người Ai
-                            Cập, ta sẽ gặp những bài toán về kim tự tháp. Đề bài
-                            tiếp theo đây được trích từ một quyển sách giấy cói
-                            nổi tiếng được viết bởi viên thư lại Ahmes, có niên
-                            đại vào nửa đầu thế kỉ 16 trước Công nguyên. Một kim
-                            tự tháp có cạnh đáy bằng 140 cẳng tay và độ dốc bằng
-                            5 gang tay và 1 ngón tay, có độ cao là bao nhiều?
-                            Cẳng tay, gang tay và ngón tay là các đơn vị đo
-                            lường lần lượt tương ứng với 52,5 xentimét, 7,5
+                            Cập, ta sẽ gặp những bài toán về kim tự tháp.
+                            <br />
+                            <br />
+                            Đề bài tiếp theo đây được trích từ một quyển sách
+                            giấy cói nổi tiếng được viết bởi viên thư lại Ahmes,
+                            có niên đại vào nửa đầu thế kỉ 16 trước Công nguyên.
+                            Một kim tự tháp có cạnh đáy bằng 140 cẳng tay và độ
+                            dốc bằng 5 gang tay và 1 ngón tay, có độ cao là bao
+                            nhiều? Cẳng tay, gang tay và ngón tay là các đơn vị
+                            đo lường lần lượt tương ứng với 52,5 xentimét, 7,5
                             xentimét và 1,88 xentimét. Ahmes đã đưa ra lời giải:
-                            93 cẳng tay <InlineMath math="\frac{1}{3}" />. Trong
+                            93 cẳng tay <InlineMath math="\frac{1}{3}." /> Trong
                             sách giấy cói này, ông cũng thử sức với hình tròn.
                             Và còn nhiều bài toán khác nữa. Các bạn có thể tìm
                             đọc thêm ở cuốn sách “Toán học - Một thiên tiểu
@@ -858,18 +873,19 @@ export default function TapHop() {
                             thì câu hỏi đặt ra là: liệu{" "}
                             <InlineMath math="\mathbb{R}" /> có phải là phần tử
                             của chính nó không?
-                            <br />
-                            Nếu <InlineMath math="\mathbb{R} \in \mathbb{R}" />,
-                            thì theo định nghĩa <InlineMath math="\mathbb{R}" />{" "}
-                            phải không phải là phần tử của chính nó, điều này
-                            mâu thuẫn.
-                            <br />
-                            Nếu{" "}
-                            <InlineMath math="\mathbb{R} \notin \mathbb{R}" />,
-                            thì theo định nghĩa,{" "}
-                            <InlineMath math="\mathbb{R}" /> phải là phần tử của
-                            chính nó, lại dẫn đến mâu thuẫn.
-                            <br />
+                            <div className={`${generalInstanceClassName}`}>
+                                Nếu{" "}
+                                <InlineMath math="\mathbb{R} \in \mathbb{R}" />,
+                                thì theo định nghĩa{" "}
+                                <InlineMath math="\mathbb{R}" /> phải không phải
+                                là phần tử của chính nó, điều này mâu thuẫn.
+                                <br />
+                                Nếu{" "}
+                                <InlineMath math="\mathbb{R} \notin \mathbb{R}" />
+                                , thì theo định nghĩa,{" "}
+                                <InlineMath math="\mathbb{R}" /> phải là phần tử
+                                của chính nó, lại dẫn đến mâu thuẫn.
+                            </div>
                             <InlineMath math="\to" /> Hệ quả của nghịch lý: Sau
                             khi nghịch lý Russell được phát hiện, Frege nhận ra
                             rằng lý thuyết tập hợp của ông không thể hoạt động
@@ -1029,6 +1045,7 @@ export default function TapHop() {
                                 hình này {'"'}giống nhau{'"'} về mặt lý thuyết,
                                 mặc dù có thể có các cấu trúc khác nhau.
                             </div>
+                            <br />
                             <span className="font-[450]">
                                 Ứng dụng trong lý thuyết tập hợp
                             </span>

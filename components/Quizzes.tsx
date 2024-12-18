@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { useAnimate } from "framer-motion";
+import { useAnimate } from "motion/react";
 import {
     quizName,
     answerArray,
@@ -81,6 +81,7 @@ const QuizCardContainer = ({
     const [scope, animate] = useAnimate();
 
     const quizDialogContainerRef = useRef<HTMLDivElement | null>(null);
+    const explainationBtnRef = useRef<HTMLButtonElement | null>(null);
 
     const clickedChoice = [false, false, false, false];
     let openExplaination = false;
@@ -127,6 +128,13 @@ const QuizCardContainer = ({
                 },
                 { duration: 0.5 }
             );
+
+            setTimeout(() => {
+                if (explainationBtnRef.current)
+                    explainationBtnRef.current.scrollIntoView({
+                        behavior: "smooth",
+                    });
+            }, 500);
         }
 
         animate(
@@ -261,7 +269,7 @@ const QuizCardContainer = ({
                     onClick={handleCloseCardDialog}
                 />
                 <div
-                    className="bg-white relative py-2 z-10 scale-100 max-w-[800px] w-full h-full max-h-[400px] overflow-y-hidden rounded-xl shadow-[inset_0_4px_8px_0_rgb(0_0_0_/_0.3)]"
+                    className="bg-white relative py-2 z-10 max-w-[900px] w-full h-full max-h-[450px] overflow-y-hidden rounded-xl shadow-[inset_0_4px_8px_0_rgb(0_0_0_/_0.3)]"
                     id="dialog"
                 >
                     <button
@@ -275,7 +283,7 @@ const QuizCardContainer = ({
                         />
                     </button>
                     <div className="h-full flex flex-col mx-1">
-                        <div className="text-center lg3:text-3xl md1:text-2xl text-[1.2rem] font-semibold md1:px-2 px-[24px]">
+                        <div className="text-center md:text-3xl text-[1.3rem] font-semibold md1:px-2 px-[24px]">
                             {quizName}
                         </div>
                         <div
@@ -292,24 +300,24 @@ const QuizCardContainer = ({
                                     .map((text, idxt) => (
                                         <div
                                             key={idxt}
-                                            className="whitespace-pre text-wrap font-medium lg3:text-lg md1:text-[1rem] md1:leading-[1.5rem] text-[0.8rem] leading-[1.15rem]"
+                                            className="whitespace-pre text-wrap font-medium md:text-[1.2rem] md:leading-[1.7rem]"
                                         >
                                             {text}
                                         </div>
                                     ))}
                             </div>
-                            <div className="flex flex-wrap gap-[0.5rem] w-full justify-center mt-3 mb-6 col-[1/-1] row-[2/3] lg3:text-lg">
+                            <div className="flex flex-wrap gap-[0.5rem] w-full justify-center mt-3 mb-6 col-[1/-1] row-[2/3] md:text-[1.2rem] md:leading-[1.7rem]">
                                 {choices.map((choice, idxc) => (
                                     <div
                                         key={idxc}
-                                        className="sm:w-[49%] w-full relative"
+                                        className="lgmi:w-[49%] w-full relative"
                                     >
                                         <div
                                             className={`w-full h-full absolute top-1 left-0 -z-10 rounded-lg ${choiceColorBackdrop[idxc]}`}
                                             id={`shadow${idxc}`}
                                         />
                                         <button
-                                            className={`${choiceColor[idxc]} min-h-[56px] flex overflow-hidden active:translate-y-1 w-full h-full text-white relative transition-all ease-in duration-75 rounded-lg py-1 px-2 ${choiceColorHover[idxc]}`}
+                                            className={`${choiceColor[idxc]} min-h-[56px] flex md:items-center overflow-hidden active:translate-y-1 w-full h-full text-white relative transition-all ease-in duration-75 rounded-lg py-1 px-2 ${choiceColorHover[idxc]}`}
                                             onClick={() =>
                                                 handleClickChoice(idxc)
                                             }
@@ -387,6 +395,7 @@ const QuizCardContainer = ({
                                     className="flex flex-col items-center overflow-hidden h-0"
                                     id="buttonExplaination"
                                     onClick={handleExpandExplaination}
+                                    ref={explainationBtnRef}
                                 >
                                     <div
                                         className="w-[15px] h-[15px] relative"
@@ -403,7 +412,7 @@ const QuizCardContainer = ({
                                         </svg>
                                     </div>
                                     <div
-                                        className="text-[rgba(0,0,0,0.25)] lg3:text-base text-sm"
+                                        className="text-[rgba(0,0,0,0.5)] md:text-[1.2rem] md:leading-[1.7rem]"
                                         id="textOpenExplaination"
                                     >
                                         Xem giải thích

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useAnimate } from "framer-motion";
+import { useAnimate } from "motion/react";
 import Link from "next/link";
 
 export default function GradeCard() {

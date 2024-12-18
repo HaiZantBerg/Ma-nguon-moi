@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useCallback, useEffect, useRef } from "react";
-import { useAnimate } from "framer-motion";
+import { useAnimate } from "motion/react";
 import ChapterDialog from "./ChapterDialog";
 import debounce from "debounce";
 import {

@@ -5,15 +5,12 @@ import {
     timelineStar,
     generalContentClassName,
     generalInstanceClassName,
-    // generalInstanceClassName,
-    // timelineStar
 } from "../static/lessonsStatic";
 import ExtraLearnMore from "../Extra/ExtraLearnMore";
 
 export default function MenhDe() {
     return (
         <>
-            <div className="col-[1/-1] row-[1/-1] bg-[#000000] md:w-[1.5px] w-[0.1px] relative md:left-[13.9px] left-[9.6px]" />
             <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
                 <div className="md:h-[75px] h-[51.5px]">
                     {timelineStar.TheKy4TCN}
@@ -33,6 +30,7 @@ export default function MenhDe() {
                             nhiên, logic của Aristotle chưa phải là logic mệnh
                             đề, mà chỉ tập trung vào các phán đoán và suy luận
                             liên quan đến các danh từ và động từ.
+                            <br />
                             <br />
                             Tác phẩm nổi tiếng {'"'}Organon{'"'} của Aristotle
                             đã đi sâu vào phân tích logic học. Trong đó, ông đã
@@ -58,15 +56,15 @@ export default function MenhDe() {
                         Aristotle là khái niệm {'"'}sự phủ định{'"'} của một
                         mệnh đề. Ông phân loại mệnh đề thành {'"'}đúng{'"'} hoặc{" "}
                         {'"'}sai{'"'}, và mỗi mệnh đề có thể được phủ định để
-                        trở thành một mệnh đề ngược lại. Ví dụ:
-                        {'"'}Tất cả người Hy Lạp là công dân tự do{'"'} có thể
-                        bị phủ định thành {'"'}Không phải tất cả người Hy Lạp là
-                        công dân tự do{'"'}. Mặc dù Aristotle không sử dụng các
-                        ký hiệu toán học như chúng ta làm ngày nay, nhưng lý
-                        thuyết của ông đã chi phối tư tưởng triết học phương Tây
-                        suốt hơn 2000 năm. Các nguyên lý cơ bản của ông về mệnh
-                        đề và suy luận vẫn là nền tảng cho lý thuyết logic cho
-                        đến thời đại hiện đại.
+                        trở thành một mệnh đề ngược lại. Ví dụ: {'"'}Tất cả
+                        người Hy Lạp là công dân tự do{'"'} có thể bị phủ định
+                        thành {'"'}Không phải tất cả người Hy Lạp là công dân tự
+                        do{'"'}. Mặc dù Aristotle không sử dụng các ký hiệu toán
+                        học như chúng ta làm ngày nay, nhưng lý thuyết của ông
+                        đã chi phối tư tưởng triết học phương Tây suốt hơn 2000
+                        năm. Các nguyên lý cơ bản của ông về mệnh đề và suy luận
+                        vẫn là nền tảng cho lý thuyết logic cho đến thời đại
+                        hiện đại.
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
@@ -261,6 +259,7 @@ export default function MenhDe() {
                             đó ông nghiên cứu về các biểu thức và quan hệ giữa
                             chúng trong ngữ cảnh toán học.
                             <br />
+                            <br />
                             Frege không chỉ định nghĩa mệnh đề là một câu có thể
                             đúng hoặc sai, mà còn phát triển một hệ thống ký
                             hiệu hóa mới để mô tả mệnh đề, mà sau này được gọi
@@ -413,25 +412,23 @@ export default function MenhDe() {
                             . Điều này cho phép ông phân tích mệnh đề một cách
                             chính xác và cấu trúc chúng thành các biểu thức có
                             thể thao tác với các phép toán.
-                            <br />
+                            <br /> <br />
                             Frege là người đầu tiên làm rõ sự khác biệt giữa ngữ
                             nghĩa và cú pháp của các mệnh đề trong logic. Công
                             trình của ông không chỉ ảnh hưởng đến các nhà toán
                             học như David Hilbert và Kurt Gödel, mà còn là cơ sở
                             cho sự phát triển của lý thuyết ngôn ngữ trong triết
-                            học ngôn ngữ và lý thuyết logic hiện đại.
-                            <br />
-                            Tuy nhiên, trong suốt cuộc đời của mình, Frege không
-                            được công nhận rộng rãi và phải đối mặt với nhiều
-                            thất bại cá nhân. Một trong những thất bại lớn nhất
-                            của Frege là khi ông phát hiện ra rằng hệ thống
-                            logic của mình chứa đựng một mâu thuẫn nghiêm trọng,
-                            được nhà toán học Bertrand Russell chỉ ra trong một
-                            lá thư vào năm 1902. Dù vậy, công trình của Frege
-                            sau này đã trở thành nền tảng cho nhiều nhánh của
-                            logic hiện đại và ảnh hưởng sâu sắc đến những nhà tư
-                            tưởng sau ông, như Ludwig Wittgenstein và Kurt
-                            Gödel.
+                            học ngôn ngữ và lý thuyết logic hiện đại. Tuy nhiên,
+                            trong suốt cuộc đời của mình, Frege không được công
+                            nhận rộng rãi và phải đối mặt với nhiều thất bại cá
+                            nhân. Một trong những thất bại lớn nhất của Frege là
+                            khi ông phát hiện ra rằng hệ thống logic của mình
+                            chứa đựng một mâu thuẫn nghiêm trọng, được nhà toán
+                            học Bertrand Russell chỉ ra trong một lá thư vào năm
+                            1902. Dù vậy, công trình của Frege sau này đã trở
+                            thành nền tảng cho nhiều nhánh của logic hiện đại và
+                            ảnh hưởng sâu sắc đến những nhà tư tưởng sau ông,
+                            như Ludwig Wittgenstein và Kurt Gödel.
                         </div>
                         <ExtraLearnMore>
                             {'"'}Begriffsschrift{'"'} (1879) là một trong những
@@ -492,6 +489,7 @@ export default function MenhDe() {
                             </ExtraInlineFact>{" "}
                             chỉ ra trong một lá thư vào năm 1902.
                             <br />
+                            <br />
                             Mâu thuẫn này được gọi là {'"'}
                             <ExtraInlineFact buttonContent="nghịch lý của Russell">
                                 Trong hệ thống logic của Frege, ông cho phép
@@ -536,6 +534,7 @@ export default function MenhDe() {
                             điện tử, sau này hình thành nên các máy tính hiện
                             đại.
                             <br />
+                            <br />
                             Alan Turing và John von Neumann là hai nhân vật nổi
                             bật trong việc ứng dụng lý thuyết mệnh đề vào phát
                             triển máy tính. Turing đã sử dụng lý thuyết mệnh đề
@@ -544,21 +543,14 @@ export default function MenhDe() {
                             cổng logic và mạch điện tử, đóng góp vào việc xây
                             dựng máy tính điện tử.
                             <ExtraLearnMore extraBodyVariant="content">
-                                Tác phẩm quan trọng:
-                                <div className={`${generalInstanceClassName}`}>
-                                    {'"'}On Computable Numbers{'"'} của Turing
-                                    (1936) là một công trình quan trọng, trong
-                                    đó ông mô tả cách thức máy tính có thể thực
-                                    hiện các phép toán logic và mô phỏng các
-                                    mệnh đề toán học.
-                                </div>
-                                <div className={`${generalInstanceClassName}`}>
-                                    John von Neumann đã phát triển lý thuyết về
-                                    mạch logic và máy tính điện tử, đồng thời
-                                    xây dựng các mô hình tính toán trong đó mệnh
-                                    đề và phép toán logic đóng vai trò then
-                                    chốt.
-                                </div>
+                                {'"'}On Computable Numbers{'"'} của Turing
+                                (1936) là một công trình quan trọng, trong đó
+                                ông mô tả cách thức máy tính có thể thực hiện
+                                các phép toán logic và mô phỏng các mệnh đề toán
+                                học. John von Neumann đã phát triển lý thuyết về
+                                mạch logic và máy tính điện tử, đồng thời xây
+                                dựng các mô hình tính toán trong đó mệnh đề và
+                                phép toán logic đóng vai trò then chốt.
                             </ExtraLearnMore>
                             Công trình của Turing và von Neumann mở đường cho sự
                             phát triển của ngành khoa học máy tính, đồng thời
@@ -582,23 +574,25 @@ export default function MenhDe() {
                                 học máy (Machine Learning) và lập trình máy
                                 tính. Các thuật toán học máy như mạng nơ-ron
                                 nhân tạo sử dụng lý thuyết logic mệnh đề để xây
-                                dựng các mô hình học tập. Trong khi đó, trong
-                                lập trình, mệnh đề được sử dụng để tạo các điều
-                                kiện và quyết định trong các thuật toán. Trong
-                                AI, mệnh đề có thể giúp xây dựng các hệ thống
-                                chuyên gia, trong đó các câu hỏi và câu trả lời
-                                được xác định qua logic mệnh đề. Các chương
-                                trình máy tính sử dụng mệnh đề để kiểm tra các
-                                điều kiện, ví dụ như trong các ngôn ngữ lập
-                                trình như Python, JavaScript, C++, nơi các mệnh
-                                đề được áp dụng trong các câu lệnh if, while và
-                                các vòng lặp logic. Mệnh đề hiện nay vẫn là công
-                                cụ chủ yếu trong phát triển các ứng dụng AI, đặc
-                                biệt trong xử lý ngôn ngữ tự nhiên và phân tích
-                                dữ liệu. Các công nghệ tiên tiến như chatbot, tự
-                                động hóa và các hệ thống phân tích dữ liệu đều
-                                dựa vào logic mệnh đề để thực hiện các quyết
-                                định thông minh.
+                                dựng các mô hình học tập.
+                                <br />
+                                <br />
+                                Trong khi đó, trong lập trình, mệnh đề được sử
+                                dụng để tạo các điều kiện và quyết định trong
+                                các thuật toán. Trong AI, mệnh đề có thể giúp
+                                xây dựng các hệ thống chuyên gia, trong đó các
+                                câu hỏi và câu trả lời được xác định qua logic
+                                mệnh đề. Các chương trình máy tính sử dụng mệnh
+                                đề để kiểm tra các điều kiện, ví dụ như trong
+                                các ngôn ngữ lập trình như Python, JavaScript,
+                                C++, nơi các mệnh đề được áp dụng trong các câu
+                                lệnh if, while và các vòng lặp logic. Mệnh đề
+                                hiện nay vẫn là công cụ chủ yếu trong phát triển
+                                các ứng dụng AI, đặc biệt trong xử lý ngôn ngữ
+                                tự nhiên và phân tích dữ liệu. Các công nghệ
+                                tiên tiến như chatbot, tự động hóa và các hệ
+                                thống phân tích dữ liệu đều dựa vào logic mệnh
+                                đề để thực hiện các quyết định thông minh.
                             </div>
                         </div>
                     </div>

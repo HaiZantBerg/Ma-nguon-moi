@@ -1,6 +1,6 @@
 "use client";
 
-import { useAnimate } from "framer-motion";
+import { useAnimate } from "motion/react";
 import React, { useState } from "react";
 import { storyContent } from "../static/funfactsStatic";
 import { FlipCard } from "../FunFacts";
