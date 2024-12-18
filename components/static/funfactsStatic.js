@@ -13,13 +13,13 @@ export const images = [
                 <Image
                     src={walk}
                     alt=""
-                    key="image6"
+                    key="image1"
                     className="w-[90%] aspect-square"
                 />,
                 <Image
                     src={feast}
                     alt=""
-                    key="image6"
+                    key="image2"
                     className="w-[90%] aspect-square"
                 />,
                 <div key="image3" />,
@@ -131,7 +131,7 @@ export const storyContent = [
     [
         [
             [
-                <div>
+                <div key="story111">
                     Một trong những giai thoại nổi tiếng nhất về Aristotle là
                     cách ông giảng dạy độc đáo. Khác với những triết gia khác
                     ngồi trong phòng giảng bài, Aristotle có thói quen vừa đi
@@ -153,7 +153,7 @@ export const storyContent = [
                     của em chạy nhanh hơn bước chân của em, rồi em sẽ không cần
                     phải dừng lại.{'"'}
                 </div>,
-                <div>
+                <div key="story112">
                     Aristotle cũng là một người rất thực tế và đôi khi thích nói
                     đùa về những vấn đề liên quan đến cuộc sống hàng ngày. Có
                     một câu chuyện kể rằng, Aristotle thường tổ chức những bữa
@@ -169,7 +169,7 @@ export const storyContent = [
                     Aristotle vừa hài hước vừa thực tế, thể hiện sự tinh tế
                     trong cách ông cân bằng giữa tri thức và nhu cầu cuộc sống.
                 </div>,
-                <div>
+                <div key="story113">
                     Một lần khác, một học trò cố tình đặt cho Aristotle một câu
                     hỏi hóc búa để thử thách trí thông minh của ông. Học trò này
                     hỏi: {'"'}Thưa thầy, làm thế nào để chúng ta có thể chắc
@@ -183,7 +183,7 @@ export const storyContent = [
                     vừa châm biếm vừa mang tính giáo dục, nhấn mạnh tầm quan
                     trọng của việc học từ những sai lầm và trải nghiệm.
                 </div>,
-                <div>
+                <div key="story114">
                     Một câu chuyện khác mang tính đời thường nhưng cũng khá hài
                     hước là về cuộc sống gia đình của Aristotle. Theo sử sách
                     ghi lại, Aristotle và vợ ông, Pythias, có mối quan hệ khá
@@ -202,7 +202,7 @@ export const storyContent = [
                     từ đó, Aristotle học được rằng triết lý cuộc sống đôi khi
                     không thể giải quyết mọi vấn đề gia đình.
                 </div>,
-                <div>
+                <div key="story115">
                     Còn có một câu chuyện vui liên quan đến thời trẻ của
                     Aristotle khi ông là học trò tại Học viện của Plato. Plato,
                     thầy của Aristotle, luôn ca ngợi tư tưởng của mình về {'"'}
@@ -220,7 +220,7 @@ export const storyContent = [
                     ông không ngại thách thức thầy mình, ngay cả khi nó mang
                     tính hài hước.
                 </div>,
-                <div>
+                <div key="story116">
                     Dù nổi tiếng với tư duy logic và triết học, Aristotle cũng
                     có những lúc muốn thử sức với nghệ thuật. Có lần, ông thử
                     làm thơ - một hoạt động được cho là cao quý trong thời kỳ
@@ -243,8 +243,8 @@ export const storyContent = [
                 </div>,
             ],
             [
-                <div>
-                    William of Ockham nổi tiếng với nguyên lý {'"'}Ockham's
+                <div key="story117">
+                    William of Ockham nổi tiếng với nguyên lý {'"'}Ockham{"'"}s
                     Razor{'"'}
                     (Lưỡi dao của Ockham), một nguyên lý cho rằng các giải thích
                     đơn giản thường là chính xác nhất, và chúng ta không nên
@@ -256,12 +256,13 @@ export const storyContent = [
                     Có một lần, một đồng nghiệp đến hỏi Ockham về một vấn đề
                     thần học phức tạp, hy vọng sẽ có một cuộc thảo luận dài dòng
                     và sâu sắc. Nhưng Ockham chỉ đơn giản trả lời: {'"'}Câu trả
-                    lời là 'không'.{'"'} Người đồng nghiệp thất vọng hỏi: {'"'}
+                    lời là {"'"}không{"'"}.{'"'} Người đồng nghiệp thất vọng
+                    hỏi: {'"'}
                     Tại sao lại không? Có rất nhiều điều cần phải xem xét!{
                         '"'
                     }{" "}
                     Ockham chỉ mỉm cười và nói: {'"'}Vì giải thích dài không cần
-                    thiết khi sự thật chỉ đơn giản là 'không'.{'"'}
+                    thiết khi sự thật chỉ đơn giản là {"'"}không{"'"}.{'"'}
                     <br />
                     <br />
                     Câu trả lời ngắn gọn của Ockham phản ánh chính nguyên tắc
@@ -269,7 +270,7 @@ export const storyContent = [
                     khác phải cười vì cách ông cắt ngắn những cuộc tranh luận
                     phức tạp chỉ bằng một vài từ.
                 </div>,
-                <div>
+                <div key="story118">
                     William of Ockham không ngại lên tiếng chống lại Giáo hoàng
                     John XXII trong những tranh luận về thần học và quyền lực
                     của Giáo hội. Một lần, khi Ockham bị triệu tập đến trước
@@ -285,7 +286,7 @@ export const storyContent = [
                     cách bình thản: {'"'}Con chỉ đang làm điều đơn giản nhất,
                     như lưỡi dao của chính mình đã dạy con.{'"'}
                 </div>,
-                <div>
+                <div key="story119">
                     Peter Abelard, ngoài vai trò là một triết gia lỗi lạc, còn
                     được nhớ đến nhiều qua mối tình đầy sóng gió với Héloïse,
                     một học trò xuất sắc của ông. Câu chuyện tình yêu này gây ra
@@ -308,7 +309,7 @@ export const storyContent = [
                     tiếng vì sự lãng mạn mà còn vì những khoảnh khắc tranh luận
                     trí tuệ đầy hài hước giữa họ.
                 </div>,
-                <div>
+                <div key="story1110">
                     Abelard nổi tiếng là một trong những trí thức sắc bén nhất
                     thời đại, nhưng chính sự kiêu ngạo về kiến thức của mình đã
                     khiến ông rơi vào nhiều tình huống dở khóc dở cười. Trong
@@ -325,7 +326,7 @@ export const storyContent = [
                     mọi người bật cười, thừa nhận rằng Abelard đôi khi quá lý
                     thuyết và khó hiểu, ngay cả với những người thông thái khác.
                 </div>,
-                <div>
+                <div key="story1111">
                     Ngoài nguyên lý triết học, William of Ockham cũng áp dụng sự
                     đơn giản vào cuộc sống hàng ngày. Có một câu chuyện kể rằng,
                     trong một lần đi dạo với một nhóm học trò, Ockham được hỏi
@@ -342,7 +343,7 @@ export const storyContent = [
                 </div>,
             ],
             [
-                <div>
+                <div key="story1112">
                     Boole là người rất tận tụy với công việc, thậm chí đôi khi
                     ông còn áp dụng tư duy logic của mình vào những tình huống
                     đời thường. Một câu chuyện kể rằng, một ngày nọ, khi thời
@@ -360,7 +361,7 @@ export const storyContent = [
                     chuyện này cho thấy cách Boole và gia đình ông áp dụng sự
                     hài hước, dù đôi khi hơi quá đà, vào cuộc sống thường nhật.
                 </div>,
-                <div>
+                <div key="story1113">
                     Một câu chuyện vui khác kể về sự nghiêm túc của Boole khi áp
                     dụng tư duy logic vào cuộc sống hàng ngày. Một lần, khi ông
                     và một người bạn ngồi xuống ăn sáng, người bạn của Boole
@@ -379,7 +380,7 @@ export const storyContent = [
                     thấy ông có thể đưa logic vào bất cứ vấn đề gì, kể cả trong
                     những tình huống đời thường nhất.
                 </div>,
-                <div>
+                <div key="story1114">
                     Boole có cuộc sống gia đình khá thú vị. Vợ ông, Mary Everest
                     Boole, cũng là một người rất thông minh và có những phương
                     pháp dạy toán học khác lạ. Nhưng một trong những điểm hài
@@ -405,7 +406,7 @@ export const storyContent = [
                 </div>,
             ],
             [
-                <div>
+                <div key="story1115">
                     Một trong những câu chuyện hài hước nhất về Frege liên quan
                     đến cuốn sách {'"'}Grundgesetze der Arithmetik{'"'} (Các
                     định luật cơ bản của số học) của ông. Frege dành nhiều năm
@@ -432,7 +433,7 @@ export const storyContent = [
                     nhận thức được rằng, đôi khi, ngay cả những lý thuyết vĩ đại
                     nhất cũng có thể bị phá vỡ bởi một chi tiết nhỏ.
                 </div>,
-                <div>
+                <div key="story1116">
                     Frege nổi tiếng là một người tỉ mỉ và cẩn thận, đôi khi quá
                     mức đến mức khiến học trò của ông phải bật cười. Một lần,
                     khi Frege giảng dạy về logic và ký hiệu học, ông dành cả giờ
@@ -449,7 +450,7 @@ export const storyContent = [
                     mà còn là một bài học về sự cẩn trọng trong logic và toán
                     học.
                 </div>,
-                <div>
+                <div key="story1117">
                     Dù nổi tiếng là một nhà tư tưởng logic học, Frege lại không
                     giỏi trong việc đối thoại về những chủ đề đời thường. Một
                     lần, trong một buổi tiệc, Frege ngồi cạnh một người bạn
@@ -465,7 +466,7 @@ export const storyContent = [
                     khi nói về những điều bình thường nhất, ông cũng không thể
                     thoát khỏi thói quen phân tích logic quá mức của mình.
                 </div>,
-                <div>
+                <div key="story1118">
                     Có một câu chuyện vui kể rằng Frege, trong một lần đi mua
                     sắm, đã đứng rất lâu trước một kệ hàng, cố gắng quyết định
                     giữa hai loại bánh mì. Ông tính toán chi li giá cả và giá
@@ -482,7 +483,7 @@ export const storyContent = [
                 </div>,
             ],
             [
-                <div>
+                <div key="story1119">
                     David Hilbert là một giáo sư nổi tiếng tại Đại học
                     Göttingen, và một câu chuyện vui kể về quan điểm của ông đối
                     với những sinh viên không có năng khiếu toán học. Có lần,
@@ -499,7 +500,7 @@ export const storyContent = [
                     trọng của toán học trong việc phát triển khoa học và công
                     nghệ.
                 </div>,
-                <div>
+                <div key="story1120">
                     Hilbert có một câu nói nổi tiếng trong giới học thuật, nhằm
                     châm biếm những người không hiểu rõ toán học mà lại muốn từ
                     bỏ nó. Trong một buổi thảo luận về vấn đề toán học và nghiên
@@ -515,7 +516,7 @@ export const storyContent = [
                     hỏi sự hiểu biết sâu sắc, không phải ai cũng có thể dễ dàng
                     theo đuổi.
                 </div>,
-                <div>
+                <div key="story1121">
                     Có một câu chuyện vui kể về khả năng tiếp thu kiến thức của
                     Hilbert. Khi Hilbert còn trẻ, một số đồng nghiệp đã cười
                     nhạo ông vì không thể hiểu ngay một bài toán phức tạp.
@@ -529,7 +530,7 @@ export const storyContent = [
                     những đặc điểm giúp ông thành công vượt bậc trong sự nghiệp
                     toán học của mình.
                 </div>,
-                <div>
+                <div key="story1122">
                     Hilbert luôn có một thái độ hài hước và tự tin khi nói về
                     toán học. Một câu chuyện kể lại rằng, khi nghe tin một nhà
                     toán học trẻ nhận định rằng hình học sẽ sớm {'"'}chết{'"'}{" "}
@@ -545,7 +546,7 @@ export const storyContent = [
                     hước của Hilbert vừa là sự tự tin về tầm quan trọng của toán
                     học.
                 </div>,
-                <div>
+                <div key="story1123">
                     Một câu chuyện nổi tiếng khác về David Hilbert liên quan đến
                     một buổi bảo vệ luận án tiến sĩ. Trong buổi bảo vệ luận án
                     của một nghiên cứu sinh, sau khi nghe phần trình bày phức
@@ -561,7 +562,7 @@ export const storyContent = [
                 </div>,
             ],
             [
-                <div>
+                <div key="story1124">
                     Bạn có biết việc tìm ra số <InlineMath math="\sqrt{2}" /> đã
                     khiến Pythagoras (Pi-ta-go) trở thành một kẻ giết người.
                     <br />
