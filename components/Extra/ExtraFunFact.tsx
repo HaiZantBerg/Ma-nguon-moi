@@ -76,11 +76,7 @@ export default function ExtraFunFact({
                         idxf={ffidx[1]}
                         triggerCloseCard={handleOpenClose}
                     >
-                        {storyContent[ffidx[0]][ffidx[1]][ffidx[2]][ffidx[3]]
-                            .split("//")
-                            .map((text, idxt) => (
-                                <p key={idxt}>{text}</p>
-                            ))}
+                        {storyContent[ffidx[0]][ffidx[1]][ffidx[2]][ffidx[3]]}
                     </FlipCard>
                 </>
             )}

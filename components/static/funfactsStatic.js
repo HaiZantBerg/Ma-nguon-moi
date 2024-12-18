@@ -3,6 +3,8 @@ import logicBread from "@/public/Image/logicbread.png";
 import Image from "next/image";
 import walk from "@/public/Image/walk.png";
 import feast from "@/public/Image/feast.png";
+import wife from "@/public/Image/wife.png";
+import simple from "@/public/Image/simple.png";
 
 import { InlineMath } from "react-katex";
 
@@ -23,7 +25,13 @@ export const images = [
                     className="w-[90%] aspect-square"
                 />,
                 <div key="image3" />,
-                <div key="image4" />,
+                <Image
+                    src={wife}
+                    alt=""
+                    key="image4"
+                    className="w-[90%] aspect-square"
+                />,
+                ,
                 <div key="image5" />,
                 <Image
                     src={depressedAristotle}
@@ -37,7 +45,12 @@ export const images = [
                 <div key="image8" />,
                 <div key="image9" />,
                 <div key="image10" />,
-                <div key="image11" />,
+                <Image
+                    src={simple}
+                    alt=""
+                    key="image11"
+                    className="w-[90%] h-auto"
+                />,
             ],
             [
                 <div key="image12" />,
