@@ -513,7 +513,7 @@ export default function Slider({ id }: { id: number }) {
             "#chapterTitle1",
             {
                 transform: ["translateY(-80px)", "translateY(0px)"],
-                color: ["rgba(0,0,0,0)", "rgba(0,0,0,1)"],
+                opacity: [0, 1],
             },
             {
                 type: "spring",
@@ -555,7 +555,7 @@ export default function Slider({ id }: { id: number }) {
             "#chapterTitle1",
             {
                 transform: ["translateY(80px)", "translateY(0px)"],
-                color: ["rgba(0,0,0,0)", "rgba(0,0,0,1)"],
+                opacity: [0, 1],
             },
             {
                 type: "spring",
@@ -976,16 +976,9 @@ export default function Slider({ id }: { id: number }) {
                     </div>
                 </div>
                 <div className="flex flex-col justify-between h-full flex-1 sm:min-w-[500px] min-w-[300px] xxlg:pb-[10vh] md1:pb-[5vh] pb-[3rem]">
-                    <div className="flex flex-col items-center xxlg:gap-[10vh] md1:gap-[5vh] gap-10 xxlg:pt-[30vh] md1:pt-[35vh] pt-[15rem] md1:px-0 px-5">
-                        <div className="sm:text-[2rem] leading-[2.25rem] text-2xl font-light text-center md1:px-12 px-3 h-24">
-                            <div
-                                id="chapterTitle1"
-                                ref={chapterContentRef}
-                                style={{
-                                    color: "rgba(0,0,0,1)",
-                                    fontWeight: 350,
-                                }}
-                            >
+                    <div className="flex flex-col items-center gap-[10vh] pt-[30vh] md1:px-0 px-5">
+                        <div className="sm:text-[2.5rem] sm:leading-[2.75rem] text-[#133310] text-[1.75rem] font-semibold leading-[2rem] text-center md1:px-12 px-3 h-24 font-['Chakra_Petch']">
+                            <div id="chapterTitle1" ref={chapterContentRef}>
                                 {chapter[id][0]}
                             </div>
                         </div>

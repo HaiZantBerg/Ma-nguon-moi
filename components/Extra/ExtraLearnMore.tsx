@@ -90,8 +90,8 @@ export default function ExtraLearnMore({
                 onClick={handleOpenClose}
                 className={`${
                     buttonClassName && buttonClassName
-                } hover:bg-[#fdff8a] ${
-                    openExtra ? "bg-[#fdff8a]" : "bg-[#ffffc7]"
+                } hover:bg-[#feffa8] ${
+                    openExtra ? "bg-[#feffa8]" : "bg-[#ffffc7]"
                 } transition-colors duration-2 ease-in font-[500] md:text-[1.05rem] text-[0.9rem] md1:rounded-[20px] rounded-[16px] border text-[#6a6a0b] border-[#6a6a0b] relative`}
                 id="button"
             >

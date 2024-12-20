@@ -7,6 +7,11 @@ import {
     generalInstanceClassName,
 } from "../static/lessonsStatic";
 import ExtraLearnMore from "../Extra/ExtraLearnMore";
+import Aristotle from "@/public/Image/aristotle.png";
+import GeogreBoole from "@/public/Image/georgeboole.png";
+import GottlobFrege from "@/public/Image/gottlobfrege.png";
+import BertrandRussell from "@/public/Image/bertrandrussell.png";
+import Image from "next/image";
 
 export default function MenhDe() {
     return (
@@ -21,28 +26,46 @@ export default function MenhDe() {
                     </div>
                     <div className={`${generalContentClassName}`}>
                         <ExtraInlineFact buttonContent="Aristotle">
-                            <span className="font-[475]">Aristotle</span>{" "}
-                            (384-322 TCN), một trong những triết gia Hy Lạp cổ
-                            đại, là người đầu tiên hệ thống hóa các quy tắc của
-                            suy luận logic. Ông đã xây dựng các nguyên tắc cơ
-                            bản của logic học, mà sau này được biết đến với tên
-                            gọi logic học suy diễn (syllogistic logic). Tuy
-                            nhiên, logic của Aristotle chưa phải là logic mệnh
-                            đề, mà chỉ tập trung vào các phán đoán và suy luận
-                            liên quan đến các danh từ và động từ.
-                            <br />
-                            <br />
-                            Tác phẩm nổi tiếng {'"'}Organon{'"'} của Aristotle
-                            đã đi sâu vào phân tích logic học. Trong đó, ông đã
-                            định nghĩa và phân tích mệnh đề theo một hệ thống
-                            chặt chẽ, từ đó tạo nền tảng cho các nghiên cứu về
-                            luận lý học sau này. Aristotle cũng giới thiệu khái
-                            niệm {'"'}mệnh đề đơn{'"'} (Simple Proposition) và{" "}
-                            {'"'}mệnh đề phức{'"'}
-                            (Compound Proposition), đồng thời phát triển các lý
-                            thuyết về suy luận hợp lý từ các mệnh đề này, dẫn
-                            đến các hình thức suy diễn như {'"'}syllogism{'"'}{" "}
-                            (hình thức suy luận thông qua 3 mệnh đề).
+                            <div className="flex md:flex-row flex-col gap-2 md:items-start items-center">
+                                <div className="md:min-w-[225px] md:max-w-none max-w-[200px]">
+                                    <Image
+                                        src={Aristotle}
+                                        alt=""
+                                        className="w-full h-auto"
+                                    />
+                                </div>
+                                <div>
+                                    <span className="font-[475]">
+                                        Aristotle
+                                    </span>{" "}
+                                    (384-322 TCN), một trong những triết gia Hy
+                                    Lạp cổ đại, là người đầu tiên hệ thống hóa
+                                    các quy tắc của suy luận logic. Ông đã xây
+                                    dựng các nguyên tắc cơ bản của logic học, mà
+                                    sau này được biết đến với tên gọi logic học
+                                    suy diễn (syllogistic logic). Tuy nhiên,
+                                    logic của Aristotle chưa phải là logic mệnh
+                                    đề, mà chỉ tập trung vào các phán đoán và
+                                    suy luận liên quan đến các danh từ và động
+                                    từ.
+                                    <br />
+                                    <br />
+                                    Tác phẩm nổi tiếng {'"'}Organon{'"'} của
+                                    Aristotle đã đi sâu vào phân tích logic học.
+                                    Trong đó, ông đã định nghĩa và phân tích
+                                    mệnh đề theo một hệ thống chặt chẽ, từ đó
+                                    tạo nền tảng cho các nghiên cứu về luận lý
+                                    học sau này. Aristotle cũng giới thiệu khái
+                                    niệm {'"'}mệnh đề đơn{'"'} (Simple
+                                    Proposition) và {'"'}mệnh đề phức{'"'}
+                                    (Compound Proposition), đồng thời phát triển
+                                    các lý thuyết về suy luận hợp lý từ các mệnh
+                                    đề này, dẫn đến các hình thức suy diễn như{" "}
+                                    {'"'}
+                                    syllogism{'"'} (hình thức suy luận thông qua
+                                    3 mệnh đề).
+                                </div>
+                            </div>
                         </ExtraInlineFact>
                         , người sáng lập trường phái logic học, đã đưa ra các
                         định lý cơ bản về mệnh đề trong các tác phẩm của mình.
@@ -127,18 +150,37 @@ export default function MenhDe() {
                         <div className={`${generalContentClassName}`}>
                             Vào thế kỷ 19,{" "}
                             <ExtraInlineFact buttonContent="George Boole">
-                                George Boole (1815-1864) là người đầu tiên phát
-                                triển hệ thống logic mệnh đề hiện đại với việc
-                                sáng tạo ra Đại số Boole. Trong cuốn sách {'"'}
-                                The Mathematical Analysis of Logic{'"'} (1847)
-                                và {'"'}An Investigation of the Laws of Thought
-                                {'"'} (1854), Boole đã hệ thống hóa cách thức xử
-                                lý các phát biểu toán học thông qua các phép
-                                toán đại số như AND, OR, và NOT, tương ứng với
-                                các mệnh đề logic. Đại số Boole cho phép biểu
-                                diễn các mệnh đề bằng các giá trị đúng (1) hoặc
-                                sai (0), từ đó thực hiện các phép toán logic để
-                                kiểm tra tính hợp lý của các mệnh đề.
+                                <div className="flex md:flex-row flex-col gap-2 md:items-start items-center">
+                                    <div className="md:min-w-[225px] md:max-w-none max-w-[200px]">
+                                        <Image
+                                            src={GeogreBoole}
+                                            alt=""
+                                            className="w-full h-auto"
+                                        />
+                                    </div>
+                                    <div>
+                                        <span className="font-[475]">
+                                            George Boole
+                                        </span>{" "}
+                                        (1815-1864) là người đầu tiên phát triển
+                                        hệ thống logic mệnh đề hiện đại với việc
+                                        sáng tạo ra Đại số Boole. Trong cuốn
+                                        sách {'"'}
+                                        The Mathematical Analysis of Logic{
+                                            '"'
+                                        }{" "}
+                                        (1847) và {'"'}An Investigation of the
+                                        Laws of Thought
+                                        {'"'} (1854), Boole đã hệ thống hóa cách
+                                        thức xử lý các phát biểu toán học thông
+                                        qua các phép toán đại số như AND, OR, và
+                                        NOT, tương ứng với các mệnh đề logic.
+                                        Đại số Boole cho phép biểu diễn các mệnh
+                                        đề bằng các giá trị đúng (1) hoặc sai
+                                        (0), từ đó thực hiện các phép toán logic
+                                        để kiểm tra tính hợp lý của các mệnh đề.
+                                    </div>
+                                </div>
                             </ExtraInlineFact>{" "}
                             phát triển logic đại số, nơi ông áp dụng các phép
                             toán đại số vào lý thuyết logic. Ông giới thiệu các
@@ -155,7 +197,7 @@ export default function MenhDe() {
                             là sinh vật{'"'} có thể được biểu diễn bằng các phép
                             toán đại số như sau: Giả sử:
                             <br />
-                            P: {'"'}Socrates là người{'"'} (được biểu diễn bằng
+                            P: {'"'}Socrates là người{'"'} (được biểu diễn bằng{" "}
                             <span className="font-[475]">1</span> nếu đúng,{" "}
                             <span className="font-[475]">0</span> nếu sai).
                             <br />
@@ -175,46 +217,49 @@ export default function MenhDe() {
                             <span className="font-[475]">1</span> khi cả hai
                             mệnh đề đều đúng (tức là P=1 và Q=1), và 0 khi một
                             trong hai mệnh đề là sai.
-                            <br />
-                            <br />
-                            <span className="font-[475]">
-                                Các phép toán logic cơ bản trong đại số Boole:
-                            </span>
-                            <div className={`${generalInstanceClassName}`}>
-                                <span className="font-[475]">AND</span> (
-                                <InlineMath math="\land" />
-                                ): Kết quả là{" "}
-                                <span className="font-[475]">1</span> khi cả hai
-                                mệnh đề đều đúng, ngược lại là{" "}
-                                <span className="font-[475]">0</span>.
-                            </div>
-                            <div className={`${generalInstanceClassName}`}>
-                                <span className="font-[475]">OR</span> (
-                                <InlineMath math="\lor" />
-                                ): Kết quả là{" "}
-                                <span className="font-[475]">1</span> nếu ít
-                                nhất một trong hai mệnh đề đúng, ngược lại là{" "}
-                                <span className="font-[475]">0</span>.
-                            </div>
-                            <div className={`${generalInstanceClassName}`}>
-                                <span className="font-[475]">NOT</span> (
-                                <InlineMath math="\neg" />
-                                ): Đảo ngược giá trị của mệnh đề (đúng thành sai
-                                và ngược lại).
-                            </div>
-                            Ví dụ, nếu:
-                            <div className={`${generalInstanceClassName}`}>
-                                P=1 (Socrates là người) và
-                            </div>
-                            <div className={`${generalInstanceClassName}`}>
-                                Q=1 (Socrates là sinh vật),
-                            </div>
-                            <div className={`${generalInstanceClassName}`}>
-                                thì P <InlineMath math="\land" /> Q=1, nghĩa là
-                                {'"'}Socrates là người và Socrates là sinh vật
-                                {'"'} là đúng. Nếu một trong hai mệnh đề là sai,
-                                kết quả của phép toán AND sẽ là 0.
-                            </div>
+                            <ExtraLearnMore extraBodyVariant="content">
+                                <span className="font-[475]">
+                                    Các phép toán logic cơ bản trong đại số
+                                    Boole:
+                                </span>
+                                <div className={`${generalInstanceClassName}`}>
+                                    <span className="font-[475]">AND</span> (
+                                    <InlineMath math="\land" />
+                                    ): Kết quả là{" "}
+                                    <span className="font-[475]">1</span> khi cả
+                                    hai mệnh đề đều đúng, ngược lại là{" "}
+                                    <span className="font-[475]">0</span>.
+                                </div>
+                                <div className={`${generalInstanceClassName}`}>
+                                    <span className="font-[475]">OR</span> (
+                                    <InlineMath math="\lor" />
+                                    ): Kết quả là{" "}
+                                    <span className="font-[475]">1</span> nếu ít
+                                    nhất một trong hai mệnh đề đúng, ngược lại
+                                    là <span className="font-[475]">0</span>.
+                                </div>
+                                <div className={`${generalInstanceClassName}`}>
+                                    <span className="font-[475]">NOT</span> (
+                                    <InlineMath math="\neg" />
+                                    ): Đảo ngược giá trị của mệnh đề (đúng thành
+                                    sai và ngược lại).
+                                </div>
+                                Ví dụ, nếu:
+                                <div className={`${generalInstanceClassName}`}>
+                                    P=1 (Socrates là người) và
+                                </div>
+                                <div className={`${generalInstanceClassName}`}>
+                                    Q=1 (Socrates là sinh vật),
+                                </div>
+                                <div className={`${generalInstanceClassName}`}>
+                                    thì P <InlineMath math="\land" /> Q=1, nghĩa
+                                    là
+                                    {' "'}Socrates là người và Socrates là sinh
+                                    vật
+                                    {'"'} là đúng. Nếu một trong hai mệnh đề là
+                                    sai, kết quả của phép toán AND sẽ là 0.
+                                </div>
+                            </ExtraLearnMore>
                         </div>
                     </div>
                     <div className={`${generalClassName}`}>
@@ -225,33 +270,46 @@ export default function MenhDe() {
                             Vào cuối thế kỷ 19, logic học được nâng cấp mạnh mẽ
                             nhờ những đóng góp của{" "}
                             <ExtraInlineFact buttonContent="Gottlob Frege">
-                                <span className="font-[475]">
-                                    Gottlob Frege
-                                </span>{" "}
-                                (1848-1925) là một triết gia và nhà toán học
-                                người Đức, được xem là cha đẻ của{" "}
-                                <span className="font-[475]">
-                                    logic học hiện đại
-                                </span>
-                                . Ông phát triển hệ thống lý thuyết logic
-                                formal, phân biệt giữa ngữ nghĩa và cú pháp
-                                trong logic. Frege sáng tạo ra hệ thống ký hiệu
-                                logic để mô tả các mệnh đề và suy luận. Tác phẩm
-                                nổi bật của ông là{" "}
-                                <span className="font-[475]">
-                                    {'"'}Begriffsschrift
-                                </span>
-                                {'"'}
-                                (1879) và{" "}
-                                <span className="font-[475]">
-                                    {'"'}Die Grundlagen der Arithmetik
-                                    {'"'}
-                                </span>
-                                (1884), trong đó ông đề xuất rằng toán học có
-                                thể được xây dựng từ logic cơ bản. Công trình
-                                của Frege ảnh hưởng sâu rộng đến các triết gia
-                                và nhà toán học như Bertrand Russell và Ludwig
-                                Wittgenstein.
+                                <div className="flex md:flex-row flex-col gap-2 md:items-start items-center">
+                                    <div className="md:min-w-[225px] md:max-w-none max-w-[200px]">
+                                        <Image
+                                            src={GottlobFrege}
+                                            alt=""
+                                            className="w-full h-auto"
+                                        />
+                                    </div>
+                                    <div>
+                                        <span className="font-[475]">
+                                            Gottlob Frege
+                                        </span>{" "}
+                                        (1848-1925) là một triết gia và nhà toán
+                                        học người Đức, được xem là cha đẻ của{" "}
+                                        <span className="font-[475]">
+                                            logic học hiện đại
+                                        </span>
+                                        . Ông phát triển hệ thống lý thuyết
+                                        logic formal, phân biệt giữa ngữ nghĩa
+                                        và cú pháp trong logic. Frege sáng tạo
+                                        ra hệ thống ký hiệu logic để mô tả các
+                                        mệnh đề và suy luận. Tác phẩm nổi bật
+                                        của ông là{" "}
+                                        <span className="font-[475]">
+                                            {'"'}Begriffsschrift
+                                        </span>
+                                        {'"'}
+                                        (1879) và{" "}
+                                        <span className="font-[475]">
+                                            {'"'}Die Grundlagen der Arithmetik
+                                            {'"'}
+                                        </span>
+                                        (1884), trong đó ông đề xuất rằng toán
+                                        học có thể được xây dựng từ logic cơ
+                                        bản. Công trình của Frege ảnh hưởng sâu
+                                        rộng đến các triết gia và nhà toán học
+                                        như Bertrand Russell và Ludwig
+                                        Wittgenstein.
+                                    </div>
+                                </div>
                             </ExtraInlineFact>
                             , một nhà toán học và logic học người Đức. Frege
                             phát triển lý thuyết về logic toán học, đồng thời
@@ -460,32 +518,47 @@ export default function MenhDe() {
                             là khi ông phát hiện ra một mâu thuẫn nghiêm trọng
                             trong hệ thống logic của mình, được nhà toán học{" "}
                             <ExtraInlineFact buttonContent="Bertrand Russell">
-                                <span className="font-[475]">
-                                    Bertrand Russell
-                                </span>{" "}
-                                (1872-1970) là một triết gia, toán học gia, và
-                                nhà logic học người Anh, nổi tiếng với công
-                                trình trong triết học phân tích và lý thuyết
-                                logic. Ông là đồng sáng lập{" "}
-                                <span className="font-[475]">Trường phái</span>
-                                logic học phân tích và đóng góp quan trọng vào
-                                sự phát triển của{" "}
-                                <span className="font-[475]">
-                                    logic toán học
-                                </span>
-                                . Russell cùng
-                                <span className="font-[475]">
-                                    Alfred North Whitehead
-                                </span>{" "}
-                                viết tác phẩm{" "}
-                                <span className="font-[475]">
-                                    Principia Mathematica
-                                </span>{" "}
-                                (1910-1913), một công trình nền tảng về logic và
-                                toán học. Ông cũng nổi tiếng với các quan điểm
-                                về triết học đạo đức, chính trị và xã hội.
-                                Russell giành giải Nobel Văn học năm 1950 vì
-                                những đóng góp vào tư tưởng triết học.
+                                <div className="flex md:flex-row flex-col gap-2 md:items-start items-center">
+                                    <div className="md:min-w-[225px] md:max-w-none max-w-[200px]">
+                                        <Image
+                                            src={BertrandRussell}
+                                            alt=""
+                                            className="w-full h-auto"
+                                        />
+                                    </div>
+                                    <div>
+                                        <span className="font-[475]">
+                                            Bertrand Russell
+                                        </span>{" "}
+                                        (1872-1970) là một triết gia, toán học
+                                        gia, và nhà logic học người Anh, nổi
+                                        tiếng với công trình trong triết học
+                                        phân tích và lý thuyết logic. Ông là
+                                        đồng sáng lập{" "}
+                                        <span className="font-[475]">
+                                            Trường phái
+                                        </span>
+                                        logic học phân tích và đóng góp quan
+                                        trọng vào sự phát triển của{" "}
+                                        <span className="font-[475]">
+                                            logic toán học
+                                        </span>
+                                        . Russell cùng
+                                        <span className="font-[475]">
+                                            Alfred North Whitehead
+                                        </span>{" "}
+                                        viết tác phẩm{" "}
+                                        <span className="font-[475]">
+                                            Principia Mathematica
+                                        </span>{" "}
+                                        (1910-1913), một công trình nền tảng về
+                                        logic và toán học. Ông cũng nổi tiếng
+                                        với các quan điểm về triết học đạo đức,
+                                        chính trị và xã hội. Russell giành giải
+                                        Nobel Văn học năm 1950 vì những đóng góp
+                                        vào tư tưởng triết học.
+                                    </div>
+                                </div>
                             </ExtraInlineFact>{" "}
                             chỉ ra trong một lá thư vào năm 1902.
                             <br />
