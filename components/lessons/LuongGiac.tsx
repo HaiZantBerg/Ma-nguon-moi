@@ -426,13 +426,13 @@ export default function LuongGiac() {
                                 là một nhà toán học và thiên văn học Ấn Độ, nổi
                                 tiếng với những đóng góp trong các lĩnh vực toán
                                 học và thiên văn học. Một trong những tác phẩm
-                                nổi bật của ông là "Mahabhaskariya", trong đó
-                                ông đã phát triển các lý thuyết về chu kỳ của
-                                các hành tinh và các hiện tượng thiên văn như
-                                nhật thực và nguyệt thực. Ông cũng là người đầu
-                                tiên giới thiệu các khái niệm về số không vào
-                                các phép toán và cải tiến các phương pháp tính
-                                toán trước đó.
+                                nổi bật của ông là {'"'}Mahabhaskariya{'"'},
+                                trong đó ông đã phát triển các lý thuyết về chu
+                                kỳ của các hành tinh và các hiện tượng thiên văn
+                                như nhật thực và nguyệt thực. Ông cũng là người
+                                đầu tiên giới thiệu các khái niệm về số không
+                                vào các phép toán và cải tiến các phương pháp
+                                tính toán trước đó.
                             </HistoricalFigureInlineFact>
                         </ExtraInlineFact>
                         . Aryabhata đã giới thiệu các khái niệm về sine và
