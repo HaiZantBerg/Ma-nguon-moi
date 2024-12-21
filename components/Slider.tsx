@@ -984,7 +984,7 @@ export default function Slider({ id }: { id: number }) {
                         </div>
                         <button
                             onClick={() => handleOpenDialog(chapterId.current)}
-                            className={`${gradeButtonOpenColor[id]} transition-colors ease-out duration-500 text-white gap-2 rounded-full sm:px-[20px] sm:py-[12.5px] px-5 py-2 mt-10 sm:mt-3 font-[550] flex items-center sm:text-xl text-lg select-none`}
+                            className={`${gradeButtonOpenColor[id]} transition-colors ease-out duration-500 text-white gap-2 rounded-full sm:px-[20px] sm:py-[12.5px] px-5 py-2 sm:mt-3 font-[550] flex items-center sm:text-xl text-lg select-none`}
                         >
                             <svg
                                 viewBox="-10 -5 20 10"
@@ -1015,7 +1015,7 @@ export default function Slider({ id }: { id: number }) {
                             </svg>
                         </button>
                     </div>
-                    <div className="select-none flex justify-center sm:gap-8 gap-4 sm:text-xl text-lg sm:*:w-40 sm:*:h-[60px] *:w-36 *:h-14">
+                    <div className="select-none flex justify-center sm:gap-8 gap-4 md:text-xl sm:text-lg text-[1.125rem] sm:*:w-40 sm:*:h-[60px] *:w-[8.5rem] *:h-[3.25rem]">
                         <div
                             className="absolute h-full sm:*:right-[92px] *:right-[60px] -z-10"
                             style={{
@@ -1097,7 +1097,7 @@ export default function Slider({ id }: { id: number }) {
                                     >
                                         <svg
                                             viewBox="-10 -10 20 20"
-                                            className="w-[20px] h-[20px] sm:w-[22.5px] sm:h-[22.5px]"
+                                            className="w-[17.5px] sm:w-[20px] md:w-[22.5px] aspect-square"
                                         >
                                             <path
                                                 d="M9 0 L-9 0 L0 -8 M-9 0 L0 8"
@@ -1195,7 +1195,7 @@ export default function Slider({ id }: { id: number }) {
                                         Tiếp theo
                                         <svg
                                             viewBox="-10 -10 20 20"
-                                            className="w-[20px] h-[20px] sm:w-[22.5px] sm:h-[22.5px]"
+                                            className="w-[17.5px] sm:w-[20px] md:w-[22.5px] aspect-square"
                                         >
                                             <path
                                                 d="M-9 0 L9 0 L0 -8 M9 0 L0 8"

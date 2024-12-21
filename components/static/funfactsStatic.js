@@ -77,6 +77,7 @@ export const images = [
             ],
             [<div key="image24" />],
         ],
+        [],
         [[<div key="image25" />]],
     ],
     [[[]]],
@@ -121,6 +122,7 @@ export const storyList = [
             ],
             ["Kẻ giết người mang tên Pythagoras?!"],
         ],
+        [],
         [["Chuyện về kính viễn vọng"]],
     ],
     [[[]]],
@@ -137,6 +139,7 @@ export const historyFigureName = [
             "Hilbert",
             "Pythagoras",
         ],
+        [],
         ["Galilei"],
     ],
     [[]],
@@ -686,6 +689,7 @@ export const storyContent = [
                 </div>,
             ],
         ],
+        [],
         [
             [
                 <div key="story1125">

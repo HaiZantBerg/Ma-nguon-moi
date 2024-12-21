@@ -16,7 +16,7 @@ import flip from "@/public/Svg/Flip.svg";
 
 const openFlipCard = signal([-1, -1]);
 
-const FunFact1 = ({ idxf, idxc }: { idxf: number; idxc: number }) => {
+const FunFact1 = ({ idxc, idxg }: { idxc: number; idxg: number }) => {
     useSignals();
 
     const triggerCloseCard = () => {
@@ -25,17 +25,17 @@ const FunFact1 = ({ idxf, idxc }: { idxf: number; idxc: number }) => {
 
     return (
         <>
-            {storyList[idxc][idxf].map((section, idx) => (
+            {storyList[idxg][idxc].map((section, idx) => (
                 <div key={idx} className="mb-5">
                     <span className="font-semibold text-2xl">
-                        {historyFigureName[idxc][idxf][idx]}
+                        {historyFigureName[idxg][idxc][idx]}
                     </span>
                     <div className="md1:ml-7 flex flex-wrap mt-5">
                         {section.map((title, idxs) => (
                             <FunFactCard
                                 key={idxs}
-                                idxf={idxf}
                                 idxc={idxc}
+                                idxg={idxg}
                                 idx={idx}
                                 idxs={idxs}
                                 title={title}
@@ -46,12 +46,12 @@ const FunFact1 = ({ idxf, idxc }: { idxf: number; idxc: number }) => {
                                             idx={idx}
                                             title={title}
                                             idxs={idxs}
+                                            idxg={idxg}
                                             idxc={idxc}
-                                            idxf={idxf}
                                             triggerCloseCard={triggerCloseCard}
                                         >
                                             {
-                                                storyContent[idxc][idxf][idx][
+                                                storyContent[idxg][idxc][idx][
                                                     idxs
                                                 ]
                                             }
@@ -68,7 +68,11 @@ const FunFact1 = ({ idxf, idxc }: { idxf: number; idxc: number }) => {
 };
 
 export const FunFact = [
-    [<FunFact1 key="funfact1" idxc={0} idxf={0} />],
+    [
+        <FunFact1 key="funfact1" idxg={0} idxc={0} />,
+        <FunFact1 key="funfact2" idxg={0} idxc={1} />,
+        <FunFact1 key="funfact3" idxg={0} idxc={2} />,
+    ],
     [],
     [],
 ];
@@ -77,15 +81,15 @@ const FunFactCard = ({
     children,
     idx,
     idxs,
-    idxf,
     idxc,
+    idxg,
     title,
 }: {
     children?: React.ReactNode;
     idx: number;
     idxs: number;
-    idxf: number;
     idxc: number;
+    idxg: number;
     title: string;
 }) => {
     return (
@@ -111,7 +115,7 @@ const FunFactCard = ({
                 </svg>
                 <div className="absolute top-0 left-0 w-full h-full grid grid-cols-1 grid-rows-2 select-none">
                     <div className="h-full aspect-square flex justify-center items-end justify-self-center col-[1/-1] row-[1/2]">
-                        {images[idxc][idxf][idx][idxs]}
+                        {images[idxg][idxc][idx][idxs]}
                     </div>
                     <div className="md1:text-[15px] md1:leading-[17.5px] text-[12px] leading-[13.5px] w-full font-semibold pt-3 px-[7px] text-center col-[1/-1] row-[2/-1]">
                         {title}
@@ -128,16 +132,16 @@ export const FlipCard = ({
     idx,
     title,
     idxs,
+    idxg,
     idxc,
-    idxf,
     triggerCloseCard,
 }: {
     children: React.ReactNode;
     title: string;
     idx: number;
     idxs: number;
-    idxf: number;
     idxc: number;
+    idxg: number;
     triggerCloseCard: () => void | Promise<void>;
 }) => {
     const [scope, animate] = useAnimate();
@@ -369,7 +373,7 @@ export const FlipCard = ({
                                 <Image src={flip} alt="" />
                             </button>
                             <div className="h-[50%] aspect-square flex justify-center items-end">
-                                {images[idxc][idxf][idx][idxs]}
+                                {images[idxg][idxc][idx][idxs]}
                             </div>
                             <div className="absolute top-[50%] pt-16 px-[30px] lg:text-[4.25rem] lg:leading-[4.75rem] sm:text-[3rem] sm:leading-[4rem] text-[1.75rem] leading-[3rem]">
                                 {title}

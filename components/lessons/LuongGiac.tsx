@@ -519,7 +519,7 @@ export default function LuongGiac() {
                         đó là{" "}
                         <ExtraFunFact
                             buttonContent="kính viễn vọng"
-                            ffidx={[0, 1, 0, 0]}
+                            ffidx={[0, 2, 0, 0]}
                         />{" "}
                         .
                     </div>
