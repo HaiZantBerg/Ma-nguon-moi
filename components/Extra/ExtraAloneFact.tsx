@@ -11,7 +11,7 @@ export default function ExtraAloneFact({
     containerClassName = "",
     extraBodyClassName = "",
     flip = false,
-    extraBodyVariant = "",
+    extraBodyVariant = "normal",
 }: {
     children?: React.ReactNode;
     buttonContent: string;
@@ -19,7 +19,7 @@ export default function ExtraAloneFact({
     containerClassName?: string;
     extraBodyClassName?: string;
     flip?: boolean;
-    extraBodyVariant?: "instance" | "" | "content";
+    extraBodyVariant?: "instance" | "normal" | "content";
 }) {
     const [scope, animate] = useAnimate();
 
@@ -86,15 +86,13 @@ export default function ExtraAloneFact({
     return (
         <div
             ref={scope}
-            className={`${
-                containerClassName && containerClassName
-            } md1:mr-0 mr-5 my-4 ${flip && "flex"}`}
+            className={`${containerClassName} md1:mr-0 mr-5 my-4 ${
+                flip && "flex"
+            }`}
         >
             <button
                 onClick={handleOpenClose}
-                className={`${
-                    buttonClassName && buttonClassName
-                } hover:bg-[#f13827] transition-all duration-2 ease-in text-white font-[500] px-4 pt-2 pb-[10px] md:text-[1.05rem] text-[0.9rem] ${
+                className={`${buttonClassName} hover:bg-[#f13827] transition-all duration-2 ease-in text-white font-[500] px-4 pt-2 pb-[10px] md:text-[1.05rem] text-[0.9rem] ${
                     openExtra
                         ? flip
                             ? "bg-[#ff6338] rounded-[0px_0px_15px_15px]"

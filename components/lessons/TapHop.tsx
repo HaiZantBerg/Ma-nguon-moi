@@ -94,46 +94,44 @@ export default function TapHop() {
                         bằng cách khắc các dấu chữ v trên một miếng gỗ, hoặc
                         bằng thắt nút trên một sợi dây.
                     </div>
-                </div>
-                <ExtraAloneFact
-                    buttonContent="Xương Ishango"
-                    containerClassName="md1:ml-[45px] ml-[30px]"
-                >
-                    <div className="w-full h-full text-lg flex lg3:flex-row flex-col gap-2 items-center">
-                        <div
-                            className={`${generalContentClassName} flex-[0_1_auto]`}
-                        >
-                            Xương Ishango có thể là hiện vật toán học cổ xưa
-                            nhất vẫn còn tồn tại đến ngày nay: nó được phát hiện
-                            vào năm 1950 tại Cộng hòa Dân chủ Congo ở khu vực
-                            Trung Phi, và được đặt tên theo khu vực nơi nó được
-                            tìm thấy. Hiện vật này có niên đại từ thời kỳ đồ đá
-                            cũ muộn trong lịch sử loài người, khoảng 20.000 năm
-                            trước.
-                            <br /> <br />
-                            Chiếc xương dài 10 cm và chứa một loạt các khía, mà
-                            nhiều nhà khoa học tin rằng đã được sử dụng để đếm.
-                            Cách nhóm các khía thậm chí có thể gợi ý về sự hiểu
-                            biết toán học cao cấp hơn, như hệ thập phân hoặc số
-                            nguyên tố. Khi đếm thì vấn đề nan giải tiếp theo mà
-                            con người phải vượt qua đó là khi số lượng cần phải
-                            đếm nhiều đáng kể, không thể nào mãi khắc vạch,
-                            không thể nào bổ sung mãi các hòn sỏi, que đếm,
-                            chuỗi hạt,… Làm sao để chỉ rõ con số lớn một cách
-                            đơn giản, với số lượng đối tượng được thể hiện ít
-                            nhất có thể? Thế là khái niệm cơ số được sinh ra.
-                        </div>
-                        <div className="lg3:flex-[1_0_50%]">
-                            <div className="w-full aspect-[595/311]">
-                                <Image
-                                    src={Boner}
-                                    alt=""
-                                    className="w-full h-full"
-                                />
+                    <ExtraAloneFact buttonContent="Xương Ishango">
+                        <div className="w-full h-full text-lg flex lg3:flex-row flex-col gap-2 items-center">
+                            <div
+                                className={`${generalContentClassName} flex-[0_1_auto]`}
+                            >
+                                Xương Ishango có thể là hiện vật toán học cổ xưa
+                                nhất vẫn còn tồn tại đến ngày nay: nó được phát
+                                hiện vào năm 1950 tại Cộng hòa Dân chủ Congo ở
+                                khu vực Trung Phi, và được đặt tên theo khu vực
+                                nơi nó được tìm thấy. Hiện vật này có niên đại
+                                từ thời kỳ đồ đá cũ muộn trong lịch sử loài
+                                người, khoảng 20.000 năm trước.
+                                <br /> <br />
+                                Chiếc xương dài 10 cm và chứa một loạt các khía,
+                                mà nhiều nhà khoa học tin rằng đã được sử dụng
+                                để đếm. Cách nhóm các khía thậm chí có thể gợi ý
+                                về sự hiểu biết toán học cao cấp hơn, như hệ
+                                thập phân hoặc số nguyên tố. Khi đếm thì vấn đề
+                                nan giải tiếp theo mà con người phải vượt qua đó
+                                là khi số lượng cần phải đếm nhiều đáng kể,
+                                không thể nào mãi khắc vạch, không thể nào bổ
+                                sung mãi các hòn sỏi, que đếm, chuỗi hạt,… Làm
+                                sao để chỉ rõ con số lớn một cách đơn giản, với
+                                số lượng đối tượng được thể hiện ít nhất có thể?
+                                Thế là khái niệm cơ số được sinh ra.
+                            </div>
+                            <div className="lg3:flex-[1_0_50%]">
+                                <div className="w-full aspect-[595/311]">
+                                    <Image
+                                        src={Boner}
+                                        alt=""
+                                        className="w-full h-full"
+                                    />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </ExtraAloneFact>
+                    </ExtraAloneFact>
+                </div>
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>Cơ số</div>
                     <div className={`${generalContentClassName}`}>

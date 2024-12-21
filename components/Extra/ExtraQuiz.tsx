@@ -11,7 +11,7 @@ export default function ExtraQuiz({
     containerClassName = "",
     extraBodyClassName = "",
     flip = false,
-    extraBodyVariant = "",
+    extraBodyVariant = "normal",
     explaination,
 }: {
     children?: React.ReactNode;
@@ -20,7 +20,7 @@ export default function ExtraQuiz({
     containerClassName?: string;
     extraBodyClassName?: string;
     flip?: boolean;
-    extraBodyVariant?: "instance" | "" | "content";
+    extraBodyVariant?: "instance" | "normal" | "content";
     explaination?: React.JSX.Element;
 }) {
     const [scope, animate] = useAnimate();

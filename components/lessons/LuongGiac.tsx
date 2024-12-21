@@ -5,6 +5,7 @@ import {
     generalContentClassName,
     timelineStar,
     generalHeaderClassName,
+    generalInstanceClassName,
 } from "../static/lessonsStatic";
 import Image from "next/image";
 import luongGiacImage1 from "@/public/Image/luonggiacimage1.png";
@@ -29,6 +30,8 @@ import AlKhwarizmi from "@/public/Image/alkhawarizmi.png";
 import AlBattani from "@/public/Image/albattani.png";
 import ExtraFunFact from "../Extra/ExtraFunFact";
 import LeonhardEuler from "@/public/Image/leonhardeuler.png";
+import ExtraAloneFact from "../Extra/ExtraAloneFact";
+import calcParamterOfEarth from "@/public/Image/calcparameterofearth.png";
 
 export default function LuongGiac() {
     return (
@@ -281,6 +284,125 @@ export default function LuongGiac() {
                         bước chân của mình. Đôi khi, có những nhiệm vụ buộc họ
                         phải đi rất xa.
                     </div>
+                    <ExtraAloneFact buttonContent="Theo bước chân Eratosthenes đi tìm chu vi  của trái đất">
+                        Ở Ai Cập cổ đại, thành phố Syene nằm dọc theo sông Nile.
+                        Syene nổi tiếng với một cái giếng đặc biệt, có một
+                        khoảng khắc mỗi năm, khi ánh sáng mặt trời chạm đến đáy
+                        giếng vào buổi trưa ngày 21 tháng 6 (Bạn biết ngày này
+                        là ngày gì không? Là ngày hạ chí, nay được thống nhất
+                        lại là ngày 22 tháng 6. Nhưng ngày xưa thì ngày hạ chí
+                        là ngày 21 tháng 6 đấy). Vào thời điểm chính xác đó, đáy
+                        giếng được chiếu sáng hoàn toàn, mà thành giếng không
+                        được chiếu sáng, có nghĩa là Mặt trời đang đứng thẳng
+                        đứng trên giếng. Eratosthenes nhận ra rằng, vào giữa
+                        buổi trưa của ngày đó, đài tưởng niệm Alexandria vẫn đổ
+                        bóng xuống mặt đất, có nghĩa là Mặt trời không ở ngay
+                        trên nó. Ông đã suy luận rằng điều này là do độ cong của
+                        Trái đất, và nhận ra rằng nó có thể được sử dụng để tính
+                        chu vi của Trái đất.
+                        <br />
+                        <br />
+                        Từ những nhận định trên của ông, ông kết luận rằng Syene
+                        nằm trên chí tuyến Bắc của Trái Đất. Đồng thời, với các
+                        phép đo ngày đó, Eratosthenes xác định rằng Alexandria
+                        và Syene nằm trên cùng một kinh tuyến, còn khoảng cách
+                        giữa hai địa danh này là khoảng 5.000 stadia.
+                        <br />
+                        <br />
+                        Trước khi tiếp tục, cần chú thích rằng một stadia là một
+                        đơn vị đo độ dài thời cổ, tương ứng với độ dài của một
+                        sân vận động. Điều đáng nói là kích thước các sân vận
+                        động thời đó không như nhau mà có sự sai khác nhất định.
+                        Tuy nhiên, đa số các nguồn cho rằng Eratosthenes đã lấy
+                        stadia theo độ dài của một sân Olympic thời đó, có độ
+                        dài 176 mét.
+                        <br />
+                        <br />
+                        Từ những gì đã biết như trên, Eratosthenes làm phép đo
+                        bằng cách cắm một chiếc gậy thẳng đứng ở Alexandria vào
+                        ngày hạ chí. Vì Mặt Trời không chiếu vuông góc xuống
+                        Alexandria nên vào giữa trưa ngày hạ chí, cây gậy vẫn đổ
+                        bóng xuống mặt đất. Đo độ dài của bóng gậy và so với độ
+                        dài thực tế của gậy, ông xác định được rằng góc tạo bởi
+                        chiếc gậy và ánh Mặt Trời là hơn 7 độ một chút (hình
+                        minh họa).
+                        <div className="my-3">
+                            <Image src={calcParamterOfEarth} alt="" />
+                        </div>
+                        Hình bên trái: phép đo để tính ra góc lệch của tia sáng
+                        Mặt Trời theo cách của Eratosthenes. Bên phải: từ việc
+                        xác định được cung 7 độ tương ứng với 5000 stadia,
+                        Eratosthenes tính ra gần đúng chu vi của Trái Đất. Bạn
+                        có thể thấy rằng kết quả tính này chênh lệch so với thực
+                        tế ngày nay được xác nhận khoảng 10%. Sự sai khác này là
+                        không tránh khỏi vì trên thực tế thì:
+                        <div className={`${generalInstanceClassName}`}>
+                            - Khoảng cách giữa Syene và Alexandria đã không được
+                            đo thật chính xác với phương pháp thời đó.
+                        </div>
+                        <div className={`${generalInstanceClassName}`}>
+                            - Syene không nằm chính xác trên chí tuyến Bắc mà
+                            lệch khoảng 55 km về phía Bắc.
+                        </div>
+                        <div className={`${generalInstanceClassName}`}>
+                            - Syene và Alexandria không nằm cùng kinh tuyến mà
+                            lệch nhau khoảng 3 độ.
+                        </div>
+                        Mặc dù vậy, với những sai số nhỏ đó, kết quả tính của
+                        Eratosthenes đã là một thành tựu đáng chú ý đối với
+                        thiên văn học thời đó, và nó là minh chứng cho giá trị
+                        của sự sáng tạo, kết hợp một cách chính xác công cụ toán
+                        học đơn giản với những quan sát trực tiếp. (Theo{" "}
+                        <Link
+                            href="https://thienvanvietnam.org/index.php?option=com_content&view=article&id=1589:do-chu-vi-trai-dat-cach-day-hon-2000-nam&catid=28&Itemid=144"
+                            target="_blank"
+                            className="font-[475] underline"
+                        >
+                            thienvanvietnam.org
+                        </Link>
+                        )
+                        <br />
+                        <br />
+                        Bạn có thể xem video sau để hiểu rõ hơn cách tính thời
+                        bấy giờ.
+                        <div className="max-w-[700px] aspect-video mt-4">
+                            <ReactPlayer
+                                url="https://www.youtube.com/watch?v=313icHT2XF8"
+                                width="100%"
+                                height="100%"
+                            />
+                        </div>
+                    </ExtraAloneFact>
+                    <ExtraAloneFact buttonContent="Al-Biruni - Đường chân trời và bán kính của Trái đất">
+                        Những nỗ lực đầu tiên để đo lường bán kính Trái Đất bắt
+                        đầu từ thời kỳ cổ đại với các nhà khoa học Hy Lạp như
+                        Eratosthenes (276-194 TCN) và Ptolemy (100-170 SCN). Đến
+                        thời kỳ trung cổ, các nhà khoa học Hồi giáo đã tiếp tục
+                        nghiên cứu và cải tiến các phương pháp đo lường bán kính
+                        Trái Đất. Như Al-Biruni (973-1048) và Al-Ma'mun
+                        (786-833). Ở đây, chúng tôi xin đề cập đến cách tính của
+                        Al-Biruni. Ông đã phát triển một phương pháp mới sử dụng
+                        độ cao của các ngọn núi và góc nhìn từ chúng để tính
+                        toán bán kính Trái Đất như cách giải ở trên.
+                        <div className="max-w-[700px] aspect-video my-4">
+                            <ReactPlayer
+                                url="https://www.youtube.com/watch?v=uRBvT5QcO8A&t=297s"
+                                width="100%"
+                                height="100%"
+                            />
+                        </div>{" "}
+                        Vậy bạn có biết cách tìm vẽ đường thẳng nối với đường
+                        chân trời tìm bằng cách nào? Các bạn có thể tìm hiểu
+                        thêm một chút về đường chân trời và phương pháp chứng
+                        minh trái đất không thể là mặt phẳng trong video
+                        <div className="max-w-[700px] aspect-video my-4">
+                            <ReactPlayer
+                                url="https://www.youtube.com/watch?v=tejB8pFOYD8"
+                                width="100%"
+                                height="100%"
+                            />
+                        </div>
+                    </ExtraAloneFact>
                 </div>
             </div>
             <div className="col-[1/-1] row-[2/3] h-fit mt-[10px]">

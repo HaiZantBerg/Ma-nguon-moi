@@ -14,7 +14,6 @@ export default function ExtraFunFact({
     buttonContent: string;
     buttonClassName?: string;
     containerClassName?: string;
-    extraBodyVariant?: "instance" | "" | "content";
     ffidx: number[];
 }) {
     const [scope, animate] = useAnimate();
