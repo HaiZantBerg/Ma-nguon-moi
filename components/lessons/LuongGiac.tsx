@@ -367,6 +367,7 @@ export default function LuongGiac() {
                         thêm ở phần câu chuyện lịch sử.
                     </div>
                 </div>
+                Quỳnh gà
             </div>
         </>
     );
