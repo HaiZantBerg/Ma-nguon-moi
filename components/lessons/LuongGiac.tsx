@@ -346,7 +346,7 @@ export default function LuongGiac() {
                         <ExtraInlineFact buttonContent="Ptolemy">
                             <span className="font-[475]">Ptolemy</span> (khoảng
                             100 - 170 CN) tiếp tục công trình của Hipparchus và
-                            viết cuốn sách nổi tiếng "
+                            viết cuốn sách nổi tiếng {'"'}
                             <Link
                                 href="https://archive.org/details/in.ernet.dli.2015.547436/page/n57/mode/2up"
                                 target="_blank"
@@ -354,7 +354,7 @@ export default function LuongGiac() {
                             >
                                 Almagest
                             </Link>
-                            ", trong đó có các bảng lượng giác để tính toán các
+                            {'"'}, trong đó có các bảng lượng giác để tính toán các
                             khoảng cách và góc trong thiên văn học.
                         </ExtraInlineFact>{" "}
                         , đã có đóng góp quan trọng trong việc phát triển lý
@@ -367,6 +367,7 @@ export default function LuongGiac() {
                         thêm ở phần câu chuyện lịch sử.
                     </div>
                 </div>
+                quỳnh gà
             </div>
         </>
     );
