@@ -74,8 +74,8 @@ export default function ExtraFunFact({
                             storyList[ffidx[0]][ffidx[1]][ffidx[2]][ffidx[3]]
                         }
                         idxs={ffidx[3]}
-                        idxc={ffidx[0]}
-                        idxf={ffidx[1]}
+                        idxg={ffidx[0]}
+                        idxc={ffidx[1]}
                         triggerCloseCard={handleOpenClose}
                     >
                         {storyContent[ffidx[0]][ffidx[1]][ffidx[2]][ffidx[3]]}
