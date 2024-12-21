@@ -1,16 +1,21 @@
 import { BlockMath, InlineMath } from "react-katex";
-import ExtraInlineFact from "../Extra/ExtraInlineFact";
+import ExtraInlineFact, {
+    HistoricalFigureInlineFact,
+} from "../Extra/ExtraInlineFact";
 import {
     generalClassName,
     timelineStar,
     generalContentClassName,
     generalInstanceClassName,
+    generalHeaderClassName,
 } from "../static/lessonsStatic";
 import ExtraLearnMore from "../Extra/ExtraLearnMore";
 import Aristotle from "@/public/Image/aristotle.png";
 import GeogreBoole from "@/public/Image/georgeboole.png";
 import GottlobFrege from "@/public/Image/gottlobfrege.png";
 import BertrandRussell from "@/public/Image/bertrandrussell.png";
+import WilliamOfOckham from "@/public/Image/williamofockham.png";
+import PeterAbelard from "@/public/Image/peterabelard.png";
 import Image from "next/image";
 
 export default function MenhDe() {
@@ -21,51 +26,40 @@ export default function MenhDe() {
                     {timelineStar.TheKy4TCN}
                 </div>
                 <div className={`${generalClassName}`}>
-                    <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base my-2">
+                    <div className={`${generalHeaderClassName}`}>
                         Aristotle và Triết Học Logic
                     </div>
                     <div className={`${generalContentClassName}`}>
                         <ExtraInlineFact buttonContent="Aristotle">
-                            <div className="flex md:flex-row flex-col gap-2 md:items-start items-center">
-                                <div className="md:min-w-[225px] md:max-w-none max-w-[200px]">
-                                    <Image
-                                        src={Aristotle}
-                                        alt=""
-                                        className="w-full h-auto"
-                                    />
-                                </div>
-                                <div>
-                                    <span className="font-[475]">
-                                        Aristotle
-                                    </span>{" "}
-                                    (384-322 TCN), một trong những triết gia Hy
-                                    Lạp cổ đại, là người đầu tiên hệ thống hóa
-                                    các quy tắc của suy luận logic. Ông đã xây
-                                    dựng các nguyên tắc cơ bản của logic học, mà
-                                    sau này được biết đến với tên gọi logic học
-                                    suy diễn (syllogistic logic). Tuy nhiên,
-                                    logic của Aristotle chưa phải là logic mệnh
-                                    đề, mà chỉ tập trung vào các phán đoán và
-                                    suy luận liên quan đến các danh từ và động
-                                    từ.
-                                    <br />
-                                    <br />
-                                    Tác phẩm nổi tiếng {'"'}Organon{'"'} của
-                                    Aristotle đã đi sâu vào phân tích logic học.
-                                    Trong đó, ông đã định nghĩa và phân tích
-                                    mệnh đề theo một hệ thống chặt chẽ, từ đó
-                                    tạo nền tảng cho các nghiên cứu về luận lý
-                                    học sau này. Aristotle cũng giới thiệu khái
-                                    niệm {'"'}mệnh đề đơn{'"'} (Simple
-                                    Proposition) và {'"'}mệnh đề phức{'"'}
-                                    (Compound Proposition), đồng thời phát triển
-                                    các lý thuyết về suy luận hợp lý từ các mệnh
-                                    đề này, dẫn đến các hình thức suy diễn như{" "}
-                                    {'"'}
-                                    syllogism{'"'} (hình thức suy luận thông qua
-                                    3 mệnh đề).
-                                </div>
-                            </div>
+                            <HistoricalFigureInlineFact
+                                image={<Image src={Aristotle} alt="" />}
+                                historicalFigureName="Aristotle"
+                            >
+                                (384-322 TCN), một trong những triết gia Hy Lạp
+                                cổ đại, là người đầu tiên hệ thống hóa các quy
+                                tắc của suy luận logic. Ông đã xây dựng các
+                                nguyên tắc cơ bản của logic học, mà sau này được
+                                biết đến với tên gọi logic học suy diễn
+                                (syllogistic logic). Tuy nhiên, logic của
+                                Aristotle chưa phải là logic mệnh đề, mà chỉ tập
+                                trung vào các phán đoán và suy luận liên quan
+                                đến các danh từ và động từ.
+                                <br />
+                                <br />
+                                Tác phẩm nổi tiếng {'"'}Organon{'"'} của
+                                Aristotle đã đi sâu vào phân tích logic học.
+                                Trong đó, ông đã định nghĩa và phân tích mệnh đề
+                                theo một hệ thống chặt chẽ, từ đó tạo nền tảng
+                                cho các nghiên cứu về luận lý học sau này.
+                                Aristotle cũng giới thiệu khái niệm {'"'}mệnh đề
+                                đơn{'"'} (Simple Proposition) và {'"'}mệnh đề
+                                phức{'"'}
+                                (Compound Proposition), đồng thời phát triển các
+                                lý thuyết về suy luận hợp lý từ các mệnh đề này,
+                                dẫn đến các hình thức suy diễn như {'"'}
+                                syllogism{'"'} (hình thức suy luận thông qua 3
+                                mệnh đề).
+                            </HistoricalFigureInlineFact>
                         </ExtraInlineFact>
                         , người sáng lập trường phái logic học, đã đưa ra các
                         định lý cơ bản về mệnh đề trong các tác phẩm của mình.
@@ -101,34 +95,47 @@ export default function MenhDe() {
                                 buttonContent="William
                             of Ockham"
                             >
-                                <span className="font-[475]">
-                                    William of Ockham
-                                </span>{" "}
-                                (1287-1347) là một nhà triết học và tu sĩ người
-                                Anh, nổi tiếng với nguyên lý {'"'}Dao cạo Ockham
-                                {'"'}
-                                (Occam{"'"}s Razor), cho rằng khi đối mặt với
-                                nhiều giả thuyết, giả thuyết đơn giản nhất với
-                                ít giả định nhất là hợp lý nhất. Ông là người
-                                sáng lập trường phái {'"'}Nominalism{'"'}, phủ
-                                nhận sự tồn tại của các khái niệm chung và chỉ
-                                chấp nhận các sự vật cụ thể. Ockham cũng có ảnh
-                                hưởng sâu rộng đến logic học, khoa học và triết
-                                học hiện đại.
-                            </ExtraInlineFact>
+                                <HistoricalFigureInlineFact
+                                    image={
+                                        <Image src={WilliamOfOckham} alt="" />
+                                    }
+                                    historicalFigureName="William of Ockham"
+                                >
+                                    (1287-1347) là một nhà triết học và tu sĩ
+                                    người Anh, nổi tiếng với nguyên lý {'"'}Dao
+                                    cạo Ockham
+                                    {'"'}
+                                    (Occam{"'"}s Razor), cho rằng khi đối mặt
+                                    với nhiều giả thuyết, giả thuyết đơn giản
+                                    nhất với ít giả định nhất là hợp lý nhất.
+                                    Ông là người sáng lập trường phái {'"'}
+                                    Nominalism{'"'}, phủ nhận sự tồn tại của các
+                                    khái niệm chung và chỉ chấp nhận các sự vật
+                                    cụ thể. Ockham cũng có ảnh hưởng sâu rộng
+                                    đến logic học, khoa học và triết học hiện
+                                    đại.
+                                </HistoricalFigureInlineFact>
+                            </ExtraInlineFact>{" "}
                             và{" "}
                             <ExtraInlineFact buttonContent="Peter Abelard">
-                                <span className="font-[475]">
-                                    Peter Abelard
-                                </span>{" "}
-                                (1079-1142) là một triết gia và thần học gia
-                                người Pháp, nổi bật với phương pháp {'"'}Sic et
-                                Non{'"'}, khuyến khích đối chiếu các quan điểm
-                                đối lập trong thần học. Ông cũng nổi tiếng với
-                                mối tình với Héloïse và là một trong những người
-                                tiên phong trong việc áp dụng lý luận logic vào
-                                thần học. Abelard có ảnh hưởng lớn đến triết học
-                                và thần học thời Trung Cổ.
+                                <div className="flex md:flex-row flex-col gap-2 md:items-start items-center">
+                                    <HistoricalFigureInlineFact
+                                        image={
+                                            <Image src={PeterAbelard} alt="" />
+                                        }
+                                        historicalFigureName="Peter Abelard"
+                                    >
+                                        (1079-1142) là một triết gia và thần học
+                                        gia người Pháp, nổi bật với phương pháp{" "}
+                                        {'"'}Sic et Non{'"'}, khuyến khích đối
+                                        chiếu các quan điểm đối lập trong thần
+                                        học. Ông cũng nổi tiếng với mối tình với
+                                        Héloïse và là một trong những người tiên
+                                        phong trong việc áp dụng lý luận logic
+                                        vào thần học. Abelard có ảnh hưởng lớn
+                                        đến triết học và thần học thời Trung Cổ.
+                                    </HistoricalFigureInlineFact>
+                                </div>
                             </ExtraInlineFact>{" "}
                             đã tiếp tục phát triển các khái niệm về logic và
                             ngôn ngữ, tập trung vào cách các phát biểu có thể
@@ -144,43 +151,31 @@ export default function MenhDe() {
                         {timelineStar.TheKy19(1)}
                     </div>
                     <div className={`${generalClassName}`}>
-                        <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base my-2">
+                        <div className={`${generalHeaderClassName}`}>
                             Đại số Boole (1847)
                         </div>
                         <div className={`${generalContentClassName}`}>
                             Vào thế kỷ 19,{" "}
                             <ExtraInlineFact buttonContent="George Boole">
-                                <div className="flex md:flex-row flex-col gap-2 md:items-start items-center">
-                                    <div className="md:min-w-[225px] md:max-w-none max-w-[200px]">
-                                        <Image
-                                            src={GeogreBoole}
-                                            alt=""
-                                            className="w-full h-auto"
-                                        />
-                                    </div>
-                                    <div>
-                                        <span className="font-[475]">
-                                            George Boole
-                                        </span>{" "}
-                                        (1815-1864) là người đầu tiên phát triển
-                                        hệ thống logic mệnh đề hiện đại với việc
-                                        sáng tạo ra Đại số Boole. Trong cuốn
-                                        sách {'"'}
-                                        The Mathematical Analysis of Logic{
-                                            '"'
-                                        }{" "}
-                                        (1847) và {'"'}An Investigation of the
-                                        Laws of Thought
-                                        {'"'} (1854), Boole đã hệ thống hóa cách
-                                        thức xử lý các phát biểu toán học thông
-                                        qua các phép toán đại số như AND, OR, và
-                                        NOT, tương ứng với các mệnh đề logic.
-                                        Đại số Boole cho phép biểu diễn các mệnh
-                                        đề bằng các giá trị đúng (1) hoặc sai
-                                        (0), từ đó thực hiện các phép toán logic
-                                        để kiểm tra tính hợp lý của các mệnh đề.
-                                    </div>
-                                </div>
+                                <HistoricalFigureInlineFact
+                                    image={<Image src={GeogreBoole} alt="" />}
+                                    historicalFigureName="George Boole"
+                                >
+                                    (1815-1864) là người đầu tiên phát triển hệ
+                                    thống logic mệnh đề hiện đại với việc sáng
+                                    tạo ra Đại số Boole. Trong cuốn sách {'"'}
+                                    The Mathematical Analysis of Logic{'"'}{" "}
+                                    (1847) và {'"'}An Investigation of the Laws
+                                    of Thought
+                                    {'"'} (1854), Boole đã hệ thống hóa cách
+                                    thức xử lý các phát biểu toán học thông qua
+                                    các phép toán đại số như AND, OR, và NOT,
+                                    tương ứng với các mệnh đề logic. Đại số
+                                    Boole cho phép biểu diễn các mệnh đề bằng
+                                    các giá trị đúng (1) hoặc sai (0), từ đó
+                                    thực hiện các phép toán logic để kiểm tra
+                                    tính hợp lý của các mệnh đề.
+                                </HistoricalFigureInlineFact>
                             </ExtraInlineFact>{" "}
                             phát triển logic đại số, nơi ông áp dụng các phép
                             toán đại số vào lý thuyết logic. Ông giới thiệu các
@@ -263,53 +258,48 @@ export default function MenhDe() {
                         </div>
                     </div>
                     <div className={`${generalClassName}`}>
-                        <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base my-2">
+                        <div className={`${generalHeaderClassName}`}>
                             Logic hình thức (Frege và Peano)
                         </div>
                         <div className={`${generalContentClassName}`}>
                             Vào cuối thế kỷ 19, logic học được nâng cấp mạnh mẽ
                             nhờ những đóng góp của{" "}
                             <ExtraInlineFact buttonContent="Gottlob Frege">
-                                <div className="flex md:flex-row flex-col gap-2 md:items-start items-center">
-                                    <div className="md:min-w-[225px] md:max-w-none max-w-[200px]">
+                                <HistoricalFigureInlineFact
+                                    image={
                                         <Image
                                             src={GottlobFrege}
                                             alt=""
                                             className="w-full h-auto"
                                         />
-                                    </div>
-                                    <div>
-                                        <span className="font-[475]">
-                                            Gottlob Frege
-                                        </span>{" "}
-                                        (1848-1925) là một triết gia và nhà toán
-                                        học người Đức, được xem là cha đẻ của{" "}
-                                        <span className="font-[475]">
-                                            logic học hiện đại
-                                        </span>
-                                        . Ông phát triển hệ thống lý thuyết
-                                        logic formal, phân biệt giữa ngữ nghĩa
-                                        và cú pháp trong logic. Frege sáng tạo
-                                        ra hệ thống ký hiệu logic để mô tả các
-                                        mệnh đề và suy luận. Tác phẩm nổi bật
-                                        của ông là{" "}
-                                        <span className="font-[475]">
-                                            {'"'}Begriffsschrift
-                                        </span>
+                                    }
+                                    historicalFigureName="Gottlob Frege"
+                                >
+                                    (1848-1925) là một triết gia và nhà toán học
+                                    người Đức, được xem là cha đẻ của{" "}
+                                    <span className="font-[475]">
+                                        logic học hiện đại
+                                    </span>
+                                    . Ông phát triển hệ thống lý thuyết logic
+                                    formal, phân biệt giữa ngữ nghĩa và cú pháp
+                                    trong logic. Frege sáng tạo ra hệ thống ký
+                                    hiệu logic để mô tả các mệnh đề và suy luận.
+                                    Tác phẩm nổi bật của ông là{" "}
+                                    <span className="font-[475]">
+                                        {'"'}Begriffsschrift
+                                    </span>
+                                    {'"'}
+                                    (1879) và{" "}
+                                    <span className="font-[475]">
+                                        {'"'}Die Grundlagen der Arithmetik
                                         {'"'}
-                                        (1879) và{" "}
-                                        <span className="font-[475]">
-                                            {'"'}Die Grundlagen der Arithmetik
-                                            {'"'}
-                                        </span>
-                                        (1884), trong đó ông đề xuất rằng toán
-                                        học có thể được xây dựng từ logic cơ
-                                        bản. Công trình của Frege ảnh hưởng sâu
-                                        rộng đến các triết gia và nhà toán học
-                                        như Bertrand Russell và Ludwig
-                                        Wittgenstein.
-                                    </div>
-                                </div>
+                                    </span>
+                                    (1884), trong đó ông đề xuất rằng toán học
+                                    có thể được xây dựng từ logic cơ bản. Công
+                                    trình của Frege ảnh hưởng sâu rộng đến các
+                                    triết gia và nhà toán học như Bertrand
+                                    Russell và Ludwig Wittgenstein.
+                                </HistoricalFigureInlineFact>
                             </ExtraInlineFact>
                             , một nhà toán học và logic học người Đức. Frege
                             phát triển lý thuyết về logic toán học, đồng thời
@@ -509,7 +499,7 @@ export default function MenhDe() {
                         {timelineStar.TheKy20(1)}
                     </div>
                     <div className={`${generalClassName}`}>
-                        <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base my-2">
+                        <div className={`${generalHeaderClassName}`}>
                             Sự phát hiện mâu thuẫn trong hệ thống logic của
                             Frege
                         </div>
@@ -518,47 +508,39 @@ export default function MenhDe() {
                             là khi ông phát hiện ra một mâu thuẫn nghiêm trọng
                             trong hệ thống logic của mình, được nhà toán học{" "}
                             <ExtraInlineFact buttonContent="Bertrand Russell">
-                                <div className="flex md:flex-row flex-col gap-2 md:items-start items-center">
-                                    <div className="md:min-w-[225px] md:max-w-none max-w-[200px]">
-                                        <Image
-                                            src={BertrandRussell}
-                                            alt=""
-                                            className="w-full h-auto"
-                                        />
-                                    </div>
-                                    <div>
-                                        <span className="font-[475]">
-                                            Bertrand Russell
-                                        </span>{" "}
-                                        (1872-1970) là một triết gia, toán học
-                                        gia, và nhà logic học người Anh, nổi
-                                        tiếng với công trình trong triết học
-                                        phân tích và lý thuyết logic. Ông là
-                                        đồng sáng lập{" "}
-                                        <span className="font-[475]">
-                                            Trường phái
-                                        </span>
-                                        logic học phân tích và đóng góp quan
-                                        trọng vào sự phát triển của{" "}
-                                        <span className="font-[475]">
-                                            logic toán học
-                                        </span>
-                                        . Russell cùng
-                                        <span className="font-[475]">
-                                            Alfred North Whitehead
-                                        </span>{" "}
-                                        viết tác phẩm{" "}
-                                        <span className="font-[475]">
-                                            Principia Mathematica
-                                        </span>{" "}
-                                        (1910-1913), một công trình nền tảng về
-                                        logic và toán học. Ông cũng nổi tiếng
-                                        với các quan điểm về triết học đạo đức,
-                                        chính trị và xã hội. Russell giành giải
-                                        Nobel Văn học năm 1950 vì những đóng góp
-                                        vào tư tưởng triết học.
-                                    </div>
-                                </div>
+                                <HistoricalFigureInlineFact
+                                    image={
+                                        <Image src={BertrandRussell} alt="" />
+                                    }
+                                    historicalFigureName="Bertrand Russell"
+                                >
+                                    (1872-1970) là một triết gia, toán học gia,
+                                    và nhà logic học người Anh, nổi tiếng với
+                                    công trình trong triết học phân tích và lý
+                                    thuyết logic. Ông là đồng sáng lập{" "}
+                                    <span className="font-[475]">
+                                        Trường phái
+                                    </span>
+                                    logic học phân tích và đóng góp quan trọng
+                                    vào sự phát triển của{" "}
+                                    <span className="font-[475]">
+                                        logic toán học
+                                    </span>
+                                    . Russell cùng
+                                    <span className="font-[475]">
+                                        Alfred North Whitehead
+                                    </span>{" "}
+                                    viết tác phẩm{" "}
+                                    <span className="font-[475]">
+                                        Principia Mathematica
+                                    </span>{" "}
+                                    (1910-1913), một công trình nền tảng về
+                                    logic và toán học. Ông cũng nổi tiếng với
+                                    các quan điểm về triết học đạo đức, chính
+                                    trị và xã hội. Russell giành giải Nobel Văn
+                                    học năm 1950 vì những đóng góp vào tư tưởng
+                                    triết học.
+                                </HistoricalFigureInlineFact>
                             </ExtraInlineFact>{" "}
                             chỉ ra trong một lá thư vào năm 1902.
                             <br />
@@ -596,7 +578,7 @@ export default function MenhDe() {
                             trong những thất bại lớn nhất trong sự nghiệp của
                             ông.
                         </div>
-                        <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base my-2">
+                        <div className={`${generalHeaderClassName}`}>
                             Logic tính toán và thế kỷ 20
                         </div>
                         <div className={`${generalContentClassName}`}>
@@ -636,7 +618,7 @@ export default function MenhDe() {
                             {timelineStar.NgayNay}
                         </div>
                         <div className={`${generalClassName}`}>
-                            <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base my-2">
+                            <div className={`${generalHeaderClassName}`}>
                                 Mệnh Đề Trong Lập Trình, Trí Tuệ Nhân Tạo và Lý
                                 Thuyết Máy Tính
                             </div>

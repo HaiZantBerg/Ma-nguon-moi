@@ -11,10 +11,13 @@ export const gridDisplay = [
 ];
 
 export const generalClassName =
-    "md1:ml-[45px] ml-[30px] lg3:text-lg sm:text-base text-[0.9rem] leading-[1.3rem] md1:mr-2 mr-5";
+    "md1:ml-[45px] md:ml-[30px] ml-[20px] lg3:text-lg sm:text-base text-[0.9rem] leading-[1.3rem] md1:mr-2 mr-5";
 export const generalContentClassName =
-    "md1:text-lg sm:text-base text-[0.9rem] leading-[1.3rem] pl-4 text-pretty";
-export const generalInstanceClassName = "sm:pl-[24px] pl-[12px] text-pretty";
+    "md1:text-lg sm:text-base text-[0.9rem] leading-[1.3rem] md1:pl-4 md:pl-3 pl-2 text-pretty";
+export const generalInstanceClassName =
+    "md1:pl-[24px] md:pl-[18px] pl-[12px] text-pretty";
+export const generalHeaderClassName =
+    "font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base my-2";
 
 export const timelineStar = {
     ThoiCoDai: (
@@ -288,7 +291,7 @@ export const timelineStar = {
                 transform="translate(0 24.8)"
                 fontSize={20}
                 fill="#231f20"
-                fontFamily="Algerian"
+                className="font-['Algerian']"
             >
                 cuoi the ky 19 -
             </text>
@@ -379,7 +382,7 @@ export const timelineStar = {
                 transform="translate(0 24.8)"
                 fontSize={20}
                 fill="#231f20"
-                fontFamily="Algerian"
+                className="font-['Algerian']"
             >
                 dau the ky 20
             </text>
@@ -474,7 +477,7 @@ export const timelineStar = {
                     transform="translate(19.03 24.8)"
                     fontSize={20}
                     fill="#231f20"
-                    fontFamily="Algerian"
+                    className="font-['Algerian']"
                 >
                     The ky 20
                 </text>
@@ -717,7 +720,7 @@ export const timelineStar = {
                 transform="translate(18.56 25.59)"
                 fontSize={20}
                 fill="#231f20"
-                fontFamily="Algerian"
+                className="font-['Algerian']"
             >
                 Ngay nay
             </text>
@@ -732,6 +735,148 @@ export const timelineStar = {
                     fill="url(#linear-gradient119)"
                 />
             </g>
+        </svg>
+    ),
+    Khoang2000TCN: (
+        <svg
+            id="Layer_3"
+            data-name="Layer 3"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 243.23 36.53"
+            key="120"
+            className="h-full relative z-10"
+        >
+            <defs>
+                <linearGradient
+                    id="linear-gradient120"
+                    x1="-195.11"
+                    y1="753.43"
+                    x2="-201.75"
+                    y2="753.43"
+                    gradientTransform="matrix(-1, 0, 0, 1, -147.13, -393.45)"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop offset="0.2" stopColor="#f0c6d1" />
+                    <stop offset="0.88" stopColor="#c4bfdf" />
+                </linearGradient>
+            </defs>
+            <rect x="0.3" width="13.9" height="36.53" fill="none" />
+            <text
+                transform="translate(19.03 24.8)"
+                fontSize={20}
+                fill="#231f20"
+                className="font-['Algerian']"
+            >
+                Khoang 2000 nam tcn
+            </text>
+            <path
+                d="M107.22,348.56l.13-.08s.79-1.07,1.28-1,.33.52.33.52.05-.44-.21-.57S107.94,347.53,107.22,348.56Z"
+                transform="translate(-43.86 -341.71)"
+                fill="#231f20"
+            />
+            <path
+                d="M109,347a4.43,4.43,0,0,0,3-.89,31.77,31.77,0,0,0-3,4.09c-.33.73.58-2.78,0-3s-1.56.89-1.91,1.39c0,0,.3-.85.54-1.59a.39.39,0,0,1,.48-.31C108.28,346.68,108.4,346.79,109,347Z"
+                transform="translate(-43.86 -341.71)"
+                fill="#231f20"
+            />
+            <path
+                d="M109.17,350.51a41.57,41.57,0,0,1,2.85-3.9v.12a34.31,34.31,0,0,0-2.74,3.82Z"
+                transform="translate(-43.86 -341.71)"
+                fill="#231f20"
+            />
+            <g id="Layer_1" data-name="Layer 1">
+                <path
+                    d="M58,359.9s-7-1.36-7-9.53c0,8.17-6.7,9.53-6.7,9.53h-.23S51,361.28,51,369.58a9.37,9.37,0,0,1,7.18-9.68"
+                    transform="translate(-43.86 -341.71)"
+                    stroke="#231f20"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="0.41"
+                    fill="url(#linear-gradient120)"
+                />
+            </g>
+            <path
+                d="M222,349.19l-.21.79a3.54,3.54,0,0,1-1.16,1.36,6.13,6.13,0,0,1-1.81.59,6,6,0,0,1-1.81-.59,2.36,2.36,0,0,1-.64-.56,2.7,2.7,0,0,0,.78.76,6.47,6.47,0,0,0,1.81.59,6.37,6.37,0,0,0,1.81-.59,3.48,3.48,0,0,0,1.17-1.36l.2-.69Z"
+                transform="translate(-40.86 -341.71)"
+                fill="#231f20"
+            />
+            <path
+                d="M218.62,351.64a6,6,0,0,1-1.81-.59,3.48,3.48,0,0,1-1.17-1.36l-.25-.87a5.06,5.06,0,0,0,1.35,1.41,7.63,7.63,0,0,0,1.88.66,7.61,7.61,0,0,0,1.87-.66,5.16,5.16,0,0,0,1.36-1.41l-.26.87a3.38,3.38,0,0,1-1.16,1.36A6.13,6.13,0,0,1,218.62,351.64Z"
+                transform="translate(-40.86 -341.71)"
+                fill="#231f20"
+            />
+        </svg>
+    ),
+    Khoang300TCN: (
+        <svg
+            id="Layer_3"
+            data-name="Layer 3"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 238.23 36.53"
+            key="121"
+            className="h-full relative z-10"
+        >
+            <defs>
+                <linearGradient
+                    id="linear-gradient121"
+                    x1="-195.11"
+                    y1="753.43"
+                    x2="-201.75"
+                    y2="753.43"
+                    gradientTransform="matrix(-1, 0, 0, 1, -147.13, -393.45)"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop offset="0.2" stopColor="#a5ce87" />
+                    <stop offset="0.88" stopColor="#23b469" />
+                </linearGradient>
+            </defs>
+            <rect x="0.3" width="13.9" height="36.53" fill="none" />
+            <text
+                transform="translate(19.03 24.8)"
+                fontSize={20}
+                fill="#231f20"
+                className="font-['Algerian']"
+            >
+                Khoang 300 nam tcn
+            </text>
+            <path
+                d="M107.22,348.56l.13-.08s.79-1.07,1.28-1,.33.52.33.52.05-.44-.21-.57S107.94,347.53,107.22,348.56Z"
+                transform="translate(-43.86 -341.71)"
+                fill="#231f20"
+            />
+            <path
+                d="M109,347a4.43,4.43,0,0,0,3-.89,31.77,31.77,0,0,0-3,4.09c-.33.73.58-2.78,0-3s-1.56.89-1.91,1.39c0,0,.3-.85.54-1.59a.39.39,0,0,1,.48-.31C108.28,346.68,108.4,346.79,109,347Z"
+                transform="translate(-43.86 -341.71)"
+                fill="#231f20"
+            />
+            <path
+                d="M109.17,350.51a41.57,41.57,0,0,1,2.85-3.9v.12a34.31,34.31,0,0,0-2.74,3.82Z"
+                transform="translate(-43.86 -341.71)"
+                fill="#231f20"
+            />
+            <g id="Layer_1" data-name="Layer 1">
+                <path
+                    d="M58,359.9s-7-1.36-7-9.53c0,8.17-6.7,9.53-6.7,9.53h-.23S51,361.28,51,369.58a9.37,9.37,0,0,1,7.18-9.68"
+                    transform="translate(-43.86 -341.71)"
+                    stroke="#231f20"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="0.41"
+                    fill="url(#linear-gradient121)"
+                />
+            </g>
+            <path
+                d="M222,349.19l-.21.79a3.54,3.54,0,0,1-1.16,1.36,6.13,6.13,0,0,1-1.81.59,6,6,0,0,1-1.81-.59,2.36,2.36,0,0,1-.64-.56,2.7,2.7,0,0,0,.78.76,6.47,6.47,0,0,0,1.81.59,6.37,6.37,0,0,0,1.81-.59,3.48,3.48,0,0,0,1.17-1.36l.2-.69Z"
+                transform="translate(-40.86 -341.71)"
+                fill="#231f20"
+            />
+            <path
+                d="M218.62,351.64a6,6,0,0,1-1.81-.59,3.48,3.48,0,0,1-1.17-1.36l-.25-.87a5.06,5.06,0,0,0,1.35,1.41,7.63,7.63,0,0,0,1.88.66,7.61,7.61,0,0,0,1.87-.66,5.16,5.16,0,0,0,1.36-1.41l-.26.87a3.38,3.38,0,0,1-1.16,1.36A6.13,6.13,0,0,1,218.62,351.64Z"
+                transform="translate(-40.86 -341.71)"
+                fill="#231f20"
+            />
         </svg>
     ),
 };

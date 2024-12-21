@@ -2,7 +2,7 @@
 
 import { useAnimate } from "motion/react";
 import React, { useRef, useState } from "react";
-import { extraBodyVariants } from "./static";
+import { extraBodyVariants, extraPaddingLeft } from "./static";
 
 export default function ExtraQuiz({
     children,
@@ -98,7 +98,7 @@ export default function ExtraQuiz({
         <div
             ref={scope}
             className={`${containerClassName ?? containerClassName} ${
-                flip ? "md1:mr-0 mr-5 my-4 flex" : "md1:mr-0 mr-5 my-4"
+                flip ? "md1:mr-0 mr-2 my-4 flex" : "md1:mr-0 mr-2 my-4"
             }`}
         >
             <button
@@ -143,7 +143,7 @@ export default function ExtraQuiz({
                 />
             )}
             <div
-                className={`h-0 absolute left-0 md1:pl-[81px] pl-[30px] md1:pr-2 pr-5 overflow-hidden w-full z-20 flex ${
+                className={`h-0 absolute left-0 ${extraPaddingLeft} md1:pr-2 pr-7 overflow-hidden w-full z-20 flex ${
                     flip ? "-translate-y-full items-end" : ""
                 }`}
                 id="extraBody"
@@ -152,9 +152,9 @@ export default function ExtraQuiz({
                 <div
                     className={`${extraBodyVariants[extraBodyVariant]} ${extraBodyClassName} rounded-[0px_15px_15px_15px] md1:pb-8 pt-3 pb-6 md1:px-10 px-6 border border-[#2f730c] bg-[#d3ffbd] text-[#327e0c]`}
                 >
-                    <div>{children}</div>
+                    <div>{openExtra && <>{children}</>}</div>
                     <div className="h-0 overflow-hidden" id="explaination">
-                        {explaination}
+                        {openExtra && <>{explaination}</>}
                     </div>
                     {explaination && (
                         <div

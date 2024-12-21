@@ -2,7 +2,7 @@
 
 import { useAnimate } from "motion/react";
 import React, { useRef, useState } from "react";
-import { extraBodyVariants } from "./static";
+import { extraBodyVariants, extraPaddingLeft } from "./static";
 
 export default function ExtraInlineFact({
     children,
@@ -129,7 +129,7 @@ export default function ExtraInlineFact({
                 />
             )}
             <div
-                className={`h-0 absolute left-0 md1:pl-[81px] pl-[30px] md1:pr-2 pr-5 overflow-hidden w-full z-20 flex ${
+                className={`h-0 absolute left-0 ${extraPaddingLeft} md1:pr-2 pr-5 overflow-hidden w-full z-20 flex ${
                     flip ? "-translate-y-full items-end" : ""
                 }`}
                 id="extraBody"
@@ -155,6 +155,28 @@ export default function ExtraInlineFact({
                         />
                     </>
                 )}
+            </div>
+        </div>
+    );
+}
+
+export function HistoricalFigureInlineFact({
+    children,
+    image,
+    historicalFigureName,
+}: {
+    children: React.ReactNode;
+    image: React.JSX.Element;
+    historicalFigureName?: string;
+}) {
+    return (
+        <div className="flex md:flex-row flex-col gap-2 md:items-start items-center">
+            <div className="md:min-w-[225px] md:max-w-[250px] max-w-[200px] *:w-full *:h-auto">
+                {image}
+            </div>
+            <div>
+                <span className="font-[475]">{historicalFigureName}</span>{" "}
+                {children}
             </div>
         </div>
     );

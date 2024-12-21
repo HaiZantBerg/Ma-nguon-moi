@@ -12,12 +12,21 @@ import {
     generalClassName,
     generalContentClassName,
     generalInstanceClassName,
+    generalHeaderClassName,
 } from "../static/lessonsStatic";
 import ExtraQuiz from "../Extra/ExtraQuiz";
 import ExtraAloneFact from "../Extra/ExtraAloneFact";
-import ExtraInlineFact from "../Extra/ExtraInlineFact";
+import ExtraInlineFact, {
+    HistoricalFigureInlineFact,
+} from "../Extra/ExtraInlineFact";
 import ExtraFunFact from "../Extra/ExtraFunFact";
 import ExtraLearnMore from "../Extra/ExtraLearnMore";
+import GottlobFrege from "@/public/Image/gottlobfrege.png";
+import GeorgCantor from "@/public/Image/georgcantor.png";
+import Bertrandrussell from "@/public/Image/bertrandrussell.png";
+import Brahmagupta from "@/public/Image/brahmagupta.png";
+import AbrahamFraenkel from "@/public/Image/abarahamfraenkel.png";
+import ErnstZermelo from "@/public/Image/ernstzermelo.png";
 
 const playVideo = signal([true]);
 
@@ -56,6 +65,7 @@ export default function TapHop() {
                                 muted
                                 width="100%"
                                 height="100%"
+                                type="video/mp4"
                             />
                         </div>
                     </div>
@@ -123,9 +133,7 @@ export default function TapHop() {
                     </div>
                 </ExtraAloneFact>
                 <div className={`${generalClassName}`}>
-                    <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base mb-2">
-                        Cơ số
-                    </div>
+                    <div className={`${generalHeaderClassName}`}>Cơ số</div>
                     <div className={`${generalContentClassName}`}>
                         Để hiểu được khái niệm gây khá nhiều bối rối này, chúng
                         ta bàn một chút về cách đếm hiện nay. Với chúng ta, mỗi
@@ -299,7 +307,7 @@ export default function TapHop() {
                     </div>
                 </div>
                 <div className={`${generalClassName}`}>
-                    <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base my-2">
+                    <div className={`${generalHeaderClassName}`}>
                         Sự ra đời của số 0 và số âm
                     </div>
                     <div className={`${generalContentClassName}`}>
@@ -367,14 +375,20 @@ export default function TapHop() {
                             buttonContent="Brahmagupta"
                             extraBodyVariant="content"
                         >
-                            Nhà toán học Ấn Độ Brahmagupta (598 - 668 CE) đã
-                            phát minh ra các quy tắc cộng, trừ và nhân với số 0
-                            và số âm trong quyển sách Brahma Sphuta Siddhanta.
-                            Ông cũng là một nhà thiên văn học và thực hiện nhiều
-                            khám phá khác trong toán học. Thật không may, các
-                            bài viết của anh ấy không chứa bất kỳ bằng chứng
-                            nào, vì vậy chúng tôi không thể biết được kết quả
-                            của anh ấy như thế nào.
+                            <HistoricalFigureInlineFact
+                                image={<Image src={Brahmagupta} alt="" />}
+                            >
+                                Nhà toán học Ấn Độ{" "}
+                                <span className="font-[475]">Brahmagupta</span>{" "}
+                                (598 - 668 CE) đã phát minh ra các quy tắc cộng,
+                                trừ và nhân với số 0 và số âm trong quyển sách
+                                Brahma Sphuta Siddhanta. Ông cũng là một nhà
+                                thiên văn học và thực hiện nhiều khám phá khác
+                                trong toán học. Thật không may, các bài viết của
+                                anh ấy không chứa bất kỳ bằng chứng nào, vì vậy
+                                chúng tôi không thể biết được kết quả của anh ấy
+                                như thế nào.
+                            </HistoricalFigureInlineFact>
                         </ExtraInlineFact>
                         . Và ông cũng là người đầu tiên nêu lên các quy tắc tính
                         toán trong hệ ghi số có số 0 trong quyển sách{" "}
@@ -569,7 +583,7 @@ export default function TapHop() {
                     </div>
                 </div>
                 <div className={`${generalClassName}`}>
-                    <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base my-2">
+                    <div className={`${generalHeaderClassName}`}>
                         Sự xuất hiện của số hữu tỉ
                     </div>
                     <div className={`${generalContentClassName}`}>
@@ -681,13 +695,17 @@ export default function TapHop() {
                             buttonContent="Georg Cantor"
                             extraBodyVariant="content"
                         >
-                            <span className="font-[475]">Georg Cantor </span>{" "}
-                            (1845-1918) là nhà toán học người Đức, sáng lập lý
-                            thuyết tập hợp hiện đại. Ông phát hiện ra tập hợp vô
-                            hạn có thể có kích thước khác nhau và giới thiệu
-                            khái niệm về số cardinal và số siêu hạn, mở đường
-                            cho nghiên cứu về tập hợp vô hạn và lý thuyết tập
-                            hợp.
+                            <HistoricalFigureInlineFact
+                                image={<Image src={GeorgCantor} alt="" />}
+                                historicalFigureName="Georg Cantor"
+                            >
+                                (1845-1918) là nhà toán học người Đức, sáng lập
+                                lý thuyết tập hợp hiện đại. Ông phát hiện ra tập
+                                hợp vô hạn có thể có kích thước khác nhau và
+                                giới thiệu khái niệm về số cardinal và số siêu
+                                hạn, mở đường cho nghiên cứu về tập hợp vô hạn
+                                và lý thuyết tập hợp.
+                            </HistoricalFigureInlineFact>
                         </ExtraInlineFact>{" "}
                         công bố năm 1874, {'"'}Über eine Eigenschaft des
                         Inbegriffes aller reellen algebraischen Zahlen{'"'} (
@@ -809,7 +827,7 @@ export default function TapHop() {
                     </div>
                 </div>
                 <div className={`${generalClassName}`}>
-                    <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base my-2">
+                    <div className={`${generalHeaderClassName}`}>
                         Gottlob Frege và Lý thuyết tập hợp
                     </div>
                     <div className={`${generalContentClassName}`}>
@@ -817,13 +835,18 @@ export default function TapHop() {
                             buttonContent="Gottlob Frege"
                             extraBodyVariant="content"
                         >
-                            Gottlob Frege (1848 - 1925) được xem là người sáng
-                            lập ra logic học hiện đại. Trong công trình nổi
-                            tiếng của ông, {'"'}Begriffsschrift{'"'} (1879),
-                            Frege đã đưa ra một hệ thống logic đại số để hình
-                            dung và mô tả các khái niệm toán học. Ông đã phát
-                            triển phép tính tâm lý học (predicate calculus), một
-                            nền tảng cơ bản của logic toán học hiện đại.
+                            <HistoricalFigureInlineFact
+                                image={<Image src={GottlobFrege} alt="" />}
+                                historicalFigureName="Gottlob Frege "
+                            >
+                                (1848 - 1925) được xem là người sáng lập ra
+                                logic học hiện đại. Trong công trình nổi tiếng
+                                của ông, {'"'}Begriffsschrift{'"'} (1879), Frege
+                                đã đưa ra một hệ thống logic đại số để hình dung
+                                và mô tả các khái niệm toán học. Ông đã phát
+                                triển phép tính tâm lý học (predicate calculus),
+                                một nền tảng cơ bản của logic toán học hiện đại.
+                            </HistoricalFigureInlineFact>
                         </ExtraInlineFact>{" "}
                         sử dụng khái niệm {'"'}tập hợp{'"'} trong lý thuyết của
                         ông, đặc biệt là trong cách ông định nghĩa khái niệm.
@@ -851,12 +874,17 @@ export default function TapHop() {
                             buttonContent="Bertrand Russell"
                             extraBodyVariant="content"
                         >
-                            Bertrand Russell (1872-1970) là nhà triết học, toán
-                            học và logic học người Anh, nổi tiếng với nghịch lý
-                            Russell trong lý thuyết tập hợp. Ông cùng Whitehead
-                            viết Principia Mathematica, đặt nền tảng cho toán
-                            học hiện đại qua logic học. Russell cũng là một nhà
-                            hoạt động xã hội, nhận Giải Nobel Văn học 1950.
+                            <HistoricalFigureInlineFact
+                                image={<Image src={Bertrandrussell} alt="" />}
+                                historicalFigureName="Bertrand Russell"
+                            >
+                                (1872-1970) là nhà triết học, toán học và logic
+                                học người Anh, nổi tiếng với nghịch lý Russell
+                                trong lý thuyết tập hợp. Ông cùng Whitehead viết
+                                Principia Mathematica, đặt nền tảng cho toán học
+                                hiện đại qua logic học. Russell cũng là một nhà
+                                hoạt động xã hội, nhận Giải Nobel Văn học 1950.
+                            </HistoricalFigureInlineFact>
                         </ExtraInlineFact>{" "}
                         phát hiện ra{" "}
                         <ExtraInlineFact
@@ -907,26 +935,44 @@ export default function TapHop() {
                             tất cả các tập hợp không phải là phần tử của chính
                             nó
                         </span>
-                        . Và để giải quyết vấn đề nghịch lý này thì nhà toán học
+                        . Và để giải quyết vấn đề nghịch lý này thì nhà toán học{" "}
                         <ExtraInlineFact
-                            buttonContent="Zermelo và Fraenkel"
+                            buttonContent="Zermelo"
                             extraBodyVariant="content"
                         >
-                            Ernst Zermelo là một nhà toán học người Đức nổi
-                            tiếng với các đóng góp trong lý thuyết tập hợp, đặc
-                            biệt là việc phát triển Axiom of Choice (Axiom lựa
-                            chọn), một tiên đề quan trọng trong lý thuyết tập
-                            hợp hiện đại. Ông cũng là người đề xuất hệ thống
-                            tiên đề Zermelo-Fraenkel để xây dựng lý thuyết tập
-                            hợp vững chắc, với Zermelo-Fraenkel + Axioms of
-                            Choice (ZFC) là hệ thống tiên đề phổ biến nhất hiện
-                            nay trong toán học. <br /> <br /> Abraham Fraenkel
-                            là một nhà toán học người Đức, nổi tiếng với việc
-                            phát triển hệ thống tiên đề Zermelo-Fraenkel cho lý
-                            thuyết tập hợp, trong đó các tiên đề này giúp xây
-                            dựng nền tảng toán học vững chắc, đồng thời giải
-                            quyết một số vấn đề trong lý thuyết tập hợp mà
-                            Zermelo chưa hoàn chỉnh.
+                            <HistoricalFigureInlineFact
+                                image={<Image src={ErnstZermelo} alt="" />}
+                                historicalFigureName="Ernst Zermelo"
+                            >
+                                (1871 - 1953) là một nhà toán học người Đức nổi
+                                tiếng với các đóng góp trong lý thuyết tập hợp,
+                                đặc biệt là việc phát triển Axiom of Choice
+                                (Axiom lựa chọn), một tiên đề quan trọng trong
+                                lý thuyết tập hợp hiện đại. Ông cũng là người đề
+                                xuất hệ thống tiên đề Zermelo-Fraenkel để xây
+                                dựng lý thuyết tập hợp vững chắc, với
+                                Zermelo-Fraenkel + Axioms of Choice (ZFC) là hệ
+                                thống tiên đề phổ biến nhất hiện nay trong toán
+                                học.
+                            </HistoricalFigureInlineFact>
+                        </ExtraInlineFact>{" "}
+                        và{" "}
+                        <ExtraInlineFact
+                            buttonContent="Fraenkel"
+                            extraBodyVariant="content"
+                        >
+                            <HistoricalFigureInlineFact
+                                image={<Image src={AbrahamFraenkel} alt="" />}
+                                historicalFigureName="Abraham Fraenkel"
+                            >
+                                (1891 - 1965) là một nhà toán học người Đức, nổi
+                                tiếng với việc phát triển hệ thống tiên đề
+                                Zermelo-Fraenkel cho lý thuyết tập hợp, trong đó
+                                các tiên đề này giúp xây dựng nền tảng toán học
+                                vững chắc, đồng thời giải quyết một số vấn đề
+                                trong lý thuyết tập hợp mà Zermelo chưa hoàn
+                                chỉnh.
+                            </HistoricalFigureInlineFact>
                         </ExtraInlineFact>{" "}
                         đã xây dựng{" "}
                         <ExtraInlineFact
@@ -971,7 +1017,7 @@ export default function TapHop() {
                 </div>
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>
-                        <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base my-2">
+                        <div className={`${generalHeaderClassName}`}>
                             Lý thuyết tập hợp và các phép toán nâng cao
                         </div>
                         <div className={`${generalContentClassName}`}>

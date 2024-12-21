@@ -4,18 +4,23 @@ import {
     generalClassName,
     generalContentClassName,
     timelineStar,
-    // generalInstanceClassName,
+    generalHeaderClassName,
 } from "../static/lessonsStatic";
 import Image from "next/image";
 import luongGiacImage1 from "@/public/Image/luonggiacimage1.png";
 import luongGiacImage2 from "@/public/Image/luonggiacimage2.png";
-import ExtraInlineFact from "../Extra/ExtraInlineFact";
+import ExtraInlineFact, {
+    HistoricalFigureInlineFact,
+} from "../Extra/ExtraInlineFact";
 import ExtraQuiz from "../Extra/ExtraQuiz";
 import Link from "next/link";
 import ReactPlayer from "react-player";
 import luongGiacRightAngle from "@/public/Image/luonggiacrightangle.png";
 import luongGiacEratosthenes from "@/public/Image/luonggiaceratosthenes.png";
 import luongGiacGieng from "@/public/Image/luonggiacgieng.png";
+import xayDungThienVanHoc from "@/public/Image/xaydungthienvanhoc.png";
+import banDoSaoAiCap from "@/public/Image/bandosaoaicap.png";
+import Hipparchus from "@/public/Image/hipparchus.png";
 
 export default function LuongGiac() {
     return (
@@ -34,9 +39,7 @@ export default function LuongGiac() {
                     toán học đầu tiên như Thales, Pythagoras và Archimedes,
                     những cái tên cho đến ngày nay vẫn còn gây ám ảnh trong các
                     trang sách giáo khoa của chúng ta.
-                    <div className="font-semibold md1:text-[1.25rem] md1:leading-[1.325rem] text-base my-2">
-                        Đo đạc
-                    </div>
+                    <div className={`${generalHeaderClassName}`}>Đo đạc</div>
                     <div className={`${generalContentClassName}`}>
                         Trước khi trở thành mối bận tâm của các nhà tư tưởng vĩ
                         đại, thực địa mới là nơi hình học được vinh danh. Từ
@@ -148,7 +151,7 @@ export default function LuongGiac() {
                                             href="https://www.geogebra.org/calculator/subgghfq"
                                             className="underline font-[475]"
                                         >
-                                            https://www.geogebra.org/calculator/subgghfq
+                                            geogebra.org
                                         </Link>
                                     </div>
                                     <div className="lg3:flex-[1_0_30%] flex-none lg3:w-auto md:w-[50%] w-[70%] flex items-end">
@@ -230,7 +233,7 @@ export default function LuongGiac() {
                             phần năm mươi tổng chu vi Trái đất. Đương nhiên là
                             sau đó ông ta lại nhờ cậy đến các nhà trắc địa bộ
                             hành tới để làm công việc đo đạc.
-                            <div className="grid lgmi:grid-cols-2 grid-cols-1 lgmi:grid-rows-[300px_auto] grid-rows-[300px_auto_300px_auto] my-3">
+                            <div className="grid lgmi:grid-cols-2 grid-cols-1 lgmi:grid-rows-[300px_auto] grid-rows-[300px_300px_auto] my-3">
                                 <div className="lgmi:col-[1/2] row-[1/2] lgmi:row-[1/2] justify-self-center p-2">
                                     <Image
                                         src={luongGiacEratosthenes}
@@ -238,24 +241,30 @@ export default function LuongGiac() {
                                         className="h-full w-auto"
                                     />
                                 </div>
-                                <div className="lgmi:col-[2/-1] row-[3/4] lgmi:row-[1/2] justify-self-center p-2">
+                                <div className="lgmi:col-[2/-1] row-[2/3] lgmi:row-[1/2] justify-self-center p-2">
                                     <Image
                                         src={luongGiacGieng}
                                         alt=""
                                         className="h-full w-auto"
                                     />
                                 </div>
-                                <div className="lgmi:col-[1/2] row-[2/3] lgmi:row-[2/-1] pt-2 text-center lgmi:px-1 px-5 lgmi:pb-0 pb-5">
-                                    <span className="font-[475]">Groma</span> -
-                                    Công cụ khảo sát đất đai, được phát minh vào
-                                    thế kỷ thứ II - TK I TCN bởi Ai Cập, và phổ
-                                    biến tại Hy Lạp, La Mã
-                                </div>
-                                <div className="lgmi:col-[2/-1] row-[4/-1] lgmi:row-[2/-1] pt-2 text-center lgmi:px-1 px-5">
-                                    Cách sử dụng groma trong khảo sát địa chính
+                                <div className="lgmi:col-[1/-1] row-[3/-1] lgmi:row-[2/-1] pt-2 text-center lgmi:px-1 px-5 lgmi:pb-0 pb-5">
+                                    Giếng đặc biệt ở Syene, được Eratosthenes
+                                    lấy để tính toán chu vi của trái đất.
                                 </div>
                             </div>
-                        </ExtraInlineFact>{" "}
+                            Không giống như những người đồng nghiệp Hy Lạp, các
+                            nhà trắc địa Ai Cập không trực tiếp đếm bước chân
+                            của mình, mà đếm bước chân của con lạc đà họ cưỡi.
+                            Loài động vật này nổi danh với bước chân đều đặn.
+                            Sau hành trình dài dọc theo bờ sông Nile, phán quyết
+                            được đưa ra: Hai thành phố cách nhau 5000 xtađion
+                            (stadium) và chu vi Trái đất thì vào khoảng 250000
+                            xtađion, tức 39375 kilômét. Một lần nữa, kết quả gần
+                            đúng đến kinh ngạc khi mà hiện nay chúng ta biết
+                            rằng con số chính xác của chu vi Trái đất là 40008
+                            kilômét. Chênh lệch còn chưa đến 2%!
+                        </ExtraInlineFact>
                         (bématistes). Nếu các nhà trắc địa bình thường hay các
                         thợ căng dây có nghĩa vụ đo đ`ạc các thửa ruộng và công
                         trình thì các nhà trắc địa bộ hành phải chịu trách nhiệm
@@ -263,6 +272,99 @@ export default function LuongGiac() {
                         này có nhiệm vụ tính các khoảng cách lớn dựa theo số
                         bước chân của mình. Đôi khi, có những nhiệm vụ buộc họ
                         phải đi rất xa.
+                    </div>
+                </div>
+            </div>
+            <div className="col-[1/-1] row-[2/3] h-fit mt-[10px]">
+                <div className="md:h-[75px] h-[51.5px]">
+                    {timelineStar.Khoang2000TCN}
+                </div>
+                <div className={`${generalClassName}`}>
+                    <div className={`${generalHeaderClassName}`}>
+                        Xây dựng thiên văn học
+                    </div>
+                    Từ buổi hồng hoang của lịch sử, con người đã ngắm nhìn và
+                    suy ngẫm về bầu trời sao huyền bí, quyến rũ trên đầu. Người
+                    xưa quan sát chuyển động lặp đi lặp lại của Mặt Trời và Mặt
+                    Trăng trên bầu trời đêm để nhận biết các thời điểm chuyển
+                    mùa.
+                    <br />
+                    Những hiện tượng thiên văn bí ẩn còn được coi là điềm báo
+                    cho những gì sẽ xảy ra trong cuộc sống cũng như củng cố tín
+                    ngưỡng của con người. Khi việc trồng trọt và chăn nuôi xuất
+                    hiện thì quan sát thiên văn trở nên rất quan trọng. Nông
+                    dân, mục đồng, thợ săn và giới tăng lữ quan sát thiên văn để
+                    biết được thời vụ đánh bắt, sản xuất. Thời gian trôi đi, dần
+                    dần con người nhận ra rằng Mặt Trời, Mặt Trăng và những vì
+                    sao di chuyển theo một đường nhất định trên trời còn những
+                    hành tinh lại không như vậy.
+                    <div className="my-4">
+                        <Image src={xayDungThienVanHoc} alt="" />
+                    </div>
+                    <div className={`${generalHeaderClassName}`}>
+                        Ai Cập và Babylon
+                    </div>
+                    <div className={`${generalContentClassName}`}>
+                        Cả người Ai Cập và người Babylon đã phát triển các
+                        phương pháp để tính toán các độ dài và góc trong các tam
+                        giác, mặc dù họ chưa phát triển đầy đủ lý thuyết lượng
+                        giác như ngày nay. Người Babylon đã sử dụng bảng số học
+                        để tính toán các phép tính về góc và chu vi của các hình
+                        tròn.
+                        <div className="mt-4 flex flex-col w-fit items-center gap-4">
+                            <Image src={banDoSaoAiCap} alt="" />
+                            Một bản đồ sao được người Ai Cập sử dụng khoảng thế
+                            kỷ XV TCN
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="col-[1/-1] row-[3/4] h-fit mt-[10px]">
+                <div className="md:h-[75px] h-[51.5px]">
+                    {timelineStar.Khoang300TCN}
+                </div>
+                <div className={`${generalClassName}`}>
+                    <div className={`${generalHeaderClassName}`}>
+                        Hy Lạp cổ đại
+                    </div>
+                    <div className={`${generalContentClassName}`}>
+                        Các nhà toán học Hy Lạp, như{" "}
+                        <ExtraInlineFact buttonContent="Hipparchus">
+                            <HistoricalFigureInlineFact
+                                image={<Image src={Hipparchus} alt="" />}
+                                historicalFigureName="Hipparchus"
+                            >
+                                (khoảng 190 TCN - 120 TCN) là một nhà thiên văn
+                                học và toán học nổi tiếng người Hy Lạp, được coi
+                                là người sáng lập lý thuyết lượng giác. Ông nổi
+                                bật với các đóng góp trong thiên văn học và toán
+                                học, đặc biệt là trong việc nghiên cứu chuyển
+                                động của các thiên thể.
+                            </HistoricalFigureInlineFact>
+                        </ExtraInlineFact>{" "}
+                        và{" "}
+                        <ExtraInlineFact buttonContent="Ptolemy">
+                            <span className="font-[475]">Ptolemy</span> (khoảng
+                            100 - 170 CN) tiếp tục công trình của Hipparchus và
+                            viết cuốn sách nổi tiếng "
+                            <Link
+                                href="https://archive.org/details/in.ernet.dli.2015.547436/page/n57/mode/2up"
+                                target="_blank"
+                                className="underline font-[475]"
+                            >
+                                Almagest
+                            </Link>
+                            ", trong đó có các bảng lượng giác để tính toán các
+                            khoảng cách và góc trong thiên văn học.
+                        </ExtraInlineFact>{" "}
+                        , đã có đóng góp quan trọng trong việc phát triển lý
+                        thuyết lượng giác. Hipparchus (khoảng 190 TCN) được coi
+                        là người sáng lập ra lượng giác học, ông đã tạo ra bảng
+                        giá trị cho các hàm lượng giác cơ bản như sine (sin) và
+                        cosine (cos). Hipparchus cũng đã nghiên cứu về các quan
+                        hệ góc trong các tam giác vuông và tam giác tròn. Vậy
+                        quy ước về góc từ đâu mà có, bạn đọc có thể tìm hiểu
+                        thêm ở phần câu chuyện lịch sử.
                     </div>
                 </div>
             </div>

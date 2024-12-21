@@ -350,7 +350,7 @@ export default function ChapterDialog({
                 className="w-[25vw] h-[15dvh] bg-white rounded-xl relative z-10"
                 id="box"
             >
-                <div className="w-full h-full lg:px-9 sm:px-7 px-3 py-6 overflow-hidden relative grid md1:grid-rows-[auto_1fr] grid-rows-[1fr_8px_auto] grid-cols-1">
+                <div className="w-full h-full lg:px-9 md:px-4 sm:px-3 px-1 py-6 overflow-hidden relative grid md1:grid-rows-[auto_1fr] grid-rows-[1fr_8px_auto] grid-cols-1">
                     <div className="col-[1/-1] md1:row-[1/2] row-[3/-1] md1:h-[140px] h-[54px] w-full overflow-hidden z-10 md1:translate-y-[-24px] pointer-events-none">
                         <div className="hidden md1:flex justify-end gap-3">
                             <div className="gap-3 flex *:pointer-events-auto">
