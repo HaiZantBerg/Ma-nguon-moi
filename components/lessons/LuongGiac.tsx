@@ -277,7 +277,7 @@ export default function LuongGiac() {
                             kilômét. Chênh lệch còn chưa đến 2%!
                         </ExtraInlineFact>
                         (bématistes). Nếu các nhà trắc địa bình thường hay các
-                        thợ căng dây có nghĩa vụ đo đ`ạc các thửa ruộng và công
+                        thợ căng dây có nghĩa vụ đo đạc các thửa ruộng và công
                         trình thì các nhà trắc địa bộ hành phải chịu trách nhiệm
                         cho những thứ lớn hơn rất nhiều! Ở Hy Lạp, những người
                         này có nhiệm vụ tính các khoảng cách lớn dựa theo số
@@ -379,7 +379,7 @@ export default function LuongGiac() {
                         Eratosthenes (276-194 TCN) và Ptolemy (100-170 SCN). Đến
                         thời kỳ trung cổ, các nhà khoa học Hồi giáo đã tiếp tục
                         nghiên cứu và cải tiến các phương pháp đo lường bán kính
-                        Trái Đất. Như Al-Biruni (973-1048) và Al-Ma'mun
+                        Trái Đất. Như Al-Biruni (973-1048) và Al-Ma{"'"}mun
                         (786-833). Ở đây, chúng tôi xin đề cập đến cách tính của
                         Al-Biruni. Ông đã phát triển một phương pháp mới sử dụng
                         độ cao của các ngọn núi và góc nhìn từ chúng để tính
