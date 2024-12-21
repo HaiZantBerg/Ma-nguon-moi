@@ -553,14 +553,14 @@ export default function MenhDe() {
                                 câu hỏi đặt ra là liệu tập hợp R có phải là phần
                                 tử của chính nó hay không:
                                 <div className={`${generalInstanceClassName}`}>
-                                    Nếu R là phần tử của chính nó, thì theo định
-                                    nghĩa, nó không phải là phần tử của chính
-                                    nó.
+                                    Nếu <InlineMath math="\mathbb{R}" /> là phần
+                                    tử của chính nó, thì theo định nghĩa, nó
+                                    không phải là phần tử của chính nó.
                                 </div>
                                 <div className={`${generalInstanceClassName}`}>
-                                    Nếu R không phải là phần tử của chính nó,
-                                    thì theo định nghĩa, nó phải là phần tử của
-                                    chính nó.
+                                    Nếu <InlineMath math="\mathbb{R}" /> không
+                                    phải là phần tử của chính nó, thì theo định
+                                    nghĩa, nó phải là phần tử của chính nó.
                                 </div>
                             </ExtraInlineFact>
                             {'"'}.
@@ -615,7 +615,7 @@ export default function MenhDe() {
                     </div>
                     <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
                         <div className="md:h-[75px] h-[51.5px]">
-                            {timelineStar.NgayNay}
+                            {timelineStar.NgayNay(0)}
                         </div>
                         <div className={`${generalClassName}`}>
                             <div className={`${generalHeaderClassName}`}>

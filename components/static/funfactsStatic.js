@@ -5,6 +5,7 @@ import walk from "@/public/Image/walk.png";
 import feast from "@/public/Image/feast.png";
 import wife from "@/public/Image/wife.png";
 import simpleTalk from "@/public/Image/simpletalk.png";
+import storyAboutTelescope from "@/public/Image/storyabouttelescope.png";
 
 import { InlineMath } from "react-katex";
 
@@ -76,6 +77,7 @@ export const images = [
             ],
             [<div key="image24" />],
         ],
+        [[<div key="image25" />]],
     ],
     [[[]]],
     [[[]]],
@@ -119,6 +121,7 @@ export const storyList = [
             ],
             ["Kẻ giết người mang tên Pythagoras?!"],
         ],
+        [["Chuyện về kính viễn vọng"]],
     ],
     [[[]]],
     [[[]]],
@@ -134,6 +137,7 @@ export const historyFigureName = [
             "Hilbert",
             "Pythagoras",
         ],
+        ["Galilei"],
     ],
     [[]],
     [[]],
@@ -679,6 +683,85 @@ export const storyContent = [
                     <br />
                     (Bài viết có sự tham khảo từ cuốn sách Những vụ Scandal
                     trong toán học, Theoni Pappas.)
+                </div>,
+            ],
+        ],
+        [
+            [
+                <div key="story1125">
+                    Vào mùa hè một năm nọ, Galilê nhận được thư của một người
+                    bạn gửi tới, trong thư có nói rằng: {'"'}Có một người Hà Lan
+                    chế tạo được một chiếc kính rất đặc biệt, hôm qua khi đi dạo
+                    bên bờ sông tôi đã gặp ông ta. Lúc ấy bên kia bờ sông có một
+                    cô gái rất đẹp, qua ống kính tôi đã nhìn thấy cô gái ấy,
+                    khuôn mặt cô rõ mồn một cứ như cô đang đứng ngay trước mặt
+                    tôi vậy. Tôi ngạc nhiên đến reo lên, tôi nghĩ rằng mình có
+                    thể sờ tay vào cô gái được, nhưng khi tôi với tay ra thì
+                    suýt ngã xuống sông, thì ra cô gái vẫn ở mãi tận bờ sông bên
+                    kia! Vì rằng ông ta không còn chiếc kính nào nữa nên không
+                    thể mua lại cho anh được.{'"'}
+                    <br />
+                    <br />
+                    Galilê đọc đi đọc lại bức thư, mừng nhảy cẫng lên, ông nói:{" "}
+                    {'"'}Tôi cũng phải làm chiếc kính như thế! Tôi muốn nhìn tận
+                    mắt khuôn mặt của những người ở phía xa , có lẽ tôi còn muốn
+                    nhìn rõ cả khuôn mặt của những vì sao trên trời cao!{'"'}
+                    <br />
+                    <br />
+                    Để làm được loại kính đặc biệt này Galilê đã tìm đọc các tài
+                    liệu có liên quan, sau đó suy nghĩ tìm tòi. Một mặt ông dùng
+                    bút vẽ trên giấy, một mặt dùng máy tính để tính toán. Mất
+                    đúng một đêm, cuối cùng ông đã tìm được cách làm ra chiếc
+                    kính này. Galilê muốn làm loại kính này, ông cần mua mấy
+                    chiếc phôi thấu kính để thử làm thiết bị có thể nhìn ra
+                    được, nhưng lục túi không thấy còn đồng nào, ông nói với
+                    người làm: {'"'}Lấy áo khoác của tôi đi đặt lấy tiền đi!
+                    {'"'} Người phục vụ gái không nỡ làm như vậy, liền lấy tiền
+                    riêng của mình để mua mấy miếng phôi thấu kính.
+                    <div className="my-5 px-5 flex justify-center items-center">
+                        <Image src={storyAboutTelescope} alt="" />
+                    </div>
+                    Sau khi có vật liệu để làm rồi ông liền bắt tay vào mài
+                    kính. Về tính năng của{" "}
+                    <span className="font-[700]">thấu kính</span> thì Galilê quá
+                    thuộc nhưng việc mài kính là rất công phu. Ông phải mất mấy
+                    ngày mới mài được hai miếng thấu kính, một{" "}
+                    <span className="font-[700]">thấu kính lồi</span>, một{" "}
+                    <span className="font-[700]">thấu kính lõm</span>. Ông lấy
+                    hai ống dài một to, một nhỏ để có thể lồng vào nhau được,
+                    ông gắn hai chiếc thấu kính lên hai chiếc ống đó, lúc này
+                    chỉ còn việc{" "}
+                    <span className="font-[700]">điều chỉnh cự ly</span> của hai
+                    thấu kính là có thể đưa những vật từ xa lại gần và phóng đại
+                    nó lên. Galilê nâng cái ống kính đơn giản và kỳ lạ ấy lên
+                    ngắm cây mọc phía ngoài cửa sổ, ông điều chỉnh hai chiếc ống
+                    có gắn kính tức là điều chỉnh cự ly của hai thấu kính, khi
+                    điều chỉnh đến vị trí tốt nhất, Galilê bỗng đã nhìn thấy cái
+                    cây đứng từ xa nhỏ gần lại ngay trước mắt, có cảm giác như
+                    giơ tay ra là có thể sờ thấy được. Galilê đã thành công, đã
+                    làm được loại kính có thể nhìn xa này, ông vô cùng sung
+                    sướng! Ông quyết tâm tiếp tục cải tiến loại kính này để nó
+                    có thể nhìn xa hơn. Thế là ông lại bắt đầu thiết kế, tính
+                    toán, vẽ, mài thấu kính … Qua một mùa hè phấn đấu, hệ số
+                    phóng đại của thấu kính đã tăng lên từ 3 đến 9 lần. Sau này
+                    ông lại làm ra được chiếc kính phóng đại vật thể lên gấp 33
+                    lần, loại kính này được mọi người gọi là {'"'}kính viễn vọng
+                    {'"'}. Bởi vì nó thực sự là{" "}
+                    <span className="font-[700]">kính viễn vọng</span> nên cho
+                    đến nay người ta vẫn gọi nó với cái tên như vậy.
+                    <br />
+                    <br />
+                    Sau khi sản xuất thành công kính viễn vọng, tin truyền nhanh
+                    đi khắp Châu Âu, đã có nhiều người bỏ tiền mua kính của ông.
+                    Vì bộ phận quan trọng nhất của kính vọng là thấu kính, nên
+                    Galilê suốt ngày đêm ngồi mài kính, tuy như vậy nhưng kính
+                    ông làm ra vẫn không đủ để bán cho người cần.
+                    <br />
+                    <br />
+                    Galilê sản xuất và cải tiến kính viễn vọng đồng thời bắt đầu
+                    dùng kính viễn vọng vào ứng dụng vào quan sát bầu trời, nó
+                    đặt nền móng cho ông nghiên cứu{" "}
+                    <span className="font-[700]">thiên văn học</span> sau này.
                 </div>,
             ],
         ],

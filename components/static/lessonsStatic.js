@@ -683,60 +683,62 @@ export const timelineStar = {
             />
         </svg>
     ),
-    NgayNay: (
-        <svg
-            id="Layer_3"
-            data-name="Layer 3"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 118.82 36.53"
-            key="119"
-            className="h-full relative z-10"
-        >
-            <defs>
-                <linearGradient
-                    id="linear-gradient119"
-                    x1="-195.2"
-                    y1="1111.44"
-                    x2="-201.85"
-                    y2="1111.44"
-                    gradientTransform="matrix(-1, 0, 0, 1, -147.13, -393.45)"
-                    gradientUnits="userSpaceOnUse"
-                >
-                    <stop offset="0.2" stopColor="#79c143" />
-                    <stop offset="0.88" stopColor="#2cb670" />
-                </linearGradient>
-            </defs>
-            <polygon
-                points="47.91 8.1 51.14 10.73 51.71 10.17 49.07 6.94 47.91 8.1"
-                fill="#231f20"
-            />
-            <polygon
-                points="49.56 6.97 52.22 10.23 51.62 10.83 51.83 10.81 52.4 10.24 49.76 7.01 49.56 6.97"
-                fill="#231f20"
-            />
-            <rect x="0.3" width="13.9" height="36.53" fill="none" />
-            <text
-                transform="translate(18.56 25.59)"
-                fontSize={20}
-                fill="#231f20"
-                className="font-['Algerian']"
+    NgayNay: (idx) => {
+        return (
+            <svg
+                id="Layer_3"
+                data-name="Layer 3"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 118.82 36.53"
+                key={`119${idx}`}
+                className="h-full relative z-10"
             >
-                Ngay nay
-            </text>
-            <g id="Layer_1" data-name="Layer 1">
-                <path
-                    d="M58.06,717.92s-7-1.36-7-9.53c0,8.17-6.71,9.53-6.71,9.53h-.22s6.9,1.38,6.9,9.68a9.38,9.38,0,0,1,7.18-9.68"
-                    transform="translate(-43.95 -699.73)"
-                    stroke="#231f20"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="0.41"
-                    fill="url(#linear-gradient119)"
+                <defs>
+                    <linearGradient
+                        id={`linear-gradient119${idx}`}
+                        x1="-195.2"
+                        y1="1111.44"
+                        x2="-201.85"
+                        y2="1111.44"
+                        gradientTransform="matrix(-1, 0, 0, 1, -147.13, -393.45)"
+                        gradientUnits="userSpaceOnUse"
+                    >
+                        <stop offset="0.2" stopColor="#79c143" />
+                        <stop offset="0.88" stopColor="#2cb670" />
+                    </linearGradient>
+                </defs>
+                <polygon
+                    points="47.91 8.1 51.14 10.73 51.71 10.17 49.07 6.94 47.91 8.1"
+                    fill="#231f20"
                 />
-            </g>
-        </svg>
-    ),
+                <polygon
+                    points="49.56 6.97 52.22 10.23 51.62 10.83 51.83 10.81 52.4 10.24 49.76 7.01 49.56 6.97"
+                    fill="#231f20"
+                />
+                <rect x="0.3" width="13.9" height="36.53" fill="none" />
+                <text
+                    transform="translate(18.56 25.59)"
+                    fontSize={20}
+                    fill="#231f20"
+                    className="font-['Algerian']"
+                >
+                    Ngay nay
+                </text>
+                <g id="Layer_1" data-name="Layer 1">
+                    <path
+                        d="M58.06,717.92s-7-1.36-7-9.53c0,8.17-6.71,9.53-6.71,9.53h-.22s6.9,1.38,6.9,9.68a9.38,9.38,0,0,1,7.18-9.68"
+                        transform="translate(-43.95 -699.73)"
+                        stroke="#231f20"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="0.41"
+                        fill={`url(#linear-gradient119${idx})`}
+                    />
+                </g>
+            </svg>
+        );
+    },
     Khoang2000TCN: (
         <svg
             id="Layer_3"
@@ -869,12 +871,344 @@ export const timelineStar = {
             </g>
             <path
                 d="M222,349.19l-.21.79a3.54,3.54,0,0,1-1.16,1.36,6.13,6.13,0,0,1-1.81.59,6,6,0,0,1-1.81-.59,2.36,2.36,0,0,1-.64-.56,2.7,2.7,0,0,0,.78.76,6.47,6.47,0,0,0,1.81.59,6.37,6.37,0,0,0,1.81-.59,3.48,3.48,0,0,0,1.17-1.36l.2-.69Z"
-                transform="translate(-40.86 -341.71)"
+                transform="translate(-52.86 -341.71)"
                 fill="#231f20"
             />
             <path
                 d="M218.62,351.64a6,6,0,0,1-1.81-.59,3.48,3.48,0,0,1-1.17-1.36l-.25-.87a5.06,5.06,0,0,0,1.35,1.41,7.63,7.63,0,0,0,1.88.66,7.61,7.61,0,0,0,1.87-.66,5.16,5.16,0,0,0,1.36-1.41l-.26.87a3.38,3.38,0,0,1-1.16,1.36A6.13,6.13,0,0,1,218.62,351.64Z"
-                transform="translate(-40.86 -341.71)"
+                transform="translate(-52.86 -341.71)"
+                fill="#231f20"
+            />
+        </svg>
+    ),
+    TheKy57: (
+        <svg
+            id="Layer_3"
+            data-name="Layer 3"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 238.23 36.53"
+            key="122"
+            className="h-full relative z-10"
+        >
+            <defs>
+                <linearGradient
+                    id="linear-gradient122"
+                    x1="-195.11"
+                    y1="859.69"
+                    x2="-201.75"
+                    y2="859.69"
+                    gradientTransform="matrix(-1, 0, 0, 1, -147.13, -393.45)"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop offset="0.2" stopColor="#d65c44" />
+                    <stop offset="0.88" stopColor="#9b4f82" />
+                </linearGradient>
+            </defs>
+            <path
+                d="M122.31,455.38l.14-.08s.82-1.11,1.33-1,.34.53.34.53,0-.46-.21-.59S123.06,454.31,122.31,455.38Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+            <path
+                d="M124.13,453.73a4.6,4.6,0,0,0,3.11-.93,32.65,32.65,0,0,0-3.14,4.25c-.34.76.6-2.89,0-3.16s-1.62.93-2,1.44c0,0,.31-.88.55-1.65a.42.42,0,0,1,.51-.32C123.42,453.43,123.54,453.55,124.13,453.73Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+            <path
+                d="M124.35,457.41a44.07,44.07,0,0,1,3-4.05v.13a37,37,0,0,0-2.85,4Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+            <rect x="0.3" width="13.9" height="36.53" fill="none" />
+            <text
+                transform="translate(19.03 24.8)"
+                fontSize={20}
+                fill="#231f20"
+                className="font-[Algerian]"
+            >
+                The ky 5 - 7
+            </text>
+            <g id="Layer_1" data-name="Layer 1">
+                <path
+                    d="M58,466.17s-7-1.37-7-9.54c0,8.17-6.7,9.54-6.7,9.54h-.23S51,467.54,51,475.85a9.36,9.36,0,0,1,7.18-9.68"
+                    transform="translate(-43.86 -447.97)"
+                    stroke="#231f20"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="0.41"
+                    fill="url(#linear-gradient122)"
+                />
+            </g>
+            <polygon
+                points="55.6 4.95 52.9 7.15 52.42 6.68 54.63 3.98 55.6 4.95"
+                fill="#231f20"
+            />
+            <polygon
+                points="54.22 4 51.99 6.73 52.49 7.23 52.32 7.21 51.84 6.74 54.05 4.04 54.22 4"
+                fill="#231f20"
+            />
+            <polygon
+                points="49.46 7.78 47.34 9.46 45.97 9.46 46.22 9.58 47.6 9.58 49.56 8.03 49.46 7.78"
+                fill="#231f20"
+            />
+            <path
+                d="M94.22,454.68l-.3-.21a14.69,14.69,0,0,0,2.93,3H95.24l.48.13h1.39A19.45,19.45,0,0,1,94.22,454.68Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+            <path
+                d="M89.7,457.17h1.38l1.85-1.46,1.84,1.46h1.39s-2.36-1.76-2.88-2.93h-.71C92.05,455.41,89.7,457.17,89.7,457.17Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+        </svg>
+    ),
+    TheKy814: (
+        <svg
+            id="Layer_3"
+            data-name="Layer 3"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 238.23 36.53"
+            key="123"
+            className="h-full relative z-10"
+        >
+            <defs>
+                <linearGradient
+                    id="linear-gradient123"
+                    x1="-195.11"
+                    y1="859.69"
+                    x2="-201.75"
+                    y2="859.69"
+                    gradientTransform="matrix(-1, 0, 0, 1, -147.13, -393.45)"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop offset="0.2" stopColor="#8e925c" />
+                    <stop offset="0.88" stopColor="#f2f3cc" />
+                </linearGradient>
+            </defs>
+            <path
+                d="M122.31,455.38l.14-.08s.82-1.11,1.33-1,.34.53.34.53,0-.46-.21-.59S123.06,454.31,122.31,455.38Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+            <path
+                d="M124.13,453.73a4.6,4.6,0,0,0,3.11-.93,32.65,32.65,0,0,0-3.14,4.25c-.34.76.6-2.89,0-3.16s-1.62.93-2,1.44c0,0,.31-.88.55-1.65a.42.42,0,0,1,.51-.32C123.42,453.43,123.54,453.55,124.13,453.73Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+            <path
+                d="M124.35,457.41a44.07,44.07,0,0,1,3-4.05v.13a37,37,0,0,0-2.85,4Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+            <rect x="0.3" width="13.9" height="36.53" fill="none" />
+            <text
+                transform="translate(19.03 24.8)"
+                fontSize={20}
+                fill="#231f20"
+                className="font-[Algerian]"
+            >
+                The ky 8 - 14
+            </text>
+            <g id="Layer_1" data-name="Layer 1">
+                <path
+                    d="M58,466.17s-7-1.37-7-9.54c0,8.17-6.7,9.54-6.7,9.54h-.23S51,467.54,51,475.85a9.36,9.36,0,0,1,7.18-9.68"
+                    transform="translate(-43.86 -447.97)"
+                    stroke="#231f20"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="0.41"
+                    fill="url(#linear-gradient123)"
+                />
+            </g>
+            <polygon
+                points="55.6 4.95 52.9 7.15 52.42 6.68 54.63 3.98 55.6 4.95"
+                fill="#231f20"
+            />
+            <polygon
+                points="54.22 4 51.99 6.73 52.49 7.23 52.32 7.21 51.84 6.74 54.05 4.04 54.22 4"
+                fill="#231f20"
+            />
+            <polygon
+                points="49.46 7.78 47.34 9.46 45.97 9.46 46.22 9.58 47.6 9.58 49.56 8.03 49.46 7.78"
+                fill="#231f20"
+            />
+            <path
+                d="M94.22,454.68l-.3-.21a14.69,14.69,0,0,0,2.93,3H95.24l.48.13h1.39A19.45,19.45,0,0,1,94.22,454.68Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+            <path
+                d="M89.7,457.17h1.38l1.85-1.46,1.84,1.46h1.39s-2.36-1.76-2.88-2.93h-.71C92.05,455.41,89.7,457.17,89.7,457.17Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+        </svg>
+    ),
+    TheKy1617: (
+        <svg
+            id="Layer_3"
+            data-name="Layer 3"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 238.23 36.53"
+            key="124"
+            className="h-full relative z-10"
+        >
+            <defs>
+                <linearGradient
+                    id="linear-gradient124"
+                    x1="-195.11"
+                    y1="859.69"
+                    x2="-201.75"
+                    y2="859.69"
+                    gradientTransform="matrix(-1, 0, 0, 1, -147.13, -393.45)"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop offset="0.2" stopColor="#6f75a6" />
+                    <stop offset="0.88" stopColor="#0082a7" />
+                </linearGradient>
+            </defs>
+            <path
+                d="M122.31,455.38l.14-.08s.82-1.11,1.33-1,.34.53.34.53,0-.46-.21-.59S123.06,454.31,122.31,455.38Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+            <path
+                d="M124.13,453.73a4.6,4.6,0,0,0,3.11-.93,32.65,32.65,0,0,0-3.14,4.25c-.34.76.6-2.89,0-3.16s-1.62.93-2,1.44c0,0,.31-.88.55-1.65a.42.42,0,0,1,.51-.32C123.42,453.43,123.54,453.55,124.13,453.73Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+            <path
+                d="M124.35,457.41a44.07,44.07,0,0,1,3-4.05v.13a37,37,0,0,0-2.85,4Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+            <rect x="0.3" width="13.9" height="36.53" fill="none" />
+            <text
+                transform="translate(19.03 24.8)"
+                fontSize={20}
+                fill="#231f20"
+                className="font-[Algerian]"
+            >
+                The ky 16 - 17
+            </text>
+            <g id="Layer_1" data-name="Layer 1">
+                <path
+                    d="M58,466.17s-7-1.37-7-9.54c0,8.17-6.7,9.54-6.7,9.54h-.23S51,467.54,51,475.85a9.36,9.36,0,0,1,7.18-9.68"
+                    transform="translate(-43.86 -447.97)"
+                    stroke="#231f20"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="0.41"
+                    fill="url(#linear-gradient124)"
+                />
+            </g>
+            <polygon
+                points="55.6 4.95 52.9 7.15 52.42 6.68 54.63 3.98 55.6 4.95"
+                fill="#231f20"
+            />
+            <polygon
+                points="54.22 4 51.99 6.73 52.49 7.23 52.32 7.21 51.84 6.74 54.05 4.04 54.22 4"
+                fill="#231f20"
+            />
+            <polygon
+                points="49.46 7.78 47.34 9.46 45.97 9.46 46.22 9.58 47.6 9.58 49.56 8.03 49.46 7.78"
+                fill="#231f20"
+            />
+            <path
+                d="M94.22,454.68l-.3-.21a14.69,14.69,0,0,0,2.93,3H95.24l.48.13h1.39A19.45,19.45,0,0,1,94.22,454.68Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+            <path
+                d="M89.7,457.17h1.38l1.85-1.46,1.84,1.46h1.39s-2.36-1.76-2.88-2.93h-.71C92.05,455.41,89.7,457.17,89.7,457.17Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+        </svg>
+    ),
+    TheKy1819: (
+        <svg
+            id="Layer_3"
+            data-name="Layer 3"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 238.23 36.53"
+            key="125"
+            className="h-full relative z-10"
+        >
+            <defs>
+                <linearGradient
+                    id="linear-gradient125"
+                    x1="-195.11"
+                    y1="859.69"
+                    x2="-201.75"
+                    y2="859.69"
+                    gradientTransform="matrix(-1, 0, 0, 1, -147.13, -393.45)"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop offset="0.2" stopColor="#f08a95" />
+                    <stop offset="0.88" stopColor="#ffcb6d" />
+                </linearGradient>
+            </defs>
+            <path
+                d="M122.31,455.38l.14-.08s.82-1.11,1.33-1,.34.53.34.53,0-.46-.21-.59S123.06,454.31,122.31,455.38Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+            <path
+                d="M124.13,453.73a4.6,4.6,0,0,0,3.11-.93,32.65,32.65,0,0,0-3.14,4.25c-.34.76.6-2.89,0-3.16s-1.62.93-2,1.44c0,0,.31-.88.55-1.65a.42.42,0,0,1,.51-.32C123.42,453.43,123.54,453.55,124.13,453.73Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+            <path
+                d="M124.35,457.41a44.07,44.07,0,0,1,3-4.05v.13a37,37,0,0,0-2.85,4Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+            <rect x="0.3" width="13.9" height="36.53" fill="none" />
+            <text
+                transform="translate(19.03 24.8)"
+                fontSize={20}
+                fill="#231f20"
+                className="font-[Algerian]"
+            >
+                The ky 18 - 19
+            </text>
+            <g id="Layer_1" data-name="Layer 1">
+                <path
+                    d="M58,466.17s-7-1.37-7-9.54c0,8.17-6.7,9.54-6.7,9.54h-.23S51,467.54,51,475.85a9.36,9.36,0,0,1,7.18-9.68"
+                    transform="translate(-43.86 -447.97)"
+                    stroke="#231f20"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="0.41"
+                    fill="url(#linear-gradient125)"
+                />
+            </g>
+            <polygon
+                points="55.6 4.95 52.9 7.15 52.42 6.68 54.63 3.98 55.6 4.95"
+                fill="#231f20"
+            />
+            <polygon
+                points="54.22 4 51.99 6.73 52.49 7.23 52.32 7.21 51.84 6.74 54.05 4.04 54.22 4"
+                fill="#231f20"
+            />
+            <polygon
+                points="49.46 7.78 47.34 9.46 45.97 9.46 46.22 9.58 47.6 9.58 49.56 8.03 49.46 7.78"
+                fill="#231f20"
+            />
+            <path
+                d="M94.22,454.68l-.3-.21a14.69,14.69,0,0,0,2.93,3H95.24l.48.13h1.39A19.45,19.45,0,0,1,94.22,454.68Z"
+                transform="translate(-43.86 -447.97)"
+                fill="#231f20"
+            />
+            <path
+                d="M89.7,457.17h1.38l1.85-1.46,1.84,1.46h1.39s-2.36-1.76-2.88-2.93h-.71C92.05,455.41,89.7,457.17,89.7,457.17Z"
+                transform="translate(-43.86 -447.97)"
                 fill="#231f20"
             />
         </svg>

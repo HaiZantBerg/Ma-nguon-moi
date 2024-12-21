@@ -21,6 +21,14 @@ import luongGiacGieng from "@/public/Image/luonggiacgieng.png";
 import xayDungThienVanHoc from "@/public/Image/xaydungthienvanhoc.png";
 import banDoSaoAiCap from "@/public/Image/bandosaoaicap.png";
 import Hipparchus from "@/public/Image/hipparchus.png";
+import Ptolemy from "@/public/Image/ptolemy.png";
+import Aryabahata from "@/public/Image/aryabhata.png";
+import Brahmagupta from "@/public/Image/brahmagupta.png";
+import BhaskaraI from "@/public/Image/bhaskarai.png";
+import AlKhwarizmi from "@/public/Image/alkhawarizmi.png";
+import AlBattani from "@/public/Image/albattani.png";
+import ExtraFunFact from "../Extra/ExtraFunFact";
+import LeonhardEuler from "@/public/Image/leonhardeuler.png";
 
 export default function LuongGiac() {
     return (
@@ -344,27 +352,224 @@ export default function LuongGiac() {
                         </ExtraInlineFact>{" "}
                         và{" "}
                         <ExtraInlineFact buttonContent="Ptolemy">
-                            <span className="font-[475]">Ptolemy</span> (khoảng
-                            100 - 170 CN) tiếp tục công trình của Hipparchus và
-                            viết cuốn sách nổi tiếng "
-                            <Link
-                                href="https://archive.org/details/in.ernet.dli.2015.547436/page/n57/mode/2up"
-                                target="_blank"
-                                className="underline font-[475]"
+                            <HistoricalFigureInlineFact
+                                image={<Image src={Ptolemy} alt="" />}
+                                historicalFigureName="Ptolemy"
                             >
-                                Almagest
-                            </Link>
-                            ", trong đó có các bảng lượng giác để tính toán các
-                            khoảng cách và góc trong thiên văn học.
+                                (khoảng 100 - 170 CN) tiếp tục công trình của
+                                Hipparchus và viết cuốn sách nổi tiếng {'"'}
+                                <Link
+                                    href="https://archive.org/details/in.ernet.dli.2015.547436/page/n57/mode/2up"
+                                    target="_blank"
+                                    className="underline font-[475]"
+                                >
+                                    Almagest
+                                </Link>
+                                {'"'}, trong đó có các bảng lượng giác để tính
+                                toán các khoảng cách và góc trong thiên văn học.
+                            </HistoricalFigureInlineFact>
                         </ExtraInlineFact>{" "}
                         , đã có đóng góp quan trọng trong việc phát triển lý
                         thuyết lượng giác. Hipparchus (khoảng 190 TCN) được coi
                         là người sáng lập ra lượng giác học, ông đã tạo ra bảng
                         giá trị cho các hàm lượng giác cơ bản như sine (sin) và
                         cosine (cos). Hipparchus cũng đã nghiên cứu về các quan
-                        hệ góc trong các tam giác vuông và tam giác tròn. Vậy
-                        quy ước về góc từ đâu mà có, bạn đọc có thể tìm hiểu
-                        thêm ở phần câu chuyện lịch sử.
+                        hệ góc trong các tam giác vuông và tam giác tròn.
+                    </div>
+                </div>
+            </div>
+            <div className="col-[1/-1] row-[4/5] h-fit mt-[10px]">
+                <div className="md:h-[75px] h-[51.5px]">
+                    {timelineStar.TheKy57}
+                </div>
+                <div className={`${generalClassName}`}>
+                    <div className={`${generalHeaderClassName}`}>Ấn Độ</div>
+                    <div className={`${generalContentClassName}`}>
+                        Lượng giác được phát triển mạnh mẽ ở Ấn Độ, đặc biệt là
+                        trong các công trình của các nhà toán học như{" "}
+                        <ExtraInlineFact buttonContent="Aryabhata">
+                            <HistoricalFigureInlineFact
+                                image={<Image src={Aryabahata} alt="" />}
+                                historicalFigureName="Aryabhata"
+                            >
+                                (khoảng 476 - 550 CN) là một nhà toán học và
+                                thiên văn học vĩ đại người Ấn Độ, được biết đến
+                                là một trong những học giả nổi bật nhất trong
+                                lịch sử khoa học Ấn Độ cổ đại. Ông là tác giả
+                                của cuốn {'"'}Aryabhatiya{'"'}, một tác phẩm nổi
+                                tiếng trong toán học và thiên văn học, chứa đựng
+                                nhiều khái niệm quan trọng vẫn có ảnh hưởng lâu
+                                dài.
+                            </HistoricalFigureInlineFact>
+                        </ExtraInlineFact>
+                        ,{" "}
+                        <ExtraInlineFact buttonContent="Brahmagupta">
+                            <HistoricalFigureInlineFact
+                                historicalFigureName="Brahmagupta"
+                                image={<Image src={Brahmagupta} alt="" />}
+                            >
+                                (khoảng 598 - 668 CN) là một trong những nhà
+                                toán học và thiên văn học vĩ đại của Ấn Độ cổ
+                                đại, nổi bật với những đóng góp quan trọng trong
+                                cả hai lĩnh vực này. Ông là tác giả của cuốn
+                                {'"'}Brahmasphutasiddhanta{'"'}, một tác phẩm
+                                nổi tiếng mà trong đó, ông đã phát triển và
+                                trình bày nhiều lý thuyết toán học mới.
+                            </HistoricalFigureInlineFact>
+                        </ExtraInlineFact>
+                        , và{" "}
+                        <ExtraInlineFact buttonContent="Bhaskara I">
+                            <HistoricalFigureInlineFact
+                                historicalFigureName="Bhaskara I"
+                                image={<Image src={BhaskaraI} alt="" />}
+                            >
+                                là một nhà toán học và thiên văn học Ấn Độ, nổi
+                                tiếng với những đóng góp trong các lĩnh vực toán
+                                học và thiên văn học. Một trong những tác phẩm
+                                nổi bật của ông là "Mahabhaskariya", trong đó
+                                ông đã phát triển các lý thuyết về chu kỳ của
+                                các hành tinh và các hiện tượng thiên văn như
+                                nhật thực và nguyệt thực. Ông cũng là người đầu
+                                tiên giới thiệu các khái niệm về số không vào
+                                các phép toán và cải tiến các phương pháp tính
+                                toán trước đó.
+                            </HistoricalFigureInlineFact>
+                        </ExtraInlineFact>
+                        . Aryabhata đã giới thiệu các khái niệm về sine và
+                        cosine trong công trình của mình và thậm chí đã sử dụng
+                        những khái niệm này để tính toán các hiện tượng thiên
+                        văn. Các nhà toán học Ấn Độ đã phát triển bảng sine với
+                        độ chính xác cao và bắt đầu sử dụng các phương pháp giải
+                        phương trình lượng giác.
+                    </div>
+                </div>
+            </div>
+            <div className="col-[1/-1] row-[5/6] h-fit mt-[10px]">
+                <div className="md:h-[75px] h-[51.5px]">
+                    {timelineStar.TheKy814}
+                </div>
+                <div className={`${generalClassName}`}>
+                    <div className={`${generalHeaderClassName}`}>Trung Cổ</div>
+                    <div className={`${generalContentClassName}`}>
+                        Trong thời kỳ Trung Cổ, các học giả Ả Rập như{" "}
+                        <ExtraInlineFact buttonContent="Al-Battani">
+                            <HistoricalFigureInlineFact
+                                historicalFigureName="Al-Battani"
+                                image={<Image src={AlBattani} alt="" />}
+                            >
+                                (khoảng 858-929 CN), còn được gọi là
+                                Albategnius, là một nhà thiên văn học và toán
+                                học vĩ đại người Ả Rập, nổi tiếng với những đóng
+                                góp quan trọng trong việc cải tiến các lý thuyết
+                                thiên văn cổ điển và phát triển các phương pháp
+                                tính toán. Ông sinh ra và làm việc tại vùng đất
+                                hiện nay là Syria.
+                                <br />
+                                <br />
+                                Bảng lượng giác: Al-Battani đã phát triển các
+                                bảng lượng giác với độ chính xác cao hơn so với
+                                các bảng trước đó, bao gồm các giá trị của sine,
+                                cosine, và tangent (tương ứng với các khái niệm
+                                sau này trong toán học hiện đại). Các bảng lượng
+                                giác này là công cụ rất quan trọng trong các
+                                phép tính thiên văn học và các nghiên cứu về quỹ
+                                đạo các hành tinh.
+                                <br /> <br />
+                                Phương pháp đo góc: Al-Battani là một trong
+                                những người đầu tiên áp dụng các khái niệm về
+                                lượng giác vào việc đo góc của Mặt Trăng, Mặt
+                                Trời và các hành tinh, đặc biệt trong việc tính
+                                toán các hiện tượng thiên văn như nguyệt thực và
+                                nhật thực.
+                            </HistoricalFigureInlineFact>
+                        </ExtraInlineFact>{" "}
+                        và{" "}
+                        <ExtraInlineFact buttonContent="Al-Khwarizmi">
+                            <HistoricalFigureInlineFact
+                                historicalFigureName="Al-Khwarizmi"
+                                image={<Image src={AlKhwarizmi} alt="" />}
+                            >
+                                (khoảng 780-850 CN) là người có công trong việc
+                                dịch các công trình toán học từ tiếng Ả Rập sang
+                                tiếng Latinh, giúp truyền bá các kiến thức về
+                                lượng giác sang châu Âu.
+                            </HistoricalFigureInlineFact>
+                        </ExtraInlineFact>{" "}
+                        tiếp tục phát triển lý thuyết lượng giác. Al-Battani đã
+                        mở rộng và hoàn thiện bảng lượng giác của Ptolemy và
+                        nghiên cứu các mối quan hệ giữa các góc trong tam giác
+                        vuông và hình tròn.
+                    </div>
+                </div>
+            </div>
+            <div className="col-[1/-1] row-[6/7] h-fit mt-[10px]">
+                <div className="md:h-[75px] h-[51.5px]">
+                    {timelineStar.TheKy1617}
+                </div>
+                <div className={`${generalClassName}`}>
+                    <div className={`${generalContentClassName}`}>
+                        Lượng giác bắt đầu phát triển mạnh mẽ ở châu Âu trong
+                        thời kỳ Phục Hưng và Cách mạng khoa học. Các nhà toán
+                        học như Regiomontanus, Johannes Kepler, và Isaac Newton
+                        đã mở rộng lý thuyết lượng giác để áp dụng vào các
+                        nghiên cứu thiên văn, hình học, và cơ học.
+                        <br />
+                        <br />
+                        Một dụng cụ không thể thiếu để phát triển thiên văn học,
+                        đó là{" "}
+                        <ExtraFunFact
+                            buttonContent="kính viễn vọng"
+                            ffidx={[0, 1, 0, 0]}
+                        />{" "}
+                        .
+                    </div>
+                </div>
+            </div>
+
+            <div className="col-[1/-1] row-[7/8] h-fit mt-[10px]">
+                <div className="md:h-[75px] h-[51.5px]">
+                    {timelineStar.TheKy1819}
+                </div>
+                <div className={`${generalClassName}`}>
+                    <div className={`${generalContentClassName}`}>
+                        Vào thế kỷ 18, các hàm lượng giác được định nghĩa rõ
+                        ràng hơn và ứng dụng trong các lĩnh vực khác nhau như
+                        phân tích, cơ học, điện học, v.v. Các nhà toán học như{" "}
+                        <ExtraInlineFact buttonContent="Leonhard Euler">
+                            <HistoricalFigureInlineFact
+                                image={<Image src={LeonhardEuler} alt="" />}
+                                historicalFigureName="Leonhard Euler"
+                            >
+                                (1707-1783) là một trong những nhà toán học và
+                                lý thuyết vĩ đại nhất trong lịch sử. Ông là
+                                người Thụy Sĩ và có ảnh hưởng sâu rộng đến nhiều
+                                lĩnh vực của toán học, từ giải tích đến lý
+                                thuyết đồ thị, lý thuyết số, và cơ học lý
+                                thuyết. Những đóng góp của Euler rất phong phú
+                                và có ảnh hưởng lớn đến sự phát triển của toán
+                                học và khoa học kỹ thuật.
+                            </HistoricalFigureInlineFact>
+                        </ExtraInlineFact>{" "}
+                        đã phát triển các công thức lượng giác quan trọng và
+                        định lý lượng giác, đặt nền tảng cho sự phát triển của
+                        giải tích toán học. Euler cũng đã đóng góp vào sự phát
+                        triển của hàm lượng giác phức, mở rộng khả năng ứng dụng
+                        lượng giác trong các lĩnh vực như sóng và dao động.
+                    </div>
+                </div>
+            </div>
+            <div className="col-[1/-1] row-[8/-1] h-fit mt-[10px]">
+                <div className="md:h-[75px] h-[51.5px]">
+                    {timelineStar.NgayNay(1)}
+                </div>
+                <div className={`${generalClassName}`}>
+                    <div className={`${generalContentClassName}`}>
+                        Lượng giác ngày nay không chỉ là một công cụ quan trọng
+                        trong toán học mà còn trong nhiều ngành khoa học và kỹ
+                        thuật, như vật lý, điện tử, cơ học, và cả máy tính. Các
+                        ứng dụng hiện đại của lượng giác bao gồm vẽ đồ thị, phân
+                        tích tín hiệu, truyền thông và giải quyết các vấn đề về
+                        ánh sáng và sóng.
                     </div>
                 </div>
             </div>
