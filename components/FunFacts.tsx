@@ -16,7 +16,7 @@ import flip from "@/public/Svg/Flip.svg";
 
 const openFlipCard = signal([-1, -1]);
 
-const FunFact1 = ({ idxc, idxg }: { idxc: number; idxg: number }) => {
+export const FunFact = ({ idxc, idxg }: { idxc: number; idxg: number }) => {
     useSignals();
 
     const triggerCloseCard = () => {
@@ -66,16 +66,6 @@ const FunFact1 = ({ idxc, idxg }: { idxc: number; idxg: number }) => {
         </>
     );
 };
-
-export const FunFact = [
-    [
-        <FunFact1 key="funfact1" idxg={0} idxc={0} />,
-        <FunFact1 key="funfact2" idxg={0} idxc={1} />,
-        <FunFact1 key="funfact3" idxg={0} idxc={2} />,
-    ],
-    [],
-    [],
-];
 
 const FunFactCard = ({
     children,
@@ -165,43 +155,25 @@ export const FlipCard = ({
         }, 200);
 
         animate(
-            "#flipCardBody",
+            "#flipCard2",
             {
-                opacity: [0, 1],
+                transform: ["scale(0.35)", "scale(1)"],
             },
             {
-                duration: 0.5,
                 type: "spring",
-                stiffness: 100,
-                damping: 10,
-                mass: 1,
+                stiffness: 350,
+                damping: 30,
+                mass: 1.75,
             }
         );
 
         animate(
-            "#flipCardTitle",
+            "#flipCard1",
             {
-                opacity: [0, 1],
+                transform: ["rotateY(180deg)", "rotateY(0deg)"],
             },
             {
-                duration: 0.5,
-                type: "spring",
-                stiffness: 100,
-                damping: 10,
-                mass: 1,
-            }
-        );
-
-        animate(
-            "#flipCard",
-            {
-                transform: [
-                    "rotateY(180deg) scale(0.35)",
-                    "rotateY(0deg) scale(1)",
-                ],
-            },
-            {
-                duration: 0.1,
+                delay: 0.5,
                 type: "spring",
                 stiffness: 100,
                 damping: 20,
@@ -215,12 +187,11 @@ export const FlipCard = ({
             isFlip = true;
 
             animate(
-                "#flipCard",
+                "#flipCard1",
                 {
                     transform: ["rotateY(0deg)", "rotateY(180deg)"],
                 },
                 {
-                    duration: 0.1,
                     type: "spring",
                     stiffness: 100,
                     damping: 20,
@@ -231,12 +202,11 @@ export const FlipCard = ({
             isFlip = false;
 
             animate(
-                "#flipCard",
+                "#flipCard1",
                 {
                     transform: ["rotateY(180deg)", "rotateY(0deg)"],
                 },
                 {
-                    duration: 0.1,
                     type: "spring",
                     stiffness: 100,
                     damping: 20,
@@ -266,7 +236,6 @@ export const FlipCard = ({
                 opacity: [1, 0],
             },
             {
-                duration: 0.1,
                 type: "spring",
                 stiffness: 400,
                 damping: 50,
@@ -275,7 +244,7 @@ export const FlipCard = ({
         );
 
         animate(
-            "#flipCard",
+            "#flipCard1",
             {
                 transform: [
                     "rotateY(0deg) scale(1)",
@@ -283,7 +252,6 @@ export const FlipCard = ({
                 ],
             },
             {
-                duration: 0.1,
                 type: "spring",
                 stiffness: 200,
                 damping: 30,
@@ -297,7 +265,6 @@ export const FlipCard = ({
                 opacity: [1, 0],
             },
             {
-                duration: 0.1,
                 type: "spring",
                 stiffness: 400,
                 damping: 50,
@@ -317,7 +284,7 @@ export const FlipCard = ({
             ref={scope}
         >
             <div
-                className="absolute top-0 left-0 w-screen h-screen -z-10 md1:block hidden"
+                className="absolute top-0 left-0 w-screen h-screen -z-10 md1:pointer-events-auto pointer-events-auto"
                 style={{
                     background: "rgba(0, 0, 0, 0.75)",
                 }}
@@ -325,90 +292,98 @@ export const FlipCard = ({
                 onClick={closeCardAnimation}
             />
             <div
-                className="relative w-[82.22vh] h-[92.5vh]"
+                className="w-[82.22vh] h-[92.5vh]"
                 style={{
                     transformStyle: "preserve-3d",
                 }}
-                id="flipCard"
+                id="flipCard1"
             >
                 <div
-                    className="relative top-[50%]"
+                    className="w-full h-full"
                     style={{
-                        aspectRatio: 8 / 9,
                         transformStyle: "preserve-3d",
-                        transform: "translateY(-50%)",
                     }}
+                    id="flipCard2"
                 >
-                    <svg viewBox="-160 -180 320 360" id="flipCardBody">
-                        <path
-                            d="M-120 -177.5 L120 -177.5 L157.5 -140 L157.5 140 L120 177.5 L-120 177.5 L-157.5 140 L-157.5 -140 Z"
-                            strokeWidth="3"
-                            strokeLinejoin="round"
-                            strokeLinecap="round"
-                            className="stroke-[rgb(25,25,25)]"
-                            fill="white"
-                        />
-                    </svg>
                     <div
-                        className="w-full h-full absolute top-0 left-0"
+                        className="relative top-[50%]"
                         style={{
+                            aspectRatio: 8 / 9,
                             transformStyle: "preserve-3d",
+                            transform: "translateY(-50%)",
                         }}
                     >
+                        <svg viewBox="-160 -180 320 360" id="flipCardBody">
+                            <path
+                                d="M-120 -177.5 L120 -177.5 L157.5 -140 L157.5 140 L120 177.5 L-120 177.5 L-157.5 140 L-157.5 -140 Z"
+                                strokeWidth="3"
+                                strokeLinejoin="round"
+                                strokeLinecap="round"
+                                className="stroke-[rgb(25,25,25)]"
+                                fill="white"
+                            />
+                        </svg>
                         <div
-                            className="text-[60px] leading-[65px] flex flex-col h-full items-center w-full absolute left-0 top-0 font-semibold px-[40px] text-center overflow-hidden"
+                            className="w-full h-full absolute top-0 left-0"
                             style={{
                                 transformStyle: "preserve-3d",
-                                transform: "translateZ(-1px) scale(-1, 1)",
                             }}
-                            id="flipCardTitle"
                         >
-                            <button
-                                className="w-[10%] h-[10%] absolute top-[5%] left-[10%]"
-                                style={{
-                                    transformStyle: "preserve-3d",
-                                }}
-                                onClick={handleFlipCard}
-                            >
-                                <Image src={flip} alt="" />
-                            </button>
-                            <div className="h-[50%] aspect-square flex justify-center items-end">
-                                {images[idxg][idxc][idx][idxs]}
-                            </div>
-                            <div className="absolute top-[50%] pt-16 px-[30px] lg:text-[4.25rem] lg:leading-[4.75rem] sm:text-[3rem] sm:leading-[4rem] text-[1.75rem] leading-[3rem]">
-                                {title}
-                            </div>
-                        </div>
-                        <div
-                            className="w-full h-full hidden justify-between flex-col items-center absolute top-0 left-0 px-11 pt-[16%] pb-[10%]"
-                            style={{
-                                transformStyle: "preserve-3d",
-                                transform: "translateZ(1px)",
-                            }}
-                            ref={flipCardContentRef}
-                        >
-                            <button
-                                onClick={closeCardAnimation}
-                                className="w-[5%] h-[5%] absolute top-[8%] right-[10%]"
-                            >
-                                <Image src={cross} alt="" />
-                            </button>
-                            <button
-                                className="w-[10%] h-[10%] absolute top-[5%] left-[10%]"
-                                style={{
-                                    transformStyle: "preserve-3d",
-                                }}
-                                onClick={handleFlipCard}
-                            >
-                                <Image src={flip} alt="" />
-                            </button>
                             <div
-                                className="text-[clamp(15px,5vw,27.5px)] leading-[clamp(22px,5.5vw,35.5px)] mt-2 w-full flex-col font-medium px-6 text-center overflow-y-auto flex gap-5"
+                                className="flex flex-col h-full items-center w-full absolute left-0 top-0 font-semibold px-[40px] text-center overflow-hidden"
                                 style={{
-                                    aspectRatio: 8 / 9,
+                                    transformStyle: "preserve-3d",
+                                    transform: "translateZ(-1px) scale(-1, 1)",
                                 }}
+                                id="flipCardTitle"
                             >
-                                {children}
+                                <button
+                                    className="w-[10%] h-[10%] absolute top-[5%] left-[10%]"
+                                    style={{
+                                        transformStyle: "preserve-3d",
+                                    }}
+                                    onClick={handleFlipCard}
+                                >
+                                    <Image src={flip} alt="" />
+                                </button>
+                                <div className="h-[50%] aspect-square flex justify-center items-end">
+                                    {images[idxg][idxc][idx][idxs]}
+                                </div>
+                                <div className="absolute top-[50%] md1:pt-16 pt-4 px-[30px] lg:text-[4.25rem] lg:leading-[4.75rem] sm:text-[3rem] sm:leading-[4rem] text-[1.75rem] leading-[3rem]">
+                                    {title}
+                                </div>
+                            </div>
+                            <div
+                                className="w-full h-full hidden justify-between flex-col items-center absolute top-0 left-0 px-11 pt-[16%] pb-[10%]"
+                                style={{
+                                    transformStyle: "preserve-3d",
+                                    transform: "translateZ(1px)",
+                                }}
+                                ref={flipCardContentRef}
+                            >
+                                <button
+                                    onClick={closeCardAnimation}
+                                    className="w-[5%] h-[5%] absolute top-[8%] right-[10%]"
+                                >
+                                    <Image src={cross} alt="" />
+                                </button>
+                                <button
+                                    className="w-[10%] h-[10%] absolute top-[5%] left-[10%]"
+                                    style={{
+                                        transformStyle: "preserve-3d",
+                                    }}
+                                    onClick={handleFlipCard}
+                                >
+                                    <Image src={flip} alt="" />
+                                </button>
+                                <div
+                                    className="text-[clamp(15px,5vw,27.5px)] leading-[clamp(22px,5.5vw,35.5px)] mt-2 w-full flex-col font-medium px-6 text-center overflow-y-auto flex gap-5"
+                                    style={{
+                                        aspectRatio: 8 / 9,
+                                    }}
+                                >
+                                    {children}
+                                </div>
                             </div>
                         </div>
                     </div>

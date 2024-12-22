@@ -17,28 +17,26 @@ import {
 import cross from "@/public/Svg/Cross.svg";
 import Image from "next/image";
 
-const Quiz1 = ({ idxq, idxc }: { idxq: number; idxc: number }) => {
+export const Quiz = ({ idxc, idxg }: { idxc: number; idxg: number }) => {
     return (
         <>
-            {quizName[idxc][idxq].map((quiz, idx) => (
+            {quizName[idxg][idxc].map((quiz, idx) => (
                 <QuizCardContainer
                     idx={idx}
                     content={quiz}
                     key={idx}
-                    quizName={quizName[idxc][idxq][idx]}
-                    quiz={quizzes[idxc][idxq][idx]}
-                    choices={choicesArray[idxc][idxq][idx]}
-                    answerId={answerArray[idxc][idxq][idx]}
-                    explaination={quizExplaination[idxc][idxq][idx]}
+                    quizName={quizName[idxg][idxc][idx]}
+                    quiz={quizzes[idxg][idxc][idx]}
+                    choices={choicesArray[idxg][idxc][idx]}
+                    answerId={answerArray[idxg][idxc][idx]}
+                    explaination={quizExplaination[idxg][idxc][idx]}
                 >
-                    {quizCardImg[idxc][idxq][idx]}
+                    {quizCardImg[idxg][idxc][idx]}
                 </QuizCardContainer>
             ))}
         </>
     );
 };
-
-export const Quizzes = [[<Quiz1 key="quiz1" idxq={0} idxc={0} />], [], []];
 
 const QuizCardDisplay = ({
     children,
@@ -192,7 +190,6 @@ const QuizCardContainer = ({
                 transform: ["scale(0.7)", "scale(1)"],
             },
             {
-                duration: 0.3,
                 type: "spring",
                 stiffness: 700,
                 damping: 50,

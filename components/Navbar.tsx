@@ -16,15 +16,19 @@ export default function Navbar() {
 
     return (
         <div className="bg-[rgba(0,0,0,0.9)] text-white h-16 flex items-center px-10 sm:justify-between justify-center relative z-[20]">
-            {/* <Image src="" alt="" /> */}
-            <Link href="/" className="flex items-center">
-                {/* <div className="bg-white w-10 h-10 mr-2"></div> */}
-                <div className="font-bold text-xl">EThems</div>
-            </Link>
-            {/* <div className="text-sm text-end sm:block hidden">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, reprehenderit?
-            </div> */}
+            <div className="flex items-center gap-5">
+                <Link href="/" className="flex items-center">
+                    <div className="font-bold text-xl">EThems</div>
+                </Link>
+                {/* <div>
+                    <Link
+                        href="/historical-figures"
+                        className="flex items-center"
+                    >
+                        hello
+                    </Link>
+                </div> */}
+            </div>
         </div>
     );
 }

@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { useAnimate } from "motion/react";
 import LessonLayout from "./Lesson";
 import { FunFact } from "./FunFacts";
-import { Quizzes } from "./Quizzes";
+import { Quiz } from "./Quizzes";
 import { colorStop, svgIcon } from "./static/static";
 import { LHeader, QHeader, FFHeader } from "./static/chaptersStatic";
 
@@ -619,7 +619,7 @@ export default function ChapterDialog({
                                         <div className="md1:pl-4 md1:pt-0 pt-2 h-full flex flex-col w-full">
                                             <FFHeader />
                                             <div className="h-full md1:overflow-y-auto md1:overflow-x-hidden w-full mt-5">
-                                                {FunFact[id][idx]}
+                                                <FunFact idxc={idx} idxg={id} />
                                             </div>
                                         </div>
                                     </div>
@@ -632,7 +632,7 @@ export default function ChapterDialog({
                                         <div className="md1:pl-4 md1:pt-0 pt-2 h-full flex flex-col w-full">
                                             <QHeader />
                                             <div className="h-fit md1:overflow-y-auto md1:overflow-x-hidden w-full mt-5 md1:pt-5 md1:pl-5 md1:pb-0 grid grid-cols-[repeat(auto-fit,minmax(200px,max-content))] md1:gap-10 md:gap-2 gap-6 md1:justify-normal justify-center pb-5 pt-2">
-                                                {Quizzes[id][idx]}
+                                                <Quiz idxc={idx} idxg={id} />
                                             </div>
                                         </div>
                                     </div>

@@ -6,6 +6,11 @@ import feast from "@/public/Image/feast.png";
 import wife from "@/public/Image/wife.png";
 import simpleTalk from "@/public/Image/simpletalk.png";
 import storyAboutTelescope from "@/public/Image/storyabouttelescope.png";
+import hardQuesSimpAns from "@/public/Image/cauhoihocbuavatratraloibatngo.png";
+import funnyDenied from "@/public/Image/loituchoihaihuocvoigiaohoang.png";
+import knifeAndSimple from "@/public/Image/luoidaovasudongian.png";
+import PlatosPrank from "@/public/Image/sugieucotcuarplato.png";
+import philosopherLover from "@/public/Image/trietgiavacauchuyentinhyeutaitieng.png";
 
 import { InlineMath } from "react-katex";
 
@@ -25,14 +30,24 @@ export const images = [
                     key="image2"
                     className="w-[90%] aspect-square"
                 />,
-                <div key="image3" />,
+                <Image
+                    src={hardQuesSimpAns}
+                    alt=""
+                    key="image3"
+                    className="w-[90%] aspect-square"
+                />,
                 <Image
                     src={wife}
                     alt=""
                     key="image4"
                     className="w-[90%] aspect-square"
                 />,
-                <div key="image5" />,
+                <Image
+                    src={PlatosPrank}
+                    alt=""
+                    key="image5"
+                    className="w-[90%] aspect-square"
+                />,
                 <Image
                     src={depressedAristotle}
                     alt=""
@@ -41,8 +56,18 @@ export const images = [
                 />,
             ],
             [
-                <div key="image7" />,
-                <div key="image8" />,
+                <Image
+                    src={funnyDenied}
+                    alt=""
+                    key="image7"
+                    className="w-[90%] aspect-square"
+                />,
+                <Image
+                    src={philosopherLover}
+                    alt=""
+                    key="image8"
+                    className="w-[90%] aspect-square"
+                />,
                 <div key="image9" />,
                 <Image
                     src={simpleTalk}
@@ -50,7 +75,12 @@ export const images = [
                     key="image10"
                     className="w-[90%] aspect-square"
                 />,
-                <div key="image11" />,
+                <Image
+                    src={knifeAndSimple}
+                    alt=""
+                    key="image11"
+                    className="w-[90%] aspect-square"
+                />,
             ],
             [
                 <div key="image12" />,
