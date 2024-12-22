@@ -32,6 +32,13 @@ import ExtraFunFact from "../Extra/ExtraFunFact";
 import LeonhardEuler from "@/public/Image/leonhardeuler.png";
 import ExtraAloneFact from "../Extra/ExtraAloneFact";
 import calcParamterOfEarth from "@/public/Image/calcparameterofearth.png";
+import measureMountainHeight from "@/public/Image/measuremountainheight.png";
+import measureParameterOfEarth from "@/public/Image/measureparameterofearth.png";
+import Dioptra from "@/public/Image/dioptra.png";
+import howAncientGreekUseDioptra from "@/public/Image/howancientgreekusedioptra.png";
+import howToUseDioptra from "@/public/Image/howtousedioptra.png";
+import aPartOfAristarchussBook from "@/public/Image/apartofaristarchussbook.png";
+import { InlineMath } from "react-katex";
 
 export default function LuongGiac() {
     return (
@@ -374,16 +381,73 @@ export default function LuongGiac() {
                         </div>
                     </ExtraAloneFact>
                     <ExtraAloneFact buttonContent="Al-Biruni - Đường chân trời và bán kính của Trái đất">
+                        Bạn có biết cách nào để tính bán kính Trái đất không? Có
+                        nhiều cách, và bây giờ con người đã tìm được càng ngày
+                        càng chính xác con số này hơn. Và dĩ nhiên cách đầu
+                        tiên, đơn giản nhất đó là ta lấy đáp án ở câu chuyện 1 ở
+                        trên (liên kết đến câu hỏi trên) và sử dụng công thức
+                        tính chu vi của hình tròn để tìm bán kính. Vậy bạn biết
+                        thêm cách nào nữa không? Hãy cùng thử làm với đề toán
+                        sau:
+                        <br />
+                        <br />
+                        <div className="flex gap-2 xxlg:flex-col md:flex-row flex-col">
+                            <div>
+                                a{")"} Tính chiều cao h của một ngọn núi. Biết
+                                tại vị trí A nhìn đỉnh núi dưới một góc{" "}
+                                <InlineMath math="\alpha" />, tại vị trí B cách
+                                A khoảng cách l, nhìn đỉnh núi dưới một góc{" "}
+                                <InlineMath math="\beta" />.
+                            </div>
+                            <div className="min-w-[250px] max-w-[300px] my-2">
+                                <Image
+                                    src={measureMountainHeight}
+                                    alt=""
+                                    className="w-full h-auto"
+                                />
+                            </div>
+                        </div>
+                        <div className="flex gap-2 xxlg:flex-col md:flex-row flex-col">
+                            <div>
+                                b{")"} Bây giờ ta vào câu hỏi chính nào. Để tính
+                                bán kính của trái đất, ta cần một ngọn núi thể
+                                nhìn thấy đường chân trời. Người đứng quan sát
+                                tại đỉnh núi, đo được góc tạo bởi đường song
+                                song với phương nằm ngang và đường thẳng nối với
+                                đường chân trời có số đo là{" "}
+                                <InlineMath math="\varphi" />. Tính bán kính của
+                                trái đất.
+                            </div>
+                            <div className="min-w-[250px] max-w-[300px] my-2">
+                                <Image
+                                    src={measureParameterOfEarth}
+                                    alt=""
+                                    className="w-full h-auto"
+                                />
+                            </div>
+                        </div>
+                        Đáp án:
+                        <br />a{")"} Áp dụng định lý sin trong tam giác ta được{" "}
+                        <InlineMath math="h = \dfrac{l \times \sin \alpha \times \sin \beta}{\sin (\alpha - \beta)}" />
+                        .
+                        <br />
+                        <br />b{")"} Từ hình bên ta được{" "}
+                        <InlineMath math="\dfrac{R}{R + h} = \cos \varphi" />,
+                        từ đó ta tính được R.
+                        <br />
+                        <br />
+                        <span className="font-[475]">Thông tin thêm</span>:
+                        <br />
                         Những nỗ lực đầu tiên để đo lường bán kính Trái Đất bắt
                         đầu từ thời kỳ cổ đại với các nhà khoa học Hy Lạp như
                         Eratosthenes (276-194 TCN) và Ptolemy (100-170 SCN). Đến
                         thời kỳ trung cổ, các nhà khoa học Hồi giáo đã tiếp tục
                         nghiên cứu và cải tiến các phương pháp đo lường bán kính
-                        Trái Đất. Như Al-Biruni (973-1048) và Al-Ma{"'"}mun
-                        (786-833). Ở đây, chúng tôi xin đề cập đến cách tính của
-                        Al-Biruni. Ông đã phát triển một phương pháp mới sử dụng
-                        độ cao của các ngọn núi và góc nhìn từ chúng để tính
-                        toán bán kính Trái Đất như cách giải ở trên.
+                        Trái Đất. Như Al-Biruni (973-1048) và Al-Ma
+                        {"'"}mun (786-833). Ở đây, chúng tôi xin đề cập đến cách
+                        tính của Al-Biruni. Ông đã phát triển một phương pháp
+                        mới sử dụng độ cao của các ngọn núi và góc nhìn từ chúng
+                        để tính toán bán kính Trái Đất như cách giải ở trên.
                         <div className="max-w-[700px] aspect-video my-4">
                             <ReactPlayer
                                 url="https://www.youtube.com/watch?v=uRBvT5QcO8A&t=297s"
@@ -497,7 +561,124 @@ export default function LuongGiac() {
                         giá trị cho các hàm lượng giác cơ bản như sine (sin) và
                         cosine (cos). Hipparchus cũng đã nghiên cứu về các quan
                         hệ góc trong các tam giác vuông và tam giác tròn.
+                        <div className="grid md:grid-cols-2 grid-cols-1 md:grid-rows-[repeat(3,auto)] md:mt-2 mt-5 grid-rows-[repeat(5,auto)] text-[rgba(0,0,0,0.75)] justify-items-center text-center">
+                            <div className="md:col-[1/2] md:row-[1/2] col-[1/-1] row-[1/2] px-10">
+                                <div className="md:min-w-[200px] min-w-[125px] md:max-w-[250px] max-w-[200px] self-center">
+                                    <Image
+                                        src={Dioptra}
+                                        alt=""
+                                        className="w-full h-auto"
+                                    />
+                                </div>
+                            </div>
+                            <div className="md:col-[1/2] md:row-[2/3] col-[1/-1] row-[2/3] m-2">
+                                <span className="font-[475]">Dioptra</span> -
+                                công cụ dùng để quan sát thiên văn và đo đạc địa
+                                chất, được phát minh bởi Héron thành Alexandria
+                                (Hy Lạp) vào thế kỷ III TCN
+                            </div>
+                            <div className="min-h-[100px] md:col-[2/-1] md:row-[1/2] col-[1/-1] row-[3/4] self-center flex md:items-center items-end md:px-2 md:mt-0 mt-5">
+                                <div className="min-w-[200px] max-w-[400px]">
+                                    <Image
+                                        src={howToUseDioptra}
+                                        alt=""
+                                        className="w-full h-auto"
+                                    />
+                                </div>
+                            </div>
+                            <div className="md:col-[2/-1] md:row-[2/3] col-[1/-1] row-[4/5] m-2">
+                                Cách sử dụng Dioptra để đo góc khi quan sát
+                                thiên văn
+                            </div>
+                            <div className="md:col-[1/-1] md:row-[3/-1] col-[1/-1] row-[5/-1] flex flex-col justify-center items-center gap-2 md:px-40 md:mt-0 mt-5">
+                                <div className="min-w-[300px] max-w-[400px]">
+                                    <Image
+                                        src={howAncientGreekUseDioptra}
+                                        alt=""
+                                        className="w-full h-auto"
+                                    />
+                                </div>
+                                <ExtraInlineFact
+                                    buttonContent="Đo đạc của người Hy Lạp cổ"
+                                    extraBodyClassName="text-start"
+                                >
+                                    Vậy người Hy Lạp cổ đã dùng cách đo thiên
+                                    văn nào để tính ra được khoảng cách từ trái
+                                    đất đến các ngôi sao? Hãy cùng xem video để
+                                    rõ hơn về cách tính nhé.
+                                    <div className="aspect-video max-w-[700px] my-3">
+                                        <ReactPlayer
+                                            url="https://www.youtube.com/watch?v=A82WzFtmLvI"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                    Sau khi xem xong video, bạn có phát hiện ra
+                                    làm sao để tìm được khoảng cách của vì sao
+                                    đến đường kính của quỹ đạo trái đất không?
+                                    Hãy dùng định lí sin trong tam giác cân nhé.
+                                    Không thì đơn giản hơn, hãy dùng công thức
+                                    lượng giác trong tam giác vuông. Quá đơn
+                                    giản đúng không nào.
+                                    <br />
+                                    <br />
+                                    Hoặc bạn có thể xem thêm video để càng hiểu
+                                    sâu hơn về cách tính khoảng cách này.
+                                    <div className="aspect-video max-w-[700px] my-3">
+                                        <ReactPlayer
+                                            url="https://www.youtube.com/watch?v=QTbuOhn7-Qk"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                </ExtraInlineFact>
+                            </div>
+                        </div>
                     </div>
+                    <ExtraAloneFact buttonContent="Aristarchus và Những Ước Tính Kinh Ngạc Về Vũ Trụ">
+                        <div className="flex xxlg:flex-col md:flex-row flex-col gap-2 md:items-start items-center">
+                            Một trong những cuốn sách của Aristarchus còn tồn
+                            tại viết về kích thước và khoảng cách của Mặt trời
+                            và Mặt trăng. Trong chuyên luận đáng chú ý này,
+                            Aristarchus đã thực hiện những nỗ lực sớm nhất để
+                            tính toán kích thước và khoảng cách tương đối giữa
+                            Mặt trời và Mặt trăng.
+                            <div className="xxlg:min-w-[500px] md:min-w-[300px] max-w-[300px] w-full">
+                                <Image
+                                    src={aPartOfAristarchussBook}
+                                    alt=""
+                                    className="w-full h-auto"
+                                />
+                            </div>
+                        </div>
+                        <br />
+                        Từ lâu người ta đã quan sát thấy Mặt trời và Mặt trăng
+                        dường như có cùng kích thước trên bầu trời, và Mặt trời
+                        ở xa hơn rất nhiều. Họ đã nhận ra điều này từ nhật thực,
+                        xuất hiện do Mặt trăng đi qua phía trước Mặt trời ở một
+                        khoảng cách nhất định so với Trái đất. Aristachus đã sử
+                        dụng tam giác Pithagoras (Pytago) để ước tính rằng
+                        khoảng cách từ Trái Đất đến Mặt trời gấp 18 đến 20 lần
+                        khoảng cách đến Mặt trăng. Ông cũng ước tính rằng kích
+                        thước của Mặt trăng xấp xỉ một phần ba Trái Đất, dựa
+                        trên việc căn thời gian nguyệt thực cẩn thận. Và mặc dù
+                        ước tính của ông về khoảng cách tới Mặt trời quá nhỏ (tỷ
+                        lệ thực tế là 390) do thiếu kính thiên văn chính xác vào
+                        thời điểm đó, tính toán của ông về tỷ lệ kích thước của
+                        Trái đất với Mặt trăng lại chính xác đến ngạc nhiên
+                        (đường kính Mặt trăng bằng 0,27 lần đường kính Trái
+                        Đất).
+                        <br />
+                        <br />
+                        Hãy cùng tìm hiểu thông qua video nhé
+                        <div className="aspect-video max-w-[700px] my-3">
+                            <ReactPlayer
+                                url="https://www.youtube.com/watch?v=RK6xaey6J00"
+                                width="100%"
+                                height="100%"
+                            />
+                        </div>
+                    </ExtraAloneFact>
                 </div>
             </div>
             <div className="col-[1/-1] row-[4/5] h-fit mt-[10px]">
@@ -657,7 +838,7 @@ export default function LuongGiac() {
                         Vào thế kỷ 18, các hàm lượng giác được định nghĩa rõ
                         ràng hơn và ứng dụng trong các lĩnh vực khác nhau như
                         phân tích, cơ học, điện học, v.v. Các nhà toán học như{" "}
-                        <ExtraInlineFact buttonContent="Leonhard Euler">
+                        <ExtraInlineFact buttonContent="Leonhard Euler" flip>
                             <HistoricalFigureInlineFact
                                 image={<Image src={LeonhardEuler} alt="" />}
                                 historicalFigureName="Leonhard Euler"

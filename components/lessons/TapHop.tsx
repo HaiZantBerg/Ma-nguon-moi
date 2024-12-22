@@ -94,6 +94,8 @@ export default function TapHop() {
                         bằng cách khắc các dấu chữ v trên một miếng gỗ, hoặc
                         bằng thắt nút trên một sợi dây.
                     </div>
+                </div>
+                <div className={`${generalClassName}`}>
                     <ExtraAloneFact buttonContent="Xương Ishango">
                         <div className="w-full h-full text-lg flex lg3:flex-row flex-col gap-2 items-center">
                             <div
@@ -131,8 +133,6 @@ export default function TapHop() {
                             </div>
                         </div>
                     </ExtraAloneFact>
-                </div>
-                <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>Cơ số</div>
                     <div className={`${generalContentClassName}`}>
                         Để hiểu được khái niệm gây khá nhiều bối rối này, chúng

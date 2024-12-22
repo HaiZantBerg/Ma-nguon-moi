@@ -171,7 +171,7 @@ export function HistoricalFigureInlineFact({
 }) {
     return (
         <div className="flex md:flex-row flex-col gap-2 md:items-start items-center">
-            <div className="md:min-w-[225px] md:max-w-[250px] max-w-[200px] *:w-full *:h-auto">
+            <div className="md:min-w-[225px] max-w-[200px] *:w-full *:h-auto w-full">
                 {image}
             </div>
             <div>
