@@ -133,8 +133,6 @@ export default function SpaceCanvas() {
     const particleAnimation = () => {
         if (!ctx.current) return;
 
-        let animationId: number;
-
         ctx.current.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
         starParticleArray.forEach((star) => {
@@ -144,7 +142,7 @@ export default function SpaceCanvas() {
             }
         });
 
-        animationId = requestAnimationFrame(particleAnimation);
+        const animationId = requestAnimationFrame(particleAnimation);
 
         return () => {
             cancelAnimationFrame(animationId);
