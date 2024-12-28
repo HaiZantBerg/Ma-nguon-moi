@@ -25,44 +25,47 @@ export const FunFact = ({ idxc, idxg }: { idxc: number; idxg: number }) => {
 
     return (
         <>
-            {storyList[idxg][idxc].map((section, idx) => (
-                <div key={idx} className="mb-5">
-                    <span className="font-semibold text-2xl">
-                        {historyFigureName[idxg][idxc][idx]}
-                    </span>
-                    <div className="md1:ml-7 flex flex-wrap mt-5">
-                        {section.map((title, idxs) => (
-                            <FunFactCard
-                                key={idxs}
-                                idxc={idxc}
-                                idxg={idxg}
-                                idx={idx}
-                                idxs={idxs}
-                                title={title}
-                            >
-                                {openFlipCard.value[0] === idx &&
-                                    openFlipCard.value[1] === idxs && (
-                                        <FlipCard
-                                            idx={idx}
-                                            title={title}
-                                            idxs={idxs}
-                                            idxg={idxg}
-                                            idxc={idxc}
-                                            triggerCloseCard={triggerCloseCard}
-                                        >
-                                            {
-                                                storyContent[idxg][idxc][idx][
-                                                    idxs
-                                                ]
-                                            }
-                                        </FlipCard>
-                                    )}
-                            </FunFactCard>
-                        ))}
+            {storyList[idxg][idxc] &&
+                storyList[idxg][idxc].map((section, idx) => (
+                    <div key={idx} className="mb-5">
+                        <span className="font-semibold text-2xl">
+                            {historyFigureName[idxg][idxc][idx]}
+                        </span>
+                        <div className="md1:ml-7 flex flex-wrap mt-5">
+                            {section.map((title, idxs) => (
+                                <FunFactCard
+                                    key={idxs}
+                                    idxc={idxc}
+                                    idxg={idxg}
+                                    idx={idx}
+                                    idxs={idxs}
+                                    title={title}
+                                >
+                                    {openFlipCard.value[0] === idx &&
+                                        openFlipCard.value[1] === idxs && (
+                                            <FlipCard
+                                                idx={idx}
+                                                title={title}
+                                                idxs={idxs}
+                                                idxg={idxg}
+                                                idxc={idxc}
+                                                triggerCloseCard={
+                                                    triggerCloseCard
+                                                }
+                                            >
+                                                {
+                                                    storyContent[idxg][idxc][
+                                                        idx
+                                                    ][idxs]
+                                                }
+                                            </FlipCard>
+                                        )}
+                                </FunFactCard>
+                            ))}
+                        </div>
+                        <hr className="mr-10" />
                     </div>
-                    <hr className="mr-10" />
-                </div>
-            ))}
+                ))}
         </>
     );
 };
