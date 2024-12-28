@@ -173,7 +173,7 @@ export default function SpaceCanvas() {
             );
         }
 
-        let animationId = requestAnimationFrame(particleAnimation);
+        const animationId = requestAnimationFrame(particleAnimation);
 
         return () => {
             window.removeEventListener("resize", resizeCanvas);
