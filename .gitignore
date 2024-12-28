@@ -8,6 +8,8 @@
 
 # testing
 /coverage
+/components/SpaceCanvas.tsx
+/app/test
 
 # next.js
 /.next/
