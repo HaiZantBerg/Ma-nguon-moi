@@ -89,7 +89,7 @@ export default function GradeCard() {
             className="flex xl:flex-row flex-col xl:gap-0 md:gap-5 gap-10 justify-between text-white xl:*:grow"
         >
             <Link
-                href="/khoi-10"
+                href="/khoi10"
                 className="flex xl:justify-center justify-center sm:justify-normal"
             >
                 <svg
@@ -172,7 +172,7 @@ export default function GradeCard() {
                 </svg>
             </Link>
             <Link
-                href="/khoi-11"
+                href="/khoi11"
                 className="flex xl:justify-center sm:justify-end justify-center"
             >
                 <svg
@@ -255,7 +255,7 @@ export default function GradeCard() {
                 </svg>
             </Link>
             <Link
-                href="/khoi-12"
+                href="/khoi12"
                 className="flex xl:justify-center justify-center sm:justify-normal"
             >
                 <svg

@@ -15,7 +15,12 @@ export default function Navbar() {
     }
 
     return (
-        <div className="bg-[rgba(0,0,0,0.9)] text-white h-16 flex items-center px-10 sm:justify-between justify-center relative z-[20]">
+        <div
+            className="backdrop-blur-xl fixed left-0 top-0 text-white h-16 flex items-center px-10 sm:justify-between justify-center w-full z-[100]"
+            style={{
+                backgroundColor: "rgba(0,0,0,0.85)",
+            }}
+        >
             <div className="flex items-center gap-5">
                 <Link href="/" className="flex items-center">
                     <div className="font-bold text-xl">EThems</div>

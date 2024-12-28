@@ -338,7 +338,7 @@ export default function ChapterDialog({
     return (
         <div
             key={idx}
-            className="top-0 left-0 fixed w-full h-[100dvh] z-30 flex items-center justify-center"
+            className="top-0 left-0 fixed w-full h-[100dvh] z-[110] flex items-center justify-center"
             ref={scope}
         >
             <div

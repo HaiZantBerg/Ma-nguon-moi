@@ -102,7 +102,7 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                 { ease: "easeOut" }
             );
 
-            toggleRef.current[idxl].style.display = "block";
+            toggleRef.current[idxl].style.display = "grid";
             toggleRef.current[constCurToggleId].style.display = "none";
 
             curToggleId.current = idxl;
@@ -148,14 +148,14 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                 Lessons[id][idx].map((lesson, idxl) => (
                     <div
                         key={idxl}
-                        className={`h-full md1:overflow-y-auto md1:overflow-x-hidden font-light w-full ${
-                            idxl ? "hidden" : "grid grid-cols-2 grid-rows-1"
+                        className={`h-full md1:overflow-y-auto md1:overflow-x-hidden grid-cols-2 grid-rows-1 font-light w-full ${
+                            idxl ? "hidden" : "grid"
                         }`}
                         ref={(el) => {
                             toggleRef.current[idxl] = el;
                         }}
                     >
-                        <div className="bg-[#292929] md:w-[1.5px] w-[1px] sticky h-full top-0 md1:left-[50px] md:left-[14px] left-[9.5px] col-[1/2] row-[1/-1]" />
+                        <div className="bg-[#292929] md:w-[1.5px] w-[1px] z-10 sticky h-full top-0 md1:left-[50px] md:left-[14px] left-[9.5px] col-[1/2] row-[1/-1]" />
                         {initialLessonToggleLoad.value[idxl] && (
                             <div className="col-[1/-1] row-[1/-1]">
                                 <div

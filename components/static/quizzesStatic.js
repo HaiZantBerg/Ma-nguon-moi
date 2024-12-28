@@ -110,7 +110,13 @@ export const quizExplaination = [
                     kính trong trường hợp này.
                 </div>
             </div>,
-            <div key="explaination3"></div>,
+            <div key="explaination3">
+                Hải là người khiêm tốn nhất
+                <br />
+                <br />
+                Nếu Hùng đúng thì Hoàng và Hải cũng đúng. Nếu Huy đúng thì Hải
+                cũng đúng. Nếu Hoàng đúng thì sao? Nếu Hoàng sai thì sao?
+            </div>,
             <div key="explaination4">
                 Do tổng số bạn ngồi quanh bàn là lẻ, nên số nam và số nữ không
                 thể bằng nhau. Từ đó suy ra, trong hai câu nói: {'"'}Đa số trong
@@ -144,7 +150,15 @@ export const quizExplaination = [
             <div key="explaination5" className="my-2">
                 4 con ếch. Andrew, Burt, Danny, Eli là ếch, Charlie là kangaroo.
             </div>,
-            <div key="explaination6"></div>,
+            <div key="explaination6">
+                Phải lật mặt A và mặt 2.
+                <br />
+                <br />
+                Bạn nghĩ là phải lật tấm bìa có ghi là A? Bạn đã đúng. Còn tấm
+                bìa thứ hai là tấm nào? Chắc không phải là tấm bìa ghi là B rồi?
+                Nhưng 1 và 2 thì chọn cái nào? Hãy suy nghĩ cho cẩn thận, đừng
+                để bị mắc lừa.
+            </div>,
         ],
     ],
     [[]],

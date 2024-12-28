@@ -295,3 +295,5 @@ export const gradeParticleColor = [
     "hsla(230 100% 24% / 0.6)",
     "",
 ];
+
+export const chapterTextColor = ["text-[#133310]", "", ""];

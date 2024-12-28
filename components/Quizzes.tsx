@@ -20,20 +20,21 @@ import Image from "next/image";
 export const Quiz = ({ idxc, idxg }: { idxc: number; idxg: number }) => {
     return (
         <>
-            {quizName[idxg][idxc].map((quiz, idx) => (
-                <QuizCardContainer
-                    idx={idx}
-                    content={quiz}
-                    key={idx}
-                    quizName={quizName[idxg][idxc][idx]}
-                    quiz={quizzes[idxg][idxc][idx]}
-                    choices={choicesArray[idxg][idxc][idx]}
-                    answerId={answerArray[idxg][idxc][idx]}
-                    explaination={quizExplaination[idxg][idxc][idx]}
-                >
-                    {quizCardImg[idxg][idxc][idx]}
-                </QuizCardContainer>
-            ))}
+            {quizName[idxg][idxc] &&
+                quizName[idxg][idxc].map((quiz, idx) => (
+                    <QuizCardContainer
+                        idx={idx}
+                        content={quiz}
+                        key={idx}
+                        quizName={quizName[idxg][idxc][idx]}
+                        quiz={quizzes[idxg][idxc][idx]}
+                        choices={choicesArray[idxg][idxc][idx]}
+                        answerId={answerArray[idxg][idxc][idx]}
+                        explaination={quizExplaination[idxg][idxc][idx]}
+                    >
+                        {quizCardImg[idxg][idxc][idx]}
+                    </QuizCardContainer>
+                ))}
         </>
     );
 };

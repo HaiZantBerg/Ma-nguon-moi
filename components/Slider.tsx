@@ -11,6 +11,7 @@ import {
     gradeParticleColor,
     circleColor,
     gradeButtonOpenColor,
+    chapterTextColor,
 } from "./static/static";
 import { description, chapter } from "./static/chaptersStatic";
 // import { db } from "@/db";
@@ -212,7 +213,7 @@ export default function Slider({ id }: { id: number }) {
             if (!canvasRef.current) return;
 
             canvasRef.current.width = window.innerWidth;
-            canvasRef.current.height = window.innerHeight - 65;
+            canvasRef.current.height = window.innerHeight;
         }, 500),
         []
     );
@@ -389,7 +390,7 @@ export default function Slider({ id }: { id: number }) {
                 nextBtnRef.current.getBoundingClientRect();
 
             const dx = e.clientX,
-                dy = top - 60,
+                dy = top,
                 vx =
                     (dx - (left + (right - left) / 2)) / (20 + random(-10, -5)),
                 vy = (bottom - e.clientY) / (30 + random(-15, 15)) + 5;
@@ -478,7 +479,7 @@ export default function Slider({ id }: { id: number }) {
                 prevBtnRef.current.getBoundingClientRect();
 
             const dx = e.clientX,
-                dy = top - 70,
+                dy = top,
                 vx =
                     (dx - (left + (right - left) / 2)) / (20 + random(-10, -5)),
                 vy = (bottom - e.clientY) / (30 + random(-15, 15)) + 5;
@@ -864,7 +865,7 @@ export default function Slider({ id }: { id: number }) {
                     ))}
                 </div>
             </div>
-            <div className="h-[calc(100dvh-64px)] flex justify-between relative z-10">
+            <div className="h-dvh flex justify-between relative z-10">
                 <div className="flex-1 h-full items-end flex justify-end pt-[550px] xxlg:pb-[10vh] md1:pb-[5vh] pb-8">
                     <div className=" bg-gray-50 border-[2.5px] border-gray-300 rounded-[30px] max-w-[460px] w-full max-h-[300px] px-7 py-5 lg3:flex flex-col hidden">
                         <div className="flex flex-row items-center justify-normal gap-3">
@@ -976,8 +977,10 @@ export default function Slider({ id }: { id: number }) {
                     </div>
                 </div>
                 <div className="flex flex-col justify-between h-full flex-1 sm:min-w-[500px] min-w-[300px] xxlg:pb-[10vh] md1:pb-[5vh] pb-[3rem]">
-                    <div className="flex flex-col items-center gap-[10vh] pt-[30vh] md1:px-0 px-5">
-                        <div className="sm:text-[2.5rem] sm:leading-[2.75rem] text-[#133310] text-[1.75rem] font-semibold leading-[2rem] text-center md1:px-12 px-3 h-24 font-['Chakra_Petch']">
+                    <div className="flex flex-col items-center gap-[10vh] pt-[40vh] md1:px-0 px-5">
+                        <div
+                            className={`sm:text-[2.5rem] sm:leading-[2.75rem] ${chapterTextColor[id]} text-[1.75rem] font-semibold leading-[2rem] text-center md1:px-12 px-3 h-24 font-['Chakra_Petch']`}
+                        >
                             <div id="chapterTitle1" ref={chapterContentRef}>
                                 {chapter[id][0]}
                             </div>
@@ -1015,7 +1018,7 @@ export default function Slider({ id }: { id: number }) {
                             </svg>
                         </button>
                     </div>
-                    <div className="select-none flex justify-center sm:gap-8 gap-4 md:text-xl sm:text-lg text-[1.125rem] sm:*:w-40 sm:*:h-[60px] *:w-[8.5rem] *:h-[3.25rem]">
+                    <div className="select-none flex justify-center sm:gap-8 gap-4 sm:text-xl text-[1.125rem] sm:*:w-40 sm:*:h-[60px] *:w-[8.5rem] *:h-[3.25rem]">
                         <div
                             className="absolute h-full sm:*:right-[92px] *:right-[60px] -z-10"
                             style={{
