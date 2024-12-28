@@ -438,7 +438,7 @@ export default function ChapterDialog({
                                 {svgIcon[3]}
                             </svg>
                         </div>
-                        <div className="flex md1:hidden justify-between h-full">
+                        <div className="flex md1:hidden justify-between h-full px-2">
                             <svg
                                 viewBox="-28 -27 54 54"
                                 className="cursor-pointer w-[55px] h-[54px] pointer-events-auto"

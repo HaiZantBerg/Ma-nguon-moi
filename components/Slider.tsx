@@ -786,7 +786,7 @@ export default function Slider({ id }: { id: number }) {
                     width={2400}
                     height={500}
                     viewBox="0 0 2400 500"
-                    className="absolute xxlg:stroke-[2.75px] sm:stroke-[2.5px] stroke-[1.75px] md1:scale-125 scale-100 md1:translate-y-28 translate-y-10"
+                    className="absolute xxlg:stroke-[2.75px] sm:stroke-[2.5px] stroke-[1.75px] md1:scale-125 scale-100 md1:top-[7.25rem] top-[3.5rem]"
                 >
                     <path
                         d="M1200 550 L100 550 C -100 -40 2500 -40 2300 550 Z"
@@ -794,7 +794,7 @@ export default function Slider({ id }: { id: number }) {
                         fill="none"
                     />
                 </svg>
-                <div className="absolute overflow-hidden md1:scale-125 scale-100 md1:translate-y-[6.75rem] translate-y-10 w-[2400px] h-[485px]">
+                <div className="absolute overflow-hidden md1:scale-125 scale-100 md1:top-28 top-[3.5rem] w-[2400px] h-[485px]">
                     {chapter[id].map((_, idx) => (
                         <div
                             key={idx}
