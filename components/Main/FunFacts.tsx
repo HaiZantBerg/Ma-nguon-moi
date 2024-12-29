@@ -6,7 +6,7 @@ import {
     storyList,
     historyFigureName,
     storyContent,
-} from "./static/funfactsStatic";
+} from "../static/funfactsStatic";
 import { useAnimate } from "motion/react";
 import Image from "next/image";
 import cross from "@/public/Svg/Cross.svg";

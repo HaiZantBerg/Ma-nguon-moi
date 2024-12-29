@@ -15,14 +15,14 @@ import {
     generalContentClassName,
     generalInstanceClassName,
     generalHeaderClassName,
-} from "../static/lessonsStatic";
-import ExtraQuiz from "../Extra/ExtraQuiz";
-import ExtraAloneFact from "../Extra/ExtraAloneFact";
+} from "../../static/lessonsStatic";
+import ExtraQuiz from "../../Extra/ExtraQuiz";
+import ExtraAloneFact from "../../Extra/ExtraAloneFact";
 import ExtraInlineFact, {
     HistoricalFigureInlineFact,
-} from "../Extra/ExtraInlineFact";
-import ExtraFunFact from "../Extra/ExtraFunFact";
-import ExtraLearnMore from "../Extra/ExtraLearnMore";
+} from "../../Extra/ExtraInlineFact";
+import ExtraFunFact from "../../Extra/ExtraFunFact";
+import ExtraLearnMore from "../../Extra/ExtraLearnMore";
 import GottlobFrege from "@/public/Image/gottlobfrege.png";
 import GeorgCantor from "@/public/Image/georgcantor.png";
 import Bertrandrussell from "@/public/Image/bertrandrussell.png";

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useAnimate } from "motion/react";
 import ChapterDialog from "./ChapterDialog";
 import debounce from "debounce";
@@ -12,11 +12,12 @@ import {
     circleColor,
     gradeButtonOpenColor,
     chapterTextColor,
-} from "./static/static";
-import { description, chapter } from "./static/chaptersStatic";
+} from "../static/static";
+import { description, chapter } from "../static/chaptersStatic";
 // import { db } from "@/db";
 import { signal } from "@preact/signals-react";
 import { useSignals } from "@preact/signals-react/runtime";
+import { useSearchParams } from "next/navigation";
 
 const firstCord = 20;
 const secondCord = 7.5;
@@ -183,10 +184,11 @@ class minusParticle {
     }
 }
 
-const curChapterId = signal(-1);
-
 export default function Slider({ id }: { id: number }) {
     useSignals();
+
+    const searchParams = useSearchParams().get("chuong");
+    const [curChapterId, setCurChapterId] = useState(-1);
 
     const [scope, animate] = useAnimate();
 
@@ -502,7 +504,7 @@ export default function Slider({ id }: { id: number }) {
         }
     };
 
-    const handleIncreaseClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleIncreaseClick = (e?: React.MouseEvent<HTMLButtonElement>) => {
         chapterId.current = (chapterId.current + 1) % chapter[id].length;
 
         if (chapterContentRef.current) {
@@ -540,7 +542,7 @@ export default function Slider({ id }: { id: number }) {
             );
         });
 
-        handleNextClickAnimation(e);
+        if (e) handleNextClickAnimation(e);
     };
 
     const handleDecreaseClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -736,7 +738,7 @@ export default function Slider({ id }: { id: number }) {
     };
 
     const handleOpenDialog = async (idx: number) => {
-        curChapterId.value = idx;
+        setCurChapterId(idx);
 
         // try {
         //     await db.chapterData.put({
@@ -750,7 +752,7 @@ export default function Slider({ id }: { id: number }) {
     };
 
     const handleCloseDialog = async () => {
-        curChapterId.value = -1;
+        setCurChapterId(-1);
 
         // try {
         //     await db.chapterData.put({
@@ -763,17 +765,19 @@ export default function Slider({ id }: { id: number }) {
         // }
     };
 
-    // useEffect(() => {
-    //     const fetchCurChapter = async () => {
-    //         const openChapter = await db.chapterData.get(1);
+    useEffect(() => {
+        //     const fetchCurChapter = async () => {
+        //         const openChapter = await db.chapterData.get(1);
 
-    //         if (openChapter) setCurChapterId(openChapter.curChapter);
+        //         if (openChapter) setCurChapterId(openChapter.curChapter);
 
-    //         setTimeout(() => (playAnimation.current = true), 100);
-    //     };
+        //         setTimeout(() => (playAnimation.current = true), 100);
+        //     };
 
-    //     fetchCurChapter();
-    // }, []);
+        //     fetchCurChapter();
+
+        if (searchParams) setCurChapterId(Number(searchParams) - 1);
+    }, []);
 
     return (
         <div ref={scope}>
@@ -1224,11 +1228,11 @@ export default function Slider({ id }: { id: number }) {
                     </div>
                 </div>
             </div>
-            {curChapterId.value !== -1 && (
+            {curChapterId !== -1 && (
                 <ChapterDialog
-                    chapterTitle={chapter[id][curChapterId.value]}
+                    chapterTitle={chapter[id][curChapterId]}
                     id={id}
-                    idx={curChapterId.value}
+                    idx={curChapterId}
                     description={description}
                     playAnimation={playAnimation.current}
                     handleCloseDialog={handleCloseDialog}

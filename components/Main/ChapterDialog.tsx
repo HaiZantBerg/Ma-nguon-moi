@@ -5,8 +5,8 @@ import { useAnimate } from "motion/react";
 import LessonLayout from "./Lesson";
 import { FunFact } from "./FunFacts";
 import { Quiz } from "./Quizzes";
-import { colorStop, svgIcon } from "./static/static";
-import { LHeader, QHeader, FFHeader } from "./static/chaptersStatic";
+import { colorStop, svgIcon } from "../static/static";
+import { LHeader, QHeader, FFHeader } from "../static/chaptersStatic";
 
 export default function ChapterDialog({
     chapterTitle,

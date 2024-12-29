@@ -13,7 +13,7 @@ import {
     choiceColorBackdrop,
     choiceColorHover,
     quizExplaination,
-} from "./static/quizzesStatic";
+} from "../static/quizzesStatic";
 import cross from "@/public/Svg/Cross.svg";
 import Image from "next/image";
 

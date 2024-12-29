@@ -1,4 +1,4 @@
-import Slider from "@/components/Slider";
+import Slider from "@/components/Main/Slider";
 import React from "react";
 
 export default function page() {

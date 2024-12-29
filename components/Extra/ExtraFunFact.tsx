@@ -3,7 +3,7 @@
 import { useAnimate } from "motion/react";
 import React, { useState } from "react";
 import { storyContent, storyList } from "../static/funfactsStatic";
-import { FlipCard } from "../FunFacts";
+import { FlipCard } from "../Main/FunFacts";
 
 export default function ExtraFunFact({
     buttonContent,

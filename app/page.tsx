@@ -32,7 +32,7 @@
 // };
 
 import React from "react";
-import CardGrade from "@/components/CardGrade";
+import CardGrade from "@/components/Main/CardGrade";
 
 const page = () => {
     return (

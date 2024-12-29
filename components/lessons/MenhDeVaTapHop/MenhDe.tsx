@@ -1,15 +1,15 @@
 import { BlockMath, InlineMath } from "react-katex";
 import ExtraInlineFact, {
     HistoricalFigureInlineFact,
-} from "../Extra/ExtraInlineFact";
+} from "../../Extra/ExtraInlineFact";
 import {
     generalClassName,
     timelineStar,
     generalContentClassName,
     generalInstanceClassName,
     generalHeaderClassName,
-} from "../static/lessonsStatic";
-import ExtraLearnMore from "../Extra/ExtraLearnMore";
+} from "../../static/lessonsStatic";
+import ExtraLearnMore from "../../Extra/ExtraLearnMore";
 import Aristotle from "@/public/Image/aristotle.png";
 import GeogreBoole from "@/public/Image/georgeboole.png";
 import GottlobFrege from "@/public/Image/gottlobfrege.png";

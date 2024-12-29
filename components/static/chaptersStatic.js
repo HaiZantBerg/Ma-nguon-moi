@@ -4,6 +4,8 @@ import Quill from "@/public/Svg/Quill.svg";
 import Sparkle from "@/public/Svg/Sparkle.svg";
 import Notice from "@/public/Svg/Noticed.svg";
 import QuesExcla from "@/public/Svg/QuesExcla.svg";
+import ReactPlayer from "react-player";
+import Delayed from "../Others/Delay";
 
 export const chapter = [
     [
@@ -97,7 +99,35 @@ export const description = [
         <div key="description9"></div>,
     ],
     [
-        <div key="description10"></div>,
+        <div key="description10">
+            Lịch sử phát triển của lượng giác đi cùng với sự phát triển của đo
+            đạc và thiên văn. Để hiểu rõ hơn bạn đọc có thể tìm hiểu thêm ở{" "}
+            <Link
+                className="text-[#073108] underline decoration-[1.5px] decoration-emerald-800 font-[375]"
+                href="/khoi10?chuong=3"
+            >
+                chương 3 - lớp 10
+            </Link>
+            .
+            <br />
+            <br />
+            Ở chương này, chúng ta sẽ đi cụ thể hơn về hàm số lượng giác, phương
+            trình lượng giá. Và để có thể tìm hiểu về các khái niệm này, thì đầu
+            tiên ta cùng nhau đi tìm hiểu về lịch sử phát triển của góc lượng
+            giác và góc theo đơn vị radian.
+            <br />
+            <br />
+            Bạn có thể tìm hiểu thêm ở video sau
+            <Delayed waitBeforeShow={750}>
+                <div className="aspect-video max-w-[400px] mt-2">
+                    <ReactPlayer
+                        url="https://www.youtube.com/watch?v=eRenu0jUfmY"
+                        width="100%"
+                        height="100%"
+                    />
+                </div>
+            </Delayed>
+        </div>,
         <div key="description11"></div>,
         <div key="description12"></div>,
         <div key="description13"></div>,
