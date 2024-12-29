@@ -1,6 +1,11 @@
 import Slider from "@/components/Main/Slider";
+import { Suspense } from "react";
 import React from "react";
 
 export default function page() {
-    return <Slider id={1} />;
+    return (
+        <Suspense>
+            <Slider id={1} />
+        </Suspense>
+    );
 }
