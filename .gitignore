@@ -6,9 +6,9 @@
 
 # testing
 /coverage
-/components/Main/SpaceCanvas.tsx
-/app/test/
-/app/historicalfigures/
+components/Main/SpaceCanvas.tsx
+app/test/
+app/historicalfigures/
 
 # next.js
 /.next/
