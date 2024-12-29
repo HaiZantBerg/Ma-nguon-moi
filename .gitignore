@@ -7,8 +7,8 @@
 # testing
 /coverage
 /components/Main/SpaceCanvas.tsx
-/app/test
-/historicalfigures
+/app/test/
+/historicalfigures/
 
 # next.js
 /.next/
