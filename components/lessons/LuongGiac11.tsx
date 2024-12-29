@@ -16,12 +16,13 @@ export default function LuongGiac11() {
                         Góc lượng giác
                     </span>
                     <br />
-                    Khái niệm về "góc âm" và "góc lớn hơn 360
-                    <InlineMath math="\degree" />" xuất hiện khi các nhà toán
-                    học mở rộng định nghĩa góc vượt ra ngoài hình học thuần túy
-                    để đáp ứng nhu cầu trong lượng giác, giải tích, và các lĩnh
-                    vực khoa học khác. Đây là một phần quan trọng trong việc
-                    phát triển góc lượng giác hiện đại.
+                    Khái niệm về {'"'}góc âm{'"'} và {'"'}góc lớn hơn 360
+                    <InlineMath math="\degree" />
+                    {'"'} xuất hiện khi các nhà toán học mở rộng định nghĩa góc
+                    vượt ra ngoài hình học thuần túy để đáp ứng nhu cầu trong
+                    lượng giác, giải tích, và các lĩnh vực khoa học khác. Đây là
+                    một phần quan trọng trong việc phát triển góc lượng giác
+                    hiện đại.
                     <div className={`${generalInstanceClassName}`}>
                         <br />
                         1. Khái niệm ban đầu về góc (trước góc âm và lớn hơn 360
@@ -149,8 +150,8 @@ export default function LuongGiac11() {
                             <div className={`${generalInstanceClassName}`}>
                                 Khái niệm radian xuất hiện vào thế kỷ 17 và được
                                 Leonhard Euler chính thức hóa vào năm 1743.
-                                Thuật ngữ "radian" được đặt tên vào năm 1873 bởi
-                                James Thomson.{" "}
+                                Thuật ngữ {'"'}radian{'"'} được đặt tên vào năm
+                                1873 bởi James Thomson.{" "}
                             </div>
                         </div>
                     </div>
