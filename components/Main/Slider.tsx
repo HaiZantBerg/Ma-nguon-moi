@@ -15,7 +15,6 @@ import {
 } from "../static/static";
 import { description, chapter } from "../static/chaptersStatic";
 // import { db } from "@/db";
-import { signal } from "@preact/signals-react";
 import { useSignals } from "@preact/signals-react/runtime";
 import { useSearchParams } from "next/navigation";
 
