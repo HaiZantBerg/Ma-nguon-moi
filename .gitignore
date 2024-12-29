@@ -8,7 +8,7 @@
 /coverage
 /components/Main/SpaceCanvas.tsx
 /app/test/
-/historicalfigures/
+/app/historicalfigures/
 
 # next.js
 /.next/
