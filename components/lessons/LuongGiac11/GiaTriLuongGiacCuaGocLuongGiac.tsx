@@ -6,7 +6,7 @@ import {
     timelineStar,
 } from "../../static/lessonsStatic";
 import { InlineMath } from "react-katex";
-import unitAndArcLength from "@/public/Image/unitandarclength.png";
+// import unitAndArcLength from "@/public/Image/unitandarclength.png";
 
 export default function GiaTriLuongGiacCuaGocLuongGiac() {
     return (
