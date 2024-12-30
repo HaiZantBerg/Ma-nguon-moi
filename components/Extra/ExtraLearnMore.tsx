@@ -1,7 +1,7 @@
 "use client";
 
 import { useAnimate } from "motion/react";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { extraBodyVariants, extraPaddingLeft } from "./static";
 
 export default function ExtraLearnMore({
@@ -24,9 +24,17 @@ export default function ExtraLearnMore({
     const [openExtra, setOpenExtra] = useState(false);
 
     const extraBodyContainerRef = useRef<HTMLDivElement | null>(null);
+    const delayTime = useRef<number>(0);
+
+    useEffect(() => {
+        if (extraBodyContainerRef.current)
+            delayTime.current =
+                extraBodyContainerRef.current.getBoundingClientRect().width /
+                4000;
+    });
 
     const handleOpenClose = async () => {
-        if (!openExtra && extraBodyContainerRef.current) {
+        if (!openExtra) {
             animate(
                 "#button",
                 {
@@ -35,17 +43,13 @@ export default function ExtraLearnMore({
                 { type: "spring", stiffness: 250, damping: 20, mass: 0.5 }
             );
 
-            const delayTime =
-                extraBodyContainerRef.current.getBoundingClientRect().width /
-                4000;
-
             animate(
                 "#extraBody",
                 {
                     height: "fit-content",
                 },
                 {
-                    delay: delayTime,
+                    delay: delayTime.current,
                     type: "spring",
                     stiffness: 450,
                     damping: 40,

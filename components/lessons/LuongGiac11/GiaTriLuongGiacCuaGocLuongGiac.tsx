@@ -4,10 +4,11 @@ import {
     generalHeaderClassName,
     generalInstanceClassName,
     timelineStar,
-} from "../static/lessonsStatic";
+} from "../../static/lessonsStatic";
 import { InlineMath } from "react-katex";
+import unitAndArcLength from "@/public/Image/unitandarclength.png";
 
-export default function LuongGiac11() {
+export default function GiaTriLuongGiacCuaGocLuongGiac() {
     return (
         <>
             <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
@@ -104,32 +105,39 @@ export default function LuongGiac11() {
                         Đơn vị đo góc và độ dài cung tròn
                     </span>
                     <div>
-                        Việc đo góc bằng radian bắt nguồn từ sự phát triển của
-                        toán học vào thế kỷ 18, mặc dù khái niệm cơ bản đã có
-                        trước đó nhưng chưa được chuẩn hóa. Đây là quá trình
-                        phát triển:
+                        Việc đo góc bằng{" "}
+                        <span className="font-[475]">radian</span> bắt nguồn từ
+                        sự phát triển của toán học vào{" "}
+                        <span className="font-[475]">thế kỷ 18</span>, mặc dù
+                        khái niệm cơ bản đã có trước đó nhưng chưa được chuẩn
+                        hóa. Đây là quá trình phát triển:
                         <div className={`${generalInstanceClassName}`}>
                             <br />
                             1. Khái niệm cơ bản trước radian{" "}
                             <div className={`${generalInstanceClassName}`}>
-                                Trong thời kỳ cổ đại, các nhà toán học như
-                                Euclid và Archimedes đã biết rằng độ dài của một
-                                cung tròn liên hệ với bán kính của nó. Tuy
-                                nhiên, họ chưa đặt tên hay sử dụng hệ đo góc dựa
-                                trên tỷ lệ này.{" "}
+                                Trong thời kỳ cổ đại, các nhà toán học như{" "}
+                                <span className="font-[475]">Euclid</span> và{" "}
+                                <span className="font-[475]">Archimedes</span>{" "}
+                                đã biết rằng độ dài của một cung tròn liên hệ
+                                với bán kính của nó. Tuy nhiên, họ chưa đặt tên
+                                hay sử dụng hệ đo góc dựa trên tỷ lệ này.{" "}
                             </div>
                             <div className={`${generalInstanceClassName}`}>
-                                Người Babylon sử dụng hệ độ (degree), chia một
-                                vòng tròn thành 360
+                                Người Babylon sử dụng hệ{" "}
+                                <span className="font-[475]">độ (degree)</span>,
+                                chia một vòng tròn thành 360
                                 <InlineMath math="\degree" />.{" "}
                             </div>
                             <br />
                             2. Sự xuất hiện của ý tưởng radian
                             <div className={`${generalInstanceClassName}`}>
                                 {" "}
-                                Thế kỷ 17: Ý tưởng đo góc dựa trên tỉ lệ giữa
-                                cung tròn và bán kính xuất hiện trong các nghiên
-                                cứu của Isaac Newton và Roger Cotes.{" "}
+                                <span className="font-[475]">Thế kỷ 17</span>: Ý
+                                tưởng đo góc dựa trên tỉ lệ giữa cung tròn và
+                                bán kính xuất hiện trong các nghiên cứu của{" "}
+                                <span className="font-[475]">Isaac Newton</span>{" "}
+                                và{" "}
+                                <span className="font-[475]">Roger Cotes</span>.{" "}
                             </div>
                             <br />
                             3. Định nghĩa radian chính thức
@@ -141,7 +149,7 @@ export default function LuongGiac11() {
                                 <InlineMath math="\degree" />.{" "}
                             </div>
                             <div className={`${generalInstanceClassName}`}>
-                                Độ dài cung tròn được tính bằng công thức:
+                                Độ dài cung tròn được tính bằng công thức:{" "}
                                 <InlineMath math="s = r \cdot \theta" />, với{" "}
                                 <InlineMath math="\theta" /> tính bằng radian.{" "}
                             </div>

@@ -1,4 +1,10 @@
-export const lessonsToggle = [[["Mệnh đề", "Tập hợp"]], [], []];
+export const lessonsToggle = [
+    [["Mệnh đề", "Tập hợp"]],
+    [["Giá Trị Lượng Giác Của Góc Lượng Giác", "Phương Trình Lượng Giác"]],
+    [],
+];
+
+export const lessonMarginTop = [[], ["min-[440px]:mt-[44px] mt-[64px]"], []];
 
 export const gridDisplay = [
     [
@@ -6,7 +12,7 @@ export const gridDisplay = [
         "",
         "grid-rows-[repeat(8,auto)]",
     ],
-    [],
+    [["grid-rows-[repeat(4,auto)]", "grid-rows-[repeat(4,auto)]"]],
     [],
 ];
 

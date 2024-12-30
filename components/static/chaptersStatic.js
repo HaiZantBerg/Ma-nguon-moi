@@ -149,7 +149,7 @@ export const description = [
 
 export const LHeader = () => {
     return (
-        <div className='md1:pl-4 font-["Chakra_Petch"] font-[600] h-[72px] pt-[19px] md1:text-[40px] sm:text-[35px] text-[27.5px] sm:leading-[42.5px] leading-[37.5px] items-center sm:gap-4 gap-2 flex text-nowrap'>
+        <div className='md1:pl-4 font-["Chakra_Petch"] font-[600] md1:h-[72px] md1:pt-[19px] md1:text-[40px] sm:text-[35px] text-[27.5px] sm:leading-[42.5px] leading-[37.5px] items-center sm:gap-4 gap-2 flex text-nowrap'>
             Câu chuyện lịch sử
             <div className="sm:h-[64px] h-[47.5px] aspect-square">
                 <Image src={Quill} alt="" width={100} height={100} />
@@ -160,7 +160,7 @@ export const LHeader = () => {
 
 export const FFHeader = () => {
     return (
-        <div className='font-["Chakra_Petch"] font-[600] h-[72px] pt-2 md1:text-[40px] items-end text-[35px] leading-[42.5px] flex text-nowrap'>
+        <div className='font-["Chakra_Petch"] font-[600] md1:h-[72px] md1:pt-2 md1:text-[40px] items-end text-[35px] leading-[42.5px] flex text-nowrap'>
             <div className="w-[40px] aspect-square mr-3">
                 <Image src={Sparkle} alt="" width={100} height={100} />
             </div>
@@ -177,7 +177,7 @@ export const FFHeader = () => {
 
 export const QHeader = () => {
     return (
-        <div className='font-["Chakra_Petch"] font-[600] h-[72px] md1:text-[40px] items-end text-[35px] leading-[42.5px] flex text-nowrap'>
+        <div className='font-["Chakra_Petch"] font-[600] md1:h-[72px] h-[64px] md1:text-[40px] items-end text-[35px] leading-[42.5px] flex text-nowrap'>
             <div
                 className="mr-2 w-[90px] aspect-square"
                 style={{

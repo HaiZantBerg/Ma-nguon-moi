@@ -477,21 +477,24 @@ export default function LuongGiac() {
                     <div className={`${generalHeaderClassName}`}>
                         Xây dựng thiên văn học
                     </div>
-                    Từ buổi hồng hoang của lịch sử, con người đã ngắm nhìn và
-                    suy ngẫm về bầu trời sao huyền bí, quyến rũ trên đầu. Người
-                    xưa quan sát chuyển động lặp đi lặp lại của Mặt Trời và Mặt
-                    Trăng trên bầu trời đêm để nhận biết các thời điểm chuyển
-                    mùa.
-                    <br />
-                    Những hiện tượng thiên văn bí ẩn còn được coi là điềm báo
-                    cho những gì sẽ xảy ra trong cuộc sống cũng như củng cố tín
-                    ngưỡng của con người. Khi việc trồng trọt và chăn nuôi xuất
-                    hiện thì quan sát thiên văn trở nên rất quan trọng. Nông
-                    dân, mục đồng, thợ săn và giới tăng lữ quan sát thiên văn để
-                    biết được thời vụ đánh bắt, sản xuất. Thời gian trôi đi, dần
-                    dần con người nhận ra rằng Mặt Trời, Mặt Trăng và những vì
-                    sao di chuyển theo một đường nhất định trên trời còn những
-                    hành tinh lại không như vậy.
+                    <div className={`${generalContentClassName}`}>
+                        Từ buổi hồng hoang của lịch sử, con người đã ngắm nhìn
+                        và suy ngẫm về bầu trời sao huyền bí, quyến rũ trên đầu.
+                        Người xưa quan sát chuyển động lặp đi lặp lại của Mặt
+                        Trời và Mặt Trăng trên bầu trời đêm để nhận biết các
+                        thời điểm chuyển mùa.
+                        <br />
+                        Những hiện tượng thiên văn bí ẩn còn được coi là điềm
+                        báo cho những gì sẽ xảy ra trong cuộc sống cũng như củng
+                        cố tín ngưỡng của con người. Khi việc trồng trọt và chăn
+                        nuôi xuất hiện thì quan sát thiên văn trở nên rất quan
+                        trọng. Nông dân, mục đồng, thợ săn và giới tăng lữ quan
+                        sát thiên văn để biết được thời vụ đánh bắt, sản xuất.
+                        Thời gian trôi đi, dần dần con người nhận ra rằng Mặt
+                        Trời, Mặt Trăng và những vì sao di chuyển theo một đường
+                        nhất định trên trời còn những hành tinh lại không như
+                        vậy.
+                    </div>
                     <div className="my-4">
                         <Image src={xayDungThienVanHoc} alt="" />
                     </div>
