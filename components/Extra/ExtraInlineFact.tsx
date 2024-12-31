@@ -1,7 +1,7 @@
 "use client";
 
 import { useAnimate } from "motion/react";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { extraBodyVariants, extraPaddingLeft } from "./static";
 
 export default function ExtraInlineFact({
@@ -29,15 +29,13 @@ export default function ExtraInlineFact({
     const extraBodyContainerRef = useRef<HTMLDivElement | null>(null);
     const delayTime = useRef<number>(0);
 
-    useEffect(() => {
-        if (extraBodyContainerRef.current)
+    const handleOpenClose = async () => {
+        if (!delayTime.current && extraBodyContainerRef.current)
             delayTime.current =
                 Math.sqrt(
                     extraBodyContainerRef.current.getBoundingClientRect().height
                 ) / 90;
-    });
 
-    const handleOpenClose = async () => {
         if (!openExtra) {
             setTimeout(() => {
                 if (sneakyRef.current)
