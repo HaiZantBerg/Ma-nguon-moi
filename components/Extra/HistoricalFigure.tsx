@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function HistoricalFigureInlineFact({
+export default function HistoricalFigure({
     children,
     image,
     historicalFigureName,

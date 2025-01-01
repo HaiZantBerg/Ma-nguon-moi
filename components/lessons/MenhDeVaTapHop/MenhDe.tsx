@@ -15,22 +15,20 @@ import BertrandRussell from "@/public/Image/bertrandrussell.png";
 import WilliamOfOckham from "@/public/Image/williamofockham.png";
 import PeterAbelard from "@/public/Image/peterabelard.png";
 import Image from "next/image";
-import HistoricalFigureInlineFact from "@/components/Extra/HistoricalFigure";
+import HistoricalFigure from "@/components/Extra/HistoricalFigure";
 
 export default function MenhDe() {
     return (
         <>
             <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy(101140, "4 TCN")}
-                </div>
+                {timelineStar.TheKy(101140, "4 TCN")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>
                         Aristotle và Triết Học Logic
                     </div>
                     <div className={`${generalContentClassName}`}>
                         <ExtraInlineFact buttonContent="Aristotle">
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 image={<Image src={Aristotle} alt="" />}
                                 historicalFigureName="Aristotle"
                             >
@@ -58,7 +56,7 @@ export default function MenhDe() {
                                 dẫn đến các hình thức suy diễn như {'"'}
                                 syllogism{'"'} (hình thức suy luận thông qua 3
                                 mệnh đề).
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>
                         , người sáng lập trường phái logic học, đã đưa ra các
                         định lý cơ bản về mệnh đề trong các tác phẩm của mình.
@@ -84,9 +82,7 @@ export default function MenhDe() {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">
-                        {timelineStar.TheKy(10111217, "12 - 17")}
-                    </div>
+                    {timelineStar.TheKy(10111217, "12 - 17")}
                     <div className={`${generalClassName}`}>
                         <div className={`${generalContentClassName}`}>
                             Trong giai đoạn này, các nhà logic học như{" "}
@@ -94,7 +90,7 @@ export default function MenhDe() {
                                 buttonContent="William
                             of Ockham"
                             >
-                                <HistoricalFigureInlineFact
+                                <HistoricalFigure
                                     image={
                                         <Image src={WilliamOfOckham} alt="" />
                                     }
@@ -113,12 +109,12 @@ export default function MenhDe() {
                                     cụ thể. Ockham cũng có ảnh hưởng sâu rộng
                                     đến logic học, khoa học và triết học hiện
                                     đại.
-                                </HistoricalFigureInlineFact>
+                                </HistoricalFigure>
                             </ExtraInlineFact>{" "}
                             và{" "}
                             <ExtraInlineFact buttonContent="Peter Abelard">
                                 <div className="flex md:flex-row flex-col gap-2 md:items-start items-center">
-                                    <HistoricalFigureInlineFact
+                                    <HistoricalFigure
                                         image={
                                             <Image src={PeterAbelard} alt="" />
                                         }
@@ -133,7 +129,7 @@ export default function MenhDe() {
                                         phong trong việc áp dụng lý luận logic
                                         vào thần học. Abelard có ảnh hưởng lớn
                                         đến triết học và thần học thời Trung Cổ.
-                                    </HistoricalFigureInlineFact>
+                                    </HistoricalFigure>
                                 </div>
                             </ExtraInlineFact>{" "}
                             đã tiếp tục phát triển các khái niệm về logic và
@@ -146,9 +142,7 @@ export default function MenhDe() {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">
-                        {timelineStar.TheKy(101219, "19")}
-                    </div>
+                    {timelineStar.TheKy(101219, "19")}
                     <div className={`${generalClassName}`}>
                         <div className={`${generalHeaderClassName}`}>
                             Đại số Boole (1847)
@@ -156,7 +150,7 @@ export default function MenhDe() {
                         <div className={`${generalContentClassName}`}>
                             Vào thế kỷ 19,{" "}
                             <ExtraInlineFact buttonContent="George Boole">
-                                <HistoricalFigureInlineFact
+                                <HistoricalFigure
                                     image={<Image src={GeogreBoole} alt="" />}
                                     historicalFigureName="George Boole"
                                 >
@@ -174,7 +168,7 @@ export default function MenhDe() {
                                     các giá trị đúng (1) hoặc sai (0), từ đó
                                     thực hiện các phép toán logic để kiểm tra
                                     tính hợp lý của các mệnh đề.
-                                </HistoricalFigureInlineFact>
+                                </HistoricalFigure>
                             </ExtraInlineFact>{" "}
                             phát triển logic đại số, nơi ông áp dụng các phép
                             toán đại số vào lý thuyết logic. Ông giới thiệu các
@@ -264,7 +258,7 @@ export default function MenhDe() {
                             Vào cuối thế kỷ 19, logic học được nâng cấp mạnh mẽ
                             nhờ những đóng góp của{" "}
                             <ExtraInlineFact buttonContent="Gottlob Frege">
-                                <HistoricalFigureInlineFact
+                                <HistoricalFigure
                                     image={
                                         <Image
                                             src={GottlobFrege}
@@ -298,7 +292,7 @@ export default function MenhDe() {
                                     trình của Frege ảnh hưởng sâu rộng đến các
                                     triết gia và nhà toán học như Bertrand
                                     Russell và Ludwig Wittgenstein.
-                                </HistoricalFigureInlineFact>
+                                </HistoricalFigure>
                             </ExtraInlineFact>
                             , một nhà toán học và logic học người Đức. Frege
                             phát triển lý thuyết về logic toán học, đồng thời
@@ -495,9 +489,7 @@ export default function MenhDe() {
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
-                    <div className="md:h-[75px] h-[51.5px]">
-                        {timelineStar.TheKy(101120, "20")}
-                    </div>
+                    {timelineStar.TheKy(101120, "20")}
                     <div className={`${generalClassName}`}>
                         <div className={`${generalHeaderClassName}`}>
                             Sự phát hiện mâu thuẫn trong hệ thống logic của
@@ -508,7 +500,7 @@ export default function MenhDe() {
                             là khi ông phát hiện ra một mâu thuẫn nghiêm trọng
                             trong hệ thống logic của mình, được nhà toán học{" "}
                             <ExtraInlineFact buttonContent="Bertrand Russell">
-                                <HistoricalFigureInlineFact
+                                <HistoricalFigure
                                     image={
                                         <Image src={BertrandRussell} alt="" />
                                     }
@@ -540,7 +532,7 @@ export default function MenhDe() {
                                     trị và xã hội. Russell giành giải Nobel Văn
                                     học năm 1950 vì những đóng góp vào tư tưởng
                                     triết học.
-                                </HistoricalFigureInlineFact>
+                                </HistoricalFigure>
                             </ExtraInlineFact>{" "}
                             chỉ ra trong một lá thư vào năm 1902.
                             <br />
@@ -614,9 +606,7 @@ export default function MenhDe() {
                         </div>
                     </div>
                     <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
-                        <div className="md:h-[75px] h-[51.5px]">
-                            {timelineStar.NgayNay(0)}
-                        </div>
+                        {timelineStar.NgayNay(0)}
                         <div className={`${generalClassName}`}>
                             <div className={`${generalHeaderClassName}`}>
                                 Mệnh Đề Trong Lập Trình, Trí Tuệ Nhân Tạo và Lý

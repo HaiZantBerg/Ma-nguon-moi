@@ -43,7 +43,7 @@ export default function LessonLayout({ id, idx }: { id: number; idx: number }) {
                             scrollbarGutter: "stable",
                         }}
                     >
-                        <div className="bg-[#292929] md:w-[1.5px] w-[1px] sticky h-full top-0 md1:left-[50px] md:left-[14px] left-[9.5px] col-[1/2] row-[1/-1]" />
+                        <div className="bg-[#292929] md:w-[1.25px] w-[1px] sticky h-full top-0 md1:left-[49px] md:left-[12px] left-[9px] col-[1/2] row-[1/-1]" />
                         <div className="col-[1/-1] row-[1/-1]">
                             <div
                                 className={`grid grid-cols-1 ${gridDisplay[id][idx]} relative md1:pl-9`}
@@ -185,7 +185,7 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                                     toggleRef.current[idxl] = el;
                                 }}
                             >
-                                <div className="bg-[#292929] md:w-[1.5px] w-[1px] z-10 sticky h-full top-0 md1:left-[50px] md:left-[14px] left-[9.5px] col-[1/2] row-[1/-1]" />
+                                <div className="bg-[#292929] md:w-[1.25px] w-[1px] z-10 sticky h-full top-0 md1:left-[49px] md:left-[12px] left-[9px] col-[1/2] row-[1/-1]" />
                                 {initialLessonToggleLoad[idxl] && (
                                     <div className="col-[1/-1] row-[1/-1]">
                                         <div

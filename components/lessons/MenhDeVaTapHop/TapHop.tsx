@@ -27,7 +27,7 @@ import Bertrandrussell from "@/public/Image/bertrandrussell.png";
 import Brahmagupta from "@/public/Image/brahmagupta.png";
 import AbrahamFraenkel from "@/public/Image/abarahamfraenkel.png";
 import ErnstZermelo from "@/public/Image/ernstzermelo.png";
-import HistoricalFigureInlineFact from "@/components/Extra/HistoricalFigure";
+import HistoricalFigure from "@/components/Extra/HistoricalFigure";
 
 const playVideo = signal([true]);
 
@@ -44,9 +44,7 @@ export default function TapHop() {
     return (
         <>
             <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.ThoiCoDai()}
-                </div>
+                {timelineStar.ThoiCoDai()}
                 <div
                     className={`${generalClassName} grid lg2:grid-cols-[auto_auto] lg2:grid-rows-[auto_auto]`}
                 >
@@ -374,7 +372,7 @@ export default function TapHop() {
                             buttonContent="Brahmagupta"
                             extraBodyVariant="content"
                         >
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 image={<Image src={Brahmagupta} alt="" />}
                             >
                                 Nhà toán học Ấn Độ{" "}
@@ -387,7 +385,7 @@ export default function TapHop() {
                                 anh ấy không chứa bất kỳ bằng chứng nào, vì vậy
                                 chúng tôi không thể biết được kết quả của anh ấy
                                 như thế nào.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>
                         . Và ông cũng là người đầu tiên nêu lên các quy tắc tính
                         toán trong hệ ghi số có số 0 trong quyển sách{" "}
@@ -688,9 +686,7 @@ export default function TapHop() {
                 </div>
             </div>
             <div className="col-[1/-1] row-[2/3] h-fit">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy(1012191, "19")}
-                </div>
+                {timelineStar.TheKy(1012191, "19")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>
                         Bài báo của{" "}
@@ -698,7 +694,7 @@ export default function TapHop() {
                             buttonContent="Georg Cantor"
                             extraBodyVariant="content"
                         >
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 image={<Image src={GeorgCantor} alt="" />}
                                 historicalFigureName="Georg Cantor"
                             >
@@ -708,7 +704,7 @@ export default function TapHop() {
                                 giới thiệu khái niệm về số cardinal và số siêu
                                 hạn, mở đường cho nghiên cứu về tập hợp vô hạn
                                 và lý thuyết tập hợp.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>{" "}
                         công bố năm 1874, {'"'}Über eine Eigenschaft des
                         Inbegriffes aller reellen algebraischen Zahlen{'"'} (
@@ -826,16 +822,12 @@ export default function TapHop() {
             </div>
             <div className="col-[1/-1] row-[3/4] h-fit">
                 <div className="grid grid-rows-1 md:grid-cols-[28.5px_auto] grid-cols-[20px_auto]">
-                    <div className="md:h-[75px] h-[51.5px] col-[1/2] row-[1/-1]">
+                    <div className="col-[1/2] row-[1/-1]">
                         {timelineStar.Star1dc19}
                     </div>
                     <div className="col-[2/-1] row-[1/-1] flex flex-wrap ml-3">
-                        <div className="md:h-[75px] h-[51.5px] ">
-                            {timelineStar.DauTheKy19Text}
-                        </div>
-                        <div className="md:h-[75px] h-[51.5px] ">
-                            {timelineStar.CuoiTheKy19Text}
-                        </div>
+                        {timelineStar.DauTheKy19Text}
+                        {timelineStar.CuoiTheKy19Text}
                     </div>
                 </div>
                 <div className={`${generalClassName}`}>
@@ -847,7 +839,7 @@ export default function TapHop() {
                             buttonContent="Gottlob Frege"
                             extraBodyVariant="content"
                         >
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 image={<Image src={GottlobFrege} alt="" />}
                                 historicalFigureName="Gottlob Frege "
                             >
@@ -858,7 +850,7 @@ export default function TapHop() {
                                 và mô tả các khái niệm toán học. Ông đã phát
                                 triển phép tính tâm lý học (predicate calculus),
                                 một nền tảng cơ bản của logic toán học hiện đại.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>{" "}
                         sử dụng khái niệm {'"'}tập hợp{'"'} trong lý thuyết của
                         ông, đặc biệt là trong cách ông định nghĩa khái niệm.
@@ -886,7 +878,7 @@ export default function TapHop() {
                             buttonContent="Bertrand Russell"
                             extraBodyVariant="content"
                         >
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 image={<Image src={Bertrandrussell} alt="" />}
                                 historicalFigureName="Bertrand Russell"
                             >
@@ -896,7 +888,7 @@ export default function TapHop() {
                                 Principia Mathematica, đặt nền tảng cho toán học
                                 hiện đại qua logic học. Russell cũng là một nhà
                                 hoạt động xã hội, nhận Giải Nobel Văn học 1950.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>{" "}
                         phát hiện ra{" "}
                         <ExtraInlineFact
@@ -952,7 +944,7 @@ export default function TapHop() {
                             buttonContent="Zermelo"
                             extraBodyVariant="content"
                         >
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 image={<Image src={ErnstZermelo} alt="" />}
                                 historicalFigureName="Ernst Zermelo"
                             >
@@ -966,14 +958,14 @@ export default function TapHop() {
                                 Zermelo-Fraenkel + Axioms of Choice (ZFC) là hệ
                                 thống tiên đề phổ biến nhất hiện nay trong toán
                                 học.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>{" "}
                         và{" "}
                         <ExtraInlineFact
                             buttonContent="Fraenkel"
                             extraBodyVariant="content"
                         >
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 image={<Image src={AbrahamFraenkel} alt="" />}
                                 historicalFigureName="Abraham Fraenkel"
                             >
@@ -984,7 +976,7 @@ export default function TapHop() {
                                 vững chắc, đồng thời giải quyết một số vấn đề
                                 trong lý thuyết tập hợp mà Zermelo chưa hoàn
                                 chỉnh.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>{" "}
                         đã xây dựng{" "}
                         <ExtraInlineFact
@@ -1024,9 +1016,7 @@ export default function TapHop() {
                 </div>
             </div>
             <div className="col-[1/-1] row-[4/-1] h-fit">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy(101220, "20")}
-                </div>
+                {timelineStar.TheKy(101220, "20")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>
                         Lý thuyết tập hợp và các phép toán nâng cao

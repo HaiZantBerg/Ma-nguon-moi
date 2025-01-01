@@ -10,7 +10,11 @@ import { BlockMath } from "react-katex";
 import ExtraInlineFact from "@/components/Extra/ExtraInlineFact";
 import Image from "next/image";
 import ExtraLearnMore from "@/components/Extra/ExtraLearnMore";
-import HistoricalFigureInlineFact from "@/components/Extra/HistoricalFigure";
+import HistoricalFigure from "@/components/Extra/HistoricalFigure";
+import IsaacNewton from "@/public/Image/isaacnewton.png";
+import LeonhardEuler from "@/public/Image/leonhardeuler.png";
+import JohannesKepler from "@/public/Image/johanneskepler.png";
+import Regiomontanus from "@/public/Image/regiomontanus.png";
 
 export default function PhuongTrinhLuongGiac() {
     return (
@@ -42,9 +46,7 @@ export default function PhuongTrinhLuongGiac() {
                         trong vật lý, đặc biệt là trong dao động và sóng.
                     </div>
                 </div>
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy(1141617, "16 - 17")}
-                </div>
+                {timelineStar.TheKy(1141617, "16 - 17")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>
                         Phát triển phương trình lượng giác ở châu Âu
@@ -59,18 +61,19 @@ export default function PhuongTrinhLuongGiac() {
                         <br />
                         <br />
                         <ExtraInlineFact buttonContent="Regiomontanus">
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 historicalFigureName="Regiomontanus"
-                                image={<Image src={""} alt="" />}
+                                image={<Image src={Regiomontanus} alt="" />}
                             >
-                                Regiomontanus (Johannes Müller von Königsberg,
-                                1436 - 1476) là một nhà toán học và thiên văn
-                                học người Đức trong thời kỳ Phục hưng. Ông sáng
-                                lập nhà in khoa học đầu tiên và xuất bản cuốn
-                                sách giáo khoa thiên văn học đầu tiên vào năm
-                                1472. Những đóng góp của Regiomontanus đã hỗ trợ
-                                phát triển hệ nhật tâm Copernicus.
-                            </HistoricalFigureInlineFact>
+                                (1436 - 1476) hay còn có tên gọi khác là
+                                Johannes Müller von Könisberg, là một nhà toán
+                                học và thiên văn học người Đức trong thời kỳ
+                                Phục hưng. Ông sáng lập nhà in khoa học đầu tiên
+                                và xuất bản cuốn sách giáo khoa thiên văn học
+                                đầu tiên vào năm 1472. Những đóng góp của
+                                Regiomontanus đã hỗ trợ phát triển hệ nhật tâm
+                                Copernicus.
+                            </HistoricalFigure>
                         </ExtraInlineFact>{" "}
                         là một trong những người đầu tiên áp dụng đại số vào
                         việc giải quyết các vấn đề lượng giác. Trước thời của
@@ -88,9 +91,9 @@ export default function PhuongTrinhLuongGiac() {
                         <br />
                         <br />
                         <ExtraInlineFact buttonContent="Johannes Kepler">
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 historicalFigureName="Johannes Kepler"
-                                image={<Image src={""} alt="" />}
+                                image={<Image src={JohannesKepler} alt="" />}
                             >
                                 (1571 - 1630) là một nhà toán học và thiên văn
                                 học người Đức, nổi tiếng với ba định luật chuyển
@@ -98,7 +101,7 @@ export default function PhuongTrinhLuongGiac() {
                                 hành tinh di chuyển theo đường cong elip quanh
                                 Mặt Trời và đã đóng góp quan trọng vào việc phát
                                 triển thiên văn học hiện đại.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>{" "}
                         đã sử dụng các phương trình lượng giác để mô tả chuyển
                         động của các hành tinh theo định lý của ông về quỹ đạo
@@ -120,9 +123,8 @@ export default function PhuongTrinhLuongGiac() {
                 </div>
             </div>
             <div className="col-[1/-1] row-[2/3] h-fit mt-[10px]">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy(1141718, "17 - 18")}
-                </div>
+                {timelineStar.TheKy(1141718, "17 - 18")}
+
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>
                         Euler và sự ra đời của phương trình lượng giác đại số
@@ -132,9 +134,9 @@ export default function PhuongTrinhLuongGiac() {
                         chuyển từ hình học sang đại số, đặc biệt là nhờ những
                         đóng góp của Leonhard Euler và các nhà toán học khác.
                         <ExtraInlineFact buttonContent="Leonhard Euler">
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 historicalFigureName="Leonhard Euler"
-                                image={<Image src={""} alt="" />}
+                                image={<Image src={LeonhardEuler} alt="" />}
                             >
                                 (1707-1783) là một trong những nhà toán học vĩ
                                 đại nhất trong lịch sử, nổi bật với những đóng
@@ -146,7 +148,7 @@ export default function PhuongTrinhLuongGiac() {
                                 công trình của Euler đã đặt nền tảng cho nhiều
                                 nhánh toán học hiện đại và ứng dụng rộng rãi
                                 trong khoa học và kỹ thuật.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>{" "}
                         đã mở rộng khái niệm về các hàm lượng giác và tìm ra
                         công thức Euler, liên kết giữa số phức và các hàm lượng
@@ -170,9 +172,9 @@ export default function PhuongTrinhLuongGiac() {
                         <br />
                         <br />
                         <ExtraInlineFact buttonContent="Isaac Newton">
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 historicalFigureName="Isaac Newton"
-                                image={<Image src={""} alt="" />}
+                                image={<Image src={IsaacNewton} alt="" />}
                             >
                                 (1643 - 1727) là một nhà toán học và nhà vật lý
                                 nổi tiếng người Anh, nổi tiếng với ba định luật
@@ -181,7 +183,7 @@ export default function PhuongTrinhLuongGiac() {
                                 học vi phân và đã sáng chế kính hiển vi phản xạ
                                 đầu tiên. Các đóng góp của Newton đã đặt nền
                                 móng cho nhiều lĩnh vực khoa học hiện đại.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>{" "}
                         trong công trình về giải tích và cơ học, đã sử dụng các
                         phương trình lượng giác để mô tả các hiện tượng vật lý,
@@ -219,9 +221,7 @@ export default function PhuongTrinhLuongGiac() {
                 </div>
             </div>
             <div className="col-[1/-1] row-[3/4] h-fit mt-[10px]">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy(1142021, "20 - 21")}
-                </div>
+                {timelineStar.TheKy(1142021, "20 - 21")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>
                         Phương trình lượng giác trong khoa học hiện đại

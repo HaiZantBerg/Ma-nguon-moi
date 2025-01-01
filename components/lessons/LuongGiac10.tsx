@@ -21,7 +21,7 @@ import xayDungThienVanHoc from "@/public/Image/xaydungthienvanhoc.png";
 import banDoSaoAiCap from "@/public/Image/bandosaoaicap.png";
 import Hipparchus from "@/public/Image/hipparchus.png";
 import Ptolemy from "@/public/Image/ptolemy.png";
-import Aryabahata from "@/public/Image/aryabhata.png";
+import Aryabhata from "@/public/Image/aryabhata.png";
 import Brahmagupta from "@/public/Image/brahmagupta.png";
 import BhaskaraI from "@/public/Image/bhaskarai.png";
 import AlKhwarizmi from "@/public/Image/alkhawarizmi.png";
@@ -37,15 +37,13 @@ import howAncientGreekUseDioptra from "@/public/Image/howancientgreekusedioptra.
 import howToUseDioptra from "@/public/Image/howtousedioptra.png";
 import aPartOfAristarchussBook from "@/public/Image/apartofaristarchussbook.png";
 import { InlineMath } from "react-katex";
-import HistoricalFigureInlineFact from "../Extra/HistoricalFigure";
+import HistoricalFigure from "../Extra/HistoricalFigure";
 
 export default function LuongGiac() {
     return (
         <>
             <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.ThoiCoDai()}
-                </div>
+                {timelineStar.ThoiCoDai()}
                 <div className={`${generalClassName}`}>
                     Khi các con số đã được phát minh, toán học sớm phân thành
                     nhiều nhánh như số học, logic học hay đại số học. Các nhánh
@@ -471,9 +469,7 @@ export default function LuongGiac() {
                 </div>
             </div>
             <div className="col-[1/-1] row-[2/3] h-fit mt-[10px]">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.Khoang2000TCN}
-                </div>
+                {timelineStar.Khoang(10239, "2000 nam tcn")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>
                         Xây dựng thiên văn học
@@ -496,7 +492,7 @@ export default function LuongGiac() {
                         nhất định trên trời còn những hành tinh lại không như
                         vậy.
                     </div>
-                    <div className="my-4">
+                    <div className="my-4 flex md:justify-normal justify-center">
                         <Image src={xayDungThienVanHoc} alt="" />
                     </div>
                     <div className={`${generalHeaderClassName}`}>
@@ -509,20 +505,18 @@ export default function LuongGiac() {
                         giác như ngày nay. Người Babylon đã sử dụng bảng số học
                         để tính toán các phép tính về góc và chu vi của các hình
                         tròn.
-                        <div className="mt-4 flex flex-col w-fit items-center gap-4">
+                        <div className="mt-4 flex flex-col md1:w-fit w-full items-center gap-4">
                             <Image src={banDoSaoAiCap} alt="" />
-                            <span className="text-[rgba(0,0,0,0.75)]">
+                            <div className="text-[rgba(0,0,0,0.75)]">
                                 Một bản đồ sao được người Ai Cập sử dụng khoảng
                                 thế kỷ XV TCN
-                            </span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="col-[1/-1] row-[3/4] h-fit mt-[10px]">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.Khoang300TCN}
-                </div>
+                {timelineStar.Khoang(90192, "300 nam tcn")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>
                         Hy Lạp cổ đại
@@ -530,7 +524,7 @@ export default function LuongGiac() {
                     <div className={`${generalContentClassName}`}>
                         Các nhà toán học Hy Lạp, như{" "}
                         <ExtraInlineFact buttonContent="Hipparchus">
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 image={<Image src={Hipparchus} alt="" />}
                                 historicalFigureName="Hipparchus"
                             >
@@ -540,11 +534,11 @@ export default function LuongGiac() {
                                 bật với các đóng góp trong thiên văn học và toán
                                 học, đặc biệt là trong việc nghiên cứu chuyển
                                 động của các thiên thể.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>{" "}
                         và{" "}
                         <ExtraInlineFact buttonContent="Ptolemy">
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 image={<Image src={Ptolemy} alt="" />}
                                 historicalFigureName="Ptolemy"
                             >
@@ -559,7 +553,7 @@ export default function LuongGiac() {
                                 </Link>
                                 {'"'}, trong đó có các bảng lượng giác để tính
                                 toán các khoảng cách và góc trong thiên văn học.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>{" "}
                         , đã có đóng góp quan trọng trong việc phát triển lý
                         thuyết lượng giác. Hipparchus (khoảng 190 TCN) được coi
@@ -688,17 +682,15 @@ export default function LuongGiac() {
                 </div>
             </div>
             <div className="col-[1/-1] row-[4/5] h-fit mt-[10px]">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy(10357, "5 - 7")}
-                </div>
+                {timelineStar.TheKy(10357, "5 - 7")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>Ấn Độ</div>
                     <div className={`${generalContentClassName}`}>
                         Lượng giác được phát triển mạnh mẽ ở Ấn Độ, đặc biệt là
                         trong các công trình của các nhà toán học như{" "}
                         <ExtraInlineFact buttonContent="Aryabhata">
-                            <HistoricalFigureInlineFact
-                                image={<Image src={Aryabahata} alt="" />}
+                            <HistoricalFigure
+                                image={<Image src={Aryabhata} alt="" />}
                                 historicalFigureName="Aryabhata"
                             >
                                 (khoảng 476 - 550 CN) là một nhà toán học và
@@ -709,11 +701,11 @@ export default function LuongGiac() {
                                 tiếng trong toán học và thiên văn học, chứa đựng
                                 nhiều khái niệm quan trọng vẫn có ảnh hưởng lâu
                                 dài.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>
                         ,{" "}
                         <ExtraInlineFact buttonContent="Brahmagupta">
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 historicalFigureName="Brahmagupta"
                                 image={<Image src={Brahmagupta} alt="" />}
                             >
@@ -724,11 +716,11 @@ export default function LuongGiac() {
                                 {'"'}Brahmasphutasiddhanta{'"'}, một tác phẩm
                                 nổi tiếng mà trong đó, ông đã phát triển và
                                 trình bày nhiều lý thuyết toán học mới.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>
                         , và{" "}
                         <ExtraInlineFact buttonContent="Bhaskara I">
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 historicalFigureName="Bhaskara I"
                                 image={<Image src={BhaskaraI} alt="" />}
                             >
@@ -742,7 +734,7 @@ export default function LuongGiac() {
                                 đầu tiên giới thiệu các khái niệm về số không
                                 vào các phép toán và cải tiến các phương pháp
                                 tính toán trước đó.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>
                         . Aryabhata đã giới thiệu các khái niệm về sine và
                         cosine trong công trình của mình và thậm chí đã sử dụng
@@ -754,15 +746,13 @@ export default function LuongGiac() {
                 </div>
             </div>
             <div className="col-[1/-1] row-[5/6] h-fit mt-[10px]">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy(103814, "8 - 14")}
-                </div>
+                {timelineStar.TheKy(103814, "8 - 14")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>Trung Cổ</div>
                     <div className={`${generalContentClassName}`}>
                         Trong thời kỳ Trung Cổ, các học giả Ả Rập như{" "}
                         <ExtraInlineFact buttonContent="Al-Battani">
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 historicalFigureName="Al-Battani"
                                 image={<Image src={AlBattani} alt="" />}
                             >
@@ -790,11 +780,11 @@ export default function LuongGiac() {
                                 Trời và các hành tinh, đặc biệt trong việc tính
                                 toán các hiện tượng thiên văn như nguyệt thực và
                                 nhật thực.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>{" "}
                         và{" "}
                         <ExtraInlineFact buttonContent="Al-Khwarizmi">
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 historicalFigureName="Al-Khwarizmi"
                                 image={<Image src={AlKhwarizmi} alt="" />}
                             >
@@ -802,7 +792,7 @@ export default function LuongGiac() {
                                 dịch các công trình toán học từ tiếng Ả Rập sang
                                 tiếng Latinh, giúp truyền bá các kiến thức về
                                 lượng giác sang châu Âu.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>{" "}
                         tiếp tục phát triển lý thuyết lượng giác. Al-Battani đã
                         mở rộng và hoàn thiện bảng lượng giác của Ptolemy và
@@ -812,9 +802,7 @@ export default function LuongGiac() {
                 </div>
             </div>
             <div className="col-[1/-1] row-[6/7] h-fit mt-[10px]">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy(1031617, "16 - 17")}
-                </div>
+                {timelineStar.TheKy(1031617, "16 - 17")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>
                         Lượng giác bắt đầu phát triển mạnh mẽ ở châu Âu trong
@@ -836,16 +824,14 @@ export default function LuongGiac() {
             </div>
 
             <div className="col-[1/-1] row-[7/8] h-fit mt-[10px]">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy(1031819, "18 - 19")}
-                </div>
+                {timelineStar.TheKy(1031819, "18 - 19")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>
                         Vào thế kỷ 18, các hàm lượng giác được định nghĩa rõ
                         ràng hơn và ứng dụng trong các lĩnh vực khác nhau như
                         phân tích, cơ học, điện học, v.v. Các nhà toán học như{" "}
                         <ExtraInlineFact buttonContent="Leonhard Euler" flip>
-                            <HistoricalFigureInlineFact
+                            <HistoricalFigure
                                 image={<Image src={LeonhardEuler} alt="" />}
                                 historicalFigureName="Leonhard Euler"
                             >
@@ -857,7 +843,7 @@ export default function LuongGiac() {
                                 thuyết. Những đóng góp của Euler rất phong phú
                                 và có ảnh hưởng lớn đến sự phát triển của toán
                                 học và khoa học kỹ thuật.
-                            </HistoricalFigureInlineFact>
+                            </HistoricalFigure>
                         </ExtraInlineFact>{" "}
                         đã phát triển các công thức lượng giác quan trọng và
                         định lý lượng giác, đặt nền tảng cho sự phát triển của
@@ -868,9 +854,7 @@ export default function LuongGiac() {
                 </div>
             </div>
             <div className="col-[1/-1] row-[8/-1] h-fit mt-[10px]">
-                <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.NgayNay(1)}
-                </div>
+                {timelineStar.NgayNay(1)}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>
                         Lượng giác ngày nay không chỉ là một công cụ quan trọng
