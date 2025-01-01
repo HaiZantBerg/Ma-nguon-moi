@@ -91,8 +91,8 @@ export default function GiaTriLuongGiacCuaGocLuongGiac() {
                     </svg>
                 </div>
                 <div className={`${generalClassName}`}>
-                    Khái niệm về "góc âm" và "góc lớn hơn 360
-                    <InlineMath math="\degree" />" xuất hiện khi các nhà toán
+                    Khái niệm về {'"'}góc âm{'"'} và {'"'}góc lớn hơn 360
+                    <InlineMath math="\degree" />{'"'} xuất hiện khi các nhà toán
                     học mở rộng định nghĩa góc vượt ra ngoài hình học thuần túy
                     để đáp ứng nhu cầu trong lượng giác, giải tích, và các lĩnh
                     vực khoa học khác. Đây là một phần quan trọng trong việc
