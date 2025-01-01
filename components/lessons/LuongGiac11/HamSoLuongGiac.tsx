@@ -5,7 +5,7 @@ import {
     timelineStar,
 } from "../../static/lessonsStatic";
 import Image from "next/image";
-import ancientCalcTable from "@/public/Image/ancientCalcTable.png";
+import ancientCalcTable from "@/public/Image/ancientcalctable.png";
 import ExtraInlineFact from "@/components/Extra/ExtraInlineFact";
 import HistoricalFigure from "@/components/Extra/HistoricalFigure";
 import geocentricModel from "@/public/Image/geocentricmodel.png";
