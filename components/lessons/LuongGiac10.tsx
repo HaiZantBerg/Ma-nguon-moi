@@ -10,9 +10,7 @@ import {
 import Image from "next/image";
 import luongGiacImage1 from "@/public/Image/luonggiacimage1.png";
 import luongGiacImage2 from "@/public/Image/luonggiacimage2.png";
-import ExtraInlineFact, {
-    HistoricalFigureInlineFact,
-} from "../Extra/ExtraInlineFact";
+import ExtraInlineFact from "../Extra/ExtraInlineFact";
 import ExtraQuiz from "../Extra/ExtraQuiz";
 import Link from "next/link";
 import ReactPlayer from "react-player";
@@ -39,13 +37,14 @@ import howAncientGreekUseDioptra from "@/public/Image/howancientgreekusedioptra.
 import howToUseDioptra from "@/public/Image/howtousedioptra.png";
 import aPartOfAristarchussBook from "@/public/Image/apartofaristarchussbook.png";
 import { InlineMath } from "react-katex";
+import HistoricalFigureInlineFact from "../Extra/HistoricalFigure";
 
 export default function LuongGiac() {
     return (
         <>
             <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.ThoiCoDai}
+                    {timelineStar.ThoiCoDai()}
                 </div>
                 <div className={`${generalClassName}`}>
                     Khi các con số đã được phát minh, toán học sớm phân thành
@@ -57,7 +56,9 @@ export default function LuongGiac() {
                     toán học đầu tiên như Thales, Pythagoras và Archimedes,
                     những cái tên cho đến ngày nay vẫn còn gây ám ảnh trong các
                     trang sách giáo khoa của chúng ta.
-                    <div className={`${generalHeaderClassName}`}>Đo đạc</div>
+                    <div className={`${generalHeaderClassName} mt-2`}>
+                        Đo đạc
+                    </div>
                     <div className={`${generalContentClassName}`}>
                         Trước khi trở thành mối bận tâm của các nhà tư tưởng vĩ
                         đại, thực địa mới là nơi hình học được vinh danh. Từ
@@ -266,7 +267,7 @@ export default function LuongGiac() {
                                         className="h-full w-auto"
                                     />
                                 </div>
-                                <div className="lgmi:col-[1/-1] row-[3/-1] lgmi:row-[2/-1] pt-2 text-center lgmi:px-1 px-5 lgmi:pb-0 pb-5">
+                                <div className="lgmi:col-[1/-1] row-[3/-1] lgmi:row-[2/-1] pt-2 text-center lgmi:px-1 px-5 lgmi:pb-0 pb-5 text-[rgba(0,0,0,0.75)]">
                                     Giếng đặc biệt ở Syene, được Eratosthenes
                                     lấy để tính toán chu vi của trái đất.
                                 </div>
@@ -510,8 +511,10 @@ export default function LuongGiac() {
                         tròn.
                         <div className="mt-4 flex flex-col w-fit items-center gap-4">
                             <Image src={banDoSaoAiCap} alt="" />
-                            Một bản đồ sao được người Ai Cập sử dụng khoảng thế
-                            kỷ XV TCN
+                            <span className="text-[rgba(0,0,0,0.75)]">
+                                Một bản đồ sao được người Ai Cập sử dụng khoảng
+                                thế kỷ XV TCN
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -686,7 +689,7 @@ export default function LuongGiac() {
             </div>
             <div className="col-[1/-1] row-[4/5] h-fit mt-[10px]">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy57}
+                    {timelineStar.TheKy(10357, "5 - 7")}
                 </div>
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>Ấn Độ</div>
@@ -752,7 +755,7 @@ export default function LuongGiac() {
             </div>
             <div className="col-[1/-1] row-[5/6] h-fit mt-[10px]">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy814}
+                    {timelineStar.TheKy(103814, "8 - 14")}
                 </div>
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>Trung Cổ</div>
@@ -810,7 +813,7 @@ export default function LuongGiac() {
             </div>
             <div className="col-[1/-1] row-[6/7] h-fit mt-[10px]">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy1617}
+                    {timelineStar.TheKy(1031617, "16 - 17")}
                 </div>
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>
@@ -834,7 +837,7 @@ export default function LuongGiac() {
 
             <div className="col-[1/-1] row-[7/8] h-fit mt-[10px]">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy1819}
+                    {timelineStar.TheKy(1031819, "18 - 19")}
                 </div>
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>

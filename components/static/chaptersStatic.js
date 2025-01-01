@@ -42,7 +42,10 @@ export const chapter = [
 
 export const description = [
     [
-        <div key="description1">
+        <div
+            key="description1"
+            className="md1:text-[1.1rem] md1:leading-[1.6rem]"
+        >
             <p className="font-[500] pb-1">Mệnh đề</p>
             <p className="pl-[20px]">
                 Mệnh đề là một câu khẳng định trong toán học có thể đúng hoặc
@@ -62,7 +65,7 @@ export const description = [
         <div key="description2"></div>,
         <div
             key="description3"
-            className="md1:text-[1.12rem] md1:leading-[1.6rem]"
+            className="md1:text-[1.1rem] md1:leading-[1.6rem]"
         >
             Để có thể đi vào chuyên sâu của một khái niệm trước hết chúng ta
             phải biết rõ các khái niệm chúng ta đang bàn đến có ý nghĩa thế nào
@@ -72,16 +75,17 @@ export const description = [
             từ Hán Việt ghép từ 2 khái niệm: “lượng” mang ý nghĩa về đo lường và
             “giác” nói về các góc, nên có thể hiểu “lượng giác” mang ý nghĩa là
             một phương pháp đo lường và định lượng về góc.
-            <br /> Nếu chỉ mang ý nghĩa như trên chúng ta không có gì để bàn ở
-            đây, trong tiếng Anh hoặc tiếng Pháp, khái niệm “lượng giác” được
-            tương ứng với “<span className="font-[475]">trigonometry</span>”,
-            đây là một từ xuất phát từ tiếng Hy Lạp - nền văn minh đặt nền tảng
-            cho sự phát triển của nền văn mình phương Tây - trong đó, “
+            <br />
+            <br />
+            Nếu chỉ mang ý nghĩa như trên chúng ta không có gì để bàn ở đây,
+            trong tiếng Anh hoặc tiếng Pháp, khái niệm “lượng giác” được tương
+            ứng với “<span className="font-[475]">trigonometry</span>”, đây là
+            một từ xuất phát từ tiếng Hy Lạp - nền văn minh đặt nền tảng cho sự
+            phát triển của nền văn mình phương Tây - trong đó, “
             <span className="font-[475]">trigōnon</span>” có nghĩa là “tam giác”
             và “<span className="font-[475]">metron</span>” mang nghĩa “đo
             lường”. Như thế khái niệm “lượng giác” trong tiếng Anh lại có ý
-            nghĩa là sự đo lường về góc bằng tam giác.
-            <br /> (
+            nghĩa là sự đo lường về góc bằng tam giác.{" "}
             <Link
                 target="_blank"
                 href="https://zefro.wordpress.com/2021/07/16/luong-giac-tu-ly-thuyet-den-thuc-te/"
@@ -89,7 +93,6 @@ export const description = [
             >
                 Theo nguồn
             </Link>
-            )
         </div>,
         <div key="description4"></div>,
         <div key="description5"></div>,

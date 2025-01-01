@@ -1,7 +1,5 @@
 import { BlockMath, InlineMath } from "react-katex";
-import ExtraInlineFact, {
-    HistoricalFigureInlineFact,
-} from "../../Extra/ExtraInlineFact";
+import ExtraInlineFact from "../../Extra/ExtraInlineFact";
 import {
     generalClassName,
     timelineStar,
@@ -17,13 +15,14 @@ import BertrandRussell from "@/public/Image/bertrandrussell.png";
 import WilliamOfOckham from "@/public/Image/williamofockham.png";
 import PeterAbelard from "@/public/Image/peterabelard.png";
 import Image from "next/image";
+import HistoricalFigureInlineFact from "@/components/Extra/HistoricalFigure";
 
 export default function MenhDe() {
     return (
         <>
             <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy4TCN}
+                    {timelineStar.TheKy(101140, "4 TCN")}
                 </div>
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>
@@ -86,7 +85,7 @@ export default function MenhDe() {
                 </div>
                 <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
                     <div className="md:h-[75px] h-[51.5px]">
-                        {timelineStar.TheKy1217}
+                        {timelineStar.TheKy(10111217, "12 - 17")}
                     </div>
                     <div className={`${generalClassName}`}>
                         <div className={`${generalContentClassName}`}>
@@ -148,7 +147,7 @@ export default function MenhDe() {
                 </div>
                 <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
                     <div className="md:h-[75px] h-[51.5px]">
-                        {timelineStar.TheKy19(1)}
+                        {timelineStar.TheKy(101219, "19")}
                     </div>
                     <div className={`${generalClassName}`}>
                         <div className={`${generalHeaderClassName}`}>
@@ -212,7 +211,7 @@ export default function MenhDe() {
                             <span className="font-[475]">1</span> khi cả hai
                             mệnh đề đều đúng (tức là P=1 và Q=1), và 0 khi một
                             trong hai mệnh đề là sai.
-                            <ExtraLearnMore extraBodyVariant="content">
+                            <ExtraLearnMore>
                                 <span className="font-[475]">
                                     Các phép toán logic cơ bản trong đại số
                                     Boole:
@@ -477,26 +476,27 @@ export default function MenhDe() {
                             thành nền tảng cho nhiều nhánh của logic hiện đại và
                             ảnh hưởng sâu sắc đến những nhà tư tưởng sau ông,
                             như Ludwig Wittgenstein và Kurt Gödel.
+                            <ExtraLearnMore>
+                                {'"'}Begriffsschrift{'"'} (1879) là một trong
+                                những tác phẩm đột phá của Frege, trong đó ông
+                                giới thiệu hệ thống ký hiệu logic. Đây là nền
+                                tảng của hệ thống toán học được sử dụng trong lý
+                                thuyết tập hợp và lý thuyết về các hàm toán học.
+                                <br />
+                                Trong tác phẩm này, Frege cũng phân tích các
+                                loại mệnh đề phức tạp hơn và khái niệm của {'"'}
+                                lượng từ
+                                {'"'}
+                                (quantifiers), qua đó cho phép tạo ra các mệnh
+                                đề trong một hệ thống hình thức logic học có thể
+                                được kiểm tra và suy luận một cách chặt chẽ.
+                            </ExtraLearnMore>
                         </div>
-                        <ExtraLearnMore>
-                            {'"'}Begriffsschrift{'"'} (1879) là một trong những
-                            tác phẩm đột phá của Frege, trong đó ông giới thiệu
-                            hệ thống ký hiệu logic. Đây là nền tảng của hệ thống
-                            toán học được sử dụng trong lý thuyết tập hợp và lý
-                            thuyết về các hàm toán học.
-                            <br />
-                            Trong tác phẩm này, Frege cũng phân tích các loại
-                            mệnh đề phức tạp hơn và khái niệm của {'"'}lượng từ
-                            {'"'}
-                            (quantifiers), qua đó cho phép tạo ra các mệnh đề
-                            trong một hệ thống hình thức logic học có thể được
-                            kiểm tra và suy luận một cách chặt chẽ.
-                        </ExtraLearnMore>
                     </div>
                 </div>
                 <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
                     <div className="md:h-[75px] h-[51.5px]">
-                        {timelineStar.TheKy20(1)}
+                        {timelineStar.TheKy(101120, "20")}
                     </div>
                     <div className={`${generalClassName}`}>
                         <div className={`${generalHeaderClassName}`}>
@@ -597,7 +597,7 @@ export default function MenhDe() {
                             trong khi von Neumann phát triển lý thuyết về các
                             cổng logic và mạch điện tử, đóng góp vào việc xây
                             dựng máy tính điện tử.
-                            <ExtraLearnMore extraBodyVariant="content">
+                            <ExtraLearnMore>
                                 {'"'}On Computable Numbers{'"'} của Turing
                                 (1936) là một công trình quan trọng, trong đó
                                 ông mô tả cách thức máy tính có thể thực hiện

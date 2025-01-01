@@ -18,9 +18,7 @@ import {
 } from "../../static/lessonsStatic";
 import ExtraQuiz from "../../Extra/ExtraQuiz";
 import ExtraAloneFact from "../../Extra/ExtraAloneFact";
-import ExtraInlineFact, {
-    HistoricalFigureInlineFact,
-} from "../../Extra/ExtraInlineFact";
+import ExtraInlineFact from "../../Extra/ExtraInlineFact";
 import ExtraFunFact from "../../Extra/ExtraFunFact";
 import ExtraLearnMore from "../../Extra/ExtraLearnMore";
 import GottlobFrege from "@/public/Image/gottlobfrege.png";
@@ -29,6 +27,7 @@ import Bertrandrussell from "@/public/Image/bertrandrussell.png";
 import Brahmagupta from "@/public/Image/brahmagupta.png";
 import AbrahamFraenkel from "@/public/Image/abarahamfraenkel.png";
 import ErnstZermelo from "@/public/Image/ernstzermelo.png";
+import HistoricalFigureInlineFact from "@/components/Extra/HistoricalFigure";
 
 const playVideo = signal([true]);
 
@@ -46,7 +45,7 @@ export default function TapHop() {
         <>
             <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.ThoiCoDai}
+                    {timelineStar.ThoiCoDai()}
                 </div>
                 <div
                     className={`${generalClassName} grid lg2:grid-cols-[auto_auto] lg2:grid-rows-[auto_auto]`}
@@ -411,8 +410,11 @@ export default function TapHop() {
                                 hơn nữa, Brahmagupta còn chỉ ra khái niệm số âm,
                                 số dương qua mô hình khoản nợ và tài sản:
                                 <div className={`${generalInstanceClassName}`}>
+                                    <br />
                                     Một khoản nợ trừ đi{" "}
-                                    <span className="font-[475]">sunya</span>{" "}
+                                    <span className="font-[475]">
+                                        sunya
+                                    </span>{" "}
                                     vẫn là một khoản nợ.
                                 </div>
                                 <div className={`${generalInstanceClassName}`}>
@@ -458,6 +460,7 @@ export default function TapHop() {
                                     Tài sản chia ra các khoản nợ thì thành những
                                     khoản nợ.
                                 </div>
+                                <br />
                                 Chưa dừng lại ở đó, quyền sách còn bàn về căn
                                 bậc hai, căn bậc ba, phương trình tuyến tính,
                                 phương trình nghiệm nguyên, bộ ba Pythagoras,
@@ -686,7 +689,7 @@ export default function TapHop() {
             </div>
             <div className="col-[1/-1] row-[2/3] h-fit">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy19(0)}
+                    {timelineStar.TheKy(1012191, "19")}
                 </div>
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>
@@ -747,69 +750,78 @@ export default function TapHop() {
                             một tập hợp đếm được.
                         </ExtraInlineFact>
                         .
+                        <ExtraLearnMore>
+                            Tập các số thực <InlineMath math="\mathbb{R}" /> lại
+                            không thể đếm được. Điều này được chứng minh qua
+                            định lý Cantor rằng không thể thiết lập một ánh xạ
+                            một-một giữa tập <InlineMath math="\mathbb{N}" /> và{" "}
+                            <InlineMath math="\mathbb{R}" />.{" "}
+                            <span className="font-[475]">Định lý Cantor</span>,
+                            hay còn gọi là{" "}
+                            <span className="font-[475]">
+                                Định lý Cantor về chiều của tập hợp
+                            </span>
+                            , là một trong những phát hiện quan trọng của
+                            <span className="font-[475]">
+                                {" "}
+                                Georg Cantor
+                            </span>{" "}
+                            trong lý thuyết tập hợp. Định lý này chứng minh
+                            rằng:
+                            <br />{" "}
+                            <span className="font-[475]">
+                                {'"'}Không có ánh xạ (hàm) một-một từ một tập
+                                hợp vô hạn vào một tập hợp con của nó mà phủ
+                                định.{'"'}
+                            </span>
+                            <br />
+                            Cụ thể, định lý này cho biết rằng:
+                            <br />
+                            <div className={`${generalInstanceClassName}`}>
+                                Tập hợp số thực <InlineMath math="\mathbb{R}" />{" "}
+                                có nhiều phần tử hơn tập hợp số tự nhiên{" "}
+                                <InlineMath math="\mathbb{N}" />, mặc dù cả hai
+                                đều là vô hạn. Điều này có nghĩa là tập hợp các
+                                số thực là một tập hợp vô hạn lớn hơn so với tập
+                                hợp các số tự nhiên.
+                            </div>
+                            <div className={`${generalInstanceClassName}`}>
+                                {" "}
+                                Tập hợp vô hạn không thể có cùng số phần tử với
+                                một tập con của nó. Tức là không thể tìm một ánh
+                                xạ một-một từ một tập hợp vô hạn vào một tập con
+                                của nó. Nếu có một ánh xạ như vậy, thì ánh xạ đó
+                                không thể là khả nghịch (không thể đảo ngược
+                                được).
+                            </div>{" "}
+                            Các phép toán tập hợp cơ bản của Cantor: Hợp tập,
+                            Giao tập, Hiệu tập, Tập con,... như ta đã biết hiện
+                            nay.
+                            <br />
+                            <div className={`${generalInstanceClassName}`}>
+                                Hợp tập (Union): Nếu A và B là hai tập hợp, thì
+                                hợp tập <InlineMath math="A \cup B" /> là tập
+                                hợp tất cả các phần tử thuộc A hoặc B, không
+                                trùng lặp.
+                            </div>
+                            <div className={`${generalInstanceClassName}`}>
+                                Giao tập (Intersection): Giao tập{" "}
+                                <InlineMath math="A \cap B" /> là tập hợp tất cả
+                                các phần tử mà A và B cùng chia sẻ.
+                            </div>
+                            <div className={`${generalInstanceClassName}`}>
+                                Hiệu tập (Difference): Hiệu tập{" "}
+                                <InlineMath math="A / B" /> là tập hợp tất cả
+                                các phần tử thuộc A nhưng không thuộc B.
+                            </div>
+                            <div className={`${generalInstanceClassName}`}>
+                                Tập con (Subset): Một tập hợp A là một tập con
+                                của tập hợp B (ký hiệu{" "}
+                                <InlineMath math="A \subset B" /> ) nếu mọi phần
+                                tử của A đều là phần tử của B.
+                            </div>
+                        </ExtraLearnMore>
                     </div>
-                    <ExtraLearnMore>
-                        Tập các số thực <InlineMath math="\mathbb{R}" /> lại
-                        không thể đếm được. Điều này được chứng minh qua định lý
-                        Cantor rằng không thể thiết lập một ánh xạ một-một giữa
-                        tập <InlineMath math="\mathbb{N}" /> và{" "}
-                        <InlineMath math="\mathbb{R}" />.{" "}
-                        <span className="font-[475]">Định lý Cantor</span>, hay
-                        còn gọi là{" "}
-                        <span className="font-[475]">
-                            Định lý Cantor về chiều của tập hợp
-                        </span>
-                        , là một trong những phát hiện quan trọng của
-                        <span className="font-[475]"> Georg Cantor</span> trong
-                        lý thuyết tập hợp. Định lý này chứng minh rằng:
-                        <br />{" "}
-                        <span className="font-[475]">
-                            {'"'}Không có ánh xạ (hàm) một-một từ một tập hợp vô
-                            hạn vào một tập hợp con của nó mà phủ định.{'"'}
-                        </span>
-                        <br />
-                        Cụ thể, định lý này cho biết rằng:
-                        <br />
-                        <div className={`${generalInstanceClassName}`}>
-                            Tập hợp số thực <InlineMath math="\mathbb{R}" /> có
-                            nhiều phần tử hơn tập hợp số tự nhiên{" "}
-                            <InlineMath math="\mathbb{N}" />, mặc dù cả hai đều
-                            là vô hạn. Điều này có nghĩa là tập hợp các số thực
-                            là một tập hợp vô hạn lớn hơn so với tập hợp các số
-                            tự nhiên.
-                        </div>
-                        <div className={`${generalInstanceClassName}`}>
-                            {" "}
-                            Tập hợp vô hạn không thể có cùng số phần tử với một
-                            tập con của nó. Tức là không thể tìm một ánh xạ
-                            một-một từ một tập hợp vô hạn vào một tập con của
-                            nó. Nếu có một ánh xạ như vậy, thì ánh xạ đó không
-                            thể là khả nghịch (không thể đảo ngược được).
-                        </div>{" "}
-                        Các phép toán tập hợp cơ bản của Cantor: Hợp tập, Giao
-                        tập, Hiệu tập, Tập con,... như ta đã biết hiện nay.
-                        <br />
-                        <div className={`${generalInstanceClassName}`}>
-                            Hợp tập (Union): Nếu A và B là hai tập hợp, thì hợp
-                            tập <InlineMath math="A \cup B" /> là tập hợp tất cả
-                            các phần tử thuộc A hoặc B, không trùng lặp.
-                        </div>
-                        <div className={`${generalInstanceClassName}`}>
-                            Giao tập (Intersection): Giao tập{" "}
-                            <InlineMath math="A \cap B" /> là tập hợp tất cả các
-                            phần tử mà A và B cùng chia sẻ.
-                        </div>
-                        <div className={`${generalInstanceClassName}`}>
-                            Hiệu tập (Difference): Hiệu tập{" "}
-                            <InlineMath math="A / B" /> là tập hợp tất cả các
-                            phần tử thuộc A nhưng không thuộc B.
-                        </div>
-                        <div className={`${generalInstanceClassName}`}>
-                            Tập con (Subset): Một tập hợp A là một tập con của
-                            tập hợp B (ký hiệu <InlineMath math="A \subset B" />{" "}
-                            ) nếu mọi phần tử của A đều là phần tử của B.
-                        </div>
-                    </ExtraLearnMore>
                 </div>
             </div>
             <div className="col-[1/-1] row-[3/4] h-fit">
@@ -1013,36 +1025,34 @@ export default function TapHop() {
             </div>
             <div className="col-[1/-1] row-[4/-1] h-fit">
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.TheKy20(0)}
+                    {timelineStar.TheKy(101220, "20")}
                 </div>
                 <div className={`${generalClassName}`}>
+                    <div className={`${generalHeaderClassName}`}>
+                        Lý thuyết tập hợp và các phép toán nâng cao
+                    </div>
                     <div className={`${generalContentClassName}`}>
-                        <div className={`${generalHeaderClassName}`}>
-                            Lý thuyết tập hợp và các phép toán nâng cao
+                        Khái niệm về thứ tự và số hạng (Ordinal and Cardinal
+                        Numbers):
+                        <div className={`${generalInstanceClassName}`}>
+                            Trong lý thuyết tập hợp, số hạng (ordinal numbers)
+                            dùng để chỉ thứ tự của các phần tử trong một tập hợp
+                            (ví dụ: {'"'}phần tử thứ nhất
+                            {'"'},{'"'}phần tử thứ hai{'"'},...).
                         </div>
-                        <div className={`${generalContentClassName}`}>
-                            Khái niệm về thứ tự và số hạng (Ordinal and Cardinal
-                            Numbers):
-                            <div className={`${generalInstanceClassName}`}>
-                                Trong lý thuyết tập hợp, số hạng (ordinal
-                                numbers) dùng để chỉ thứ tự của các phần tử
-                                trong một tập hợp (ví dụ: {'"'}phần tử thứ nhất
-                                {'"'},{'"'}phần tử thứ hai{'"'},...).
-                            </div>
-                            <div className={`${generalInstanceClassName}`}>
-                                Số cardinal là một khái niệm quan trọng dùng để
-                                chỉ kích thước hoặc số lượng phần tử của một tập
-                                hợp. Số cardinal có thể là hữu hạn hoặc vô hạn.
-                            </div>
-                            Lý thuyết mô hình (Model Theory) và ứng dụng trong
-                            lý thuyết tập hợp: Vào nửa sau thế kỷ 20, lý thuyết
-                            tập hợp trở thành cơ sở cho lý thuyết mô hình, trong
-                            đó các mô hình toán học được mô tả bằng các tập hợp
-                            và phép toán trên chúng. Lý thuyết mô hình giúp giải
-                            quyết các câu hỏi về sự đúng đắn và tính khả thi của
-                            các lý thuyết toán học.
+                        <div className={`${generalInstanceClassName}`}>
+                            Số cardinal là một khái niệm quan trọng dùng để chỉ
+                            kích thước hoặc số lượng phần tử của một tập hợp. Số
+                            cardinal có thể là hữu hạn hoặc vô hạn.
                         </div>
-                        <ExtraLearnMore extraBodyVariant="content" flip>
+                        Lý thuyết mô hình (Model Theory) và ứng dụng trong lý
+                        thuyết tập hợp: Vào nửa sau thế kỷ 20, lý thuyết tập hợp
+                        trở thành cơ sở cho lý thuyết mô hình, trong đó các mô
+                        hình toán học được mô tả bằng các tập hợp và phép toán
+                        trên chúng. Lý thuyết mô hình giúp giải quyết các câu
+                        hỏi về sự đúng đắn và tính khả thi của các lý thuyết
+                        toán học.
+                        <ExtraLearnMore flip>
                             <span className="font-[450]">
                                 Lý thuyết mô hình
                             </span>{" "}
@@ -1175,34 +1185,31 @@ export default function TapHop() {
                                 khác nhau trong lý thuyết tập hợp.
                             </div>
                         </ExtraLearnMore>
-                        <div className={`${generalContentClassName}`}>
-                            Khoa học máy tính:
-                            <div className={`${generalInstanceClassName}`}>
-                                Ngôn ngữ lập trình: Các ngôn ngữ lập trình sử
-                                dụng các cấu trúc dữ liệu như danh sách, tập hợp
-                                và mảng, trong đó tập hợp là một công cụ quan
-                                trọng để tổ chức và thao tác dữ liệu.
-                            </div>
-                            <div className={`${generalInstanceClassName}`}>
-                                Cơ sở dữ liệu: Trong lý thuyết cơ sở dữ liệu,
-                                tập hợp được sử dụng để mô hình hóa các đối
-                                tượng dữ liệu và quan hệ giữa chúng.
-                            </div>
-                            <br />
-                            Các ứng dụng khác:
-                            <div className={`${generalInstanceClassName}`}>
-                                Lý thuyết đồ thị: Các tập hợp và phép toán trên
-                                tập hợp cũng được ứng dụng trong lý thuyết đồ
-                                thị, nơi các đỉnh và cạnh có thể được coi là các
-                                phần tử trong các tập hợp.
-                            </div>
-                            <div className={`${generalInstanceClassName}`}>
-                                Lý thuyết thông tin và mã hóa: Tập hợp cũng là
-                                công cụ quan trọng trong lý thuyết mã hóa, nơi
-                                các tập hợp của các mã có thể được sử dụng để
-                                đảm bảo tính chính xác trong việc truyền tải
-                                thông tin.
-                            </div>
+                        Khoa học máy tính:
+                        <div className={`${generalInstanceClassName}`}>
+                            Ngôn ngữ lập trình: Các ngôn ngữ lập trình sử dụng
+                            các cấu trúc dữ liệu như danh sách, tập hợp và mảng,
+                            trong đó tập hợp là một công cụ quan trọng để tổ
+                            chức và thao tác dữ liệu.
+                        </div>
+                        <div className={`${generalInstanceClassName}`}>
+                            Cơ sở dữ liệu: Trong lý thuyết cơ sở dữ liệu, tập
+                            hợp được sử dụng để mô hình hóa các đối tượng dữ
+                            liệu và quan hệ giữa chúng.
+                        </div>
+                        <br />
+                        Các ứng dụng khác:
+                        <div className={`${generalInstanceClassName}`}>
+                            Lý thuyết đồ thị: Các tập hợp và phép toán trên tập
+                            hợp cũng được ứng dụng trong lý thuyết đồ thị, nơi
+                            các đỉnh và cạnh có thể được coi là các phần tử
+                            trong các tập hợp.
+                        </div>
+                        <div className={`${generalInstanceClassName}`}>
+                            Lý thuyết thông tin và mã hóa: Tập hợp cũng là công
+                            cụ quan trọng trong lý thuyết mã hóa, nơi các tập
+                            hợp của các mã có thể được sử dụng để đảm bảo tính
+                            chính xác trong việc truyền tải thông tin.
                         </div>
                     </div>
                 </div>

@@ -165,7 +165,7 @@ export default function GiaTriLuongGiacCuaGocLuongGiac() {
                     </div>
                 </div>
                 <div className="md:h-[75px] h-[51.5px]">
-                    {timelineStar.ThoiCoDai}
+                    {timelineStar.ThoiCoDai()}
                 </div>
             </div>
         </>

@@ -9,7 +9,7 @@ export default function ExtraLearnMore({
     buttonClassName = "",
     containerClassName = "",
     extraBodyClassName = "",
-    extraBodyVariant = "",
+    extraBodyVariant = "content",
     flip = false,
 }: {
     children?: React.ReactNode;

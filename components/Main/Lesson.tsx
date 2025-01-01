@@ -12,6 +12,7 @@ import TapHop from "../lessons/MenhDeVaTapHop/TapHop";
 import LuongGiac10 from "../lessons/LuongGiac10";
 import GiaTriLuongGiacCuaGocLuongGiac from "../lessons/LuongGiac11/GiaTriLuongGiacCuaGocLuongGiac";
 import PhuongTrinhLuongGiac from "../lessons/LuongGiac11/PhuongTrinhLuongGiac";
+import HamSoLuongGiac from "../lessons/LuongGiac11/HamSoLuongGiac";
 
 const Lessons = [
     [
@@ -22,6 +23,7 @@ const Lessons = [
     [
         [
             <GiaTriLuongGiacCuaGocLuongGiac key="lesson4" />,
+            <HamSoLuongGiac key="lesson6" />,
             <PhuongTrinhLuongGiac key="lesson5" />,
         ],
     ],
@@ -139,7 +141,7 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                         >
                             <div className="col-[1/-1] row-[1/-1] px-3 flex">
                                 <span className="text-nowrap md:text-[1.25rem] md:leading-[1.75rem] text-[1.125rem] leding-[1.5rem]">
-                                    Bài {idxl + 1}
+                                    Bài {lessonName[0]}
                                 </span>
                                 <div
                                     className={`${
@@ -149,7 +151,7 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                                 >
                                     <span className="md:inline hidden">: </span>
                                     <span className="md:inline block w-[calc(100vw-75px)] text-start md:text-[1.25rem] md:leading-[1.75rem] leading-[1.6rem] text-[1.3rem] max-[768px]:font-['Chakra_Petch']">
-                                        {lessonName}
+                                        {lessonName[1]}
                                     </span>
                                 </div>
                             </div>
