@@ -74,13 +74,13 @@ export default function HamSoLuongGiac() {
                                 <span className="font-[475]">Ptolemy</span>, là
                                 một nhà thiên văn học, toán học và địa lý người
                                 Ai Cập, sinh khoảng năm 100. Ông nổi tiếng với
-                                tác phẩm "
-                                <span className="font-[475]">Almagest</span>",
-                                mô hình hệ Mặt Trời trung tâm (geocentric model)
-                                và các đóng góp quan trọng trong địa lý và thiên
-                                văn học. Ptolemy cũng đã ghi lại độ dài và vĩ độ
-                                của khoảng 8,000 địa điểm trên bản đồ thế giới
-                                của ông.
+                                tác phẩm {'"'}
+                                <span className="font-[475]">Almagest</span>
+                                {'"'}, mô hình hệ Mặt Trời trung tâm (geocentric
+                                model) và các đóng góp quan trọng trong địa lý
+                                và thiên văn học. Ptolemy cũng đã ghi lại độ dài
+                                và vĩ độ của khoảng 8,000 địa điểm trên bản đồ
+                                thế giới của ông.
                                 <div className="mt-4 flex flex-col w-full items-center gap-4">
                                     <Image src={geocentricModel} alt="" />
                                     <div className="text-[rgba(255,255,255,0.75)] font-[475]">
@@ -108,10 +108,10 @@ export default function HamSoLuongGiac() {
                             >
                                 (476 - 550 CE) là một nhà toán học và thiên văn
                                 học nổi tiếng của Ấn Độ. Ông được biết đến với
-                                tác phẩm "
+                                tác phẩm {'"'}
                                 <span className="font-[475]">Aryabhatiya</span>
-                                ", trong đó ông đã tính toán chính xác giá trị
-                                của π (pi) và đề xuất lý thuyết Trái Đất tự
+                                {'"'}, trong đó ông đã tính toán chính xác giá
+                                trị của π (pi) và đề xuất lý thuyết Trái Đất tự
                                 quay. Những đóng góp của ông đã đặt nền móng cho
                                 nhiều nghiên cứu toán học và thiên văn học sau
                                 này.
@@ -129,17 +129,17 @@ export default function HamSoLuongGiac() {
                             >
                                 (505 - 587 CE) là một nhà thiên văn học, toán
                                 học và huyền thuật người Ấn Độ. Ông nổi tiếng
-                                với tác phẩm "
+                                với tác phẩm {'"'}
                                 <span className="font-[475]">
                                     Pancha-siddhantikaa
                                 </span>
-                                ", một tổng hợp các tài liệu thiên văn học của
-                                Hy Lạp, Ai Cập, La Mã và Ấn Độ. Varahamihira
-                                cũng là tác giả của "
+                                {'"'}, một tổng hợp các tài liệu thiên văn học
+                                của Hy Lạp, Ai Cập, La Mã và Ấn Độ. Varahamihira
+                                cũng là tác giả của {'"'}
                                 <span className="font-[475]">
                                     Brihat-samhitaa
                                 </span>
-                                ", một tác phẩm đa ngành bao gồm kiến trúc,
+                                {'"'}, một tác phẩm đa ngành bao gồm kiến trúc,
                                 thiên văn học, huyền thuật và nhiều lĩnh vực
                                 khác.
                             </HistoricalFigure>
@@ -206,7 +206,7 @@ export default function HamSoLuongGiac() {
                         về lý thuyết hàm lượng giác giúp xây dựng nền tảng cho
                         lý thuyết lượng giác hiện đại, đặc biệt là trong việc
                         nghiên cứu các chu kỳ và dao động.
-                    </div>{" "}
+                    </div>
                 </div>
             </div>
         </>
