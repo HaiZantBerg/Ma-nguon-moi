@@ -379,7 +379,7 @@ export default function GiaTriLuongGiacCuaGocLuongGiac() {
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>
                         Trong thời kỳ cổ đại, các nhà toán học như{" "}
-                        <span className="font-[475]">Euclid</span> và
+                        <span className="font-[475]">Euclid</span> và{" "}
                         <span className="font-[475]">Archimedes</span> đã biết
                         rằng độ dài của một cung tròn liên hệ với bán kính của
                         nó. Tuy nhiên, họ chưa đặt tên hay sử dụng hệ đo góc dựa
