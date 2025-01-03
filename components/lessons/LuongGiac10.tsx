@@ -332,16 +332,16 @@ export default function LuongGiac() {
                         dài thực tế của gậy, ông xác định được rằng góc tạo bởi
                         chiếc gậy và ánh Mặt Trời là hơn 7 độ một chút (hình
                         minh họa).
-                        <div className="my-3">
+                        <div className="my-3 flex justify-center">
                             <Image src={calcParamterOfEarth} alt="" />
                         </div>
-                        Hình bên trái: phép đo để tính ra góc lệch của tia sáng
-                        Mặt Trời theo cách của Eratosthenes. Bên phải: từ việc
-                        xác định được cung 7 độ tương ứng với 5000 stadia,
-                        Eratosthenes tính ra gần đúng chu vi của Trái Đất. Bạn
-                        có thể thấy rằng kết quả tính này chênh lệch so với thực
-                        tế ngày nay được xác nhận khoảng 10%. Sự sai khác này là
-                        không tránh khỏi vì trên thực tế thì:
+                        Phép đo để tính ra góc lệch của tia sáng Mặt Trời theo
+                        cách của Eratosthenes. Từ việc xác định được cung 7 độ
+                        tương ứng với 5000 stadia, Eratosthenes tính ra gần đúng
+                        chu vi của Trái Đất. Bạn có thể thấy rằng kết quả tính
+                        này chênh lệch so với thực tế ngày nay được xác nhận
+                        khoảng 10%. Sự sai khác này là không tránh khỏi vì trên
+                        thực tế thì:
                         <div className={`${generalInstanceClassName}`}>
                             - Khoảng cách giữa Syene và Alexandria đã không được
                             đo thật chính xác với phương pháp thời đó.

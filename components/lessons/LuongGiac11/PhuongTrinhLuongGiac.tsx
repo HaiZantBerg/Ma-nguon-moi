@@ -6,7 +6,7 @@ import {
     generalInstanceClassName,
     timelineStar,
 } from "../../static/lessonsStatic";
-import { BlockMath } from "react-katex";
+import { BlockMath, InlineMath } from "react-katex";
 import ExtraInlineFact from "@/components/Extra/ExtraInlineFact";
 import Image from "next/image";
 import ExtraLearnMore from "@/components/Extra/ExtraLearnMore";
@@ -32,18 +32,21 @@ export default function PhuongTrinhLuongGiac() {
                         <span className="font-[475]">
                             Phương trình lượng giác cơ bản
                         </span>
-                        : Một phương trình lượng giác đơn giản có thể là sin(x)
-                        = 0, cos(x) = 1, hoặc tan(x) = 0. Các phương trình này
+                        : Một phương trình lượng giác đơn giản có thể là{" "}
+                        <InlineMath math="\sin{x} = 0" />
+                        , <InlineMath math="\cos{x} = 1" />, hoặc{" "}
+                        <InlineMath math="\tan{x} = 0" />. Các phương trình này
                         có thể được giải bằng cách sử dụng các công thức lượng
                         giác cơ bản và các định lý như định lý Pythagoras.
                         <br /> <br />
                         <span className="font-[475]">
                             Phương trình lượng giác bậc cao
                         </span>
-                        : Các phương trình như sin²(x) + cos²(x) = 1, hoặc các
-                        phương trình phức tạp hơn liên quan đến các hàm lượng
-                        giác như cot, sin, cos, được sử dụng để giải các vấn đề
-                        trong vật lý, đặc biệt là trong dao động và sóng.
+                        : Các phương trình như{" "}
+                        <InlineMath math="\sin^{2}{x} + \cos^{2}{x} = 1" />,
+                        hoặc các phương trình phức tạp hơn liên quan đến các hàm
+                        lượng giác như cot, sin, cos, được sử dụng để giải các
+                        vấn đề trong vật lý, đặc biệt là trong dao động và sóng.
                     </div>
                 </div>
                 {timelineStar.TheKy(1141617, "16 - 17")}

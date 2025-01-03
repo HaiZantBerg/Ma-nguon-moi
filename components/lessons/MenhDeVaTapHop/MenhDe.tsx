@@ -1,4 +1,4 @@
-import { BlockMath, InlineMath } from "react-katex";
+import { InlineMath } from "react-katex";
 import ExtraInlineFact from "../../Extra/ExtraInlineFact";
 import {
     generalClassName,
@@ -196,7 +196,9 @@ export default function MenhDe() {
                             Phát biểu {'"'}Socrates là người và Socrates là sinh
                             vật{'"'} có thể được viết dưới dạng phép toán đại số
                             như sau:
-                            <BlockMath math="P \land Q" />
+                            <div className="flex justify-center gap-2 text-xl font-[400]">
+                                P <InlineMath math="\land" /> Q
+                            </div>
                             Trong đó:
                             <br />
                             <InlineMath math="\land" /> là phép toán logic {'"'}

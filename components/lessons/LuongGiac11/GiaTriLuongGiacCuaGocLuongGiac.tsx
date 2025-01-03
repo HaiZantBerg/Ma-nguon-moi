@@ -92,11 +92,12 @@ export default function GiaTriLuongGiacCuaGocLuongGiac() {
                 </div>
                 <div className={`${generalClassName}`}>
                     Khái niệm về {'"'}góc âm{'"'} và {'"'}góc lớn hơn 360
-                    <InlineMath math="\degree" />{'"'} xuất hiện khi các nhà toán
-                    học mở rộng định nghĩa góc vượt ra ngoài hình học thuần túy
-                    để đáp ứng nhu cầu trong lượng giác, giải tích, và các lĩnh
-                    vực khoa học khác. Đây là một phần quan trọng trong việc
-                    phát triển góc lượng giác hiện đại.
+                    <InlineMath math="\degree" />
+                    {'"'} xuất hiện khi các nhà toán học mở rộng định nghĩa góc
+                    vượt ra ngoài hình học thuần túy để đáp ứng nhu cầu trong
+                    lượng giác, giải tích, và các lĩnh vực khoa học khác. Đây là
+                    một phần quan trọng trong việc phát triển góc lượng giác
+                    hiện đại.
                 </div>
             </div>{" "}
             <div className="col-[1/-1] row-[2/3] h-fit mt-[10px]">
@@ -386,7 +387,8 @@ export default function GiaTriLuongGiacCuaGocLuongGiac() {
                         <br /> <br />
                         Người Babylon sử dụng hệ{" "}
                         <span className="font-[475]">độ (degree)</span>, chia
-                        một vòng tròn thành $360^\circ$.
+                        một vòng tròn thành 360
+                        <InlineMath math="\degree" />.
                     </div>
                 </div>
             </div>
@@ -414,8 +416,8 @@ export default function GiaTriLuongGiacCuaGocLuongGiac() {
                         tỉ lệ giữa cung tròn và bán kính xuất hiện trong các
                         nghiên cứu của Isaac Newton và Roger Cotes. Định nghĩa
                         radian chính thức Một vòng tròn đầy đủ có góc{" "}
-                        <InlineMath math="2\pi" /> radian:
-                        <InlineMath math="2\pi" /> , radian = 360
+                        <InlineMath math="2\pi" /> radian:{" "}
+                        <InlineMath math="2\pi" />, radian = 360
                         <InlineMath math="\degree" />. Độ dài cung tròn được
                         tính bằng công thức:{" "}
                         <InlineMath math="s = r \cdot \theta" />, với{" "}
