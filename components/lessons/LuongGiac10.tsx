@@ -265,7 +265,7 @@ export default function LuongGiac() {
                                         className="h-full w-auto"
                                     />
                                 </div>
-                                <div className="lgmi:col-[1/-1] row-[3/-1] lgmi:row-[2/-1] pt-2 text-center lgmi:px-1 px-5 lgmi:pb-0 pb-5 text-[rgba(0,0,0,0.75)]">
+                                <div className="lgmi:col-[1/-1] row-[3/-1] lgmi:row-[2/-1] pt-2 text-center lgmi:px-1 px-5 lgmi:pb-0 pb-5 text-[rgba(255,255,255,0.75)]">
                                     Giếng đặc biệt ở Syene, được Eratosthenes
                                     lấy để tính toán chu vi của trái đất.
                                 </div>
@@ -281,7 +281,7 @@ export default function LuongGiac() {
                             đúng đến kinh ngạc khi mà hiện nay chúng ta biết
                             rằng con số chính xác của chu vi Trái đất là 40008
                             kilômét. Chênh lệch còn chưa đến 2%!
-                        </ExtraInlineFact>
+                        </ExtraInlineFact>{" "}
                         (bématistes). Nếu các nhà trắc địa bình thường hay các
                         thợ căng dây có nghĩa vụ đo đạc các thửa ruộng và công
                         trình thì các nhà trắc địa bộ hành phải chịu trách nhiệm
