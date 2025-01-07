@@ -221,7 +221,8 @@ export default function TapHop() {
                                 </Link>{" "}
                                 Đây là trích đoạn từ De Temporum Ratione. Trong
                                 chương đầu tiên của De Temporum Ratione, mang
-                                tên “Tính toán hoặc nói chuyện bằng ngón tay,”
+                                tên {'"'}Tính toán hoặc nói chuyện bằng ngón
+                                tay,{'"'}
                                 đã mô tả một hình thức đếm bằng ngón tay.
                             </ExtraInlineFact>{" "}
                             (hệ thập phân) là vô cùng phổ biến.
@@ -310,9 +311,9 @@ export default function TapHop() {
                     <div className={`${generalContentClassName}`}>
                         Trong khi một vài thế kỷ trước người Hy Lạp còn gặp khó
                         khăn trong việc chấp nhận 1 là một con số, hãy tưởng
-                        tượng việc gắn tên “số” cho một điều không tồn tại tạo
-                        nên một cuộc các mạng thế nào. Vậy thì đối với số 0 lại
-                        càng khó khăn để chấp nhận hơn.
+                        tượng việc gắn tên {'"'}số{'"'} cho một điều không tồn
+                        tại tạo nên một cuộc các mạng thế nào. Vậy thì đối với
+                        số 0 lại càng khó khăn để chấp nhận hơn.
                         <br />
                         Số 0 được coi là một trong những khám phá vĩ đại nhất
                         trong lịch sử loài người. Cho đến khi phát hiện ra số 0,
@@ -334,15 +335,16 @@ export default function TapHop() {
                         tại Harvard và tác giả cuốn sách về con số không, nói
                         với tạp chí Vox.
                         <br />
-                        Trong cuốn “Chữ số và Thế giới - Nguồn gốc bị lãng quên”
-                        của Đỗ Minh Triết trang 323 có khẳng định: “Vậy là Ấn Độ
-                        đã có hệ ghi số hoàn chỉnh, đơn giản, hữu hiệu nhất của
-                        nhân loại: hệ ghi số gồm mười chữ số gán cho số 0 và
-                        chín số đếm đầu tiên, số được ghi theo quy tắc vị trí
-                        định lượng cơ số 10. Ấn Độ chính là tác giả độc lập của
-                        phát minh vĩ đại này, không phải Hy Lạp, không phải La
-                        Mã, Maya hay Babylon và cũng không phải của Ả Rập Hồi
-                        giáo.”
+                        Trong cuốn {'"'}Chữ số và Thế giới - Nguồn gốc bị lãng
+                        quên{'"'}
+                        của Đỗ Minh Triết trang 323 có khẳng định: {'"'}Vậy là
+                        Ấn Độ đã có hệ ghi số hoàn chỉnh, đơn giản, hữu hiệu
+                        nhất của nhân loại: hệ ghi số gồm mười chữ số gán cho số
+                        0 và chín số đếm đầu tiên, số được ghi theo quy tắc vị
+                        trí định lượng cơ số 10. Ấn Độ chính là tác giả độc lập
+                        của phát minh vĩ đại này, không phải Hy Lạp, không phải
+                        La Mã, Maya hay Babylon và cũng không phải của Ả Rập Hồi
+                        giáo.{'"'}
                         <br />
                         <br />
                         Trước người Ấn Độ, vài dân tộc đã từng manh nha suy nghĩ
@@ -492,13 +494,13 @@ export default function TapHop() {
                         mất một thời gian dài các nhà toán học mới thực sự chấp
                         nhận chúng. Giới học giả Trung Quốc là những người đầu
                         tiên mô tả những số lượng có thể liên quan đến số âm.
-                        Trong những lời bàn ở “Cửu chương toán thuật”, Lưu Huy
-                        đã mô tả một hệ thống các thanh màu cho phép biểu diễn
-                        những số lượng dương hoặc âm. Mỗi thanh đỏ biểu trưng
-                        cho một số dương, mỗi thanh đen biểu trưng cho một số
-                        âm. Lưu Huy đã giải thích cụ thể hai loại số này tương
-                        tác với nhau như thế nào, và đặc biệt là việc chúng cộng
-                        vào hoặc trừ với nhau ra sao.
+                        Trong những lời bàn ở {'"'}Cửu chương toán thuật{'"'},
+                        Lưu Huy đã mô tả một hệ thống các thanh màu cho phép
+                        biểu diễn những số lượng dương hoặc âm. Mỗi thanh đỏ
+                        biểu trưng cho một số dương, mỗi thanh đen biểu trưng
+                        cho một số âm. Lưu Huy đã giải thích cụ thể hai loại số
+                        này tương tác với nhau như thế nào, và đặc biệt là việc
+                        chúng cộng vào hoặc trừ với nhau ra sao.
                     </div>
                     <ExtraQuiz
                         buttonContent="Tại sao trừ với trừ lại thành cộng?"
@@ -643,13 +645,35 @@ export default function TapHop() {
                             93 cẳng tay <InlineMath math="\frac{1}{3}." /> Trong
                             sách giấy cói này, ông cũng thử sức với hình tròn.
                             Và còn nhiều bài toán khác nữa. Các bạn có thể tìm
-                            đọc thêm ở cuốn sách “Toán học - Một thiên tiểu
-                            thuyết” của Mickael Launay.
+                            đọc thêm ở cuốn sách {'"'}Toán học - Một thiên tiểu
+                            thuyết{'"'} của Mickael Launay.
                             <br />
                             <br />
-                            Bạn cũng có thể tham khảo thêm câu chuyện “Cánh tay,
-                            gang tay và bàn tay” và “Một lý do tốt để yêu người
-                            Pháp”
+                            Bạn cũng có thể tham khảo thêm câu chuyện {'"'}
+                            <ExtraFunFact
+                                buttonContent="Cánh tay, gang tay và bàn tay"
+                                ffidx={[0, 0, 6, 0]}
+                            />
+                            {'"'} và {'"'}
+                            <ExtraFunFact
+                                buttonContent="Một lý do tốt để yêu người Pháp"
+                                ffidx={[0, 0, 6, 1]}
+                            />
+                            {'"'}.
+                            <br />
+                            <br />
+                            Năm 1790 giới khoa học Pháp đã đo lường lấy một phần
+                            hai mươi triệu đường kinh tuyến Bắc - Nam làm tiêu
+                            chuẩn độ dài gọi là mét, căn cứ vào đó người ta dùng
+                            Bạch Kim chế tạo ra thước mét tiêu chuẩn đầu tiên.
+                            <br />
+                            <br />
+                            Năm 1889 tại hội nghị đo lường quốc tế, người ta đã
+                            chính thức quyết định căn cứ vào độ dài thước mét
+                            tiêu chuẩn đầu tiên này, chế tạo ra thước mét có
+                            tiết diện hình X bằng hợp kim bạch kim - Irit và lấy
+                            nó làm thước mét tiêu chuẩn quốc tế và được lưu giữ
+                            ở Viện Đo lường quốc tế Paris.
                         </ExtraInlineFact>
                         : Trong các hoạt động đời sống như đo chiều dài, diện
                         tích, khối lượng, hoặc chia sẻ tài sản, các số nguyên
