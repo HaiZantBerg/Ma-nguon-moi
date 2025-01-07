@@ -38,7 +38,7 @@ import howToUseDioptra from "@/public/Image/howtousedioptra.png";
 import aPartOfAristarchussBook from "@/public/Image/apartofaristarchussbook.png";
 import { BlockMath, InlineMath } from "react-katex";
 import HistoricalFigure from "../Extra/HistoricalFigure";
-import sTamGiac from "@/public/Image/stamgiac.png";
+// import sTamGiac from "@/public/Image/stamgiac.png";
 
 export default function LuongGiac() {
     return (
@@ -881,7 +881,8 @@ export default function LuongGiac() {
                                 <br />
                                 <br />
                                 <span className="font-[475]">
-                                    Sử dụng công thức Heron (Heron's Formula)
+                                    Sử dụng công thức Heron (Heron{"'"}s
+                                    Formula)
                                 </span>
                                 : Công thức Heron tính diện tích khi biết độ dài
                                 tất cả các cạnh:
