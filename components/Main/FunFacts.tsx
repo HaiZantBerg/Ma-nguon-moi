@@ -371,7 +371,7 @@ export const FlipCard = ({
                                     <Image src={cross} alt="" />
                                 </button>
                                 <button
-                                    className="w-[10%] h-[10%] absolute top-[5%] left-[10%]"
+                                    className="w-[10%] h-[7.5%] absolute top-[5%] left-[10%]"
                                     style={{
                                         transformStyle: "preserve-3d",
                                     }}
