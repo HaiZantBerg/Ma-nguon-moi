@@ -18,7 +18,7 @@ import yuongHillbert from "@/public/Image/younghillbert.png";
 import theSomething from "@/public/Image/thesomething.png";
 import sentenceDueToBeingSmart from "@/public/Image/sentenceduetobeingsmart.png";
 import deadMath from "@/public/Image/deadmath.png";
-import hisStupidStudent from "@/public/Image/hisstupidstudent.png";
+import hisStupidStudent from "@/public/Image/hissupidstudent.png";
 import tooDetail from "@/public/Image/toodetail.png";
 import haveNothingToTalkAbout from "@/public/Image/havenothingtotalkabout.png";
 import greatFailure from "@/public/Image/greatfailure.png";
