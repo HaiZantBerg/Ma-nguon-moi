@@ -21,7 +21,7 @@ import deadMath from "@/public/Image/deadmath.png";
 import hisStupidStudent from "@/public/Image/hisstupidstudent.png";
 import tooDetail from "@/public/Image/toodetail.png";
 import haveNothingToTalkAbout from "@/public/Image/havenothingtotalkabout.png";
-import greatFailure from "@/public/Image/greatfailure.png";
+import hugeFailure from "@/public/Image/hugefailure.png";
 import protect from "@/public/Image/protect.png";
 import storyPage1 from "@/public/Image/storypage1.png";
 import storyPage2 from "@/public/Image/storypage2.png";
@@ -127,7 +127,7 @@ export const images = [
             ],
             [
                 <Image
-                    src={greatFailure}
+                    src={hugeFailure}
                     alt=""
                     key="image15"
                     className="w-[90%] aspect-square"
