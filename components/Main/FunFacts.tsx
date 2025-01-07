@@ -380,7 +380,7 @@ export const FlipCard = ({
                                     <Image src={flip} alt="" />
                                 </button>
                                 <div
-                                    className="text-[clamp(15px,5vw,27.5px)] leading-[clamp(22px,5.5vw,35.5px)] mt-2 w-full flex-col font-medium px-6 text-center overflow-y-auto flex gap-5"
+                                    className="text-[clamp(15px,5vw,27.5px)] leading-[clamp(22px,5.5vw,35.5px)] mt-2 w-full flex-col font-medium px-6 text-center overflow-x-hidden overflow-y-auto flex gap-5"
                                     style={{
                                         aspectRatio: 8 / 9,
                                     }}

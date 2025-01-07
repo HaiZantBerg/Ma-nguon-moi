@@ -645,6 +645,11 @@ export default function TapHop() {
                             Và còn nhiều bài toán khác nữa. Các bạn có thể tìm
                             đọc thêm ở cuốn sách “Toán học - Một thiên tiểu
                             thuyết” của Mickael Launay.
+                            <br />
+                            <br />
+                            Bạn cũng có thể tham khảo thêm câu chuyện “Cánh tay,
+                            gang tay và bàn tay” và “Một lý do tốt để yêu người
+                            Pháp”
                         </ExtraInlineFact>
                         : Trong các hoạt động đời sống như đo chiều dài, diện
                         tích, khối lượng, hoặc chia sẻ tài sản, các số nguyên

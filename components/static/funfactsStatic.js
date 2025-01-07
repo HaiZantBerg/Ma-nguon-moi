@@ -11,8 +11,26 @@ import funnyDenied from "@/public/Image/loituchoihaihuocvoigiaohoang.png";
 import knifeAndSimple from "@/public/Image/luoidaovasudongian.png";
 import PlatosPrank from "@/public/Image/sugieucotcuarplato.png";
 import philosopherLover from "@/public/Image/trietgiavacauchuyentinhyeutaitieng.png";
-
+import rain from "@/public/Image/rain.png";
+import woman from "@/public/Image/woman.png";
+import supermarket from "@/public/Image/supermarket.png";
+import yuongHillbert from "@/public/Image/younghillbert.png";
+import theSomething from "@/public/Image/thesomething.png";
+import sentenceDueToBeingSmart from "@/public/Image/sentenceduetobeingsmart.png";
+import deadMath from "@/public/Image/deadmath.png";
+import hisStupidStudent from "@/public/Image/hisstupidstudent.png";
+import tooDetail from "@/public/Image/toodetail.png";
+import haveNothingToTalkAbout from "@/public/Image/havenothingtotalkabout.png";
+import greatFailure from "@/public/Image/greatfailure.png";
+import protect from "@/public/Image/protect.png";
+import storyPage1 from "@/public/Image/storypage1.png";
+import storyPage2 from "@/public/Image/storypage2.png";
+import storyPage3 from "@/public/Image/storypage3.png";
+import storyPage4 from "@/public/Image/storypage4.png";
+import storyPage5 from "@/public/Image/storypage5.png";
 import { InlineMath } from "react-katex";
+import "katex/dist/katex.min.css";
+import Link from "next/link";
 
 export const images = [
     [
@@ -68,7 +86,12 @@ export const images = [
                     key="image8"
                     className="w-[90%] aspect-square"
                 />,
-                <div key="image9" />,
+                <Image
+                    src={sentenceDueToBeingSmart}
+                    alt=""
+                    key="image9"
+                    className="w-[90%] aspect-square"
+                />,
                 <Image
                     src={simpleTalk}
                     alt=""
@@ -83,29 +106,85 @@ export const images = [
                 />,
             ],
             [
-                <div key="image12" />,
+                <Image
+                    src={rain}
+                    alt=""
+                    key="image12"
+                    className="w-[90%] aspect-square"
+                />,
                 <Image
                     src={logicBread}
                     alt=""
                     key="image13"
                     className="w-[97%] h-[97%] mt-[3%]"
                 />,
-                <div key="image14" />,
+                <Image
+                    src={woman}
+                    alt=""
+                    key="image14"
+                    className="w-[90%] aspect-square"
+                />,
             ],
             [
-                <div key="image15" />,
-                <div key="image16" />,
-                <div key="image17" />,
-                <div key="image18" />,
+                <Image
+                    src={greatFailure}
+                    alt=""
+                    key="image15"
+                    className="w-[90%] aspect-square"
+                />,
+                <Image
+                    src={tooDetail}
+                    alt=""
+                    key="image16"
+                    className="w-[90%] aspect-square"
+                />,
+                <Image
+                    src={haveNothingToTalkAbout}
+                    alt=""
+                    key="image17"
+                    className="w-[90%] aspect-square"
+                />,
+                <Image
+                    src={supermarket}
+                    alt=""
+                    key="image18"
+                    className="w-[90%] aspect-square"
+                />,
             ],
             [
-                <div key="image19" />,
-                <div key="image20" />,
-                <div key="image21" />,
-                <div key="image22" />,
-                <div key="image23" />,
+                <Image
+                    src={hisStupidStudent}
+                    alt=""
+                    key="image19"
+                    className="w-[90%] aspect-square"
+                />,
+                <Image
+                    src={theSomething}
+                    alt=""
+                    key="image20"
+                    className="w-[90%] aspect-square"
+                />,
+                <Image
+                    src={yuongHillbert}
+                    alt=""
+                    key="image21"
+                    className="w-[90%] aspect-square"
+                />,
+                <Image
+                    src={deadMath}
+                    alt=""
+                    key="image22"
+                    className="w-[90%] aspect-square"
+                />,
+                <Image
+                    src={protect}
+                    alt=""
+                    key="image23"
+                    className="w-[90%] aspect-square"
+                />,
             ],
             [<div key="image24" />],
+            [<div key="image26" />, <div key="image27" />],
         ],
         [],
         [[<div key="image25" />]],
@@ -138,7 +217,7 @@ export const storyList = [
                 "Cuộc sống gia đình với tư duy logic",
             ],
             [
-                `Frege và việc "thất bại vĩ đại"`,
+                'Frege và việc "thất bại vĩ đại"',
                 "Frege và cách giảng dạy quá chi tiết",
                 "Frege và những cuộc trò chuyện về cuộc sống",
                 "Frege và toán học trong siêu thị",
@@ -151,6 +230,7 @@ export const storyList = [
                 "Hilbert và câu hỏi trong buổi bảo vệ luận án tiến sĩ",
             ],
             ["Kẻ giết người mang tên Pythagoras?!"],
+            ["Cánh tay, gang tay và bàn tay", "Một lý do để yêu người Pháp"],
         ],
         [],
         [["Chuyện về kính viễn vọng"]],
@@ -168,6 +248,7 @@ export const historyFigureName = [
             "Frege",
             "Hilbert",
             "Pythagoras",
+            "Các mẫu chuyện khác",
         ],
         [],
         ["Galilei"],
@@ -715,7 +796,130 @@ export const storyContent = [
                     <br />
                     <br />
                     (Bài viết có sự tham khảo từ cuốn sách Những vụ Scandal
-                    trong toán học, Theoni Pappas.)
+                    trong toán học, Theoni Pappas)
+                </div>,
+            ],
+            [
+                <div key="story1125">
+                    Ngày nay, chúng ta có lẽ đã quá quen thuộc với các đơn vị đo
+                    chiều dài rồi đúng không nào. Tuy nhiên, ngày xưa khi mỗi
+                    nơi, mỗi tộc người có cách đo đạc khác nhau thì chuyện này
+                    lại khác. Sẽ có vô số sự hiểu lầm tai hại đấy nhé. Ta hãy
+                    thực hiện một chuyến du hành ngược dòng thời gian về quá
+                    khứ, cách đây 3000 năm và cũng đọc câu chuyện sau nhé:
+                    <div className="flex w-full gap-1 mx-2 justify-center">
+                        <div>
+                            <Image src={storyPage1} alt="" />
+                        </div>
+                        <div>
+                            <Image src={storyPage2} alt="" />
+                        </div>
+                    </div>
+                    Thế điều gì trong câu chuyện này khiến chúng ta quan tâm:
+                    Goliath cao bao nhiêu nhỉ?
+                    <div className="text-start">
+                        <br />
+                        <div className="grid grid-cols-[2fr_minmax(min-content,1fr)] grid-rows-1">
+                            <div className="col-[1/2] row-[1/-1]">
+                                Ngày trước, người ta sử dụng những bộ phận trên
+                                cơ thể mình để mà đo đạc:
+                                <br />
+                                - Một cánh tay (a cubit) là chiều dài của phần
+                                cuối cánh tay kể từ khuỷu tay cho tới đầu của
+                                ngón tay giữa.
+                                <br />- Một gang tay (a span) là khoảng cách lớn
+                                nhất nằm giữa ngón cái và ngón út của một bàn
+                                tay mở rộng. Cứ hai gang tay thì được một cánh
+                                tay (bạn có thể thử bằng chính bàn tay và cánh
+                                tay của mình)
+                            </div>
+                            <div className="col-[2/-1] row-[1/-1]">
+                                <Image src={storyPage3} alt="" />
+                            </div>
+                        </div>
+                        - Một bề rộng bàn tay (a palm) đơn giản là bề rộng của
+                        một bàn tay không kể ngón cái.
+                        <br />- Một bề rộng ngón tay (a digit) đơn giản là bề
+                        rộng của ngón tay. Cứ 4 bề rộng ngón tay thì ra bề rộng
+                        bàn tay, 24 bề rộng ngón tay thì ra cánh tay.
+                    </div>
+                    <br />
+                    <span className="font-[750]">
+                        Thế rồi… cuối cùng Goliath cao bao nhiêu???
+                    </span>
+                    <br />
+                    <br />
+                    Chuyện này chỉ có một chỗ khó thôi: Con người cao lớn khác
+                    nhau. Một cánh tay có thể dài 40 cm mà còn có thể khác, dài
+                    đến 70 cm. Điều này có nghĩa là, chàng khổng lồ Goliath (với
+                    chiều cao sáu cánh tay và một gang tay) có thể cao tới
+                    4m55cm, dong cũng có thể chỉ cao 2m60cm mà thôi.
+                    <br />
+                    <br />
+                    Đã đến lúc chúng ta cần phải có một sự thống nhất trong đo
+                    đạc. Và một vị cứu tinh đã xuất hiện đến từ nước Pháp. Các
+                    bạn có thể tìm hiểu thêm ở câu chuyện “Một lý do tốt để yêu
+                    người Pháp”
+                    <br />
+                    <br />
+                    Theo Toán học độc đáo vô cùng - đo đạc không giới hạn -
+                    KJARTAN POSKITT.
+                </div>,
+                <div key="story1126">
+                    Phải công nhận: Toàn bộ hệ thống đo đạc phục vụ con người
+                    trên thế giới này và giúp cho việc tính toán trở nên dễ dàng
+                    hơn hẳn là do người Pháp phát triển nên.
+                    <div className="flex justify-center">
+                        <Image src={storyPage4} alt="" className="mx-2" />
+                    </div>
+                    Đầu tiên, họ cần phải thống nhất với nhau, một mét dài bao
+                    nhiêu. Và họ quyết định rất đơn giản như sau: Nó là một phần
+                    mười triệu của khoảng cách kể từ đường xích đạo cho tới điểm
+                    Cực Bắc, đoạn đi ngang qua thành phố Paris.
+                    <div className="flex justify-center">
+                        <Image src={storyPage5} alt="" className="mx-2" />
+                    </div>
+                    Sau đó, họ lấy một thanh thép đặc biệt, khắc lên đó hai điểm
+                    đánh dấu, với khoảng cách nằm giữa chúng chính xác là 1 mét.
+                    Dần dần mét đã trở thành đơn vị đo đạc căn bản trên toàn thế
+                    giới.
+                    <br />
+                    <br />
+                    Ấy vậy mà lại có những người cho là hai vạch trên một thanh
+                    thép tại thành phố Pari là quá đơn giản. Thế là họ nghĩ ra
+                    một thứ phức tạp hơn và vào năm 1893, họ đã quyết định rằng
+                    1 mét phải là khoảng cách mà ánh sáng đi được trong{" "}
+                    <InlineMath math="\dfrac{1}{299.792.458}" /> giây đồng hồ
+                    trong không gian không có không khí. Chỉ đọc thôi là thấy
+                    mệt rồi đừng nói đến chuyên làm và tính toán được 1 mét đó
+                    là thế nào rồi. Có vẻ họ rảnh rỗi sinh nông nổi thì phải. Và
+                    chính vì sự rảnh rỗi đó của họ nên chẳng một người nào trên
+                    thế giới dùng phương pháp này để đo đạc cả.
+                    <br />
+                    <br />
+                    Dĩ nhiên đơn vị đo mét là quá dài đối với một vật nào đó
+                    (như đo … cái kẹo cầu vồng mà bạn là thằng bạn của bạn đang
+                    muốn chia nhau ăn chung nhưng không ai chịu nhường ai phần
+                    lớn hơn) mà lại quá ngắn đối với một số vật khác (như đo …
+                    khoảng cách từ mặt bạn đến lưng của bạn chẳng hạn ). Nhưng
+                    thay vì nghĩa ra một đống những đơn vị đo lường mới điên rồ,
+                    người ra đã phát triển nên một hệ thống đơn bị thông minh,
+                    cho phép người dùng chỉ cần chia cho 10, cho 100, cho 1000
+                    hoặc nhân với 10, 100, 1000 khi muốn đổi đơn vị đo. Thật
+                    đúng là trò trẻ, dễ như ăn kẹo.
+                    <br />
+                    <br />
+                    Theo Toán học độc đáo vô cùng - đo đạc không giới hạn -
+                    KJARTAN POSKITT. <br />
+                    <br />
+                    Thông tin thêm -{" "}
+                    <Link
+                        href="https://smetest.vn"
+                        target="_blank"
+                        className="underline font-[600]"
+                    >
+                        TRUNG TÂM KIỂM ĐỊNH HIỆU CHUẨN ĐO LƯỜNG MIỀN NAM
+                    </Link>
                 </div>,
             ],
         ],

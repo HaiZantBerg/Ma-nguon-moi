@@ -151,7 +151,9 @@ export default function ExtraInlineFact({
                             </button>
                         </div>
                         {!flip && (
-                            <div className="bg-black w-[1px] h-full absolute md1:left-[49px] md:left-[13px] left-[9px] top-0" />
+                            <div className="bg-white w-[3px] h-full absolute md1:left-[48px] md:left-[12px] left-[8px] top-0">
+                                <div className="bg-black w-[1px] h-full translate-x-[1px]" />
+                            </div>
                         )}
                         <div
                             className="absolute left-0 w-full h-full"

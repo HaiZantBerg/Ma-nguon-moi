@@ -38,7 +38,7 @@ import howToUseDioptra from "@/public/Image/howtousedioptra.png";
 import aPartOfAristarchussBook from "@/public/Image/apartofaristarchussbook.png";
 import { BlockMath, InlineMath } from "react-katex";
 import HistoricalFigure from "../Extra/HistoricalFigure";
-// import sTamGiac from "@/public/Image/stamgiac.png";
+import sTamGiac from "@/public/Image/stamgiac.png";
 
 export default function LuongGiac() {
     return (
@@ -591,7 +591,7 @@ export default function LuongGiac() {
                                 Cách sử dụng Dioptra để đo góc khi quan sát
                                 thiên văn
                             </div>
-                            <div className="md:-1]  flex flex-col justify-center items-center gap-2 md:px-40 md:mt-0 mt-5">
+                            <div className="md:col-[1/-1] md:row-[3/4] flex flex-col justify-center items-center gap-2 md:mt-0 mt-5 md:px-40">
                                 <div className="min-w-[300px] max-w-[400px]">
                                     <Image
                                         src={howAncientGreekUseDioptra}
@@ -658,7 +658,7 @@ export default function LuongGiac() {
                         ở xa hơn rất nhiều. Họ đã nhận ra điều này từ nhật thực,
                         xuất hiện do Mặt trăng đi qua phía trước Mặt trời ở một
                         khoảng cách nhất định so với Trái đất. Aristachus đã sử
-                        dụng tam giác Pithagoras (Pytago) để ước tính rằng
+                        dụng tam giác Pythagoras (Pytago) để ước tính rằng
                         khoảng cách từ Trái Đất đến Mặt trời gấp 18 đến 20 lần
                         khoảng cách đến Mặt trăng. Ông cũng ước tính rằng kích
                         thước của Mặt trăng xấp xỉ một phần ba Trái Đất, dựa
@@ -821,6 +821,12 @@ export default function LuongGiac() {
                             buttonContent="De
                         Triangulis Omnimodis"
                         >
+                            <div className="mb-4 flex flex-col items-center gap-2">
+                                <Image src={sTamGiac} alt="" />
+                                Diện tích của tam giác: trích dẫn từ cuốn De
+                                Triangulis Omnimodis (1533 edition) của tác giả
+                                Regiomontanus.
+                            </div>
                             Cuốn sách{" "}
                             <span className="font-[475]">
                                 De Triangulis Omnimodis
@@ -829,18 +835,21 @@ export default function LuongGiac() {
                             phương pháp lượng giác cổ điển, đặc biệt là dựa vào
                             mối quan hệ giữa các góc và cạnh của tam giác, để
                             tính diện tích tam giác. Phương pháp được sử dụng
-                            bao gồm các phương pháp
+                            bao gồm các phương pháp:
                             <div className={`${generalInstanceClassName}`}>
                                 <br />
                                 <span className="font-[475]">
-                                    Sử dụng đường vuông góc (Altitude) và cạnh
-                                    đáy (Base)
+                                    1. Sử dụng đường vuông góc (Altitude) và
+                                    cạnh đáy (Base):
                                 </span>
-                                :<br />
+                                <br />
                                 <div className={`${generalInstanceClassName}`}>
                                     Diện tích tam giác được tính theo công thức:
-                                    <BlockMath math="\textrm{Diện tích} = \dfrac{1}{2} \times \textrm{Đáy} \times \textrm{Chiều cao}" />
-                                    <br />
+                                </div>
+                            </div>
+                            <BlockMath math="\text{Diện tích} = \dfrac{1}{2} \times \text{Đáy} \times \text{Chiều cao}" />
+                            <div className={`${generalInstanceClassName}`}>
+                                <div className={`${generalInstanceClassName}`}>
                                     Cuốn sách tập trung vào việc xác định chiều
                                     cao (đường vuông góc từ đỉnh đến cạnh đối
                                     diện) trong các trường hợp:
@@ -863,55 +872,87 @@ export default function LuongGiac() {
                                         (tam giác vuông).{" "}
                                     </div>
                                 </div>
-                                <span className="font-[475]">
-                                    Dựa vào định lý lượng giác (Law of Sines và
-                                    Cosines)
-                                </span>
-                                :{" "}
-                                <span className="font-[475]">Định lý Sin</span>:
-                                <BlockMath math="\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C} = 2R" />
-                                với <InlineMath math="R" /> là bán kính đường
-                                tròn ngoại tiếp tam giác. Định lý này được sử
-                                dụng để tính tỉ lệ giữa các cạnh và góc, từ đó
-                                suy ra chiều cao hoặc diện tích.{" "}
-                                <span className="font-[475]">Định lý Cos</span>:{" "}
-                                <BlockMath math="c^2 = a^2 + b^2 - 2ab\cos C" />{" "}
-                                Từ định lý này, các cạnh và góc tam giác được
-                                liên hệ để tính diện tích.
-                                <br />
                                 <br />
                                 <span className="font-[475]">
-                                    Sử dụng công thức Heron (Heron{"'"}s
-                                    Formula)
+                                    2. Dựa vào định lý lượng giác (Law of Sines
+                                    và Cosines):
                                 </span>
-                                : Công thức Heron tính diện tích khi biết độ dài
-                                tất cả các cạnh:
-                                <BlockMath math="\textrm{Diện tích} = \sqrt{p(p-a)(p-b)(p-c)}" />
-                                với <InlineMath math="p" /> là nửa chu vi:{" "}
-                                <InlineMath math="p= \frac{a+b+c}{2}" />.
-                                <br />
-                                <br />
+
+                                <div className={`${generalInstanceClassName}`}>
+                                    <span className="font-[475]">
+                                        Định lý Sin:
+                                    </span>
+                                </div>
+                            </div>
+                            <BlockMath math="\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C} = 2R" />
+                            <div className={`${generalInstanceClassName}`}>
+                                <div className={`${generalInstanceClassName}`}>
+                                    với <InlineMath math="R" /> là bán kính
+                                    đường tròn ngoại tiếp tam giác. Định lý này
+                                    được sử dụng để tính tỉ lệ giữa các cạnh và
+                                    góc, từ đó suy ra chiều cao hoặc diện tích.
+                                    <br />
+                                    <span className="font-[475]">
+                                        Định lý Cos:
+                                    </span>
+                                </div>
+                            </div>
+                            <BlockMath math="c^2 = a^2 + b^2 - 2ab\cos C" />
+                            <div className={`${generalInstanceClassName}`}>
+                                <div className={`${generalInstanceClassName}`}>
+                                    Từ định lý này, các cạnh và góc tam giác
+                                    được liên hệ để tính diện tích.
+                                    <br />
+                                    <br />
+                                </div>
                                 <span className="font-[475]">
-                                    Dựa vào góc vuông và hình học phẳng
+                                    3. Sử dụng công thức Heron (Heron{"'"}s
+                                    Formula):
                                 </span>
-                                : Trong tam giác vuông, diện tích được tính trực
-                                tiếp:
-                                <BlockMath math="\textrm{Diện tích} = \frac{1}{2} \times \textrm{Cạnh góc vuông 1} \times \textrm{Cạnh góc vuông 2}" />
-                                Trong tam giác không vuông, các phép chiếu và
-                                tam giác phụ được sử dụng để tính chiều cao và
-                                diện tích.
-                                <br />
-                                <br />
+                                <div className={`${generalInstanceClassName}`}>
+                                    Công thức Heron tính diện tích khi biết độ
+                                    dài tất cả các cạnh:
+                                </div>
+                            </div>
+                            <BlockMath math="\text{Diện tích} = \sqrt{p(p-a)(p-b)(p-c)}" />
+                            <div className={`${generalInstanceClassName}`}>
+                                <div className={`${generalInstanceClassName}`}>
+                                    với <InlineMath math="p" /> là nửa chu vi:{" "}
+                                    <InlineMath math="p= \frac{a+b+c}{2}" />.
+                                    <br />
+                                    <br />
+                                </div>
                                 <span className="font-[475]">
-                                    Điểm nhấn trong phương pháp của
-                                    Regiomontanus
+                                    4. Dựa vào góc vuông và hình học phẳng:
                                 </span>
-                                : Ông sử dụng bảng sin và cos (do các nhà toán
-                                học Ấn Độ và Hồi giáo phát triển) để hỗ trợ tính
-                                toán. Phương pháp của ông đánh dấu bước phát
-                                triển quan trọng trong việc chuyển lượng giác
-                                thành một ngành toán học độc lập, không chỉ phục
-                                vụ thiên văn học.
+                                <div className={`${generalInstanceClassName}`}>
+                                    Trong tam giác vuông, diện tích được tính
+                                    trực tiếp:
+                                </div>
+                            </div>
+                            <BlockMath math="\text{Diện tích} = \frac{1}{2} \times \text{Cạnh góc vuông 1} \times \text{Cạnh góc vuông 2}" />
+                            <div className={`${generalInstanceClassName}`}>
+                                <div className={`${generalInstanceClassName}`}>
+                                    Trong tam giác không vuông, các phép chiếu
+                                    và tam giác phụ được sử dụng để tính chiều
+                                    cao và diện tích.
+                                    <br />
+                                    <br />
+                                </div>
+                                <span className="font-[475]">
+                                    5. Điểm nhấn trong phương pháp của
+                                    Regiomontanus:
+                                </span>
+                                <div className={`${generalInstanceClassName}`}>
+                                    Ông sử dụng bảng sin và cos (do các nhà toán
+                                    học Ấn Độ và Hồi giáo phát triển) để hỗ trợ
+                                    tính toán.
+                                    <br />
+                                    Phương pháp của ông đánh dấu bước phát triển
+                                    quan trọng trong việc chuyển lượng giác
+                                    thành một ngành toán học độc lập, không chỉ
+                                    phục vụ thiên văn học.
+                                </div>
                             </div>
                         </ExtraInlineFact>
                         <br />
@@ -921,7 +962,7 @@ export default function LuongGiac() {
                         <ExtraFunFact
                             buttonContent="kính viễn vọng"
                             ffidx={[0, 2, 0, 0]}
-                        />{" "}
+                        />
                         .
                     </div>
                 </div>
