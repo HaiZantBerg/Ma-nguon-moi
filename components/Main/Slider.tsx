@@ -21,38 +21,23 @@ const firstCord = 20;
 const secondCord = 7.5;
 
 class plusParticle {
-    angle: number;
-    radians: number;
+    angle: number = 0;
+    radians: number = 0;
     x: number;
     y: number;
     vx: number;
     vy: number;
-    gravity: number;
-    scale: number;
+    gravity: number = -0.3;
+    scale: number = 150;
     color: string;
-    scaleTime: number;
+    scaleTime: number = 0.001;
 
-    constructor(
-        angle: number,
-        radians: number,
-        gravity: number,
-        dx: number,
-        dy: number,
-        vx: number,
-        vy: number,
-        scale: number,
-        color: string
-    ) {
-        this.angle = angle;
-        this.radians = radians;
+    constructor(dx: number, dy: number, vx: number, vy: number, color: string) {
         this.x = dx;
         this.y = dy;
         this.vx = vx;
         this.vy = vy;
-        this.gravity = gravity;
-        this.scale = scale;
         this.color = color;
-        this.scaleTime = 0.001;
     }
 
     draw(ctx: CanvasRenderingContext2D) {
@@ -65,25 +50,28 @@ class plusParticle {
 
             ctx.fillStyle = `${this.color}`;
 
-            ctx.beginPath();
+            const p = new Path2D(
+                `M${-firstCord / this.scale} ${-secondCord / this.scale} L${
+                    -secondCord / this.scale
+                } ${-secondCord / this.scale} L${-secondCord / this.scale} ${
+                    -firstCord / this.scale
+                } L${secondCord / this.scale} ${-firstCord / this.scale} L${
+                    secondCord / this.scale
+                } ${-secondCord / this.scale} L${firstCord / this.scale} ${
+                    -secondCord / this.scale
+                } L${firstCord / this.scale} ${secondCord / this.scale} L${
+                    secondCord / this.scale
+                } ${secondCord / this.scale} L${secondCord / this.scale} ${
+                    firstCord / this.scale
+                } L${-secondCord / this.scale} ${firstCord / this.scale} L${
+                    -secondCord / this.scale
+                } ${secondCord / this.scale} L${-firstCord / this.scale} ${
+                    secondCord / this.scale
+                } Z`
+            );
 
-            ctx.moveTo(-firstCord / this.scale, -secondCord / this.scale);
-            ctx.lineTo(-secondCord / this.scale, -secondCord / this.scale);
-            ctx.lineTo(-secondCord / this.scale, -firstCord / this.scale);
-            ctx.lineTo(secondCord / this.scale, -firstCord / this.scale);
-            ctx.lineTo(secondCord / this.scale, -secondCord / this.scale);
-            ctx.lineTo(firstCord / this.scale, -secondCord / this.scale);
-            ctx.lineTo(firstCord / this.scale, secondCord / this.scale);
-            ctx.lineTo(secondCord / this.scale, secondCord / this.scale);
-            ctx.lineTo(secondCord / this.scale, firstCord / this.scale);
-            ctx.lineTo(-secondCord / this.scale, firstCord / this.scale);
-            ctx.lineTo(-secondCord / this.scale, secondCord / this.scale);
-            ctx.lineTo(-firstCord / this.scale, secondCord / this.scale);
-
-            ctx.closePath();
-
-            ctx.stroke();
-            ctx.fill();
+            ctx.stroke(p);
+            ctx.fill(p);
 
             ctx.restore();
         }
@@ -106,38 +94,23 @@ class plusParticle {
 }
 
 class minusParticle {
-    angle: number;
-    radians: number;
+    angle: number = 0;
+    radians: number = 0;
     x: number;
     y: number;
     vx: number;
     vy: number;
-    gravity: number;
-    scale: number;
+    gravity: number = -0.3;
+    scale: number = 150;
     color: string;
-    scaleTime: number;
+    scaleTime: number = 0.001;
 
-    constructor(
-        angle: number,
-        radians: number,
-        gravity: number,
-        dx: number,
-        dy: number,
-        vx: number,
-        vy: number,
-        scale: number,
-        color: string
-    ) {
-        this.angle = angle;
-        this.radians = radians;
+    constructor(dx: number, dy: number, vx: number, vy: number, color: string) {
         this.x = dx;
         this.y = dy;
         this.vx = vx;
         this.vy = vy;
-        this.gravity = gravity;
-        this.scale = scale;
         this.color = color;
-        this.scaleTime = 0.001;
     }
 
     draw(ctx: CanvasRenderingContext2D) {
@@ -150,17 +123,16 @@ class minusParticle {
 
             ctx.fillStyle = `${this.color}`;
 
-            ctx.beginPath();
+            const p = new Path2D(
+                `M${-secondCord / this.scale} ${-firstCord / this.scale} L${
+                    secondCord / this.scale
+                } ${-firstCord / this.scale} L${secondCord / this.scale} ${
+                    firstCord / this.scale
+                } L${-secondCord / this.scale} ${firstCord / this.scale} Z`
+            );
 
-            ctx.moveTo(-secondCord / this.scale, -firstCord / this.scale);
-            ctx.lineTo(secondCord / this.scale, -firstCord / this.scale);
-            ctx.lineTo(secondCord / this.scale, firstCord / this.scale);
-            ctx.lineTo(-secondCord / this.scale, firstCord / this.scale);
-
-            ctx.closePath();
-
-            ctx.stroke();
-            ctx.fill();
+            ctx.stroke(p);
+            ctx.fill(p);
 
             ctx.restore();
         }
@@ -238,31 +210,27 @@ export default function Slider({ id }: { id: number }) {
             ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
             minusParticleArray.forEach((minusIcon, idx) => {
-                if (minusIcon) {
-                    minusIcon.update();
-                    minusIcon.draw(ctx);
+                minusIcon.update();
+                minusIcon.draw(ctx);
 
-                    if (
-                        minusIcon.y > window.innerHeight + 200 ||
-                        minusIcon.x < -500 ||
-                        minusIcon.x > window.innerWidth + 200
-                    )
-                        minusParticleArray.splice(idx, 1);
-                }
+                if (
+                    minusIcon.y > window.innerHeight + 200 ||
+                    minusIcon.x < -500 ||
+                    minusIcon.x > window.innerWidth + 200
+                )
+                    minusParticleArray.splice(idx, 1);
             });
 
             plusParticleArray.forEach((plusIcon, idx) => {
-                if (plusIcon) {
-                    plusIcon.update();
-                    plusIcon.draw(ctx);
+                plusIcon.update();
+                plusIcon.draw(ctx);
 
-                    if (
-                        plusIcon.y > window.innerHeight + 200 ||
-                        plusIcon.x < -500 ||
-                        plusIcon.x > window.innerWidth + 200
-                    )
-                        plusParticleArray.splice(idx, 1);
-                }
+                if (
+                    plusIcon.y > window.innerHeight + 200 ||
+                    plusIcon.x < -500 ||
+                    plusIcon.x > window.innerWidth + 200
+                )
+                    plusParticleArray.splice(idx, 1);
             });
 
             if (!minusParticleArray.length && !plusParticleArray.length) {
@@ -394,17 +362,7 @@ export default function Slider({ id }: { id: number }) {
                 vy = (bottom - e.clientY) / (30 + random(-15, 15)) + 5;
 
             plusParticleArray.push(
-                new plusParticle(
-                    0,
-                    0,
-                    -0.3,
-                    dx,
-                    dy,
-                    vx,
-                    vy,
-                    150,
-                    gradeParticleColor[id]
-                )
+                new plusParticle(dx, dy, vx, vy, gradeParticleColor[id])
             );
 
             if (!stopAnimate && ctx) animationLoop(ctx);
@@ -483,17 +441,7 @@ export default function Slider({ id }: { id: number }) {
                 vy = (bottom - e.clientY) / (30 + random(-15, 15)) + 5;
 
             minusParticleArray.push(
-                new minusParticle(
-                    0,
-                    0,
-                    -0.3,
-                    dx,
-                    dy,
-                    vx,
-                    vy,
-                    150,
-                    gradeParticleColor[id]
-                )
+                new minusParticle(dx, dy, vx, vy, gradeParticleColor[id])
             );
 
             if (!stopAnimate && ctx) animationLoop(ctx);

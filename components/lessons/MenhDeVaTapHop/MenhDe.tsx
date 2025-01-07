@@ -1,4 +1,4 @@
-import { InlineMath } from "react-katex";
+import { BlockMath, InlineMath } from "react-katex";
 import ExtraInlineFact from "../../Extra/ExtraInlineFact";
 import {
     generalClassName,
@@ -61,15 +61,14 @@ export default function MenhDe() {
                         , người sáng lập trường phái logic học, đã đưa ra các
                         định lý cơ bản về mệnh đề trong các tác phẩm của mình.
                         Ông là người đầu tiên khái quát hóa cách thức mà các câu
-                        trong ngôn ngữ có thể được phân loại là {'"'}đúng{'"'}{" "}
-                        hoặc
-                        {'"'}sai{'"'}. Mặc dù các nền văn minh khác cũng có
+                        trong ngôn ngữ có thể được phân loại là {'"'}đúng{'" '}
+                        hoặc {'"'}sai{'"'}. Mặc dù các nền văn minh khác cũng có
                         những nghiên cứu sơ khai về logic, nhưng Aristotle là
                         người đầu tiên có hệ thống hóa và đưa ra những nguyên lý
                         áp dụng chung. Một trong những lý thuyết quan trọng của
                         Aristotle là khái niệm {'"'}sự phủ định{'"'} của một
-                        mệnh đề. Ông phân loại mệnh đề thành {'"'}đúng{'"'} hoặc{" "}
-                        {'"'}sai{'"'}, và mỗi mệnh đề có thể được phủ định để
+                        mệnh đề. Ông phân loại mệnh đề thành {'"'}đúng{'"'} hoặc
+                        {' "'}sai{'"'}, và mỗi mệnh đề có thể được phủ định để
                         trở thành một mệnh đề ngược lại. Ví dụ: {'"'}Tất cả
                         người Hy Lạp là công dân tự do{'"'} có thể bị phủ định
                         thành {'"'}Không phải tất cả người Hy Lạp là công dân tự
@@ -157,7 +156,7 @@ export default function MenhDe() {
                                     (1815-1864) là người đầu tiên phát triển hệ
                                     thống logic mệnh đề hiện đại với việc sáng
                                     tạo ra Đại số Boole. Trong cuốn sách {'"'}
-                                    The Mathematical Analysis of Logic{'"'}{" "}
+                                    The Mathematical Analysis of Logic{'" '}
                                     (1847) và {'"'}An Investigation of the Laws
                                     of Thought
                                     {'"'} (1854), Boole đã hệ thống hóa cách
@@ -196,9 +195,7 @@ export default function MenhDe() {
                             Phát biểu {'"'}Socrates là người và Socrates là sinh
                             vật{'"'} có thể được viết dưới dạng phép toán đại số
                             như sau:
-                            <div className="flex justify-center gap-2 text-xl font-[400]">
-                                P <InlineMath math="\land" /> Q
-                            </div>
+                            <BlockMath math="\text{P} \land \text{Q}" />
                             Trong đó:
                             <br />
                             <InlineMath math="\land" /> là phép toán logic {'"'}

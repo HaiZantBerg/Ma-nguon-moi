@@ -131,8 +131,8 @@ export default function ExtraInlineFact({
                 />
             )}
             <div
-                className={`h-0 absolute left-0 ${extraPaddingLeft} md1:pr-2 pr-5 overflow-hidden w-full z-20 flex ${
-                    flip ? "-translate-y-full items-end" : ""
+                className={`h-0 absolute left-0 ${extraPaddingLeft} md1:pr-2 pr-5 overflow-hidden w-full flex ${
+                    flip ? "items-end -translate-y-full z-10" : ""
                 }`}
                 id="extraBody"
                 ref={extraBodyContainerRef}
@@ -140,7 +140,7 @@ export default function ExtraInlineFact({
                 {openExtra && (
                     <>
                         <div
-                            className={`${extraBodyVariants[extraBodyVariant]} ${extraBodyClassName} rounded-[15px] text-white md:py-4 w-full py-3 md:px-6 px-4 bg-[#e67e00]`}
+                            className={`${extraBodyVariants[extraBodyVariant]} ${extraBodyClassName} relative z-20 rounded-[15px] text-white md:py-4 w-full py-3 md:px-6 px-4 bg-[#e67e00]`}
                         >
                             <div>{children}</div>
                             <button
@@ -150,9 +150,11 @@ export default function ExtraInlineFact({
                                 Đóng
                             </button>
                         </div>
-
+                        {!flip && (
+                            <div className="bg-black w-[1px] h-full absolute md1:left-[49px] md:left-[13px] left-[9px] top-0" />
+                        )}
                         <div
-                            className="absolute left-0 w-full h-full -z-10"
+                            className="absolute left-0 w-full h-full"
                             onClick={handleOpenClose}
                         />
                     </>

@@ -43,7 +43,7 @@ export default function TapHop() {
 
     return (
         <>
-            <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
+            <div className="h-fit mt-[10px]">
                 {timelineStar.ThoiCoDai()}
                 <div
                     className={`${generalClassName} grid lg2:grid-cols-[auto_auto] lg2:grid-rows-[auto_auto]`}
@@ -504,20 +504,16 @@ export default function TapHop() {
                         buttonContent="Tại sao trừ với trừ lại thành cộng?"
                         explaination={
                             <div>
-                                a{")"} Giả sử bạn bổ sung thêm 4 thanh đen, vậy
-                                số tiền bạn là bao nhiêu? b{")"} Nếu bây giờ
-                                người ta đưa cho bạn 4 thanh xám, số tiền của
-                                bạn là bao nhiêu? c{")"} Nếu người ta đưa bạn 4
-                                thanh xám, số tiền của bạn là bao nhiêu? d{")"}{" "}
-                                Khoản tiền của bạn sẽ thế nào nếu người ta lấy
-                                đi của bạn 4 thanh xám? Thấy rằng, đối với câu a
-                                {")"}, số tiền của bạn có sẽ tăng thêm 20€. Nói
-                                cách khác: 4 x 5 = 20. Tích của hai số dương vẫn
-                                là số dương, đến đây mọi thứ đều ổn.
+                                Thấy rằng, đối với câu a{")"}, số tiền của bạn
+                                có sẽ tăng thêm 20€. Nói cách khác: 4 x 5 = 20.
+                                Tích của hai số dương vẫn là số dương, đến đây
+                                mọi thứ đều ổn.
+                                <br />
                                 <br />b{")"} Nếu bây giờ người ta đưa cho bạn 4
                                 thanh xám, nghĩa là bốn khoản nợ, khoản tiền sẽ
                                 giảm đi 20€. Nói cách khác: 4 x (-5) = -20. Một
                                 số dương nhân với một số âm sẽ cho ra một số âm.
+                                <br />
                                 <br />
                                 Và tương tự, câu c{")"} nếu người ta lấy của bạn
                                 4 thanh đen, bạn sẽ mất 20€. Cũng có nghĩa là
@@ -526,9 +522,11 @@ export default function TapHop() {
                                 cùng tác dụng với việc đang lấy tiền từ người
                                 đó. Thêm số âm tức là trừ đi số dương.
                                 <br />
+                                <br />
                                 Giờ hãy tới điểm mấu chốt là câu d{")"}: khoản
                                 tiền của bạn sẽ thế nào nếu người ta lấy đi của
                                 bạn 4 thanh xám?
+                                <br />
                                 <br />
                                 Nói cách khác, chuyện gì sẽ xảy ra nếu người ta
                                 xóa bỏ những khoản nợ của bạn? Câu trả lời rất
@@ -544,10 +542,12 @@ export default function TapHop() {
                         dụ sử dụng hệ thống này để biểu diễn cho sự lời lỗ về
                         tiền bạc.
                         <br />
+                        <br />
                         Giả sử một thanh đen tượng trưng cho 5€ trong khi một
                         thanh xám tượng trưng cho một món nợ 5€, nghĩa là -5€.
                         Nếu bạn có 10 thanh đen và 5 thanh xám, khoản tiền của
                         bạn sẽ là 25€.
+                        <br />
                         <br />
                         Bây giờ hãy nghiên cứu những trường hợp khác nhau có thể
                         xảy ra khi tài khoản của bạn thay đổi. Và hãy đưa về
@@ -685,7 +685,7 @@ export default function TapHop() {
                     </div>
                 </div>
             </div>
-            <div className="col-[1/-1] row-[2/3] h-fit">
+            <div className="h-fit">
                 {timelineStar.TheKy(1012191, "19")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>
@@ -820,7 +820,7 @@ export default function TapHop() {
                     </div>
                 </div>
             </div>
-            <div className="col-[1/-1] row-[3/4] h-fit">
+            <div className="h-fit">
                 <div className="grid grid-rows-1 md:grid-cols-[28.5px_auto] grid-cols-[20px_auto]">
                     <div className="col-[1/2] row-[1/-1]">
                         {timelineStar.Star1dc19}
@@ -1015,7 +1015,7 @@ export default function TapHop() {
                     </div>
                 </div>
             </div>
-            <div className="col-[1/-1] row-[4/-1] h-fit">
+            <div className=" h-fit">
                 {timelineStar.TheKy(101220, "20")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>

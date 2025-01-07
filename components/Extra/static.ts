@@ -4,4 +4,5 @@ export const extraBodyVariants: { [key: string]: string } = {
     normal: "lg:ml-0 md:ml-1 ml-2",
 };
 
-export const extraPaddingLeft: string = "md1:pl-[81px] md:pl-[26px] pl-[12px]";
+export const extraPaddingLeft: string =
+    "md1:pl-[81px] lg:pl-[30px] md:pl-[26px] pl-[12px]";

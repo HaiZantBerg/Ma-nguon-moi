@@ -17,22 +17,6 @@ export const lessonsToggle = [
 
 export const lessonMarginTop = [[], ["min-[440px]:mt-[44px] mt-[64px]"], []];
 
-export const gridDisplay = [
-    [
-        ["grid-rows-[repeat(4,auto)]", "grid-rows-[repeat(4,auto)]"],
-        "",
-        "grid-rows-[repeat(8,auto)]",
-    ],
-    [
-        [
-            "grid-rows-[repeat(4,auto)]",
-            "grid-rows-[repeat(3,auto)]",
-            "grid-rows-[repeat(3,auto)]",
-        ],
-    ],
-    [],
-];
-
 export const generalClassName =
     "md1:ml-[45px] md:ml-[30px] ml-[20px] lg3:text-lg sm:text-base text-[0.9rem] leading-[1.3rem] md1:mr-2 mr-5";
 export const generalContentClassName =
@@ -543,7 +527,7 @@ export const timelineStar = {
     },
     TheKy: (id, text) => {
         return (
-            <div className="md:h-[70px] h-[47.5px]">
+            <div className="md:h-[70px] h-[47.5px] flex">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -571,6 +555,15 @@ export const timelineStar = {
                         </linearGradient>
                     </defs>
                     <path
+                        d="M58,466.17s-7-1.37-7-9.54c0,8.17-6.7,9.54-6.7,9.54h-.23S51,467.54,51,475.85a9.36,9.36,0,0,1,7.18-9.68"
+                        transform="translate(-43.86 -447.97)"
+                        stroke="#231f20"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="0.41"
+                        fill={`url(#linear-gradient${id})`}
+                    />
+                    <path
                         d="M122.31,455.38l.14-.08s.82-1.11,1.33-1,.34.53.34.53,0-.46-.21-.59S123.06,454.31,122.31,455.38Z"
                         transform="translate(-42.86 -447.97)"
                         fill="#231f20"
@@ -594,17 +587,6 @@ export const timelineStar = {
                     >
                         The ky {text}
                     </text>
-                    <g id="Layer_1" data-name="Layer 1">
-                        <path
-                            d="M58,466.17s-7-1.37-7-9.54c0,8.17-6.7,9.54-6.7,9.54h-.23S51,467.54,51,475.85a9.36,9.36,0,0,1,7.18-9.68"
-                            transform="translate(-43.86 -447.97)"
-                            stroke="#231f20"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="0.41"
-                            fill={`url(#linear-gradient${id})`}
-                        />
-                    </g>
                     <polygon
                         points="55.6 4.95 52.9 7.15 52.42 6.68 54.63 3.98 55.6 4.95"
                         fill="#231f20"

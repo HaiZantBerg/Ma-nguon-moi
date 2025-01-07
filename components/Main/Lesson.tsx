@@ -1,11 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import {
-    gridDisplay,
-    lessonMarginTop,
-    lessonsToggle,
-} from "../static/lessonsStatic";
+import { lessonMarginTop, lessonsToggle } from "../static/lessonsStatic";
 import { useAnimate } from "motion/react";
 import MenhDe from "../lessons/MenhDeVaTapHop/MenhDe";
 import TapHop from "../lessons/MenhDeVaTapHop/TapHop";
@@ -38,18 +34,14 @@ export default function LessonLayout({ id, idx }: { id: number; idx: number }) {
             ) : (
                 Lessons[id][idx] && (
                     <div
-                        className="mt-8 h-full md1:overflow-y-auto md1:overflow-x-hidden font-light w-full grid grid-cols-2 grid-rows-1"
+                        className="mt-8 h-full md1:overflow-y-auto md1:overflow-x-hidden font-light w-full"
                         style={{
                             scrollbarGutter: "stable",
                         }}
                     >
-                        <div className="bg-[#292929] md:w-[1.25px] w-[1px] sticky h-full top-0 md1:left-[49px] md:left-[12px] left-[9px] col-[1/2] row-[1/-1]" />
-                        <div className="col-[1/-1] row-[1/-1]">
-                            <div
-                                className={`grid grid-cols-1 ${gridDisplay[id][idx]} relative md1:pl-9`}
-                            >
-                                {Lessons[id][idx]}
-                            </div>
+                        <div className={`relative md1:pl-9`}>
+                            <div className="bg-black w-[1px] absolute h-full md1:left-[49px] md:left-[13px] left-[9px]" />
+                            {Lessons[id][idx]}
                         </div>
                     </div>
                 )
@@ -178,21 +170,19 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                                     lessonMarginTop[id][idx]
                                         ? lessonMarginTop[id][idx]
                                         : "mt-10"
-                                } h-full md1:overflow-y-auto md1:overflow-x-hidden grid-cols-2 grid-rows-1 font-light w-full ${
-                                    idxl ? "hidden" : "grid"
+                                } h-full md1:overflow-y-auto md1:overflow-x-hidden font-light w-full ${
+                                    idxl ? "hidden" : "block"
                                 }`}
                                 ref={(el) => {
                                     toggleRef.current[idxl] = el;
                                 }}
                             >
-                                <div className="bg-[#292929] md:w-[1.25px] w-[1px] z-10 sticky h-full top-0 md1:left-[49px] md:left-[12px] left-[9px] col-[1/2] row-[1/-1]" />
                                 {initialLessonToggleLoad[idxl] && (
-                                    <div className="col-[1/-1] row-[1/-1]">
-                                        <div
-                                            className={`grid grid-cols-1 ${gridDisplay[id][idx][idxl]} relative md1:pl-9`}
-                                        >
-                                            {lesson}
-                                        </div>
+                                    <div
+                                        className={`grid grid-cols-1 relative md1:pl-9`}
+                                    >
+                                        <div className="bg-black w-[1px] absolute h-full md1:left-[49px] md:left-[13px] left-[9px]" />
+                                        {lesson}
                                     </div>
                                 )}
                             </div>

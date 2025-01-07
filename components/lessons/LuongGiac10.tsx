@@ -36,13 +36,14 @@ import Dioptra from "@/public/Image/dioptra.png";
 import howAncientGreekUseDioptra from "@/public/Image/howancientgreekusedioptra.png";
 import howToUseDioptra from "@/public/Image/howtousedioptra.png";
 import aPartOfAristarchussBook from "@/public/Image/apartofaristarchussbook.png";
-import { InlineMath } from "react-katex";
+import { BlockMath, InlineMath } from "react-katex";
 import HistoricalFigure from "../Extra/HistoricalFigure";
+import sTamGiac from "@/public/Image/stamgiac.png";
 
 export default function LuongGiac() {
     return (
         <>
-            <div className="col-[1/-1] row-[1/2] h-fit mt-[10px]">
+            <div className="h-fit mt-[10px]">
                 {timelineStar.ThoiCoDai()}
                 <div className={`${generalClassName}`}>
                     Khi các con số đã được phát minh, toán học sớm phân thành
@@ -265,7 +266,7 @@ export default function LuongGiac() {
                                         className="h-full w-auto"
                                     />
                                 </div>
-                                <div className="lgmi:col-[1/-1] row-[3/-1] lgmi:row-[2/-1] pt-2 text-center lgmi:px-1 px-5 lgmi:pb-0 pb-5 text-[rgba(255,255,255,0.75)]">
+                                <div className="lgmi: lgmi:row-[2/-1] pt-2 text-center lgmi:px-1 px-5 lgmi:pb-0 pb-5 text-[rgba(255,255,255,0.75)]">
                                     Giếng đặc biệt ở Syene, được Eratosthenes
                                     lấy để tính toán chu vi của trái đất.
                                 </div>
@@ -468,7 +469,7 @@ export default function LuongGiac() {
                     </ExtraAloneFact>
                 </div>
             </div>
-            <div className="col-[1/-1] row-[2/3] h-fit mt-[10px]">
+            <div className="h-fit mt-[10px]">
                 {timelineStar.Khoang(10239, "2000 nam tcn")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>
@@ -515,7 +516,7 @@ export default function LuongGiac() {
                     </div>
                 </div>
             </div>
-            <div className="col-[1/-1] row-[3/4] h-fit mt-[10px]">
+            <div className="h-fit mt-[10px]">
                 {timelineStar.Khoang(90192, "300 nam tcn")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>
@@ -562,7 +563,7 @@ export default function LuongGiac() {
                         cosine (cos). Hipparchus cũng đã nghiên cứu về các quan
                         hệ góc trong các tam giác vuông và tam giác tròn.
                         <div className="grid md:grid-cols-2 grid-cols-1 md:grid-rows-[repeat(3,auto)] md:mt-2 mt-5 grid-rows-[repeat(5,auto)] text-[rgba(0,0,0,0.75)] justify-items-center text-center">
-                            <div className="md:col-[1/2] md:row-[1/2] col-[1/-1] row-[1/2] px-10">
+                            <div className="md:col-[1/2] md:row-[1/2] px-10">
                                 <div className="md:min-w-[200px] min-w-[125px] md:max-w-[250px] max-w-[200px] self-center">
                                     <Image
                                         src={Dioptra}
@@ -571,13 +572,13 @@ export default function LuongGiac() {
                                     />
                                 </div>
                             </div>
-                            <div className="md:col-[1/2] md:row-[2/3] col-[1/-1] row-[2/3] m-2">
+                            <div className="md:col-[1/2] md:row-[2/3] m-2">
                                 <span className="font-[475]">Dioptra</span> -
                                 công cụ dùng để quan sát thiên văn và đo đạc địa
                                 chất, được phát minh bởi Héron thành Alexandria
                                 (Hy Lạp) vào thế kỷ III TCN
                             </div>
-                            <div className="min-h-[100px] md:col-[2/-1] md:row-[1/2] col-[1/-1] row-[3/4] self-center flex md:items-center items-end md:px-2 md:mt-0 mt-5">
+                            <div className="min-h-[100px] md:col-[2/-1] md:row-[1/2] self-center flex md:items-center items-end md:px-2 md:mt-0 mt-5">
                                 <div className="min-w-[200px] max-w-[400px]">
                                     <Image
                                         src={howToUseDioptra}
@@ -586,11 +587,11 @@ export default function LuongGiac() {
                                     />
                                 </div>
                             </div>
-                            <div className="md:col-[2/-1] md:row-[2/3] col-[1/-1] row-[4/5] m-2">
+                            <div className="md:col-[2/-1] md:row-[2/3] m-2">
                                 Cách sử dụng Dioptra để đo góc khi quan sát
                                 thiên văn
                             </div>
-                            <div className="md:col-[1/-1] md:row-[3/-1] col-[1/-1] row-[5/-1] flex flex-col justify-center items-center gap-2 md:px-40 md:mt-0 mt-5">
+                            <div className="md:-1]  flex flex-col justify-center items-center gap-2 md:px-40 md:mt-0 mt-5">
                                 <div className="min-w-[300px] max-w-[400px]">
                                     <Image
                                         src={howAncientGreekUseDioptra}
@@ -681,7 +682,7 @@ export default function LuongGiac() {
                     </ExtraAloneFact>
                 </div>
             </div>
-            <div className="col-[1/-1] row-[4/5] h-fit mt-[10px]">
+            <div className="h-fit mt-[10px]">
                 {timelineStar.TheKy(10357, "5 - 7")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>Ấn Độ</div>
@@ -745,7 +746,7 @@ export default function LuongGiac() {
                     </div>
                 </div>
             </div>
-            <div className="col-[1/-1] row-[5/6] h-fit mt-[10px]">
+            <div className="h-fit mt-[10px]">
                 {timelineStar.TheKy(103814, "8 - 14")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalHeaderClassName}`}>Trung Cổ</div>
@@ -801,7 +802,7 @@ export default function LuongGiac() {
                     </div>
                 </div>
             </div>
-            <div className="col-[1/-1] row-[6/7] h-fit mt-[10px]">
+            <div className="h-fit mt-[10px]">
                 {timelineStar.TheKy(1031617, "16 - 17")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>
@@ -810,6 +811,108 @@ export default function LuongGiac() {
                         học như Regiomontanus, Johannes Kepler, và Isaac Newton
                         đã mở rộng lý thuyết lượng giác để áp dụng vào các
                         nghiên cứu thiên văn, hình học, và cơ học.
+                        <br />
+                        <br />
+                        Trong đó, phương pháp của nhà toán học Regiomontanus
+                        đánh dấu bước phát triển quan trọng trong việc chuyển
+                        lượng giác thành một ngành toán học độc lập, không chỉ
+                        phục vụ thiên văn học. Thông qua tác phẩm nổi tiếng{" "}
+                        <ExtraInlineFact
+                            buttonContent="De
+                        Triangulis Omnimodis"
+                        >
+                            Cuốn sách{" "}
+                            <span className="font-[475]">
+                                De Triangulis Omnimodis
+                            </span>{" "}
+                            của Regiomontanus, xuất bản năm 1533, sử dụng các
+                            phương pháp lượng giác cổ điển, đặc biệt là dựa vào
+                            mối quan hệ giữa các góc và cạnh của tam giác, để
+                            tính diện tích tam giác. Phương pháp được sử dụng
+                            bao gồm các phương pháp
+                            <div className={`${generalInstanceClassName}`}>
+                                <br />
+                                <span className="font-[475]">
+                                    Sử dụng đường vuông góc (Altitude) và cạnh
+                                    đáy (Base)
+                                </span>
+                                :<br />
+                                <div className={`${generalInstanceClassName}`}>
+                                    Diện tích tam giác được tính theo công thức:
+                                    <BlockMath math="\textrm{Diện tích} = \dfrac{1}{2} \times \textrm{Đáy} \times \textrm{Chiều cao}" />
+                                    <br />
+                                    Cuốn sách tập trung vào việc xác định chiều
+                                    cao (đường vuông góc từ đỉnh đến cạnh đối
+                                    diện) trong các trường hợp:
+                                    <div
+                                        className={`${generalInstanceClassName}`}
+                                    >
+                                        Khi đường vuông góc nằm{" "}
+                                        <span className="font-[475]">
+                                            trong tam giác
+                                        </span>
+                                        .
+                                        <br />
+                                        Khi đường vuông góc nằm{" "}
+                                        <span className="font-[475]">
+                                            ngoài tam giác
+                                        </span>
+                                        .
+                                        <br />
+                                        Khi đường vuông góc trùng với cạnh đáy
+                                        (tam giác vuông).{" "}
+                                    </div>
+                                </div>
+                                <span className="font-[475]">
+                                    Dựa vào định lý lượng giác (Law of Sines và
+                                    Cosines)
+                                </span>
+                                :{" "}
+                                <span className="font-[475]">Định lý Sin</span>:
+                                <BlockMath math="\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C} = 2R" />
+                                với <InlineMath math="R" /> là bán kính đường
+                                tròn ngoại tiếp tam giác. Định lý này được sử
+                                dụng để tính tỉ lệ giữa các cạnh và góc, từ đó
+                                suy ra chiều cao hoặc diện tích.{" "}
+                                <span className="font-[475]">Định lý Cos</span>:{" "}
+                                <BlockMath math="c^2 = a^2 + b^2 - 2ab\cos C" />{" "}
+                                Từ định lý này, các cạnh và góc tam giác được
+                                liên hệ để tính diện tích.
+                                <br />
+                                <br />
+                                <span className="font-[475]">
+                                    Sử dụng công thức Heron (Heron's Formula)
+                                </span>
+                                : Công thức Heron tính diện tích khi biết độ dài
+                                tất cả các cạnh:
+                                <BlockMath math="\textrm{Diện tích} = \sqrt{p(p-a)(p-b)(p-c)}" />
+                                với <InlineMath math="p" /> là nửa chu vi:{" "}
+                                <InlineMath math="p= \frac{a+b+c}{2}" />.
+                                <br />
+                                <br />
+                                <span className="font-[475]">
+                                    Dựa vào góc vuông và hình học phẳng
+                                </span>
+                                : Trong tam giác vuông, diện tích được tính trực
+                                tiếp:
+                                <BlockMath math="\textrm{Diện tích} = \frac{1}{2} \times \textrm{Cạnh góc vuông 1} \times \textrm{Cạnh góc vuông 2}" />
+                                Trong tam giác không vuông, các phép chiếu và
+                                tam giác phụ được sử dụng để tính chiều cao và
+                                diện tích.
+                                <br />
+                                <br />
+                                <span className="font-[475]">
+                                    Điểm nhấn trong phương pháp của
+                                    Regiomontanus
+                                </span>
+                                : Ông sử dụng bảng sin và cos (do các nhà toán
+                                học Ấn Độ và Hồi giáo phát triển) để hỗ trợ tính
+                                toán. Phương pháp của ông đánh dấu bước phát
+                                triển quan trọng trong việc chuyển lượng giác
+                                thành một ngành toán học độc lập, không chỉ phục
+                                vụ thiên văn học.
+                            </div>
+                        </ExtraInlineFact>
                         <br />
                         <br />
                         Một dụng cụ không thể thiếu để phát triển thiên văn học,
@@ -822,8 +925,7 @@ export default function LuongGiac() {
                     </div>
                 </div>
             </div>
-
-            <div className="col-[1/-1] row-[7/8] h-fit mt-[10px]">
+            <div className="h-fit mt-[10px]">
                 {timelineStar.TheKy(1031819, "18 - 19")}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>
@@ -853,7 +955,7 @@ export default function LuongGiac() {
                     </div>
                 </div>
             </div>
-            <div className="col-[1/-1] row-[8/-1] h-fit mt-[10px]">
+            <div className="h-fit mt-[10px]">
                 {timelineStar.NgayNay(1)}
                 <div className={`${generalClassName}`}>
                     <div className={`${generalContentClassName}`}>
