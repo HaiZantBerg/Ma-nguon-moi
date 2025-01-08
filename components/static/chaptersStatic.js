@@ -92,6 +92,15 @@ export const description = [
                 className="underline"
             >
                 Theo nguồn
+            </Link>{" "}
+            <br />
+            <br />
+            Các bạn có thể tìm hiểu thêm kiến thức về lượng giác ở{" "}
+            <Link
+                href="/khoi11?chuong=1"
+                className="text-[#0d0c3f] underline decoration-[1.5px] decoration-sky-800 font-[375]"
+            >
+                chương 1 - lớp 11.
             </Link>
         </div>,
         <div key="description4"></div>,
