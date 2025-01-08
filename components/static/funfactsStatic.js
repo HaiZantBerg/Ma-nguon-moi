@@ -35,6 +35,7 @@ import Link from "next/link";
 export const images = [
     [
         [
+            [<div key="image26" />, <div key="image27" />],
             [
                 <Image
                     src={walk}
@@ -184,7 +185,6 @@ export const images = [
                 />,
             ],
             [<div key="image24" />],
-            [<div key="image26" />, <div key="image27" />],
         ],
         [],
         [[<div key="image25" />]],
@@ -242,13 +242,13 @@ export const storyList = [
 export const historyFigureName = [
     [
         [
+            "Các mẫu chuyện khác",
             "Aristotle",
             "William of Ockham và Peter Abelard",
             "George Boole",
             "Frege",
             "Hilbert",
             "Pythagoras",
-            "Các mẫu chuyện khác",
         ],
         [],
         ["Galilei"],
@@ -260,6 +260,129 @@ export const historyFigureName = [
 export const storyContent = [
     [
         [
+            [
+                <div key="story1125">
+                    Ngày nay, chúng ta có lẽ đã quá quen thuộc với các đơn vị đo
+                    chiều dài rồi đúng không nào. Tuy nhiên, ngày xưa khi mỗi
+                    nơi, mỗi tộc người có cách đo đạc khác nhau thì chuyện này
+                    lại khác. Sẽ có vô số sự hiểu lầm tai hại đấy nhé. Ta hãy
+                    thực hiện một chuyến du hành ngược dòng thời gian về quá
+                    khứ, cách đây 3000 năm và cũng đọc câu chuyện sau nhé:
+                    <div className="flex w-full gap-1 mx-2 justify-center">
+                        <div>
+                            <Image src={storyPage1} alt="" />
+                        </div>
+                        <div>
+                            <Image src={storyPage2} alt="" />
+                        </div>
+                    </div>
+                    Thế điều gì trong câu chuyện này khiến chúng ta quan tâm:
+                    Goliath cao bao nhiêu nhỉ?
+                    <div className="text-start">
+                        <br />
+                        <div className="grid grid-cols-[2fr_minmax(min-content,1fr)] grid-rows-1">
+                            <div className="col-[1/2] row-[1/-1]">
+                                Ngày trước, người ta sử dụng những bộ phận trên
+                                cơ thể mình để mà đo đạc:
+                                <br />
+                                - Một cánh tay (a cubit) là chiều dài của phần
+                                cuối cánh tay kể từ khuỷu tay cho tới đầu của
+                                ngón tay giữa.
+                                <br />- Một gang tay (a span) là khoảng cách lớn
+                                nhất nằm giữa ngón cái và ngón út của một bàn
+                                tay mở rộng. Cứ hai gang tay thì được một cánh
+                                tay (bạn có thể thử bằng chính bàn tay và cánh
+                                tay của mình)
+                            </div>
+                            <div className="col-[2/-1] row-[1/-1]">
+                                <Image src={storyPage3} alt="" />
+                            </div>
+                        </div>
+                        - Một bề rộng bàn tay (a palm) đơn giản là bề rộng của
+                        một bàn tay không kể ngón cái.
+                        <br />- Một bề rộng ngón tay (a digit) đơn giản là bề
+                        rộng của ngón tay. Cứ 4 bề rộng ngón tay thì ra bề rộng
+                        bàn tay, 24 bề rộng ngón tay thì ra cánh tay.
+                    </div>
+                    <br />
+                    <span className="font-[750]">
+                        Thế rồi… cuối cùng Goliath cao bao nhiêu???
+                    </span>
+                    <br />
+                    <br />
+                    Chuyện này chỉ có một chỗ khó thôi: Con người cao lớn khác
+                    nhau. Một cánh tay có thể dài 40 cm mà còn có thể khác, dài
+                    đến 70 cm. Điều này có nghĩa là, chàng khổng lồ Goliath (với
+                    chiều cao sáu cánh tay và một gang tay) có thể cao tới
+                    4m55cm, dong cũng có thể chỉ cao 2m60cm mà thôi.
+                    <br />
+                    <br />
+                    Đã đến lúc chúng ta cần phải có một sự thống nhất trong đo
+                    đạc. Và một vị cứu tinh đã xuất hiện đến từ nước Pháp. Các
+                    bạn có thể tìm hiểu thêm ở câu chuyện “Một lý do tốt để yêu
+                    người Pháp”
+                    <br />
+                    <br />
+                    Theo Toán học độc đáo vô cùng - đo đạc không giới hạn -
+                    KJARTAN POSKITT.
+                </div>,
+                <div key="story1126">
+                    Phải công nhận: Toàn bộ hệ thống đo đạc phục vụ con người
+                    trên thế giới này và giúp cho việc tính toán trở nên dễ dàng
+                    hơn hẳn là do người Pháp phát triển nên.
+                    <div className="flex justify-center">
+                        <Image src={storyPage4} alt="" className="mx-2" />
+                    </div>
+                    Đầu tiên, họ cần phải thống nhất với nhau, một mét dài bao
+                    nhiêu. Và họ quyết định rất đơn giản như sau: Nó là một phần
+                    mười triệu của khoảng cách kể từ đường xích đạo cho tới điểm
+                    Cực Bắc, đoạn đi ngang qua thành phố Paris.
+                    <div className="flex justify-center">
+                        <Image src={storyPage5} alt="" className="mx-2" />
+                    </div>
+                    Sau đó, họ lấy một thanh thép đặc biệt, khắc lên đó hai điểm
+                    đánh dấu, với khoảng cách nằm giữa chúng chính xác là 1 mét.
+                    Dần dần mét đã trở thành đơn vị đo đạc căn bản trên toàn thế
+                    giới.
+                    <br />
+                    <br />
+                    Ấy vậy mà lại có những người cho là hai vạch trên một thanh
+                    thép tại thành phố Pari là quá đơn giản. Thế là họ nghĩ ra
+                    một thứ phức tạp hơn và vào năm 1893, họ đã quyết định rằng
+                    1 mét phải là khoảng cách mà ánh sáng đi được trong{" "}
+                    <InlineMath math="\dfrac{1}{299.792.458}" /> giây đồng hồ
+                    trong không gian không có không khí. Chỉ đọc thôi là thấy
+                    mệt rồi đừng nói đến chuyên làm và tính toán được 1 mét đó
+                    là thế nào rồi. Có vẻ họ rảnh rỗi sinh nông nổi thì phải. Và
+                    chính vì sự rảnh rỗi đó của họ nên chẳng một người nào trên
+                    thế giới dùng phương pháp này để đo đạc cả.
+                    <br />
+                    <br />
+                    Dĩ nhiên đơn vị đo mét là quá dài đối với một vật nào đó
+                    (như đo … cái kẹo cầu vồng mà bạn là thằng bạn của bạn đang
+                    muốn chia nhau ăn chung nhưng không ai chịu nhường ai phần
+                    lớn hơn) mà lại quá ngắn đối với một số vật khác (như đo …
+                    khoảng cách từ mặt bạn đến lưng của bạn chẳng hạn ). Nhưng
+                    thay vì nghĩa ra một đống những đơn vị đo lường mới điên rồ,
+                    người ra đã phát triển nên một hệ thống đơn bị thông minh,
+                    cho phép người dùng chỉ cần chia cho 10, cho 100, cho 1000
+                    hoặc nhân với 10, 100, 1000 khi muốn đổi đơn vị đo. Thật
+                    đúng là trò trẻ, dễ như ăn kẹo.
+                    <br />
+                    <br />
+                    Theo Toán học độc đáo vô cùng - đo đạc không giới hạn -
+                    KJARTAN POSKITT. <br />
+                    <br />
+                    Thông tin thêm -{" "}
+                    <Link
+                        href="https://smetest.vn"
+                        target="_blank"
+                        className="underline font-[600]"
+                    >
+                        TRUNG TÂM KIỂM ĐỊNH HIỆU CHUẨN ĐO LƯỜNG MIỀN NAM
+                    </Link>
+                </div>,
+            ],
             [
                 <div key="story111">
                     Một trong những giai thoại nổi tiếng nhất về Aristotle là
@@ -797,129 +920,6 @@ export const storyContent = [
                     <br />
                     (Bài viết có sự tham khảo từ cuốn sách Những vụ Scandal
                     trong toán học, Theoni Pappas)
-                </div>,
-            ],
-            [
-                <div key="story1125">
-                    Ngày nay, chúng ta có lẽ đã quá quen thuộc với các đơn vị đo
-                    chiều dài rồi đúng không nào. Tuy nhiên, ngày xưa khi mỗi
-                    nơi, mỗi tộc người có cách đo đạc khác nhau thì chuyện này
-                    lại khác. Sẽ có vô số sự hiểu lầm tai hại đấy nhé. Ta hãy
-                    thực hiện một chuyến du hành ngược dòng thời gian về quá
-                    khứ, cách đây 3000 năm và cũng đọc câu chuyện sau nhé:
-                    <div className="flex w-full gap-1 mx-2 justify-center">
-                        <div>
-                            <Image src={storyPage1} alt="" />
-                        </div>
-                        <div>
-                            <Image src={storyPage2} alt="" />
-                        </div>
-                    </div>
-                    Thế điều gì trong câu chuyện này khiến chúng ta quan tâm:
-                    Goliath cao bao nhiêu nhỉ?
-                    <div className="text-start">
-                        <br />
-                        <div className="grid grid-cols-[2fr_minmax(min-content,1fr)] grid-rows-1">
-                            <div className="col-[1/2] row-[1/-1]">
-                                Ngày trước, người ta sử dụng những bộ phận trên
-                                cơ thể mình để mà đo đạc:
-                                <br />
-                                - Một cánh tay (a cubit) là chiều dài của phần
-                                cuối cánh tay kể từ khuỷu tay cho tới đầu của
-                                ngón tay giữa.
-                                <br />- Một gang tay (a span) là khoảng cách lớn
-                                nhất nằm giữa ngón cái và ngón út của một bàn
-                                tay mở rộng. Cứ hai gang tay thì được một cánh
-                                tay (bạn có thể thử bằng chính bàn tay và cánh
-                                tay của mình)
-                            </div>
-                            <div className="col-[2/-1] row-[1/-1]">
-                                <Image src={storyPage3} alt="" />
-                            </div>
-                        </div>
-                        - Một bề rộng bàn tay (a palm) đơn giản là bề rộng của
-                        một bàn tay không kể ngón cái.
-                        <br />- Một bề rộng ngón tay (a digit) đơn giản là bề
-                        rộng của ngón tay. Cứ 4 bề rộng ngón tay thì ra bề rộng
-                        bàn tay, 24 bề rộng ngón tay thì ra cánh tay.
-                    </div>
-                    <br />
-                    <span className="font-[750]">
-                        Thế rồi… cuối cùng Goliath cao bao nhiêu???
-                    </span>
-                    <br />
-                    <br />
-                    Chuyện này chỉ có một chỗ khó thôi: Con người cao lớn khác
-                    nhau. Một cánh tay có thể dài 40 cm mà còn có thể khác, dài
-                    đến 70 cm. Điều này có nghĩa là, chàng khổng lồ Goliath (với
-                    chiều cao sáu cánh tay và một gang tay) có thể cao tới
-                    4m55cm, dong cũng có thể chỉ cao 2m60cm mà thôi.
-                    <br />
-                    <br />
-                    Đã đến lúc chúng ta cần phải có một sự thống nhất trong đo
-                    đạc. Và một vị cứu tinh đã xuất hiện đến từ nước Pháp. Các
-                    bạn có thể tìm hiểu thêm ở câu chuyện “Một lý do tốt để yêu
-                    người Pháp”
-                    <br />
-                    <br />
-                    Theo Toán học độc đáo vô cùng - đo đạc không giới hạn -
-                    KJARTAN POSKITT.
-                </div>,
-                <div key="story1126">
-                    Phải công nhận: Toàn bộ hệ thống đo đạc phục vụ con người
-                    trên thế giới này và giúp cho việc tính toán trở nên dễ dàng
-                    hơn hẳn là do người Pháp phát triển nên.
-                    <div className="flex justify-center">
-                        <Image src={storyPage4} alt="" className="mx-2" />
-                    </div>
-                    Đầu tiên, họ cần phải thống nhất với nhau, một mét dài bao
-                    nhiêu. Và họ quyết định rất đơn giản như sau: Nó là một phần
-                    mười triệu của khoảng cách kể từ đường xích đạo cho tới điểm
-                    Cực Bắc, đoạn đi ngang qua thành phố Paris.
-                    <div className="flex justify-center">
-                        <Image src={storyPage5} alt="" className="mx-2" />
-                    </div>
-                    Sau đó, họ lấy một thanh thép đặc biệt, khắc lên đó hai điểm
-                    đánh dấu, với khoảng cách nằm giữa chúng chính xác là 1 mét.
-                    Dần dần mét đã trở thành đơn vị đo đạc căn bản trên toàn thế
-                    giới.
-                    <br />
-                    <br />
-                    Ấy vậy mà lại có những người cho là hai vạch trên một thanh
-                    thép tại thành phố Pari là quá đơn giản. Thế là họ nghĩ ra
-                    một thứ phức tạp hơn và vào năm 1893, họ đã quyết định rằng
-                    1 mét phải là khoảng cách mà ánh sáng đi được trong{" "}
-                    <InlineMath math="\dfrac{1}{299.792.458}" /> giây đồng hồ
-                    trong không gian không có không khí. Chỉ đọc thôi là thấy
-                    mệt rồi đừng nói đến chuyên làm và tính toán được 1 mét đó
-                    là thế nào rồi. Có vẻ họ rảnh rỗi sinh nông nổi thì phải. Và
-                    chính vì sự rảnh rỗi đó của họ nên chẳng một người nào trên
-                    thế giới dùng phương pháp này để đo đạc cả.
-                    <br />
-                    <br />
-                    Dĩ nhiên đơn vị đo mét là quá dài đối với một vật nào đó
-                    (như đo … cái kẹo cầu vồng mà bạn là thằng bạn của bạn đang
-                    muốn chia nhau ăn chung nhưng không ai chịu nhường ai phần
-                    lớn hơn) mà lại quá ngắn đối với một số vật khác (như đo …
-                    khoảng cách từ mặt bạn đến lưng của bạn chẳng hạn ). Nhưng
-                    thay vì nghĩa ra một đống những đơn vị đo lường mới điên rồ,
-                    người ra đã phát triển nên một hệ thống đơn bị thông minh,
-                    cho phép người dùng chỉ cần chia cho 10, cho 100, cho 1000
-                    hoặc nhân với 10, 100, 1000 khi muốn đổi đơn vị đo. Thật
-                    đúng là trò trẻ, dễ như ăn kẹo.
-                    <br />
-                    <br />
-                    Theo Toán học độc đáo vô cùng - đo đạc không giới hạn -
-                    KJARTAN POSKITT. <br />
-                    <br />
-                    Thông tin thêm -{" "}
-                    <Link
-                        href="https://smetest.vn"
-                        target="_blank"
-                        className="underline font-[600]"
-                    >
-                        TRUNG TÂM KIỂM ĐỊNH HIỆU CHUẨN ĐO LƯỜNG MIỀN NAM
-                    </Link>
                 </div>,
             ],
         ],

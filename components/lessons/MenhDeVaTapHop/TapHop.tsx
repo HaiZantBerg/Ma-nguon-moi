@@ -652,12 +652,12 @@ export default function TapHop() {
                             Bạn cũng có thể tham khảo thêm câu chuyện {'"'}
                             <ExtraFunFact
                                 buttonContent="Cánh tay, gang tay và bàn tay"
-                                ffidx={[0, 0, 6, 0]}
+                                ffidx={[0, 0, 0, 0]}
                             />
                             {'"'} và {'"'}
                             <ExtraFunFact
                                 buttonContent="Một lý do tốt để yêu người Pháp"
-                                ffidx={[0, 0, 6, 1]}
+                                ffidx={[0, 0, 0, 1]}
                             />
                             {'"'}.
                             <br />
