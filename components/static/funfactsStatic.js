@@ -196,6 +196,7 @@ export const images = [
 export const storyList = [
     [
         [
+            ["Cánh tay, gang tay và bàn tay", "Một lý do để yêu người Pháp"],
             [
                 "Trường học của người đi bộ",
                 "Bữa ăn vui vẻ của triết gia",
@@ -230,7 +231,6 @@ export const storyList = [
                 "Hilbert và câu hỏi trong buổi bảo vệ luận án tiến sĩ",
             ],
             ["Kẻ giết người mang tên Pythagoras?!"],
-            ["Cánh tay, gang tay và bàn tay", "Một lý do để yêu người Pháp"],
         ],
         [],
         [["Chuyện về kính viễn vọng"]],

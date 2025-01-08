@@ -45,7 +45,7 @@ const page = () => {
                     </p>
                     <p className="md:hidden">Chọn Khối Của Bạn</p>
                 </div>
-                <div className="text-end pt-3 w-[560px] md:text-base text-sm xl:text-lg">
+                <div className="text-end pt-3 w-[560px] md:text-base min-[375px]:text-sm text-[0.8rem] leading-[1rem] xl:text-lg xl:pr-2">
                     Nơi đây tập hợp các cột mốc quan trọng trong toán học, từ
                     các con số cổ đại đến các lý thuyết hiện đại, kết nối kiến
                     thức qua các thời đại và nền văn hóa. Hãy cùng chúng tôi
