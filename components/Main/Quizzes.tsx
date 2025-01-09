@@ -20,7 +20,7 @@ import Image from "next/image";
 export const Quiz = ({ idxc, idxg }: { idxc: number; idxg: number }) => {
     return (
         <>
-            {quizName[idxg][idxc] &&
+            {quizName[idxg][idxc] ? (
                 quizName[idxg][idxc].map((quiz, idx) => (
                     <QuizCardContainer
                         idx={idx}
@@ -34,7 +34,10 @@ export const Quiz = ({ idxc, idxg }: { idxc: number; idxg: number }) => {
                     >
                         {quizCardImg[idxg][idxc][idx]}
                     </QuizCardContainer>
-                ))}
+                ))
+            ) : (
+                <div className="h-full" />
+            )}
         </>
     );
 };

@@ -530,7 +530,7 @@ export default function ChapterDialog({
                     </div>
                     <div className="col-[1/-1] md1:row-[1/-1] row-[1/2] md1:grid flex flex-col md1:grid-cols-[20%_1fr] md1:grid-rows-1 md1:overflow-y-hidden overflow-x-hidden overflow-y-auto h-full w-full">
                         <div
-                            className="md1:col-[1/2] md1:row-[1/-1] text-start font-bold md1:pr-2 md1:px-0 px-2 h-full flex flex-col"
+                            className="md1:col-[1/2] md1:row-[1/-1] text-start font-bold md1:pr-2 md1:px-0 px-2 md1:h-full flex flex-col"
                             id="chapterTitleAndDescription"
                         >
                             <div className='font-["Chakra_Petch"] font-[700] md1:pt-0 pt-2 md1:text-[35px] text-[27.5px] h-fit overflow-hidden md1:flex-none flex-[1_0_auto] md1:leading-[1.26] leading-[1.25] md1:text-balance'>
