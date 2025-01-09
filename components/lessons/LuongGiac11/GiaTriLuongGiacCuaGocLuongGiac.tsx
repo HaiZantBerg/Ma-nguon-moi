@@ -384,7 +384,8 @@ export default function GiaTriLuongGiacCuaGocLuongGiac() {
                         rằng độ dài của một cung tròn liên hệ với bán kính của
                         nó. Tuy nhiên, họ chưa đặt tên hay sử dụng hệ đo góc dựa
                         trên tỷ lệ này.
-                        <br /><br />
+                        <br />
+                        <br />
                         Người Babylon sử dụng hệ{" "}
                         <span className="font-[475]">độ (degree)</span>, chia
                         một vòng tròn thành 360

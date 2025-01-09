@@ -141,10 +141,10 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                                     } overflow-hidden md:static absolute md:top-0 top-10 sm:left-0 left-[6px] md:pointer-events-auto pointer-events-none`}
                                     id={`lessonName${idxl}`}
                                 >
-                                    <span className="md:inline hidden">: </span>
-                                    <span className="md:inline block w-[calc(100vw-75px)] text-start md:text-[1.25rem] md:leading-[1.75rem] leading-[1.6rem] text-[1.3rem] max-[768px]:font-['Chakra_Petch']">
+                                    <div className="md:inline hidden">: </div>
+                                    <div className="md:inline block w-[calc(100vw-75px)] text-start md:text-[1.25rem] md:leading-[1.75rem] leading-[1.6rem] text-[1.3rem] max-[768px]:font-['Chakra_Petch']">
                                         {lessonName[1]}
-                                    </span>
+                                    </div>
                                 </div>
                             </div>
                             <div className="col-[1/-1] row-[1/-1] self-end flex justify-center w-full">
