@@ -821,16 +821,16 @@ export const storyContent = [
                     <br />
                     <br />
                     Đó là một câu chuyện {'"'}truyền miệng{'"'} rất nổi tiếng
-                    trong giới toán học đấy các bạn ạ. Chắc hẳn các bạn đọc của
-                    VMF là học sinh Việt Nam đã quen và áp dụng không ít lần
-                    định lí Pythagoras, về việc tổng bình phương hai cạnh góc
-                    vuông bằng bình phương cạnh huyền. Hôm nay chúng ta sẽ cùng
-                    đọc thêm một câu chuyện {'"'}trái chiều{'"'} về Pythagoras
-                    và bước đầu thảo luận về những {'"'}số thực{'"'} nhé. Đầu
-                    tiên, chúng ta hãy cùng tưởng tượng lại thế giới ngày xửa
-                    ngày xưa (500 năm trước Công nguyên), bối cảnh là khi nhà
-                    triết học Hyppasus cùng các môn đệ khác của Pythagoras trên
-                    một chuyến đi biển:
+                    trong giới toán học đấy các bạn ạ. Chắc hẳn các bạn đọc là
+                    học sinh Việt Nam đã quen và áp dụng không ít lần định lí
+                    Pythagoras, về việc tổng bình phương hai cạnh góc vuông bằng
+                    bình phương cạnh huyền. Hôm nay chúng ta sẽ cùng đọc thêm
+                    một câu chuyện {'"'}trái chiều{'"'} về Pythagoras và bước
+                    đầu thảo luận về những {'"'}số thực{'"'} nhé. Đầu tiên,
+                    chúng ta hãy cùng tưởng tượng lại thế giới ngày xửa ngày xưa
+                    (500 năm trước Công nguyên), bối cảnh là khi nhà triết học
+                    Hyppasus cùng các môn đệ khác của Pythagoras trên một chuyến
+                    đi biển:
                     <br />
                     <br />
                     {'"'}Ném kẻ phản bội xuống biển{'"'}, đám đông la hét.
