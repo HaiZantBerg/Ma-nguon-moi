@@ -68,7 +68,7 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
     const handleToggle = (idxl: number, id: number, idx: number) => {
         const constCurToggleId = curToggleId.current;
 
-        isMoblie = Number(!(window.innerWidth < 768)) / 2.75;
+        isMoblie = window.innerWidth < 768;
 
         if (!initialLessonToggleLoad[idxl])
             setInitialLessonToggleLoad((prev) => ({
@@ -153,7 +153,7 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                                     } overflow-hidden md:static absolute md:top-0 top-10 sm:left-0 left-[6px] md:pointer-events-auto pointer-events-none`}
                                     id={`lessonName${idxl}`}
                                 >
-                                    <div className="md:inline hidden text-start text-[1.25rem] leading-[1.75rem]">
+                                    <div className="md:inline hidden text-[1.25rem] leading-[1.75rem]">
                                         : {lessonName[1]}
                                     </div>
                                 </div>
@@ -172,7 +172,7 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                 <div className="sm:h-[2px] h-[1px] bg-[rgba(0,0,0,0.25)] absolute bottom-0 left-0 w-full" />
             </div>
             <div
-                className="md:hidden text-start leading-[1.6rem] text-[1.3rem] font-['Chakra_Petch'] my-3"
+                className="md:hidden leading-[1.6rem] text-[1.3rem] font-['Chakra_Petch'] my-3"
                 id="lessonName"
                 ref={smallDeviceLessonNameRef}
             >
