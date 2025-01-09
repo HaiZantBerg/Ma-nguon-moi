@@ -148,7 +148,7 @@ export default function ExtraQuiz({
             )}
             <div
                 className={`h-0 absolute left-0 ${extraPaddingLeft} md1:pr-2 pr-7 overflow-hidden w-full flex ${
-                    flip ? "-translate-y-full items-end" : ""
+                    flip ? "-translate-y-full items-end z-10" : ""
                 }`}
                 id="extraBody"
                 ref={extraBodyContainerRef}
