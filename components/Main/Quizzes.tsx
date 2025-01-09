@@ -255,11 +255,11 @@ const QuizCardContainer = ({
                 <QuizCardDisplay content={content}>{children}</QuizCardDisplay>
             </button>
             <div
-                className="fixed w-screen h-screen justify-center items-center top-0 left-0 z-[100] px-10 py-10 hidden"
+                className="fixed w-screen h-dvh justify-center items-center top-0 left-0 z-[100] px-10 py-10 hidden"
                 ref={quizDialogContainerRef}
             >
                 <div
-                    className="absolute top-0 left-0 w-screen h-screen -z-10 opacity-0"
+                    className="absolute top-0 left-0 w-screen h-dvh -z-10 opacity-0"
                     style={{
                         background: "rgba(0, 0, 0, 0.75)",
                     }}

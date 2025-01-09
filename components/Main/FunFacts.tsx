@@ -280,14 +280,14 @@ export const FlipCard = ({
 
     return (
         <div
-            className="fixed z-[100] w-screen h-screen top-0 left-0 flex items-center justify-center text-black"
+            className="fixed z-[100] w-screen h-dvh top-0 left-0 flex items-center justify-center text-black"
             style={{
                 perspective: "750px",
             }}
             ref={scope}
         >
             <div
-                className="absolute top-0 left-0 w-screen h-screen -z-10 md1:pointer-events-auto pointer-events-auto"
+                className="absolute top-0 left-0 w-screen h-dvh -z-10 md1:pointer-events-auto pointer-events-auto"
                 style={{
                     background: "rgba(0, 0, 0, 0.75)",
                 }}
