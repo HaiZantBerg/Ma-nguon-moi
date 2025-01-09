@@ -11,6 +11,7 @@ export default function ExtraLearnMore({
     extraBodyClassName = "",
     extraBodyVariant = "content",
     flip = false,
+    line = false,
 }: {
     children?: React.ReactNode;
     buttonClassName?: string;
@@ -18,6 +19,7 @@ export default function ExtraLearnMore({
     extraBodyClassName?: string;
     extraBodyVariant?: string;
     flip?: boolean;
+    line?: boolean;
 }) {
     const [scope, animate] = useAnimate();
 
@@ -254,24 +256,35 @@ export default function ExtraLearnMore({
                 />
             )}
             <div
-                className={`h-0 absolute left-0 ${extraPaddingLeft} md1:pr-2 pr-5 overflow-hidden w-full z-20 flex ${
+                className={`h-0 absolute left-0 ${extraPaddingLeft} md1:pr-2 pr-5 overflow-hidden w-full flex ${
                     flip ? "-translate-y-full items-end" : ""
                 }`}
                 id="extraBody"
                 ref={extraBodyContainerRef}
             >
                 {openExtra && (
-                    <div
-                        className={`${extraBodyVariants[extraBodyVariant]} ${extraBodyClassName} md:pt-8 md:pb-6 pt-4 pb-3 md:px-10 px-6 bg-[#ffffc7] text-[#6a6a0b] border-[#6a6a0b] border md1:rounded-[20px] rounded-[16px]`}
-                    >
-                        <div>{children}</div>
-                        <button
-                            className="border md:text-[1.1rem] text-sm mt-6 border-[#6a6a0b] py-3 font-semibold px-6 rounded-full"
-                            onClick={handleOpenClose}
+                    <>
+                        <div
+                            className={`${extraBodyVariants[extraBodyVariant]} ${extraBodyClassName} relative z-20 md:pt-8 md:pb-6 pt-4 pb-3 md:px-10 px-6 bg-[#ffffc7] text-[#6a6a0b] border-[#6a6a0b] border md1:rounded-[20px] rounded-[16px]`}
                         >
-                            Đóng
-                        </button>
-                    </div>
+                            <div>{children}</div>
+                            <button
+                                className="border md:text-[1.1rem] text-sm mt-6 border-[#6a6a0b] py-3 font-semibold px-6 rounded-full"
+                                onClick={handleOpenClose}
+                            >
+                                Đóng
+                            </button>
+                        </div>
+                        {line && (
+                            <div className="bg-white w-[3px] h-full absolute md1:left-[48px] md:left-[12px] left-[8px] top-0">
+                                <div className="bg-black w-[1px] h-full translate-x-[1px]" />
+                            </div>
+                        )}
+                        <div
+                            className="absolute left-0 w-full h-full"
+                            onClick={handleOpenClose}
+                        />
+                    </>
                 )}
             </div>
         </div>

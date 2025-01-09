@@ -11,6 +11,7 @@ export default function ExtraQuiz({
     containerClassName = "",
     extraBodyClassName = "",
     flip = false,
+    line = false,
     extraBodyVariant = "normal",
     explaination,
 }: {
@@ -20,6 +21,7 @@ export default function ExtraQuiz({
     containerClassName?: string;
     extraBodyClassName?: string;
     flip?: boolean;
+    line?: boolean;
     extraBodyVariant?: "instance" | "normal" | "content";
     explaination?: React.JSX.Element;
 }) {
@@ -145,14 +147,14 @@ export default function ExtraQuiz({
                 />
             )}
             <div
-                className={`h-0 absolute left-0 ${extraPaddingLeft} md1:pr-2 pr-7 overflow-hidden w-full z-20 flex ${
+                className={`h-0 absolute left-0 ${extraPaddingLeft} md1:pr-2 pr-7 overflow-hidden w-full flex ${
                     flip ? "-translate-y-full items-end" : ""
                 }`}
                 id="extraBody"
                 ref={extraBodyContainerRef}
             >
                 <div
-                    className={`${extraBodyVariants[extraBodyVariant]} ${extraBodyClassName} rounded-[0px_15px_15px_15px] md1:pb-8 pt-3 pb-6 md1:px-10 px-6 border border-[#2f730c] bg-[#d3ffbd] text-[#327e0c]`}
+                    className={`${extraBodyVariants[extraBodyVariant]} ${extraBodyClassName} relative z-20 rounded-[0px_15px_15px_15px] md1:pb-8 pt-3 pb-6 md1:px-10 px-6 border border-[#2f730c] bg-[#d3ffbd] text-[#327e0c]`}
                 >
                     <div>{openExtra && <>{children}</>}</div>
                     <div className="h-0 overflow-hidden" id="explaination">
@@ -173,6 +175,11 @@ export default function ExtraQuiz({
                     >
                         Đóng
                     </button>
+                    {line && (
+                        <div className="bg-white w-[3px] h-full absolute md1:left-[48px] md:left-[12px] left-[8px] top-0">
+                            <div className="bg-black w-[1px] h-full translate-x-[1px]" />
+                        </div>
+                    )}
                 </div>
                 <div
                     className="absolute left-0 w-full h-full -z-10"

@@ -820,6 +820,7 @@ export default function LuongGiac() {
                         <ExtraInlineFact
                             buttonContent="De
                         Triangulis Omnimodis"
+                            line
                         >
                             <div className="mb-4 flex flex-col items-center gap-2">
                                 <Image src={sTamGiac} alt="" />

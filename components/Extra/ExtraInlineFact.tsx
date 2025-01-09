@@ -11,6 +11,7 @@ export default function ExtraInlineFact({
     containerClassName = "",
     extraBodyClassName = "",
     flip = false,
+    line = false,
     extraBodyVariant = "content",
 }: {
     children?: React.ReactNode;
@@ -19,6 +20,7 @@ export default function ExtraInlineFact({
     containerClassName?: string;
     extraBodyClassName?: string;
     flip?: boolean;
+    line?: boolean;
     extraBodyVariant?: "instance" | "content";
 }) {
     const [scope, animate] = useAnimate();
@@ -150,7 +152,7 @@ export default function ExtraInlineFact({
                                 Đóng
                             </button>
                         </div>
-                        {!flip && (
+                        {line && (
                             <div className="bg-white w-[3px] h-full absolute md1:left-[48px] md:left-[12px] left-[8px] top-0">
                                 <div className="bg-black w-[1px] h-full translate-x-[1px]" />
                             </div>
