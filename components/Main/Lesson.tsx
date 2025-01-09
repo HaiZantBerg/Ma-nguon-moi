@@ -127,12 +127,12 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                 <div className="flex h-full">
                     {lessonsToggle[id][idx].map((lessonName, idxl) => (
                         <button
-                            className="h-full grid grid-rows-1 grid-cols-1 w-fit md:text-nowrap"
+                            className="h-full grid grid-rows-1 grid-cols-1 w-fit md:whitespace-nowrap"
                             key={idxl}
                             onClick={() => handleToggle(idxl)}
                         >
                             <div className="col-[1/-1] row-[1/-1] px-3 flex">
-                                <span className="text-nowrap md:text-[1.25rem] md:leading-[1.75rem] text-[1.125rem] leding-[1.5rem]">
+                                <span className="whitespace-nowrap md:text-[1.25rem] md:leading-[1.75rem] text-[1.125rem] leding-[1.5rem]">
                                     Bài {lessonName[0]}
                                 </span>
                                 <div

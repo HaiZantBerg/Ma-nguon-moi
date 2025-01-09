@@ -17,9 +17,6 @@ import { description, chapter } from "../static/chaptersStatic";
 // import { db } from "@/db";
 import { useSearchParams } from "next/navigation";
 
-const firstCord = 20;
-const secondCord = 7.5;
-
 class plusParticle {
     angle: number = 0;
     radians: number = 0;
@@ -28,7 +25,7 @@ class plusParticle {
     vx: number;
     vy: number;
     gravity: number = -0.3;
-    scale: number = 150;
+    scale: number = 0.2;
     color: string;
     scaleTime: number = 0.001;
 
@@ -48,26 +45,12 @@ class plusParticle {
 
             ctx.rotate(this.radians);
 
+            ctx.scale(this.scale, this.scale);
+
             ctx.fillStyle = `${this.color}`;
 
             const p = new Path2D(
-                `M${-firstCord / this.scale} ${-secondCord / this.scale} L${
-                    -secondCord / this.scale
-                } ${-secondCord / this.scale} L${-secondCord / this.scale} ${
-                    -firstCord / this.scale
-                } L${secondCord / this.scale} ${-firstCord / this.scale} L${
-                    secondCord / this.scale
-                } ${-secondCord / this.scale} L${firstCord / this.scale} ${
-                    -secondCord / this.scale
-                } L${firstCord / this.scale} ${secondCord / this.scale} L${
-                    secondCord / this.scale
-                } ${secondCord / this.scale} L${secondCord / this.scale} ${
-                    firstCord / this.scale
-                } L${-secondCord / this.scale} ${firstCord / this.scale} L${
-                    -secondCord / this.scale
-                } ${secondCord / this.scale} L${-firstCord / this.scale} ${
-                    secondCord / this.scale
-                } Z`
+                `M-20 -7.5 L-7.5 -7.5 L-7.5 -20 L7.5 -20 L7.5 -7.5 L20 -7.5 L20 7.5 L7.5 7.5 L7.5 20 L-7.5 20 L-7.5 7.5 L-20 7.5 Z`
             );
 
             ctx.stroke(p);
@@ -89,7 +72,7 @@ class plusParticle {
 
         if (this.scaleTime < 1) this.scaleTime += 0.01;
 
-        this.scale = 1 / (1 - Math.pow(1 - this.scaleTime, 3));
+        this.scale = 1 - Math.pow(1 - this.scaleTime, 3);
     }
 }
 
@@ -121,15 +104,11 @@ class minusParticle {
 
             ctx.rotate(this.radians);
 
+            ctx.scale(this.scale, this.scale);
+
             ctx.fillStyle = `${this.color}`;
 
-            const p = new Path2D(
-                `M${-secondCord / this.scale} ${-firstCord / this.scale} L${
-                    secondCord / this.scale
-                } ${-firstCord / this.scale} L${secondCord / this.scale} ${
-                    firstCord / this.scale
-                } L${-secondCord / this.scale} ${firstCord / this.scale} Z`
-            );
+            const p = new Path2D(`M-7.5 -20 L7.5 -20 L7.5 20 L-7.5 20 Z`);
 
             ctx.stroke(p);
             ctx.fill(p);
@@ -150,7 +129,7 @@ class minusParticle {
 
         if (this.scaleTime < 1) this.scaleTime += 0.01;
 
-        this.scale = 1 / (1 - Math.pow(1 - this.scaleTime, 3));
+        this.scale = 1 - Math.pow(1 - this.scaleTime, 3);
     }
 }
 
