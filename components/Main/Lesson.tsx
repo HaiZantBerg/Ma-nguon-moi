@@ -142,7 +142,7 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                                     id={`lessonName${idxl}`}
                                 >
                                     <div className="md:inline hidden">: </div>
-                                    <div className="md:inline block w-[calc(100vw-75px)] text-start md:text-[1.25rem] md:leading-[1.75rem] leading-[1.6rem] text-[1.3rem] max-[768px]:font-['Chakra_Petch']">
+                                    <div className="md:inline block max-[768px]:w-[calc(100vw-75px)] text-start md:text-[1.25rem] md:leading-[1.75rem] leading-[1.6rem] text-[1.3rem] max-[768px]:font-['Chakra_Petch']">
                                         {lessonName[1]}
                                     </div>
                                 </div>
