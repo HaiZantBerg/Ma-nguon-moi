@@ -103,21 +103,21 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                 );
             }
 
-            // animate(
-            //     `#toggleLine${idxl}`,
-            //     {
-            //         width: "100%",
-            //     },
-            //     { delay: 0.2, ease: "easeOut" }
-            // );
+            animate(
+                `#toggleLine${idxl}`,
+                {
+                    width: "100%",
+                },
+                { delay: 0.2, ease: "easeOut" }
+            );
 
-            // animate(
-            //     `#toggleLine${curToggleId.current}`,
-            //     {
-            //         width: "0px",
-            //     },
-            //     { ease: "easeOut" }
-            // );
+            animate(
+                `#toggleLine${curToggleId.current}`,
+                {
+                    width: "0px",
+                },
+                { ease: "easeOut" }
+            );
 
             smallDeviceLessonNameRef.current.textContent = String(
                 lessonsToggle[id][idx][idxl][1]
@@ -139,11 +139,11 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                 <div className="flex h-full">
                     {lessonsToggle[id][idx].map((lessonName, idxl) => (
                         <button
-                            className="h-full w-fit md:whitespace-nowrap"
+                            className="h-full grid grid-rows-1 grid-cols-1 w-fit md:whitespace-nowrap"
                             key={idxl}
                             onClick={() => handleToggle(idxl, id, idx)}
                         >
-                            <div className="col-[1/-1] row-[1/-1] px-3 flex">
+                            <div className="col-[1/-1] row-[1/-1] px-3 flex w-fit">
                                 <span className="whitespace-nowrap md:text-[1.25rem] md:leading-[1.75rem] text-[1.125rem] leding-[1.5rem]">
                                     Bài {lessonName[0]}
                                 </span>
@@ -158,14 +158,14 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                                     </div>
                                 </div>
                             </div>
-                            {/* <div className="col-[1/-1] row-[1/-1] self-end flex justify-center w-full">
+                            <div className="col-[1/-1] row-[1/-1] self-end flex justify-center w-full">
                                 <div
                                     className={`sm:h-[2px] h-[1px] bg-black ${
                                         idxl ? "w-0" : "w-full"
                                     }`}
                                     id={`toggleLine${idxl}`}
                                 />
-                            </div> */}
+                            </div>
                         </button>
                     ))}
                 </div>
