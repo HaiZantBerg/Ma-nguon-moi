@@ -15,8 +15,6 @@ export const lessonsToggle = [
     [],
 ];
 
-export const lessonMarginTop = [[], ["min-[440px]:mt-[44px] mt-[64px]"], []];
-
 export const generalClassName =
     "md1:ml-[45px] md:ml-[30px] ml-[20px] lg3:text-lg sm:text-base text-[0.9rem] leading-[1.3rem] md1:mr-2 mr-5";
 export const generalContentClassName =

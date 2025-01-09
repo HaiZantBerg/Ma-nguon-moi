@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { lessonMarginTop, lessonsToggle } from "../static/lessonsStatic";
+import { lessonsToggle } from "../static/lessonsStatic";
 import { useAnimate } from "motion/react";
 import MenhDe from "../lessons/MenhDeVaTapHop/MenhDe";
 import TapHop from "../lessons/MenhDeVaTapHop/TapHop";
@@ -60,11 +60,12 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
     const [scope, animate] = useAnimate();
 
     const toggleRef = useRef<(HTMLDivElement | null)[]>([]);
+    const smallDeviceLessonNameRef = useRef<HTMLDivElement | null>(null);
     const curToggleId = useRef<number>(0);
 
     let isMoblie;
 
-    const handleToggle = (idxl: number) => {
+    const handleToggle = (idxl: number, id: number, idx: number) => {
         const constCurToggleId = curToggleId.current;
 
         isMoblie = Number(!(window.innerWidth < 768)) / 2.75;
@@ -75,25 +76,32 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                 [idxl]: true,
             }));
 
-        if (!toggleRef.current[idxl] || !toggleRef.current[constCurToggleId])
+        if (
+            !toggleRef.current[idxl] ||
+            !toggleRef.current[constCurToggleId] ||
+            !smallDeviceLessonNameRef.current
+        )
             return;
 
         if (idxl !== curToggleId.current) {
-            animate(
-                `#lessonName${idxl}`,
-                {
-                    width: "fit-content",
-                },
-                { ease: "easeOut", duration: isMoblie }
-            );
+            if (isMoblie) {
+            } else {
+                animate(
+                    `#lessonName${idxl}`,
+                    {
+                        width: "fit-content",
+                    },
+                    { ease: "easeOut" }
+                );
 
-            animate(
-                `#lessonName${curToggleId.current}`,
-                {
-                    width: "0px",
-                },
-                { ease: "easeOut", duration: isMoblie }
-            );
+                animate(
+                    `#lessonName${curToggleId.current}`,
+                    {
+                        width: "0px",
+                    },
+                    { ease: "easeOut" }
+                );
+            }
 
             animate(
                 `#toggleLine${idxl}`,
@@ -109,6 +117,10 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                     width: "0px",
                 },
                 { ease: "easeOut" }
+            );
+
+            smallDeviceLessonNameRef.current.textContent = String(
+                lessonsToggle[id][idx][idxl][1]
             );
 
             toggleRef.current[idxl].style.display = "grid";
@@ -129,7 +141,7 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                         <button
                             className="h-full grid grid-rows-1 grid-cols-1 w-fit md:whitespace-nowrap"
                             key={idxl}
-                            onClick={() => handleToggle(idxl)}
+                            onClick={() => handleToggle(idxl, id, idx)}
                         >
                             <div className="col-[1/-1] row-[1/-1] px-3 flex">
                                 <span className="whitespace-nowrap md:text-[1.25rem] md:leading-[1.75rem] text-[1.125rem] leding-[1.5rem]">
@@ -141,9 +153,8 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                                     } overflow-hidden md:static absolute md:top-0 top-10 sm:left-0 left-[6px] md:pointer-events-auto pointer-events-none`}
                                     id={`lessonName${idxl}`}
                                 >
-                                    <div className="md:inline hidden">: </div>
-                                    <div className="md:inline block max-[768px]:w-[calc(100vw-75px)] text-start md:text-[1.25rem] md:leading-[1.75rem] leading-[1.6rem] text-[1.3rem] max-[768px]:font-['Chakra_Petch']">
-                                        {lessonName[1]}
+                                    <div className="md:inline hidden text-start text-[1.25rem] leading-[1.75rem]">
+                                        : {lessonName[1]}
                                     </div>
                                 </div>
                             </div>
@@ -160,17 +171,20 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                 </div>
                 <div className="sm:h-[2px] h-[1px] bg-[rgba(0,0,0,0.25)] absolute bottom-0 left-0 w-full" />
             </div>
+            <div
+                className="md:hidden text-start leading-[1.6rem] text-[1.3rem] font-['Chakra_Petch'] my-3"
+                id="lessonName"
+                ref={smallDeviceLessonNameRef}
+            >
+                {lessonsToggle[id][idx][0][1]}
+            </div>
             {Array.isArray(Lessons[id][idx]) &&
                 Lessons[id][idx].map(
                     (lesson, idxl) =>
                         lesson && (
                             <div
                                 key={idxl}
-                                className={`md:mt-[10px] ${
-                                    lessonMarginTop[id][idx]
-                                        ? lessonMarginTop[id][idx]
-                                        : "mt-10"
-                                } h-full md1:overflow-y-auto md1:overflow-x-hidden font-light w-full ${
+                                className={`md:mt-[10px] h-full md1:overflow-y-auto md1:overflow-x-hidden font-light w-full ${
                                     idxl ? "hidden" : "block"
                                 }`}
                                 ref={(el) => {
