@@ -103,21 +103,21 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                 );
             }
 
-            animate(
-                `#toggleLine${idxl}`,
-                {
-                    width: "100%",
-                },
-                { delay: 0.2, ease: "easeOut" }
-            );
+            // animate(
+            //     `#toggleLine${idxl}`,
+            //     {
+            //         width: "100%",
+            //     },
+            //     { delay: 0.2, ease: "easeOut" }
+            // );
 
-            animate(
-                `#toggleLine${curToggleId.current}`,
-                {
-                    width: "0px",
-                },
-                { ease: "easeOut" }
-            );
+            // animate(
+            //     `#toggleLine${curToggleId.current}`,
+            //     {
+            //         width: "0px",
+            //     },
+            //     { ease: "easeOut" }
+            // );
 
             smallDeviceLessonNameRef.current.textContent = String(
                 lessonsToggle[id][idx][idxl][1]
@@ -139,7 +139,7 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                 <div className="flex h-full">
                     {lessonsToggle[id][idx].map((lessonName, idxl) => (
                         <button
-                            className="h-full grid grid-rows-1 grid-cols-1 w-fit md:whitespace-nowrap"
+                            className="h-full w-fit md:whitespace-nowrap"
                             key={idxl}
                             onClick={() => handleToggle(idxl, id, idx)}
                         >
@@ -150,7 +150,7 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                                 <div
                                     className={`${
                                         idxl ? "w-0" : "w-fit"
-                                    } overflow-hidden md:static absolute md:top-0 top-10 sm:left-0 left-[6px] md:pointer-events-auto pointer-events-none`}
+                                    } overflow-hidden md:pointer-events-auto pointer-events-none`}
                                     id={`lessonName${idxl}`}
                                 >
                                     <div className="md:inline hidden text-[1.25rem] leading-[1.75rem]">
@@ -158,14 +158,14 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-[1/-1] row-[1/-1] self-end flex justify-center w-full">
+                            {/* <div className="col-[1/-1] row-[1/-1] self-end flex justify-center w-full">
                                 <div
                                     className={`sm:h-[2px] h-[1px] bg-black ${
                                         idxl ? "w-0" : "w-full"
                                     }`}
                                     id={`toggleLine${idxl}`}
                                 />
-                            </div>
+                            </div> */}
                         </button>
                     ))}
                 </div>
