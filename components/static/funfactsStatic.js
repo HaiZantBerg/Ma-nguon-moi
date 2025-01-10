@@ -31,11 +31,16 @@ import storyPage5 from "@/public/Image/storypage5.png";
 import { InlineMath } from "react-katex";
 import "katex/dist/katex.min.css";
 import Link from "next/link";
+import depTrai from "@/public/Image/deptrai.png";
+import tay from "@/public/Image/tay.png";
 
 export const images = [
     [
         [
-            [<div key="image26" />, <div key="image27" />],
+            [
+                <Image key="image26" alt="" src={tay} />,
+                <Image key="image27" alt="" src={depTrai} />,
+            ],
             [
                 <Image
                     src={walk}
