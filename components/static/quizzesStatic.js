@@ -47,7 +47,15 @@ chúng ta là con trai". Hỏi có bao nhiêu bạn trai ngồi quanh bàn?`,
 //
 Hỏi có bao nhiêu con ếch trong số 5 bạn này?
 `,
-            `Mọi người giúp mình câu toán logic này đi: Peter có 4 tấm bìa 2 mặt, một mặt ghi 1 chữ cái còn mặt kia ghi một số. Peter khẳng định rằng "Nếu 1 mặt của tấm bìa ghi chữ A thì mặt kia ghi số 1". Hiện trên bàn đặt 4 tấm bìa và mặt ngửa lên ghi lần lượt là A, 1, 2, B. Hỏi phải lật 2 tấm bìa nào để kiểm tra khẳng định của Peter là đúng hay sai. 
+            `Mọi người giúp mình câu toán logic này đi: 
+//
+Peter có 4 tấm bìa 2 mặt, một mặt ghi 1 chữ cái còn mặt kia ghi một số. 
+// 
+Peter khẳng định rằng "Nếu 1 mặt của tấm bìa ghi chữ A thì mặt kia ghi số 1". 
+// 
+Hiện trên bàn đặt 4 tấm bìa và mặt ngửa lên ghi lần lượt là A, 1, 2, B. 
+//
+Hỏi phải lật 2 tấm bìa nào để kiểm tra khẳng định của Peter là đúng hay sai. 
 `,
         ],
     ],

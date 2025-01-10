@@ -7,6 +7,7 @@
 # testing
 /coverage
 components/Main/SpaceCanvas.tsx
+components/Others/Image.tsx
 app/test/
 app/historicalfigures/
 
