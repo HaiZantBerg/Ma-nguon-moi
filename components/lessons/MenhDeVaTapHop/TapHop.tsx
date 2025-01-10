@@ -65,6 +65,14 @@ export default function TapHop() {
                                 width="100%"
                                 height="100%"
                                 type="video/mp4"
+                                config={{
+                                    file: {
+                                        attributes: {
+                                            crossOrigin: "anonymous",
+                                            type: "video/mp4",
+                                        },
+                                    },
+                                }}
                             />
                         </div>
                     </div>
