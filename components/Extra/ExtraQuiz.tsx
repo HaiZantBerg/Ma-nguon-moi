@@ -133,7 +133,7 @@ export default function ExtraQuiz({
                 <div
                     className={`absolute hidden ${
                         flip ? "top-[-15px]" : "bottom-[-15px]"
-                    } h-[15px] w-full left-0`}
+                    } h-[15px] z-[5] w-full left-0`}
                     ref={sneakyRef}
                 >
                     <div className="bg-[#d3ffbd] relative z-30 w-full h-full" />

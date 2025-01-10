@@ -122,7 +122,7 @@ export default function ExtraInlineFact({
                 <div
                     className={`absolute hidden ${
                         flip ? "top-[-15px]" : "bottom-[-15px]"
-                    } left-0 h-[15px] w-full bg-[#e67e00]`}
+                    } left-0 z-[5] h-[15px] w-full bg-[#e67e00]`}
                     ref={sneakyRef}
                 />
             </button>

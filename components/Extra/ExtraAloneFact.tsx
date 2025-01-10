@@ -120,7 +120,7 @@ export default function ExtraAloneFact({
                 <div
                     className={`absolute hidden ${
                         flip ? "top-[-15px]" : "bottom-[-15px]"
-                    } left-0 h-[15px] w-full bg-[#e43707]`}
+                    } left-0 h-[15px] z-[5] w-full bg-[#e43707]`}
                     ref={sneakyRef}
                 />
             </button>
