@@ -31,7 +31,7 @@ export const FunFact = ({ idxc, idxg }: { idxc: number; idxg: number }) => {
                         <span className="font-semibold text-2xl">
                             {historyFigureName[idxg][idxc][idx]}
                         </span>
-                        <div className="md1:ml-7 flex  mt-5">
+                        <div className="md1:ml-7 flex flex-wrap mt-5">
                             {section.map((title, idxs) => (
                                 <FunFactCard
                                     key={idxs}
