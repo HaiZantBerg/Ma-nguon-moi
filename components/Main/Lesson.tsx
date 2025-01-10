@@ -139,11 +139,11 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                 <div className="flex h-full">
                     {lessonsToggle[id][idx].map((lessonName, idxl) => (
                         <button
-                            className="h-full grid grid-rows-1 grid-cols-1 w-fit md:whitespace-nowrap"
+                            className="h-full w-fit md:whitespace-nowrap"
                             key={idxl}
                             onClick={() => handleToggle(idxl, id, idx)}
                         >
-                            <div className="col-[1/-1] row-[1/-1] px-3 flex w-fit">
+                            <div className="relative px-3 flex">
                                 <span className="whitespace-nowrap md:text-[1.25rem] md:leading-[1.75rem] text-[1.125rem] leding-[1.5rem]">
                                     Bài {lessonName[0]}
                                 </span>
@@ -157,14 +157,14 @@ const LessonsToggleLayout = ({ id, idx }: { id: number; idx: number }) => {
                                         : {lessonName[1]}
                                     </div>
                                 </div>
-                            </div>
-                            <div className="col-[1/-1] row-[1/-1] self-end flex justify-center w-full">
-                                <div
-                                    className={`sm:h-[2px] h-[1px] bg-black ${
-                                        idxl ? "w-0" : "w-full"
-                                    }`}
-                                    id={`toggleLine${idxl}`}
-                                />
+                                <div className="absolute bottom-[-7px] left-0 flex">
+                                    <div
+                                        className={`sm:h-[2px] h-[1px] bg-black ${
+                                            idxl ? "w-0" : "w-full"
+                                        }`}
+                                        id={`toggleLine${idxl}`}
+                                    />
+                                </div>
                             </div>
                         </button>
                     ))}
