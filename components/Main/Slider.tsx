@@ -987,6 +987,7 @@ export default function Slider({ id }: { id: number }) {
                                 style={{
                                     perspective: "450px",
                                     transformStyle: "preserve-3d",
+                                    transform: "translateZ(10px)",
                                 }}
                             >
                                 <div
@@ -1020,6 +1021,7 @@ export default function Slider({ id }: { id: number }) {
                                 style={{
                                     perspective: "450px",
                                     transformStyle: "preserve-3d",
+                                    transform: "translateZ(10px)",
                                 }}
                             >
                                 <div
