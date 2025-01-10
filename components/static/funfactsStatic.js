@@ -38,8 +38,18 @@ export const images = [
     [
         [
             [
-                <Image key="image26" alt="" src={tay} />,
-                <Image key="image27" alt="" src={depTrai} />,
+                <Image
+                    key="image26"
+                    alt=""
+                    src={tay}
+                    className="w-[90%] aspect-square"
+                />,
+                <Image
+                    key="image27"
+                    alt=""
+                    src={depTrai}
+                    className="w-[90%] aspect-square"
+                />,
             ],
             [
                 <Image
