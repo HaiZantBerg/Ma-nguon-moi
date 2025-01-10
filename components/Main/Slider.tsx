@@ -955,7 +955,7 @@ export default function Slider({ id }: { id: number }) {
                     </div>
                     <div className="select-none flex justify-center sm:gap-8 gap-4 sm:text-xl text-[1.125rem] sm:*:w-40 sm:*:h-[60px] *:w-[8.5rem] *:h-[3.25rem]">
                         <div
-                            className="absolute h-full sm:*:right-[92px] *:right-[60px] -z-10"
+                            className="absolute h-full sm:*:right-[92px] *:right-[60px]"
                             style={{
                                 perspective: "300px",
                                 transformStyle: "preserve-3d",
@@ -1052,7 +1052,7 @@ export default function Slider({ id }: { id: number }) {
                             </div>
                         </button>
                         <div
-                            className="absolute h-full sm:*:left-[92px] *:left-[75px] -z-10"
+                            className="absolute h-full sm:*:left-[92px] *:left-[75px]"
                             style={{
                                 perspective: "300px",
                                 transformStyle: "preserve-3d",
