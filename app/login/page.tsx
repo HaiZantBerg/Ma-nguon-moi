@@ -5,7 +5,7 @@ import React, { FormEvent, useEffect, useState } from "react";
 
 const NEXTJS_LOGIN_API = "/api/login";
 
-export default function page() {
+export default function Page() {
     const router = useRouter();
 
     const [isMounted, setIsMounted] = useState(false);

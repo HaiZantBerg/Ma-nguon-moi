@@ -100,7 +100,7 @@ export default function ChapterDialog({
         };
 
         openDialogAnimation();
-    }, []);
+    }, [animate, idx, playAnimation]);
 
     const closeDialogAnimation = async () => {
         if (isClosing) return;

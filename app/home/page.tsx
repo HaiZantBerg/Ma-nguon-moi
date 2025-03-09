@@ -4,7 +4,7 @@ import { getUserData } from "@/components/FetchingData/getData";
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 
-export default function page() {
+export default function Page() {
     const { data, error, isLoading } = useQuery({
         queryKey: ["userData"],
         queryFn: getUserData,

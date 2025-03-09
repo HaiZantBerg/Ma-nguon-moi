@@ -1,7 +1,7 @@
 import { deleteTokens } from "@/lib/auth/cookiesManagement";
 import { NextResponse } from "next/server";
 
-export async function POST(request: Request) {
+export async function POST() {
     deleteTokens();
 
     return NextResponse.json({}, { status: 200 });

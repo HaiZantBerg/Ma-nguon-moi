@@ -183,7 +183,7 @@ export const FlipCard = ({
                 mass: 2,
             }
         );
-    }, []);
+    }, [animate]);
 
     const handleFlipCard = () => {
         if (!isFlip) {

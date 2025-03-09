@@ -164,7 +164,7 @@ export default function Slider({ id }: { id: number }) {
             canvasRef.current.width = window.innerWidth;
             canvasRef.current.height = window.innerHeight;
         }, 500),
-        []
+        [canvasRef]
     );
 
     useEffect(() => {
@@ -708,7 +708,7 @@ export default function Slider({ id }: { id: number }) {
 
             setCurChapterId(Number(searchParams) - 1);
         }
-    }, []);
+    }, [handleIncreaseClick, searchParams]);
 
     return (
         <div ref={scope}>
