@@ -12,4 +12,5 @@ export default function Page() {
 
     if (!isLoading)
         return <div className="translate-y-20">1{data.message}</div>;
+    if (error) return <div>error</div>;
 }

@@ -157,15 +157,12 @@ export default function Slider({ id }: { id: number }) {
 
     const today = new Date();
 
-    const resizeCanvas = useCallback(
-        debounce(() => {
-            if (!canvasRef.current) return;
+    const resizeCanvas = debounce(() => {
+        if (!canvasRef.current) return;
 
-            canvasRef.current.width = window.innerWidth;
-            canvasRef.current.height = window.innerHeight;
-        }, 500),
-        [canvasRef]
-    );
+        canvasRef.current.width = window.innerWidth;
+        canvasRef.current.height = window.innerHeight;
+    }, 500);
 
     useEffect(() => {
         resizeCanvas();
@@ -708,7 +705,7 @@ export default function Slider({ id }: { id: number }) {
 
             setCurChapterId(Number(searchParams) - 1);
         }
-    }, [handleIncreaseClick, searchParams]);
+    }, [handleIncreaseClick, searchParams, setCurChapterId]);
 
     return (
         <div ref={scope}>
