@@ -6,13 +6,12 @@ import Link from "next/link";
 
 export default function Navbar() {
     const pathname = usePathname();
-    const lastSegment = pathname.split("/").at(-2)?.split("-")[0];
+    const lastSegment = pathname.split("/").at(-1);
 
-    const noNavBarRoutes = ["khoi"];
+    const noNavBarRoutes = ["login", "", "register"];
 
-    if (lastSegment && noNavBarRoutes.includes(lastSegment)) {
+    if ((lastSegment && noNavBarRoutes.includes(lastSegment)) || !lastSegment)
         return null;
-    }
 
     return (
         <div

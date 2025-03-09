@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Main/Navbar";
 import { Inter } from "next/font/google";
+import QueryProvider from "@/components/Others/QueryProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+    subsets: ["latin"],
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
     title: "Ethems",
@@ -19,8 +23,10 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${inter.className} bg-white text-black`}>
-                <Navbar />
-                {children}
+                <QueryProvider>
+                    <Navbar />
+                    {children}
+                </QueryProvider>
             </body>
         </html>
     );
