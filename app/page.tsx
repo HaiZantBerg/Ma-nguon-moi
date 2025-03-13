@@ -10,54 +10,33 @@ import style from "@/components/css/landingPageStyle.module.css";
 import starry1 from "@/public/Image/starry1-01.png";
 import starry2 from "@/public/Image/starry2-01.png";
 import starry3 from "@/public/Image/starry3-01.png";
+import threed1 from "@/public/Svg/3d1.svg";
+import threed2 from "@/public/Svg/3d2.svg";
+import starSomething from "@/public/Svg/starsomething.svg";
 
 export default function page() {
     return (
         <div className="w-full">
-            <div className="h-dvh w-full bg-[#080414] flex flex-col relative">
-                <div className="absolute left-0 top-0 w-full h-full overflow-hidden grid grid-cols-1 grid-rows-1">
-                    <Image
-                        src={starry1}
-                        alt=""
-                        className={`${style.star11} h-full col-[1/2] row-[1/2]`}
-                    />
-                    <Image
-                        src={starry1}
-                        alt=""
-                        className={`${style.star12} h-full col-[1/2] row-[1/2]`}
-                    />
-                    <Image
-                        src={starry2}
-                        alt=""
-                        className={`${style.star21} h-full col-[1/2] row-[1/2]`}
-                    />
-                    <Image
-                        src={starry2}
-                        alt=""
-                        className={`${style.star22} h-full col-[1/2] row-[1/2]`}
-                    />
-                    <Image
-                        src={starry3}
-                        alt=""
-                        className={`${style.star31} h-full col-[1/2] row-[1/2]`}
-                    />
-                    <Image
-                        src={starry3}
-                        alt=""
-                        className={`${style.star32} h-full col-[1/2] row-[1/2]`}
-                    />
+            <div className="h-dvh w-full bg-[#080414] flex flex-col relative overflow-hidden">
+                <div className="absolute left-0 top-0 w-full h-full overflow-hidden grid grid-cols-1 grid-rows-1 *:h-full *:col-[1/2] *:row-[1/2] *:md:scale-100 *:scale-150 *:w-auto *:select-none">
+                    <Image src={starry1} alt="" className={`${style.star11}`} />
+                    <Image src={starry1} alt="" className={`${style.star12}`} />
+                    <Image src={starry2} alt="" className={`${style.star21}`} />
+                    <Image src={starry2} alt="" className={`${style.star22}`} />
+                    <Image src={starry3} alt="" className={`${style.star31}`} />
+                    <Image src={starry3} alt="" className={`${style.star32}`} />
                 </div>
                 <div className="absolute z-10 left-0 top-0 w-full h-full flex overflow-hidden justify-center min-[75rem]:gap-[25rem] md:gap-[10rem] *:-translate-x-[8rem] *:sm:translate-y-[20rem] *:translate-y-[12rem]">
                     <Image
                         src={sineFunc}
                         alt=""
-                        className="h-[50rem] min-[75rem]:min-w-[75rem] md:min-w-[65rem] min-w-[55rem]"
+                        className="h-[50rem] min-[75rem]:min-w-[75rem] md:min-w-[65rem] min-w-[55rem] select-none"
                         priority
                     />
                     <Image
                         src={Fibbo}
                         alt=""
-                        className="h-[50rem] min-[75rem]:min-w-[60rem] md:min-w-[50rem] min-w-[40rem]"
+                        className="h-[50rem] min-[75rem]:min-w-[60rem] md:min-w-[50rem] min-w-[40rem] select-none"
                         priority
                     />
                 </div>
@@ -80,19 +59,24 @@ export default function page() {
                 <div className="w-full h-32 pt-16 relative z-10">
                     <div className="mx-auto max-w-[98rem] flex items-center px-8 h-[56px]">
                         <Link
-                            className="font-['Chakra_Petch'] text-white font-bold flex gap-4"
+                            className="font-['Chakra_Petch'] text-white font-bold flex gap-4 relative"
                             href="/"
                         >
                             <Image
                                 alt=""
                                 src={logo}
-                                className="sm:block hidden h-[56px] w-fit"
+                                className="sm:block hidden h-[56px] w-fit select-none"
                             />
                             <Image alt="" src={Ethems} height="32" />
+                            <Image
+                                src={starSomething}
+                                alt=""
+                                className="absolute md:left-30 md:top-[-3rem] left-[3.5rem] top-[-3rem] md:h-[10rem] h-[8.5rem] rotate-[15deg] w-auto select-none"
+                            />
                         </Link>
                         <div className="justify-end flex-1 flex">
                             <Link
-                                className="text-[#c1d4ff] select-none flex justify-center items-center sm:text-base text-sm text-nowrap shadow-[inset_0px_0px_0px_rgba(238,243,255,0.5),0px_0px_2px_rgba(238,243,255,0.4)] hover:shadow-[inset_0px_0px_12px_rgba(238,243,255,0.5),0px_0px_8px_rgba(238,243,255,0.4)] transition-all duration-200 ease-in hover:text-[#eff4ff] relative z-10 border border-[#5c6bc0] hover:border-[#7b87cc] rounded-xl px-5 py-2 overflow-hidden"
+                                className="text-[#c1d4ff] select-none flex justify-center items-center sm:text-base text-sm text-nowrap shadow-[inset_0px_0px_0px_rgba(238,243,255,0.5),0px_0px_2px_rgba(238,243,255,0.4)] hover:shadow-[inset_0px_0px_12px_rgba(238,243,255,0.5),0px_0px_8px_rgba(238,243,255,0.4)] transition-all duration-200 ease-in hover:text-[#eff4ff] relative z-10 border border-[#5c6bc0] hover:border-[#7b87cc] rounded-xl px-4 py-2 overflow-hidden"
                                 href="/login"
                                 id="logInBtn"
                             >
@@ -110,18 +94,28 @@ export default function page() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col relative z-10">
-                    <div className="sm:mt-[8rem] mt-[4rem]">
+                <div className="sm:mt-[8rem] mt-[4rem] mx-auto flex flex-col items-center relative z-10">
+                    <div className="relative mx-auto">
                         <Image
                             src={landingPageHeader}
                             alt=""
-                            className="sm:h-[18rem] h-[10rem] mx-auto select-none"
+                            className="sm:h-[18rem] h-[10rem] select-none w-auto"
                         />
-                        <div className="text-[#d1d3d4] sm:px-16 px-8 text-center mx-auto sm:mt-8 mt-10 max-w-[48rem] sm:text-[1.2rem] text-[0.9rem] tracking-wide">
-                            Lật mở lịch sử toán học — nơi hội tụ những nghịch lý
-                            sâu xa nhất, vẻ đẹp thuần túy và những bí ẩn vĩnh
-                            cửu của nó.
-                        </div>
+                        <Image
+                            src={threed1}
+                            alt=""
+                            className="absolute sm:left-[-6.5rem] left-[-3.5rem] sm:top-[-4rem] top-[-2.5rem] sm:h-[5.5rem] h-[3.5rem] w-auto select-none"
+                        />
+                    </div>
+                    <div className="text-[#d1d3d4] sm:px-16 px-8 text-center mx-auto sm:mt-8 mt-10 max-w-[48rem] sm:text-[1.2rem] text-[0.9rem] tracking-wide text-pretty relative">
+                        Lật mở lịch sử toán học — nơi hội tụ những nghịch lý sâu
+                        xa nhất, vẻ đẹp thuần túy và những bí ẩn vĩnh cửu của
+                        nó.
+                        <Image
+                            src={threed2}
+                            alt=""
+                            className="absolute sm:bottom-[-6rem] bottom-[-4rem] right-[1rem] sm:h-[5.5rem] h-[3.5rem] w-auto select-none"
+                        />
                     </div>
                 </div>
                 <div className="grow flex justify-center">
