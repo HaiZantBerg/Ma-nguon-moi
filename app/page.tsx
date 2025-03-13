@@ -6,21 +6,59 @@ import Image from "next/image";
 import landingPageHeader from "@/public/Svg/landingPageHeader.svg";
 import sineFunc from "@/public/Svg/sine func.svg";
 import Fibbo from "@/public/Svg/fibbo.svg";
+import style from "@/components/css/landingPageStyle.module.css";
+import starry1 from "@/public/Image/starry1-01.png";
+import starry2 from "@/public/Image/starry2-01.png";
+import starry3 from "@/public/Image/starry3-01.png";
 
 export default function page() {
     return (
         <div className="w-full">
             <div className="h-dvh w-full bg-[#080414] flex flex-col relative">
+                <div className="absolute left-0 top-0 w-full h-full overflow-hidden grid grid-cols-1 grid-rows-1">
+                    <Image
+                        src={starry1}
+                        alt=""
+                        className={`${style.star11} h-full col-[1/2] row-[1/2]`}
+                    />
+                    <Image
+                        src={starry1}
+                        alt=""
+                        className={`${style.star12} h-full col-[1/2] row-[1/2]`}
+                    />
+                    <Image
+                        src={starry2}
+                        alt=""
+                        className={`${style.star21} h-full col-[1/2] row-[1/2]`}
+                    />
+                    <Image
+                        src={starry2}
+                        alt=""
+                        className={`${style.star22} h-full col-[1/2] row-[1/2]`}
+                    />
+                    <Image
+                        src={starry3}
+                        alt=""
+                        className={`${style.star31} h-full col-[1/2] row-[1/2]`}
+                    />
+                    <Image
+                        src={starry3}
+                        alt=""
+                        className={`${style.star32} h-full col-[1/2] row-[1/2]`}
+                    />
+                </div>
                 <div className="absolute z-10 left-0 top-0 w-full h-full flex overflow-hidden justify-center min-[75rem]:gap-[25rem] md:gap-[10rem] *:-translate-x-[8rem] *:sm:translate-y-[20rem] *:translate-y-[12rem]">
                     <Image
                         src={sineFunc}
                         alt=""
                         className="h-[50rem] min-[75rem]:min-w-[75rem] md:min-w-[65rem] min-w-[55rem]"
+                        priority
                     />
                     <Image
                         src={Fibbo}
                         alt=""
                         className="h-[50rem] min-[75rem]:min-w-[60rem] md:min-w-[50rem] min-w-[40rem]"
+                        priority
                     />
                 </div>
                 <div className="absolute left-0 top-0 w-full h-full overflow-hidden">

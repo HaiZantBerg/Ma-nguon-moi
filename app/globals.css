@@ -4,6 +4,9 @@
 :root {
     --background: #ffffff;
     --foreground: #171717;
+    --animationStarTime1: 20000ms;
+    --animationStarTime2: 80000ms;
+    --animationStarTime3: 60000ms;
 }
 
 @media (prefers-color-scheme: dark) {
