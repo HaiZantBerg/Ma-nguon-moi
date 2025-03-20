@@ -58,7 +58,7 @@ export default function Page() {
                             </div>
                             <input
                                 name="username"
-                                className={`${styling.loginInput} peer bg-[#202434] sm:w-[20rem] w-[18rem] sm:h-[3rem] h-[2.75rem] outline-0 mt-3 rounded-2xl text-center focus:placeholder:invisible text-[1.1rem] max-[40rem]:placeholder:text-[0.95rem]`}
+                                className={`${styling.loginInput} bg-[#202434] duration-[0ms] outline-0 sm:w-[20rem] w-[18rem] sm:h-[3rem] h-[2.75rem] mt-3 rounded-2xl text-center focus:placeholder:invisible text-[1.1rem] max-[40rem]:placeholder:text-[0.95rem]`}
                                 placeholder="banlanhat@gmail.com"
                                 required
                             />
