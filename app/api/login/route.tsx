@@ -25,7 +25,9 @@ export async function POST(request: Request) {
 
         setAccessToken(access);
         setRefreshToken(refresh);
+
+        return NextResponse.json({}, { status: 200 });
     }
 
-    return NextResponse.json({}, { status: 200 });
+    return NextResponse.json({}, { status: 400 });
 }
