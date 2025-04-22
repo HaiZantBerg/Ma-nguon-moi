@@ -66,12 +66,14 @@ export default function page() {
                                 alt=""
                                 src={logo}
                                 className="sm:block hidden h-[56px] w-fit select-none"
+                                priority
                             />
-                            <Image alt="" src={Ethems} height="32" />
+                            <Image alt="" src={Ethems} height="32" priority />
                             <Image
                                 src={starSomething}
                                 alt=""
                                 className="absolute md:left-30 md:top-[-3rem] left-[3.5rem] top-[-3rem] md:h-[10rem] h-[8.5rem] rotate-[15deg] w-auto select-none"
+                                priority
                             />
                         </Link>
                         <div className="justify-end flex-1 flex">
@@ -100,11 +102,13 @@ export default function page() {
                             src={landingPageHeader}
                             alt=""
                             className="sm:h-[18rem] h-[10rem] select-none w-auto"
+                            priority
                         />
                         <Image
                             src={threed1}
                             alt=""
                             className="absolute sm:left-[-6.5rem] left-[-3.5rem] sm:top-[-4rem] top-[-2.5rem] sm:h-[5.5rem] h-[3.5rem] w-auto select-none"
+                            priority
                         />
                     </div>
                     <div className="text-[#d1d3d4] sm:px-16 px-8 text-center mx-auto sm:mt-8 mt-10 max-w-[48rem] sm:text-[1.2rem] text-[0.9rem] tracking-wide text-pretty relative">
@@ -115,6 +119,7 @@ export default function page() {
                             src={threed2}
                             alt=""
                             className="absolute sm:bottom-[-6rem] bottom-[-4rem] right-[1rem] sm:h-[5.5rem] h-[3.5rem] w-auto select-none"
+                            priority
                         />
                     </div>
                 </div>

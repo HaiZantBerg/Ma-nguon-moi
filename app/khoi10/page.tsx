@@ -1,11 +1,11 @@
-import Slider from "@/components/Main/Slider";
+import ChapterRoute from "@/components/Main/ChapterRoute";
 import { Suspense } from "react";
 import React from "react";
 
 export default function page() {
     return (
         <Suspense>
-            <Slider id={0} />
+            <ChapterRoute grade={0} />
         </Suspense>
     );
 }

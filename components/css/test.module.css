@@ -1,35 +1,49 @@
-@keyframes fly {
-    from {
-        transform: translateY(100vh);
-    }
-    to {
-        transform: translateY(-100vh);
-    }
+.loginInput::after {
+    content: "";
+    border: 2px solid #581ce3;
+    box-shadow: 0 0 0 2px #f9dcef;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.star11 {
-    animation: fly var(--animationStarTime1) linear infinite;
+.levelBtn::before {
+    content: "";
+    background-color: #1463ca;
+    z-index: -10;
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 5px;
+    left: 0;
 }
 
-.star12 {
-    animation: fly var(--animationStarTime1) linear infinite;
-    animation-delay: calc(var(--animationStarTime1) / -2);
+.levelBtn:hover::before {
+    background-color: #0b50aa;
 }
 
-.star21 {
-    animation: fly var(--animationStarTime2) linear infinite;
+.levelBtn:active::before {
+    transform: translateY(-5px);
 }
 
-.star22 {
-    animation: fly var(--animationStarTime2) linear infinite;
-    animation-delay: calc(var(--animationStarTime2) / -2);
-}
-
-.star31 {
-    animation: fly var(--animationStarTime3) linear infinite;
-}
-
-.star32 {
-    animation: fly var(--animationStarTime3) linear infinite;
-    animation-delay: calc(var(--animationStarTime3) / -2);
+.drawerContent::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 1) 2%,
+        rgba(255, 255, 255, 0) 10%,
+        rgba(255, 255, 255, 0) 90%,
+        rgba(255, 255, 255, 1) 98%
+    );
+    pointer-events: none;
 }

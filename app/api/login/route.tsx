@@ -1,6 +1,10 @@
 "use server";
 
-import { setAccessToken, setRefreshToken } from "@/lib/auth/cookiesManagement";
+import {
+    getAccessToken,
+    setAccessToken,
+    setRefreshToken,
+} from "@/lib/auth/cookiesManagement";
 import { NextResponse } from "next/server";
 
 const DJANGO_LOGIN_API = "http://localhost:8000/api/token/pair";

@@ -42,24 +42,20 @@ export const chapter = [
 
 export const description = [
     [
-        <div
-            key="description1"
-            className="md1:text-[1.1rem] md1:leading-[1.6rem]"
-        >
-            <p className="font-[500] pb-1">Mệnh đề</p>
-            <p className="pl-[20px]">
-                Mệnh đề là một câu khẳng định trong toán học có thể đúng hoặc
-                sai. Nó thường được sử dụng để phát biểu các kết luận trong lý
-                thuyết. Mệnh đề có thể có các dạng như mệnh đề đảo, mệnh đề
-                tương đương, và được chứng minh qua các phương pháp logic.
+        <div key="description1">
+            <p className="mb-1.5">
+                <span className="font-bold">Mệnh đề</span> là một câu khẳng định
+                trong toán học có thể đúng hoặc sai. Nó thường được sử dụng để
+                phát biểu các kết luận trong lý thuyết. Mệnh đề có thể có các
+                dạng như mệnh đề đảo, mệnh đề tương đương, và được chứng minh
+                qua các phương pháp logic.
             </p>
-            <p className="font-[500] pb-1">Tập hợp</p>
-            <p className="pl-[20px]">
-                Lịch sử toán học về tập hợp và các phép toán trong tập hợp có
-                thể được tóm tắt qua một số mốc quan trọng. Tập hợp là một khái
-                niệm cơ bản trong toán học, và sự phát triển của lý thuyết tập
-                hợp đã có ảnh hưởng sâu rộng đến các lĩnh vực khác của toán học
-                và khoa học máy tính.
+            <p>
+                Lịch sử toán học về <span className="font-bold">tập hợp</span>{" "}
+                và các phép toán trong tập hợp có thể được tóm tắt qua một số
+                mốc quan trọng. Tập hợp là một khái niệm cơ bản trong toán học,
+                và sự phát triển của lý thuyết tập hợp đã có ảnh hưởng sâu rộng
+                đến các lĩnh vực khác của toán học và khoa học máy tính.
             </p>
         </div>,
         <div key="description2"></div>,
