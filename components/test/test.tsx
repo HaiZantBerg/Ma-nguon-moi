@@ -14,6 +14,7 @@ import {
     AnimatePresence,
     easeIn,
     motion,
+    useMotionValue,
     useScroll,
     useTransform,
 } from "motion/react";
@@ -64,11 +65,11 @@ export default function Test() {
     if (isMounted)
         return (
             <div
-                className="w-full h-fit overflow-auto max-[1275px]:flex-col-reverse flex-row flex bg-white sm:pt-36 pt-28 max-[1275px]:justify-normal items-start max-[1275px]:items-center justify-center min-[1550px]:gap-[15rem] min-[640px]:gap-[5rem] sm:px-24 px-4"
+                className="w-full h-fit max-[1275px]:flex-col-reverse flex-row flex bg-white sm:pt-36 pt-28 max-[1275px]:justify-normal items-start max-[1275px]:items-center justify-center min-[1550px]:gap-[15rem] min-[640px]:gap-[5rem] sm:px-24 px-4"
                 ref={container}
             >
                 <AnimatePresence>
-                    {isMobile && curChapter > 0 && (
+                    {curChapter > 0 && (
                         <Drawer
                             curChapter={curChapter}
                             romanNumeral={romanNumeral}
@@ -204,7 +205,7 @@ export default function Test() {
                         </div>
                     </div>
                 </div>
-                <div className="fixed top-0 left-0 w-full h-full select-none pointer-events-none">
+                {/* <div className="fixed top-0 left-0 w-full h-full select-none pointer-events-none">
                     <motion.div
                         className="absolute top-[32%] left-1/2 -translate-x-1/2 w-[50rem] opacity-[15%]"
                         style={{
@@ -245,7 +246,7 @@ export default function Test() {
                     >
                         <Image src={bg5} alt="" />
                     </motion.div>
-                </div>
+                </div> */}
             </div>
         );
 }
@@ -263,40 +264,59 @@ const Drawer = ({
         document.body.style.overflow = "hidden";
     }, []);
 
+    const dragY = useMotionValue(0);
+
     return (
         <div className="fixed h-full w-full left-0 top-0 z-50 flex items-end">
             <motion.div
-                className="bg-[#000000] w-full h-full opacity-0 absolute top-0 left-0"
+                className="bg-[#000000] w-full h-full opacity-0 absolute top-0 left-0 -z-10"
                 onClick={handleCloseDrawer}
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 0.25 }}
+                animate={{ opacity: 0.5 }}
+                exit={{ opacity: 0 }}
                 transition={{
                     duration: 0.3,
                     ease: easeIn,
                 }}
-                exit={{ opacity: 0 }}
             />
             <motion.div
-                className="bg-white w-full rounded-t-2xl flex items-center flex-col sm:pb-[1.75rem] pb-[1rem]"
+                className="bg-white w-full rounded-t-2xl flex items-center flex-col pb-[17rem]"
                 id="drawer"
+                style={{ y: dragY }}
                 initial={{
-                    transform: "scale(0.85) translateY(100%)",
+                    y: "100%",
+                    scale: 0.85,
                 }}
                 animate={{
-                    transform: "scale(1) translateY(0)",
+                    y: "256px",
+                    scale: 1,
                 }}
                 exit={{
-                    transform: "scale(0.85) translateY(100%)",
+                    y: "100%",
+                    scale: 0.85,
+                }}
+                layout="position"
+                dragConstraints={{
+                    top: 256,
+                    bottom: 256,
+                }}
+                dragElastic={{
+                    top: 0.125,
+                    bottom: 0.3,
+                }}
+                drag="y"
+                onDragEnd={() => {
+                    if (dragY.get() >= 300) handleCloseDrawer();
                 }}
             >
-                <div className="w-[10rem] bg-[#96969677] h-[0.25rem] rounded-2xl mt-3" />
-                <div className="md:px-10 px-5 py-5 w-full">
+                <div className="w-[10rem] bg-[#96969677] h-[0.25rem] rounded-2xl mt-3 pointer-events-none" />
+                <div className="sm:px-10 px-5 py-5 w-full">
                     <p className="text-center">
-                        <span className="font-semibold font-['Chakra_Petch'] md:text-[2rem] text-[1.4rem]">
+                        <span className="font-semibold font-['Chakra_Petch'] sm:text-[2rem] text-[1.4rem]">
                             CHƯƠNG {romanNumeral[curChapter - 1]}
                         </span>
                         <br />
-                        <span className="md:text-[1.5rem] text-xl">
+                        <span className="sm:text-[1.5rem] text-xl">
                             {chapter[0][curChapter - 1]}
                         </span>
                     </p>

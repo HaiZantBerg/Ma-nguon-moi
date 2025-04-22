@@ -177,7 +177,7 @@ export default function LevelBtn({
                             delay: -1 - delay,
                         }}
                     >
-                        <Image src={levelUiI} alt="" />
+                        <Image priority src={levelUiI} alt="" />
                     </motion.div>
                     <motion.div
                         className="absolute top-[10rem] left-1/2 -translate-x-1/2 w-[75%] pointer-events-none"
@@ -190,7 +190,7 @@ export default function LevelBtn({
                             delay: -0.5 - delay,
                         }}
                     >
-                        <Image src={levelUiII} alt="" />
+                        <Image priority src={levelUiII} alt="" />
                     </motion.div>
                     <motion.div
                         className="absolute top-[5rem] left-1/2 -translate-x-1/2 w-[80%] aspect-square justify-center flex items-center pointer-events-none"
@@ -215,7 +215,7 @@ export default function LevelBtn({
                                 delay: -delay,
                             }}
                         >
-                            <Image src={levelUiIII} alt="" />
+                            <Image priority src={levelUiIII} alt="" />
                         </motion.div>
                         <div className="font-['Algerian'] sm:text-[2.25rem] text-[1.9rem] text-black">
                             {idx}
