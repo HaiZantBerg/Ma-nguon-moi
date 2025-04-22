@@ -53,7 +53,8 @@ export default function ChapterRoute({ grade }: { grade: number }) {
 
     const { scrollYProgress } = useScroll({
         target: container,
-        offset: ["start end", "end start"],
+        offset: ["start start", "end end"],
+        layoutEffect: false,
     });
 
     const parallax1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
