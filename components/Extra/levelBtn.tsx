@@ -110,7 +110,7 @@ export default function LevelBtn({
     useEffect(() => {
         const el = document.getElementById(`container${idx}${grade}`);
         setMountElement(el);
-    }, [idx]);
+    }, [idx, grade]);
 
     return (
         <div className={`${gridPosition} w-full h-full relative`}>
