@@ -8,6 +8,7 @@
 /coverage
 components/Main/SpaceCanvas.tsx
 components/Others/Image.tsx
+components/test/
 app/test/
 app/historicalfigures/
 
