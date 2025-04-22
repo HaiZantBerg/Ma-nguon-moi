@@ -1,7 +1,7 @@
 "use server";
 
 import {
-    getAccessToken,
+    // getAccessToken,
     setAccessToken,
     setRefreshToken,
 } from "@/lib/auth/cookiesManagement";
