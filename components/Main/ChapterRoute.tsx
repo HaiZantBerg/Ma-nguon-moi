@@ -23,6 +23,56 @@ import Link from "next/link";
 import { chapter, description } from "../static/chaptersStatic";
 import styling from "@/components/css/test.module.css";
 
+const LevelBtnArray = [
+    {
+        gridPosition: "col-[3/4] row-[1/2]",
+        className: "absolute sm:left-[25%] left-[15%]",
+        detailsCN: "translate-y-12",
+    },
+    {
+        gridPosition: "col-[2/3] row-[1/2]",
+        className: "absolute top-[20%] left-[20%]",
+        directionR: true,
+        delay: 1,
+    },
+    {
+        gridPosition: "row-[1/2] col-[1/2]",
+        className: "absolute top-[60%] left-[5%]",
+        directionR: true,
+    },
+    {
+        gridPosition: "col-[2/3] row-[2/3]",
+        className: "absolute left-[10%]",
+        directionR: true,
+        delay: 2,
+    },
+    {
+        gridPosition: "col-[1/2] row-[2/3]",
+        className: "absolute top-[60%] left-[20%]",
+        directionR: true,
+    },
+    {
+        gridPosition: "row-[2/3] col-[3/4]",
+        className: "absolute right-0 top-[30%]",
+        delay: 2,
+    },
+    {
+        gridPosition: "col-[3/4] row-[3/4]",
+        className: "absolute left-[15%]",
+    },
+    {
+        gridPosition: "col-[2/3] row-[3/4]",
+        className: "absolute top-[20%] left-[10%]",
+        directionR: true,
+        delay: 2,
+    },
+    {
+        gridPosition: "row-[3/4] col-[1/2]",
+        className: "absolute top-[60%]",
+        directionR: true,
+    },
+];
+
 export default function ChapterRoute({ grade }: { grade: number }) {
     const [isMounted, setIsMounted] = useState(false);
     const [curChapter, setCurChapter] = useState(0);
@@ -53,8 +103,7 @@ export default function ChapterRoute({ grade }: { grade: number }) {
 
     const { scrollYProgress } = useScroll({
         target: container,
-        offset: ["start start", "end end"],
-        layoutEffect: false,
+        offset: ["start end", "end start"],
     });
 
     const parallax1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
@@ -82,99 +131,22 @@ export default function ChapterRoute({ grade }: { grade: number }) {
                         />
                     )}
                 </AnimatePresence>
-                <div className="relative grid grid-cols-[repeat(3,8rem)] min-[640px]:grid-cols-[repeat(3,12rem)] min-[1550px]:grid-cols-[repeat(3,14rem)] sm:grid-rows-[repeat(3,50rem)] grid-rows-[repeat(3,40rem)] pb-40 z-10">
-                    <LevelBtn
-                        romanNumeral={romanNumeral[1]}
-                        isMobile={isMobile}
-                        grade={grade}
-                        idx={1}
-                        gridPosition="col-[3/4] row-[1/2]"
-                        className="absolute left-[25%]"
-                        detailsCN="translate-y-12"
-                        setCurChapter={setCurChapter}
-                    />
-                    <LevelBtn
-                        romanNumeral={romanNumeral[2]}
-                        isMobile={isMobile}
-                        grade={grade}
-                        idx={2}
-                        directionR
-                        gridPosition="col-[2/3] row-[1/2]"
-                        className="absolute top-[20%] left-[20%]"
-                        delay={1}
-                        setCurChapter={setCurChapter}
-                    />
-                    <LevelBtn
-                        romanNumeral={romanNumeral[3]}
-                        isMobile={isMobile}
-                        grade={grade}
-                        idx={3}
-                        directionR
-                        gridPosition="row-[1/2] col-[1/2]"
-                        className="absolute top-[60%] left-[5%]"
-                        setCurChapter={setCurChapter}
-                    />
-                    <LevelBtn
-                        romanNumeral={romanNumeral[4]}
-                        isMobile={isMobile}
-                        grade={grade}
-                        idx={4}
-                        directionR
-                        gridPosition="col-[2/3] row-[2/3]"
-                        className="absolute left-[10%]"
-                        delay={2}
-                        setCurChapter={setCurChapter}
-                    />
-                    <LevelBtn
-                        romanNumeral={romanNumeral[5]}
-                        isMobile={isMobile}
-                        grade={grade}
-                        idx={5}
-                        directionR
-                        gridPosition="col-[1/2] row-[2/3]"
-                        className="absolute top-[60%] left-[20%]"
-                        setCurChapter={setCurChapter}
-                    />
-                    <LevelBtn
-                        romanNumeral={romanNumeral[6]}
-                        isMobile={isMobile}
-                        grade={grade}
-                        idx={6}
-                        gridPosition="row-[2/3] col-[3/-1]"
-                        className="absolute right-0 top-[30%]"
-                        delay={2}
-                        setCurChapter={setCurChapter}
-                    />
-                    <LevelBtn
-                        romanNumeral={romanNumeral[7]}
-                        isMobile={isMobile}
-                        grade={grade}
-                        idx={7}
-                        gridPosition="col-[3/4] row-[3/4]"
-                        className="absolute left-[15%]"
-                        setCurChapter={setCurChapter}
-                    />
-                    <LevelBtn
-                        romanNumeral={romanNumeral[8]}
-                        isMobile={isMobile}
-                        grade={grade}
-                        idx={8}
-                        directionR
-                        gridPosition="col-[2/3] row-[3/4]"
-                        className="absolute top-[20%] left-[10%]"
-                        delay={2}
-                        setCurChapter={setCurChapter}
-                    />
-                    <LevelBtn
-                        romanNumeral={romanNumeral[9]}
-                        isMobile={isMobile}
-                        grade={grade}
-                        idx={9}
-                        directionR
-                        gridPosition="row-[3/4] col-[1/2]"
-                        className="absolute top-[60%]"
-                        setCurChapter={setCurChapter}
-                    />
+                <div className="relative grid grid-cols-3 grid-rows-3 pb-40 z-10">
+                    {LevelBtnArray.map((config, idx) => (
+                        <LevelBtn
+                            romanNumeral={romanNumeral[idx]}
+                            isMobile={isMobile}
+                            grade={grade}
+                            idx={idx}
+                            gridPosition={config.gridPosition}
+                            className={config.className}
+                            detailsCN={config.detailsCN}
+                            directionR={config.directionR}
+                            delay={config.delay}
+                            setCurChapter={setCurChapter}
+                            key={idx}
+                        />
+                    ))}
                 </div>
                 <div className="border-2 rounded-[1.25rem] border-[#2f406e] bg-[#041dff0c] max-w-[32rem] h-fit max-[1275px]:static sticky max-[1275px]:top-[0rem] top-[9rem] sm:p-[2rem] p-[1.5rem] backdrop-blur-lg backdrop-saturate-150 z-10">
                     <p className="sm:text-4xl text-3xl font-bold font-['Chakra_Petch']">
@@ -326,13 +298,21 @@ const Drawer = ({
                             {description[0][curChapter - 1]}
                         </div>
                     </div>
-                    <Link
-                        className={`relative h-[3rem] rounded-2xl bg-[#207cf3] transition-colors ease-in duration-150 hover:bg-[#0c6ce8] active:top-[5px] flex justify-center items-center gap-5 text-xl text-white font-medium ${styling.levelBtn}`}
-                        href=""
-                    >
-                        Khám phá
-                        <Image src={find} alt="" className="h-[60%] w-fit" />
-                    </Link>
+                    <div className="">
+                        <button></button>
+                        <Link
+                            className={`relative h-[3rem] rounded-2xl bg-[#207cf3] transition-colors ease-in duration-150 hover:bg-[#0c6ce8] active:top-[5px] flex justify-center items-center gap-5 text-xl text-white font-medium ${styling.levelBtn}`}
+                            href=""
+                        >
+                            Khám phá
+                            <Image
+                                src={find}
+                                alt=""
+                                className="h-[60%] w-fit"
+                            />
+                        </Link>
+                        <button></button>
+                    </div>
                 </div>
             </motion.div>
         </div>

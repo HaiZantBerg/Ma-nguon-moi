@@ -25,7 +25,7 @@ export default function RootLayout({
             <body className={`${inter.className} overflow-auto`}>
                 <QueryProvider>
                     <Navbar />
-                    <div>{children}</div>
+                    {children}
                 </QueryProvider>
             </body>
         </html>

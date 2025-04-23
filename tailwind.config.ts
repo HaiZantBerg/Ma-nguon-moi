@@ -6,11 +6,14 @@ const config: Config = {
         "./components/**/*.{js,ts,jsx,tsx,mdx}",
         "./app/**/*.{js,ts,jsx,tsx,mdx}",
         "./components/Extra/**/*.{js,ts,jsx,tsx,mdx}",
+        "./components/Test/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
         extend: {
             height: {
                 dvh: "100dvh",
+                svh: "100svh",
+                lvh: "100lvh",
             },
             colors: {
                 background: "var(--background)",

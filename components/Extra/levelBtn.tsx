@@ -40,7 +40,11 @@ export default function LevelBtn({
     const [scope, animate] = useAnimate();
 
     const handleMouseClick = () => {
-        if (isMobile) setCurChapter(idx);
+        if (isMobile) setCurChapter(idx + 1);
+
+        document
+            .getElementById(`container${idx}${grade}`)
+            ?.scrollIntoView({ behavior: "smooth" });
     };
 
     const handleMouseEnter = () => {
@@ -111,12 +115,13 @@ export default function LevelBtn({
         const el = document.getElementById(`container${idx}${grade}`);
         setMountElement(el);
     }, [idx, grade]);
-
     return (
-        <div className={`${gridPosition} w-full h-full relative`}>
+        <div
+            className={`${gridPosition} w-[6rem] min-[640px]:w-[12rem] min-[400px]:w-[8rem] min-[1550px]:w-[14rem] sm:h-[50rem] h-[45rem] relative`}
+        >
             <div className={className}>
                 <div
-                    className="relative sm:w-[8rem] w-[7rem] aspect-[0.5] select-none"
+                    className="relative sm:w-[8rem] w-[5.5rem] aspect-[0.5] select-none scroll-mt-[40vh]"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                     onClick={handleMouseClick}
@@ -146,10 +151,10 @@ export default function LevelBtn({
                                             </span>
                                             <br />
                                             <span className="text-xl">
-                                                {chapter[grade][idx - 1]}
+                                                {chapter[grade][idx]}
                                             </span>
                                         </p>
-                                        {description[grade][idx - 1]}
+                                        {description[grade][idx]}
                                         <Link
                                             className={`relative h-[3rem] rounded-2xl mt-3 bg-[#207cf3] transition-colors ease-in duration-150 hover:bg-[#0c6ce8] active:top-[5px] flex justify-center items-center gap-5 text-xl text-white font-medium ${styling.levelBtn}`}
                                             href=""
@@ -193,7 +198,7 @@ export default function LevelBtn({
                         <Image priority src={levelUiII} alt="" />
                     </motion.div>
                     <motion.div
-                        className="absolute top-[5rem] left-1/2 -translate-x-1/2 w-[80%] aspect-square justify-center flex items-center pointer-events-none"
+                        className="absolute sm:top-[5rem] top-[6rem] left-1/2 -translate-x-1/2 w-[80%] aspect-square justify-center flex items-center pointer-events-none"
                         animate={{ y: [0, -10] }}
                         transition={{
                             duration: 2,
@@ -217,8 +222,8 @@ export default function LevelBtn({
                         >
                             <Image priority src={levelUiIII} alt="" />
                         </motion.div>
-                        <div className="font-['Algerian'] sm:text-[2.25rem] text-[1.9rem] text-black">
-                            {idx}
+                        <div className="font-['Algerian'] sm:text-[2.25rem] text-[1.65rem] text-black">
+                            {idx + 1}
                         </div>
                     </motion.div>
                 </div>
