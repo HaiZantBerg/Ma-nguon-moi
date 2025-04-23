@@ -178,7 +178,7 @@ export default function ChapterRoute({ grade }: { grade: number }) {
                         </div>
                     </div>
                 </div>
-                <div className="fixed top-0 left-0 w-full h-full select-none pointer-events-none">
+                <div className="fixed top-0 left-0 w-full h-lvh select-none pointer-events-none">
                     <motion.div
                         className="absolute top-[32%] left-1/2 -translate-x-1/2 w-[50rem] opacity-[15%]"
                         style={{
