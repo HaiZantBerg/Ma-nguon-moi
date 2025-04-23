@@ -153,7 +153,7 @@ export default function ChapterRoute({ grade }: { grade: number }) {
                         KHỐI
                     </p>
                     <p className="sm:text-[5rem] text-[4.25rem] font-bold mb-4 sm:leading-[4rem] leading-[3rem] font-['Chakra_Petch']">
-                        10
+                        1{grade}
                     </p>
                     <div className="flex gap-4 sm:text-base text-[0.8rem]">
                         <p>
