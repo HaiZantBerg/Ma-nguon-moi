@@ -8,8 +8,8 @@
 /coverage
 components/Main/SpaceCanvas.tsx
 components/Others/Image.tsx
-components/test/
-app/check/
+components/uhh/
+app/test/
 app/historicalfigures/
 
 # next.js
