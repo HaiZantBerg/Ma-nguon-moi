@@ -9,11 +9,12 @@ import bg3 from "@/public/Image/bgpart3.png";
 import bg4 from "@/public/Image/bgpart4.png";
 import bg5 from "@/public/Image/bgpart5.png";
 import find from "@/public/Svg/find.svg";
+import arrow from "@/public/Svg/arrowStuff.svg";
 import portalIcon from "@/public/Image/portalSmIcon.png";
 import {
-    AnimatePresence,
     easeIn,
     motion,
+    useAnimate,
     useMotionValue,
     useScroll,
     useTransform,
@@ -21,7 +22,7 @@ import {
 import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 import { chapter, description } from "../static/chaptersStatic";
-import styling from "@/components/css/test.module.css";
+import styling from "@/components/css/generalStyling.module.css";
 
 const LevelBtnArray = [
     {
@@ -73,7 +74,13 @@ const LevelBtnArray = [
     },
 ];
 
-export default function ChapterRoute({ grade }: { grade: number }) {
+export default function ChapterRoute({
+    grade,
+    numberOfChapter,
+}: {
+    grade: number;
+    numberOfChapter: number;
+}) {
     const [isMounted, setIsMounted] = useState(false);
     const [curChapter, setCurChapter] = useState(0);
 
@@ -118,19 +125,15 @@ export default function ChapterRoute({ grade }: { grade: number }) {
                 className="w-full h-fit max-[1275px]:flex-col-reverse flex-row flex bg-white sm:pt-36 pt-28 max-[1275px]:justify-normal items-start max-[1275px]:items-center justify-center min-[1550px]:gap-[15rem] min-[640px]:gap-[5rem] sm:px-24 px-4"
                 ref={container}
             >
-                <AnimatePresence>
-                    {curChapter > 0 && (
-                        <Drawer
-                            curChapter={curChapter}
-                            romanNumeral={romanNumeral}
-                            handleCloseDrawer={() => {
-                                document.body.style.overflow = "auto";
-
-                                setCurChapter(0);
-                            }}
-                        />
-                    )}
-                </AnimatePresence>
+                {isMobile && curChapter > 0 && (
+                    <Drawer
+                        curChapter={curChapter}
+                        romanNumeral={romanNumeral}
+                        setCurChapter={setCurChapter}
+                        grade={grade}
+                        numberOfChapter={numberOfChapter}
+                    />
+                )}
                 <div className="relative grid grid-cols-3 grid-rows-3 pb-40 z-10">
                     {LevelBtnArray.map((config, idx) => (
                         <LevelBtn
@@ -172,21 +175,23 @@ export default function ChapterRoute({ grade }: { grade: number }) {
                                     />
                                 </div>
                                 <span className="pl-2 text-nowrap">
-                                    9 chương
+                                    {numberOfChapter} chương
                                 </span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="fixed top-0 left-0 w-full h-lvh select-none pointer-events-none">
-                    <motion.div
-                        className="absolute top-[32%] left-1/2 -translate-x-1/2 w-[50rem] opacity-[15%]"
-                        style={{
-                            y: parallax1,
-                        }}
-                    >
-                        <Image src={bg1} alt="" />
-                    </motion.div>
+                <div className="fixed top-0 left-0 w-full h-full select-none pointer-events-none">
+                    {!isMobile && (
+                        <motion.div
+                            className="absolute top-[32%] left-1/2 -translate-x-1/2 w-[50rem] opacity-[15%]"
+                            style={{
+                                y: parallax1,
+                            }}
+                        >
+                            <Image src={bg1} alt="" />
+                        </motion.div>
+                    )}
                     <motion.div
                         className="absolute top-[15%] left-[5%] w-[25rem] opacity-[14%]"
                         style={{
@@ -204,7 +209,7 @@ export default function ChapterRoute({ grade }: { grade: number }) {
                         <Image src={bg3} alt="" />
                     </motion.div>
                     <motion.div
-                        className="absolute top-[25%] right-[5rem] w-[22.5rem] opacity-[15%]"
+                        className="absolute md:top-[25%] top-[40%] right-[5rem] w-[22.5rem] opacity-[15%]"
                         style={{
                             y: parallax4,
                         }}
@@ -212,7 +217,7 @@ export default function ChapterRoute({ grade }: { grade: number }) {
                         <Image src={bg4} alt="" />
                     </motion.div>
                     <motion.div
-                        className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[95%] opacity-[16%]"
+                        className="absolute md:top-[20%] top-[50%] left-1/2 -translate-x-1/2 md:h-full h-[60%] aspect-video opacity-[17.5%]"
                         style={{
                             y: parallax5,
                         }}
@@ -227,59 +232,84 @@ export default function ChapterRoute({ grade }: { grade: number }) {
 const Drawer = ({
     curChapter,
     romanNumeral,
-    handleCloseDrawer,
+    setCurChapter,
+    grade,
+    numberOfChapter,
 }: {
     curChapter: number;
     romanNumeral: string[];
-    handleCloseDrawer: () => void;
+    setCurChapter: React.Dispatch<React.SetStateAction<number>>;
+    grade: number;
+    numberOfChapter: number;
 }) => {
+    const [scope, animate] = useAnimate();
+
     useEffect(() => {
         document.body.style.overflow = "hidden";
     }, []);
 
     const dragY = useMotionValue(0);
 
+    const handleCloseDrawer = async () => {
+        animate(
+            scope.current,
+            {
+                backgroundColor: "#00000000",
+            },
+            {
+                duration: 0.3,
+                ease: easeIn,
+            }
+        );
+
+        await animate("#drawer", {
+            y: "100%",
+            scale: 0.85,
+        });
+
+        document.body.style.overflow = "auto";
+
+        setCurChapter(0);
+    };
+
     return (
-        <div className="fixed h-full w-full left-0 top-0 z-50 flex items-end">
+        <motion.div
+            className="fixed left-0 top-0 z-50 w-full h-full"
+            onClick={handleCloseDrawer}
+            initial={{ backgroundColor: "#00000000" }}
+            animate={{ backgroundColor: "#00000050" }}
+            transition={{
+                duration: 0.3,
+                ease: easeIn,
+            }}
+            ref={scope}
+        >
             <motion.div
-                className="bg-[#000000] w-full h-full opacity-0 absolute top-0 left-0 -z-10"
-                onClick={handleCloseDrawer}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.5 }}
-                exit={{ opacity: 0 }}
-                transition={{
-                    duration: 0.3,
-                    ease: easeIn,
+                onClick={(e) => {
+                    e.stopPropagation();
                 }}
-            />
-            <motion.div
-                className="bg-white w-full rounded-t-2xl flex items-center flex-col pb-[17rem]"
+                className={`${styling.fakeDrawer} bg-white w-full rounded-t-2xl flex items-center flex-col absolute bottom-0 z-10`}
                 id="drawer"
+                drag="y"
                 style={{ y: dragY }}
                 initial={{
                     y: "100%",
                     scale: 0.85,
                 }}
                 animate={{
-                    y: "256px",
+                    y: "0%",
                     scale: 1,
                 }}
-                exit={{
-                    y: "100%",
-                    scale: 0.85,
-                }}
-                layout="position"
-                dragConstraints={{
-                    top: 256,
-                    bottom: 256,
-                }}
                 dragElastic={{
-                    top: 0.125,
-                    bottom: 0.3,
+                    top: 0.3,
+                    bottom: 0.5,
                 }}
-                drag="y"
+                dragConstraints={{
+                    bottom: 0,
+                    top: 0,
+                }}
                 onDragEnd={() => {
-                    if (dragY.get() >= 300) handleCloseDrawer();
+                    if (dragY.get() >= 50) handleCloseDrawer();
                 }}
             >
                 <div className="w-[10rem] bg-[#96969677] h-[0.25rem] rounded-2xl mt-3 pointer-events-none" />
@@ -298,10 +328,38 @@ const Drawer = ({
                             {description[0][curChapter - 1]}
                         </div>
                     </div>
-                    <div className="">
-                        <button></button>
+                    <div className="flex h-[3rem] gap-3 relative">
+                        <div className="absolute w-full flex h-full -bottom-1 gap-3">
+                            <div className="h-full aspect-square bg-[#656575] rounded-2xl" />
+                            <div className="h-full grow bg-[#3b3fa1] rounded-2xl" />
+                            <div className="h-full aspect-square bg-[#656575] rounded-2xl" />
+                        </div>
+                        <button
+                            className={`relative h-full aspect-square ${
+                                curChapter > 1 ? "bg-[#a8a8c3]" : "bg-[#50505e]"
+                            } rounded-2xl`}
+                            onClick={() => {
+                                if (curChapter > 1) {
+                                    setCurChapter(curChapter - 1);
+
+                                    document
+                                        .getElementById(
+                                            `container${curChapter - 2}${grade}`
+                                        )
+                                        ?.scrollIntoView({
+                                            behavior: "smooth",
+                                        });
+                                }
+                            }}
+                        >
+                            <Image
+                                src={arrow}
+                                alt=""
+                                className="rotate-270 w-[50%] translate-x-[40%]"
+                            />
+                        </button>
                         <Link
-                            className={`relative h-[3rem] rounded-2xl bg-[#207cf3] transition-colors ease-in duration-150 hover:bg-[#0c6ce8] active:top-[5px] flex justify-center items-center gap-5 text-xl text-white font-medium ${styling.levelBtn}`}
+                            className="relative h-full rounded-2xl bg-[#207cf3] grow flex justify-center items-center sm:gap-5 gap-3 text-xl text-white font-medium"
                             href=""
                         >
                             Khám phá
@@ -311,10 +369,35 @@ const Drawer = ({
                                 className="h-[60%] w-fit"
                             />
                         </Link>
-                        <button></button>
+                        <button
+                            className={`relative h-full aspect-square ${
+                                curChapter < numberOfChapter
+                                    ? "bg-[#a8a8c3]"
+                                    : "bg-[#50505e]"
+                            } rounded-2xl`}
+                            onClick={() => {
+                                if (curChapter < numberOfChapter) {
+                                    document
+                                        .getElementById(
+                                            `container${curChapter}${grade}`
+                                        )
+                                        ?.scrollIntoView({
+                                            behavior: "smooth",
+                                        });
+
+                                    setCurChapter(curChapter + 1);
+                                }
+                            }}
+                        >
+                            <Image
+                                src={arrow}
+                                alt=""
+                                className="rotate-90 w-[50%] translate-x-[60%]"
+                            />
+                        </button>
                     </div>
                 </div>
             </motion.div>
-        </div>
+        </motion.div>
     );
 };

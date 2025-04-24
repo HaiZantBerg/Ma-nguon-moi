@@ -113,6 +113,7 @@ export default function LevelBtn({
 
     useEffect(() => {
         const el = document.getElementById(`container${idx}${grade}`);
+
         setMountElement(el);
     }, [idx, grade]);
     return (
@@ -121,7 +122,7 @@ export default function LevelBtn({
         >
             <div className={className}>
                 <div
-                    className="relative sm:w-[8rem] w-[5.5rem] aspect-[0.5] select-none scroll-mt-[40vh]"
+                    className="relative sm:w-[8rem] w-[5.5rem] aspect-[0.5] select-none scroll-mt-[30vh]"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                     onClick={handleMouseClick}
@@ -172,7 +173,7 @@ export default function LevelBtn({
                             mountElement
                         )}
                     <motion.div
-                        className="absolute top-[10.75rem] left-1/2 -translate-x-1/2 pointer-events-none w-full"
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none w-full"
                         animate={{ y: [0, -10] }}
                         transition={{
                             duration: 2,
@@ -185,7 +186,7 @@ export default function LevelBtn({
                         <Image priority src={levelUiI} alt="" />
                     </motion.div>
                     <motion.div
-                        className="absolute top-[10rem] left-1/2 -translate-x-1/2 w-[75%] pointer-events-none"
+                        className="absolute sm:bottom-[4.8rem] bottom-[3.5rem] left-1/2 -translate-x-1/2 w-[75%] pointer-events-none"
                         animate={{ y: [0, -10] }}
                         transition={{
                             duration: 2,
@@ -198,7 +199,7 @@ export default function LevelBtn({
                         <Image priority src={levelUiII} alt="" />
                     </motion.div>
                     <motion.div
-                        className="absolute sm:top-[5rem] top-[6rem] left-1/2 -translate-x-1/2 w-[80%] aspect-square justify-center flex items-center pointer-events-none"
+                        className="absolute sm:bottom-[7.5rem] bottom-[5rem] left-1/2 -translate-x-1/2 w-[80%] aspect-square justify-center flex items-center pointer-events-none"
                         animate={{ y: [0, -10] }}
                         transition={{
                             duration: 2,
