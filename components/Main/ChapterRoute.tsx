@@ -174,6 +174,7 @@ export default function ChapterRoute({
                                         height={24}
                                     />
                                 </div>
+                                {/* Thêm các chí số funfact game... */}
                                 <span className="pl-2 text-nowrap">
                                     {numberOfChapter} chương
                                 </span>
@@ -181,7 +182,7 @@ export default function ChapterRoute({
                         </div>
                     </div>
                 </div>
-                <div className="fixed top-0 left-0 w-full h-full select-none pointer-events-none">
+                <div className="fixed top-0 left-0 w-full h-svh select-none pointer-events-none">
                     {!isMobile && (
                         <motion.div
                             className="absolute top-[32%] left-1/2 -translate-x-1/2 w-[50rem] opacity-[15%]"
