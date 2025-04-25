@@ -71,6 +71,7 @@ const LevelBtnArray = [
         gridPosition: "row-[3/4] col-[1/2]",
         className: "absolute top-[60%]",
         directionR: true,
+        detailsCN: "-translate-y-24 bottom-0",
     },
 ];
 
@@ -134,7 +135,7 @@ export default function ChapterRoute({
                         numberOfChapter={numberOfChapter}
                     />
                 )}
-                <div className="relative grid grid-cols-3 grid-rows-3 pb-40 z-10">
+                <div className="relative grid grid-cols-[repeat(3,1fr)] grid-rows-[repeat(3,1fr)] pb-40 z-10">
                     {LevelBtnArray.map((config, idx) => (
                         <LevelBtn
                             romanNumeral={romanNumeral[idx]}
@@ -273,6 +274,12 @@ const Drawer = ({
         setCurChapter(0);
     };
 
+    const handleBtnClick = (id: number) => {
+        animate(`#btn${id}`, {
+            y: ["5px", "0px"],
+        });
+    };
+
     return (
         <motion.div
             className="fixed left-0 top-0 z-50 w-full h-full"
@@ -330,27 +337,28 @@ const Drawer = ({
                         </div>
                     </div>
                     <div className="flex h-[3rem] gap-3 relative">
-                        <div className="absolute w-full flex h-full -bottom-1 gap-3">
-                            <div className="h-full aspect-square bg-[#656575] rounded-2xl" />
+                        <div className="absolute w-full flex h-full -bottom-1 gap-3 -z-10">
+                            <div className="h-full aspect-square rounded-2xl bg-[#32324b]" />
                             <div className="h-full grow bg-[#3b3fa1] rounded-2xl" />
-                            <div className="h-full aspect-square bg-[#656575] rounded-2xl" />
+                            <div className="h-full aspect-square rounded-2xl bg-[#32324b]" />
                         </div>
                         <button
-                            className={`relative h-full aspect-square ${
-                                curChapter > 1 ? "bg-[#a8a8c3]" : "bg-[#50505e]"
-                            } rounded-2xl`}
+                            id="btn1"
+                            className="h-full aspect-square rounded-2xl bg-[#4a5c99]"
                             onClick={() => {
-                                if (curChapter > 1) {
-                                    setCurChapter(curChapter - 1);
+                                handleBtnClick(1);
 
-                                    document
-                                        .getElementById(
-                                            `container${curChapter - 2}${grade}`
-                                        )
-                                        ?.scrollIntoView({
-                                            behavior: "smooth",
-                                        });
-                                }
+                                const des = ((curChapter + 7) % 9) + 1;
+
+                                setCurChapter(des);
+
+                                document
+                                    .getElementById(
+                                        `container${des - 1}${grade}`
+                                    )
+                                    ?.scrollIntoView({
+                                        behavior: "smooth",
+                                    });
                             }}
                         >
                             <Image
@@ -360,8 +368,12 @@ const Drawer = ({
                             />
                         </button>
                         <Link
-                            className="relative h-full rounded-2xl bg-[#207cf3] grow flex justify-center items-center sm:gap-5 gap-3 text-xl text-white font-medium"
+                            id="btn2"
+                            className="h-full rounded-2xl bg-[#207cf3] grow flex justify-center items-center sm:gap-5 gap-3 text-xl text-white font-medium"
                             href=""
+                            onClick={() => {
+                                handleBtnClick(2);
+                            }}
                         >
                             Khám phá
                             <Image
@@ -371,23 +383,20 @@ const Drawer = ({
                             />
                         </Link>
                         <button
-                            className={`relative h-full aspect-square ${
-                                curChapter < numberOfChapter
-                                    ? "bg-[#a8a8c3]"
-                                    : "bg-[#50505e]"
-                            } rounded-2xl`}
+                            id="btn3"
+                            className="h-full aspect-square rounded-2xl bg-[#4a5c99]"
                             onClick={() => {
-                                if (curChapter < numberOfChapter) {
-                                    document
-                                        .getElementById(
-                                            `container${curChapter}${grade}`
-                                        )
-                                        ?.scrollIntoView({
-                                            behavior: "smooth",
-                                        });
+                                handleBtnClick(3);
 
-                                    setCurChapter(curChapter + 1);
-                                }
+                                const inc = curChapter % numberOfChapter;
+
+                                document
+                                    .getElementById(`container${inc}${grade}`)
+                                    ?.scrollIntoView({
+                                        behavior: "smooth",
+                                    });
+
+                                setCurChapter(inc + 1);
                             }}
                         >
                             <Image

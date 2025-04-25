@@ -9,7 +9,6 @@ import Image from "next/image";
 import { motion, useAnimate } from "motion/react";
 import find from "@/public/Svg/find.svg";
 import Link from "next/link";
-import styling from "@/components/css/test.module.css";
 import { createPortal } from "react-dom";
 
 export default function LevelBtn({
@@ -157,7 +156,7 @@ export default function LevelBtn({
                                         </p>
                                         {description[grade][idx]}
                                         <Link
-                                            className={`relative h-[3rem] rounded-2xl mt-3 bg-[#207cf3] transition-colors ease-in duration-150 hover:bg-[#0c6ce8] active:top-[5px] flex justify-center items-center gap-5 text-xl text-white font-medium ${styling.levelBtn}`}
+                                            className="h-[3rem] rounded-2xl mt-3 bg-[#207cf3] shadow-[0_0.25rem_#3b3fa1] active:shadow-[0_0_#3b3fa1] active:translate-y-[5px] hover:bg-[#0c6ce8] flex justify-center items-center gap-5 text-xl text-white font-medium"
                                             href=""
                                         >
                                             Khám phá
