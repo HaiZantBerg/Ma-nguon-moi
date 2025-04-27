@@ -111,7 +111,7 @@ export default function ChapterRoute({
 
     const { scrollYProgress } = useScroll({
         target: container,
-        offset: ["start end", "end start"],
+        offset: ["start start", "end end"],
     });
 
     const parallax1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
