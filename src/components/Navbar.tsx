@@ -6,10 +6,10 @@ import Link from "next/link";
 
 export default function Navbar() {
     const pathname = usePathname();
-    const lastSegment = pathname.split("/").at(-1);
+    // const lastSegment = pathname.split("/").at(-1);
 
     // Ktra nếu có lastSegment thì không render navBar
-    const noNavBarRoutes = ["login", "", "register"];
+    // const noNavBarRoutes = ["login", "", "register"];
 
     return (
         <div

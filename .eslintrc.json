@@ -22,7 +22,7 @@
                 "mode": "full",
                 "type": "features",
                 "capture": ["featureName"],
-                "pattern": ["src/features/**/*"]
+                "pattern": ["src/features/*/**/*"]
             },
             {
                 "mode": "full",
