@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function Navbar() {
-    const pathname = usePathname();
+    // const pathname = usePathname();
     // const lastSegment = pathname.split("/").at(-1);
 
     // Ktra nếu có lastSegment thì không render navBar
