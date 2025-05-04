@@ -6,11 +6,14 @@
 
 # testing
 /coverage
-components/Main/SpaceCanvas.tsx
-components/Others/Image.tsx
-components/uhh/
-app/test/
-app/historicalfigures/
+src/components/Main/SpaceCanvas.tsx
+src/components/Others/Image.tsx
+src/components/uhh/
+src/app/test/
+src/app/historicalfigures/
+
+#legacy
+src/components/legacy/
 
 # next.js
 /.next/
