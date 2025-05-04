@@ -1,0 +1,174 @@
+"use client";
+
+import { useAnimate } from "motion/react";
+import React, { useRef, useState } from "react";
+import { extraBodyVariants, extraPaddingLeft } from "./static";
+
+export default function ExtraInlineFact({
+    children,
+    buttonContent,
+    buttonClassName = "",
+    containerClassName = "",
+    extraBodyClassName = "",
+    flip = false,
+    line = false,
+    extraBodyVariant = "content",
+}: {
+    children?: React.ReactNode;
+    buttonContent: string;
+    buttonClassName?: string;
+    containerClassName?: string;
+    extraBodyClassName?: string;
+    flip?: boolean;
+    line?: boolean;
+    extraBodyVariant?: "instance" | "content";
+}) {
+    const [scope, animate] = useAnimate();
+
+    const [openExtra, setOpenExtra] = useState(false);
+
+    const sneakyRef = useRef<HTMLDivElement | null>(null);
+    const extraBodyContainerRef = useRef<HTMLDivElement | null>(null);
+    const delayTime = useRef<number>(0);
+
+    const handleOpenClose = async () => {
+        if (!delayTime.current && extraBodyContainerRef.current)
+            delayTime.current =
+                Math.sqrt(
+                    extraBodyContainerRef.current.getBoundingClientRect()
+                        .height,
+                ) / 90;
+
+        if (!openExtra) {
+            setTimeout(() => {
+                if (sneakyRef.current)
+                    sneakyRef.current.style.display = "block";
+            }, 10);
+
+            animate(
+                "#extraBody",
+                {
+                    height: "fit-content",
+                },
+                {
+                    type: "spring",
+                    stiffness: 450,
+                    damping: 40,
+                    mass: 1.5,
+                },
+            );
+
+            setOpenExtra(true);
+        } else {
+            setTimeout(
+                () => {
+                    if (sneakyRef.current)
+                        sneakyRef.current.style.display = "none";
+                },
+                delayTime.current * 1000 - 50,
+            );
+
+            await animate(
+                "#extraBody",
+                {
+                    height: "0px",
+                },
+                { duration: delayTime.current },
+            );
+
+            setOpenExtra(false);
+        }
+    };
+
+    const handleMouseEnter = () => {
+        animate("#line", {
+            width: "95%",
+        });
+    };
+
+    const handleMouseLeave = () => {
+        animate("#line", {
+            width: "0px",
+        });
+    };
+
+    return (
+        <div
+            ref={scope}
+            className={`${containerClassName && containerClassName} ${
+                flip ? "inline-flex" : "inline"
+            }`}
+        >
+            <button
+                onClick={handleOpenClose}
+                className={`${
+                    buttonClassName && buttonClassName
+                } hover:bg-[#f58700] transition-all duration-2 ease-in text-white py-[3px] px-[5px] ${
+                    openExtra
+                        ? flip
+                            ? "bg-[#f58700] rounded-[0px_0px_8px_8px]"
+                            : "bg-[#f58700] rounded-[8px_8px_0px_0px]"
+                        : "bg-[#ff981a] rounded-[8px_8px_8px_8px]"
+                } relative`}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                id="button"
+            >
+                <div className="relative w-full">
+                    <div>{buttonContent}</div>
+                    <div className="h-[2px] w-full absolute bottom-[-0.5px] left-0 grid grid-cols-1 grid-rows-1 *:justify-self-center">
+                        <div className="bg-[rgba(255,210,152,0.75)] h-full col-[1/-1] row-[1/-1] w-[95%]" />
+                        <div
+                            className="bg-[rgba(255,251,246,0.75)] w-0 h-full z-10 col-[1/-1] row-[1/-1]"
+                            id="line"
+                        />
+                    </div>
+                </div>
+                <div
+                    className={`absolute hidden ${
+                        flip ? "top-[-15px]" : "bottom-[-15px]"
+                    } left-0 z-[5] h-[15px] w-full bg-[#e67e00]`}
+                    ref={sneakyRef}
+                />
+            </button>
+            {openExtra && (
+                <div
+                    className="absolute w-full h-full top-0 left-0 z-10"
+                    onClick={handleOpenClose}
+                />
+            )}
+            <div
+                className={`h-0 absolute left-0 ${extraPaddingLeft} md1:pr-2 pr-5 overflow-hidden w-full flex ${
+                    flip ? "items-end -translate-y-full z-10" : ""
+                }`}
+                id="extraBody"
+                ref={extraBodyContainerRef}
+            >
+                {openExtra && (
+                    <>
+                        <div
+                            className={`${extraBodyVariants[extraBodyVariant]} ${extraBodyClassName} relative z-20 rounded-[15px] text-white md:py-4 w-full py-3 md:px-6 px-4 bg-[#e67e00]`}
+                        >
+                            <div>{children}</div>
+                            <button
+                                className="border-2 md:text-[0.9rem] text-sm mt-3 border-white py-2 font-semibold px-6 rounded-full"
+                                onClick={handleOpenClose}
+                            >
+                                Đóng
+                            </button>
+                        </div>
+                        {line && (
+                            <div className="bg-white w-[3px] h-full absolute md1:left-[48px] md:left-[12px] left-[8px] top-0">
+                                <div className="bg-black w-[1px] h-full translate-x-[1px]" />
+                            </div>
+                        )}
+                        <div
+                            className="absolute left-0 w-full h-full"
+                            onClick={handleOpenClose}
+                        />
+                    </>
+                )}
+            </div>
+        </div>
+    );
+}

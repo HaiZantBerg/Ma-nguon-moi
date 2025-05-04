@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+    --animationStarTime1: 30000ms;
+    --animationStarTime2: 80000ms;
+    --animationStarTime3: 60000ms;
+}
+
+body {
+    color: #171717;
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+@layer base {
+    @font-face {
+        font-family: "Chakra Petch";
+        src: url("../../public/font/ChakraPetch-Medium.ttf");
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Chakra Petch";
+        src: url("../../public/font/ChakraPetch-Regular.ttf");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Chakra Petch";
+        src: url("../../public/font/ChakraPetch-Light.ttf");
+        font-weight: 300;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Chakra Petch";
+        src: url("../../public/font/ChakraPetch-Bold.ttf");
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Chakra Petch";
+        src: url("../../public/font/ChakraPetch-SemiBold.ttf");
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Algerian";
+        src: url("../../public/font/Algerian.woff");
+        font-weight: normal;
+        font-style: normal;
+    }
+}
