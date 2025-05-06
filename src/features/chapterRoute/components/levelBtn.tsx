@@ -89,20 +89,19 @@ export default function LevelBtn({
                                     id="detail"
                                 >
                                     <div className="w-[22.5rem] p-5">
-                                        <p className="mb-3 text-center">
-                                            <span className="font-['Chakra_Petch'] text-[1.4rem] font-semibold">
+                                        <header className="mb-3 text-center">
+                                            <p className="font-['Chakra_Petch'] text-[1.4rem] font-semibold">
                                                 CHƯƠNG {romanNumeral}
-                                            </span>
-                                            <br />
-                                            <span className="text-xl">
+                                            </p>
+                                            <p className="text-xl">
                                                 {chapter[grade][idx]}
-                                            </span>
-                                        </p>
+                                            </p>
+                                        </header>
                                         {description[grade][idx]}
                                         <Button3d
                                             as={Link}
                                             variant="blue"
-                                            className="mt-3 h-[3rem] gap-5 text-xl block"
+                                            className="mt-3 h-[3rem] text-xl block"
                                             href={`/khoi1${grade}/chuong${idx + 1}`}
                                         >
                                             <Button3d.Content className="gap-3">

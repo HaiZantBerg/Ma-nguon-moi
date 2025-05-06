@@ -11,6 +11,7 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
     - Thêm mấy cái chỉ số các thứ trong Card ở phần ChapterRoute
     - Làm thêm cái Icon biểu tượng cho từng khối lớp
     - Làm mới lại đống Lesson, FunFact, Quizzes
+    - LÀM CÁI DB 3:< CẦN LẮM R
 
 ### Đã hoàn thành 🥰🥰🥰🫠🫠:
 
@@ -33,3 +34,7 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
 
     11:30 PM: trời sửa nhìu lỗi phết:v chả hiểu sao phải 'use client' khi dùng compound component, bây giờ mới bắt đầu xây dựng backend mà chưa bt bắt đầu từ đâu hết:<
     thôi mấy cái này toàn đi tắm để suy nghĩ thui à:3 đẩy lên lun, trời thấy web chả đổi mấy mà code đổi gần như hoàn toàn rồi, chắc nhìn git add sẽ chất phết
+
+- 5 / 5 / 2025:
+  Mới đó mà hết nghỉ lễ r:v sắp thi r, đã thế còn dính thêm robot;-;
+  r cả thi tin học trẻ bruhhh

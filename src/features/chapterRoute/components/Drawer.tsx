@@ -86,14 +86,9 @@ export default function Drawer({
                         </div>
                     </article>
                     <div className="relative flex h-[3rem] gap-3">
-                        <div className="absolute -bottom-1 -z-10 flex h-full w-full gap-3">
-                            <div className="aspect-square h-full rounded-2xl bg-[]" />
-                            <div className="h-full grow rounded-2xl bg-[#3b3fa1]" />
-                            <div className="aspect-square h-full rounded-2xl bg-[#32324b]" />
-                        </div>
                         <Button3d
                             variant="grey"
-                            className="h-full aspect-square"
+                            className="size-full"
                             onClick={() => {
                                 const des = ((curChapter + 7) % 9) + 1;
 
@@ -134,7 +129,7 @@ export default function Drawer({
                             <Button3d.Behind />
                         </Button3d>
                         <Button3d
-                            className="aspect-square h-full"
+                            className="size-full"
                             variant="grey"
                             onClick={() => {
                                 const inc = curChapter % numberOfChapter;

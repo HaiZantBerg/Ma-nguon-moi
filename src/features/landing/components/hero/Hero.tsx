@@ -16,7 +16,7 @@ export default function Hero() {
             <div className="relative z-10 h-32 w-full pt-16">
                 <div className="mx-auto flex h-[56px] max-w-[98rem] items-center px-8">
                     <Link
-                        className="relative flex gap-4 font-['Chakra_Petch'] font-bold text-white"
+                        className="relative space-x-4 font-['Chakra_Petch'] font-bold text-white"
                         href="/"
                     >
                         <Image

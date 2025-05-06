@@ -40,7 +40,7 @@ export default function Button3d<T extends ElementType = "button">({
 
     return (
         <Button3dContext.Provider value={value}>
-            <Component className={cn(className, "relative")} {...props}>
+            <Component className={className} {...props}>
                 {children}
             </Component>
         </Button3dContext.Provider>

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-// import { Navbar } from "@/components";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 
@@ -15,15 +14,14 @@ export const metadata: Metadata = {
         "This app's purpose is for students to understand more about the history of maths",
 };
 
-export default function RootLayout({
-    children,
-}: Readonly<{
+type RootLayoutProps = Readonly<{
     children: ReactNode;
-}>) {
+}>;
+
+export default function RootLayout({ children }: RootLayoutProps) {
     return (
         <html lang="en">
             <body className={`${inter.className} h-lvh overflow-auto`}>
-                {/* <Navbar /> */}
                 {children}
             </body>
         </html>
