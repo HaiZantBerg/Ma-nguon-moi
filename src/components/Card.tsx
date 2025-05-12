@@ -1,19 +1,17 @@
 "use client";
 
 import { cn } from "@/lib/tailwind/tailwindMerge";
-import React, { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
+import React, { ComponentPropsWithoutRef, ElementType } from "react";
 
 type CardProps<T extends ElementType> = {
     as?: T;
-    children: ReactNode;
-    className?: string;
 };
 
 export default function Card({
     children,
     className,
     ...props
-}: CardProps<"div">) {
+}: CardProps<"div"> & ComponentPropsWithoutRef<"div">) {
     return (
         <div
             className={cn(

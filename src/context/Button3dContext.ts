@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 
 export type ButtonContextProps = {
-    variant: "blue" | "grey" | "logIn";
+    variant: "blue" | "grey" | "sign-up" | "sign-in";
 };
 
 export const Button3dContext = createContext<ButtonContextProps | undefined>(

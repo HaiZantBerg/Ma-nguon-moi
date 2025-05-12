@@ -1,5 +1,5 @@
 {
-    "name": "webkhkt",
+    "name": "ethems",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -9,16 +9,15 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "@emnapi/runtime": "^1.4.3",
-        "@preact/signals": "^1.2.2",
+        "@next/eslint-plugin-next": "^15.3.1",
         "@preact/signals-react": "^2.2.0",
+        "@prisma/client": "^6.7.0",
+        "@radix-ui/react-slot": "^1.2.2",
         "@tailwindcss/postcss": "^4.1.4",
-        "@typescript-eslint/eslint-plugin": "^8.16.0",
-        "@typescript-eslint/parser": "^8.16.0",
+        "@upstash/redis": "^1.34.9",
         "axios": "^1.9.0",
         "clsx": "^2.1.1",
         "debounce": "^2.2.0",
-        "eslint-plugin-boundaries": "^5.0.1",
         "express": "^5.1.0",
         "motion": "^12.8.0",
         "next": "^15.1.0",
@@ -29,22 +28,31 @@
         "react-responsive": "^10.0.1",
         "tailwind-merge": "^2.6.0",
         "tailwindcss-animate": "^1.0.7",
-        "webpack": "^5.97.1"
+        "webpack": "^5.97.1",
+        "zod": "^3.24.4"
     },
     "devDependencies": {
+        "@eslint/css": "^0.7.0",
+        "@eslint/js": "^9.26.0",
+        "@eslint/json": "^0.12.0",
         "@swc/cli": "^0.5.2",
         "@swc/core": "^1.10.1",
-        "@types/jsonwebtoken": "^9.0.9",
-        "@types/node": "^22.15.11",
+        "@types/node": "^22.15.12",
         "@types/react": "^18.3.16",
         "@types/react-dom": "^18.3.5",
         "@types/react-katex": "^3.0.4",
-        "eslint": "^9.15.0",
-        "eslint-config-next": "15.0.3",
+        "@typescript-eslint/parser": "^8.32.0",
+        "eslint": "^9.26.0",
+        "eslint-config-next": "^15.3.1",
+        "eslint-config-prettier": "^10.1.2",
+        "eslint-plugin-boundaries": "^5.0.1",
+        "eslint-plugin-react": "^7.37.5",
+        "globals": "^16.0.0",
         "postcss": "^8.5.3",
         "prettier": "^3.5.3",
         "prisma": "^6.7.0",
         "tsx": "^4.19.4",
-        "typescript": "^5.8.3"
+        "typescript": "^5.8.3",
+        "typescript-eslint": "^8.32.0"
     }
 }

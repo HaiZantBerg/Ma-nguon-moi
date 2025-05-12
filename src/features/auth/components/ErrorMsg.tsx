@@ -1,0 +1,27 @@
+import Image from "next/image";
+import React from "react";
+import warningSign from "@/assets/Svg/warning.svg";
+
+type ErrorMsgProps = {
+    errorArray?: string[];
+};
+
+export default function ErrorMsg({ errorArray }: ErrorMsgProps) {
+    if (errorArray)
+        return (
+            <div className="text-sm text-red-600 mt-1.5">
+                {errorArray.map((error, id) => (
+                    <div key={id} className="flex items-center">
+                        <div className="size-[0.9rem] mr-1">
+                            <Image
+                                src={warningSign}
+                                alt=""
+                                className="h-full w-auto"
+                            />
+                        </div>
+                        <p key={id}>{error}</p>
+                    </div>
+                ))}
+            </div>
+        );
+}

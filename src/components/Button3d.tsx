@@ -11,18 +11,11 @@ import React, {
     ComponentPropsWithoutRef,
     ElementType,
     HTMLAttributes,
-    ReactNode,
 } from "react";
-
-type ButtonProps = {
-    className?: string;
-    children: ReactNode;
-};
 
 type ButtonAsProps<T extends ElementType> = {
     as?: T;
-} & ButtonProps &
-    ButtonContextProps;
+} & ButtonContextProps;
 
 export default function Button3d<T extends ElementType = "button">({
     as,
@@ -34,13 +27,11 @@ export default function Button3d<T extends ElementType = "button">({
     Omit<ComponentPropsWithoutRef<T>, keyof ButtonAsProps<T>>) {
     const Component = as || "button";
 
-    const value = {
-        variant: variant,
-    };
+    const value = { variant };
 
     return (
         <Button3dContext.Provider value={value}>
-            <Component className={className} {...props}>
+            <Component className={cn(className, "relative")} {...props}>
                 {children}
             </Component>
         </Button3dContext.Provider>
@@ -51,7 +42,7 @@ Button3d.Content = function Button3dContent({
     children,
     className,
     ...props
-}: ButtonProps & HTMLAttributes<HTMLDivElement>) {
+}: HTMLAttributes<HTMLDivElement>) {
     const { variant } = useButton3dContext();
 
     const [scope, animate] = useAnimate();
@@ -59,7 +50,10 @@ Button3d.Content = function Button3dContent({
     const variants = {
         blue: "bg-[#207cf3] text-white hover:bg-[#0c6ce8]",
         grey: "bg-[#4a5c99]",
-        logIn: "bg-[linear-gradient(42deg,rgba(89,103,227,1)5%,rgba(114,89,227,1)26%,rgba(89,98,227,1)58%)]",
+        "sign-in":
+            "bg-[linear-gradient(42deg,rgba(89,103,227,1)5%,rgba(114,89,227,1)26%,rgba(89,98,227,1)58%)]",
+        "sign-up":
+            "bg-[linear-gradient(42deg,rgba(140,83,219,1)10%,rgba(142,83,219,1)26%,rgba(140,83,219,1)58%)]",
     };
 
     return (
@@ -70,7 +64,7 @@ Button3d.Content = function Button3dContent({
             className={cn(
                 className,
                 variants[variant],
-                "flex items-center justify-center h-full w-full",
+                "flex items-center justify-center h-full w-full relative z-10",
             )}
             {...props}
             ref={scope}
@@ -88,13 +82,14 @@ Button3d.Content = function Button3dContent({
 Button3d.Behind = function Button3dBehind({
     className,
     ...props
-}: Omit<ButtonProps, "children"> & HTMLAttributes<HTMLDivElement>) {
+}: HTMLAttributes<HTMLDivElement>) {
     const { variant } = useButton3dContext();
 
     const variants = {
         blue: "bg-[#3b3fa1]",
         grey: "bg-[#32324b]",
-        logIn: "bg-[#3b3fa1]",
+        "sign-in": "bg-[#3b3fa1]",
+        "sign-up": "bg-[#642F8A]",
     };
 
     return (
@@ -102,7 +97,7 @@ Button3d.Behind = function Button3dBehind({
             className={cn(
                 className,
                 variants[variant],
-                "absolute h-full w-full top-[5px] left-0 -z-10 rounded-2xl",
+                "absolute h-full w-full top-[5px] left-0 rounded-2xl",
             )}
             {...props}
         />

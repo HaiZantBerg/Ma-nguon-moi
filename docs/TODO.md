@@ -3,21 +3,34 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
 ### Nhiệm vụ 🥲🥶:
 
 - 5 / 4 / 2025:
+
+    - Thay đổi thông báo error ở signUpForm.tsx và signInForm.tsx
     - Làm lại cái bg1 cho phần ParallaxBg.tsx
-    - Hoàn thiện lại cấu trúc tệp và sắp xếp hợp lý cái file để tăng readablity, dùng mấy các tag khác ngoài div để tăng accessablity
     - Xài mấy cái api của Chatgpt, chắc phải trả phí:v (nghèo quá nên chọn cái rẻ nhất😅)
     - Hoàn thiện giao diện ChapterRoute
     - Cài đặt backend cơ bản để đăng nhập, đăng kí
     - Thêm mấy cái chỉ số các thứ trong Card ở phần ChapterRoute
     - Làm thêm cái Icon biểu tượng cho từng khối lớp
     - Làm mới lại đống Lesson, FunFact, Quizzes
-    - LÀM CÁI DB 3:< CẦN LẮM R
+
+- 5 / 11 / 2025:
+    - Hoàn thiện authentication
 
 ### Đã hoàn thành 🥰🥰🥰🫠🫠:
 
 - 5 / 4 / 2025:
     - Xây dựng tất cả mọi thứ đã làm trước khi làm cái file TODO.md này 😀💀
+- 5 / 5 / 2025:
     - Làm cái Btn với cái đống kiến thức về TS "as" prop
+- 5 / 7 / 2025:
+    - Config Eslint
+- 5 / 9 / 2025:
+    - Học prisma cơ bản
+    - LÀM CÁI DB
+    - Hoàn thiện lại cấu trúc tệp và sắp xếp hợp lý cái file để tăng readablity, dùng mấy các tag khác ngoài div để tăng accessablity (chắc là hoàn thành ¯\_(ツ)\_/¯)
+- 5 / 12 / 2025:
+    - Cập nhật form validation với zod
+    - Hoàn thiện form validation 🎉🎉🎉🎊🎊🎊
 
 ### update log 📝:
 
@@ -26,6 +39,12 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
     - Bỏ học backend là Django vì khó quá sang dùng Express cho dễ vì cũng sử dụng javascript
 - 5 / 4 / 2025:
     - Mới làm xong đống components cho chapterRoute
+- 5 / 6 / 2025:
+    - Bắt đầu học làm db với prisma
+- 5 / 7 / 2025:
+    - Đã config eslint thành công
+- 5 / 10 / 2025:
+    - Hoàn thành một số cái nhỏ của authentication
 
 ### Viết xàm xàm:
 
@@ -38,3 +57,23 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
 - 5 / 5 / 2025:
   Mới đó mà hết nghỉ lễ r:v sắp thi r, đã thế còn dính thêm robot;-;
   r cả thi tin học trẻ bruhhh
+
+- 5 / 6 / 2025:
+  Ui bùn ngủ quá
+  trời set up cái eslint phức tạp ghê á, đã thế h phải lm thêm cái prisma, haizz
+
+- 5 / 7 / 2025:
+  YESSSS, cuối cùng eslint cũng hoạt động:DDD đm lâu quá, trời ơi;-; zui quá mới điểm thấp mà đc cái này zui quá
+
+- 5 / 10 / 2025:
+  Mới làm xong dự án video trên lớp lỡ làm bỏ hoang cái project lun, haizaa
+
+- 5 / 11 / 2025:
+  Làm việc với zod xong thấy cái lib này tiện vcl, mà ngày trước còn chê🙂
+
+- 5 / 12 / 2025:
+  Chưa bh mà đọc docs nhiều đến v, trc đây toàn là coi ytb:>> h bt cách đọc và tìm hiểu r, 1 đống nguồn trên mạng ngon phết, thấy zod ngầu vcl, cho dù chưa bị vấn đề mà phải nghĩ đến zod, nhma ngta nói nhiều quá nên xài luôn cho nó tiện🙂🙂🙂
+
+    YESSSSS, được cái sign up r, yay:DDDD 🎉🎉🎊🎊🎉🎉🎉🎊🎊
+
+    Trời ơi đang zui mà đm cái cookies nó lại lỗi 😭😭😭😭 Nỗi lòng coder

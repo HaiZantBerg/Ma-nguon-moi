@@ -17,18 +17,21 @@ export default function Page() {
                     />
                 </div>
                 <div className="bg-[#202434] w-fit mx-auto *:mx-auto px-4 py-7 rounded-2xl shadow-[0_40px_100px_-15px] shadow-indigo-950">
-                    <div className="mb-4 w-fit text-2xl font-semibold">
-                        Đăng nhập với
-                    </div>
-                    <hr className="w-[18rem] border-t-[#404866] sm:w-[22rem]" />
+                    <header className="mb-4 w-fit text-2xl font-semibold">
+                        <p>Đăng nhập với</p>
+                    </header>
+                    <hr className="w-[18rem] border-t-[#404866] sm:w-[22rem] my-[1.5rem]" />
                     <SignInForm />
-                    <hr className="w-[18rem] sm:w-[22rem] border-t-[#404866]" />
-                    <div className="mt-4 w-fit text-[0.85rem] sm:text-[0.9rem]">
+                    <hr className="w-[18rem] sm:w-[22rem] border-t-[#404866] mt-[1.5rem] mb-[15px]" />
+                    <p className="w-fit text-[0.85rem] sm:text-[0.9rem]">
                         Bạn mới biết đến Ethems?{" "}
-                        <span className="font-semibold text-[#4c9aff]">
-                            <Link href="/register">Đăng ký tại đây!</Link>
-                        </span>
-                    </div>
+                        <Link
+                            href="/register"
+                            className="font-semibold text-[#4c9aff]"
+                        >
+                            Đăng ký
+                        </Link>
+                    </p>
                 </div>
             </div>
         </div>

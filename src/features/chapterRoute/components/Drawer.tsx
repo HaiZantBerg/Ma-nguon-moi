@@ -1,5 +1,5 @@
 import React from "react";
-import arrow from "../assets/arrowStuff.svg";
+import arrow from "@/assets/Svg/arrowStuff.svg";
 import Link from "next/link";
 import { chapter, description } from "../data/chaptersStatic";
 import styling from "../assets/drawer.module.css";
