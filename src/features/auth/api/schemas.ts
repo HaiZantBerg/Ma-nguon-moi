@@ -26,11 +26,23 @@ export const signUpSchema = z.object({
                 });
             }
         }),
-    email: z.string().email("Email không hợp lệ hoặc đã tồn tại"),
+    email: z
+        .string()
+        .email("Email không hợp lệ hoặc đã tồn tại")
+        .min(1, "Email không được để trống"),
     password: z
         .string()
         .min(6, "Mật khẩu phải có ít nhất 6 kí tự")
-        .max(20, "Mật khẩu chỉ nên chứa tối đa 20 kí tự"),
+        .max(20, "Mật khẩu chỉ nên chứa tối đa 20 kí tự")
+        .superRefine((val, ctx) => {
+            if (!val.length)
+                ctx.addIssue({
+                    code: z.ZodIssueCode.invalid_type,
+                    expected: "string",
+                    received: "null",
+                    message: "Mật khẩu không được để trống",
+                });
+        }),
 });
 
 export const sessionSchema = z.object({

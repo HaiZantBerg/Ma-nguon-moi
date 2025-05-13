@@ -4,7 +4,8 @@ import { signUpSchema } from "./schemas";
 import { redirect } from "next/navigation";
 import { generateSalt, hashPassword } from "./core/passwordHasher";
 import db from "@/lib/prisma/prisma";
-import { createUserSession } from "./core/session";
+import createUserSession from "./core/session";
+import { cookies } from "next/headers";
 
 export async function signUp(previous: unknown, unsafeData: FormData) {
     const formUsername = unsafeData.get("username") as string;
@@ -56,22 +57,22 @@ export async function signUp(previous: unknown, unsafeData: FormData) {
         const salt = generateSalt();
         const hashedPassword = await hashPassword(safeData.data.password, salt);
 
-        // const user = await db.user.create({
-        //     data: {
-        //         username: safeData.data.username,
-        //         password: hashedPassword,
-        //         email: safeData.data.email,
-        //         salt,
-        //     },
-        // });
+        const user = await db.user.create({
+            data: {
+                username: safeData.data.username,
+                password: hashedPassword,
+                email: safeData.data.email,
+                salt,
+            },
+        });
 
-        // if (user === null)
-        //     return {
-        //         error: { general: "Không thể tạo tài khoản" },
-        //         formField,
-        //     };
+        if (user === null)
+            return {
+                error: { general: "Không thể tạo tài khoản" },
+                formField,
+            };
 
-        await createUserSession();
+        await createUserSession(user, await cookies());
     } catch {
         return {
             error: { general: "Không thể tạo tài khoản" },

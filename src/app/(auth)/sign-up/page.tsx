@@ -8,16 +8,16 @@ import logo from "@/assets/Svg/logowhite.svg";
 
 export default function page() {
     return (
-        <div className="w-full h-dvh bg-[#0a060a] text-white flex gap-[20rem]">
-            <div className="absolute top-0 left-0 h-32 w-full pt-16">
+        <div className="w-full h-dvh bg-[#0a060a] text-white flex max-[1150px]:flex-col items-center min-[1150px]:gap-[5rem] min-[1500px]:gap-[20rem]">
+            <div className="absolute top-0 left-0 h-fit w-full mt-[2rem]">
                 <Link
-                    className="space-x-2 flex relative ml-[5rem] items-center"
+                    className="space-x-2 flex relative sm:ml-[5rem] ml-[3rem] items-center"
                     href="/"
                 >
                     <Image
                         alt=""
                         src={logo}
-                        className="hidden h-[56px] w-fit select-none sm:block"
+                        className="h-[56px] w-fit select-none"
                     />
                     <Image
                         alt=""
@@ -27,10 +27,16 @@ export default function page() {
                     />
                 </Link>
             </div>
-            <div className="flex justify-end w-1/2 h-full items-center">
-                <Image src={book} alt="" className="w-[20rem]" />
+            <div className="flex min-[1150px]:justify-end min-[1150px]:w-1/2 max-[1300px]:mt-[7rem]">
+                <div className="sm:w-[32rem] w-[20rem] h-fit">
+                    <Image
+                        src={book}
+                        alt=""
+                        className="min-[1300px]:w-[20rem] sm:w-[17.5rem] w-[12.5rem] h-auto mx-auto"
+                    />
+                </div>
             </div>
-            <div className="justify-center flex w-1/2 h-full flex-col">
+            <div className="flex min-[1150px]:w-1/2 flex-col">
                 <div className="*:mx-auto sm:w-[32rem] w-[20rem]">
                     <header className="sm:w-[30rem] w-[18rem]">
                         <h1 className="text-center text-5xl font-bold font-['Chakra_Petch']">

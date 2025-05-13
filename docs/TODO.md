@@ -74,6 +74,10 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
 - 5 / 12 / 2025:
   Chưa bh mà đọc docs nhiều đến v, trc đây toàn là coi ytb:>> h bt cách đọc và tìm hiểu r, 1 đống nguồn trên mạng ngon phết, thấy zod ngầu vcl, cho dù chưa bị vấn đề mà phải nghĩ đến zod, nhma ngta nói nhiều quá nên xài luôn cho nó tiện🙂🙂🙂
 
-    YESSSSS, được cái sign up r, yay:DDDD 🎉🎉🎊🎊🎉🎉🎉🎊🎊
+    YESSSSS, được cái sign up r, yay:DDDD 🎉🎉🎊🎊🎉🎉🎉🎊🎊.
 
-    Trời ơi đang zui mà đm cái cookies nó lại lỗi 😭😭😭😭 Nỗi lòng coder
+    Trời ơi đang zui mà đm cái cookies nó lại lỗi 😭😭😭😭 Nỗi lòng coder.
+
+    Wow push lên github một đống lun, nhìn quá đã🙂🙂🙂😅.
+
+    Ui trời cookies thật là khó hiểu.
