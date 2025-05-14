@@ -1,17 +1,54 @@
 "use client";
 
-import React, { CSSProperties } from "react";
+import React, {
+    CSSProperties,
+    useActionState,
+    useEffect,
+    useState,
+} from "react";
 import passwordIcon from "../assets/passwordIcon.svg";
 import emailIcon from "../assets/emailIcon.svg";
 import { Form, Input, Button3d } from "@/components";
+import { signIn } from "@/auth/action";
+import cross from "../assets/Cross.svg";
+import Image from "next/image";
 
 export default function SignUpForm() {
+    const [data, action, isPending] = useActionState(signIn, undefined);
+    const [showUpError, setShowUpError] = useState<string | undefined>(
+        undefined,
+    );
+
+    useEffect(() => {
+        if (data && !isPending) setShowUpError(data.error);
+    }, [data, isPending]);
+
     return (
-        <Form className="sm:w-[24rem] w-[18rem]">
+        <Form className="sm:w-[20rem] w-[18rem]" action={action}>
+            {showUpError && (
+                <div
+                    id="errorMsg"
+                    className="text-[#ff4949] px-4 text-[0.9rem] justify-between py-2 bg-[#6d202069] flex items-center rounded-xl border border-red-600 mb-[1rem]"
+                >
+                    {data?.error}
+                    <div
+                        className="h-[2rem] aspect-square flex justify-center items-center cursor-pointer"
+                        onClick={() => {
+                            setShowUpError(undefined);
+                        }}
+                    >
+                        <Image
+                            src={cross}
+                            alt="close-error-popup"
+                            className="h-[0.65rem] aspect-square"
+                        />
+                    </div>
+                </div>
+            )}
             <Form.Feild className="flex flex-col w-full">
-                <Form.Item>
-                    <label htmlFor="email" className="sr-only">
-                        Địa chỉ email
+                <Form.Item className="flex-col gap-1">
+                    <label htmlFor="email" className="text-[#dadae6]">
+                        Địa chỉ email:
                     </label>
                     <Input id="email" className="*:sm:h-[3rem] *:h-[2.75rem]">
                         <Input.IconContainer className="ml-1.5">
@@ -32,14 +69,15 @@ export default function SignUpForm() {
                                     "--hide-autofill": "#202434",
                                 } as CSSProperties
                             }
+                            defaultValue={data?.formField.email}
                             spellCheck="false"
                         />
                         <div className="pointer-events-none absolute w-full h-full top-0 left-0 rounded-xl border border-[#404866] ring-2 ring-transparent transition-all duration-300 ease-in peer-focus:border-[#581ce3] peer-focus:ring-[#f9dcef]" />
                     </Input>
                 </Form.Item>
-                <Form.Item>
-                    <label htmlFor="password" className="sr-only">
-                        Mật khẩu
+                <Form.Item className="flex-col gap-1">
+                    <label htmlFor="password" className="text-[#dadae6]">
+                        Mật khẩu:
                     </label>
                     <Input
                         id="password"
@@ -70,6 +108,12 @@ export default function SignUpForm() {
                 className="h-[2.75rem] w-full sm:h-[3rem]"
                 type="submit"
             >
+                {isPending && (
+                    <div
+                        id="overlay"
+                        className="w-full h-[49px] sm:h-[53px] absolute top-0 left-0 bg-black opacity-40 rounded-2xl z-20"
+                    />
+                )}
                 <Button3d.Content className="font-semibold sm:text-[1.1rem] text-base">
                     Đăng nhập
                 </Button3d.Content>

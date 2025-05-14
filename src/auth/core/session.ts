@@ -44,3 +44,17 @@ async function setCookie(sessionId: string, cookies: Pick<Cookies, "set">) {
         expires: Date.now() + SESSION_EXP * 1000,
     });
 }
+
+export async function getUserFromSession(cookies: Pick<Cookies, "get">) {
+    const seesionId = cookies.get(SESSION_COOKIE)?.value;
+
+    return seesionId ? getUserSessionById(seesionId) : null;
+}
+
+async function getUserSessionById(sessionId: string) {
+    const rawUser = await redisClient.get(`session:${sessionId}`);
+
+    const { success, data } = sessionSchema.safeParse(rawUser);
+
+    return success ? data : null;
+}

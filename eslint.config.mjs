@@ -20,6 +20,7 @@ const eslintConfig = [
                     mode: "full",
                     type: "global",
                     pattern: [
+                        "src/auth/**/*",
                         "src/redis/**/*",
                         "src/generated/**/*",
                         "src/assets/**/*",

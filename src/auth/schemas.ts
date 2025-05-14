@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const signInSchema = z.object({
     email: z.string().email(),
-    password: z.string().min(6).max(20),
+    password: z.string().min(6).max(30),
 });
 
 export const signUpSchema = z.object({
@@ -33,7 +33,7 @@ export const signUpSchema = z.object({
     password: z
         .string()
         .min(6, "Mật khẩu phải có ít nhất 6 kí tự")
-        .max(20, "Mật khẩu chỉ nên chứa tối đa 20 kí tự")
+        .max(30, "Mật khẩu chỉ nên chứa tối đa 30 kí tự")
         .superRefine((val, ctx) => {
             if (!val.length)
                 ctx.addIssue({

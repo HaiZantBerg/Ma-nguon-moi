@@ -9,8 +9,8 @@ import { motion } from "motion/react";
 import arrow from "@/assets/Svg/arrowStuff.svg";
 import Image from "next/image";
 import { Button3d } from "@/components";
-import { signUp } from "../api/action";
 import ErrorMsg from "./ErrorMsg";
+import { signUp } from "@/auth/action";
 
 export default function SignUpForm() {
     const [data, action, isPending] = useActionState(signUp, undefined);
@@ -109,7 +109,7 @@ export default function SignUpForm() {
             </Form.Feild>
             <Button3d
                 variant="sign-up"
-                className="mt-[1.5rem] h-[2.75rem] w-full sm:h-[3rem]"
+                className="md:mt-[1.5rem] mt-[15px] h-[2.75rem] w-full sm:h-[3rem]"
                 type="submit"
                 disabled={isPending}
             >

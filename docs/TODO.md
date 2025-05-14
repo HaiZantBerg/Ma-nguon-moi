@@ -4,7 +4,6 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
 
 - 5 / 4 / 2025:
 
-    - Thay đổi thông báo error ở signUpForm.tsx và signInForm.tsx
     - Làm lại cái bg1 cho phần ParallaxBg.tsx
     - Xài mấy cái api của Chatgpt, chắc phải trả phí:v (nghèo quá nên chọn cái rẻ nhất😅)
     - Hoàn thiện giao diện ChapterRoute
@@ -31,6 +30,9 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
 - 5 / 12 / 2025:
     - Cập nhật form validation với zod
     - Hoàn thiện form validation 🎉🎉🎉🎊🎊🎊
+- 5 / 14 / 2025:
+    - Thay đổi thông báo error ở signUpForm.tsx và signInForm.tsx
+    - Hoàn thành signUp và signIn feature
 
 ### update log 📝:
 
@@ -81,3 +83,6 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
     Wow push lên github một đống lun, nhìn quá đã🙂🙂🙂😅.
 
     Ui trời cookies thật là khó hiểu.
+
+- 5 / 14 / 2025:
+  LESSS GOOO, ko ngờ lâu như v, trời hên quá nó hoạt động, mà ngu kiểu j mà password là passwword vay vcl chữ w trên bàn phím lâu lâu bị ngu:> nhma xong rùi zui quá

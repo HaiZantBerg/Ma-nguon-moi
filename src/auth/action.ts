@@ -1,16 +1,25 @@
 "use server";
 
-import { signUpSchema } from "./schemas";
+import { signInSchema, signUpSchema } from "./schemas";
 import { redirect } from "next/navigation";
-import { generateSalt, hashPassword } from "./core/passwordHasher";
+import {
+    comparePasswords,
+    generateSalt,
+    hashPassword,
+} from "./core/passwordHasher";
 import db from "@/lib/prisma/prisma";
 import createUserSession from "./core/session";
 import { cookies } from "next/headers";
 
-export async function signUp(previous: unknown, unsafeData: FormData) {
+export async function signUp(_previous: unknown, unsafeData: FormData) {
     const formUsername = unsafeData.get("username") as string;
     const formEmail = unsafeData.get("email") as string;
     const formPassword = unsafeData.get("password");
+
+    const formField = {
+        username: formUsername,
+        email: formEmail,
+    };
 
     const safeData = signUpSchema.safeParse({
         username: formUsername,
@@ -27,17 +36,9 @@ export async function signUp(previous: unknown, unsafeData: FormData) {
                 password: password?._errors,
                 email: email?._errors,
             },
-            formField: {
-                username: formUsername,
-                email: formEmail,
-            },
+            formField,
         };
     }
-
-    const formField = {
-        username: safeData.data.username,
-        email: safeData.data.email,
-    };
 
     const existingUser = await db.user.findUnique({
         where: {
@@ -79,6 +80,56 @@ export async function signUp(previous: unknown, unsafeData: FormData) {
             formField,
         };
     }
+
+    redirect("/home");
+}
+
+export async function signIn(_previous: unknown, unsafeData: FormData) {
+    const formEmail = unsafeData.get("email") as string;
+    const formPassword = unsafeData.get("password");
+
+    const formField = {
+        email: formEmail,
+    };
+
+    const { success, data } = signInSchema.safeParse({
+        email: formEmail,
+        password: formPassword,
+    });
+
+    if (!success)
+        return { error: "Email hoặc mật khẩu không hợp lệ", formField };
+
+    const user = await db.user.findFirst({
+        where: {
+            email: data.email,
+        },
+        select: {
+            username: true,
+            password: true,
+            salt: true,
+            id: true,
+            email: true,
+            role: true,
+        },
+    });
+
+    if (!user)
+        return {
+            error: "Tài khoản không tồn tại, hãy tạo một tài khoản mới",
+            formField,
+        };
+
+    const isCorrectPassword = await comparePasswords({
+        hashedPassword: user.password,
+        password: data.password,
+        salt: user.salt,
+    });
+
+    if (!isCorrectPassword)
+        return { error: "Email hoặc mật khẩu không đúng", formField };
+
+    await createUserSession(user, await cookies());
 
     redirect("/home");
 }
