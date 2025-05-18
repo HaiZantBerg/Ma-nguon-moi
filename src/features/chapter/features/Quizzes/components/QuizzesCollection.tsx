@@ -5,5 +5,10 @@ export default function QuizzesCollection({
     grade,
     chapter,
 }: ChapterChildProps) {
-    return <div>QuizzesCollection</div>;
+    return (
+        <div>
+            {grade}
+            {chapter}
+        </div>
+    );
 }

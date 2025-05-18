@@ -5,5 +5,10 @@ export default function FunFactsCollection({
     grade,
     chapter,
 }: ChapterChildProps) {
-    return <div>FunFactsCollection</div>;
+    return (
+        <div>
+            {grade}
+            {chapter}
+        </div>
+    );
 }
