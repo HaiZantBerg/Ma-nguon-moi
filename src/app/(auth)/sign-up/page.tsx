@@ -1,14 +1,14 @@
 import Image from "next/image";
 import React from "react";
 import book from "public/Image/auth/sign-up.png";
-import SignUpForm from "@/features/auth/components/SignUpForm";
+import { SignUpForm } from "@/features/auth";
 import Link from "next/link";
 import Ethems from "@/assets/Svg/ethems.svg";
 import logo from "@/assets/Svg/logowhite.svg";
 
 export default function page() {
     return (
-        <div className="w-full h-full min-h-fit bg-[#0a060a] text-white flex max-[1150px]:flex-col items-center min-[1150px]:gap-[5rem] min-[1500px]:gap-[20rem]">
+        <div className="w-full h-lvh min-h-fit bg-[#0a060a] text-white flex max-[1150px]:flex-col items-center min-[1150px]:gap-[5rem] min-[1500px]:gap-[20rem]">
             <div className="absolute top-0 left-0 h-fit w-full mt-[2rem]">
                 <Link
                     className="space-x-2 flex relative sm:ml-[5rem] ml-[2rem] items-center"
@@ -33,6 +33,7 @@ export default function page() {
                         src={book}
                         alt=""
                         className="min-[1300px]:w-[20rem] sm:w-[17.5rem] w-[12.5rem] h-auto mx-auto"
+                        priority
                     />
                 </div>
             </div>

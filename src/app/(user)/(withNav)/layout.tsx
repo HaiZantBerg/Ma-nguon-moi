@@ -1,5 +1,5 @@
 import { Navbar } from "@/components";
-import React, { ReactNode } from "react";
+import React, { Fragment, ReactNode } from "react";
 
 type UserLayoutProps = {
     children: ReactNode;
@@ -7,9 +7,9 @@ type UserLayoutProps = {
 
 export default function UserLayout({ children }: UserLayoutProps) {
     return (
-        <>
+        <Fragment>
             <Navbar></Navbar>
             {children}
-        </>
+        </Fragment>
     );
 }

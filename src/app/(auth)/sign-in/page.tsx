@@ -2,7 +2,7 @@ import React from "react";
 import signInIcon from "@/features/auth/assets/signInIcon.svg";
 import Image from "next/image";
 import Link from "next/link";
-import SignInForm from "@/features/auth/components/SignInForm";
+import { SignInForm } from "@/features/auth";
 
 export default function Page() {
     return (

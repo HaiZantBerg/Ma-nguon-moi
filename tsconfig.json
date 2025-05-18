@@ -22,7 +22,8 @@
         ],
         "paths": {
             "@/*": ["./src/*"],
-            "public/*": ["./public/*"]
+            "public/*": ["./public/*"],
+            "feature/*": ["./src/features/*"]
         }
     },
     "include": [

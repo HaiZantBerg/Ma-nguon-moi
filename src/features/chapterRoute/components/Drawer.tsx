@@ -115,7 +115,7 @@ export default function Drawer({
                         <Button3d
                             as={Link}
                             variant="blue"
-                            href={`/khoi1${grade}/chuong${curChapter}`}
+                            href={`/khoi1${grade}/chuong${curChapter}/legacy`}
                             className="grow font-medium"
                         >
                             <Button3d.Content className="gap-3 sm:gap-5 text-xl">

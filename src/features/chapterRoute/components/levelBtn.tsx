@@ -102,7 +102,7 @@ export default function LevelBtn({
                                             as={Link}
                                             variant="blue"
                                             className="mt-3 h-[3rem] text-xl block"
-                                            href={`/khoi1${grade}/chuong${idx + 1}`}
+                                            href={`/khoi1${grade}/chuong${idx + 1}/legacy`}
                                         >
                                             <Button3d.Content className="gap-3">
                                                 Khám phá

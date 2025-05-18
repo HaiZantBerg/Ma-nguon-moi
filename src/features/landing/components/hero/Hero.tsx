@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Ethems from "@/assets/Svg/ethems.svg";
 import logo from "@/assets/Svg/logowhite.svg";
-import starSomething from "@/assets/Svg/starsomething.svg";
+import starSomething from "../../assets/starsomething.svg";
 import HeroCTA from "./HeroCTA";
 import HeroHeader from "./HeroHeader";
 import StarryBackground from "./StarryBackground";
@@ -15,7 +15,10 @@ export default function Hero() {
             <StarryBackground />
             <div className="relative z-10 h-32 w-full pt-16">
                 <div className="mx-auto flex h-[56px] max-w-[98rem] items-center px-8">
-                    <Link className="space-x-4 flex relative" href="/">
+                    <Link
+                        className="space-x-4 flex relative items-center"
+                        href="/"
+                    >
                         <Image
                             alt=""
                             src={logo}

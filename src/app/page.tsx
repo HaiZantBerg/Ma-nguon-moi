@@ -1,4 +1,4 @@
-import Hero from "@/features/landing/components/hero/Hero";
+import { Hero } from "@/features/landing";
 import React from "react";
 
 export default function page() {

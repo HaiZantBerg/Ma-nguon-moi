@@ -13,7 +13,11 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
     - Làm mới lại đống Lesson, FunFact, Quizzes
 
 - 5 / 11 / 2025:
+
     - Hoàn thiện authentication
+
+- 5 / 15 / 2025:
+    - Hoàn thành ngay cái phần câu chuyện lịch sử, tùm lum, tùm la
 
 ### Đã hoàn thành 🥰🥰🥰🫠🫠:
 
@@ -86,3 +90,9 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
 
 - 5 / 14 / 2025:
   LESSS GOOO, ko ngờ lâu như v, trời hên quá nó hoạt động, mà ngu kiểu j mà password là passwword vay vcl chữ w trên bàn phím lâu lâu bị ngu:> nhma xong rùi zui quá
+
+- 5 / 15 / 2025:
+  Còn đúng 1 tháng nữa là thi r, lo quá🆘🆘🆘‼️‼️‼️
+
+- 5 / 18 / 2025:
+  Ui bữa nay vừa lm robot vừa lm cái này, khiến mik lừi vt cái này quá🫠🫠🫠

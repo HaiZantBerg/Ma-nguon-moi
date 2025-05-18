@@ -1,6 +1,7 @@
-import ChapterRoute from "@/features/chapterRoute/components/ChapterRoute/ChapterRoute";
+import { Navbar } from "@/components";
+import { ChapterRoute } from "@/features/chapterRoute";
 import { notFound } from "next/navigation";
-import React from "react";
+import React, { Fragment } from "react";
 
 const numberOfChapter = [9, 9, 6];
 const acceptableGrade = [0, 1, 2];
@@ -15,11 +16,12 @@ export default async function page({
     if (!acceptableGrade.includes(grade)) notFound();
 
     return (
-        <>
+        <Fragment>
+            <Navbar></Navbar>
             <ChapterRoute
                 grade={grade}
                 numberOfChapter={numberOfChapter[grade]}
             />
-        </>
+        </Fragment>
     );
 }
