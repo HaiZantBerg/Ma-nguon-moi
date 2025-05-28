@@ -1,8 +1,10 @@
+"use client";
+
 import { motion, MotionValue, useTransform } from "motion/react";
-import bg2 from "public/Image/chapterRoute/bgpart2.png";
-import bg3 from "public/Image/chapterRoute/bgpart3.png";
-import bg4 from "public/Image/chapterRoute/bgpart4.png";
-import bg5 from "public/Image/chapterRoute/bgpart5.png";
+import bg2 from "public/Image/chapterRoute/bgpart2.webp";
+import bg3 from "public/Image/chapterRoute/bgpart3.webp";
+import bg4 from "public/Image/chapterRoute/bgpart4.webp";
+import bg5 from "public/Image/chapterRoute/bgpart5.webp";
 import Image from "next/image";
 import React from "react";
 

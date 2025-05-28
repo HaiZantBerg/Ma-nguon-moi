@@ -93,6 +93,7 @@ export default function BookMarkItem({ config, id }: BookMarkItemProps) {
                     transition={transitionConfig}
                     className="w-full h-full absolute top-0 left-0"
                 >
+                    <p className="">hello</p>
                     {image}
                 </motion.div>
             </PushLink>

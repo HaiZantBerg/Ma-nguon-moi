@@ -1,6 +1,5 @@
-import Image from "next/image";
 import React from "react";
-import warningSign from "@/assets/Svg/warning.svg";
+import WarningSignIcon from "@/assets/Svg/warning.svg";
 
 type ErrorMsgProps = {
     errorArray?: string[];
@@ -13,11 +12,7 @@ export default function ErrorMsg({ errorArray }: ErrorMsgProps) {
                 {errorArray.map((error, id) => (
                     <div key={id} className="flex items-center">
                         <div className="size-[0.9rem] mr-1">
-                            <Image
-                                src={warningSign}
-                                alt=""
-                                className="h-full w-auto"
-                            />
+                            <WarningSignIcon className="h-full w-auto" />
                         </div>
                         <p key={id}>{error}</p>
                     </div>

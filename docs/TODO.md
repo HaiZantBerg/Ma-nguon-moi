@@ -6,11 +6,9 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
 
     - Làm lại cái bg1 cho phần ParallaxBg.tsx
     - Xài mấy cái api của Chatgpt, chắc phải trả phí:v (nghèo quá nên chọn cái rẻ nhất😅)
-    - Hoàn thiện giao diện ChapterRoute
-    - Cài đặt backend cơ bản để đăng nhập, đăng kí
     - Thêm mấy cái chỉ số các thứ trong Card ở phần ChapterRoute
     - Làm thêm cái Icon biểu tượng cho từng khối lớp
-    - Làm mới lại đống Lesson, FunFact, Quizzes
+    - Làm mới lại đống Lesson, FunFact, Quizzes bằng mdx
 
 - 5 / 11 / 2025:
 
@@ -27,12 +25,14 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
     - Làm cái Btn với cái đống kiến thức về TS "as" prop
 - 5 / 7 / 2025:
     - Config Eslint
+    - Hoàn thiện giao diện ChapterRoute
 - 5 / 9 / 2025:
     - Học prisma cơ bản
     - LÀM CÁI DB
     - Hoàn thiện lại cấu trúc tệp và sắp xếp hợp lý cái file để tăng readablity, dùng mấy các tag khác ngoài div để tăng accessablity (chắc là hoàn thành ¯\_(ツ)\_/¯)
 - 5 / 12 / 2025:
     - Cập nhật form validation với zod
+    - Cài đặt backend cơ bản để đăng nhập, đăng kí
     - Hoàn thiện form validation 🎉🎉🎉🎊🎊🎊
 - 5 / 14 / 2025:
     - Thay đổi thông báo error ở signUpForm.tsx và signInForm.tsx
@@ -51,6 +51,8 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
     - Đã config eslint thành công
 - 5 / 10 / 2025:
     - Hoàn thành một số cái nhỏ của authentication
+- 5 / 19 / 2025:
+    - Thay thế làm việc với React Component sang mdx cho tiện
 
 ### Viết xàm xàm:
 
@@ -96,3 +98,21 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
 
 - 5 / 18 / 2025:
   Ui bữa nay vừa lm robot vừa lm cái này, khiến mik lừi vt cái này quá🫠🫠🫠
+
+    Aya, hôm nay có đc một cái thư viện hay phết, svgr ngày xưa ko bt xài cứ hỏi chatgpt thôi ngố vcl😅😅😅🫠🫠🫠 h bt đi tìm hỉu r config cái thứ r, chỉnh hết mấy cái lỗi
+    r h chuyển sang từ webpack sang turbopack cho dù cx chả hỉu mấy cái đó để lm j nhưng h thông minh hơn r🤡🤡🤡 chỉnh từ svg sang react components tiện quá, Nextjs Image
+    Components coi như vứt khi lm vc zới svg nha:>
+
+    H zui r nha, đang tập xài mdx chứ pure react chắc xỉu mất😣😖😵‍💫😵‍💫😵‍💫
+
+    ui tự hào quá tự nhiên h zừa bt đọc mấy cái docs trên mạng mà hỉu, ít lạm dụng chatgpt mà thực sự tiếp thu kiến thức thật trên mạng, r tự setup các thứ một đống thu viện
+    lun eslint turbopack ... cho dù cx chỉ là của beginner🤡🤡🤡
+
+- 5 / 19 / 2025:
+  Yay thi xong rùi nè:D cúi kì cx hơi hơi khó á, mong đc hs xuất sắc. h mới thấy mdx đỉnh phết, sáng tạo đủ kiểu lun
+
+- 5 / 20 / 2025:
+  Mỗi lên thêm 1 thư viện mới là 1 lần sửa hết đống code để phù hợp với cái mới, mết mà zui phết🫠🫠🫠
+
+- 5 / 28 / 2025:
+  Bỏ cái này hơi lâu r nhỉ:> nhma bận quá chả nhớ j hết;-;

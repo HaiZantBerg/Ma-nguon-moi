@@ -4,13 +4,13 @@ import React from "react";
 import { chapter, description } from "../data/chaptersStatic";
 import Image from "next/image";
 import { motion } from "motion/react";
-import find from "../assets/find.svg";
+import { FindIcon } from "../assets";
 import Link from "next/link";
 import { createPortal } from "react-dom";
 import { cn } from "@/lib/tailwind/tailwindMerge";
-import levelUiI from "public/Image/chapterRoute/leveluipart1.png";
-import levelUiII from "public/Image/chapterRoute/leveluipart2.png";
-import levelUiIII from "public/Image/chapterRoute/leveluipart3.png";
+import levelUiI from "public/Image/chapterRoute/leveluipart1.webp";
+import levelUiII from "public/Image/chapterRoute/leveluipart2.webp";
+import levelUiIII from "public/Image/chapterRoute/leveluipart3.webp";
 import useHover from "../hooks/useHover";
 import { Button3d } from "@/components";
 
@@ -50,17 +50,13 @@ export default function LevelBtn({
 
     const handleMouseClick = () => {
         if (isMobile) setCurChapter(idx + 1);
-
-        document
-            .getElementById(`container${idx}${grade}`)
-            ?.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
         <div
             className={cn(
                 gridPosition,
-                "relative h-[45rem] w-[6rem] min-[640px]:w-[12rem] sm:h-[50rem]",
+                "relative h-[45rem] w-[6rem] min-[40rem]:w-[12rem] sm:h-[50rem]",
             )}
         >
             <div className={className}>
@@ -106,11 +102,7 @@ export default function LevelBtn({
                                         >
                                             <Button3d.Content className="gap-3">
                                                 Khám phá
-                                                <Image
-                                                    src={find}
-                                                    alt=""
-                                                    className="h-[60%] w-fit"
-                                                />
+                                                <FindIcon className="h-[60%] w-fit" />
                                             </Button3d.Content>
                                             <Button3d.Behind />
                                         </Button3d>

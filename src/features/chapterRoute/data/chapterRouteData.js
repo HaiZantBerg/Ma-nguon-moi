@@ -45,6 +45,5 @@ export const LevelBtnArray = [
         gridPosition: "row-[3/4] col-[1/2]",
         className: "absolute top-[60%]",
         directionR: true,
-        detailsCN: "-translate-y-24 bottom-0",
     },
 ];

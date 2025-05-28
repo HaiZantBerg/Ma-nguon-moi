@@ -2,7 +2,7 @@
 
 import {
     Button3dContext,
-    ButtonContextProps,
+    ButtonContextType,
     useButton3dContext,
 } from "@/context/Button3dContext";
 import { cn } from "@/lib/tailwind/tailwindMerge";
@@ -15,7 +15,7 @@ import React, {
 
 type ButtonAsProps<T extends ElementType> = {
     as?: T;
-} & ButtonContextProps;
+} & ButtonContextType;
 
 export default function Button3d<T extends ElementType = "button">({
     as,
@@ -49,11 +49,12 @@ Button3d.Content = function Button3dContent({
 
     const variants = {
         blue: "bg-[#207cf3] text-white hover:bg-[#0c6ce8]",
-        grey: "bg-[#4a5c99]",
+        "blue-grey": "bg-[#4a5c99]",
         "sign-in":
             "bg-[linear-gradient(42deg,rgba(89,103,227,1)5%,rgba(114,89,227,1)26%,rgba(89,98,227,1)58%)]",
         "sign-up":
             "bg-[linear-gradient(42deg,rgba(140,83,219,1)10%,rgba(142,83,219,1)26%,rgba(140,83,219,1)58%)]",
+        grey: "bg-[#737373]",
     };
 
     return (
@@ -87,17 +88,21 @@ Button3d.Behind = function Button3dBehind({
 
     const variants = {
         blue: "bg-[#3b3fa1]",
-        grey: "bg-[#32324b]",
+        "blue-grey": "bg-[#32324b]",
         "sign-in": "bg-[#3b3fa1]",
         "sign-up": "bg-[#642F8A]",
+        grey: "bg-[#474747]",
     };
 
     return (
         <div
+            style={{
+                borderRadius: 16,
+            }}
             className={cn(
-                className,
                 variants[variant],
-                "absolute h-full w-full top-[5px] left-0 rounded-2xl",
+                "absolute h-full w-full top-[5px] left-0",
+                className,
             )}
             {...props}
         />

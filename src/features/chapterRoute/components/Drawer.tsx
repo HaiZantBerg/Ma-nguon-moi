@@ -1,10 +1,11 @@
+"use client";
+
 import React from "react";
-import arrow from "@/assets/Svg/arrowStuff.svg";
+import ArrowIcon from "@/assets/Svg/arrowStuff.svg";
 import Link from "next/link";
 import { chapter, description } from "../data/chaptersStatic";
 import styling from "../assets/drawer.module.css";
-import find from "../assets/find.svg";
-import Image from "next/image";
+import { FindIcon } from "../assets";
 import { motion } from "motion/react";
 import useDrawer from "../hooks/useDrawer";
 import { Button3d } from "@/components";
@@ -87,8 +88,8 @@ export default function Drawer({
                     </article>
                     <div className="relative flex h-[3rem] gap-3">
                         <Button3d
-                            variant="grey"
-                            className="size-full"
+                            variant="blue-grey"
+                            className="h-full aspect-square"
                             onClick={() => {
                                 const des = ((curChapter + 7) % 9) + 1;
 
@@ -104,11 +105,7 @@ export default function Drawer({
                             }}
                         >
                             <Button3d.Content>
-                                <Image
-                                    src={arrow}
-                                    alt=""
-                                    className="w-[50%] translate-x-[-2px] rotate-270"
-                                />
+                                <ArrowIcon className="w-[50%] translate-x-[-2px] rotate-270" />
                             </Button3d.Content>
                             <Button3d.Behind />
                         </Button3d>
@@ -120,17 +117,13 @@ export default function Drawer({
                         >
                             <Button3d.Content className="gap-3 sm:gap-5 text-xl">
                                 Khám phá
-                                <Image
-                                    src={find}
-                                    alt=""
-                                    className="h-[60%] w-fit"
-                                />
+                                <FindIcon className="h-[60%] w-fit" />
                             </Button3d.Content>
                             <Button3d.Behind />
                         </Button3d>
                         <Button3d
-                            className="size-full"
-                            variant="grey"
+                            className="h-full aspect-square"
+                            variant="blue-grey"
                             onClick={() => {
                                 const inc = curChapter % numberOfChapter;
 
@@ -144,11 +137,7 @@ export default function Drawer({
                             }}
                         >
                             <Button3d.Content>
-                                <Image
-                                    src={arrow}
-                                    alt=""
-                                    className="w-[50%] translate-x-[2px] rotate-90"
-                                />
+                                <ArrowIcon className="w-[50%] translate-x-[2px] rotate-90" />
                             </Button3d.Content>
                             <Button3d.Behind />
                         </Button3d>

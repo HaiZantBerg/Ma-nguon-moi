@@ -1,10 +1,10 @@
 import { createContext, useContext } from "react";
 
-export type ButtonContextProps = {
-    variant: "blue" | "grey" | "sign-up" | "sign-in";
+export type ButtonContextType = {
+    variant: "blue" | "blue-grey" | "sign-up" | "sign-in" | "grey";
 };
 
-export const Button3dContext = createContext<ButtonContextProps | undefined>(
+export const Button3dContext = createContext<ButtonContextType | undefined>(
     undefined,
 );
 

@@ -9,11 +9,16 @@ const eslintConfig = [
         ignorePatterns: [
             "node_modules",
             "src/generated/",
-            "src/components/Legacy",
+            "src/components/_Legacy/",
         ],
-        extends: ["next/core-web-vitals", "next/typescript", "prettier"],
+        extends: [
+            "next/core-web-vitals",
+            "next/typescript",
+            "plugin:mdx/recommended",
+        ],
         plugins: ["boundaries"],
         settings: {
+            "mdx/code-blocks": true,
             "boundaries/include": ["src/**/*"],
             "boundaries/elements": [
                 {
@@ -84,6 +89,16 @@ const eslintConfig = [
                 },
             ],
         },
+        overrides: [
+            {
+                files: ["**/*.mdx"],
+                rules: {
+                    "react/no-unescaped-entities": "off",
+                    "no-unused-expressions": "off",
+                    "@typescript-eslint/no-unused-expressions": "off",
+                },
+            },
+        ],
     }),
 ];
 

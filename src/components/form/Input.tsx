@@ -1,5 +1,4 @@
 import { cn } from "@/lib/tailwind/tailwindMerge";
-import Image, { ImageProps } from "next/image";
 import React, { HTMLAttributes, InputHTMLAttributes } from "react";
 import styling from "@/assets/styles/signInFormStyle.module.css";
 
@@ -12,11 +11,7 @@ export default function Input({
     );
 }
 
-Input.Icon = function InputIcon({ className, alt, ...props }: ImageProps) {
-    return <Image className={className} {...props} alt={alt} />;
-};
-
-Input.IconContainer = function InputIconContainer({
+Input.Icon = function InputIcon({
     children,
     className,
     ...props

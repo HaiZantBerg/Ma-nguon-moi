@@ -1,13 +1,12 @@
 "use client";
 
 import React, { CSSProperties, useActionState } from "react";
-import passwordIcon from "../assets/passwordIcon.svg";
-import emailIcon from "../assets/emailIcon.svg";
-import userIcon from "../assets/userIcon.svg";
+import PasswordIcon from "../assets/passwordIcon.svg";
+import EmailIcon from "../assets/emailIcon.svg";
+import UserIcon from "../assets/userIcon.svg";
 import { Form, Input } from "@/components";
 import { motion } from "motion/react";
-import arrow from "@/assets/Svg/arrowStuff.svg";
-import Image from "next/image";
+import ArrowIcon from "@/assets/Svg/arrowStuff.svg";
 import { Button3d } from "@/components";
 import ErrorMsg from "./ErrorMsg";
 import { signUp } from "@/auth/action";
@@ -23,13 +22,9 @@ export default function SignUpForm() {
                         Tên người dùng
                     </label>
                     <Input className="sm:h-[3rem] h-[2.75rem]" id="username">
-                        <Input.IconContainer className="ml-1.5">
-                            <Input.Icon
-                                src={userIcon}
-                                alt="userIcon"
-                                className="w-auto h-[1.5rem]"
-                            />
-                        </Input.IconContainer>
+                        <Input.Icon className="ml-1.5">
+                            <UserIcon className="w-auto h-[1.5rem]" />
+                        </Input.Icon>
                         <Input.Placeholder
                             id="username"
                             name="username"
@@ -53,13 +48,12 @@ export default function SignUpForm() {
                         Email
                     </label>
                     <Input className="sm:h-[3rem] h-[2.75rem]" id="email">
-                        <Input.IconContainer className="ml-1.5">
-                            <Input.Icon
-                                src={emailIcon}
-                                alt="emailIcon"
+                        <Input.Icon className="ml-1.5">
+                            <EmailIcon
                                 className="w-auto h-[1.5rem]"
+                                viewBox="0 0 512 512"
                             />
-                        </Input.IconContainer>
+                        </Input.Icon>
                         <Input.Placeholder
                             id="email"
                             name="email"
@@ -83,13 +77,12 @@ export default function SignUpForm() {
                         Mật khẩu
                     </label>
                     <Input className="sm:h-[3rem] h-[2.75rem]" id="password">
-                        <Input.IconContainer className="ml-1.5">
-                            <Input.Icon
-                                src={passwordIcon}
-                                alt="passwordIcon"
+                        <Input.Icon className="ml-1.5">
+                            <PasswordIcon
                                 className="w-auto h-[3rem]"
+                                viewBox="0 0 512 512"
                             />
-                        </Input.IconContainer>
+                        </Input.Icon>
                         <Input.Placeholder
                             id="password"
                             name="password"
@@ -122,11 +115,7 @@ export default function SignUpForm() {
                 <Button3d.Content className="font-semibold sm:text-[1.1rem] text-base">
                     Tiếp tục
                     <motion.div className="h-[17.5%] w-auto ml-2">
-                        <Image
-                            src={arrow}
-                            alt=""
-                            className="h-full w-auto rotate-90"
-                        />
+                        <ArrowIcon className="h-full w-auto rotate-90" />
                     </motion.div>
                 </Button3d.Content>
                 <Button3d.Behind />

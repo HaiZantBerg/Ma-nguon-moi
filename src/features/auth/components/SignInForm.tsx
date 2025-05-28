@@ -6,12 +6,11 @@ import React, {
     useEffect,
     useState,
 } from "react";
-import passwordIcon from "../assets/passwordIcon.svg";
-import emailIcon from "../assets/emailIcon.svg";
+import PasswordIcon from "../assets/passwordIcon.svg";
+import EmailIcon from "../assets/emailIcon.svg";
 import { Form, Input, Button3d } from "@/components";
 import { signIn } from "@/auth/action";
-import cross from "../assets/Cross.svg";
-import Image from "next/image";
+import CrossItem from "../assets/Cross.svg";
 
 export default function SignUpForm() {
     const [data, action, isPending] = useActionState(signIn, undefined);
@@ -37,11 +36,7 @@ export default function SignUpForm() {
                             setShowUpError(undefined);
                         }}
                     >
-                        <Image
-                            src={cross}
-                            alt="close-error-popup"
-                            className="h-[0.65rem] aspect-square"
-                        />
+                        <CrossItem className="h-[0.65rem] aspect-square" />
                     </div>
                 </div>
             )}
@@ -51,13 +46,9 @@ export default function SignUpForm() {
                         Địa chỉ email:
                     </label>
                     <Input id="email" className="*:sm:h-[3rem] *:h-[2.75rem]">
-                        <Input.IconContainer className="ml-1.5">
-                            <Input.Icon
-                                src={emailIcon}
-                                alt="emailIcon"
-                                className="w-auto h-[1.5rem]"
-                            />
-                        </Input.IconContainer>
+                        <Input.Icon className="ml-1.5">
+                            <EmailIcon className="w-auto h-[1.5rem]" />
+                        </Input.Icon>
                         <Input.Placeholder
                             id="email"
                             name="email"
@@ -83,13 +74,9 @@ export default function SignUpForm() {
                         id="password"
                         className="*:sm:h-[3rem] *:h-[2.75rem]"
                     >
-                        <Input.IconContainer className="ml-1.5">
-                            <Input.Icon
-                                src={passwordIcon}
-                                alt="passwordIcon"
-                                className="w-auto h-[3rem]"
-                            />
-                        </Input.IconContainer>
+                        <Input.Icon className="ml-1.5">
+                            <PasswordIcon className="w-auto h-[3rem]" />
+                        </Input.Icon>
                         <Input.Placeholder
                             name="password"
                             className="peer max-[40rem]:placeholder:text-[0.95rem] rounded-xl"

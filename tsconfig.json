@@ -33,7 +33,8 @@
         ".next/types/**/*.ts",
         "src/**/*",
         "declarations.d.ts",
-        "prettier.config.mjs"
+        "svgr.d.ts",
+        ".prettierrc"
     ],
     "exclude": ["node_modules"]
 }

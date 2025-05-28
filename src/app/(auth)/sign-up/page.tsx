@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import book from "public/Image/auth/sign-up.png";
+import book from "public/Image/auth/sign-up.webp";
 import { SignUpForm } from "@/features/auth";
 import Link from "next/link";
 import Ethems from "@/assets/Svg/ethems.svg";
-import logo from "@/assets/Svg/logowhite.svg";
+import Logo from "@/assets/Svg/logowhite.svg";
 
 export default function page() {
     return (
@@ -14,17 +14,8 @@ export default function page() {
                     className="space-x-2 flex relative sm:ml-[5rem] ml-[2rem] items-center"
                     href="/"
                 >
-                    <Image
-                        alt=""
-                        src={logo}
-                        className="h-[44px] sm:h-[56px] w-fit select-none"
-                    />
-                    <Image
-                        alt=""
-                        src={Ethems}
-                        className="h-[22px] sm:h-[28px] w-auto"
-                        priority
-                    />
+                    <Logo className="h-[44px] sm:h-[56px] w-fit select-none" />
+                    <Ethems className="h-[22px] sm:h-[28px] w-auto" />
                 </Link>
             </div>
             <div className="flex min-[1150px]:justify-end min-[1150px]:w-1/2 max-[1150px]:mt-[7rem] max-[1150px]:mb-[5rem] max-[768px]:mb-[3rem]">

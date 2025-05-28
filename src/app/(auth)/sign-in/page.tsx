@@ -1,7 +1,7 @@
 import React from "react";
-import signInIcon from "@/features/auth/assets/signInIcon.svg";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import signInIcon from "public/Image/auth/signInIcon.webp";
 import { SignInForm } from "@/features/auth";
 
 export default function Page() {
@@ -13,7 +13,6 @@ export default function Page() {
                         src={signInIcon}
                         alt=""
                         className="mx-auto h-[22rem] w-auto"
-                        priority
                     />
                 </div>
                 <div className="bg-[#202434] w-fit mx-auto *:mx-auto px-4 py-7 rounded-2xl shadow-[0_40px_100px_-15px] shadow-indigo-950">

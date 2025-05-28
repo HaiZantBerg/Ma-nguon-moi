@@ -1,9 +1,12 @@
 import { useAnimate } from "motion/react";
 import { usePathname } from "next/navigation";
+import { useMediaQuery } from "react-responsive";
 
 export default function useAnimateBookMarks(border: string, title: string) {
     const pathname = usePathname();
     const isSection = pathname.split("/")[3] === title;
+
+    const isMobile = useMediaQuery({ query: "(max-width: 1367px)" });
 
     const [scope, animate] = useAnimate();
 
@@ -17,6 +20,8 @@ export default function useAnimateBookMarks(border: string, title: string) {
     const dropShadowTranparency = `drop-shadow(0 0 0px transparent)`;
 
     const handleMouseEnter = () => {
+        if (isMobile) return null;
+
         animate(
             scope.current,
             {
@@ -55,6 +60,8 @@ export default function useAnimateBookMarks(border: string, title: string) {
     };
 
     const handleMouseLeave = () => {
+        if (isMobile) return null;
+
         animate(
             scope.current,
             {

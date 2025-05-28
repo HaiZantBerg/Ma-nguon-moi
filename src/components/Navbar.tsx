@@ -2,10 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import Ethems from "@/assets/Svg/ethems.svg";
-import logo from "@/assets/Svg/logowhite.svg";
-import Image from "next/image";
-import setting from "@/assets/Svg/navBar/setting.svg";
+import { Ethems, Logo, SettingIcon } from "@/assets";
 import { usePathname } from "next/navigation";
 
 const navList = [
@@ -46,17 +43,8 @@ export default function Navbar() {
         >
             <div className="flex items-center pl-[0.75rem]" id="logo">
                 <Link href="/home" className="flex items-center gap-2">
-                    <Image
-                        alt=""
-                        src={logo}
-                        className="hidden h-[36px] w-fit select-none sm:block"
-                    />
-                    <Image
-                        alt=""
-                        src={Ethems}
-                        className="h-[24px] w-auto"
-                        priority
-                    />
+                    <Logo className="hidden h-[36px] w-fit select-none sm:block" />
+                    <Ethems className="h-[24px] w-auto" />
                 </Link>
             </div>
             <ul id="navLinks">
@@ -84,11 +72,7 @@ export default function Navbar() {
                 id="settingsDropDown"
                 className="h-[2.5rem] aspect-square flex justify-center items-center"
             >
-                <Image
-                    src={setting}
-                    alt="setting"
-                    className="h-[1.75rem] w-auto"
-                />
+                <SettingIcon className="h-[1.75rem] w-auto" />
             </button>
         </nav>
     );

@@ -1,46 +1,55 @@
-import { z } from "zod";
+import { z } from "zod/v4";
 
 export const signInSchema = z.object({
-    email: z.string().email(),
+    email: z.email(),
     password: z.string().min(6).max(30),
 });
 
 export const signUpSchema = z.object({
     username: z
-        .string()
-        .min(6, "Tên người dùng phải có ít nhất 6 kí tự")
-        .max(20, "Tên người dùng chỉ nên chứa tối đa 20 kí tự")
-        .superRefine((val, ctx) => {
-            if (!val.length)
-                ctx.addIssue({
-                    code: z.ZodIssueCode.invalid_type,
-                    expected: "string",
-                    received: "null",
-                    message: "Tên người dùng không được để trống",
-                });
+        .string({
+            error: (iss) =>
+                iss === undefined ? "Tên người dùng không được để trống." : "",
+        })
+        .min(6, "Tên người dùng phải có ít nhất 6 kí tự.")
+        .max(20, "Tên người dùng chỉ nên chứa tối đa 20 kí tự.")
+        .check((ctx) => {
+            const { value, issues } = ctx;
 
-            if (!/[a-zA-Z]+$/.test(val)) {
-                ctx.addIssue({
-                    code: z.ZodIssueCode.custom,
+            if (!/[a-zA-Z]+$/.test(value))
+                issues.push({
+                    code: "custom",
                     message: "Tên người dùng chỉ nên chứa chữ cái",
+                    input: value,
                 });
-            }
         }),
-    email: z
-        .string()
-        .email("Email không hợp lệ hoặc đã tồn tại")
-        .min(1, "Email không được để trống"),
+    email: z.email({
+        error: (iss) =>
+            iss.input === undefined
+                ? "Email không được để trống."
+                : "Email không hợp lệ hoặc đã tồn tại.",
+    }),
     password: z
         .string()
-        .min(6, "Mật khẩu phải có ít nhất 6 kí tự")
-        .max(30, "Mật khẩu chỉ nên chứa tối đa 30 kí tự")
-        .superRefine((val, ctx) => {
-            if (!val.length)
-                ctx.addIssue({
-                    code: z.ZodIssueCode.invalid_type,
+        .max(30, "Mật khẩu chỉ nên chứa tối đa 30 kí tự.")
+        .check((ctx) => {
+            const { value, issues } = ctx;
+
+            if (!value.length)
+                issues.push({
+                    code: "invalid_type",
                     expected: "string",
                     received: "null",
                     message: "Mật khẩu không được để trống",
+                    input: value,
+                });
+            else if (value.length < 6)
+                issues.push({
+                    code: "too_small",
+                    minimum: 6,
+                    origin: "string",
+                    message: "Mật khẩu phải có ít nhất 6 kí tự.",
+                    input: value,
                 });
         }),
 });

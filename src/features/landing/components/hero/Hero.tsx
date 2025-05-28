@@ -1,9 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import Ethems from "@/assets/Svg/ethems.svg";
-import logo from "@/assets/Svg/logowhite.svg";
-import starSomething from "../../assets/starsomething.svg";
+import Logo from "@/assets/Svg/logowhite.svg";
+import StarSomethingIcon from "../../assets/starsomething.svg";
 import HeroCTA from "./HeroCTA";
 import HeroHeader from "./HeroHeader";
 import StarryBackground from "./StarryBackground";
@@ -19,22 +18,9 @@ export default function Hero() {
                         className="space-x-4 flex relative items-center"
                         href="/"
                     >
-                        <Image
-                            alt=""
-                            src={logo}
-                            className="hidden h-[56px] w-fit select-none sm:block"
-                        />
-                        <Image
-                            alt=""
-                            src={Ethems}
-                            className="h-[32px] w-auto"
-                            priority
-                        />
-                        <Image
-                            src={starSomething}
-                            alt=""
-                            className="absolute top-[-3rem] left-[3.5rem] h-[8.5rem] w-auto rotate-[15deg] select-none md:top-[-3rem] md:left-30 md:h-[10rem]"
-                        />
+                        <Logo className="hidden h-[56px] w-fit select-none md:block" />
+                        <Ethems className="h-[32px] w-auto" />
+                        <StarSomethingIcon className="absolute top-[-3rem] left-[3.5rem] h-[8.5rem] w-auto rotate-[15deg] select-none md:top-[-3rem] md:left-30 md:h-[10rem]" />
                     </Link>
                     <div className="flex flex-1 justify-end">
                         <CoolLookingBtn

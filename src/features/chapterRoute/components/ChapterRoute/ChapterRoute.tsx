@@ -1,16 +1,13 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import React from "react";
 import LevelBtn from "../levelBtn";
-import { useScroll } from "motion/react";
-import { useMediaQuery } from "react-responsive";
-import smRoute from "../../assets/routeSm.svg";
-import lgRoute from "../../assets/routeLg.svg";
+import { SmRoute, LgRoute, SmPortalIcon } from "@/features/chapterRoute/assets";
 import Drawer from "../Drawer";
 import { LevelBtnArray } from "../../data/chapterRouteData";
 import ParallaxBg from "./ParallaxBg";
 import { Card } from "@/components";
+import useSetUp from "../../hooks/useSetUp";
 
 export default function ChapterRoute({
     grade,
@@ -19,8 +16,15 @@ export default function ChapterRoute({
     grade: number;
     numberOfChapter: number;
 }) {
-    const [isMounted, setIsMounted] = useState(false);
-    const [curChapter, setCurChapter] = useState(0);
+    const {
+        scrollYProgress,
+        isMobile,
+        willChangeRouteLayout,
+        setCurChapter,
+        isMounted,
+        curChapter,
+        container,
+    } = useSetUp();
 
     const romanNumeral = [
         "I",
@@ -33,27 +37,6 @@ export default function ChapterRoute({
         "VIII",
         "IX",
     ];
-
-    useEffect(() => {
-        setIsMounted(true);
-
-        return () => {
-            setIsMounted(false);
-        };
-    }, []);
-
-    const container = useRef<HTMLDivElement | null>(null);
-
-    const isMobile = useMediaQuery({ query: "(max-width: 1367px)" });
-    const willChangeRouteLayout = useMediaQuery({
-        query: "(max-width: 640px)",
-    });
-
-    const { scrollYProgress } = useScroll({
-        layoutEffect: false,
-        target: container,
-        offset: ["start start", "end start"],
-    });
 
     if (isMounted)
         return (
@@ -73,21 +56,11 @@ export default function ChapterRoute({
                 <div className="relative z-10 grid grid-cols-[repeat(3,1fr)] grid-rows-[repeat(3,1fr)] pb-40">
                     {willChangeRouteLayout ? (
                         <div className="absolute top-[7rem] left-[-2.5rem] h-full w-[25rem]">
-                            <Image
-                                src={smRoute}
-                                alt=""
-                                className="h-auto w-full opacity-75"
-                                priority
-                            />
+                            <SmRoute className="h-auto w-full opacity-75" />
                         </div>
                     ) : (
                         <div className="absolute top-[10rem] left-9 h-full w-full">
-                            <Image
-                                src={lgRoute}
-                                alt=""
-                                className="h-auto w-full opacity-75"
-                                priority
-                            />
+                            <LgRoute className="h-auto w-full opacity-75" />
                         </div>
                     )}
                     {LevelBtnArray.map((config, idx) => (
@@ -120,12 +93,7 @@ export default function ChapterRoute({
                         <div className="flex w-fit flex-col border-l-2 border-[#2f406e] py-2 pl-4">
                             <div className="flex">
                                 <div className="inline h-[1.5rem] w-[1.5rem]">
-                                    <Image
-                                        src="/Image/chapterRoute/portalSmIcon.png"
-                                        alt=""
-                                        width={24}
-                                        height={24}
-                                    />
+                                    <SmPortalIcon className="size-[24px]" />
                                 </div>
                                 <span className="pl-2 text-nowrap">
                                     {numberOfChapter} chương

@@ -1,4 +1,4 @@
 export type ChapterChildProps = {
-    grade: number;
-    chapter: number;
+    grade: string;
+    chapter: string;
 };

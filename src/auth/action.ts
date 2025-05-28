@@ -10,6 +10,7 @@ import {
 import db from "@/lib/prisma/prisma";
 import createUserSession from "./core/session";
 import { cookies } from "next/headers";
+import z from "zod/v4";
 
 export async function signUp(_previous: unknown, unsafeData: FormData) {
     const formUsername = unsafeData.get("username") as string;
@@ -28,13 +29,13 @@ export async function signUp(_previous: unknown, unsafeData: FormData) {
     });
 
     if (!safeData.success) {
-        const { username, password, email } = safeData.error.format();
+        const tree = z.treeifyError(safeData.error);
 
         return {
             error: {
-                username: username?._errors,
-                password: password?._errors,
-                email: email?._errors,
+                username: tree.properties?.username?.errors,
+                password: tree.properties?.password?.errors,
+                email: tree.properties?.email?.errors,
             },
             formField,
         };
@@ -69,14 +70,14 @@ export async function signUp(_previous: unknown, unsafeData: FormData) {
 
         if (user === null)
             return {
-                error: { general: "Không thể tạo tài khoản" },
+                error: { general: "Không thể tạo tài khoản." },
                 formField,
             };
 
         await createUserSession(user, await cookies());
     } catch {
         return {
-            error: { general: "Không thể tạo tài khoản" },
+            error: { general: "Không thể tạo tài khoản." },
             formField,
         };
     }
@@ -98,7 +99,7 @@ export async function signIn(_previous: unknown, unsafeData: FormData) {
     });
 
     if (!success)
-        return { error: "Email hoặc mật khẩu không hợp lệ", formField };
+        return { error: "Email hoặc mật khẩu không hợp lệ.", formField };
 
     const user = await db.user.findFirst({
         where: {
@@ -116,7 +117,7 @@ export async function signIn(_previous: unknown, unsafeData: FormData) {
 
     if (!user)
         return {
-            error: "Tài khoản không tồn tại, hãy tạo một tài khoản mới",
+            error: "Tài khoản không tồn tại, hãy tạo một tài khoản mới.",
             formField,
         };
 
@@ -127,7 +128,7 @@ export async function signIn(_previous: unknown, unsafeData: FormData) {
     });
 
     if (!isCorrectPassword)
-        return { error: "Email hoặc mật khẩu không đúng", formField };
+        return { error: "Email hoặc mật khẩu không đúng.", formField };
 
     await createUserSession(user, await cookies());
 
