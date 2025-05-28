@@ -10,7 +10,7 @@ import PasswordIcon from "../assets/passwordIcon.svg";
 import EmailIcon from "../assets/emailIcon.svg";
 import { Form, Input, Button3d } from "@/components";
 import { signIn } from "@/auth/action";
-import CrossItem from "../assets/Cross.svg";
+import CrossItem from "@/assets/Svg/Cross.svg";
 
 export default function SignUpForm() {
     const [data, action, isPending] = useActionState(signIn, undefined);
@@ -36,7 +36,10 @@ export default function SignUpForm() {
                             setShowUpError(undefined);
                         }}
                     >
-                        <CrossItem className="h-[0.65rem] aspect-square" />
+                        <CrossItem
+                            fill="#ff4949"
+                            className="h-[0.65rem] aspect-square"
+                        />
                     </div>
                 </div>
             )}
