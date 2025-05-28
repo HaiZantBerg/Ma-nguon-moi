@@ -15,13 +15,13 @@ export const overrideComponents = {
     ),
     p: (props: ComponentPropsWithoutRef<"p">) => (
         <p
-            className="min-[1000px]:mb-[2rem] mb-[1rem] text-sm md:text-base min-[1000px]:text-[1.05rem] text-pretty"
+            className="min-[1000px]:mb-[2rem] mb-[1rem] text-sm min-[768px]:text-base min-[1000px]:text-[1.05rem] text-pretty"
             {...props}
         />
     ),
     li: (props: ComponentPropsWithoutRef<"li">) => (
         <li
-            className="ml-[1.5rem] text-sm md:text-base min-[1000px]:text-[1.05rem] text-pretty"
+            className="ml-[1.5rem] text-sm min-[768px]:text-base min-[1000px]:text-[1.05rem] text-pretty"
             {...props}
         />
     ),

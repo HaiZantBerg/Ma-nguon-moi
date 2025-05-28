@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import React from "react";
 import { BookMarkIcon, BookMarkIconOutline } from "./ui/BookMarkIcon";
 import useAnimateBookMarks from "../hooks/useAnimateBookMark";
+import useIsMounted from "@/hooks/useIsMounted";
 
 type BookMarkItemProps = {
     config: {
@@ -17,6 +18,8 @@ type BookMarkItemProps = {
 };
 
 export default function BookMarkItem({ config, id }: BookMarkItemProps) {
+    const { isMounted } = useIsMounted();
+
     const { stopColor, border, title, image } = config;
 
     const {
@@ -25,15 +28,22 @@ export default function BookMarkItem({ config, id }: BookMarkItemProps) {
         isSection,
         transitionConfig,
         scope,
+        isNotMobile,
+        havePlayedInitAnimation,
     } = useAnimateBookMarks(border, title);
+
+    if (!isNotMobile || !isMounted) return null;
 
     return (
         <motion.li
             initial={{
-                y: -155,
+                y: havePlayedInitAnimation.current ? -155 : -250,
             }}
             animate={{
                 y: isSection ? -140 : -150,
+            }}
+            onAnimationComplete={() => {
+                havePlayedInitAnimation.current = true;
             }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}

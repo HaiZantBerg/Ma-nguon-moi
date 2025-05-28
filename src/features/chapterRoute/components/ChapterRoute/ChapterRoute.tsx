@@ -8,6 +8,7 @@ import { LevelBtnArray } from "../../data/chapterRouteData";
 import ParallaxBg from "./ParallaxBg";
 import { Card } from "@/components";
 import useSetUp from "../../hooks/useSetUp";
+import useIsMounted from "@/hooks/useIsMounted";
 
 export default function ChapterRoute({
     grade,
@@ -21,10 +22,11 @@ export default function ChapterRoute({
         isMobile,
         willChangeRouteLayout,
         setCurChapter,
-        isMounted,
         curChapter,
         container,
     } = useSetUp();
+
+    const { isMounted } = useIsMounted();
 
     const romanNumeral = [
         "I",

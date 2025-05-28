@@ -23,7 +23,7 @@ export default function MP({ children }: MPProps) {
     return (
         <MPContext.Provider value={values}>
             <MPWrappedByCtx>
-                <div className="min-[1100px]:!mx-[10rem] min-[1000px]:mb-[2rem] mb-[1rem] text-pretty relative text-sm md:text-base min-[1000px]:text-[1.05rem]">
+                <div className="min-[1100px]:!mx-[10rem] min-[1000px]:mb-[2rem] mb-[1rem] text-pretty relative text-sm min-[768px]:text-base min-[1000px]:text-[1.05rem]">
                     {children}
                 </div>
             </MPWrappedByCtx>

@@ -11,7 +11,7 @@ export default async function bookMarkLayout({
     return (
         <Fragment>
             <ChapterNavbar />
-            <div>{children}</div>
+            {children}
         </Fragment>
     );
 }

@@ -22,7 +22,7 @@ export default function IP({ children, li }: IPProps & { li?: boolean }) {
                 li
                     ? "min-[1100px]:!ml-[11.5rem] !ml-[1.5rem] min-[1100px]:!mr-[10rem]"
                     : "min-[1100px]:!mx-[10rem]",
-                "min-[1000px]:mb-[2rem] mb-[1rem] text-pretty relative text-sm md:text-base min-[1000px]:text-[1.05rem]",
+                "min-[1000px]:mb-[2rem] mb-[1rem] text-pretty relative text-sm min-[768px]:text-base min-[1000px]:text-[1.05rem]",
             )}
         >
             {children}
@@ -114,7 +114,7 @@ IP.Content = function IPContent({
     return (
         <div
             id="contentTable"
-            className="absolute h-0 w-full z-20 overflow-hidden mb-[3rem] -translate-y-[2px] md:-translate-y-base-[1px] min-[1000px]:translate-y-0"
+            className="absolute h-0 w-full z-20 overflow-hidden mb-[3rem] -translate-y-[2px] min-[768px]:-translate-y-base-[1px] min-[1000px]:translate-y-0"
         >
             {openP && (
                 <div className="h-full rounded-[15px] bg-[#ff981a] w-full px-5 pt-3 pb-5">

@@ -12,8 +12,12 @@ type ScrollSectionItemTableProps = {
 export default function ScrollSectionItemTable({
     parId,
 }: ScrollSectionItemTableProps) {
-    const { sectionItems, activeSectionItem, scrollYProgressSectionItem } =
-        useScrollTableContext();
+    const {
+        sectionItems,
+        activeSectionItem,
+        scrollYProgressSectionItem,
+        isMobile,
+    } = useScrollTableContext();
 
     const progressHeight = useTransform(
         scrollYProgressSectionItem,
@@ -29,7 +33,7 @@ export default function ScrollSectionItemTable({
             className="grid"
         >
             <motion.div
-                className="overflow-hidden flex flex-col gap-1.5"
+                className="overflow-hidden flex flex-col"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -41,7 +45,7 @@ export default function ScrollSectionItemTable({
                     return (
                         <motion.button
                             key={id}
-                            className="text-start flex items-center gap-2 relative"
+                            className="text-start flex mt-1.5 items-center gap-2 relative"
                             onClick={() => {
                                 document
                                     .getElementById(
@@ -61,19 +65,21 @@ export default function ScrollSectionItemTable({
                                 delay: id * 0.05,
                             }}
                         >
-                            <div className="w-[1rem] flex-[0_0_16px]">
+                            <div className="min-[768px]:flex-[0_0_22px] flex-[0_0_16px]">
                                 <motion.div
                                     className={cn(
                                         havePassedItem
                                             ? "bg-black"
                                             : "bg-neutral-300",
-                                        "w-2 rounded-2xl overflow-hidden mx-auto relative",
+                                        "min-[768px]:w-2 w-[6px] rounded-2xl overflow-hidden mx-auto relative",
                                     )}
                                     animate={{
                                         height:
                                             activeSectionItem === item.id
                                                 ? "2rem"
-                                                : "0.5rem",
+                                                : isMobile
+                                                  ? "6px"
+                                                  : "0.5rem",
                                     }}
                                     transition={{ ease: "linear" }}
                                 >
@@ -88,7 +94,7 @@ export default function ScrollSectionItemTable({
                                 </motion.div>
                             </div>
                             <AnimatePresence>
-                                {activeSectionItem === item.id && (
+                                {activeSectionItem === item.id && !isMobile && (
                                     <motion.div
                                         initial={{ gridTemplateRows: "0fr" }}
                                         animate={{ gridTemplateRows: "1fr" }}

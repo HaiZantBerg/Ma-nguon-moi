@@ -6,7 +6,7 @@ export default function FunFactsCollection({
     chapter,
 }: ChapterChildProps) {
     return (
-        <div>
+        <div className="pt-[7rem]">
             {grade}
             {chapter}
         </div>

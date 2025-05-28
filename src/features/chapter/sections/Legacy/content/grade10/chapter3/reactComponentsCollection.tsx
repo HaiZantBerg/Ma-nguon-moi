@@ -17,7 +17,7 @@ export function ID() {
                         }}
                     />
                 </div>
-                <p className="px-5 pt-2 text-center text-[rgba(0,0,0,0.75)] text-sm md:text-base min-[1000px]:text-[1.05rem]">
+                <p className="px-5 pt-2 text-center text-[rgba(0,0,0,0.75)] text-sm min-[768px]:text-base min-[1000px]:text-[1.05rem]">
                     <strong>Groma</strong> - Công cụ khảo sát đất đai, được phát
                     minh vào thế kỷ thứ II - TK I TCN bởi Ai Cập, và phổ biến
                     tại Hy Lạp, La Mã
@@ -34,7 +34,7 @@ export function ID() {
                         }}
                     />
                 </div>
-                <p className="px-5 pt-2 text-center text-[rgba(0,0,0,0.75)] text-sm md:text-base min-[1000px]:text-[1.05rem]">
+                <p className="px-5 pt-2 text-center text-[rgba(0,0,0,0.75)] text-sm min-[768px]:text-base min-[1000px]:text-[1.05rem]">
                     Cách sử dụng groma trong khảo sát địa chính
                 </p>
             </div>
@@ -61,7 +61,7 @@ export function ID2() {
                     />
                 </div>
             </div>
-            <p className="text-center min-[1000px]:my-[2rem] my-[1rem] text-sm md:text-base min-[1000px]:text-[1.05rem]">
+            <p className="text-center min-[1000px]:my-[2rem] my-[1rem] text-sm min-[768px]:text-base min-[1000px]:text-[1.05rem]">
                 Dioptra- công cụ dùng để quan sát thiên văn và đo đạc địa chất,
                 được phát minh bởi Héron thành Alexandria (Hy Lạp) vào thế kỷ
                 III TCN

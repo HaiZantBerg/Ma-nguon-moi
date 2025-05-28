@@ -6,6 +6,7 @@ import {
     useRef,
     useState,
 } from "react";
+import { useMediaQuery } from "react-responsive";
 
 type SectionItem = {
     id: number;
@@ -28,6 +29,7 @@ type ScrollTableType = {
     setActiveSectionItem: (_: number) => void;
     scrollYProgressSectionItem: MotionValue<number>;
     interuptedScroll: MutableRefObject<number>;
+    isMobile: boolean;
 };
 
 export const ScrollTableContext = createContext<ScrollTableType | undefined>(
@@ -35,6 +37,8 @@ export const ScrollTableContext = createContext<ScrollTableType | undefined>(
 );
 
 export function useScrollTableValues() {
+    const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
     const interuptedScroll = useRef(-1);
 
     const [activeSection, setActiveSection] = useState(0);
@@ -62,19 +66,33 @@ export function useScrollTableValues() {
     };
 
     const process = (sections: Section[]) => {
-        const ids = sections.map(({ id }) => id);
+        const seen = new Set<number>();
 
-        const uniqueSections = sections.filter(
-            ({ id }, idx) => !ids.includes(id, idx + 1),
-        );
+        return sections.filter(({ id }) => {
+            if (seen.has(id)) return false;
 
-        return uniqueSections;
+            seen.add(id);
+            return true;
+        });
+    };
+
+    const processItem = (items: SectionItem[][]): SectionItem[][] => {
+        return items.map((item) => {
+            const seen = new Set<number>();
+
+            return item.filter(({ id }) => {
+                if (seen.has(id)) return false;
+
+                seen.add(id);
+                return true;
+            });
+        });
     };
 
     return {
         values: {
             sections: process(sections),
-            sectionItems,
+            sectionItems: processItem(sectionItems),
             registerSectionItem,
             activeSection,
             setActiveSection,
@@ -83,6 +101,7 @@ export function useScrollTableValues() {
             registerSection,
             scrollYProgressSectionItem,
             interuptedScroll,
+            isMobile,
         },
     };
 }

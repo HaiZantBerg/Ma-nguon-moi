@@ -8,12 +8,12 @@ import ScrollSectionIcon from "../../assets/scrollSectionIcon.svg";
 import ScrollSectionItemTable from "./ScrollSectionItemTable";
 
 export default function ScrollTable() {
-    const { sections, activeSection, interuptedScroll } =
+    const { sections, activeSection, interuptedScroll, isMobile } =
         useScrollTableContext();
 
     return (
-        <div className="fixed top-0 left-0 h-dvh w-[10rem] pt-[7rem] flex items-center pl-[1rem]">
-            <div className="h-[80%] w-full flex flex-col justify-center">
+        <div className="fixed top-0 left-0 h-dvh min-[1000px]:w-[10rem] w-[9.5rem] pt-[7rem] flex items-center min-[1000px]:pl-[1rem] pl-[0.25rem]">
+            <div className="h-[80%] w-full flex flex-col justify-center text-sm min-[768px]:space-y-2.5 space-y-3">
                 {sections.map((section, id) => {
                     const shouldRenderInterupt =
                         interuptedScroll.current === section.id ||
@@ -23,10 +23,7 @@ export default function ScrollTable() {
                         activeSection === section.id && shouldRenderInterupt;
 
                     return (
-                        <div
-                            key={id}
-                            className="text-start flex flex-col my-1.5"
-                        >
+                        <div key={id} className="text-start flex flex-col">
                             <button
                                 className="flex items-center text-start"
                                 onClick={() => {
@@ -52,14 +49,14 @@ export default function ScrollTable() {
                                         shouldRender
                                             ? "stroke-black"
                                             : "stroke-[#a5a5a5]",
-                                        "flex-[0_0_16px] transition-colors duration-200 ease-in",
+                                        "min-[768px]:flex-[0_0_22px] min-[768px]:size-[22px] flex-[0_0_16px] size-[1rem] transition-colors duration-200 ease-in",
                                     )}
                                     strokeWidth="5"
                                     strokeLinejoin="round"
                                     fill="white"
                                 />
                                 <AnimatePresence>
-                                    {shouldRender && (
+                                    {shouldRender && !isMobile && (
                                         <motion.div
                                             initial={{
                                                 gridTemplateRows: "0fr",

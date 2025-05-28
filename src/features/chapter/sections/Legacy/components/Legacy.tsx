@@ -23,7 +23,7 @@ export default function Legacy({ grade, chapter }: ChapterChildProps) {
         <ScrollTableContext.Provider value={values}>
             <main className="w-full flex justify-center">
                 <ScrollTable />
-                <div className="max-w-[60rem] md:mx-[10rem] sm:mx-[5rem] mx-[2rem] mb-[30lvh] mt-[1rem]">
+                <div className="max-w-[60rem] md:mx-[10rem] sm:mx-[5rem] max-[768px]:ml-[1.75rem] max-[768px]:mr-[1rem] mb-[30lvh] mt-[1rem]">
                     <div className="[&>section:first-child>section]:flex [&>section:first-child>section]:flex-col [&>section:first-child>section]:min-h-[100dvh] [&>section:first-child>section]:justify-center">
                         <Content components={overrideComponents} />
                     </div>
