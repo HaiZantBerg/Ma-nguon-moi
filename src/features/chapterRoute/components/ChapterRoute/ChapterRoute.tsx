@@ -43,7 +43,7 @@ export default function ChapterRoute({
     if (isMounted)
         return (
             <div
-                className="flex h-fit w-full flex-col-reverse items-center bg-white px-4 pt-28 max-[1367px]:overflow-x-hidden min-[500px]:px-20 min-[640px]:gap-[5rem] min-[1366px]:flex-row min-[1366px]:items-start min-[1366px]:justify-center min-[1400px]:px-24 min-[1550px]:gap-[15rem] sm:pt-36"
+                className="flex h-fit w-full flex-col-reverse items-center bg-white px-4 pt-28 max-[1367px]:overflow-hidden min-[500px]:px-20 min-[640px]:gap-[5rem] min-[1366px]:flex-row min-[1366px]:items-start min-[1366px]:justify-center min-[1400px]:px-24 min-[1550px]:gap-[15rem] sm:pt-36"
                 ref={container}
             >
                 {isMobile && curChapter > 0 && (
@@ -104,10 +104,7 @@ export default function ChapterRoute({
                         </div>
                     </Card.Content>
                 </Card>
-                <ParallaxBg
-                    // isMobile={isMobile}
-                    scrollYProgress={scrollYProgress}
-                />
+                <ParallaxBg scrollYProgress={scrollYProgress} />
             </div>
         );
 }

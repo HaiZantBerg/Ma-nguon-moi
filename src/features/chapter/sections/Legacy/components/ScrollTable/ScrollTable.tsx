@@ -12,7 +12,7 @@ export default function ScrollTable() {
         useScrollTableContext();
 
     return (
-        <div className="fixed top-0 left-0 h-dvh min-[1000px]:w-[10rem] w-[9.5rem] pt-[7rem] flex items-center min-[1000px]:pl-[1rem] pl-[0.25rem]">
+        <div className="fixed top-0 left-0 h-svh min-[1000px]:w-[10rem] w-[9.5rem] pt-[7rem] flex items-center min-[1000px]:pl-[1rem] pl-[0.25rem]">
             <div className="h-[80%] w-full flex flex-col justify-center text-sm min-[768px]:space-y-2.5 space-y-3">
                 {sections.map((section, id) => {
                     const shouldRenderInterupt =
