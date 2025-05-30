@@ -22,7 +22,7 @@ type RootLayoutProps = Readonly<{
 export default function RootLayout({ children }: RootLayoutProps) {
     return (
         <html lang="en">
-            <body className={`${inter.className} h-lvh overflow-auto`}>
+            <body className={`${inter.className} h-lvh !overflow-auto`}>
                 {children}
             </body>
         </html>

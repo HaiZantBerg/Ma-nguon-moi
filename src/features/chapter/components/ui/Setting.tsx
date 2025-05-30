@@ -42,9 +42,9 @@ export default function Setting({
     const isMobile = useMediaQuery({ query: "(max-width: 1000px)" });
 
     return (
-        <Popover className="size-[2.5rem]">
+        <Popover className="min-[1000px]:size-[2.5rem] size-[2rem]">
             <Popover.Trigger className="rounded-lg bg-[#f5f5f5] shadow-[0_5px_10px_#949494] size-full transition duration-200 ease-in hover:bg-[#f0f0f0]">
-                <SettingIcon className="w-[1.5rem] mx-auto" />
+                <SettingIcon className="min-[1000px]:w-[1.5rem] w-[1.25rem] mx-auto" />
             </Popover.Trigger>
             <Popover.Content className="flex flex-col gap-2">
                 {isMobile && (
@@ -69,7 +69,7 @@ export default function Setting({
                                         >
                                             {image[id]}
                                         </div>
-                                        <p>
+                                        <p style={{ color: border }}>
                                             {title[0].toUpperCase() +
                                                 title.slice(1)}
                                         </p>
