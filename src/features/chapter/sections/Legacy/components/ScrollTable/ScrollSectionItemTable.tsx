@@ -71,14 +71,14 @@ export default function ScrollSectionItemTable({
                                         havePassedItem
                                             ? "bg-black"
                                             : "bg-neutral-300",
-                                        "min-[768px]:w-2 w-[6px] rounded-2xl overflow-hidden mx-auto relative",
+                                        "min-[768px]:w-2 w-[0.375rem] rounded-2xl overflow-hidden mx-auto relative",
                                     )}
                                     animate={{
                                         height:
                                             activeSectionItem === item.id
                                                 ? "2rem"
                                                 : isMobile
-                                                  ? "6px"
+                                                  ? "0.375rem"
                                                   : "0.5rem",
                                     }}
                                     transition={{ ease: "linear" }}

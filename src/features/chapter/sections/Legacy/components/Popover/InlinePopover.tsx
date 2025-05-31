@@ -71,10 +71,10 @@ IP.Trigger = function IPTrigger({ children }: IPProps) {
         <motion.div
             className={cn(
                 openP ? "z-20" : "z-0",
-                "text-nowrap rounded-[8px] leading-[2rem] hover:bg-[#ff981a] inline relative px-2 pt-1 pb-1.5 transition-all duration-200 ease-in cursor-pointer",
+                "text-nowrap rounded-[8px] leading-[2rem] hover:bg-[#ff8b38] inline relative px-2 pt-1 pb-1.5 transition-all duration-200 ease-in cursor-pointer",
             )}
             style={{
-                scrollMargin: "10dvh",
+                scrollMargin: "25dvh",
             }}
             onClick={() => {
                 handleTrigger(true);
@@ -83,7 +83,7 @@ IP.Trigger = function IPTrigger({ children }: IPProps) {
                 background: "#ff6d44",
             }}
             animate={{
-                background: openP ? "#ff981a" : "#ff6d44",
+                background: openP ? "#ff8b38" : "#ff6d44",
             }}
             whileHover="hover"
             id={`trigger${id}`}
@@ -117,7 +117,7 @@ IP.Content = function IPContent({
             className="absolute h-0 w-full z-20 overflow-hidden mb-[3rem] -translate-y-[2px] min-[768px]:-translate-y-base-[1px] min-[1000px]:translate-y-0"
         >
             {openP && (
-                <div className="h-full rounded-[15px] bg-[#ff981a] w-full px-5 pt-3 pb-5">
+                <div className="h-full rounded-[15px] bg-[#ff8b38] w-full px-5 pt-3 pb-5">
                     <div
                         className={cn(
                             className,

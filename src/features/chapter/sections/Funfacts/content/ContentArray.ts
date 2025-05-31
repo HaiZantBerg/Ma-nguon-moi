@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import g0c1 from "./grade10/chapter1/content";
+import { MDTH } from "./grade10";
 import React from "react";
 
 export type ContentType = {
@@ -14,7 +14,7 @@ const ContentArray: Record<
     Record<string, Record<string, ContentType[]>>
 > = {
     grade10: {
-        chapter1: g0c1,
+        chapter1: MDTH,
     },
 };
 

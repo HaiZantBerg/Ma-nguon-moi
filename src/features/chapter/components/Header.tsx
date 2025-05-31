@@ -8,7 +8,7 @@ export default function Header() {
     const pathname = usePathname().split("/")[3];
 
     return (
-        <header className="text-6xl font-bold font-['Chakra_Petch']">
+        <header className="md:text-6xl text-5xl font-bold font-['Chakra_Petch']">
             {capitalizeFirst(pathname)}
         </header>
     );

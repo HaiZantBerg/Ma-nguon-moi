@@ -61,7 +61,7 @@ export default function Setting({
                                         className="flex items-center gap-2"
                                     >
                                         <div
-                                            className="border size-[2.25rem] flex items-center p-[4px] rounded-xl"
+                                            className="border size-[2.25rem] flex items-center p-[4px] relative z-10 rounded-xl"
                                             style={{
                                                 borderColor: border,
                                                 background: `linear-gradient(144deg,rgba(${stopColor[0]}) 0%, rgba(${stopColor[1]}) 100%)`,

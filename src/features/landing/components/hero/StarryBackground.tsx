@@ -10,36 +10,42 @@ export default function StarryBackground() {
             <div className="absolute top-0 left-0 grid h-full w-full grid-cols-1 grid-rows-1 overflow-hidden *:col-[1/2] *:row-[1/2] *:h-full *:w-auto *:scale-150 *:select-none *:md:scale-100">
                 <Image
                     fill
+                    sizes="auto"
                     src="/Image/landing/starry1-01.webp"
                     alt=""
                     className={`${styling.star11}`}
                 />
                 <Image
                     fill
+                    sizes="auto"
                     src="/Image/landing/starry1-01.webp"
                     alt=""
                     className={`${styling.star12}`}
                 />
                 <Image
                     fill
+                    sizes="auto"
                     src="/Image/landing/starry2-01.webp"
                     alt=""
                     className={`${styling.star21}`}
                 />
                 <Image
                     fill
+                    sizes="auto"
                     src="/Image/landing/starry2-01.webp"
                     alt=""
                     className={`${styling.star22}`}
                 />
                 <Image
                     fill
+                    sizes="auto"
                     src="/Image/landing/starry3-01.webp"
                     alt=""
                     className={`${styling.star31}`}
                 />
                 <Image
                     fill
+                    sizes="auto"
                     src="/Image/landing/starry3-01.webp"
                     alt=""
                     className={`${styling.star32}`}
@@ -57,6 +63,7 @@ export default function StarryBackground() {
                     alt=""
                     priority
                     fill
+                    sizes="auto"
                     style={{ objectFit: "contain" }}
                 />
             </div>

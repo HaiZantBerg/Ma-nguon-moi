@@ -30,7 +30,7 @@ export const overrideComponents = {
     ),
     ol: (props: ComponentPropsWithoutRef<"ol">) => (
         <ol
-            className="min-[1000px]:mb-[2rem] mb-[1rem] list-decimal"
+            className="min-[1000px]:mb-[2rem] mb-[1rem] list-decimal [&>li>ul>li]:!ml-0"
             {...props}
         />
     ),

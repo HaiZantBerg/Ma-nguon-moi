@@ -37,6 +37,7 @@ export default function TrackedSection({
             : isLast
               ? ["start center", "end end"]
               : ["start center", "end center"],
+        layoutEffect: false,
     });
 
     useMotionValueEvent(scrollYProgress, "change", (val) => {

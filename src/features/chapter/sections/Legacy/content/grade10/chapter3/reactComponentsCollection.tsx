@@ -12,6 +12,7 @@ export function ID() {
                         src="/Image/chapter/LuongGiac10/TCD/luonggiacimage1.webp"
                         alt=""
                         fill
+                        sizes="auto"
                         style={{
                             objectFit: "contain",
                         }}
@@ -29,6 +30,7 @@ export function ID() {
                         src="/Image/chapter/LuongGiac10/TCD/luonggiacimage2.webp"
                         alt=""
                         fill
+                        sizes="auto"
                         style={{
                             objectFit: "contain",
                         }}

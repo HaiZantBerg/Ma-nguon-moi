@@ -15,7 +15,7 @@ type MPProps = {
     children: ReactNode;
 };
 
-export default function MP({ children }: MPProps) {
+export default function MP({ children, li }: MPProps & { li?: boolean }) {
     const id = useId();
 
     const { values } = useMPContextValues(id);
@@ -23,7 +23,14 @@ export default function MP({ children }: MPProps) {
     return (
         <MPContext.Provider value={values}>
             <MPWrappedByCtx>
-                <div className="min-[1100px]:!mx-[10rem] min-[1000px]:mb-[2rem] mb-[1rem] text-pretty relative text-sm min-[768px]:text-base min-[1000px]:text-[1.05rem]">
+                <div
+                    className={cn(
+                        li
+                            ? "min-[1100px]:!ml-[11.5rem] !ml-[1.5rem] min-[1100px]:!mr-[10rem]"
+                            : "min-[1100px]:!mx-[10rem]",
+                        "min-[1000px]:mb-[2rem] mb-[1rem] text-pretty relative text-sm min-[768px]:text-base min-[1000px]:text-[1.05rem]",
+                    )}
+                >
                     {children}
                 </div>
             </MPWrappedByCtx>
@@ -93,7 +100,7 @@ MP.Content = function MPContent({
                     <div
                         className={cn(
                             className,
-                            "[&_p]:!mb-0 [&_li]:!ml-0 [&_ul]:!mb-0 flex flex-col gap-4",
+                            "[&_p]:!mb-0 [&_ul]:!mb-0 [&_ol]:!mb-0 flex flex-col gap-4",
                         )}
                     >
                         {children}

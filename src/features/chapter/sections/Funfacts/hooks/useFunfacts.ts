@@ -1,4 +1,3 @@
-import useIsMounted from "@/hooks/useIsMounted";
 import { useAnimate } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { ContentType } from "../content/ContentArray";
@@ -6,8 +5,6 @@ import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useMediaQuery } from "react-responsive";
 
 export default function useFunfacts(content: ContentType[][]) {
-    const { isMounted } = useIsMounted();
-
     const [scope, animate] = useAnimate();
 
     const isMobile = useMediaQuery({ query: "(max-width: 1000px)" });
@@ -54,67 +51,74 @@ export default function useFunfacts(content: ContentType[][]) {
         const figureId = searchParams.get("figure-id");
         const funfactId = searchParams.get("funfact-id");
 
-        handleCardAnimation(Number(figureId), Number(funfactId));
+        if (figureId !== null && funfactId !== null)
+            handleCardAnimation(Number(figureId), Number(funfactId), false);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const handleCardAnimation = (id1: number, id2: number) => {
+    const handleCardAnimation = (
+        id1: number,
+        id2: number,
+        q: boolean = true,
+    ) => {
         if (show || !content) return;
 
         const term = content[id1][id2];
 
-        const params = new URLSearchParams(searchParams);
-        if (term) {
-            params.set("figure-id", String(id1));
-            params.set("funfact-id", String(id2));
-        } else {
-            params.delete("figure-id");
-            params.delete("funfact-id");
+        if (q) {
+            const params = new URLSearchParams(searchParams);
+
+            if (term) {
+                params.set("figure-id", String(id1));
+                params.set("funfact-id", String(id2));
+            } else {
+                params.delete("figure-id");
+                params.delete("funfact-id");
+            }
+
+            replace(`${pathname}?${params.toString()}`);
         }
-        replace(`${pathname}?${params.toString()}`);
 
         const randomRotate = -(Math.random() + 0.1) * 160;
 
-        if (scope.current) {
-            setSelectedItem(term);
+        setSelectedItem(term);
 
-            if (isMobile)
-                animate(
-                    "#side",
-                    {
-                        right: "100%",
-                    },
-                    { duration: 0.4, ease: "easeOut" },
-                );
-
+        if (isMobile)
             animate(
-                "#card",
+                "#side",
                 {
-                    opacity: 1,
-                    rotate: ["50deg", `${randomRotate - 40}deg`],
-                    ...(isMobile
-                        ? { right: ["100%", "40%"] }
-                        : { left: ["100%", "40%"] }),
+                    right: "100%",
                 },
-                { type: "spring", stiffness: 550, damping: 100, mass: 10 },
+                { duration: 0.4, ease: "easeOut" },
             );
 
-            setTimeout(async () => {
-                await animate(
-                    "#card",
-                    {
-                        ...(isMobile ? { right: "0%" } : { left: "0%" }),
-                        rotate: "0deg",
-                        width: "100%",
-                        height: "100%",
-                        opacity: 0,
-                    },
-                    { type: "spring", bounce: 0, duration: 1 },
-                );
+        animate(
+            "#card",
+            {
+                opacity: 1,
+                rotate: ["50deg", `${randomRotate - 40}deg`],
+                ...(isMobile
+                    ? { right: ["100%", "40%"] }
+                    : { left: ["100%", "40%"] }),
+            },
+            { type: "spring", stiffness: 550, damping: 100, mass: 10 },
+        );
 
-                setShow(true);
-            }, 1000);
-        }
+        setTimeout(async () => {
+            await animate(
+                "#card",
+                {
+                    ...(isMobile ? { right: "0%" } : { left: "0%" }),
+                    rotate: "0deg",
+                    width: "100%",
+                    height: "100%",
+                    opacity: 0,
+                },
+                { type: "spring", bounce: 0, duration: 1 },
+            );
+
+            setShow(true);
+        }, 1000);
     };
 
     const handleHide = () => {
@@ -164,7 +168,6 @@ export default function useFunfacts(content: ContentType[][]) {
 
     return {
         isMobile,
-        isMounted,
         scope,
         handleCardAnimation,
         show,

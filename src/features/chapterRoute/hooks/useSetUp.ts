@@ -13,9 +13,9 @@ export default function useSetUp() {
     });
 
     const { scrollYProgress } = useScroll({
-        layoutEffect: false,
         target: container,
         offset: ["start start", "end start"],
+        layoutEffect: false,
     });
 
     return {

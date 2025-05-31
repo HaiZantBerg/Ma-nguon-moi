@@ -23,9 +23,13 @@ import alk from "public/Image/chapter/LuongGiac10/tk814/alkhawarizmi.webp";
 import ary from "public/Image/chapter/LuongGiac10/tk57/aryabhata.webp";
 import bha from "public/Image/chapter/LuongGiac10/tk57/bhaskarai.webp";
 import bra from "public/Image/chapter/LuongGiac10/tk57/brahmagupta.webp";
+import aicap from "public/Image/chapter/LuongGiac10/bandosaoaicap.webp";
+import xaydungthienvanhoc from "public/Image/chapter/LuongGiac10/xaydungthienvanhoc.webp";
+
+import Image from "next/image";
 
 <Section id={0} title='Mở đầu' isFirst>
-    <SItem id={0} isFirst isTop>
+    <SItem id={0} isTop>
 
         Khi các con số đã được phát minh, toán học sớm phân thành nhiều nhánh như số học, logic học hay đại số học.
         Các nhánh rẽ này dần phát triển đến độ chín muồi và trở thành những bộ môn độc lập.
@@ -187,7 +191,7 @@ import bra from "public/Image/chapter/LuongGiac10/tk57/brahmagupta.webp";
 
         <MP>
 
-            <MP.Trigger>{`Theo bước chân Eratosthenes đi tìm chu vi  của trái đất`}</MP.Trigger>
+            <MP.Trigger>{`Theo bước chân Eratosthenes đi tìm chu vi của trái đất`}</MP.Trigger>
 
             <MP.Content>
 
@@ -334,11 +338,17 @@ import bra from "public/Image/chapter/LuongGiac10/tk57/brahmagupta.webp";
         sát thiên văn để biết được thời vụ đánh bắt, sản xuất. Thời gian trôi đi, dần dần con người nhận ra rằng Mặt Trời, Mặt Trăng và những vì sao
         di chuyển theo một đường nhất định trên trời còn những **hành tinh** lại không như vậy.
 
+        <Image src={xaydungthienvanhoc} alt="" className='mb-[2rem]'/>
+
         ## Khoảng 2000 năm TCN:
 
         * Cả người Ai Cập và người Babylon đã phát triển các phương pháp để tính toán các độ dài và góc trong các tam giác,
         mặc dù họ chưa phát triển đầy đủ lý thuyết lượng giác như ngày nay. Người Babylon đã sử dụng bảng số học để tính
         toán các phép tính về góc và chu vi của các hình tròn.
+
+        * <Image src={aicap} alt="" className='mb-[2rem]'/>
+
+        * Một bản đồ sao được người Ai Cập sử dụng khoảng thế kỷ XV TCN
 
     </SItem>
 
@@ -743,7 +753,7 @@ import bra from "public/Image/chapter/LuongGiac10/tk57/brahmagupta.webp";
 
     </SItem>
 
-    <SItem id={6} title='Ngày nay' isLast isBottom>
+    <SItem id={6} title='Ngày nay' isBottom>
 
         ## Ngày nay:
 

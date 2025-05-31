@@ -21,8 +21,8 @@ export default function useAnimateBookMarks(border: string, title: string) {
         mass: 10,
     } as const;
 
-    const dropShadow = `drop-shadow(0 10px 10px ${border})`;
-    const dropShadowTranparency = `drop-shadow(0 0 0px transparent)`;
+    const dropShadow = ` drop-shadow(0 10px 10px ${border})`;
+    const dropShadowTranparency = ` drop-shadow(0 0 0px transparent)`;
 
     const handleMouseEnter = () => {
         if (isMobile) return null;

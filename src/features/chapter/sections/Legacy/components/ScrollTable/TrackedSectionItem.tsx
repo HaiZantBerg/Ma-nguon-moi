@@ -9,8 +9,6 @@ import { cn } from "@/lib/tailwind/tailwindMerge";
 type TrackedSectionItemProps = {
     id: number;
     title: string;
-    isFirst?: boolean;
-    isLast?: boolean;
     isTop?: boolean;
     isBottom?: boolean;
 } & HTMLAttributes<HTMLElement>;
@@ -19,8 +17,6 @@ export default function TrackedSectionItem({
     id,
     title,
     children,
-    isFirst,
-    isLast,
     isTop,
     isBottom,
 }: TrackedSectionItemProps) {
@@ -42,11 +38,12 @@ export default function TrackedSectionItem({
 
     const { scrollYProgress } = useScroll({
         target: container,
-        offset: isFirst
+        offset: isTop
             ? ["start start", "end center"]
-            : isLast
+            : isBottom
               ? ["start center", "center center"]
               : ["start center", "end center"],
+        layoutEffect: false,
     });
 
     const handleScrollChange = (val: number) => {
@@ -74,7 +71,7 @@ export default function TrackedSectionItem({
             }}
             ref={container}
             className={cn(
-                isLast ? "[&>:last-child]:pb-[5rem]" : "",
+                isBottom ? "[&>:last-child]:pb-[5rem]" : "",
                 "min-[1100px]:*:mx-[10rem] [&>div]:mx-0",
             )}
         >
