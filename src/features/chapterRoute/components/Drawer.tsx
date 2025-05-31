@@ -89,7 +89,7 @@ export default function Drawer({
                     <div className="relative flex h-[3rem] gap-3">
                         <Button3d
                             variant="blue-grey"
-                            className="h-full aspect-square"
+                            className="basis-[3rem] h-[3rem]"
                             onClick={() => {
                                 const des = ((curChapter + 7) % 9) + 1;
 
@@ -122,7 +122,7 @@ export default function Drawer({
                             <Button3d.Behind />
                         </Button3d>
                         <Button3d
-                            className="h-full aspect-square"
+                            className="basis-[3rem] h-[3rem]"
                             variant="blue-grey"
                             onClick={() => {
                                 const inc = curChapter % numberOfChapter;
