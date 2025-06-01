@@ -9,9 +9,6 @@
 src/app/(test)/
 src/app/historicalfigures/
 
-# legacy
-src/components/_Legacy/
-
 # not in used
 src/components/_NotInUsed/
 
