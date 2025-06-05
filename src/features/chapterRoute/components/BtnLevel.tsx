@@ -30,7 +30,7 @@ type LevelBtnProps = {
 
 const variants: ButtonContextType["variant"][] = ["blue", "red", "purple"];
 
-export default function LevelBtn({
+export default function BtnLevel({
     config,
     grade,
     idx,

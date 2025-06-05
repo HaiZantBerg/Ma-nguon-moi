@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import LevelBtn from "../LevelBtn";
 import { SmPortalIcon } from "@/features/chapterRoute/assets";
 import RouteLine from "./RouteLine";
 import Drawer from "../Drawer";
@@ -11,6 +10,7 @@ import { Card } from "@/components";
 import useSetUp from "../../hooks/useSetUp";
 import useIsMounted from "@/hooks/useIsMounted";
 import { cn } from "@/lib/tailwind/tailwindMerge";
+import BtnLevel from "../BtnLevel";
 
 const color: Record<string, string[]> = {
     grade10: ["#2f406e", "#041dff0c"],
@@ -88,7 +88,7 @@ export default function ChapterRoute({
                     />
                 )}
                 {LevelBtnArray["grade1" + grade].map((config, idx) => (
-                    <LevelBtn
+                    <BtnLevel
                         config={config}
                         romanNumeral={romanNumeral[idx]}
                         isMobile={isMobile}
