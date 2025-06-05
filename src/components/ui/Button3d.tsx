@@ -49,7 +49,7 @@ Button3d.Content = function Button3dContent({
 
     const variants = {
         blue: "bg-[#207cf3] text-white hover:bg-[#0c6ce8]",
-        red: "bg-[#f05858] text-white hover:bg-[#f64747]",
+        green: "bg-[#33c862] text-white hover:bg-[#26c358]",
         purple: "bg-[#ad20f3] text-white hover:bg-[#9b0ce9]",
         "blue-grey": "bg-[#4a5c99]",
         "sign-in":
@@ -67,7 +67,7 @@ Button3d.Content = function Button3dContent({
             className={cn(
                 className,
                 variants[variant],
-                "flex items-center justify-center h-full w-full relative z-10",
+                "flex items-center justify-center h-full w-full relative z-10 transition-colors ease-in duration-150",
             )}
             {...props}
             ref={scope}
@@ -90,7 +90,7 @@ Button3d.Behind = function Button3dBehind({
 
     const variants = {
         blue: "bg-[#3b3fa1]",
-        red: "bg-[#a03b3b]",
+        green: "bg-[#398f5e]",
         purple: "bg-[#713ba0]",
         "blue-grey": "bg-[#32324b]",
         "sign-in": "bg-[#3b3fa1]",

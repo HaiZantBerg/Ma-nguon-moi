@@ -73,7 +73,7 @@ export default function ScrollSectionItemTable({
                                 <motion.div
                                     className={cn(
                                         havePassedItem
-                                            ? "bg-[#621a03]"
+                                            ? "bg-[#bd3702]"
                                             : "bg-neutral-300",
                                         "min-[768px]:w-2 w-[0.375rem] rounded-2xl overflow-hidden mx-auto relative",
                                     )}
@@ -90,7 +90,7 @@ export default function ScrollSectionItemTable({
                                     {activeSection === parId &&
                                         activeSectionItem === item.id && (
                                             <motion.div
-                                                className="bg-[#621a03] rounded-2xl w-full"
+                                                className="bg-[#c55123] rounded-2xl w-full"
                                                 style={{
                                                     height: progressHeight,
                                                 }}

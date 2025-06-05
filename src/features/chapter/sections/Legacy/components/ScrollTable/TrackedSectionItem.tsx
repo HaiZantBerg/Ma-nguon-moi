@@ -11,6 +11,7 @@ type TrackedSectionItemProps = {
     title: string;
     isTop?: boolean;
     isBottom?: boolean;
+    className?: string;
 } & HTMLAttributes<HTMLElement>;
 
 export default function TrackedSectionItem({
@@ -19,6 +20,7 @@ export default function TrackedSectionItem({
     children,
     isTop,
     isBottom,
+    className,
 }: TrackedSectionItemProps) {
     const { id: parId } = useSectionIdContext();
 
@@ -72,6 +74,7 @@ export default function TrackedSectionItem({
             }}
             ref={container}
             className={cn(
+                className,
                 isBottom ? "[&>:last-child]:pb-[5rem]" : "",
                 "min-[1100px]:*:mx-[10rem] [&>div]:mx-0",
             )}

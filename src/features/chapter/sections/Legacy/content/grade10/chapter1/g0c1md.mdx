@@ -1,3 +1,5 @@
+import { ToggleLesson } from "./reactMDX";
+
 import {
     Section,
     SItem,
@@ -14,7 +16,9 @@ import Ber from "public/Image/chapter/MDTH/bertrandrussell.webp";
 import { BlockMath, InlineMath } from "react-katex";
 
 <Section id={0} title='Mở đầu' isFirst>
-    <SItem id={0} isTop>
+    <SItem id={0} isTop className="relative">
+
+        <ToggleLesson />
 
         Từ xa xưa, con người đã nỗ lực tìm cách suy nghĩ và lập luận một cách chặt chẽ, dẫn đến sự ra đời của logic học - ngành nghiên cứu về lập luận đúng.
         Trong đó, mệnh đề là khái niệm trung tâm, đóng vai trò là đơn vị cơ bản của tư duy logic.

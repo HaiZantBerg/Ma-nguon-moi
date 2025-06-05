@@ -3,6 +3,7 @@ import {
     createContext,
     MutableRefObject,
     useContext,
+    useEffect,
     useRef,
     useState,
 } from "react";
@@ -36,7 +37,10 @@ export const ScrollTableContext = createContext<ScrollTableType | undefined>(
     undefined,
 );
 
-export function useScrollTableValues() {
+export function useScrollTableValues(
+    part: string | null,
+    hasRedirected: boolean,
+) {
     const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
     const interuptedScroll = useRef(-1);
@@ -48,6 +52,20 @@ export function useScrollTableValues() {
     const [sectionItems, setSectionItems] = useState<SectionItem[][]>([]);
 
     const scrollYProgressSectionItem = useMotionValue(0);
+
+    useEffect(() => {
+        if (!hasRedirected || !part) return;
+
+        setSections([]);
+        setSectionItems([]);
+
+        setActiveSection(0);
+        setActiveSectionItem(0);
+
+        interuptedScroll.current = -1;
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [part]);
 
     const registerSection = (section: Section) => {
         setSections((prev) => prev.concat(section));

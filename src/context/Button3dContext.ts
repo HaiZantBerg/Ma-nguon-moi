@@ -3,7 +3,7 @@ import { createContext, useContext } from "react";
 export type ButtonContextType = {
     variant:
         | "blue"
-        | "red"
+        | "green"
         | "purple"
         | "blue-grey"
         | "sign-up"

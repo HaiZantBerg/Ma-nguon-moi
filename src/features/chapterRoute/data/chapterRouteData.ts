@@ -109,8 +109,9 @@ export const LevelBtnArray: Record<
     grade11: [
         {
             gridPosition: "col-[1/2] row-[1/2]",
-            className: "absolute -right-[20%]",
+            className: "absolute -right-[20%] z-10",
             detailsCN: "translate-y-12",
+            directionR: true,
         },
         {
             gridPosition: "col-[2/3] row-[1/2]",
@@ -125,28 +126,27 @@ export const LevelBtnArray: Record<
         },
         {
             gridPosition: "col-[3/4] row-[2/3]",
-            className: "absolute right-0 -top-[16%]",
-            directionR: true,
+            className: "absolute right-0 -top-[16%] z-10",
             delay: 2,
         },
         {
             gridPosition: "col-[3/4] row-[2/3]",
             className: "absolute top-[28%] right-[25%]",
-            directionR: true,
         },
         {
             gridPosition: "row-[2/3] col-[1/2]",
             className: "absolute sm:right-[35%] top-[48%]",
             delay: 2,
+            directionR: true,
         },
         {
             gridPosition: "col-[2/3] row-[2/3]",
             className: "absolute left-[45%] sm:-bottom-[10%] bottom-0",
+            directionR: true,
         },
         {
             gridPosition: "col-[3/4] row-[3/4]",
             className: "absolute top-[10%] sm:left-[30%] -left-[10%]",
-            directionR: true,
             delay: 2,
         },
         {
@@ -160,6 +160,7 @@ export const LevelBtnArray: Record<
             gridPosition: "col-[1/2] row-[1/2]",
             className: "absolute left-[5%]",
             detailsCN: "translate-y-12",
+            directionR: true,
         },
         {
             gridPosition: "col-[2/3] row-[1/2]",
@@ -170,13 +171,12 @@ export const LevelBtnArray: Record<
         {
             gridPosition: "row-[1/2] col-[3/4]",
             className: "absolute top-[60%] right-0",
-            directionR: true,
         },
         {
             gridPosition: "col-[1/2] row-[2/3]",
             className: "absolute left-[10%]",
-            directionR: true,
             delay: 2,
+            directionR: true,
         },
         {
             gridPosition: "row-[2/3] col-[3/4]",

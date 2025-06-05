@@ -28,7 +28,7 @@ type LevelBtnProps = {
     level: StaticImageData[];
 };
 
-const variants: ButtonContextType["variant"][] = ["blue", "red", "purple"];
+const variants: ButtonContextType["variant"][] = ["blue", "green", "purple"];
 
 export default function BtnLevel({
     config,
@@ -53,6 +53,8 @@ export default function BtnLevel({
     const handleMouseClick = () => {
         if (isMobile) setCurChapter(idx + 1);
     };
+
+    const { title, description } = chapter["grade1" + String(grade)];
 
     return (
         <div
@@ -92,16 +94,10 @@ export default function BtnLevel({
                                                 CHƯƠNG {romanNumeral}
                                             </p>
                                             <p className="text-xl">
-                                                {
-                                                    chapter["grade1" + grade]
-                                                        .title[idx]
-                                                }
+                                                {title[idx]}
                                             </p>
                                         </header>
-                                        {
-                                            chapter["grade1" + grade]
-                                                .description[idx]
-                                        }
+                                        {description[idx]}
                                         <Button3d
                                             as={Link}
                                             variant={variants[grade]}

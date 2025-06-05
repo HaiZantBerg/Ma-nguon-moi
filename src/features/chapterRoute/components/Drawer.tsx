@@ -19,7 +19,7 @@ type DrawerProps = {
     numberOfChapter: number;
 };
 
-const variants: ButtonContextType["variant"][] = ["blue", "red", "purple"];
+const variants: ButtonContextType["variant"][] = ["blue", "green", "purple"];
 
 export default function Drawer({
     curChapter,
@@ -79,7 +79,7 @@ export default function Drawer({
                             </h1>
                             <h2 className="text-xl sm:text-[1.5rem]">
                                 {
-                                    chapter["grade1" + grade].title[
+                                    chapter["grade1" + String(grade)].title[
                                         curChapter - 1
                                     ]
                                 }
@@ -90,9 +90,8 @@ export default function Drawer({
                         >
                             <div className="max-h-[50dvh] overflow-auto py-8">
                                 {
-                                    chapter["grade1" + grade].description[
-                                        curChapter - 1
-                                    ]
+                                    chapter["grade1" + String(grade)]
+                                        .description[curChapter - 1]
                                 }
                             </div>
                         </div>

@@ -8,25 +8,9 @@
 - thêm câu: "Giữ thói quen tốt với việc tìm hiểu lịch sử toán học mỗi ngày"
 
 - thẻ home
-  1B143B xanh
-  150100 đỏ
+  1B143B xanh dương
+  00140b xanh lá
   200D26 tím
-
-- chap route
-  xanh
-  #7da6ff
-  #567db8
-  #0003ab
-
-tím
-#c680ff
-#8a56b8
-#8200ad
-
-đỏ
-#ff8080
-#e37f7f
-#ad0000
 
 cool looking references😎😎😎 🔥🔥🔥:
 
