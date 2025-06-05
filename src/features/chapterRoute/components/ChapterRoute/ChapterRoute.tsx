@@ -1,14 +1,22 @@
 "use client";
 
 import React from "react";
-import LevelBtn from "../levelBtn";
-import { SmRoute, LgRoute, SmPortalIcon } from "@/features/chapterRoute/assets";
+import LevelBtn from "../LevelBtn";
+import { SmPortalIcon } from "@/features/chapterRoute/assets";
+import RouteLine from "./RouteLine";
 import Drawer from "../Drawer";
-import { LevelBtnArray } from "../../data/chapterRouteData";
+import { LevelBtnArray, ui } from "../../data/chapterRouteData";
 import ParallaxBg from "./ParallaxBg";
 import { Card } from "@/components";
 import useSetUp from "../../hooks/useSetUp";
 import useIsMounted from "@/hooks/useIsMounted";
+import { cn } from "@/lib/tailwind/tailwindMerge";
+
+const color: Record<string, string[]> = {
+    grade10: ["#2f406e", "#041dff0c"],
+    grade11: ["#6f2f2f", "#ff05050d"],
+    grade12: ["#4f2f6f", "#9305ff0d"],
+};
 
 export default function ChapterRoute({
     grade,
@@ -40,6 +48,8 @@ export default function ChapterRoute({
         "IX",
     ];
 
+    const { level, bg } = ui["grade1" + String(grade)];
+
     if (!isMounted) return;
 
     return (
@@ -56,17 +66,28 @@ export default function ChapterRoute({
                     numberOfChapter={numberOfChapter}
                 />
             )}
-            <div className="relative z-10 grid grid-cols-[repeat(3,1fr)] grid-rows-[repeat(3,1fr)] pb-40">
-                {willChangeRouteLayout ? (
-                    <div className="absolute top-[7rem] left-[-2.5rem] h-full w-[25rem]">
-                        <SmRoute className="h-auto w-full opacity-75" />
-                    </div>
-                ) : (
-                    <div className="absolute top-[10rem] left-9 h-full w-full">
-                        <LgRoute className="h-auto w-full opacity-75" />
-                    </div>
+            <div
+                className={cn(
+                    grade === 2
+                        ? "grid-cols-[repeat(2,1fr)] grid-rows-[repeat(2,1fr)]"
+                        : "grid-cols-[repeat(3,1fr)] grid-rows-[repeat(3,1fr)]",
+                    "relative z-10 grid pb-40",
                 )}
-                {LevelBtnArray.map((config, idx) => (
+            >
+                {willChangeRouteLayout ? (
+                    <RouteLine
+                        className="h-auto w-full opacity-75"
+                        grade={grade}
+                        size="sm"
+                    />
+                ) : (
+                    <RouteLine
+                        className="h-auto w-full opacity-75"
+                        grade={grade}
+                        size="lg"
+                    />
+                )}
+                {LevelBtnArray["grade1" + grade].map((config, idx) => (
                     <LevelBtn
                         config={config}
                         romanNumeral={romanNumeral[idx]}
@@ -75,10 +96,17 @@ export default function ChapterRoute({
                         idx={idx}
                         setCurChapter={setCurChapter}
                         key={idx}
+                        level={level}
                     />
                 ))}
             </div>
-            <Card className="top-[0] z-[1] border-[#2f406e] bg-[#041dff0c] min-[1366px]:sticky min-[1366px]:top-[9rem] min-[1366px]:max-w-[32rem]">
+            <Card
+                className="top-[0] z-[1] min-[1366px]:sticky min-[1366px]:top-[9rem] min-[1366px]:max-w-[32rem]"
+                style={{
+                    borderColor: color["grade1" + grade][0],
+                    background: color["grade1" + grade][1],
+                }}
+            >
                 <Card.Title as="h1" className="flex flex-col">
                     <span className="font-['Chakra_Petch'] text-3xl font-bold sm:text-4xl">
                         KHỐI
@@ -93,7 +121,12 @@ export default function ChapterRoute({
                         góp của các nền văn minh cổ đại trong đại số và hình học
                         đến những đột phá vào những năm 1900.
                     </p>
-                    <div className="flex w-fit flex-col border-l-2 border-[#2f406e] py-2 pl-4">
+                    <div
+                        className="flex w-fit flex-col border-l-2 py-2 pl-4"
+                        style={{
+                            borderColor: color["grade1" + grade][0],
+                        }}
+                    >
                         <div className="flex">
                             <div className="inline h-[1.5rem] w-[1.5rem]">
                                 <SmPortalIcon className="size-[24px]" />
@@ -105,7 +138,7 @@ export default function ChapterRoute({
                     </div>
                 </Card.Content>
             </Card>
-            <ParallaxBg scrollYProgress={scrollYProgress} />
+            <ParallaxBg scrollYProgress={scrollYProgress} bg={bg} />
         </div>
     );
 }

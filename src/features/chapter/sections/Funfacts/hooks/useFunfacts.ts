@@ -68,13 +68,8 @@ export default function useFunfacts(content: ContentType[][]) {
         if (q) {
             const params = new URLSearchParams(searchParams);
 
-            if (term) {
-                params.set("figure-id", String(id1));
-                params.set("funfact-id", String(id2));
-            } else {
-                params.delete("figure-id");
-                params.delete("funfact-id");
-            }
+            params.set("figure-id", String(id1));
+            params.set("funfact-id", String(id2));
 
             replace(`${pathname}?${params.toString()}`);
         }

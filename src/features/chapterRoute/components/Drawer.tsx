@@ -3,12 +3,13 @@
 import React from "react";
 import ArrowIcon from "@/assets/Svg/arrowStuff.svg";
 import Link from "next/link";
-import { chapter, description } from "../data/chaptersStatic";
+import { chapter } from "../data/chaptersStatic";
 import styling from "../assets/drawer.module.css";
 import { FindIcon } from "../assets";
 import { motion } from "motion/react";
 import useDrawer from "../hooks/useDrawer";
 import { Button3d } from "@/components";
+import { ButtonContextType } from "@/context/Button3dContext";
 
 type DrawerProps = {
     curChapter: number;
@@ -17,6 +18,8 @@ type DrawerProps = {
     grade: number;
     numberOfChapter: number;
 };
+
+const variants: ButtonContextType["variant"][] = ["blue", "red", "purple"];
 
 export default function Drawer({
     curChapter,
@@ -75,14 +78,22 @@ export default function Drawer({
                                 CHƯƠNG {romanNumeral[curChapter - 1]}
                             </h1>
                             <h2 className="text-xl sm:text-[1.5rem]">
-                                {chapter[0][curChapter - 1]}
+                                {
+                                    chapter["grade1" + grade].title[
+                                        curChapter - 1
+                                    ]
+                                }
                             </h2>
                         </header>
                         <div
                             className={`${styling.drawerContent} relative py-0.5`}
                         >
                             <div className="max-h-[50dvh] overflow-auto py-8">
-                                {description[0][curChapter - 1]}
+                                {
+                                    chapter["grade1" + grade].description[
+                                        curChapter - 1
+                                    ]
+                                }
                             </div>
                         </div>
                     </article>
@@ -105,19 +116,22 @@ export default function Drawer({
                             }}
                         >
                             <Button3d.Content>
-                                <ArrowIcon className="w-[50%] translate-x-[-2px] rotate-270" />
+                                <ArrowIcon
+                                    width="50%"
+                                    className="translate-x-[-2px] rotate-270"
+                                />
                             </Button3d.Content>
                             <Button3d.Behind />
                         </Button3d>
                         <Button3d
                             as={Link}
-                            variant="blue"
+                            variant={variants[grade]}
                             href={`/khoi1${grade}/chuong${curChapter}/legacy`}
                             className="grow font-medium"
                         >
                             <Button3d.Content className="gap-3 sm:gap-5 text-xl">
                                 Khám phá
-                                <FindIcon className="h-[60%] w-fit" />
+                                <FindIcon height="60%" />
                             </Button3d.Content>
                             <Button3d.Behind />
                         </Button3d>
@@ -137,7 +151,10 @@ export default function Drawer({
                             }}
                         >
                             <Button3d.Content>
-                                <ArrowIcon className="w-[50%] translate-x-[2px] rotate-90" />
+                                <ArrowIcon
+                                    width="50%"
+                                    className="translate-x-[2px] rotate-90"
+                                />
                             </Button3d.Content>
                             <Button3d.Behind />
                         </Button3d>

@@ -71,7 +71,7 @@ IP.Trigger = function IPTrigger({ children }: IPProps) {
         <motion.div
             className={cn(
                 openP ? "z-20" : "z-0",
-                "text-nowrap rounded-[8px] leading-[2rem] hover:bg-[#ff8b38] inline relative px-2 pt-1 pb-1.5 transition-all duration-200 ease-in cursor-pointer",
+                "text-nowrap rounded-[8px] leading-[2rem] hover:bg-[#ff8b38] inline relative px-2 pt-1 pb-1.5 transition-all duration-200 ease-in cursor-pointer select-none",
             )}
             style={{
                 scrollMargin: "25dvh",

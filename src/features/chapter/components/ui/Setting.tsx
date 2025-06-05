@@ -12,6 +12,7 @@ import FunfactsIcon from "../../assets/funfactsIcon.svg";
 import QuizzesIcon from "../../assets/quizzesIcon.svg";
 import { useMediaQuery } from "react-responsive";
 import PushLink from "@/components/PushLink";
+import { capitalizeFirst } from "../../utils/capitalizeFirst";
 
 const image = [
     <LegacyIcon
@@ -70,8 +71,7 @@ export default function Setting({
                                             {image[id]}
                                         </div>
                                         <p style={{ color: border }}>
-                                            {title[0].toUpperCase() +
-                                                title.slice(1)}
+                                            {capitalizeFirst(title)}
                                         </p>
                                     </PushLink>
                                 </li>

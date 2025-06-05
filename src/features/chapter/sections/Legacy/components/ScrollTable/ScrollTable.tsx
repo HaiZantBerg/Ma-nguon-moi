@@ -47,7 +47,7 @@ export default function ScrollTable() {
                                 <ScrollSectionIcon
                                     className={cn(
                                         shouldRender
-                                            ? "stroke-black"
+                                            ? "stroke-[#762003]"
                                             : "stroke-[#a5a5a5]",
                                         "min-[768px]:flex-[0_0_22px] min-[768px]:size-[22px] flex-[0_0_16px] size-[1rem] transition-colors duration-200 ease-in",
                                     )}
@@ -68,7 +68,7 @@ export default function ScrollTable() {
                                             className="grid"
                                         >
                                             <motion.p
-                                                className="pl-2 self-center overflow-hidden"
+                                                className="pl-2 text-[#200800] self-center overflow-hidden"
                                                 initial={{ opacity: 0 }}
                                                 animate={{ opacity: 1 }}
                                                 exit={{ opacity: 0 }}

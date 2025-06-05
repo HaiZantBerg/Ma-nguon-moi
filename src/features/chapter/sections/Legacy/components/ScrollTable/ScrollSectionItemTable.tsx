@@ -16,6 +16,7 @@ export default function ScrollSectionItemTable({
         sectionItems,
         activeSectionItem,
         scrollYProgressSectionItem,
+        activeSection,
         isMobile,
     } = useScrollTableContext();
 
@@ -40,7 +41,10 @@ export default function ScrollSectionItemTable({
                 transition={{ duration: 0.75 }}
             >
                 {sectionItems[parId].map((item, id) => {
-                    const havePassedItem = activeSectionItem > item.id;
+                    const havePassedItem =
+                        parId < activeSection ||
+                        (parId === activeSection &&
+                            item.id < activeSectionItem);
 
                     return (
                         <motion.button
@@ -69,7 +73,7 @@ export default function ScrollSectionItemTable({
                                 <motion.div
                                     className={cn(
                                         havePassedItem
-                                            ? "bg-black"
+                                            ? "bg-[#621a03]"
                                             : "bg-neutral-300",
                                         "min-[768px]:w-2 w-[0.375rem] rounded-2xl overflow-hidden mx-auto relative",
                                     )}
@@ -83,14 +87,15 @@ export default function ScrollSectionItemTable({
                                     }}
                                     transition={{ ease: "linear" }}
                                 >
-                                    {activeSectionItem === item.id && (
-                                        <motion.div
-                                            className="bg-black rounded-2xl w-full"
-                                            style={{
-                                                height: progressHeight,
-                                            }}
-                                        />
-                                    )}
+                                    {activeSection === parId &&
+                                        activeSectionItem === item.id && (
+                                            <motion.div
+                                                className="bg-[#621a03] rounded-2xl w-full"
+                                                style={{
+                                                    height: progressHeight,
+                                                }}
+                                            />
+                                        )}
                                 </motion.div>
                             </div>
                             <AnimatePresence>
@@ -101,7 +106,7 @@ export default function ScrollSectionItemTable({
                                         exit={{ gridTemplateRows: "0fr" }}
                                         className="grid"
                                     >
-                                        <p className="overflow-hidden">
+                                        <p className="overflow-hidden text-[#200800]">
                                             {item.title}
                                         </p>
                                     </motion.div>

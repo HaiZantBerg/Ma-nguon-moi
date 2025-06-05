@@ -26,6 +26,7 @@ export default function TrackedSectionItem({
         registerSectionItem,
         scrollYProgressSectionItem,
         setActiveSectionItem,
+        activeSection,
         activeSectionItem,
     } = useScrollTableContext();
 
@@ -56,7 +57,7 @@ export default function TrackedSectionItem({
 
         if (activeSectionItem !== id) {
             setActiveSectionItem(id);
-        } else {
+        } else if (activeSection === parId) {
             scrollYProgressSectionItem.set(val);
         }
     };

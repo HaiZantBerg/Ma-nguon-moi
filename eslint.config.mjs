@@ -56,8 +56,9 @@ const eslintConfig = [
             ],
         },
         rules: {
-            "boundaries/no-unknown": ["error"],
-            "boundaries/no-unknown-files": ["error"],
+            "@typescript-eslint/no-explicit-any": "off",
+            "boundaries/no-unknown": "error",
+            "boundaries/no-unknown-files": "error",
             "boundaries/element-types": [
                 "error",
                 {

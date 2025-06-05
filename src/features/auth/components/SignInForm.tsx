@@ -11,6 +11,7 @@ import EmailIcon from "../assets/emailIcon.svg";
 import { Form, Input, Button3d } from "@/components";
 import { signIn } from "@/auth/action";
 import CrossItem from "@/assets/Svg/Cross.svg";
+import Link from "next/link";
 
 export default function SignUpForm() {
     const [data, action, isPending] = useActionState(signIn, undefined);
@@ -36,10 +37,7 @@ export default function SignUpForm() {
                             setShowUpError(undefined);
                         }}
                     >
-                        <CrossItem
-                            fill="#ff4949"
-                            className="h-[0.65rem] aspect-square"
-                        />
+                        <CrossItem fill="#ff4949" width="10.4" height="10.4" />
                     </div>
                 </div>
             )}
@@ -90,9 +88,12 @@ export default function SignUpForm() {
                     </Input>
                 </Form.Item>
             </Form.Feild>
-            <p className="w-full mt-2 mb-4 text-end text-[0.9rem] font-bold text-[#4c9aff] sm:text-[1rem]">
+            <Link
+                href="/reset-password"
+                className="w-full mt-2 mb-4 text-end text-[0.9rem] font-bold text-[#4c9aff] sm:text-[1rem]"
+            >
                 Quên mật khẩu?
-            </p>
+            </Link>
             <Button3d
                 variant="sign-in"
                 className="h-[2.75rem] w-full sm:h-[3rem]"

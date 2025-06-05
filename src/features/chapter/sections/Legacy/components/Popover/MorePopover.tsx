@@ -61,7 +61,7 @@ MP.Trigger = function MPTrigger({ children }: MPProps) {
         <motion.div
             className={cn(
                 openP ? "z-30" : "z-0",
-                "border border-[#6a6a0b] font-medium w-fit hover:bg-[#feffa8] relative mr-[15px] px-4 py-2 transition-all duration-200 ease-in cursor-pointer",
+                "border border-[#6a6a0b] font-medium w-fit hover:bg-[#feffa8] relative mr-[15px] px-4 py-2 transition-all duration-200 ease-in cursor-pointer select-none",
             )}
             style={{
                 scrollMargin: "10dvh",

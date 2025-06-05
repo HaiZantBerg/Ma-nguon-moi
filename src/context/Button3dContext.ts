@@ -1,7 +1,14 @@
 import { createContext, useContext } from "react";
 
 export type ButtonContextType = {
-    variant: "blue" | "blue-grey" | "sign-up" | "sign-in" | "grey";
+    variant:
+        | "blue"
+        | "red"
+        | "purple"
+        | "blue-grey"
+        | "sign-up"
+        | "sign-in"
+        | "grey";
 };
 
 export const Button3dContext = createContext<ButtonContextType | undefined>(

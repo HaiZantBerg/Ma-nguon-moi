@@ -8,7 +8,6 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
     - Xài mấy cái api của Chatgpt, chắc phải trả phí:v (nghèo quá nên chọn cái rẻ nhất😅)
     - Thêm mấy cái chỉ số các thứ trong Card ở phần ChapterRoute
     - Làm thêm cái Icon biểu tượng cho từng khối lớp
-    - Làm mới lại đống Lesson, FunFact, Quizzes bằng mdx
 
 - 5 / 11 / 2025:
 
@@ -37,6 +36,8 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
 - 5 / 14 / 2025:
     - Thay đổi thông báo error ở signUpForm.tsx và signInForm.tsx
     - Hoàn thành signUp và signIn feature
+- 5 / 30 / 2025:
+    - Làm mới lại đống Lesson, FunFact, Quizzes bằng mdx
 
 ### update log 📝:
 

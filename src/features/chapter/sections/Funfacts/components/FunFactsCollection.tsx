@@ -4,6 +4,7 @@ import React from "react";
 import { ChapterChildProps } from "feature/chapter/types/General";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
+import "katex/dist/katex.min.css";
 
 import card from "public/Image/funfacts/card.webp";
 import CrossIcon from "@/assets/Svg/Cross.svg";
@@ -143,7 +144,7 @@ export default function FunFactsCollection({
                     isMobile
                         ? "border-r w-full absolute"
                         : "border-l min-[1300px]:w-[45.5rem] w-[31rem] relative",
-                    "h-full bg-white pt-[7rem] z-20",
+                    "h-full bg-white border-[#1d0029] pt-[7rem] z-20",
                 )}
                 id="side"
             >
@@ -160,11 +161,11 @@ export default function FunFactsCollection({
                         >
                             <ArrowIcon
                                 className="absolute opacity-70 top-0 left-[-2px] size-full stroke-[10px] rotate-90"
-                                stroke="black"
+                                stroke="#1d0029"
                             />
                             <ArrowIcon
                                 className="absolute opacity-70 top-0 left-1 size-full stroke-[10px] rotate-90"
-                                stroke="black"
+                                stroke="#1d0029"
                             />
                         </button>
                     )}
@@ -177,34 +178,36 @@ export default function FunFactsCollection({
                         "h-full overflow-x-hidden overflow-y-auto pr-[1rem]",
                     )}
                 >
-                    <div>
-                        {Object.entries(content).map(([figure, fact], id1) => (
-                            <div className="flex-col flex" key={id1}>
-                                {id1 != 0 && (
-                                    <hr className="md:mx-[5rem] mx-[3rem]" />
-                                )}
-                                <header className="md:text-xl text-lg font-semibold pt-[2rem]">
-                                    {figure}
-                                </header>
+                    {Object.entries(content).map(([figure, fact], id1) => (
+                        <div className="flex-col flex" key={id1}>
+                            {id1 != 0 && (
+                                <hr className="md:mx-[5rem] mx-[3rem] border-[#1d0029]" />
+                            )}
+                            <header className="sm:text-2xl text-xl font-semibold text-[#1d0029] pt-[2rem]">
+                                {figure}
+                            </header>
+                            <div className={isMobile ? "mx-auto" : ""}>
                                 <div
                                     className={cn(
-                                        isMobile ? "pl-4" : "pl-[2rem]",
+                                        isMobile
+                                            ? "min-[45rem]:w-[40.5rem] min-[30rem]:w-[27rem] w-[21rem]"
+                                            : "pl-[2rem]",
                                         "flex flex-wrap gap-[1rem] pt-[1rem] pb-[2rem]",
                                     )}
                                 >
                                     {fact.map((item, id2) => (
                                         <div
-                                            className="md:w-[12.5rem] max-[48rem]:text-[0.8rem] max-[40rem]:text-[0.6rem] max-[48rem]:leading-[1.2rem] max-[40rem]:leading-[0.9rem] sm:w-[10rem] w-[7.5rem] relative aspect-[25/38] cursor-pointer select-none"
+                                            className="min-[30rem]:w-[12.5rem] max-[30rem]:text-[0.8rem] max-[30rem]:leading-[1.2rem] w-[10rem] relative aspect-[25/38] cursor-pointer select-none"
                                             onClick={() =>
                                                 handleCardAnimation(id1, id2)
                                             }
                                             key={id2}
                                         >
-                                            <p className="absolute z-10 md:top-[0.15rem] sm:top-[0.12rem] top-[0.09rem] text-center w-full">
+                                            <p className="absolute z-10 min-[30rem]:top-[0.15rem] top-[0.12rem] text-center w-full">
                                                 {item.id}
                                             </p>
-                                            <div className="absolute z-10 w-full left-0 md:top-[5rem] sm:top-[4rem] top-[3rem] flex justify-center">
-                                                <div className="md:size-[7rem] sm:size-[5.6rem] size-[4.2rem] relative">
+                                            <div className="absolute z-10 w-full left-0 min-[30rem]:top-[5rem] top-[4rem] flex justify-center">
+                                                <div className="min-[30rem]:size-[7rem] size-[5.6rem] relative">
                                                     {item.src && (
                                                         <Image
                                                             src={item.src}
@@ -215,8 +218,8 @@ export default function FunFactsCollection({
                                                     )}
                                                 </div>
                                             </div>
-                                            <div className="absolute z-10 md:top-[13rem] sm:top-[10.4rem] top-[7.8rem] font-medium text-center w-full">
-                                                <p className="md:w-[10rem] sm:w-[8rem] w-[6rem] mx-auto">
+                                            <div className="absolute z-10 min-[30rem]:top-[13rem] top-[10.4rem] font-medium text-center w-full">
+                                                <p className="min-[30rem]:w-[10rem] w-[8rem] mx-auto">
                                                     {item.title}
                                                 </p>
                                             </div>
@@ -230,8 +233,8 @@ export default function FunFactsCollection({
                                     ))}
                                 </div>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

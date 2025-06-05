@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import signInIcon from "public/Image/auth/signInIcon.webp";
+import signInIcon from "@/assets/Svg/auth/signInIcon.svg?url";
 import { SignInForm } from "@/features/auth";
 
 export default function Page() {

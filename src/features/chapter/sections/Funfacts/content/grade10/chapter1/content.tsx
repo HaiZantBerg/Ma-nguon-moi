@@ -122,12 +122,12 @@ const g0c1 = {
             content: (
                 <>
                     <p>
-                        {`Một câu chuyện khác mang tính đời thường nhưng cũng khá hài
-                        hước là về cuộc sống gia đình của Aristotle. Theo sử sách
-                        ghi lại, Aristotle và vợ ông, Pythias, có mối quan hệ khá
-                        thú vị. Dù ông là một triết gia vĩ đại với trí tuệ siêu
-                        phàm, nhưng trong cuộc sống gia đình, đôi khi Aristotle lại
-                        gặp khó khăn khi đối diện với vợ.`}
+                        Một câu chuyện khác mang tính đời thường nhưng cũng khá
+                        hài hước là về cuộc sống gia đình của Aristotle. Theo sử
+                        sách ghi lại, Aristotle và vợ ông, Pythias, có mối quan
+                        hệ khá thú vị. Dù ông là một triết gia vĩ đại với trí
+                        tuệ siêu phàm, nhưng trong cuộc sống gia đình, đôi khi
+                        Aristotle lại gặp khó khăn khi đối diện với vợ.
                     </p>
                     <p>
                         {`Có lần, vợ ông than phiền rằng ông luôn dành quá nhiều thời
@@ -187,14 +187,15 @@ const g0c1 = {
                         xúc."`}
                     </p>
                     <p>
-                        {`Những câu chuyện này không chỉ là những giai thoại vui vẻ về
-                        Aristotle mà còn mang đến một góc nhìn khác về con người ông
-                        - không chỉ là một triết gia uyên bác mà còn là một người có
-                        tính cách thú vị, hài hước và đôi khi rất đời thường. Dù là
-                        trong những khoảnh khắc giảng dạy hay cuộc sống cá nhân,
-                        Aristotle vẫn giữ được sự tinh tế và tư duy sâu sắc, nhưng
-                        không bao giờ thiếu đi một chút hài hước khiến ông trở thành
-                        một hình mẫu vừa tôn kính vừa gần gũi.`}
+                        Những câu chuyện này không chỉ là những giai thoại vui
+                        vẻ về Aristotle mà còn mang đến một góc nhìn khác về con
+                        người ông - không chỉ là một triết gia uyên bác mà còn
+                        là một người có tính cách thú vị, hài hước và đôi khi
+                        rất đời thường. Dù là trong những khoảnh khắc giảng dạy
+                        hay cuộc sống cá nhân, Aristotle vẫn giữ được sự tinh tế
+                        và tư duy sâu sắc, nhưng không bao giờ thiếu đi một chút
+                        hài hước khiến ông trở thành một hình mẫu vừa tôn kính
+                        vừa gần gũi.
                     </p>
                 </>
             ),
@@ -277,10 +278,10 @@ const g0c1 = {
                         không cần thiết khi sự thật chỉ đơn giản là 'không'."`}
                     </p>
                     <p>
-                        {`Câu trả lời ngắn gọn của Ockham phản ánh chính nguyên
+                        Câu trả lời ngắn gọn của Ockham phản ánh chính nguyên
                         tắc nổi tiếng của ông về sự đơn giản, nhưng nó cũng
                         khiến người khác phải cười vì cách ông cắt ngắn những
-                        cuộc tranh luận phức tạp chỉ bằng một vài từ.`}
+                        cuộc tranh luận phức tạp chỉ bằng một vài từ.
                     </p>
                 </>
             ),
@@ -294,12 +295,12 @@ const g0c1 = {
             content: (
                 <>
                     <p>
-                        {`Peter Abelard, ngoài vai trò là một triết gia lỗi lạc,
+                        Peter Abelard, ngoài vai trò là một triết gia lỗi lạc,
                         còn được nhớ đến nhiều qua mối tình đầy sóng gió với
                         Héloïse, một học trò xuất sắc của ông. Câu chuyện tình
                         yêu này gây ra nhiều tai tiếng trong thời gian đó, nhưng
                         cũng có những tình tiết hài hước trong mối quan hệ của
-                        họ.`}
+                        họ.
                     </p>
                     <p>
                         {`Một lần, trong lúc đang giảng bài, Abelard bị Héloïse
@@ -313,10 +314,10 @@ const g0c1 = {
                         né tránh câu hỏi?"`}
                     </p>
                     <p>
-                        {`Câu hỏi này khiến cả lớp bật cười và Abelard cũng không
+                        Câu hỏi này khiến cả lớp bật cười và Abelard cũng không
                         khỏi cười trừ. Mối quan hệ giữa hai người từ đây không
                         chỉ nổi tiếng vì sự lãng mạn mà còn vì những khoảnh khắc
-                        tranh luận trí tuệ đầy hài hước giữa họ.`}
+                        tranh luận trí tuệ đầy hài hước giữa họ.
                     </p>
                 </>
             ),
@@ -366,14 +367,14 @@ const g0c1 = {
                         "Một chút mưa không thể gây hại cho người có lý trí."`}
                     </p>
                     <p>
-                        {`Kết quả là Boole đi bộ trong mưa suốt vài giờ, và ông bị
+                        Kết quả là Boole đi bộ trong mưa suốt vài giờ, và ông bị
                         cảm nặng. Điều này khiến vợ ông bối rối, và bà đã cố
                         gắng chữa trị cho ông theo cách mà bà nghĩ phù hợp với
-                        tư duy logic của Boole: bà đắp chăn ướt lên người ông,
+                        tư duy logic của Boole. Bà đắp chăn ướt lên người ông,
                         cho rằng nếu ông bị cảm vì nước mưa, thì nước cũng sẽ
                         chữa khỏi cho ông! Câu chuyện này cho thấy cách Boole và
                         gia đình ông áp dụng sự hài hước, dù đôi khi hơi quá đà,
-                        vào cuộc sống thường nhật.`}
+                        vào cuộc sống thường nhật.
                     </p>
                 </>
             ),
@@ -400,9 +401,9 @@ const g0c1 = {
                         suy nghĩ về logic."`}
                     </p>
                     <p>
-                        {`Câu trả lời của Boole khiến người bạn bật cười, bởi nó
+                        Câu trả lời của Boole khiến người bạn bật cười, bởi nó
                         cho thấy ông có thể đưa logic vào bất cứ vấn đề gì, kể
-                        cả trong những tình huống đời thường nhất.`}
+                        cả trong những tình huống đời thường nhất.
                     </p>
                 </>
             ),
@@ -414,12 +415,12 @@ const g0c1 = {
             content: (
                 <>
                     <p>
-                        {`Boole có cuộc sống gia đình khá thú vị. Vợ ông, Mary
+                        Boole có cuộc sống gia đình khá thú vị. Vợ ông, Mary
                         Everest Boole, cũng là một người rất thông minh và có
                         những phương pháp dạy toán học khác lạ. Nhưng một trong
                         những điểm hài hước là Mary từng than phiền rằng cuộc
                         sống với một nhà logic học như Boole đôi khi giống như
-                        sống trong một bài toán!`}
+                        sống trong một bài toán!
                     </p>
                     <p>
                         {`Có lần, Mary hỏi Boole về việc nuôi dạy con cái, mong
@@ -430,13 +431,13 @@ const g0c1 = {
                         một bài toán đại số!"`}
                     </p>
                     <p>
-                        {`Những câu chuyện hài hước về George Boole không chỉ giúp
+                        Những câu chuyện hài hước về George Boole không chỉ giúp
                         chúng ta thấy được tính cách thú vị của ông, mà còn cho
                         thấy cách ông sống với niềm đam mê toán học và logic
                         trong từng khoảnh khắc của cuộc đời. Dù có đôi khi Boole
                         bị cuốn vào những suy luận phức tạp, nhưng điều đó chỉ
                         làm tăng thêm sự đáng yêu và thú vị của một trong những
-                        người đã đặt nền móng cho khoa học máy tính hiện đại.`}
+                        người đã đặt nền móng cho khoa học máy tính hiện đại.
                     </p>
                 </>
             ),
@@ -470,12 +471,12 @@ const g0c1 = {
                         sụp đổ đã xảy ra trong tòa nhà logic của tôi."`}
                     </p>
                     <p>
-                        {`Mặc dù đây là một cú sốc lớn cho công việc của Frege,
+                        Mặc dù đây là một cú sốc lớn cho công việc của Frege,
                         nhưng cách ông phản ứng với sự bình thản và đôi chút hài
                         hước đã khiến nhiều người nể phục. Frege không đổ lỗi
                         cho ai, mà chỉ nhận thức được rằng, đôi khi, ngay cả
                         những lý thuyết vĩ đại nhất cũng có thể bị phá vỡ bởi
-                        một chi tiết nhỏ.`}
+                        một chi tiết nhỏ.
                     </p>
                 </>
             ),
@@ -497,11 +498,11 @@ const g0c1 = {
                         nó, toàn bộ công trình sẽ sụp đổ!"`}
                     </p>
                     <p>
-                        {`Lời nói của Frege khiến cả lớp bật cười vì sự chi tiết
+                        Lời nói của Frege khiến cả lớp bật cười vì sự chi tiết
                         đến mức tưởng như thái quá, nhưng sau đó các học trò
                         nhận ra rằng ông hoàn toàn đúng. Điều này không chỉ là
                         một trò đùa, mà còn là một bài học về sự cẩn trọng trong
-                        logic và toán học.`}
+                        logic và toán học.
                     </p>
                 </>
             ),
@@ -539,12 +540,12 @@ const g0c1 = {
             content: (
                 <>
                     <p>
-                        {`Có một câu chuyện vui kể rằng Frege, trong một lần đi
+                        Có một câu chuyện vui kể rằng Frege, trong một lần đi
                         mua sắm, đã đứng rất lâu trước một kệ hàng, cố gắng
                         quyết định giữa hai loại bánh mì. Ông tính toán chi li
                         giá cả và giá trị dinh dưỡng của từng loại bánh, rồi
                         phân tích xem loại nào là lựa chọn hợp lý hơn dựa trên
-                        một chuỗi các lý luận logic phức tạp.`}
+                        một chuỗi các lý luận logic phức tạp.
                     </p>
                     <p>
                         {`Cuối cùng, sau khi đứng phân vân gần cả giờ đồng hồ, ông
@@ -578,9 +579,9 @@ const g0c1 = {
                         kém cỏi trong toán học, cả thế giới sẽ phải chịu đựng."`}
                     </p>
                     <p>
-                        {`Câu nói này vừa thể hiện sự hài hước, vừa ngụ ý về tầm
+                        Câu nói này vừa thể hiện sự hài hước, vừa ngụ ý về tầm
                         quan trọng của toán học trong việc phát triển khoa học
-                        và công nghệ.`}
+                        và công nghệ.
                     </p>
                 </>
             ),
@@ -604,10 +605,10 @@ const g0c1 = {
                         học."`}
                     </p>
                     <p>
-                        {`Câu nói này vừa là một lời châm biếm nhẹ nhàng vừa phản
+                        Câu nói này vừa là một lời châm biếm nhẹ nhàng vừa phản
                         ánh niềm tin của Hilbert rằng toán học là một môn khoa
                         học đòi hỏi sự hiểu biết sâu sắc, không phải ai cũng có
-                        thể dễ dàng theo đuổi.`}
+                        thể dễ dàng theo đuổi.
                     </p>
                 </>
             ),
@@ -627,10 +628,10 @@ const g0c1 = {
                         khi tôi đã hiểu được nó, tôi sẽ không bao giờ quên."`}
                     </p>
                     <p>
-                        {`Điều này thể hiện sự kiên trì và tự tin của Hilbert
+                        Điều này thể hiện sự kiên trì và tự tin của Hilbert
                         trong quá trình nghiên cứu khoa học, và nó đã trở thành
                         một trong những đặc điểm giúp ông thành công vượt bậc
-                        trong sự nghiệp toán học của mình.`}
+                        trong sự nghiệp toán học của mình.
                     </p>
                 </>
             ),
@@ -676,11 +677,11 @@ const g0c1 = {
                         "Vậy làm thế nào để nấu súp từ ý tưởng của anh?"`}
                     </p>
                     <p>
-                        {`Mọi người trong phòng bật cười, vì Hilbert đã dùng sự
+                        Mọi người trong phòng bật cười, vì Hilbert đã dùng sự
                         hài hước của mình để nhẹ nhàng chỉ ra rằng bài trình bày
                         của sinh viên quá lý thuyết và không có tính ứng dụng
                         thực tiễn. Dù là một nhà toán học thuần túy, Hilbert vẫn
-                        đánh giá cao sự kết nối giữa lý thuyết và thực hành.`}
+                        đánh giá cao sự kết nối giữa lý thuyết và thực hành.
                     </p>
                 </>
             ),
@@ -693,7 +694,7 @@ const g0c1 = {
             content: (
                 <>
                     <p>
-                        {`Bạn có biết việc tìm ra số`}
+                        {`Bạn có biết việc tìm ra số `}
                         <InlineMath math="\sqrt{2}" />
                         {` đã khiến Pythagoras
                         (Pi-ta-go) trở thành một kẻ giết người.`}
@@ -754,7 +755,7 @@ const g0c1 = {
                         {` = 1,41421... Họ tóm lấy
                         Hippasus và ném ông xuống biển để thủ tiêu...`}
                     </p>
-                    <p>{`-------`}</p>
+                    <p>-------</p>
                     <p>
                         {`Có thể đến đây bạn sẽ nghĩ rằng chỉ là vài con số thôi
                         mà tại sao họ lại phải hại nhau như vậy! Nhưng với những
@@ -812,8 +813,8 @@ const g0c1 = {
                         tỉ lệ vàng đều là các số vô tỉ!`}
                     </p>
                     <p>
-                        {`(Bài viết có sự tham khảo từ cuốn sách Những vụ Scandal
-                        trong toán học, Theoni Pappas)`}
+                        (Bài viết có sự tham khảo từ cuốn sách Những vụ Scandal
+                        trong toán học, Theoni Pappas)
                     </p>
                 </>
             ),
@@ -827,12 +828,13 @@ const g0c1 = {
             content: (
                 <>
                     <p>
-                        {`Ngày nay, chúng ta có lẽ đã quá quen thuộc với các đơn vị đo
-                        chiều dài rồi đúng không nào. Tuy nhiên, ngày xưa khi mỗi
-                        nơi, mỗi tộc người có cách đo đạc khác nhau thì chuyện này
-                        lại khác. Sẽ có vô số sự hiểu lầm tai hại đấy nhé. Ta hãy
-                        thực hiện một chuyến du hành ngược dòng thời gian về quá
-                        khứ, cách đây 3000 năm và cũng đọc câu chuyện sau nhé:`}
+                        Ngày nay, chúng ta có lẽ đã quá quen thuộc với các đơn
+                        vị đo chiều dài rồi đúng không nào. Tuy nhiên, ngày xưa
+                        khi mỗi nơi, mỗi tộc người có cách đo đạc khác nhau thì
+                        chuyện này lại khác. Sẽ có vô số sự hiểu lầm tai hại đấy
+                        nhé. Ta hãy thực hiện một chuyến du hành ngược dòng thời
+                        gian về quá khứ, cách đây 3000 năm và cũng đọc câu
+                        chuyện sau nhé:
                     </p>
                     <div className="flex w-full justify-center gap-2">
                         <div>
@@ -843,25 +845,25 @@ const g0c1 = {
                         </div>
                     </div>
                     <p>
-                        {`Thế điều gì trong câu chuyện này khiến chúng ta quan tâm:
-                        Goliath cao bao nhiêu nhỉ?`}
+                        Thế điều gì trong câu chuyện này khiến chúng ta quan
+                        tâm: Goliath cao bao nhiêu nhỉ?
                     </p>
                     <div className="text-start space-y-4">
                         <div className="grid grid-cols-[2fr_minmax(min-content,1fr)] grid-rows-1">
                             <div className="col-[1/2] row-[1/-1]">
                                 <p>
-                                    {`Ngày trước, người ta sử dụng những bộ phận trên
-                                    cơ thể mình để mà đo đạc:`}
+                                    Ngày trước, người ta sử dụng những bộ phận
+                                    trên cơ thể mình để mà đo đạc:
                                 </p>
                                 <p>
-                                    {`- Một cánh tay (a cubit) là chiều dài của
+                                    - Một cánh tay (a cubit) là chiều dài của
                                     phần cuối cánh tay kể từ khuỷu tay cho tới
                                     đầu của ngón tay giữa. - Một gang tay (a
                                     span) là khoảng cách lớn nhất nằm giữa ngón
                                     cái và ngón út của một bàn tay mở rộng. Cứ
                                     hai gang tay thì được một cánh tay (bạn có
                                     thể thử bằng chính bàn tay và cánh tay của
-                                    mình)`}
+                                    mình)
                                 </p>
                             </div>
                             <div className="col-[2/-1] row-[1/-1] justify-self-center">
@@ -869,20 +871,20 @@ const g0c1 = {
                             </div>
                         </div>
                         <p>
-                            {`- Một bề rộng bàn tay (a palm) đơn giản là bề rộng
+                            - Một bề rộng bàn tay (a palm) đơn giản là bề rộng
                             của một bàn tay không kể ngón cái. - Một bề rộng
                             ngón tay (a digit) đơn giản là bề rộng của ngón tay.
                             Cứ 4 bề rộng ngón tay thì ra bề rộng bàn tay, 24 bề
-                            rộng ngón tay thì ra cánh tay.`}
+                            rộng ngón tay thì ra cánh tay.
                         </p>
                     </div>
                     <p>
                         <strong>
-                            {`Thế rồi… cuối cùng Goliath cao bao nhiêu???`}
+                            Thế rồi… cuối cùng Goliath cao bao nhiêu???
                         </strong>
                     </p>
                     <p>
-                        {`Chuyện này chỉ có một chỗ khó thôi: Con người cao lớn
+                        Chuyện này chỉ có một chỗ khó thôi: Con người cao lớn
                         khác nhau. Một cánh tay có thể dài 40 cm mà còn có thể
                         khác, dài đến 70 cm. Điều này có nghĩa là, chàng khổng
                         lồ Goliath (với chiều cao sáu cánh tay và một gang tay)
@@ -890,13 +892,13 @@ const g0c1 = {
                         mà thôi. Đã đến lúc chúng ta cần phải có một sự thống
                         nhất trong đo đạc. Và một vị cứu tinh đã xuất hiện đến
                         từ nước Pháp. Các bạn có thể tìm hiểu thêm ở câu chuyện
-                        “Một lý do tốt để yêu người Pháp” Theo `}
+                        “Một lý do tốt để yêu người Pháp” Theo
                         <Link
                             href="https://thcshadinh.thuvien.edu.vn/tai-lieu/sach-dien-tu/toan-hoc-doc-dao-vo-cung-t1-do-dac-khong-gioi-han-horrible-science-562727"
                             className="inline underline underline-offset-2 font-medium"
                         >
-                            {`Toán học độc đáo vô cùng - đo đạc không giới hạn -
-                            KJARTAN POSKITT.`}
+                            Toán học độc đáo vô cùng - đo đạc không giới hạn -
+                            KJARTAN POSKITT.
                         </Link>
                     </p>
                 </>
@@ -909,27 +911,27 @@ const g0c1 = {
             content: (
                 <>
                     <p>
-                        {`Phải công nhận: Toàn bộ hệ thống đo đạc phục vụ con
+                        Phải công nhận: Toàn bộ hệ thống đo đạc phục vụ con
                         người trên thế giới này và giúp cho việc tính toán trở
-                        nên dễ dàng hơn hẳn là do người Pháp phát triển nên.`}
+                        nên dễ dàng hơn hẳn là do người Pháp phát triển nên.
                     </p>
                     <div className="flex justify-center">
                         <Image src={storyPage4} alt="" className="mx-2" />
                     </div>
                     <p>
-                        {`Đầu tiên, họ cần phải thống nhất với nhau, một mét dài
+                        Đầu tiên, họ cần phải thống nhất với nhau, một mét dài
                         bao nhiêu. Và họ quyết định rất đơn giản như sau: Nó là
                         một phần mười triệu của khoảng cách kể từ đường xích đạo
-                        cho tới điểm Cực Bắc, đoạn đi ngang qua thành phố Paris.`}
+                        cho tới điểm Cực Bắc, đoạn đi ngang qua thành phố Paris.
                     </p>
                     <div className="flex justify-center">
                         <Image src={storyPage5} alt="" className="mx-2" />
                     </div>
                     <p>
-                        {`Sau đó, họ lấy một thanh thép đặc biệt, khắc lên đó hai
+                        Sau đó, họ lấy một thanh thép đặc biệt, khắc lên đó hai
                         điểm đánh dấu, với khoảng cách nằm giữa chúng chính xác
                         là 1 mét. Dần dần mét đã trở thành đơn vị đo đạc căn bản
-                        trên toàn thế giới.`}
+                        trên toàn thế giới.
                     </p>
                     <p>
                         {`Ấy vậy mà lại có những người cho là hai vạch trên một
@@ -946,7 +948,7 @@ const g0c1 = {
                         pháp này để đo đạc cả.`}
                     </p>
                     <p>
-                        {`Dĩ nhiên đơn vị đo mét là quá dài đối với một vật nào đó
+                        Dĩ nhiên đơn vị đo mét là quá dài đối với một vật nào đó
                         (như đo … cái kẹo cầu vồng mà bạn là thằng bạn của bạn
                         đang muốn chia nhau ăn chung nhưng không ai chịu nhường
                         ai phần lớn hơn) mà lại quá ngắn đối với một số vật khác
@@ -956,7 +958,7 @@ const g0c1 = {
                         thống đơn bị thông minh, cho phép người dùng chỉ cần
                         chia cho 10, cho 100, cho 1000 hoặc nhân với 10, 100,
                         1000 khi muốn đổi đơn vị đo. Thật đúng là trò trẻ, dễ
-                        như ăn kẹo.`}
+                        như ăn kẹo.
                     </p>
                     <p>
                         {`Theo `}
@@ -964,8 +966,8 @@ const g0c1 = {
                             href="https://thcshadinh.thuvien.edu.vn/tai-lieu/sach-dien-tu/toan-hoc-doc-dao-vo-cung-t1-do-dac-khong-gioi-han-horrible-science-562727"
                             className="inline underline underline-offset-2 font-medium"
                         >
-                            {`Toán học độc đáo vô cùng - đo đạc không giới hạn -
-                            KJARTAN POSKITT.`}
+                            Toán học độc đáo vô cùng - đo đạc không giới hạn -
+                            KJARTAN POSKITT.
                         </Link>
                     </p>
                     <p>
@@ -975,7 +977,7 @@ const g0c1 = {
                             target="_blank"
                             className="underline font-[600]"
                         >
-                            {`TRUNG TÂM KIỂM ĐỊNH HIỆU CHUẨN ĐO LƯỜNG MIỀN NAM`}
+                            TRUNG TÂM KIỂM ĐỊNH HIỆU CHUẨN ĐO LƯỜNG MIỀN NAM
                         </Link>
                     </p>
                 </>

@@ -1,18 +1,16 @@
 "use client";
 
 import React from "react";
-import { chapter, description } from "../data/chaptersStatic";
-import Image from "next/image";
+import { chapter } from "../data/chaptersStatic";
+import Image, { StaticImageData } from "next/image";
 import { motion } from "motion/react";
 import { FindIcon } from "../assets";
 import Link from "next/link";
 import { createPortal } from "react-dom";
 import { cn } from "@/lib/tailwind/tailwindMerge";
-import levelUiI from "public/Image/chapterRoute/leveluipart1.webp";
-import levelUiII from "public/Image/chapterRoute/leveluipart2.webp";
-import levelUiIII from "public/Image/chapterRoute/leveluipart3.webp";
 import useHover from "../hooks/useHover";
 import { Button3d } from "@/components";
+import { ButtonContextType } from "@/context/Button3dContext";
 
 type LevelBtnProps = {
     config: {
@@ -27,7 +25,10 @@ type LevelBtnProps = {
     isMobile: boolean;
     romanNumeral: string;
     setCurChapter: React.Dispatch<React.SetStateAction<number>>;
+    level: StaticImageData[];
 };
+
+const variants: ButtonContextType["variant"][] = ["blue", "red", "purple"];
 
 export default function LevelBtn({
     config,
@@ -36,6 +37,7 @@ export default function LevelBtn({
     isMobile,
     romanNumeral,
     setCurChapter,
+    level,
 }: LevelBtnProps) {
     const {
         directionR = false,
@@ -90,19 +92,25 @@ export default function LevelBtn({
                                                 CHƯƠNG {romanNumeral}
                                             </p>
                                             <p className="text-xl">
-                                                {chapter[grade][idx]}
+                                                {
+                                                    chapter["grade1" + grade]
+                                                        .title[idx]
+                                                }
                                             </p>
                                         </header>
-                                        {description[grade][idx]}
+                                        {
+                                            chapter["grade1" + grade]
+                                                .description[idx]
+                                        }
                                         <Button3d
                                             as={Link}
-                                            variant="blue"
+                                            variant={variants[grade]}
                                             className="mt-3 h-[3rem] text-xl block"
                                             href={`/khoi1${grade}/chuong${idx + 1}/legacy`}
                                         >
                                             <Button3d.Content className="gap-3">
                                                 Khám phá
-                                                <FindIcon className="h-[60%] w-fit" />
+                                                <FindIcon height="60%" />
                                             </Button3d.Content>
                                             <Button3d.Behind />
                                         </Button3d>
@@ -122,7 +130,7 @@ export default function LevelBtn({
                             delay: -1 - delay,
                         }}
                     >
-                        <Image priority src={levelUiI} alt="" />
+                        <Image priority src={level[0]} alt="" />
                     </motion.div>
                     <motion.div
                         className="pointer-events-none absolute bottom-[3.5rem] left-1/2 w-[75%] -translate-x-1/2 sm:bottom-[4.8rem]"
@@ -135,7 +143,7 @@ export default function LevelBtn({
                             delay: -0.5 - delay,
                         }}
                     >
-                        <Image priority src={levelUiII} alt="" />
+                        <Image priority src={level[1]} alt="" />
                     </motion.div>
                     <motion.div
                         className="pointer-events-none absolute bottom-[5rem] left-1/2 flex aspect-square w-[80%] -translate-x-1/2 items-center justify-center sm:bottom-[7.5rem]"
@@ -160,7 +168,7 @@ export default function LevelBtn({
                                 delay: -delay,
                             }}
                         >
-                            <Image priority src={levelUiIII} alt="" />
+                            <Image priority src={level[2]} alt="" />
                         </motion.div>
                         <div className="font-['Algerian'] text-[1.65rem] text-black sm:text-[2.25rem]">
                             {idx + 1}
