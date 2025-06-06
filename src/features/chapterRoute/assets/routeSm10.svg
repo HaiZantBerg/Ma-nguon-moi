@@ -1,13 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153.89 723.14">
-<g id="Layer_1" data-name="Layer 1">
-<polyline points="108.58 3.99 96.37 87.11 0.86 167.34 9.54 234.68 153.03 273.23 7.87 363.87 149.28 446.65 55.01 546.29 99.07 660.55 34.08 719.53" fill="none" stroke="#7da6ff" stroke-linejoin="round" stroke-width="1.25" opacity="0.28" style="isolation:isolate"/>
-<polyline points="111.34 1.54 76.84 59.2 34.91 170.09 73.63 281.61 10.91 430.36 40.91 447.36 109.75 360.8 135.49 530.28 74.47 607.55 34.08 719.53" fill="none" stroke="#567db8" stroke-linejoin="round" stroke-width="1.25"/>
-<polyline points="26.08 186.54 15.65 170.05 21.98 159.12" fill="none" stroke="#0003ab" stroke-linejoin="round" stroke-width="1.25" opacity="0.28" style="isolation:isolate"/>
-<polyline points="51.75 307.53 58.47 281.61 45.76 251.02" fill="none" stroke="#0003ab" stroke-linejoin="round" stroke-width="1.25" opacity="0.28" style="isolation:isolate"/>
-<polyline points="76.61 593.15 64.01 607.55 60.95 619.5" fill="none" stroke="#0003ab" stroke-linejoin="round" stroke-width="1.25" opacity="0.28" style="isolation:isolate"/>
-<polyline points="71.84 398.5 52.11 423.96 61.98 381.74" fill="none" stroke="#0003ab" stroke-linejoin="round" stroke-width="1.25" opacity="0.28" style="isolation:isolate"/>
-<polyline points="78.83 36.72 62.13 56.04 58.73 70.67" fill="none" stroke="#0003ab" stroke-linejoin="round" stroke-width="1.25" opacity="0.28" style="isolation:isolate"/>
-<polyline points="87.84 405.91 104.9 383.45 104.9 413.56" fill="none" stroke="#0003ab" stroke-linejoin="round" stroke-width="1.25" opacity="0.28" style="isolation:isolate"/>
-<polyline points="94.65 569.66 103.71 558.42 102.58 543.43" fill="none" stroke="#0003ab" stroke-linejoin="round" stroke-width="1.25" opacity="0.28" style="isolation:isolate"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 147.8 955.2" style="enable-background:new 0 0 147.8 955.2;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.28;fill:none;stroke:#80ffc6;stroke-width:1.25;stroke-linejoin:round;enable-background:new    ;}
+	.st1{fill:none;stroke:#56b884;stroke-width:1.25;stroke-linejoin:round;}
+	.st2{opacity:0.28;fill:none;stroke:#00ad68;stroke-width:1.25;stroke-linejoin:round;enable-background:new    ;}
+</style>
+<g id="Layer_1-2">
+	<polyline class="st0" points="29.2,48.8 104.9,114.6 5,216.9 141.8,373.7 48.5,455.5 111.5,596 8.5,667 133.5,751.3 13.2,854.2 
+		56.6,877.6 	"/>
+	<polyline class="st1" points="29.2,48.8 38.9,101.5 121.9,160 25.5,251.9 106.3,319.1 122.8,433.3 17.8,524.4 81,607.6 
+		136.1,658.9 100.9,713.3 117.2,826.2 56.6,877.6 	"/>
+	<polyline class="st2" points="56.9,508.8 36.2,528.8 56.9,554.2 	"/>
+	<polyline class="st2" points="99.3,346.9 96.7,325 79.2,311.6 	"/>
+	<polyline class="st2" points="32,274.3 9.7,255.5 27.3,236.1 	"/>
+	<polyline class="st2" points="106.6,399 113.2,429.3 101.5,437.1 	"/>
+	<polyline class="st2" points="109,794.6 108,820.8 88.2,836.1 	"/>
+	<polyline class="st2" points="106.9,686 122.5,660.9 109,649.2 	"/>
+	<polyline class="st2" points="90.1,151.3 106.4,162.7 87,177.9 	"/>
 </g>
 </svg>

@@ -50,8 +50,10 @@ Button3d.Content = function Button3dContent({
     const variants = {
         blue: "bg-[#207cf3] text-white hover:bg-[#0c6ce8]",
         green: "bg-[#33c862] text-white hover:bg-[#26c358]",
-        purple: "bg-[#ad20f3] text-white hover:bg-[#9b0ce9]",
+        purple: "bg-[#bf7ae1] text-white hover:bg-[#ba65e4]",
         "blue-grey": "bg-[#4a5c99]",
+        "green-grey": "bg-[#4b9b78]",
+        "purple-grey": "bg-[#774b9b]",
         "sign-in":
             "bg-[linear-gradient(42deg,rgba(89,103,227,1)5%,rgba(114,89,227,1)26%,rgba(89,98,227,1)58%)]",
         "sign-up":
@@ -91,8 +93,10 @@ Button3d.Behind = function Button3dBehind({
     const variants = {
         blue: "bg-[#3b3fa1]",
         green: "bg-[#398f5e]",
-        purple: "bg-[#713ba0]",
+        purple: "bg-[#731c9e]",
         "blue-grey": "bg-[#32324b]",
+        "green-grey": "bg-[#334d41]",
+        "purple-grey": "bg-[#42334d]",
         "sign-in": "bg-[#3b3fa1]",
         "sign-up": "bg-[#642F8A]",
         grey: "bg-[#474747]",

@@ -6,6 +6,8 @@ export type ButtonContextType = {
         | "green"
         | "purple"
         | "blue-grey"
+        | "green-grey"
+        | "purple-grey"
         | "sign-up"
         | "sign-in"
         | "grey";

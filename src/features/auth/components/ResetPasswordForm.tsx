@@ -88,12 +88,13 @@ export default function ResetPasswordForm() {
                 className="h-[2.75rem] w-full mt-4 sm:h-[3rem]"
                 type="submit"
             >
-                {isPending && (
-                    <div
-                        id="overlay"
-                        className="w-full h-[49px] sm:h-[53px] absolute top-0 left-0 bg-black opacity-40 rounded-2xl z-20"
-                    />
-                )}
+                {isPending ||
+                    (showUpSuccess && (
+                        <div
+                            id="overlay"
+                            className="w-full h-[49px] sm:h-[53px] absolute top-0 left-0 bg-black opacity-40 rounded-2xl z-20"
+                        />
+                    ))}
                 <Button3d.Content className="font-semibold sm:text-[1.1rem] text-base text-white">
                     Gửi yêu cầu
                 </Button3d.Content>

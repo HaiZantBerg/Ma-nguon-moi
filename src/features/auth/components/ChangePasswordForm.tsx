@@ -2,7 +2,12 @@
 
 import { Button3d, Form, Input } from "@/components";
 import PasswordIcon from "../assets/passwordIcon.svg";
-import React, { CSSProperties, useActionState, useState } from "react";
+import React, {
+    CSSProperties,
+    useActionState,
+    useEffect,
+    useState,
+} from "react";
 import CrossItem from "@/assets/Svg/Cross.svg";
 import { changePassword } from "@/auth/action";
 
@@ -19,6 +24,10 @@ export default function ChangePasswordForm({ userId }: ChangePasswordForm) {
     const [showUpError, setShowUpError] = useState<string | undefined>(
         undefined,
     );
+
+    useEffect(() => {
+        if (data && !isPending) setShowUpError(data.error);
+    }, [data, isPending]);
 
     return (
         <Form className="sm:w-[20rem] w-[18rem]" action={action}>
@@ -40,7 +49,10 @@ export default function ChangePasswordForm({ userId }: ChangePasswordForm) {
             )}
             <Form.Feild className="flex flex-col w-full">
                 <Form.Item className="flex-col gap-1">
-                    <label htmlFor="password" className="text-[#dadae6]">
+                    <label
+                        htmlFor="password"
+                        className="text-[#dadae6] sr-only"
+                    >
                         Mật khẩu:
                     </label>
                     <Input
@@ -48,7 +60,7 @@ export default function ChangePasswordForm({ userId }: ChangePasswordForm) {
                         className="*:sm:h-[3rem] *:h-[2.75rem] text-white"
                     >
                         <Input.Icon className="ml-1.5">
-                            <PasswordIcon className="w-auto h-[1.5rem]" />
+                            <PasswordIcon className="w-auto h-[3rem]" />
                         </Input.Icon>
                         <Input.Placeholder
                             id="password"
@@ -70,7 +82,7 @@ export default function ChangePasswordForm({ userId }: ChangePasswordForm) {
             </Form.Feild>
             <Button3d
                 variant="sign-in"
-                className="h-[2.75rem] w-full sm:h-[3rem]"
+                className="h-[2.75rem] w-full mt-[1.5rem] sm:h-[3rem]"
                 type="submit"
             >
                 {isPending && (
@@ -79,7 +91,7 @@ export default function ChangePasswordForm({ userId }: ChangePasswordForm) {
                         className="w-full h-[49px] sm:h-[53px] absolute top-0 left-0 bg-black opacity-40 rounded-2xl z-20"
                     />
                 )}
-                <Button3d.Content className="font-semibold sm:text-[1.1rem] text-base">
+                <Button3d.Content className="font-semibold sm:text-[1.1rem] text-base text-white">
                     Đặt lại mật khẩu
                 </Button3d.Content>
                 <Button3d.Behind />

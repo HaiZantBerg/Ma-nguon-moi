@@ -28,7 +28,7 @@ type LevelBtnProps = {
     level: StaticImageData[];
 };
 
-const variants: ButtonContextType["variant"][] = ["blue", "green", "purple"];
+const variants: ButtonContextType["variant"][] = ["green", "blue", "purple"];
 
 export default function BtnLevel({
     config,

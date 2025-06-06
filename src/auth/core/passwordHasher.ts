@@ -25,6 +25,8 @@ export async function comparePasswords({
 }) {
     const inputHashedPassword = await hashPassword(password, salt);
 
+    console.log(hashedPassword, inputHashedPassword);
+
     return crypto.timingSafeEqual(
         Buffer.from(inputHashedPassword, "hex"),
         Buffer.from(hashedPassword, "hex"),

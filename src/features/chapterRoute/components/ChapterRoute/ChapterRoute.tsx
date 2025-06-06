@@ -12,12 +12,6 @@ import useIsMounted from "@/hooks/useIsMounted";
 import { cn } from "@/lib/tailwind/tailwindMerge";
 import BtnLevel from "../BtnLevel";
 
-const color: Record<string, string[]> = {
-    grade10: ["#2f406e", "#041dff0c"],
-    grade11: ["#2f6f53", "#05ff6d0d"],
-    grade12: ["#4f2f6f", "#9305ff0d"],
-};
-
 export default function ChapterRoute({
     grade,
     numberOfChapter,
@@ -48,7 +42,7 @@ export default function ChapterRoute({
         "IX",
     ];
 
-    const { level, bg } = ui["grade1" + String(grade)];
+    const { level, bg, summary, card } = ui["grade1" + String(grade)];
 
     if (!isMounted) return;
 
@@ -103,8 +97,8 @@ export default function ChapterRoute({
             <Card
                 className="top-[0] z-[1] min-[1366px]:sticky min-[1366px]:top-[9rem] min-[1366px]:max-w-[32rem]"
                 style={{
-                    borderColor: color["grade1" + String(grade)][0],
-                    background: color["grade1" + String(grade)][1],
+                    borderColor: card[0],
+                    background: card[1],
                 }}
             >
                 <Card.Title as="h1" className="flex flex-col">
@@ -116,15 +110,11 @@ export default function ChapterRoute({
                     </span>
                 </Card.Title>
                 <Card.Content className="flex gap-4">
-                    <p>
-                        Khởi đầu hành trình khám phá lịch sử toán học, từ đóng
-                        góp của các nền văn minh cổ đại trong đại số và hình học
-                        đến những đột phá vào những năm 1900.
-                    </p>
+                    <p>{summary}</p>
                     <div
                         className="flex w-fit flex-col border-l-2 py-2 pl-4"
                         style={{
-                            borderColor: color["grade1" + String(grade)][0],
+                            borderColor: card[0],
                         }}
                     >
                         <div className="flex">

@@ -10,7 +10,29 @@ export const resetPasswordSchema = z.object({
 });
 
 export const changePasswordSchema = z.object({
-    password: z.string().min(6).max(30),
+    password: z
+        .string()
+        .max(30, "Mật khẩu chỉ nên chứa tối đa 30 kí tự.")
+        .check((ctx) => {
+            const { value, issues } = ctx;
+
+            if (!value.length)
+                issues.push({
+                    code: "invalid_type",
+                    expected: "string",
+                    received: "null",
+                    message: "Mật khẩu không được để trống",
+                    input: value,
+                });
+            else if (value.length < 6)
+                issues.push({
+                    code: "too_small",
+                    minimum: 6,
+                    origin: "string",
+                    message: "Mật khẩu phải có ít nhất 6 kí tự.",
+                    input: value,
+                });
+        }),
 });
 
 export const signUpSchema = z.object({

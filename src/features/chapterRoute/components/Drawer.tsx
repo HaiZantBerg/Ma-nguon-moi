@@ -19,7 +19,10 @@ type DrawerProps = {
     numberOfChapter: number;
 };
 
-const variants: ButtonContextType["variant"][] = ["blue", "green", "purple"];
+const variants: Extract<
+    ButtonContextType["variant"],
+    "green" | "blue" | "purple"
+>[] = ["green", "blue", "purple"];
 
 export default function Drawer({
     curChapter,
@@ -98,7 +101,7 @@ export default function Drawer({
                     </article>
                     <div className="relative flex h-[3rem] gap-3">
                         <Button3d
-                            variant="blue-grey"
+                            variant={`${variants[grade]}-grey`}
                             className="basis-[3rem] h-[3rem]"
                             onClick={() => {
                                 const des = ((curChapter + 7) % 9) + 1;
@@ -136,7 +139,7 @@ export default function Drawer({
                         </Button3d>
                         <Button3d
                             className="basis-[3rem] h-[3rem]"
-                            variant="blue-grey"
+                            variant={`${variants[grade]}-grey`}
                             onClick={() => {
                                 const inc = curChapter % numberOfChapter;
 

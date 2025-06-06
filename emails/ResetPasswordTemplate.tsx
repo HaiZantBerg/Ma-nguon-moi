@@ -23,22 +23,22 @@ export default function ResetPassword({
             <Head />
             <Tailwind>
                 <Container className="font-sans text-black bg-white mx-auto max-w-[30rem] my-[4rem] border border-solid px-[2rem] pt-[3rem] pb-[2rem] rounded-2xl border-neutral-700">
-                    <Section>
-                        <Link
-                            href="https://ethems.com"
-                            className="mb-[1rem] flex items-center gap-3"
-                        >
-                            <Img
-                                src={`${baseUrl}Image/logo/logo.png`}
-                                height="55"
-                                width="60"
-                                alt="Ethems Logo"
-                            />
-                            <Img
-                                src={`${baseUrl}Image/logo/ethems.png`}
-                                height="25"
-                                alt="Ethems"
-                            />
+                    <Section className="mb-[2rem]">
+                        <Link href="https://ethems.com">
+                            <div className="flex gap-3">
+                                <Img
+                                    src={`${baseUrl}Image/logo/logo.png`}
+                                    height="55"
+                                    width="60"
+                                    alt="Ethems Logo"
+                                />
+                                <Img
+                                    src={`${baseUrl}Image/logo/ethems.png`}
+                                    height="25"
+                                    alt="Ethems"
+                                    className="mt-[1rem]"
+                                />
+                            </div>
                         </Link>
                     </Section>
                     <Section>

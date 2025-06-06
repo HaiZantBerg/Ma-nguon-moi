@@ -229,29 +229,58 @@ export async function changePassword(
         const tree = z.treeifyError(safeData.error);
 
         return {
-            error: tree.properties?.password?.errors,
+            error: tree.properties?.password?.errors[0],
         };
     }
+
+    const user = await db.user.findUnique({
+        where: {
+            id: userId,
+        },
+        select: {
+            password: true,
+            salt: true,
+        },
+    });
+
+    if (!user)
+        return {
+            error: "Tài khoản không tồn tại, hãy tạo một tài khoản mới.",
+        };
+
+    const isDuppedPassword = await comparePasswords({
+        hashedPassword: user.password,
+        password: safeData.data.password,
+        salt: user.salt,
+    });
+
+    if (isDuppedPassword)
+        return {
+            error: "Mật khẩu không thể đổi thành mật khẩu đang được sử dụng của tài khoản",
+        };
 
     try {
         const salt = generateSalt();
         const hashedPassword = await hashPassword(safeData.data.password, salt);
 
-        const user = await db.user.update({
+        const updatedUser = await db.user.update({
             where: {
                 id: userId,
             },
             data: {
                 password: hashedPassword,
+                resetPasswordToken: null,
+                resetPasswordTokenExpiry: null,
+                salt,
             },
         });
 
-        if (user === null)
+        if (updatedUser === null)
             return {
                 error: "Không thể đặt mật khẩu",
             };
 
-        await createUserSession(user, await cookies());
+        await createUserSession(updatedUser, await cookies());
     } catch {
         return {
             error: "Không thể đặt mật khẩu",
