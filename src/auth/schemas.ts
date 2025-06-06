@@ -5,6 +5,14 @@ export const signInSchema = z.object({
     password: z.string().min(6).max(30),
 });
 
+export const resetPasswordSchema = z.object({
+    email: z.email(),
+});
+
+export const changePasswordSchema = z.object({
+    password: z.string().min(6).max(30),
+});
+
 export const signUpSchema = z.object({
     username: z
         .string({

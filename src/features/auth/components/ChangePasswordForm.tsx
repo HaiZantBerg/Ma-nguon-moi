@@ -1,27 +1,24 @@
 "use client";
 
-import React, {
-    CSSProperties,
-    useActionState,
-    useEffect,
-    useState,
-} from "react";
+import { Button3d, Form, Input } from "@/components";
 import PasswordIcon from "../assets/passwordIcon.svg";
-import EmailIcon from "../assets/emailIcon.svg";
-import { Form, Input, Button3d } from "@/components";
-import { signIn } from "@/auth/action";
+import React, { CSSProperties, useActionState, useState } from "react";
 import CrossItem from "@/assets/Svg/Cross.svg";
-import Link from "next/link";
+import { changePassword } from "@/auth/action";
 
-export default function SignUpForm() {
-    const [data, action, isPending] = useActionState(signIn, undefined);
+type ChangePasswordForm = {
+    userId: string;
+};
+
+export default function ChangePasswordForm({ userId }: ChangePasswordForm) {
+    const [data, action, isPending] = useActionState(
+        (prev: unknown, formData: FormData) =>
+            changePassword(prev, formData, userId),
+        undefined,
+    );
     const [showUpError, setShowUpError] = useState<string | undefined>(
         undefined,
     );
-
-    useEffect(() => {
-        if (data && !isPending) setShowUpError(data.error);
-    }, [data, isPending]);
 
     return (
         <Form className="sm:w-[20rem] w-[18rem]" action={action}>
@@ -30,7 +27,7 @@ export default function SignUpForm() {
                     id="errorMsg"
                     className="text-[#ff4949] px-4 text-[0.9rem] justify-between py-2 bg-[#6d202069] flex items-center rounded-xl border border-red-600 mb-[1rem]"
                 >
-                    {showUpError}
+                    {data?.error}
                     <div
                         className="h-[2rem] aspect-square flex justify-center items-center cursor-pointer"
                         onClick={() => {
@@ -43,34 +40,6 @@ export default function SignUpForm() {
             )}
             <Form.Feild className="flex flex-col w-full">
                 <Form.Item className="flex-col gap-1">
-                    <label htmlFor="email" className="text-[#dadae6]">
-                        Địa chỉ email:
-                    </label>
-                    <Input
-                        id="email"
-                        className="*:sm:h-[3rem] *:h-[2.75rem] text-white"
-                    >
-                        <Input.Icon className="ml-1.5">
-                            <EmailIcon className="w-auto h-[1.5rem]" />
-                        </Input.Icon>
-                        <Input.Placeholder
-                            id="email"
-                            name="email"
-                            type="email"
-                            className="peer caret-white outline-0 max-[40rem]:placeholder:text-[0.95rem] sm:h-[3rem]"
-                            placeholder="Email@cua.ban"
-                            style={
-                                {
-                                    "--hide-autofill": "#202434",
-                                } as CSSProperties
-                            }
-                            defaultValue={data?.formField.email}
-                            spellCheck="false"
-                        />
-                        <div className="pointer-events-none absolute w-full h-full top-0 left-0 rounded-xl border border-[#404866] ring-2 ring-transparent transition-all duration-300 ease-in peer-focus:border-[#581ce3] peer-focus:ring-[#f9dcef]" />
-                    </Input>
-                </Form.Item>
-                <Form.Item className="flex-col gap-1">
                     <label htmlFor="password" className="text-[#dadae6]">
                         Mật khẩu:
                     </label>
@@ -79,13 +48,19 @@ export default function SignUpForm() {
                         className="*:sm:h-[3rem] *:h-[2.75rem] text-white"
                     >
                         <Input.Icon className="ml-1.5">
-                            <PasswordIcon className="w-auto h-[3rem]" />
+                            <PasswordIcon className="w-auto h-[1.5rem]" />
                         </Input.Icon>
                         <Input.Placeholder
+                            id="password"
                             name="password"
-                            className="peer max-[40rem]:placeholder:text-[0.95rem] rounded-xl"
-                            placeholder="Mật khẩu"
                             type="password"
+                            className="peer caret-white outline-0 max-[40rem]:placeholder:text-[0.95rem] sm:h-[3rem]"
+                            placeholder="Đặt lại mật khẩu"
+                            style={
+                                {
+                                    "--hide-autofill": "#202434",
+                                } as CSSProperties
+                            }
                             spellCheck="false"
                             autoComplete="off"
                         />
@@ -93,12 +68,6 @@ export default function SignUpForm() {
                     </Input>
                 </Form.Item>
             </Form.Feild>
-            <Link
-                href="/reset-password"
-                className="w-full mt-2 mb-4 text-end text-[0.9rem] font-bold text-[#4c9aff] sm:text-[1rem]"
-            >
-                Quên mật khẩu?
-            </Link>
             <Button3d
                 variant="sign-in"
                 className="h-[2.75rem] w-full sm:h-[3rem]"
@@ -111,7 +80,7 @@ export default function SignUpForm() {
                     />
                 )}
                 <Button3d.Content className="font-semibold sm:text-[1.1rem] text-base">
-                    Đăng nhập
+                    Đặt lại mật khẩu
                 </Button3d.Content>
                 <Button3d.Behind />
             </Button3d>

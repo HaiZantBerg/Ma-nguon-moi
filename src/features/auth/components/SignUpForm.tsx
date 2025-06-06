@@ -21,7 +21,10 @@ export default function SignUpForm() {
                     <label htmlFor="username" className="sr-only">
                         Tên người dùng
                     </label>
-                    <Input className="sm:h-[3rem] h-[2.75rem]" id="username">
+                    <Input
+                        className="sm:h-[3rem] h-[2.75rem] text-white"
+                        id="username"
+                    >
                         <Input.Icon className="ml-1.5">
                             <UserIcon className="w-auto h-[1.5rem]" />
                         </Input.Icon>
@@ -47,7 +50,10 @@ export default function SignUpForm() {
                     <label htmlFor="email" className="sr-only">
                         Email
                     </label>
-                    <Input className="sm:h-[3rem] h-[2.75rem]" id="email">
+                    <Input
+                        className="sm:h-[3rem] h-[2.75rem] text-white"
+                        id="email"
+                    >
                         <Input.Icon className="ml-1.5">
                             <EmailIcon
                                 className="w-auto h-[1.5rem]"
@@ -76,7 +82,10 @@ export default function SignUpForm() {
                     <label htmlFor="password" className="sr-only">
                         Mật khẩu
                     </label>
-                    <Input className="sm:h-[3rem] h-[2.75rem]" id="password">
+                    <Input
+                        className="sm:h-[3rem] h-[2.75rem] text-white"
+                        id="password"
+                    >
                         <Input.Icon className="ml-1.5">
                             <PasswordIcon
                                 className="w-auto h-[3rem]"
@@ -95,6 +104,7 @@ export default function SignUpForm() {
                             placeholder="Mật khẩu"
                             type="password"
                             spellCheck="false"
+                            autoComplete="off"
                         />
                         <div className="pointer-events-none absolute w-full h-full top-0 left-0 rounded-xl border border-[#404866] ring-2 ring-transparent transition-all duration-300 ease-in peer-focus:border-[#581ce3] peer-focus:ring-[#f9dcef]" />
                     </Input>

@@ -6,12 +6,12 @@ import { cache } from "react";
 
 import db from "@/lib/prisma/prisma";
 
-function getUserFromDb(id: string) {
+const getUserFromDb = (id: string) => {
     return db.user.findUnique({
         where: { id },
         select: { id: true, username: true, email: true, role: true },
     });
-}
+};
 
 type FullUser = Exclude<
     Awaited<ReturnType<typeof getUserFromDb>>,
@@ -63,5 +63,19 @@ async function _getCurrentUser({
 
     return user;
 }
+
+export const getCurrentUserViaResetToken = async (
+    resetPasswordToken: string,
+) => {
+    const user = db.user.findUnique({
+        where: {
+            resetPasswordToken,
+        },
+    });
+
+    if (!user) return null;
+
+    return user;
+};
 
 export const getCurrentUser = cache(_getCurrentUser);
