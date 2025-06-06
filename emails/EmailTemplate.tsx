@@ -1,3 +1,4 @@
+import "dotenv/config";
 import {
     Button,
     Container,
@@ -23,7 +24,10 @@ export default function EmailTemplate({ email }: EmailTemplateProps) {
                     <Link href="https://ethems.com">
                         <Section>
                             <Img
-                                src={`${baseUrl}public/Image/logo/logo.webp`}
+                                src={`${baseUrl}Image/logo/logo.webp`}
+                                height="50"
+                                width="55"
+                                alt="Ethems Logo"
                             />
                         </Section>
                     </Link>
