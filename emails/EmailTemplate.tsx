@@ -22,12 +22,18 @@ export default function EmailTemplate({ email }: EmailTemplateProps) {
             <Tailwind>
                 <Container className="font-sans mx-auto max-w-[30rem] my-[4rem] border border-solid px-[2rem] py-[3rem] rounded-2xl border-neutral-700">
                     <Link href="https://ethems.com">
-                        <Section>
+                        <Section className="mb-[1rem]">
                             <Img
                                 src={`${baseUrl}Image/logo/logo.webp`}
                                 height="50"
                                 width="55"
                                 alt="Ethems Logo"
+                            />
+                            <Img
+                                src={`${baseUrl}Image/logo/ethems.webp`}
+                                height="50"
+                                width="55"
+                                alt="Ethems"
                             />
                         </Section>
                     </Link>
@@ -41,7 +47,7 @@ export default function EmailTemplate({ email }: EmailTemplateProps) {
                             <br />
                             Để đặt lại mật khẩu, hãy nhấp vào nút bên dưới.
                         </p>
-                        <Button className="rounded-lg py-[0.75rem] px-[1rem] bg-[#250b83] text-white font-medium cursor-pointer">
+                        <Button className="rounded-lg py-[0.75rem] px-[1rem] bg-[#19026e] text-white font-medium cursor-pointer">
                             Đặt lại mật khẩu
                         </Button>
                         <p>
