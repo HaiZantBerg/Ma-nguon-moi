@@ -29,13 +29,13 @@ export default function ResetPassword({
                             className="mb-[1rem] flex items-center gap-3"
                         >
                             <Img
-                                src={`${baseUrl}Image/logo/logo.webp`}
+                                src={`${baseUrl}Image/logo/logo.png`}
                                 height="55"
                                 width="60"
                                 alt="Ethems Logo"
                             />
                             <Img
-                                src={`${baseUrl}Image/logo/ethems.webp`}
+                                src={`${baseUrl}Image/logo/ethems.png`}
                                 height="25"
                                 alt="Ethems"
                             />
