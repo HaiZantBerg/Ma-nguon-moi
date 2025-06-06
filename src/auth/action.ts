@@ -8,7 +8,7 @@ import {
     hashPassword,
 } from "./core/passwordHasher";
 import db from "@/lib/prisma/prisma";
-import createUserSession from "./core/session";
+import createUserSession, { removeUserFromSession } from "./core/session";
 import { cookies } from "next/headers";
 import z from "zod/v4";
 
@@ -133,4 +133,10 @@ export async function signIn(_previous: unknown, unsafeData: FormData) {
     await createUserSession(user, await cookies());
 
     redirect("/home");
+}
+
+export async function logOut() {
+    await removeUserFromSession(await cookies());
+
+    redirect("/");
 }

@@ -104,7 +104,7 @@ export const chapter: Record<
                 ở{" "}
                 <Link
                     className="text-[#073108] underline decoration-[1.5px] decoration-emerald-800 font-[375]"
-                    href="/khoi10?chuong=3"
+                    href="/khoi10/chuong3/legacy"
                 >
                     chương 3 - lớp 10
                 </Link>

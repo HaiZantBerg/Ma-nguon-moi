@@ -46,9 +46,9 @@ async function setCookie(sessionId: string, cookies: Pick<Cookies, "set">) {
 }
 
 export async function getUserFromSession(cookies: Pick<Cookies, "get">) {
-    const seesionId = cookies.get(SESSION_COOKIE)?.value;
+    const sessionId = cookies.get(SESSION_COOKIE)?.value;
 
-    return seesionId ? getUserSessionById(seesionId) : null;
+    return sessionId ? getUserSessionById(sessionId) : null;
 }
 
 async function getUserSessionById(sessionId: string) {
@@ -57,4 +57,29 @@ async function getUserSessionById(sessionId: string) {
     const { success, data } = sessionSchema.safeParse(rawUser);
 
     return success ? data : null;
+}
+
+export async function removeUserFromSession(
+    cookies: Pick<Cookies, "get" | "delete">,
+) {
+    const sessionId = cookies.get(SESSION_COOKIE)?.value;
+
+    if (!sessionId) return;
+
+    await redisClient.del(`session:${sessionId}`);
+    cookies.delete(SESSION_COOKIE);
+}
+
+export async function updateUserSessionExpiration(
+    cookies: Pick<Cookies, "get" | "set">,
+) {
+    const sessionId = cookies.get(SESSION_COOKIE)?.value;
+    if (!sessionId) return null;
+
+    const user = await getUserSessionById(sessionId);
+    if (user === null) return null;
+
+    await redisClient.set(`session:${sessionId}`, user, { ex: SESSION_EXP });
+
+    setCookie(sessionId, cookies);
 }

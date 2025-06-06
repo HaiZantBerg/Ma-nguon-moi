@@ -34,7 +34,8 @@
         "src/**/*",
         "declarations.d.ts",
         "svgr.d.ts",
-        ".prettierrc"
+        ".prettierrc",
+        "emails"
     ],
     "exclude": ["node_modules"]
 }

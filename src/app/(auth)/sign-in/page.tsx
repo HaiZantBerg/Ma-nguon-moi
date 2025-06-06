@@ -7,7 +7,7 @@ import { SignInForm } from "@/features/auth";
 export default function Page() {
     return (
         <div className="flex h-lvh min-h-fit w-full justify-center bg-[#050d1d] text-white">
-            <div className="mt-2 h-[50rem] w-[36rem] mb-4">
+            <div className="mt-2 h-[50rem] w-[24rem] mb-4">
                 <div className="h-fit select-auto">
                     <Image
                         src={signInIcon}
@@ -16,7 +16,7 @@ export default function Page() {
                     />
                 </div>
                 <div className="bg-[#202434] w-fit mx-auto *:mx-auto px-4 py-7 rounded-2xl shadow-[0_40px_100px_-15px] shadow-indigo-950">
-                    <header className="mb-4 w-fit text-2xl font-semibold">
+                    <header className="mb-4 w-fit text-2xl">
                         <p className="font-['Chakra_Petch'] font-semibold">
                             Đăng nhập với
                         </p>
@@ -27,7 +27,7 @@ export default function Page() {
                     <p className="w-fit text-[0.85rem] sm:text-[0.9rem]">
                         Bạn mới biết đến Ethems?{" "}
                         <Link
-                            href="/register"
+                            href="/sign-up"
                             className="font-semibold text-[#4c9aff]"
                         >
                             Đăng ký

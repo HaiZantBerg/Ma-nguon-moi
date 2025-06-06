@@ -16,10 +16,11 @@ export const signUpSchema = z.object({
         .check((ctx) => {
             const { value, issues } = ctx;
 
-            if (!/[a-zA-Z]+$/.test(value))
+            if (!/^[a-zA-Z0-9]+$/.test(value))
                 issues.push({
                     code: "custom",
-                    message: "Tên người dùng chỉ nên chứa chữ cái",
+                    message:
+                        "Tên người dùng không hợp lệ (không sử dụng các kí tự đặc biệt)",
                     input: value,
                 });
         }),

@@ -14,7 +14,11 @@ Tên dự án: CyberLuna Tạo website đi thi Sáng tạo trẻ:3
     - Hoàn thiện authentication
 
 - 5 / 15 / 2025:
+
     - Hoàn thành ngay cái phần câu chuyện lịch sử, tùm lum, tùm la
+
+- 6 / 5 / 2025:
+    - Nếu được thì tách FunfactCollection thành các phần nhỏ
 
 ### Đã hoàn thành 🥰🥰🥰🫠🫠:
 

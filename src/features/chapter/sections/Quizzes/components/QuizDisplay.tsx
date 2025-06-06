@@ -111,7 +111,7 @@ export default function QuizDisplay({ content }: { content: ContentType }) {
         >
             <div className="flex flex-col min-h-[calc(100%-3rem)] w-full justify-between">
                 <div className="w-full flex justify-center mb-[0.25rem]">
-                    <p className="w-[22rem] min-[41rem]:text-3xl text-2xl font-semibold font-[Chakra_Petch] text-center">
+                    <p className="w-[22rem] min-[41rem]:text-3xl text-2xl font-semibold font-['Chakra_Petch'] text-center">
                         {title}
                     </p>
                 </div>

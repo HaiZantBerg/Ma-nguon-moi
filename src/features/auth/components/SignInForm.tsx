@@ -83,6 +83,7 @@ export default function SignUpForm() {
                             className="peer max-[40rem]:placeholder:text-[0.95rem] rounded-xl"
                             placeholder="Mật khẩu"
                             type="password"
+                            spellCheck="false"
                         />
                         <div className="pointer-events-none absolute w-full h-full top-0 left-0 rounded-xl border border-[#404866] ring-2 ring-transparent transition-all duration-300 ease-in peer-focus:border-[#581ce3] peer-focus:ring-[#f9dcef]" />
                     </Input>
