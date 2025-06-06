@@ -10,9 +10,8 @@ import {
 } from "@react-email/components";
 import * as React from "react";
 
-const baseUrl = process.env.NEXT_PUBLIC_URL
-    ? `https://${process.env.NEXT_PUBLIC_URL}`
-    : "";
+const baseUrl = process.env.NEXT_PUBLIC_URL || "";
+
 type EmailTemplateProps = { email: string };
 
 export default function EmailTemplate({ email }: EmailTemplateProps) {

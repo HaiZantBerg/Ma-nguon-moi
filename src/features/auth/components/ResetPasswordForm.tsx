@@ -17,7 +17,7 @@ export default function ResetPasswordForm() {
             from: "Ethems <info@ethems.com>",
             to: ["tandocong5@gmail.com"],
             subject: "Đặt lại mật khẩu",
-            html: "<p><p/>",
+            html: "<p></p>",
         });
     };
 

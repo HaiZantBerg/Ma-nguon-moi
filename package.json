@@ -8,7 +8,7 @@
         "start": "next start",
         "lint": "next lint",
         "prepare": "husky",
-        "email": "email dev"
+        "email": "copy .env .\\node_modules\\react-email\\dist\\preview\\ && email dev -p 3001"
     },
     "dependencies": {
         "@mdx-js/loader": "^3.1.0",
