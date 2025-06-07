@@ -73,15 +73,15 @@ export default function Legacy({ grade, chapter }: ChapterChildProps) {
 
     return (
         <ScrollTableContext.Provider value={values}>
-            <main className="w-full h-fit flex justify-center bg-[#fafafa]">
+            <div className="w-full h-fit flex justify-center bg-[#fafafa]">
                 <ScrollTable />
                 <div className="max-w-[60rem] min-[62.5rem]:mx-[10rem] min-[48rem]:mx-[7rem] min-[40rem]:mx-[5rem] max-[768px]:ml-[1.75rem] max-[768px]:mr-[1rem] mb-[30lvh] mt-[1rem]">
-                    <div className={style.container}>
+                    <main className={style.container}>
                         <RenderedContent components={overrideComponents} />
-                    </div>
+                    </main>
                     <FinishBtn grade={grade} />
                 </div>
-            </main>
+            </div>
         </ScrollTableContext.Provider>
     );
 }
