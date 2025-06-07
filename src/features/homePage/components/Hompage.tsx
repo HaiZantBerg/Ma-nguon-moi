@@ -1,31 +1,39 @@
 import React from "react";
-import GradeCard from "./Cards/GradeCard";
+import { Grade, Habit, Note, Interest, Continue } from "./Cards";
 
 export default function Hompage() {
     return (
         <div className="grid grid-rows-10 grid-cols-12 h-[55rem] mx-auto py-[5rem] w-[72rem] gap-6">
             <div
-                className="row-[1/7] col-[1/5] border rounded-2xl bg-white"
+                className="row-[1/7] col-[1/5] border border-secondary rounded-2xl bg-white"
                 id="note"
-            ></div>
+            >
+                <Note />
+            </div>
             <div
                 className="row-[1/6] col-[5/13] *:rounded-2xl flex justify-between font-['Chakra_Petch']"
                 id="grade"
             >
-                <GradeCard />
+                <Grade />
             </div>
             <div
-                className="row-[7/11] col-[1/5] border rounded-2xl bg-white"
+                className="row-[7/11] col-[1/5] border border-secondary rounded-2xl bg-white"
                 id="habit"
-            ></div>
+            >
+                <Habit />
+            </div>
             <div
-                className="row-[6/11] col-[5/9] border rounded-2xl bg-white"
+                className="row-[6/11] col-[5/9] border border-secondary rounded-2xl bg-white"
                 id="maybeInterestedIn"
-            ></div>
+            >
+                <Interest />
+            </div>
             <div
-                className="row-[6/11] col-[9/13] border rounded-2xl bg-white"
+                className="row-[6/11] col-[9/13] border border-secondary rounded-2xl bg-white"
                 id="continue"
-            ></div>
+            >
+                <Continue />
+            </div>
         </div>
     );
 }

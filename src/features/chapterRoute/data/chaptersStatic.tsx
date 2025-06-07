@@ -55,8 +55,12 @@ export const chapter: Record<
                     <strong>trigonometry</strong>
                     {`", đây là một từ xuất phát từ tiếng Hy Lạp - nền văn minh
                     đặt nền tảng cho sự phát triển của nền văn mình phương Tây -
-                    trong đó, "<strong>trigōnon</strong>" có nghĩa là "tam giác"
-                    và "<strong>metron</strong>" mang nghĩa "đo lường". Như thế
+                    trong đó, "`}
+                    <strong>trigōnon</strong>
+                    {`" có nghĩa là "tam giác"
+                    và "`}
+                    <strong>metron</strong>
+                    {`" mang nghĩa "đo lường". Như thế
                     khái niệm "lượng giác" trong tiếng Anh lại có ý nghĩa là sự
                     đo lường về góc bằng tam giác. `}
                     <Link

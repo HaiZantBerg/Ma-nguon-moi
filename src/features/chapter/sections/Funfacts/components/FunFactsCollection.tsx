@@ -40,7 +40,7 @@ export default function FunFactsCollection({
                 <AnimatePresence>
                     {!isMobile && !show && !selectedItem && (
                         <motion.div
-                            className="w-full h-full flex justify-center items-center text-neutral-300 text-lg"
+                            className="w-full h-full flex justify-center items-center text-[#919191] text-lg"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -174,7 +174,7 @@ export default function FunFactsCollection({
                     className={cn(
                         isMobile
                             ? "w-full pl-2"
-                            : "min-[1300px]:w-[45.5rem] w-[31rem] pl-[2rem] py-[1rem]",
+                            : "min-[1300px]:w-[45.5rem] w-[32rem] pl-[2rem] py-[1rem]",
                         "h-full overflow-x-hidden overflow-y-auto pr-[1rem]",
                     )}
                 >

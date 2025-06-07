@@ -12,21 +12,12 @@ import FunfactsIcon from "../../assets/funfactsIcon.svg";
 import QuizzesIcon from "../../assets/quizzesIcon.svg";
 import { useMediaQuery } from "react-responsive";
 import PushLink from "@/components/PushLink";
-import { capitalizeFirst } from "../../utils/capitalizeFirst";
+import { capitalizeFirst } from "@/utils/capitalizeFirst";
 
 const image = [
-    <LegacyIcon
-        key={0}
-        // className="h-[3rem] w-auto absolute bottom-[1.6rem] left-1/2 -translate-x-1/2"
-    />,
-    <FunfactsIcon
-        key={1}
-        // className="h-[2.75rem] w-auto absolute bottom-[1.6rem] left-1/2 -translate-x-1/2"
-    />,
-    <QuizzesIcon
-        key={2}
-        // className="h-[2.6rem] w-auto absolute bottom-[1.6rem] left-1/2 -translate-x-1/2"
-    />,
+    <LegacyIcon key={0} width="26" height="26" />,
+    <FunfactsIcon key={1} width="26" height="26" />,
+    <QuizzesIcon key={2} width="26" height="26" />,
 ];
 
 export default function Setting({

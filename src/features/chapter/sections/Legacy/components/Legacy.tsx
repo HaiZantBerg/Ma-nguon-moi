@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { ChapterChildProps } from "feature/chapter/types/General";
@@ -23,26 +23,23 @@ export default function Legacy({ grade, chapter }: ChapterChildProps) {
     const pathname = usePathname();
     const { replace } = useRouter();
 
-    const hasRedirected = useRef(false);
-
     const partQ = searchParams.get("part");
 
+    const { values } = useScrollTableValues(partQ);
+
     useEffect(() => {
-        if (!ct || hasRedirected.current) return;
+        if (!ct || partQ) return;
 
         if (typeof ct === "object") {
-            if (!partQ) {
-                const firstPart = Object.keys(ct)[0];
+            const firstPart = Object.keys(ct)[0];
 
-                const params = new URLSearchParams(searchParams.toString());
+            const params = new URLSearchParams(searchParams.toString());
 
-                params.set("part", firstPart);
+            params.set("part", firstPart);
 
-                replace(`${pathname}?${params.toString()}`);
-            }
+            replace(`${pathname}?${params.toString()}`);
         }
 
-        hasRedirected.current = true;
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -58,8 +55,6 @@ export default function Legacy({ grade, chapter }: ChapterChildProps) {
 
         return ct;
     })();
-
-    const { values } = useScrollTableValues(partQ, hasRedirected.current);
 
     if (!RenderedContent) return null;
 

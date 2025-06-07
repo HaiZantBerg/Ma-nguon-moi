@@ -35,12 +35,7 @@ export default function Navbar() {
     const pathname = usePathname();
 
     return (
-        <nav
-            className="fixed top-0 left-0 z-[100] flex h-16 w-full items-center px-10 text-white backdrop-blur-xl justify-between"
-            style={{
-                backgroundColor: "rgba(0,0,0,0.85)",
-            }}
-        >
+        <nav className="fixed top-0 left-0 z-[100] bg-[#040418e7] flex h-16 w-full items-center px-10 text-white backdrop-blur-xl justify-between">
             <div className="flex items-center pl-[0.75rem]" id="logo">
                 <Link href="/home" className="flex items-center gap-2">
                     <Logo className="hidden h-[36px] w-fit select-none sm:block" />

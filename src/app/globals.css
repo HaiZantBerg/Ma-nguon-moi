@@ -4,6 +4,9 @@
     --animationStarTime1: 30000ms;
     --animationStarTime2: 80000ms;
     --animationStarTime3: 60000ms;
+    --primary: #ededf1;
+    --secondary: #061b70;
+    --accent: #0bffbe;
 }
 
 body {
@@ -20,8 +23,13 @@ button {
     cursor: pointer;
 }
 
+@theme {
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+    --color-accent: var(--accent);
+}
+
 @layer base {
-    /* inter-latin-wght-normal */
     @font-face {
         font-family: "Inter Variable";
         font-style: normal;

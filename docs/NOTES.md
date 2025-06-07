@@ -12,6 +12,10 @@
   00140b xanh lá
   200D26 tím
 
+primary color: #ededf1
+secondary color: #090418
+accent color: #0bffbe
+
 cool looking references😎😎😎 🔥🔥🔥:
 
 https://www.pinterest.com/pin/9570217952808040/

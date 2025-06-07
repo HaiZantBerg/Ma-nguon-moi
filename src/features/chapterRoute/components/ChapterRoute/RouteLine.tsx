@@ -24,14 +24,14 @@ const gradeType: Record<
         lg: { svg: routeLg10, className: "top-[10rem] left-9 w-full" },
         sm: {
             svg: routeSm10,
-            className: "top-[7rem] left-[-2.5rem] w-[25rem]",
+            className: "top-0 left-0 w-[21rem]",
         },
     },
     grade11: {
         lg: { svg: routeLg11, className: "top-[10rem] left-9 w-full" },
         sm: {
             svg: routeSm11,
-            className: "top-0 left-0 w-[21rem]",
+            className: "top-[7rem] left-[-2.5rem] w-[25rem]",
         },
     },
     grade12: {

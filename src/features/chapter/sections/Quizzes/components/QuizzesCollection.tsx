@@ -80,7 +80,7 @@ export default function QuizzesCollection({
                             )}
                         </div>
                     </div>
-                    <p className="text-lg text-neutral-400">
+                    <p className="text-lg text-[#919191]">
                         Chọn một câu đố bất kì
                     </p>
                 </div>

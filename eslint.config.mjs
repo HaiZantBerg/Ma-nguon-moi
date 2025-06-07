@@ -34,6 +34,7 @@ const eslintConfig = [
                         "src/lib/**/*",
                         "src/redis/**/*",
                         "src/types/**/*",
+                        "src/utils/**/*",
                     ],
                 },
                 {

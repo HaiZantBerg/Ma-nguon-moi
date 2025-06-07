@@ -5,11 +5,12 @@ import ArrowIcon from "@/assets/Svg/arrowStuff.svg";
 import Link from "next/link";
 import { chapter } from "../data/chaptersStatic";
 import styling from "../assets/drawer.module.css";
-import { FindIcon } from "../assets";
+import { FindIcon } from "@/assets";
 import { motion } from "motion/react";
 import useDrawer from "../hooks/useDrawer";
 import { Button3d } from "@/components";
 import { ButtonContextType } from "@/context/Button3dContext";
+import { cn } from "@/lib/tailwind/tailwindMerge";
 
 type DrawerProps = {
     curChapter: number;
@@ -89,7 +90,10 @@ export default function Drawer({
                             </h2>
                         </header>
                         <div
-                            className={`${styling.drawerContent} relative py-0.5`}
+                            className={cn(
+                                styling.drawerContent,
+                                "relative py-0.5",
+                            )}
                         >
                             <div className="max-h-[50dvh] overflow-auto py-8">
                                 {

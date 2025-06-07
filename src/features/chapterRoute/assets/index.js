@@ -1,5 +1,4 @@
 export { default as SmPortalIcon } from "./smallportalicon.svg";
-export { default as FindIcon } from "./find.svg";
 export { default as routeLg10 } from "./routeLg10.svg";
 export { default as routeLg11 } from "./routeLg11.svg";
 export { default as routeLg12 } from "./routeLg12.svg";

@@ -37,13 +37,11 @@ export const ScrollTableContext = createContext<ScrollTableType | undefined>(
     undefined,
 );
 
-export function useScrollTableValues(
-    part: string | null,
-    hasRedirected: boolean,
-) {
+export function useScrollTableValues(part: string | null) {
     const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
     const interuptedScroll = useRef(-1);
+    const didMount = useRef(false);
 
     const [activeSection, setActiveSection] = useState(0);
     const [sections, setSections] = useState<Section[]>([]);
@@ -54,7 +52,11 @@ export function useScrollTableValues(
     const scrollYProgressSectionItem = useMotionValue(0);
 
     useEffect(() => {
-        if (!hasRedirected || !part) return;
+        if (!part) return;
+        else if (!didMount.current) {
+            didMount.current = true;
+            return;
+        }
 
         setSections([]);
         setSectionItems([]);
@@ -63,8 +65,6 @@ export function useScrollTableValues(
         setActiveSectionItem(0);
 
         interuptedScroll.current = -1;
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [part]);
 
     const registerSection = (section: Section) => {

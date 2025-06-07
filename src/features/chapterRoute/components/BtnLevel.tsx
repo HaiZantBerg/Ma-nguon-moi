@@ -4,7 +4,7 @@ import React from "react";
 import { chapter } from "../data/chaptersStatic";
 import Image, { StaticImageData } from "next/image";
 import { motion } from "motion/react";
-import { FindIcon } from "../assets";
+import { FindIcon } from "@/assets";
 import Link from "next/link";
 import { createPortal } from "react-dom";
 import { cn } from "@/lib/tailwind/tailwindMerge";

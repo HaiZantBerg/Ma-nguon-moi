@@ -35,8 +35,13 @@ const nextConfig = {
 
         return config;
     },
+
     pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
     reactStrictMode: true,
+
+    images: {
+        remotePatterns: [new URL("https://www.ethems.com/**")],
+    },
 };
 
 const withMDX = createMDX({
