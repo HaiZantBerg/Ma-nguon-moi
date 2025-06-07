@@ -8,7 +8,7 @@ import { Button3d } from "@/components";
 
 export default function GradeCard() {
     return (
-        <>
+        <div className="*:rounded-2xl flex justify-between max-[54rem]:w-[48rem] h-full">
             <div
                 id="khoi10"
                 className={cn(
@@ -135,6 +135,6 @@ export default function GradeCard() {
                     </Button3d>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

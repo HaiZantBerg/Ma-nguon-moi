@@ -123,11 +123,14 @@ function _renderLegacy({ part }: { part: LegacyType }) {
                 {capitalizeFirst(type)}:
             </p>
             <div className="flex flex-col items-center mb-2">
-                <p className="font-medium text-center text-[1.1rem] leading-[1.3rem] pt-2 min-[30rem]:w-[10rem] w-[8rem] text-pretty">
+                <p className="font-medium text-center text-[1.1rem] leading-[1.3rem] pt-2 max-[81.25rem]:mb-2 min-[30rem]:w-[10rem] w-[8rem] text-pretty">
                     {title}
                 </p>
                 <div
-                    className={cn(style.cardGradient, "h-[10.75rem] relative")}
+                    className={cn(
+                        style.cardGradient,
+                        "min-[81.25rem]:h-[10.75rem] h-[12rem] relative",
+                    )}
                 >
                     <div
                         className="text-[0.9rem] leading-[1.3rem] h-full overflow-y-auto pt-4 pb-2 pr-4"
