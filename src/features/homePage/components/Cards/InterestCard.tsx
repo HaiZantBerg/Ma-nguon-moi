@@ -71,7 +71,7 @@ export default function InterestCard() {
                     </p>
                 </div>
             ),
-            url: "legacy?",
+            url: "legacy?part=menh-de",
         },
     };
 
@@ -126,7 +126,9 @@ function _renderLegacy({ part }: { part: LegacyType }) {
                 <p className="font-medium text-center text-[1.1rem] leading-[1.3rem] pt-2 min-[30rem]:w-[10rem] w-[8rem] text-pretty">
                     {title}
                 </p>
-                <div className={cn(style.cardGradient, "h-[11rem] relative")}>
+                <div
+                    className={cn(style.cardGradient, "h-[10.75rem] relative")}
+                >
                     <div
                         className="text-[0.9rem] leading-[1.3rem] h-full overflow-y-auto pt-4 pb-2 pr-4"
                         style={{
