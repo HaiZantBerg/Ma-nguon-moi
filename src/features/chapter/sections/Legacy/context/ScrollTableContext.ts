@@ -38,7 +38,7 @@ export const ScrollTableContext = createContext<ScrollTableType | undefined>(
 );
 
 export function useScrollTableValues(part: string | null) {
-    const isMobile = useMediaQuery({ query: "(max-width: 880px)" });
+    const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
     const interuptedScroll = useRef(-1);
     const didMount = useRef(false);

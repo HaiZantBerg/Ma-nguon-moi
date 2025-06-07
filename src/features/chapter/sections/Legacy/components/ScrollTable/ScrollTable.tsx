@@ -67,48 +67,52 @@ export default function ScrollTable() {
                                         strokeLinejoin="round"
                                         fill="white"
                                     />
-                                    {shouldRender && !isMobile && (
-                                        <motion.div
-                                            initial={{
-                                                gridTemplateRows: "0fr",
-                                            }}
-                                            animate={{
-                                                gridTemplateRows: "1fr",
-                                            }}
-                                            exit={{
-                                                gridTemplateRows: "0fr",
-                                            }}
-                                            className="grid"
-                                        >
-                                            <motion.p
-                                                className="pl-2 text-[#200800] self-center overflow-hidden"
-                                                initial={{ opacity: 0 }}
-                                                animate={{ opacity: 1 }}
-                                                exit={{ opacity: 0 }}
+                                    <AnimatePresence>
+                                        {shouldRender && !isMobile && (
+                                            <motion.div
+                                                initial={{
+                                                    gridTemplateRows: "0fr",
+                                                }}
+                                                animate={{
+                                                    gridTemplateRows: "1fr",
+                                                }}
+                                                exit={{
+                                                    gridTemplateRows: "0fr",
+                                                }}
+                                                className="grid"
                                             >
-                                                {section.title}
-                                            </motion.p>
-                                        </motion.div>
-                                    )}
+                                                <motion.p
+                                                    className="pl-2 text-[#200800] self-center overflow-hidden"
+                                                    initial={{ opacity: 0 }}
+                                                    animate={{ opacity: 1 }}
+                                                    exit={{ opacity: 0 }}
+                                                >
+                                                    {section.title}
+                                                </motion.p>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
                                 </button>
-                                {activeSection === section.id &&
-                                    (() => {
-                                        if (
-                                            interuptedScroll.current ===
-                                            section.id
-                                        )
-                                            interuptedScroll.current = -1;
+                                <AnimatePresence>
+                                    {activeSection === section.id &&
+                                        (() => {
+                                            if (
+                                                interuptedScroll.current ===
+                                                section.id
+                                            )
+                                                interuptedScroll.current = -1;
 
-                                        return (
-                                            <>
-                                                {shouldRenderInterupt && (
-                                                    <ScrollSectionItemTable
-                                                        parId={id}
-                                                    />
-                                                )}
-                                            </>
-                                        );
-                                    })()}
+                                            return (
+                                                <>
+                                                    {shouldRenderInterupt && (
+                                                        <ScrollSectionItemTable
+                                                            parId={id}
+                                                        />
+                                                    )}
+                                                </>
+                                            );
+                                        })()}
+                                </AnimatePresence>
                             </div>
                         );
                     })}

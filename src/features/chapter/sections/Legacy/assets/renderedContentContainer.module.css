@@ -1,9 +1,5 @@
 .container {
     :where(& > :not(:first-child)) {
-        background: white;
-        border-radius: 1rem;
-        box-shadow: 0px 5px 0px #a1a1a1;
-
         > :first-child {
             padding-top: 1rem;
 
@@ -41,7 +37,7 @@
 
             @media (width >= 81.25rem) {
                 & > * {
-                    margin-inline: 10rem !important;
+                    margin-inline: 8rem !important;
                 }
             }
 
@@ -67,13 +63,7 @@
         justify-content: center;
 
         > div {
-            background: #fff;
-            border-radius: 1rem;
-            box-shadow: 0px 5px 0px #a1a1a1;
-
-            .toggle {
-                margin-inline: 0rem !important;
-            }
+            margin-top: 12rem;
 
             padding-top: 3rem;
             padding-bottom: 2rem;
@@ -95,7 +85,7 @@
 
             @media (width >= 81.25rem) {
                 & > * {
-                    margin-inline: 10rem !important;
+                    margin-inline: 8rem !important;
                 }
             }
 

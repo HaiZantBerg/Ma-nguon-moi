@@ -7,7 +7,7 @@ import { SignInForm } from "@/features/auth";
 export default function Page() {
     return (
         <div className="flex h-lvh min-h-fit w-full justify-center bg-[#050d1d] text-white">
-            <div className="mt-2 h-[50rem] w-[24rem] mb-4">
+            <div className="mt-2 h-[50rem] w-[24rem] mb-[6rem]">
                 <div className="h-fit select-auto">
                     <Image
                         src={signInIcon}
