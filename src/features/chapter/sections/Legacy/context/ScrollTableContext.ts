@@ -38,7 +38,7 @@ export const ScrollTableContext = createContext<ScrollTableType | undefined>(
 );
 
 export function useScrollTableValues(part: string | null) {
-    const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+    const isMobile = useMediaQuery({ query: "(max-width: 880px)" });
 
     const interuptedScroll = useRef(-1);
     const didMount = useRef(false);
@@ -53,7 +53,6 @@ export function useScrollTableValues(part: string | null) {
 
     useEffect(() => {
         if (!part) return;
-        console.log(part);
 
         if (!didMount.current) {
             didMount.current = true;

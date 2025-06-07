@@ -4,7 +4,6 @@ import React, { HTMLAttributes, useEffect, useRef } from "react";
 import { useScrollTableContext } from "../../context/ScrollTableContext";
 import { useSectionIdContext } from "../../context/SectionIdContext";
 import { useMotionValueEvent, useScroll } from "motion/react";
-import { cn } from "@/lib/tailwind/tailwindMerge";
 
 type TrackedSectionItemProps = {
     id: number;
@@ -73,11 +72,7 @@ export default function TrackedSectionItem({
                 scrollMargin: "30dvh",
             }}
             ref={container}
-            className={cn(
-                className,
-                isBottom ? "[&>:last-child]:pb-[5rem]" : "",
-                "min-[1100px]:*:mx-[10rem] [&>div]:mx-0",
-            )}
+            className={className}
         >
             {children}
         </section>

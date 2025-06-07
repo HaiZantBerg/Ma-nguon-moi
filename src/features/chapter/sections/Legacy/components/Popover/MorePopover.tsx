@@ -25,9 +25,7 @@ export default function MP({ children, li }: MPProps & { li?: boolean }) {
             <MPWrappedByCtx>
                 <div
                     className={cn(
-                        li
-                            ? "min-[1100px]:!ml-[11.5rem] !ml-[1.5rem] min-[1100px]:!mr-[10rem]"
-                            : "min-[1100px]:!mx-[10rem]",
+                        !li || "!pl-[1.5rem]",
                         "min-[1000px]:mb-[2rem] mb-[1rem] text-pretty relative text-sm min-[768px]:text-base min-[1000px]:text-[1.05rem]",
                     )}
                 >
@@ -42,7 +40,7 @@ function MPWrappedByCtx({ children }: MPProps) {
     const { handleTrigger, scope, openP } = useMPContext();
 
     return (
-        <div ref={scope} className="text-[#6a6a0b] inline">
+        <div ref={scope} className="text-[#6a6a0b]">
             {openP && (
                 <div
                     className="fixed top-0 left-0 z-10 w-screen h-dvh"

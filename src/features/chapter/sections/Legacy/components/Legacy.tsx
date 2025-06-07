@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { ChapterChildProps } from "feature/chapter/types/General";
@@ -15,6 +15,7 @@ import {
 } from "../context/ScrollTableContext";
 
 import "katex/dist/katex.min.css";
+import style from "../assets/renderedContentContainer.module.css";
 
 export default function Legacy({ grade, chapter }: ChapterChildProps) {
     const ct = ContentArray["grade" + grade]["chapter" + chapter];
@@ -23,8 +24,6 @@ export default function Legacy({ grade, chapter }: ChapterChildProps) {
     const pathname = usePathname();
     const { replace } = useRouter();
 
-    const alreadyHasQuery = useRef(false);
-
     const partQ = searchParams.get("part");
 
     const { values } = useScrollTableValues(partQ);
@@ -32,10 +31,15 @@ export default function Legacy({ grade, chapter }: ChapterChildProps) {
     useEffect(() => {
         if (!ct) return;
 
-        console.log("1");
-
         if (partQ) {
-            alreadyHasQuery.current = true;
+            if (typeof ct === "function") {
+                const params = new URLSearchParams(searchParams.toString());
+
+                params.delete("part");
+
+                replace(`${pathname}?${params.toString()}`);
+            }
+
             return;
         }
 
@@ -69,10 +73,10 @@ export default function Legacy({ grade, chapter }: ChapterChildProps) {
 
     return (
         <ScrollTableContext.Provider value={values}>
-            <main className="w-full flex justify-center">
+            <main className="w-full flex justify-center bg-primary">
                 <ScrollTable />
-                <div className="max-w-[60rem] md:mx-[10rem] sm:mx-[5rem] max-[768px]:ml-[1.75rem] max-[768px]:mr-[1rem] mb-[30lvh] mt-[1rem]">
-                    <div className="[&>section:first-child>section]:flex [&>section:first-child>section]:flex-col [&>section:first-child>section]:min-h-[100dvh] [&>section:first-child>section]:justify-center">
+                <div className="max-w-[60rem] min-[55rem]:mx-[10rem] min-[40rem]:mx-[5rem] max-[768px]:ml-[1.75rem] max-[768px]:mr-[1rem] mb-[30lvh] mt-[1rem]">
+                    <div className={style.container}>
                         <RenderedContent components={overrideComponents} />
                     </div>
                     <FinishBtn grade={grade} />

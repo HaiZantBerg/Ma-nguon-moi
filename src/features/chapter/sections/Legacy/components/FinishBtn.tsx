@@ -9,7 +9,7 @@ type FinishBtnProps = {
 
 export default function FinishBtn({ grade }: FinishBtnProps) {
     return (
-        <div className="w-full flex justify-center">
+        <div className="w-full flex justify-center mt-[5rem]">
             <Button3d
                 variant="grey"
                 className="min-[1000px]:w-[11rem] w-[10rem] min-[1000px]:h-[3rem] h-[2.5rem]"

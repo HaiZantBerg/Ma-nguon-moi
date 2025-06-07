@@ -49,10 +49,10 @@ export default function TrackedSection({
             <section
                 ref={container}
                 id={`section-${id}`}
-                {...props}
                 style={{
                     scrollMargin: "30dvh",
                 }}
+                {...props}
             >
                 {children}
             </section>

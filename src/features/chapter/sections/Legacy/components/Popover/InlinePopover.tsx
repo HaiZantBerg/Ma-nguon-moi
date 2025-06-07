@@ -19,9 +19,7 @@ export default function IP({ children, li }: IPProps & { li?: boolean }) {
     return (
         <div
             className={cn(
-                li
-                    ? "min-[1100px]:!ml-[11.5rem] !ml-[1.5rem] min-[1100px]:!mr-[10rem]"
-                    : "min-[1100px]:!mx-[10rem]",
+                !li || "pl-[1.5rem]",
                 "min-[1000px]:mb-[2rem] mb-[1rem] text-pretty relative text-sm min-[768px]:text-base min-[1000px]:text-[1.05rem]",
             )}
         >

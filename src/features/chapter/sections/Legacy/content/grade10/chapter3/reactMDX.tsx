@@ -5,7 +5,7 @@ import dioptra2 from "public/Image/chapter/LuongGiac10/300TCN/dioptra2.webp";
 
 export function ID() {
     return (
-        <div className="mb-[2rem] flex max-[1100px]:flex-col gap-[4rem] max-[1100px]:gap-[2rem]">
+        <div className="flex max-[1100px]:flex-col gap-[4rem] max-[1100px]:gap-[2rem]">
             <div className="w-full">
                 <div className="relative h-[15rem]">
                     <Image
@@ -63,7 +63,7 @@ export function ID2() {
                     />
                 </div>
             </div>
-            <p className="text-center min-[1000px]:my-[2rem] my-[1rem] text-sm min-[768px]:text-base min-[1000px]:text-[1.05rem]">
+            <p className="text-center min-[1000px]:my-[2rem] px-5 text-pretty my-[1rem] text-sm min-[768px]:text-base min-[1000px]:text-[1.05rem]">
                 Dioptra- công cụ dùng để quan sát thiên văn và đo đạc địa chất,
                 được phát minh bởi Héron thành Alexandria (Hy Lạp) vào thế kỷ
                 III TCN

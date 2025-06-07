@@ -1,0 +1,109 @@
+.container {
+    :where(& > :not(:first-child)) {
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0px 5px 0px #a1a1a1;
+
+        > :first-child {
+            padding-top: 1rem;
+
+            @media (width >= 35rem) {
+                padding-top: 3rem;
+            }
+
+            @media (width >= 62.5rem) {
+                padding-top: 5rem;
+            }
+        }
+
+        > :last-child {
+            padding-bottom: 1rem;
+
+            @media (width >= 35rem) {
+                padding-bottom: 3rem;
+            }
+
+            @media (width >= 62.5rem) {
+                padding-bottom: 5rem;
+            }
+        }
+
+        > section {
+            & > * {
+                margin-inline: 1rem;
+            }
+
+            @media (width >= 35rem) {
+                & > * {
+                    margin-inline: 3rem;
+                }
+            }
+
+            @media (width >= 81.25rem) {
+                & > * {
+                    margin-inline: 10rem !important;
+                }
+            }
+
+            @media (width >= 62.5rem) {
+                & > * {
+                    margin-inline: 6rem;
+                }
+            }
+        }
+    }
+
+    :where(& > :not(:first-child):not(:last-child)) {
+        margin-bottom: 3rem;
+        @media (width >= 62.5rem) {
+            margin-bottom: 6rem;
+        }
+    }
+
+    > section:first-child > section {
+        display: flex;
+        flex-direction: column;
+        min-height: 100dvh;
+        justify-content: center;
+
+        > div {
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0px 5px 0px #a1a1a1;
+
+            .toggle {
+                margin-inline: 0rem !important;
+            }
+
+            padding-top: 3rem;
+            padding-bottom: 2rem;
+
+            @media (width >= 81.25rem) {
+                padding-top: 4rem;
+                padding-bottom: 3rem;
+            }
+
+            & > * {
+                margin-inline: 1rem;
+            }
+
+            @media (width >= 35rem) {
+                & > * {
+                    margin-inline: 3rem;
+                }
+            }
+
+            @media (width >= 81.25rem) {
+                & > * {
+                    margin-inline: 10rem !important;
+                }
+            }
+
+            @media (width >= 62.5rem) {
+                & > * {
+                    margin-inline: 6rem;
+                }
+            }
+        }
+    }
+}

@@ -282,11 +282,11 @@ export async function changePassword(
             return {
                 error: "Không thể đặt mật khẩu",
             };
-
-        await createUserSession(updatedUser, await cookies());
     } catch {
         return {
             error: "Không thể đặt mật khẩu",
         };
     }
+
+    redirect("/sign-in");
 }
