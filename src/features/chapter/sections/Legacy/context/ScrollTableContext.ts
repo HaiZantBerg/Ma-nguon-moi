@@ -53,7 +53,9 @@ export function useScrollTableValues(part: string | null) {
 
     useEffect(() => {
         if (!part) return;
-        else if (!didMount.current) {
+        console.log(part);
+
+        if (!didMount.current) {
             didMount.current = true;
             return;
         }

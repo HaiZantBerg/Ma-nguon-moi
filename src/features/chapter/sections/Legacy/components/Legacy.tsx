@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { ChapterChildProps } from "feature/chapter/types/General";
@@ -23,12 +23,21 @@ export default function Legacy({ grade, chapter }: ChapterChildProps) {
     const pathname = usePathname();
     const { replace } = useRouter();
 
+    const alreadyHasQuery = useRef(false);
+
     const partQ = searchParams.get("part");
 
     const { values } = useScrollTableValues(partQ);
 
     useEffect(() => {
-        if (!ct || partQ) return;
+        if (!ct) return;
+
+        console.log("1");
+
+        if (partQ) {
+            alreadyHasQuery.current = true;
+            return;
+        }
 
         if (typeof ct === "object") {
             const firstPart = Object.keys(ct)[0];
