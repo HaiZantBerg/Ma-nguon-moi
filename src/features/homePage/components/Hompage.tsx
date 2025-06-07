@@ -11,7 +11,7 @@ export default function Hompage() {
                 <Note />
             </div>
             <div
-                className="row-[1/6] min-[81.25rem]:col-[5/13] col-[1/13] overflow-x-auto font-['Chakra_Petch'] max-[54rem]:px-[3.2rem]"
+                className="row-[1/6] min-[81.25rem]:col-[5/13] col-[1/13] overflow-x-auto font-['Chakra_Petch']"
                 id="grade"
             >
                 <Grade />
