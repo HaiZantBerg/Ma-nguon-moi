@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import signInIcon from "@/assets/Svg/auth/signInIcon.svg?url";
-import { ChangePasswordForm, ResetPasswordForm } from "@/features/auth";
+import { ChangePasswordForm, EmailResetPassForm } from "@/features/auth";
 import { getCurrentUserViaResetToken } from "@/auth/getCurUser";
 import Link from "next/link";
 import { checkExpiry } from "@/auth/email/checkExpiry";
@@ -91,7 +91,7 @@ export default async function Page({ searchParams }: ResetPasswordProps) {
                         </p>
                     </header>
                     <hr className="w-[18rem] border-t-[#404866] sm:w-[22rem] my-[1.5rem]" />
-                    <ResetPasswordForm />
+                    <EmailResetPassForm />
                     <hr className="w-[18rem] sm:w-[22rem] border-t-[#404866] mt-[1.5rem] mb-[15px]" />
                     <p className="w-fit text-[0.85rem] sm:text-[0.9rem] text-white">
                         Chưa có tài khoản?{" "}

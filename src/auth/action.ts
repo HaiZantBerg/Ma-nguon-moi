@@ -151,7 +151,10 @@ export async function logOut() {
     redirect("/");
 }
 
-export async function resetPassword(_previous: unknown, unsafeData: FormData) {
+export async function requestResetPassword(
+    _previous: unknown,
+    unsafeData: FormData,
+) {
     const formEmail = unsafeData.get("email") as string;
 
     const formField = {
