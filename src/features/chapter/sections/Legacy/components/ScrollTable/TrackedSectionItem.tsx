@@ -29,12 +29,14 @@ export default function TrackedSectionItem({
         setActiveSectionItem,
         activeSection,
         activeSectionItem,
+        sectionItems,
     } = useScrollTableContext();
 
     useEffect(() => {
-        registerSectionItem({ id, title }, parId);
+        if (!sectionItems[parId].length)
+            registerSectionItem({ id, title }, parId);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [sectionItems[parId]]);
 
     const container = useRef<HTMLElement | null>(null);
 

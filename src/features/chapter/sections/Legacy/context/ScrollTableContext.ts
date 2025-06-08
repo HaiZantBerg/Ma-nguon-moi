@@ -61,13 +61,13 @@ export function useScrollTableValues(part: string | null) {
 
         console.log("1");
 
-        //     setSections([]);
-        //     setSectionItems([]);
+        setSections([]);
+        setSectionItems([]);
 
-        //     setActiveSection(0);
-        //     setActiveSectionItem(0);
+        setActiveSection(0);
+        setActiveSectionItem(0);
 
-        //     interuptedScroll.current = -1;
+        interuptedScroll.current = -1;
     }, [part]);
 
     const registerSection = (section: Section) => {

@@ -20,9 +20,9 @@ export default function QuizzesCollection({
     if (!content) return;
 
     return (
-        <div className="flex flex-col w-full h-full" ref={scope}>
+        <div className="flex flex-col w-full h-fit" ref={scope}>
             <div className="overflow-x-auto overflow-y-hidden min-[57rem]:h-[12.5rem] h-[10rem] mt-[10rem] min-[41rem]:mx-[7rem] min-[31rem]:mx-[3rem] mx-[1rem]">
-                <div className="space-x-4 whitespace-nowrap mx-auto w-fit h-fit">
+                <div className="space-x-4 whitespace-nowrap mx-auto w-fit h-full">
                     {content.map((item, id) => {
                         const { src, title, className = "" } = item;
 

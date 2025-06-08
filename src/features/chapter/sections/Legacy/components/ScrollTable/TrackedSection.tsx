@@ -20,15 +20,15 @@ export default function TrackedSection({
     children,
     ...props
 }: TrackedSectionProps) {
-    const { registerSection, setActiveSection, activeSection } =
+    const { registerSection, setActiveSection, activeSection, sections } =
         useScrollTableContext();
 
     const container = useRef<HTMLElement | null>(null);
 
     useEffect(() => {
-        registerSection({ id, title });
+        if (!sections.length) registerSection({ id, title });
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [sections]);
 
     const { scrollYProgress } = useScroll({
         target: container,
