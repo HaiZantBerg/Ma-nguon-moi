@@ -26,7 +26,7 @@ export default function MP({ children, li }: MPProps & { li?: boolean }) {
                 <div
                     className={cn(
                         !li || "!pl-[1.5rem]",
-                        "min-[1000px]:mb-[2rem] mb-[1rem] text-pretty relative text-sm min-[768px]:text-base min-[1000px]:text-[1.05rem]",
+                        "text-pretty relative text-sm min-[768px]:text-base min-[1000px]:text-[1.05rem]",
                     )}
                 >
                     {children}
@@ -40,12 +40,18 @@ function MPWrappedByCtx({ children }: MPProps) {
     const { handleTrigger, scope, openP } = useMPContext();
 
     return (
-        <div ref={scope} className="text-[#6a6a0b]">
+        <div
+            ref={scope}
+            className="min-[1000px]:mb-[1.5rem] mb-[1rem] pt-[0.5rem] text-[#6a6a0b]"
+        >
             {openP && (
-                <div
-                    className="fixed top-0 left-0 z-10 w-screen h-dvh"
-                    onClick={() => handleTrigger(false)}
-                />
+                <>
+                    <div
+                        className="fixed top-0 left-0 z-10 w-screen h-dvh"
+                        onClick={() => handleTrigger(false)}
+                    />
+                    <div className="fixed top-0 left-0 w-screen h-dvh bg-[#fafafa] -z-10 pointer-events-none" />
+                </>
             )}
             {children}
         </div>
@@ -93,26 +99,28 @@ MP.Content = function MPContent({
             id="contentTable"
             className="absolute h-0 w-full z-20 overflow-hidden translate-y-[-2px]"
         >
-            {openP && (
-                <div className="bg-[#ffffc7] border border-[#6a6a0b] h-full rounded-[0px_15px_15px_15px] w-full px-5 pt-4 pb-5">
-                    <div
-                        className={cn(
-                            className,
-                            "[&_p]:!mb-0 [&_ul]:!mb-0 [&_ol]:!mb-0 flex flex-col gap-4",
-                        )}
-                    >
-                        {children}
+            <div className="pb-[3rem] h-full">
+                {openP && (
+                    <div className="bg-[#ffffc7] border border-[#6a6a0b] h-full rounded-[0px_15px_15px_15px] w-full px-5 pt-4 pb-5">
+                        <div
+                            className={cn(
+                                className,
+                                "[&_p]:!mb-0 [&_ul]:!mb-0 [&_ol]:!mb-0 flex flex-col gap-4",
+                            )}
+                        >
+                            {children}
+                        </div>
+                        <button
+                            className="border text-lg mt-3 border-[#6a6a0b] py-1 font-semibold px-5 rounded-full"
+                            onClick={() => {
+                                handleTrigger(false);
+                            }}
+                        >
+                            Đóng
+                        </button>
                     </div>
-                    <button
-                        className="border text-lg mt-3 border-[#6a6a0b] py-1 font-semibold px-5 rounded-full"
-                        onClick={() => {
-                            handleTrigger(false);
-                        }}
-                    >
-                        Đóng
-                    </button>
-                </div>
-            )}
+                )}
+            </div>
         </div>
     );
 };

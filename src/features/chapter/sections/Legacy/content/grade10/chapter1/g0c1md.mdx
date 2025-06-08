@@ -1,4 +1,5 @@
 import { ToggleLesson } from "./reactMDX";
+import { BlockMath, InlineMath } from "react-katex";
 
 import {
     Section,
@@ -12,8 +13,6 @@ import Wil from "public/Image/chapter/MDTH/williamofockham.webp";
 import Pet from "public/Image/chapter/MDTH/peterabelard.webp";
 import Got from "public/Image/chapter/MDTH/gottlobfrege.webp";
 import Ber from "public/Image/chapter/MDTH/bertrandrussell.webp";
-
-import { BlockMath, InlineMath } from "react-katex";
 
 <Section id={0} title='Mở đầu' isFirst>
     <SItem id={0} isTop>
@@ -56,7 +55,7 @@ import { BlockMath, InlineMath } from "react-katex";
 
                     <IP.Ps>
 
-                        <IP.Image src={Ari} className="min-w-[30%]"/>
+                        <IP.Image src={Ari} fi/>
 
                         **Aristotle** (384-322 TCN), một trong những triết gia Hy Lạp cổ đại, là người đầu tiên hệ thống hóa các quy tắc của suy luận logic.
                         Ông đã xây dựng các nguyên tắc cơ bản của logic học, mà sau này được biết đến với tên gọi logic học suy diễn (syllogistic logic).
@@ -115,7 +114,7 @@ import { BlockMath, InlineMath } from "react-katex";
 
                     <IP.Ps>
 
-                        <IP.Image src={Wil} className="min-w-[30%]"/>
+                        <IP.Image src={Wil} fi/>
 
                         **William of Ockham** (1287-1347) là một nhà triết học và tu sĩ người Anh, nổi tiếng với nguyên lý "Dao cạo Ockham" (Occam's Razor),
                         cho rằng khi đối mặt với nhiều giả thuyết, giả thuyết đơn giản nhất với ít giả định nhất là hợp lý nhất.
@@ -138,7 +137,7 @@ import { BlockMath, InlineMath } from "react-katex";
 
                     <IP.Ps>
 
-                        <IP.Image src={Pet} className="min-w-[30%]"/>
+                        <IP.Image src={Pet} fi/>
 
                         **Peter Abelard** (1079-1142) là một triết gia và thần học gia người Pháp, nổi bật với phương pháp "Sic et Non",
                         khuyến khích đối chiếu các quan điểm đối lập trong thần học. Ông cũng nổi tiếng với mối tình với Héloïse và
@@ -179,10 +178,10 @@ import { BlockMath, InlineMath } from "react-katex";
 
                     <IP.Ps>
 
-                        <IP.Image src={Wil} className="min-w-[30%]"/>
+                        <IP.Image src={Wil} fi/>
 
                         **George Boole** (1815-1864) là người đầu tiên phát triển hệ thống logic mệnh đề hiện đại với việc sáng tạo ra Đại số Boole.
-                        Trong cuốn sách “The Mathematical Analysis of Logic” (1847) và “An Investigation of the Laws of Thought” (1854),
+                        Trong cuốn sách "The Mathematical Analysis of Logic" (1847) và "An Investigation of the Laws of Thought" (1854),
                         Boole đã hệ thống hóa cách thức xử lý các phát biểu toán học thông qua các phép toán đại số như AND, OR, và NOT,
                         tương ứng với các mệnh đề logic. Đại số Boole cho phép biểu diễn các mệnh đề bằng các giá trị đúng (1) hoặc sai (0),
                         từ đó thực hiện các phép toán logic để kiểm tra tính hợp lý của các mệnh đề.
@@ -200,7 +199,7 @@ import { BlockMath, InlineMath } from "react-katex";
 
         </IP>
 
-        * Theo Boole, logic có thể được xử lý giống như các phép toán đại số với những ký hiệu cho “và” (AND), “hoặc” (OR) và “không” (NOT),
+        * Theo Boole, logic có thể được xử lý giống như các phép toán đại số với những ký hiệu cho "và" (AND), "hoặc" (OR) và "không" (NOT),
         và các mệnh đề có thể được biểu diễn bằng số nhị phân: đúng là 1, sai là 0.
 
         <MP li>
@@ -224,7 +223,7 @@ import { BlockMath, InlineMath } from "react-katex";
                 Trong đó:
                 * <InlineMath math="\wedge"/> là phép toán logic "và" (AND), có giá trị 1 khi cả hai mệnh đề đều đúng (tức là <InlineMath math="P = 1"/> và <InlineMath math="Q = 1"/>), và 0 khi một trong hai mệnh đề là sai.
 
-                **Các phép toán logic cơ bản trong đại số Boole:**
+                **Các phép toán logic cơ bản trong đại số Boole**:
 
                 * **AND** (<InlineMath math="\wedge"/>): Kết quả là 1 khi cả hai mệnh đề đều đúng, ngược lại là 0.
 
@@ -263,7 +262,7 @@ import { BlockMath, InlineMath } from "react-katex";
 
                     <IP.Ps>
 
-                        <IP.Image src={Got} className="min-w-[30%]"/>
+                        <IP.Image src={Got} fi/>
 
                         **Gottlob Frege** (1848-1925) là một triết gia và nhà toán học người Đức, được xem là cha đẻ của logic học hiện đại.
                         Ông phát triển hệ thống lý thuyết logic formal, phân biệt giữa ngữ nghĩa và cú pháp trong logic.
@@ -298,7 +297,7 @@ import { BlockMath, InlineMath } from "react-katex";
 
                     Những đặc điểm chính của hệ thống ký hiệu logic của Frege:
 
-                    1. **Ký hiệu hàm và đối tượng:**
+                    1. **Ký hiệu hàm và đối tượng**:
 
                     * Frege phân biệt giữa hai loại khái niệm trong logic:
 
@@ -306,14 +305,14 @@ import { BlockMath, InlineMath } from "react-katex";
 
                     * * **Đối tượng (Object)**: Các thành phần trong các mệnh đề, ví dụ, các số hay các vật thể cụ thể.
 
-                    2. **Quan hệ giữa các mệnh đề:**
+                    2. **Quan hệ giữa các mệnh đề**:
 
                     * Frege sử dụng ký hiệu để diễn đạt quan hệ giữa các mệnh đề, như:
 
                     * * "<InlineMath math="\forall"/>" (for all): ký hiệu cho phép diễn đạt khái niệm tổng quát, ví dụ, "Mọi người đều tử tế."
                     * * "<InlineMath math="\exist"/>" (there exists): ký hiệu để diễn đạt sự tồn tại, ví dụ, "Có ít nhất một người tốt."
 
-                    3. **Ký hiệu cho các phép toán logic:**
+                    3. **Ký hiệu cho các phép toán logic**:
 
                     * "<InlineMath math="\lnot"/>": phủ định (NOT)
 
@@ -323,11 +322,11 @@ import { BlockMath, InlineMath } from "react-katex";
 
                     * "<InlineMath math="\rightarrow"/>": phép toán "suy ra" (implies)
 
-                    4. **Mệnh đề và câu hỏi:**
+                    4. **Mệnh đề và câu hỏi**:
 
                     * Frege dùng hệ thống ký hiệu này để phân tích các mệnh đề, phân biệt giữa tính đúng sai của các mệnh đề và nghĩa của các mệnh đề (ý nghĩa hay sự kiện).
 
-                    5. **Ý nghĩa của hàm và đối tượng:**
+                    5. **Ý nghĩa của hàm và đối tượng**:
 
                     * Frege đưa ra định nghĩa về nghĩa của một hàm (hay mệnh đề), và ông giải thích rằng hàm có thể mang một giá trị
                     (đúng hoặc sai) khi nó được áp dụng vào một đối tượng cụ thể.
@@ -390,7 +389,7 @@ import { BlockMath, InlineMath } from "react-katex";
 
                     <IP.Ps>
 
-                        <IP.Image src={Ber} className="min-w-[30%]"/>
+                        <IP.Image src={Ber} fi/>
 
                         **Bertrand Russell** (1872-1970) là một triết gia, toán học gia, và nhà logic học người Anh, nổi tiếng với công trình trong triết học phân tích và lý thuyết logic.
                         Ông là đồng sáng lập Trường phái logic học phân tích và đóng góp quan trọng vào sự phát triển của logic toán học.
@@ -418,12 +417,20 @@ import { BlockMath, InlineMath } from "react-katex";
 
                 <IP.Content>
 
-                        Trong hệ thống logic của Frege, ông cho phép định nghĩa một tập hợp R chứa tất cả các tập hợp không phải là phần tử của chính nó.
-                        Tuy nhiên, câu hỏi đặt ra là liệu tập hợp R có phải là phần tử của chính nó hay không:
+                        - Nghịch lý Russell là một trong những mâu thuẫn quan trọng nhất trong lý thuyết tập hợp, được Bertrand Russell phát hiện vào năm 1901. Nghịch lý này liên quan đến tập hợp chứa chính nó như một phần tử. Cụ thể, nếu ta định nghĩa tập hợp <InlineMath math="\reals"/> là tập hợp của tất cả các tập hợp không phải là phần tử của chính nó, thì câu hỏi đặt ra là: liệu <InlineMath math="\reals"/> có phải là phần tử của chính nó không?
 
-                        * Nếu R là phần tử của chính nó, thì theo định nghĩa, nó không phải là phần tử của chính nó.
+                        - Nếu <InlineMath math="\reals"/> ∈ <InlineMath math="\reals"/>, thì theo định nghĩa <InlineMath math="\reals"/> phải không phải là phần tử của chính nó, điều này mâu thuẫn.
 
-                        * Nếu R không phải là phần tử của chính nó, thì theo định nghĩa, nó phải là phần tử của chính nó.
+                        - Nếu <InlineMath math="\reals"/> ∉ <InlineMath math="\reals"/>, thì theo định nghĩa, <InlineMath math="\reals"/> phải là phần tử của chính nó, lại dẫn đến mâu thuẫn.
+
+                        Hệ quả của nghịch lý:
+
+                        Sau khi nghịch lý Russell được phát hiện, Frege nhận ra rằng lý thuyết tập hợp của ông không thể hoạt động như một nền tảng vững chắc cho toán học. Trong một lá thư gửi Russell, Frege đã thể hiện sự thất vọng sâu sắc về việc lý thuyết của ông bị phá vỡ.
+
+                        Nghịch lý này là một trong những lý do quan trọng dẫn đến sự phát triển của các lý thuyết tập hợp sau này,
+                        chẳng hạn như lý thuyết tập hợp tiên đề Zermelo-Fraenkel, được phát triển bởi Ernst Zermelo và Abraham Fraenkel
+                        vào những năm 1920 để tránh các nghịch lý như của Frege và Russell.
+                        Zermelo-Fraenkel sử dụng các tiên đề để hạn chế các tập hợp không hợp lệ và bảo vệ lý thuyết tập hợp khỏi các nghịch lý.
 
                 </IP.Content>
 
@@ -459,10 +466,10 @@ import { BlockMath, InlineMath } from "react-katex";
 
             <MP.Content>
 
-                * "On Computable Numbers" của Turing (1936) là một công trình quan trọng,
+                "On Computable Numbers" của Turing (1936) là một công trình quan trọng,
                 trong đó ông mô tả cách thức máy tính có thể thực hiện các phép toán logic và mô phỏng các mệnh đề toán học.
 
-                * John von Neumann đã phát triển lý thuyết về mạch logic và máy tính điện tử,
+                John von Neumann đã phát triển lý thuyết về mạch logic và máy tính điện tử,
                 đồng thời xây dựng các mô hình tính toán trong đó mệnh đề và phép toán logic đóng vai trò then chốt.
 
             </MP.Content>

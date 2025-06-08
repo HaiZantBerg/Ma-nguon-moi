@@ -891,8 +891,16 @@ const g0c1 = {
                         có thể cao tới 4m55cm, dong cũng có thể chỉ cao 2m60cm
                         mà thôi. Đã đến lúc chúng ta cần phải có một sự thống
                         nhất trong đo đạc. Và một vị cứu tinh đã xuất hiện đến
-                        từ nước Pháp. Các bạn có thể tìm hiểu thêm ở câu chuyện
-                        “Một lý do tốt để yêu người Pháp” Theo
+                        từ nước Pháp. Các bạn có thể tìm hiểu thêm ở câu chuyện{" "}
+                        <Link
+                            href="khoi10/chuong1/funfacts?figure-id=7&funfact-id=1"
+                            className="inline underline underline-offset-2 font-medium"
+                        >
+                            {`"Một lý do tốt để yêu người Pháp"`}
+                        </Link>
+                    </p>
+                    <p>
+                        {`Theo `}
                         <Link
                             href="https://thcshadinh.thuvien.edu.vn/tai-lieu/sach-dien-tu/toan-hoc-doc-dao-vo-cung-t1-do-dac-khong-gioi-han-horrible-science-562727"
                             className="inline underline underline-offset-2 font-medium"
@@ -932,6 +940,20 @@ const g0c1 = {
                         điểm đánh dấu, với khoảng cách nằm giữa chúng chính xác
                         là 1 mét. Dần dần mét đã trở thành đơn vị đo đạc căn bản
                         trên toàn thế giới.
+                    </p>
+                    <p>
+                        Năm 1790 giới khoa học Pháp đã đo lường lấy một phần hai
+                        mươi triệu đường kinh tuyến Bắc - Nam làm tiêu chuẩn độ
+                        dài gọi là mét, căn cứ vào đó người ta dùng Bạch Kim chế
+                        tạo ra thước mét tiêu chuẩn đầu tiên.
+                    </p>
+                    <p>
+                        Năm 1889 tại hội nghị đo lường quốc tế, người ta đã
+                        chính thức quyết định căn cứ vào độ dài thước mét tiêu
+                        chuẩn đầu tiên này, chế tạo ra thước mét có tiết diện
+                        hình X bằng hợp kim bạch kim - Irit và lấy nó làm thước
+                        mét tiêu chuẩn quốc tế và được lưu giữ ở Viện Đo lường
+                        quốc tế Paris.
                     </p>
                     <p>
                         {`Ấy vậy mà lại có những người cho là hai vạch trên một
