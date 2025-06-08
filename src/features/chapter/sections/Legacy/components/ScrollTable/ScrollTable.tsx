@@ -37,7 +37,7 @@ export default function ScrollTable() {
                             activeSection === section.id &&
                             shouldRenderInterupt;
 
-                        console.log("1");
+                        console.log(sections);
 
                         return (
                             <div key={id} className="text-start flex flex-col">

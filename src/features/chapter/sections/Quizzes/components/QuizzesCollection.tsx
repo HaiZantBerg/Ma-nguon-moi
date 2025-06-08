@@ -22,7 +22,7 @@ export default function QuizzesCollection({
     return (
         <div className="flex flex-col w-full h-full" ref={scope}>
             <div className="overflow-x-auto overflow-y-hidden min-[57rem]:h-[12.5rem] h-[10rem] mt-[10rem] min-[41rem]:mx-[7rem] min-[31rem]:mx-[3rem] mx-[1rem]">
-                <div className="space-x-4 whitespace-nowrap mx-auto w-fit h-full">
+                <div className="space-x-4 whitespace-nowrap mx-auto w-fit h-fit">
                     {content.map((item, id) => {
                         const { src, title, className = "" } = item;
 
@@ -56,8 +56,8 @@ export default function QuizzesCollection({
                     })}
                 </div>
             </div>
-            <div className="max-w-[94rem] w-full min-[41rem]:px-[7rem] min-[31rem]:px-[3rem] px-[1rem] grow py-[4rem] mx-auto max-h-[40rem] min-h-[30rem]">
-                <div className="border-dashed border-4 border-neutral-200 rounded-2xl h-full relative flex items-center justify-center">
+            <div className="max-w-[94rem] w-full min-[41rem]:px-[7rem] min-[31rem]:px-[3rem] px-[1rem] flex flex-col grow py-[4rem] mx-auto max-h-[40rem] min-h-[30rem]">
+                <div className="border-dashed border-4 border-neutral-200 rounded-2xl h-full grow relative flex items-center justify-center">
                     <div className="absolute w-[calc(100%+8px))] h-[calc(100%+8px))] top-[-4px] left-[-4px] flex justify-center items-center">
                         <div
                             id="quizContainer"
