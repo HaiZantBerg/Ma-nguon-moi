@@ -3,7 +3,7 @@ import {
     createContext,
     MutableRefObject,
     useContext,
-    // useEffect,
+    useEffect,
     useRef,
     useState,
 } from "react";
@@ -37,12 +37,11 @@ export const ScrollTableContext = createContext<ScrollTableType | undefined>(
     undefined,
 );
 
-export function useScrollTableValues() {
-// part: string | null
+export function useScrollTableValues(part: string | null) {
     const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
     const interuptedScroll = useRef(-1);
-    // const didMount = useRef(false);
+    const didMount = useRef(false);
 
     const [activeSection, setActiveSection] = useState(0);
     const [sections, setSections] = useState<Section[]>([]);
@@ -52,22 +51,24 @@ export function useScrollTableValues() {
 
     const scrollYProgressSectionItem = useMotionValue(0);
 
-    // useEffect(() => {
-    //     if (!part) return;
+    useEffect(() => {
+        if (!part) return;
 
-    //     if (!didMount.current) {
-    //         didMount.current = true;
-    //         return;
-    //     }
+        if (!didMount.current) {
+            didMount.current = true;
+            return;
+        }
 
-    //     setSections([]);
-    //     setSectionItems([]);
+        console.log("1");
 
-    //     setActiveSection(0);
-    //     setActiveSectionItem(0);
+        //     setSections([]);
+        //     setSectionItems([]);
 
-    //     interuptedScroll.current = -1;
-    // }, [part]);
+        //     setActiveSection(0);
+        //     setActiveSectionItem(0);
+
+        //     interuptedScroll.current = -1;
+    }, [part]);
 
     const registerSection = (section: Section) => {
         setSections((prev) => prev.concat(section));
