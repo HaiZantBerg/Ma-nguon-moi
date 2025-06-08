@@ -16,7 +16,7 @@ export function ToggleLesson() {
     ];
 
     return (
-        <div className="absolute left-0 bottom-[calc(100%+1rem)] w-full flex gap-2">
+        <div className="absolute left-0 bottom-[calc(100%+1rem)] w-fit flex gap-2">
             {toggleItems.map(({ value, label }, id) => (
                 <ToggleButton
                     key={id}

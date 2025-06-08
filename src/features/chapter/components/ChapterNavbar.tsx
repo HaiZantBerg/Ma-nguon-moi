@@ -23,7 +23,7 @@ const sections = [
 
 export default function ChapterNavbar() {
     return (
-        <div className="fixed top-0 left-0 w-full z-[100] h-[7rem] bg-[#ffffff96] backdrop-grayscale-75 backdrop-blur-3xl shadow-[0_0_20px_#d1d1d1] rounded-b-2xl flex justify-between items-center sm:px-[2rem] px-[1rem]">
+        <div className="fixed top-0 left-0 w-screen z-[100] h-[7rem] bg-[#ffffff96] backdrop-grayscale-75 backdrop-blur-3xl shadow-[0_0_20px_#d1d1d1] rounded-b-2xl flex justify-between items-center sm:px-[2rem] px-[1rem]">
             <div className="w-[16rem] h-full flex items-center">
                 <Setting sections={sections} />
             </div>
