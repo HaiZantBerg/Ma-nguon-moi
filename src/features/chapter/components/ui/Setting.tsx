@@ -79,7 +79,7 @@ export default function Setting({
                         id="setting"
                     />
                     <label htmlFor="setting" className="cursor-pointer">
-                        Setting
+                        Cài đặt
                     </label>
                 </Link>
                 <Link
