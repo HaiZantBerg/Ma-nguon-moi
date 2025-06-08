@@ -59,8 +59,6 @@ export function useScrollTableValues(part: string | null) {
             return;
         }
 
-        console.log("1");
-
         setSections([]);
         setSectionItems([]);
 

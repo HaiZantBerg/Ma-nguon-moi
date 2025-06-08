@@ -15,8 +15,6 @@ export default function ScrollTable() {
     const searchParams = useSearchParams();
     const part = searchParams.get("part");
 
-    console.log("2");
-
     return (
         <AnimatePresence>
             <div className="fixed top-0 left-0 h-svh min-[1000px]:w-[10rem] w-[9.5rem] pt-[7rem] flex items-center min-[1000px]:pl-[1rem] pl-[0.25rem]">
@@ -36,8 +34,6 @@ export default function ScrollTable() {
                         const shouldRender =
                             activeSection === section.id &&
                             shouldRenderInterupt;
-
-                        console.log(sections);
 
                         return (
                             <div key={id} className="text-start flex flex-col">
