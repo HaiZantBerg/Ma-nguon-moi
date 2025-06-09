@@ -1,9 +1,0 @@
-.auth:-webkit-autofill,
-.auth:-webkit-autofill:hover,
-.auth:-webkit-autofill:focus,
-.auth:-webkit-autofill:active {
-    --hide-autofill: #000;
-    -webkit-box-shadow: 0 0 0 9999px var(--hide-autofill) inset !important;
-    box-shadow: 0 0 0 9999px var(--hide-autofill) inset !important;
-    -webkit-text-fill-color: white;
-}
