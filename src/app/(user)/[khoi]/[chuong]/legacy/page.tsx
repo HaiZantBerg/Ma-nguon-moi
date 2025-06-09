@@ -1,4 +1,4 @@
-import { Legacy } from "@/features/chapter";
+import { Legacy } from "@/features/Legacy";
 import { ChapterProps } from "@/types/ChapterType";
 import React from "react";
 

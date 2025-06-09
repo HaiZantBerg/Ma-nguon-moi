@@ -1,0 +1,514 @@
+import { BlockMath, InlineMath } from "react-katex";
+
+import {
+    Section,
+    SItem,
+    MP,
+    IP,
+    Toggle,
+} from "feature/chapter/sections/Legacy/components";
+
+import Ari from "public/Image/chapter/MDTH/aristotle.webp";
+import Wil from "public/Image/chapter/MDTH/williamofockham.webp";
+import Pet from "public/Image/chapter/MDTH/peterabelard.webp";
+import Got from "public/Image/chapter/MDTH/gottlobfrege.webp";
+import Ber from "public/Image/chapter/MDTH/bertrandrussell.webp";
+import Boole from "public/Image/chapter/MDTH/georgeboole.webp";
+
+<Section id={0} title='Mở đầu' isFirst>
+    <SItem id={0} isTop>
+
+        <div className="relative !mt-[12rem]">
+
+            <Toggle toggle={[
+                {value: "menh-de", label: "Mệnh đề" },
+                { value: "tap-hop", label: "Tập hợp" },
+            ]}/>
+
+            # Mở đầu
+
+            Từ xa xưa, con người đã nỗ lực tìm cách suy nghĩ và lập luận một cách chặt chẽ, dẫn đến sự ra đời của logic học - ngành nghiên cứu về lập luận đúng.
+            Trong đó, mệnh đề là khái niệm trung tâm, đóng vai trò là đơn vị cơ bản của tư duy logic.
+
+            Lịch sử của mệnh đề gắn liền với những tên tuổi lớn như Aristotle -
+            triết gia Hy Lạp cổ đại, người đặt nền móng cho logic học với lý thuyết tam đoạn luận; Gottlob Frege -
+            nhà logic học Đức thế kỷ 19, người xây dựng logic mệnh đề hiện đại; và Bertrand Russell - triết gia và nhà toán học Anh,
+            người góp phần phát triển logic hình thức và lý thuyết tập hợp. Những đóng góp của họ không chỉ định hình cách ta hiểu về mệnh đề,
+            mà còn tạo nền tảng cho khoa học máy tính, trí tuệ nhân tạo và ngôn ngữ hình thức ngày nay.
+
+        </div>
+
+    </SItem>
+
+</Section>
+
+<Section id={1} title='Thế kỷ 4 TCN'>
+    <SItem id={0} title='Aristotle và Triết Học Logic'>
+
+        # Thế kỷ 4 TCN
+
+        ## Aristotle và Triết Học Logic
+
+        <IP li>
+
+            <IP.Main>
+
+                <IP.Trigger>{`Aristotle`}</IP.Trigger>
+
+                <IP.Content>
+
+                    <IP.Ps>
+
+                        <IP.Image src={Ari} fi/>
+
+                        **Aristotle** (384-322 TCN), một trong những triết gia Hy Lạp cổ đại, là người đầu tiên hệ thống hóa các quy tắc của suy luận logic.
+                        Ông đã xây dựng các nguyên tắc cơ bản của logic học, mà sau này được biết đến với tên gọi logic học suy diễn (syllogistic logic).
+                        Tuy nhiên, logic của Aristotle chưa phải là logic mệnh đề,
+                        mà chỉ tập trung vào các phán đoán và suy luận liên quan đến các danh từ và động từ.
+
+                    </IP.Ps>
+
+                </IP.Content>
+
+            </IP.Main>
+
+            {`, người sáng lập trường phái logic học, đã đưa ra các định lý cơ bản về mệnh đề trong các tác phẩm của mình.
+            Ông là người đầu tiên khái quát hóa cách thức mà các câu trong ngôn ngữ có thể được phân loại là "đúng" hoặc "sai".
+            Mặc dù các nền văn minh khác cũng có những nghiên cứu sơ khai về logic,
+            nhưng Aristotle là người đầu tiên có hệ thống hóa và đưa ra những nguyên lý áp dụng chung.`}
+
+        </IP>
+
+        * Một trong những lý thuyết quan trọng của Aristotle là khái niệm "sự phủ định" của một mệnh đề.
+        Ông phân loại mệnh đề thành "đúng" hoặc "sai", và mỗi mệnh đề có thể được phủ định để trở thành một mệnh đề ngược lại.
+        Ví dụ: "Tất cả người Hy Lạp là công dân tự do" có thể bị phủ định thành "Không phải tất cả người Hy Lạp là công dân tự do".
+
+        * Tác phẩm nổi tiếng "Organon" của Aristotle đã đi sâu vào phân tích logic học.
+        Trong đó, ông đã định nghĩa và phân tích mệnh đề theo một hệ thống chặt chẽ, từ đó tạo nền tảng cho các nghiên cứu về luận lý học sau này.
+
+        * Aristotle cũng giới thiệu khái niệm "mệnh đề đơn" (Simple Proposition) và "mệnh đề phức" (Compound Proposition),
+        đồng thời phát triển các lý thuyết về suy luận hợp lý từ các mệnh đề này,
+        dẫn đến các hình thức suy diễn như "syllogism" (hình thức suy luận thông qua 3 mệnh đề).
+
+        * Mặc dù Aristotle không sử dụng các ký hiệu toán học như chúng ta làm ngày nay,
+        nhưng lý thuyết của ông đã chi phối tư tưởng triết học phương Tây suốt hơn 2000 năm.
+        Các nguyên lý cơ bản của ông về mệnh đề và suy luận vẫn là nền tảng cho lý thuyết logic cho đến thời đại hiện đại.
+
+
+    </SItem>
+
+</Section>
+
+<Section id={2} title='Thế kỷ 12-17'>
+    <SItem id={0} title='Thời Trung Cổ và Phục Hưng'>
+
+        # Thế kỷ 12-17
+
+        ## Thời Trung Cổ và Phục Hưng
+
+        <IP li>
+
+            {`Trong giai đoạn này, các nhà logic học như `}
+
+            <IP.Main>
+
+                <IP.Trigger>{`William of Ockham`}</IP.Trigger>
+
+                <IP.Content>
+
+                    <IP.Ps>
+
+                        <IP.Image src={Wil} fi/>
+
+                        **William of Ockham** (1287-1347) là một nhà triết học và tu sĩ người Anh, nổi tiếng với nguyên lý "Dao cạo Ockham" (Occam's Razor),
+                        cho rằng khi đối mặt với nhiều giả thuyết, giả thuyết đơn giản nhất với ít giả định nhất là hợp lý nhất.
+                        Ông là người sáng lập trường phái "Nominalism", phủ nhận sự tồn tại của các khái niệm chung và chỉ chấp nhận các sự vật cụ thể.
+                        Ockham cũng có ảnh hưởng sâu rộng đến logic học, khoa học và triết học hiện đại.
+
+                    </IP.Ps>
+
+                </IP.Content>
+
+            </IP.Main>
+
+            {` và `}
+
+            <IP.Main>
+
+                <IP.Trigger>{`Peter Abelard`}</IP.Trigger>
+
+                <IP.Content>
+
+                    <IP.Ps>
+
+                        <IP.Image src={Pet} fi/>
+
+                        **Peter Abelard** (1079-1142) là một triết gia và thần học gia người Pháp, nổi bật với phương pháp "Sic et Non",
+                        khuyến khích đối chiếu các quan điểm đối lập trong thần học. Ông cũng nổi tiếng với mối tình với Héloïse và
+                        là một trong những người tiên phong trong việc áp dụng lý luận logic vào thần học.
+                        Abelard có ảnh hưởng lớn đến triết học và thần học thời Trung Cổ.
+
+                    </IP.Ps>
+
+                </IP.Content>
+
+            </IP.Main>
+
+            {` đã tiếp tục phát triển các khái niệm về logic và ngôn ngữ, tập trung vào cách các phát biểu có thể được kết hợp và phân tích.
+            Mặc dù chưa hình thành rõ ràng mệnh đề như ta hiểu ngày nay, những nghiên cứu về suy luận và ngôn ngữ của họ đã đặt nền móng cho sự phát triển sau này.`}
+
+        </IP>
+
+    </SItem>
+
+</Section>
+
+<Section id={3} title='Thế kỷ 19'>
+    <SItem id={0} title='Đại số Boole (1847)'>
+
+        # Thế kỷ 19
+
+        ## Đại số Boole(1847)
+
+        <IP li>
+
+            {`Vào thế kỷ 19, `}
+
+            <IP.Main>
+
+                <IP.Trigger>{`George Boole`}</IP.Trigger>
+
+                <IP.Content>
+
+                    <IP.Ps>
+
+                        <IP.Image src={Boole} fi/>
+
+                        **George Boole** (1815-1864) là người đầu tiên phát triển hệ thống logic mệnh đề hiện đại với việc sáng tạo ra Đại số Boole.
+                        Trong cuốn sách "The Mathematical Analysis of Logic" (1847) và "An Investigation of the Laws of Thought" (1854),
+                        Boole đã hệ thống hóa cách thức xử lý các phát biểu toán học thông qua các phép toán đại số như AND, OR, và NOT,
+                        tương ứng với các mệnh đề logic. Đại số Boole cho phép biểu diễn các mệnh đề bằng các giá trị đúng (1) hoặc sai (0),
+                        từ đó thực hiện các phép toán logic để kiểm tra tính hợp lý của các mệnh đề.
+
+                    </IP.Ps>
+
+                </IP.Content>
+
+            </IP.Main>
+
+            {` phát triển logic đại số, nơi ông áp dụng các phép toán đại số vào lý thuyết logic. Ông giới thiệu các phép toán logic cơ bản như AND (và),
+            OR (hoặc), và NOT (không), và biểu diễn mệnh đề bằng số nhị phân (1 cho đúng, 0 cho sai). Công trình của Boole,
+            được trình bày trong tác phẩm "The Laws of Thought" (1854), đã đặt nền tảng cho lý thuyết logic hiện đại và là cơ sở
+            cho sự phát triển của máy tính và kỹ thuật số.`}
+
+        </IP>
+
+        * Theo Boole, logic có thể được xử lý giống như các phép toán đại số với những ký hiệu cho "và" (AND), "hoặc" (OR) và "không" (NOT),
+        và các mệnh đề có thể được biểu diễn bằng số nhị phân: đúng là 1, sai là 0.
+
+        <MP li>
+
+            <MP.Trigger>{`Biểu diễn mệnh đề bằng đại số Boole`}</MP.Trigger>
+
+            <MP.Content>
+
+                Ví dụ về mệnh đề "Socrates là người và Socrates là sinh vật" có thể được biểu diễn bằng các phép toán đại số như sau:
+
+                * Giả sử:
+
+                * * P: "Socrates là người" (được biểu diễn bằng 1 nếu đúng, 0 nếu sai).
+
+                * * Q: "Socrates là sinh vật" (được biểu diễn bằng 1 nếu đúng, 0 nếu sai).
+
+                * Phát biểu "Socrates là người và Socrates là sinh vật" có thể được viết dưới dạng phép toán đại số như sau:
+
+                <BlockMath math="P \wedge Q"/>
+
+                Trong đó:
+                * <InlineMath math="\wedge"/> là phép toán logic "và" (AND), có giá trị 1 khi cả hai mệnh đề đều đúng (tức là <InlineMath math="P = 1"/> và <InlineMath math="Q = 1"/>), và 0 khi một trong hai mệnh đề là sai.
+
+                **Các phép toán logic cơ bản trong đại số Boole**:
+
+                * **AND** (<InlineMath math="\wedge"/>): Kết quả là 1 khi cả hai mệnh đề đều đúng, ngược lại là 0.
+
+                * **OR** (<InlineMath math='\vee'/>): Kết quả là 1 nếu ít nhất một trong hai mệnh đề đúng, ngược lại là 0.
+
+                * **NOT** (<InlineMath math='\lnot'/>): Đảo ngược giá trị của mệnh đề (đúng thành sai và ngược lại).
+
+                * Ví dụ, nếu:
+
+                * * <InlineMath math="P = 1"/> (Socrates là người),
+                * * <InlineMath math="Q = 1"/> (Socrates là sinh vật)
+
+                * thì <InlineMath math="P \wedge Q = 1"/>, nghĩa là "Socrates là người và Socrates là sinh vật" là đúng.
+                Nếu một trong hai mệnh đề là sai, kết quả của phép toán AND sẽ là 0.
+
+
+            </MP.Content>
+
+        </MP>
+
+    </SItem>
+
+    <SItem id={1} title='Logic hình thức Frege và Peano'>
+
+        ## Logic hình thức Frege và Peano
+
+        <IP li>
+
+            {`Vào cuối thế kỷ 19, logic học được nâng cấp mạnh mẽ nhờ những đóng góp của `}
+
+            <IP.Main>
+
+                <IP.Trigger>{`Gottlob Frege`}</IP.Trigger>
+
+                <IP.Content>
+
+                    <IP.Ps>
+
+                        <IP.Image src={Got} fi/>
+
+                        **Gottlob Frege** (1848-1925) là một triết gia và nhà toán học người Đức, được xem là cha đẻ của logic học hiện đại.
+                        Ông phát triển hệ thống lý thuyết logic formal, phân biệt giữa ngữ nghĩa và cú pháp trong logic.
+                        Frege sáng tạo ra hệ thống ký hiệu logic để mô tả các mệnh đề và suy luận. Tác phẩm nổi bật của ông là "Begriffsschrift" (1879)
+                        và "Die Grundlagen der Arithmetik" (1884), trong đó ông đề xuất rằng toán học có thể được xây dựng từ logic cơ bản.
+                        Công trình của Frege ảnh hưởng sâu rộng đến các triết gia và nhà toán học như Bertrand Russell và Ludwig Wittgenstein.
+
+                    </IP.Ps>
+
+                </IP.Content>
+
+            </IP.Main>
+
+            {`, một nhà toán học và logic học người Đức. Frege phát triển lý thuyết về logic toán học, đồng thời đưa ra khái niệm về "logic ngữ nghĩa",
+            trong đó ông nghiên cứu về các biểu thức và quan hệ giữa chúng trong ngữ cảnh toán học.`}
+
+        </IP>
+
+        <IP li>
+
+            {`Frege không chỉ định nghĩa mệnh đề là một câu có thể đúng hoặc sai, mà còn phát triển một hệ thống ký hiệu hóa mới để mô tả mệnh đề, mà sau này được gọi là `}
+
+            <IP.Main>
+
+                <IP.Trigger>{`hệ thống ký hiệu logic của Frege`}</IP.Trigger>
+
+                <IP.Content>
+
+                    **Hệ thống ký hiệu logic của Gottlob Frege** là một trong những đóng góp quan trọng nhất của ông trong triết học và toán học,
+                    đánh dấu sự khởi đầu của logic học hiện đại. Hệ thống này được trình bày trong tác phẩm "Begriffsschrift" (1879),
+                    nơi Frege phát triển một ngôn ngữ hình thức để mô tả các quan hệ logic và toán học.
+
+                    Những đặc điểm chính của hệ thống ký hiệu logic của Frege:
+
+                    1. **Ký hiệu hàm và đối tượng**:
+
+                    * Frege phân biệt giữa hai loại khái niệm trong logic:
+
+                    * * **Hàm (Function)**: Các ký hiệu biểu thị những quan hệ giữa các đối tượng, ví dụ, "x là một số nguyên" hoặc "x là một người".
+
+                    * * **Đối tượng (Object)**: Các thành phần trong các mệnh đề, ví dụ, các số hay các vật thể cụ thể.
+
+                    2. **Quan hệ giữa các mệnh đề**:
+
+                    * Frege sử dụng ký hiệu để diễn đạt quan hệ giữa các mệnh đề, như:
+
+                    * * "<InlineMath math="\forall"/>" (for all): ký hiệu cho phép diễn đạt khái niệm tổng quát, ví dụ, "Mọi người đều tử tế."
+                    * * "<InlineMath math="\exist"/>" (there exists): ký hiệu để diễn đạt sự tồn tại, ví dụ, "Có ít nhất một người tốt."
+
+                    3. **Ký hiệu cho các phép toán logic**:
+
+                    * "<InlineMath math="\lnot"/>": phủ định (NOT)
+
+                    * "<InlineMath math="\wedge"/>": phép toán "và" (AND)
+
+                    * "<InlineMath math="\vee"/>": phép toán "hoặc" (OR)
+
+                    * "<InlineMath math="\rightarrow"/>": phép toán "suy ra" (implies)
+
+                    4. **Mệnh đề và câu hỏi**:
+
+                    * Frege dùng hệ thống ký hiệu này để phân tích các mệnh đề, phân biệt giữa tính đúng sai của các mệnh đề và nghĩa của các mệnh đề (ý nghĩa hay sự kiện).
+
+                    5. **Ý nghĩa của hàm và đối tượng**:
+
+                    * Frege đưa ra định nghĩa về nghĩa của một hàm (hay mệnh đề), và ông giải thích rằng hàm có thể mang một giá trị
+                    (đúng hoặc sai) khi nó được áp dụng vào một đối tượng cụ thể.
+
+
+                </IP.Content>
+
+            </IP.Main>
+
+            {`. Điều này cho phép ông phân tích mệnh đề một cách chính xác và cấu trúc chúng thành các biểu thức có thể thao tác với các phép toán.`}
+
+        </IP>
+
+        * Frege là người đầu tiên làm rõ sự khác biệt giữa ngữ nghĩa và cú pháp của các mệnh đề trong logic.
+        Công trình của ông không chỉ ảnh hưởng đến các nhà toán học như David Hilbert và Kurt Gödel,
+        mà còn là cơ sở cho sự phát triển của lý thuyết ngôn ngữ trong triết học ngôn ngữ và lý thuyết logic hiện đại.
+
+        * Tuy nhiên, trong suốt cuộc đời của mình, Frege không được công nhận rộng rãi và phải đối mặt với nhiều thất bại cá nhân.
+        Một trong những thất bại lớn nhất của Frege là khi ông phát hiện ra rằng hệ thống logic của mình chứa đựng một mâu thuẫn nghiêm trọng,
+        được nhà toán học Bertrand Russell chỉ ra trong một lá thư vào năm 1902. Dù vậy, công trình của Frege sau này đã trở thành nền tảng
+        cho nhiều nhánh của logic hiện đại và ảnh hưởng sâu sắc đến những nhà tư tưởng sau ông, như Ludwig Wittgenstein và Kurt Gödel.
+
+        <MP li>
+
+            <MP.Trigger>{`Begriffsschrift`}</MP.Trigger>
+
+            <MP.Content>
+
+                "Begriffsschrift" (1879) là một trong những tác phẩm đột phá của Frege, trong đó ông giới thiệu hệ thống ký hiệu logic.
+                Đây là nền tảng của hệ thống toán học được sử dụng trong lý thuyết tập hợp và lý thuyết về các hàm toán học.
+
+                Trong tác phẩm này, Frege cũng phân tích các loại mệnh đề phức tạp hơn và khái niệm của "lượng từ" (quantifiers),
+                qua đó cho phép tạo ra các mệnh đề trong một hệ thống hình thức logic học có thể được kiểm tra và suy luận một cách chặt chẽ.
+
+            </MP.Content>
+
+        </MP>
+
+    </SItem>
+
+</Section>
+
+<Section id={4} title='Thế kỷ 20'>
+    <SItem id={0} title='Sự mâu thuẫn logic'>
+
+        # Thế kỷ 20
+
+        ## Sự phát hiện mâu thuẫn trong hệ thống logic của Frege
+
+        <IP li>
+
+            {`Một trong những thất bại lớn nhất của Gottlob Frege là khi ông phát hiện ra một mâu thuẫn nghiêm trọng trong hệ thống logic của mình,
+            được nhà toán học `}
+
+            <IP.Main>
+
+                <IP.Trigger>{`Bertrand Russell`}</IP.Trigger>
+
+                <IP.Content>
+
+                    <IP.Ps>
+
+                        <IP.Image src={Ber} fi/>
+
+                        **Bertrand Russell** (1872-1970) là một triết gia, toán học gia, và nhà logic học người Anh, nổi tiếng với công trình trong triết học phân tích và lý thuyết logic.
+                        Ông là đồng sáng lập Trường phái logic học phân tích và đóng góp quan trọng vào sự phát triển của logic toán học.
+                        Russell cùng Alfred North Whitehead viết tác phẩm Principia Mathematica (1910-1913), một công trình nền tảng về logic và toán học.
+                        Ông cũng nổi tiếng với các quan điểm về triết học đạo đức, chính trị và xã hội.
+                        Russell giành giải Nobel Văn học năm 1950 vì những đóng góp vào tư tưởng triết học.
+
+                    </IP.Ps>
+
+                </IP.Content>
+
+            </IP.Main>
+
+            {` chỉ ra trong một lá thư vào năm 1902.`}
+
+        </IP>
+
+        <IP li>
+
+            {`Mâu thuẫn này được gọi là `}
+
+            <IP.Main>
+
+                <IP.Trigger>{`"Nghịch lý của Russell"`}</IP.Trigger>
+
+                <IP.Content>
+
+                        - Nghịch lý Russell là một trong những mâu thuẫn quan trọng nhất trong lý thuyết tập hợp, được Bertrand Russell phát hiện vào năm 1901. Nghịch lý này liên quan đến tập hợp chứa chính nó như một phần tử. Cụ thể, nếu ta định nghĩa tập hợp <InlineMath math="\reals"/> là tập hợp của tất cả các tập hợp không phải là phần tử của chính nó, thì câu hỏi đặt ra là: liệu <InlineMath math="\reals"/> có phải là phần tử của chính nó không?
+
+                        - Nếu <InlineMath math="\reals"/> ∈ <InlineMath math="\reals"/>, thì theo định nghĩa <InlineMath math="\reals"/> phải không phải là phần tử của chính nó, điều này mâu thuẫn.
+
+                        - Nếu <InlineMath math="\reals"/> ∉ <InlineMath math="\reals"/>, thì theo định nghĩa, <InlineMath math="\reals"/> phải là phần tử của chính nó, lại dẫn đến mâu thuẫn.
+
+                        Hệ quả của nghịch lý:
+
+                        Sau khi nghịch lý Russell được phát hiện, Frege nhận ra rằng lý thuyết tập hợp của ông không thể hoạt động như một nền tảng vững chắc cho toán học. Trong một lá thư gửi Russell, Frege đã thể hiện sự thất vọng sâu sắc về việc lý thuyết của ông bị phá vỡ.
+
+                        Nghịch lý này là một trong những lý do quan trọng dẫn đến sự phát triển của các lý thuyết tập hợp sau này,
+                        chẳng hạn như lý thuyết tập hợp tiên đề Zermelo-Fraenkel, được phát triển bởi Ernst Zermelo và Abraham Fraenkel
+                        vào những năm 1920 để tránh các nghịch lý như của Frege và Russell.
+                        Zermelo-Fraenkel sử dụng các tiên đề để hạn chế các tập hợp không hợp lệ và bảo vệ lý thuyết tập hợp khỏi các nghịch lý.
+
+                </IP.Content>
+
+            </IP.Main>
+
+            {` chỉ ra trong một lá thư vào năm 1902.`}
+
+        </IP>
+
+        * Mâu thuẫn này khiến Frege phải từ bỏ phần lớn công trình của mình, bởi vì nó chỉ ra rằng lý thuyết về tập hợp trong hệ thống logic
+        của ông không thể đồng nhất và nhất quán.
+
+        * Bertrand Russell đã phát hiện ra nghịch lý này khi đang làm việc với Frege và gửi cho ông một lá thư vào năm 1902, trong đó chỉ ra sự tồn tại của nghịch lý.
+        Điều này là một cú sốc lớn đối với Frege và khiến ông nhận ra rằng lý thuyết của mình bị sai lầm nghiêm trọng.
+        Mặc dù Frege đã cố gắng sửa chữa sai sót này, nhưng đây vẫn là một trong những thất bại lớn nhất trong sự nghiệp của ông.
+
+    </SItem>
+
+    <SItem id={1} title='Nền móng khoa học máy tính'>
+
+        ## Nền móng khoa học máy tính
+
+        * Trong thế kỷ 20, các lý thuyết mệnh đề trở thành công cụ không thể thiếu trong các nghiên cứu về máy tính và điện toán.
+        Các nhà toán học và kỹ sư điện tử đã ứng dụng lý thuyết mệnh đề vào các thiết kế mạch điện tử, sau này hình thành nên các máy tính hiện đại.
+
+        * Alan Turing và John von Neumann là hai nhân vật nổi bật trong việc ứng dụng lý thuyết mệnh đề vào phát triển máy tính.
+        Turing đã sử dụng lý thuyết mệnh đề để mô tả các thuật toán tính toán (với máy Turing),
+        trong khi von Neumann phát triển lý thuyết về các cổng logic và mạch điện tử, đóng góp vào việc xây dựng máy tính điện tử.
+
+        <MP li>
+
+            <MP.Trigger>{`On Computable Numbers`}</MP.Trigger>
+
+            <MP.Content>
+
+                "On Computable Numbers" của Turing (1936) là một công trình quan trọng,
+                trong đó ông mô tả cách thức máy tính có thể thực hiện các phép toán logic và mô phỏng các mệnh đề toán học.
+
+                John von Neumann đã phát triển lý thuyết về mạch logic và máy tính điện tử,
+                đồng thời xây dựng các mô hình tính toán trong đó mệnh đề và phép toán logic đóng vai trò then chốt.
+
+            </MP.Content>
+
+        </MP>
+
+        * Công trình của Turing và von Neumann mở đường cho sự phát triển của ngành khoa học máy tính, đồng thời hình thành các lý thuyết về thuật toán,
+        lập trình và phần cứng máy tính.
+
+    </SItem>
+
+</Section>
+
+<Section id={5} title='Hiện nay' isLast>
+    <SItem id={0} title='Mệnh đề trong lập trình và AI' isBottom>
+
+        # Hiện nay
+
+        ## Mệnh đề trong lập trình và AI
+
+        * Ngày nay, mệnh đề không chỉ đóng vai trò trong lý thuyết toán học mà còn được sử dụng rộng rãi trong các lĩnh vực như trí tuệ nhân tạo (AI),
+        học máy (Machine Learning) và lập trình máy tính.
+
+        * Các thuật toán học máy như mạng nơ-ron nhân tạo sử dụng lý thuyết logic mệnh đề để xây dựng các mô hình học tập. Trong khi đó, trong lập trình,
+        mệnh đề được sử dụng để tạo các điều kiện và quyết định trong các thuật toán.
+
+        * Trong AI, mệnh đề có thể giúp xây dựng các hệ thống chuyên gia, trong đó các câu hỏi và câu trả lời được xác định qua logic mệnh đề.
+
+        * Các chương trình máy tính sử dụng mệnh đề để kiểm tra các điều kiện, ví dụ như trong các ngôn ngữ lập trình như Python,
+        JavaScript, C++, nơi các mệnh đề được áp dụng trong các câu lệnh if, while và các vòng lặp logic.
+
+        * Mệnh đề hiện nay vẫn là công cụ chủ yếu trong phát triển các ứng dụng AI, đặc biệt trong xử lý ngôn ngữ tự nhiên và phân tích dữ liệu.
+        Các công nghệ tiên tiến như chatbot, tự động hóa và các hệ thống phân tích dữ liệu đều dựa vào logic mệnh đề để thực hiện các quyết định thông minh.
+
+
+    </SItem>
+
+</Section>

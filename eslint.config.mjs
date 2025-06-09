@@ -29,6 +29,7 @@ const eslintConfig = [
                         "src/auth/**/*",
                         "src/components/**/*",
                         "src/context/**/*",
+                        "src/data/**/*",
                         "src/generated/**/*",
                         "src/hooks/**/*",
                         "src/lib/**/*",

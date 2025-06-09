@@ -1,4 +1,4 @@
-import { Quizzes } from "@/features/chapter";
+import { Quizzes } from "@/features/Quizzes";
 import { ChapterProps } from "@/types/ChapterType";
 import React from "react";
 

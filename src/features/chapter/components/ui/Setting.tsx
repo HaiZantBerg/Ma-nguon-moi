@@ -34,7 +34,7 @@ export default function Setting({
     const isMobile = useMediaQuery({ query: "(max-width: 1000px)" });
 
     return (
-        <Popover className="min-[1000px]:size-[2.5rem] size-[2rem]">
+        <Popover className="min-[1000px]:size-[2.5rem] size-[2rem] text-nowrap">
             <Popover.Trigger className="rounded-lg bg-[#f5f5f5] shadow-[0_5px_10px_#949494] size-full transition duration-200 ease-in hover:bg-[#f0f0f0]">
                 <SettingIcon className="min-[1000px]:w-[1.5rem] w-[1.25rem] mx-auto" />
             </Popover.Trigger>

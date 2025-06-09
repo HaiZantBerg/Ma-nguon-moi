@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { chapter } from "../data/chaptersStatic";
+import { chapters } from "@/data/chaptersStatic";
 import Image, { StaticImageData } from "next/image";
 import { motion } from "motion/react";
 import { FindIcon } from "@/assets";
@@ -54,7 +54,7 @@ export default function BtnLevel({
         if (isMobile) setCurChapter(idx + 1);
     };
 
-    const { title, description } = chapter["grade1" + String(grade)];
+    const { titles, descriptions } = chapters["grade1" + String(grade)];
 
     return (
         <div
@@ -94,10 +94,10 @@ export default function BtnLevel({
                                                 CHƯƠNG {romanNumeral}
                                             </p>
                                             <p className="text-xl">
-                                                {title[idx]}
+                                                {titles[idx]}
                                             </p>
                                         </header>
-                                        {description[idx]}
+                                        {descriptions[idx]}
                                         <Button3d
                                             as={Link}
                                             variant={variants[grade]}

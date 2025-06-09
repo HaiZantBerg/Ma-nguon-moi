@@ -1,0 +1,242 @@
+import {
+    Section,
+    SItem,
+    IP,
+    MP,
+    Toggle,
+} from "feature/chapter/sections/Legacy/components";
+
+import { InlineMath } from "react-katex";
+
+import reg from "public/Image/chapter/HLG/regiomontanus.webp";
+import kep from "public/Image/chapter/PTLG/johanneskepler.webp";
+import eul from "public/Image/chapter/LuongGiac10/tk1819/leonhardeuler.webp";
+import isa from "public/Image/chapter/HLG/isaacnewton.webp";
+
+<Section id={0} title='Mở đầu' isFirst>
+    <SItem id={0} isTop>
+
+        <div className="relative !mt-[12rem]">
+
+            <Toggle toggle={[
+                { value: "gia-tri-luong-giac-cua-goc-luong-giac", label: "Giá trị lượng giác của góc lượng giác" },
+                { value: "don-vi-do-doc-va-do-dai-cung-trong", label: "Đơn vị đo góc và độ dài cung tròn" },
+                { value: "phuong-trinh-luong-giac", label: "Phương Trình Lượng Giác" },
+            ]}/>
+
+            # Mở đầu
+
+            Khi các hàm lượng giác như sin, cos hay tan được đưa vào phương trình, người ta không chỉ còn đối diện với những biểu thức thuần túy đại số nữa,
+            mà bước vào một thế giới toán học gắn chặt với chu kỳ, đối xứng và tính tuần hoàn. Phương trình lượng giác xuất hiện một cách tự nhiên trong việc
+            mô tả các hiện tượng dao động, chuyển động tròn, và nhịp điệu của sóng - từ chu kỳ ngày đêm cho đến sự quay của hành tinh.
+            Nhưng trước khi trở thành công cụ toán học mô tả tự nhiên, những phương trình này từng gắn liền với các nỗ lực cổ xưa nhằm
+            tính toán vị trí các thiên thể trên bầu trời. Lịch sử của phương trình lượng giác vì thế không chỉ là hành trình toán học,
+            mà còn là hành trình của con người đi tìm trật tự trong vũ trụ.
+
+        </div>
+
+    </SItem>
+
+</Section>
+
+<Section id={1} title='Thế kỷ 16 - 17'>
+    <SItem id={0} title="Phát triển phương trình lượng giác ở châu Âu">
+
+        # Thế kỷ 16 - 17
+
+        ## Phát triển phương trình lượng giác ở châu Âu
+
+        * Trong thời kỳ này, phương trình lượng giác bắt đầu được phát triển ở châu Âu, nhưng vẫn chủ yếu được hiểu thông qua các
+        công thức lượng giác trong việc giải các bài toán thiên văn học và hình học. Các nhà toán học đã bắt đầu sử dụng đại số
+        và các phương trình để giải quyết các bài toán liên quan đến các góc và các hàm lượng giác.
+
+        <IP li>
+
+            <IP.Main>
+
+                <IP.Trigger>{`Regiomontanus`}</IP.Trigger>
+
+                <IP.Content>
+
+                    <IP.Ps>
+
+                        <IP.Image src={reg} fi/>
+
+                        **Regiomontanus**, tên thật là **Johannes Müller von Königsberg** (1436 - 1476) là một nhà toán học và thiên văn học người Đức
+                        trong thời kỳ Phục hưng. Ông sáng lập nhà in khoa học đầu tiên trên thế giới và xuất bản cuốn sách giáo khoa
+                        thiên văn học đầu tiên vào năm 1472. Regiomontanus cũng tính toán các bảng thiên văn và quan sát sao chổi,
+                        đóng góp quan trọng vào sự phát triển của hệ nhật tâm Copernicus.
+
+                    </IP.Ps>
+
+                </IP.Content>
+
+            </IP.Main>
+
+            {` là một trong những người đầu tiên áp dụng đại số vào việc giải quyết các vấn đề lượng giác. Trước thời của ông,
+            lượng giác chủ yếu được xem như một phần của hình học. Regiomontanus đã tập hợp và hệ thống hóa các bảng lượng giác,
+            làm cơ sở cho các công thức sau này trong việc giải các phương trình lượng giác.`}
+
+        </IP>
+
+        * Mặc dù ông không phát triển phương trình lượng giác theo cách hiện đại, các bảng lượng giác của ông đã cung cấp các giá trị của các hàm như sine và
+        tangent cho nhiều góc khác nhau, giúp tạo nền tảng cho các phương trình lượng giác trong tương lai.
+        Những bảng lượng giác này trở thành công cụ quan trọng trong thiên văn học, giúp tính toán các vị trí hành tinh và chuyển động của chúng.
+
+        <IP li>
+
+            <IP.Main>
+
+                <IP.Trigger>{`Johannes Kepler`}</IP.Trigger>
+
+                <IP.Content>
+
+                    <IP.Ps>
+
+                        <IP.Image src={kep} fi/>
+
+                        **Johannes Kepler** (1571 - 1630) là một nhà toán học và thiên văn học người Đức, nổi tiếng với ba định luật chuyển động của vệ tinh.
+                        Ông đã khám phá ra rằng các hành tinh di chuyển theo đường cong elip quanh Mặt Trời và đã đóng góp quan trọng vào việc
+                        phát triển thiên văn học hiện đại.
+
+                    </IP.Ps>
+
+                </IP.Content>
+
+            </IP.Main>
+
+            {` đã sử dụng các phương trình lượng giác để mô tả chuyển động của các hành tinh theo định lý của ông về quỹ đạo elip.
+            Ông sử dụng các hàm lượng giác, đặc biệt là sine và cosine, để tính toán các góc và khoảng cách giữa các hành tinh trong hệ mặt trời.
+            Kepler không chỉ sử dụng các bảng lượng giác mà còn xây dựng các phương trình lượng giác liên quan đến các vấn đề thiên văn học.`}
+
+        </IP>
+
+        * Kepler là người đã áp dụng phương trình lượng giác trong các nghiên cứu thực nghiệm của mình,
+        và đây là bước tiến lớn trong việc sử dụng phương trình lượng giác để mô tả các hiện tượng vật lý thực tế,
+        đặc biệt trong thiên văn học. Việc ông kết hợp lý thuyết lượng giác với dữ liệu quan sát thực tế đánh dấu sự phát triển
+        quan trọng của phương trình lượng giác trong khoa học.
+
+    </SItem>
+
+</Section>
+
+<Section id={1} title='Thế kỷ 17 - 18'>
+    <SItem id={0} title="Euler và sự ra đời của phương trình lượng giác đại số">
+
+        # Thế kỷ 17 - 18
+
+        ## Euler và sự ra đời của phương trình lượng giác đại số
+
+        * Đến thế kỷ 17 và 18, phương trình lượng giác bắt đầu chuyển từ hình học sang đại số, đặc biệt là nhờ những đóng góp của Leonhard Euler và các nhà toán học khác.
+
+        <IP li>
+
+            <IP.Main>
+
+                <IP.Trigger>{`Leonhard Euler`}</IP.Trigger>
+
+                <IP.Content>
+
+                    <IP.Ps>
+
+                        <IP.Image src={eul} fi/>
+
+                        **Leonhard Euler** (1707 - 1783) là một nhà toán học và thiên văn học người Thụy Sĩ,
+                        nổi tiếng với nhiều đóng góp quan trọng trong nhiều lĩnh vực toán học như đại số, đại số phức,
+                        đại số vi phân, và đại số đại số. Ông cũng đã đưa ra nhiều khái niệm và phương pháp toán học vĩ đại,
+                        bao gồm cách viết hàm số hiện đại và việc sử dụng ký hiệu số học hiện đại.
+
+                    </IP.Ps>
+
+                </IP.Content>
+
+            </IP.Main>
+
+            {`đã mở rộng khái niệm về các hàm lượng giác và tìm ra công thức Euler, liên kết giữa số phức và các hàm lượng giác.
+            Công thức Euler được cho là một trong những công cụ mạnh mẽ nhất trong toán học. `}
+
+        </IP>
+
+        <MP li>
+
+            <MP.Trigger><InlineMath math="e^{ix} = \cos(x) + i\sin(x)"/></MP.Trigger>
+
+            <MP.Content>
+
+                Công thức này không chỉ là một biểu thức lượng giác mà còn mở rộng sự hiểu biết về số phức và các phương trình trong không gian phức.
+                Nó cung cấp một cầu nối giữa các hàm lượng giác và lý thuyết số phức, mở ra những ứng dụng mới trong giải tích phức tạp, vật lý, và các lĩnh vực khác.
+
+            </MP.Content>
+
+        </MP>
+
+        * Euler không chỉ cải tiến các công thức lượng giác mà còn đặt nền móng cho việc sử dụng đại số trong việc giải quyết các phương trình lượng giác.
+        Ông đã giải thích các phương trình lượng giác trong ngữ cảnh đại số, từ đó cho phép các nhà toán học và
+        khoa học sau này có thể sử dụng chúng để mô tả các hiện tượng vật lý phức tạp.
+
+        <IP li>
+
+            <IP.Main>
+
+                <IP.Trigger>{`Isaac Newton`}</IP.Trigger>
+
+                <IP.Content>
+
+                    <IP.Ps>
+
+                        <IP.Image src={isa} fi/>
+
+                        **Isaac Newton** (1643 - 1727) là một nhà toán học và nhà vật lý nổi tiếng người Anh, nổi tiếng với ba định luật chuyển động và
+                        định luật hấp dẫn. Ông cũng là một trong những người phát triển độc lập toán học vi phân và đã sáng chế
+                        kính hiển vi phản xạ đầu tiên. Các đóng góp của Newton đã đặt nền móng cho nhiều lĩnh vực khoa học hiện đại.
+
+                    </IP.Ps>
+
+                </IP.Content>
+
+            </IP.Main>
+
+            {` trong công trình về giải tích và cơ học, đã sử dụng các phương trình lượng giác để mô tả các hiện tượng vật lý,
+            đặc biệt là các chuyển động cơ học và các phương trình sóng. Phương trình lượng giác bắt đầu được áp dụng trong lý thuyết dao động và
+            chuyển động của vật thể. Newton cũng sử dụng các công thức lượng giác trong các bài toán về lực và chuyển động trong không gian,
+            đặc biệt là trong các phương trình chuyển động của các hành tinh và các vật thể trong vũ trụ.`}
+
+        </IP>
+
+        * Những phương trình mà Newton phát triển có vai trò quan trọng trong việc giải quyết các vấn đề cơ học và thiên văn học,
+        và chúng cũng đánh dấu sự gia tăng sử dụng phương trình lượng giác trong lý thuyết vật lý.
+
+        * Tiếp nối tư tưởng đó, Joseph-Louis Lagrange người tiếp tục phát triển lý thuyết động lực học, sử dụng phương trình lượng giác
+        trong việc mô tả các hệ động học và chuyển động dao động. Ông phát triển phương trình Lagrange trong cơ học,
+        cho phép các phương trình lượng giác được ứng dụng trong việc giải các bài toán về dao động cơ học và các hệ thống động học phức tạp.
+
+        * Lagrange là một trong những người đầu tiên áp dụng phương trình lượng giác vào lý thuyết động lực học,
+        đóng góp lớn vào sự phát triển của các phương trình trong vật lý và toán học.
+
+    </SItem>
+
+</Section>
+
+<Section id={1} title='Thế kỷ 20 - 21'>
+    <SItem id={0} title="Phương trình lượng giác trong khoa học hiện đại">
+
+        # Thế kỷ 20 - 21
+
+        ## Phương trình lượng giác trong khoa học hiện đại
+
+        * Trong thế kỷ 20 và 21, phương trình lượng giác trở thành công cụ quan trọng trong nhiều lĩnh vực khoa học và kỹ thuật,
+        từ vật lý đến xử lý tín hiệu và phân tích dữ liệu:
+
+        * * **Ứng dụng trong xử lý tín hiệu**: Các phương trình lượng giác là nền tảng trong lý thuyết Fourier và các thuật toán xử lý tín hiệu số.
+        Chúng được sử dụng để phân tách các tín hiệu thành các thành phần sóng sin và cos, từ đó phục vụ cho các ứng dụng trong truyền thông,
+        âm thanh, điện tử, và nhiều lĩnh vực khác.
+
+        * * **Ứng dụng trong cơ học lượng tử**: Trong cơ học lượng tử, các sóng hàm lượng giác được sử dụng để mô tả sự phân bố và chuyển động của các hạt.
+        Các phương trình lượng giác như sóng sóng được sử dụng để giải thích các hiện tượng vật lý vi mô.
+
+        * * **Phương trình sóng trong vật lý**: Các phương trình sóng Maxwell mô tả sóng điện từ, và chúng sử dụng các hàm lượng giác để mô tả dao động và
+        sóng trong các môi trường khác nhau.
+
+    </SItem>
+
+</Section>

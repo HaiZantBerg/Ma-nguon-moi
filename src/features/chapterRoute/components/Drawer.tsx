@@ -3,7 +3,7 @@
 import React from "react";
 import ArrowIcon from "@/assets/Svg/arrowStuff.svg";
 import Link from "next/link";
-import { chapter } from "../data/chaptersStatic";
+import { chapters } from "@/data/chaptersStatic";
 import styling from "../assets/drawer.module.css";
 import { FindIcon } from "@/assets";
 import { motion } from "motion/react";
@@ -33,6 +33,8 @@ export default function Drawer({
     numberOfChapter,
 }: DrawerProps) {
     const { handleCloseDrawer, dragY, scope } = useDrawer(setCurChapter);
+
+    const { titles, descriptions } = chapters["grade1" + String(grade)];
 
     return (
         <motion.div
@@ -82,11 +84,7 @@ export default function Drawer({
                                 CHƯƠNG {romanNumeral[curChapter - 1]}
                             </h1>
                             <h2 className="text-xl sm:text-[1.5rem]">
-                                {
-                                    chapter["grade1" + String(grade)].title[
-                                        curChapter - 1
-                                    ]
-                                }
+                                {titles[curChapter - 1]}
                             </h2>
                         </header>
                         <div
@@ -96,10 +94,7 @@ export default function Drawer({
                             )}
                         >
                             <div className="max-h-[50dvh] overflow-auto py-8">
-                                {
-                                    chapter["grade1" + String(grade)]
-                                        .description[curChapter - 1]
-                                }
+                                {descriptions[curChapter - 1]}
                             </div>
                         </div>
                     </article>

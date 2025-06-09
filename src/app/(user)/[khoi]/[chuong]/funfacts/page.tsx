@@ -1,4 +1,4 @@
-import { FunFact } from "@/features/chapter";
+import { FunFact } from "@/features/Funfacts";
 import { ChapterProps } from "@/types/ChapterType";
 import React from "react";
 

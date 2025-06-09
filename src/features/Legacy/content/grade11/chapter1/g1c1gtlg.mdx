@@ -1,0 +1,162 @@
+import {
+    Section,
+    SItem,
+    // IP,
+    Toggle,
+} from "feature/chapter/sections/Legacy/components";
+
+import { InlineMath } from "react-katex";
+import Image from "next/image";
+
+import ddct from "public/Image/chapter/GTLG/unitandarclength.webp";
+
+<Section id={0} title='Mở đầu' isFirst>
+    <SItem id={0} isTop>
+
+        <div className="relative !mt-[12rem]">
+
+            <Toggle toggle={[
+                { value: "gia-tri-luong-giac-cua-goc-luong-giac", label: "Giá trị lượng giác của góc lượng giác" },
+                { value: "don-vi-do-doc-va-do-dai-cung-trong", label: "Đơn vị đo góc và độ dài cung tròn" },
+                { value: "phuong-trinh-luong-giac", label: "Phương Trình Lượng Giác" },
+            ]}/>
+
+            # Mở đầu
+
+            Giá trị lượng giác của một góc lượng giác là một khái niệm nền tảng trong hệ thống lượng giác học. Bắt nguồn từ quan hệ giữa các cạnh trong tam giác vuông,
+            khái niệm này được mở rộng bằng cách gắn các góc lên đường tròn đơn vị, cho phép định nghĩa giá trị lượng giác cho mọi góc, bao gồm cả góc âm và góc lớn hơn
+            <InlineMath math="360\degree"/>. Việc gắn kết góc với vị trí điểm trên đường tròn giúp xác định sin, cos,
+            tan và các hàm lượng giác khác thông qua tọa độ. Đây là bước chuyển quan trọng từ lượng giác hình học sang lượng giác đại số,
+            làm cơ sở cho việc nghiên cứu sâu hơn các hàm số và phương trình lượng giác.
+
+        </div>
+
+    </SItem>
+
+</Section>
+
+<Section id={1} title='Góc lượng giác'>
+    <SItem id={0} title='Thời kì cổ đại'>
+
+        # Góc lượng giác
+
+        ## Thời kì cổ đại
+
+        * Trong hình học cổ đại, góc được hiểu là một phần của mặt phẳng tạo bởi hai tia giao nhau tại một đỉnh. Góc chỉ được đo trong khoảng từ
+        <InlineMath math="0\degree"/> đến <InlineMath math="360\degree"/>, vì ứng dụng chính lúc đó là trong hình học và thiên văn học.
+
+        * Người Babylon đã định nghĩa một vòng tròn đầy đủ là <InlineMath math="360\degree"/>, dựa trên chu kỳ của năm.
+
+        * Các nhà toán học Hy Lạp chỉ định nghĩa góc dương (góc quay theo chiều ngược chiều kim đồng hồ) trong các nghiên cứu hình học và thiên văn.
+        Họ chưa đề cập đến góc âm.
+
+    </SItem>
+
+    <SItem id={1} title='Thế kỷ 15 - 16'>
+
+        ## Thế kỷ 15 - 16
+
+        * Vào thế kỷ 15, nhà toán học Regiomontanus đã viết tác phẩm De Triangulis Omnimodis, một trong những công trình đầu
+        tiên hệ thống hóa kiến thức về lượng giác ở châu Âu. Trong đó, ông đã sử dụng các khái niệm lượng giác gắn với đường tròn,
+        tuy nhiên lúc ấy, khái niệm "đường tròn đơn vị" - tức là đường tròn có bán kính bằng <InlineMath math="1"/> - vẫn chưa được ông dùng làm chuẩn.
+        Thay vào đó, các tỉ số lượng giác của ông vẫn dựa vào một đường tròn có bán kính tùy ý, thường là một độ dài nhất định nào đó.
+
+        * Vào thế kỷ 16, François Viète, một trong những người đặt nền móng cho đại số hiện đại, đã đưa vào các ký hiệu và
+        công thức lượng giác gần giống với cách chúng ta dùng ngày nay. Công trình của ông đã góp phần mở đường cho sự hình thành
+        khái niệm vòng tròn đơn vị - đường tròn có bán kính bằng <InlineMath math="1"/>.
+
+        * Chính sự xuất hiện của vòng tròn đơn vị đã giúp mở rộng khái niệm về góc, không chỉ còn giới hạn trong các tam giác
+        mà lan rộng ra toàn bộ mặt phẳng. Nhờ đó, các phép tính lượng giác trở nên rõ ràng và dễ xử lý hơn, bởi mọi đại lượng
+        lượng giác giờ đây có thể được định nghĩa một cách thống nhất bên trong một đường tròn duy nhất.
+
+    </SItem>
+
+    <SItem id={2} title='Thế kỷ 17 - 18'>
+
+        ## Thế kỷ 17 - 18
+
+        * Sự phát triển của khái niệm vòng tròn đơn vị không chỉ giúp đơn giản hóa các phép tính lượng giác, mà còn mở ra một cách nhìn mới
+        về các chuyển động xoay liên tục trong vật lý và kỹ thuật.
+
+        * Vào thế kỷ 17, René Descartes giới thiệu **hệ tọa độ Descartes** - nơi mỗi điểm trên mặt phẳng được biểu diễn bằng một cặp số thực,
+        gồm cả giá trị âm và dương. Chính việc chấp nhận tọa độ âm này đã gián tiếp mở đường cho khái niệm góc âm trong vòng tròn đơn vị,
+        tức là những góc quay theo chiều kim đồng hồ.
+
+        * Không lâu sau, Isaac Newton, khi nghiên cứu về dao động và sóng tuần hoàn, đã cho thấy sự cần thiết của việc dùng góc âm để mô tả
+        các pha chuyển động ngược chiều thông thường. Điều này đặc biệt quan trọng trong việc mô hình hóa các hiện tượng vật lý như sóng âm,
+        ánh sáng hay chuyển động điều hòa.
+
+        * Đến thế kỷ 18, Leonhard Euler, đã đặt dấu mốc lớn khi chính thức hóa các hàm lượng giác tuần hoàn trên vòng tròn đơn vị.
+        Ông là người đã định nghĩa rõ ràng hai chiều quay:
+
+        * * Góc dương: quay **ngược chiều kim đồng hồ**.
+
+        * * Góc âm: quay **theo chiều kim đồng hồ**.
+
+        * Khái niệm này không chỉ giúp biểu diễn góc âm, mà còn cho phép mở rộng các góc vượt quá <InlineMath math="360\degree"/>,
+        tức là quay nhiều vòng. Những ứng dụng sâu hơn của cách hiểu này sẽ tiếp tục được trình bày trong phần hàm số và phương trình lượng giác sau.
+
+    </SItem>
+
+</Section>
+
+<Section id={2} title='Đơn vị đo góc và độ dài cung tròn' isLast>
+    <SItem id={0} title='Thời kì cổ đại'>
+
+        # Đơn vị đo góc và độ dài cung tròn
+
+        ## Thời kì cổ đại
+
+        <div className="mb-4">
+
+            <Image src={ddct} alt="" className="mx-auto"/>
+
+        </div>
+
+        Việc đo góc bằng radian bắt nguồn từ sự phát triển của toán học vào thế kỷ 18, mặc dù khái niệm cơ bản đã có trước đó nhưng chưa được chuẩn hóa.
+
+        * Trong thời kỳ cổ đại, các nhà toán học như Euclid và Archimedes đã biết rằng độ dài của một cung tròn liên hệ với bán kính của nó.
+        Tuy nhiên, họ chưa đặt tên hay sử dụng hệ đo góc dựa trên tỷ lệ này.
+
+        * Người Babylon sử dụng hệ độ (degree), chia một vòng tròn thành <InlineMath math="360\degree"/>.
+
+    </SItem>
+
+    <SItem id={1} title='Thế kỷ 15 - 16' isBottom>
+
+        ## Thế kỷ 15 - 16
+
+        Vào thế kỷ 15, Regiomontanus, trong tác phẩm De Triangulis Omnimodis, đã làm rõ mối liên hệ giữa cung tròn, bán kính và góc -
+        một bước tiến lớn trong việc chuẩn hóa khái niệm góc tại châu Âu. Dù khi đó chưa sử dụng đường tròn đơn vị,
+        nhưng cách tiếp cận của ông đã đặt nền móng cho việc hiểu góc như một phần của chuyển động quay, chứ không chỉ đơn thuần là góc trong tam giác.
+
+        Hơn một thế kỷ sau, René Descartes đã mở rộng ý tưởng đó bằng việc đưa ra hệ tọa độ Descartes. Trong hệ tọa độ này,
+        ông định nghĩa các điểm trên mặt phẳng bằng cặp số, và nhờ đó, các điểm trên đường tròn cũng có thể được xác định chính xác.
+        Điều này tạo tiền đề để biểu diễn cung tròn và góc một cách hình học và đại số rõ ràng -
+        giúp đưa khái niệm góc từ hình học cổ điển sang ngôn ngữ của đại số hiện đại.
+
+    </SItem>
+
+    <SItem id={2} title='Thế kỷ 17'>
+
+        ## Thế kỷ 17
+
+        * Trong quá trình phát triển của lượng giác, một bước ngoặt quan trọng là sự xuất hiện của ý tưởng đo góc bằng radian.
+
+        * Ý tưởng này bắt đầu xuất hiện từ các nghiên cứu của Isaac Newton và Roger Cotes vào cuối thế kỷ 17,
+        khi họ nghiên cứu các hiện tượng dao động và chuyển động tròn. Thay vì đo góc theo độ - một đơn vị thuần túy quy ước -
+        họ đề xuất đo góc dựa trên tỉ lệ giữa độ dài cung tròn và bán kính.
+
+        <div className="[&_p]:!mb-1 [&_ul]:!mb-1">
+
+            * Định nghĩa radian chính thức:
+
+            * * Một vòng tròn đầy đủ có góc <InlineMath math="2\pi"/> radian: <InlineMath math="2\pi , \text{radian} = 360\degree"/>
+
+            * * Độ dài cung tròn được tính bằng công thức: <InlineMath math="s = r \cdot \theta, \quad \text{với } \theta \text{ tính bằng radian.}"/>
+
+        </div>
+
+    </SItem>
+
+</Section>
